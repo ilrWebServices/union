@@ -1,0 +1,20 @@
+{
+    "name": "cornell/union",
+    "description": "A component-based design system",
+    "type": "library",
+    "version": "0.0.1",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeff Amaral",
+            "email": "jeff.amaral@cornell.edu"
+        },
+        {
+            "name": "Aaron Froehlich",
+            "email": "aaronfroehlich@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^1.0"
+    }
+}
