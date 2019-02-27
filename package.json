@@ -1,0 +1,33 @@
+{
+  "name": "union",
+  "version": "0.0.1",
+  "description": "A component-based design system",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilrWebServices/union.git"
+  },
+  "author": {
+    "name": "Aaron Froehlich",
+    "email": "aaronfroehlich@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Jeff Amaral",
+      "email": "jeff@freethoughtdesign.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilrWebServices/union/issues"
+  },
+  "homepage": "https://github.com/ilrWebServices/union#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  },
+  "scripts": {
+    "setup": "npm install",
+    "build": "node-sass --source-map true --recursive source/ --output source/",
+    "start": "npm run build -- --watch source/"
+  }
+}
