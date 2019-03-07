@@ -1,7 +1,7 @@
 {
   "name": "union",
   "version": "0.0.1",
-  "description": "A component-based design system",
+  "description": "A component library.",
   "main": "index.js",
   "repository": {
     "type": "git",
