@@ -1,1 +1,37 @@
+// Variables
+
+// Colors
+$black: #222; // ILR Brand black
+$white: #fff;
 $cornell-red: #b31b1b;
+
+// Color usage
+$color-body: $black;
+$body-bg: $white;
+$color-alert: $cornell-red;
+
+// Fonts
+$font-family-base: san-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$line-height-base: 1.15;
+
+$dt-font-weight: 700;
+$font-weight-bolder: 800;
+
+// Margins
+$headings-margin-bottom: 0.5rem;
+$paragraph-margin-bottom: 1rem;
+$form-element-margin-bottom: 1rem;
+
+// Links
+$color-link: $cornell-red;
+$link-decoration: none;
+$color-link-hover: lighten($cornell-red, 0.1);
+$link-hover-decoration: underline;
+
+// Tables
+$table-cell-padding: 0.75rem;
+$color-table-caption: $black;
+$label-margin-bottom: 0.5rem;

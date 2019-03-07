@@ -1,0 +1,16 @@
+.cu-input {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  &.is-touched {
+    color: $color-alert;
+    border: 1px solid $color-alert;
+    background: #fef7f6;
+  }
+}
+
+.cu-input-message {
+  &--invalid {
+    color: $color-alert;
+  }
+}
