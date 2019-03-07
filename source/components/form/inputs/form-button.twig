@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * A form button element.
+ *
+ * Available variables
+ *   - attributes (object): A list of HTML attributes for the button element.
+ *   - text (renderable, REQUIRED): Text to show within the button
+ */
+#}
+
+{% set attributes = create_attribute(attributes | default({})) %}
+
+{% set classes = [
+  "cu-button",
+  "cu-button--center",
+  "cu-button--medium",
+  "cu-button--primary",
+] %}
+
+<button {{ attributes.addClass(classes) }}>
+  <span class="cu-button__item">
+    {{ text }}
+  </span>
+</button>
