@@ -1,16 +1,49 @@
 .cu-input {
-  padding: 0.5rem;
+  padding: $form-input-padding-y $form-input-padding-x;
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
 
-  &.is-touched {
-    color: $color-alert;
-    border: 1px solid $color-alert;
-    background: #fef7f6;
+  &.required.is-touched {
+    &:not(.is-filled) {
+      color: $color-alert;
+      border: 1px solid $color-alert;
+      background: #fef7f6;
+    }
   }
 }
 
 .cu-input-message {
   &--invalid {
     color: $color-alert;
+    margin-left: 0.5rem;
+  }
+}
+
+// Float label specific
+// @see https: //github.com/tonystar/float-label-css
+.cu-input-list__item.has-float-label:not(.js-disabled) {
+  textarea {
+    width: 100%;
+  }
+
+  &:not(.cu-input-list__item--select) {
+    &.is-filled .cu-input,
+    .cu-input.is-focused:not(.is-filled) {
+      transition: all 0.2s;
+      padding: $form-input-padding-y * 1.5 $form-input-padding-x $form-input-padding-y * 0.5;
+    }
+  }
+
+  input,
+  select,
+  textarea {
+    &::placeholder {
+      opacity: 1;
+      transition: all .2s;
+    }
+
+    &:placeholder-shown:not(:focus)::placeholder {
+      opacity: 0;
+    }
   }
 }

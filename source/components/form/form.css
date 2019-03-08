@@ -110,19 +110,69 @@ progress {
   /* 2 */ }
 
 .cu-input-list__item {
+  padding: 0.25rem;
   margin-bottom: 1rem; }
 
-.cu-input {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem; }
+.cu-input-list__item--label-hidden label, .cu-input-list__item--select label, .cu-input-list__item.js-disabled label {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal; }
 
-.cu-input.is-touched {
+.cu-input-list__item.has-float-label:not(.js-disabled) {
+  display: block;
+  position: relative; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled) label {
+  position: absolute;
+  left: calc(0.25rem + 1rem);
+  top: calc(0.25rem + 1rem);
+  cursor: text;
+  font-size: 125%;
+  opacity: 0.5;
+  transition: all .2s;
+  z-index: 10; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled).is-active label, .cu-input-list__item.has-float-label:not(.js-disabled).is-filled label {
+  top: calc(0.25rem + 3px);
+  left: calc(0.25rem + 3px);
+  font-size: 90%;
+  opacity: 1; }
+
+.cu-input {
+  padding: 1rem 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem; }
+
+.cu-input.required.is-touched:not(.is-filled) {
   color: #b31b1b;
   border: 1px solid #b31b1b;
   background: #fef7f6; }
 
 .cu-input-message--invalid {
-  color: #b31b1b; }
+  color: #b31b1b;
+  margin-left: 0.5rem; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled) textarea {
+  width: 100%; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled):not(.cu-input-list__item--select).is-filled .cu-input,
+.cu-input-list__item.has-float-label:not(.js-disabled):not(.cu-input-list__item--select) .cu-input.is-focused:not(.is-filled) {
+  transition: all 0.2s;
+  padding: 1.5rem 1rem 0.5rem; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled) input::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) select::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) textarea::placeholder {
+  opacity: 1;
+  transition: all .2s; }
+
+.cu-input-list__item.has-float-label:not(.js-disabled) input:placeholder-shown:not(:focus)::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) select:placeholder-shown:not(:focus)::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) textarea:placeholder-shown:not(:focus)::placeholder {
+  opacity: 0; }
 
 /*# sourceMappingURL=form.css.map */
 

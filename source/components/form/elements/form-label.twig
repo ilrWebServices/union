@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Pattern for
+ * Pattern for form labels
  *
  * Available variables:
  * - title (string) - The title to be displayed in this label
@@ -12,7 +12,6 @@
  *    - default - no special treatment
  */
 #}
-{# {% set attributes = create_attribute(attributes | default({})) %} #}
 
 {% if displayType == "inline-radio" %}
   {% set _classes = ["cu-inline-label", "cu-inline-label--radio"] %}

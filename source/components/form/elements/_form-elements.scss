@@ -1,3 +1,39 @@
 .cu-input-list__item {
+  padding: $form-element-padding;
   margin-bottom: $form-element-margin-bottom;
+
+  &--label-hidden,
+  &--select,
+  &.js-disabled {
+    label {
+      @include visually-hidden;
+    }
+  }
+}
+
+// @see https: //github.com/tonystar/float-label-css
+.cu-input-list__item.has-float-label:not(.js-disabled) {
+  display: block;
+  position: relative;
+
+  label {
+    position: absolute;
+    left: calc(#{$form-element-padding} + #{$form-input-padding-x});
+    top: calc(#{$form-element-padding} + #{$form-input-padding-y});
+    cursor: text;
+    font-size: 125%;
+    opacity: 0.5;
+    transition: all .2s;
+    z-index: 10;
+  }
+
+  &.is-active,
+  &.is-filled {
+    label {
+      top: calc(#{$form-element-padding} + 3px);
+      left: calc(#{$form-element-padding} + 3px);
+      font-size: 90%;
+      opacity: 1;
+    }
+  }
 }

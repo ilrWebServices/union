@@ -1,24 +1,42 @@
-// TODO: limit to a .js class
 const inputs = document.querySelectorAll('.cu-input');
 
 for (let i = 0, len = inputs.length; i < len; i++) {
   const input = inputs[i];
+  const wrapper = input.closest('.cu-input-list__item');
 
   // Check if the field has pre-filled text from the server side
   if (input.value) {
     input.classList.add('is-filled');
+    // Check if input has a wrapper
+    if (wrapper) {
+      wrapper.classList.add('is-filled');
+    }
+  }
+
+  // If wrapper, remove the js-disabled class for float labels
+  if (wrapper) {
+    wrapper.classList.remove('js-disabled');
   }
 
   input.onchange = function() {
+    let wrapper = input.closest('.cu-input-list__item');
     if (input.value) {
       input.classList.add('is-filled');
+      wrapper.classList.add('is-filled');
     } else {
       input.classList.remove('is-filled');
+      wrapper.classList.remove('is-filled');
     }
   };
 
   input.onfocus = function() {
     input.classList.remove('is-touched');
+    input.classList.add('is-focused');
+
+    // Check for wrapper and update classes
+    if (wrapper) {
+      wrapper.classList.add('is-active')
+    }
 
     // In there were server-side errors, the 'is-invalid' class will be present
     // but should be removed on focus because the user is trying to fix them.
@@ -42,6 +60,12 @@ for (let i = 0, len = inputs.length; i < len; i++) {
 
     input.classList.add('is-touched');
 
+    // Check for wrapper and update classes
+    if (wrapper) {
+      wrapper.classList.remove('is-active');
+    }
+
+
     if (input.validationMessage) {
       let error = document.createElement('div');
       let messageText = document.createTextNode(input.validationMessage);
@@ -51,20 +75,5 @@ for (let i = 0, len = inputs.length; i < len; i++) {
 
       input.errors = input.insertAdjacentElement('afterend', error);
     }
-  };
-}
-
-const customInputWrappers = document.querySelectorAll('.cu-custom-input');
-
-for (let i = 0, len = customInputWrappers.length; i < len; i++) {
-  const wrapper = customInputWrappers[i];
-  const input = wrapper.querySelector('.cu-input');
-
-  input.onfocus = function() {
-    wrapper.classList.add('is-active');
-  };
-
-  input.onblur = function() {
-    wrapper.classList.remove('is-active');
   };
 }
