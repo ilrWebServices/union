@@ -70,7 +70,7 @@
 }
 
 // @todo: Refactor once design is in hand.
-.cu-input-list__item--select.has-float-label {
+.cu-input-list__item--select.has-float-label:not(.js-disabled) {
   label {
     @include visually-hidden;
   }

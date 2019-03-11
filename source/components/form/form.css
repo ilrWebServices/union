@@ -169,7 +169,7 @@ progress {
   font-size: 90%;
   opacity: 1; }
 
-.cu-input-list__item--select.has-float-label label {
+.cu-input-list__item--select.has-float-label:not(.js-disabled) label {
   position: absolute !important;
   height: 1px;
   width: 1px;
