@@ -207,7 +207,7 @@ progress {
   width: auto;
   width: 200px; }
 
-.cu-input.required.is-touched:not(.is-filled), .cu-input.error:not(.is-filled) {
+.cu-input.required.is-touched:not(.is-filled), .cu-input.is-invalid:not(.is-filled) {
   color: #b31b1b;
   border: 1px solid #b31b1b;
   background: #fef7f6; }

@@ -16,7 +16,7 @@
   }
 
   &.required.is-touched,
-  &.error {
+  &.is-invalid {
     &:not(.is-filled) {
       color: $color-alert;
       border: 1px solid $color-alert;
