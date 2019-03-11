@@ -1,16 +1,6 @@
-html {
-  box-sizing: border-box; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
 .cu-button {
   color: #b31b1b;
   font-weight: bold;
   border-radius: 2px; }
-
-/*# sourceMappingURL=button.css.map */
 
 /*# sourceMappingURL=button.css.map */
