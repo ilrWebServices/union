@@ -117,6 +117,9 @@ progress {
   font: inherit;
   /* 2 */ }
 
+.cu-form summary {
+  margin-bottom: 0.75rem; }
+
 .cu-fieldset {
   margin-bottom: 0.75rem;
   padding: 1rem; }
@@ -125,7 +128,7 @@ progress {
   padding: 0.25rem;
   margin-bottom: 0.75rem; }
 
-.cu-input-list__item--label-hidden label, .cu-input-list__item--select label {
+.cu-input-list__item--label-hidden label {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -150,6 +153,14 @@ progress {
   display: block;
   position: relative; }
 
+.cu-input-list__item.has-float-label:not(.js-disabled)--select label {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal; }
+
 .cu-input-list__item.has-float-label:not(.js-disabled) label {
   position: absolute;
   left: calc(0.25rem + 0.5rem);
@@ -165,6 +176,14 @@ progress {
   left: calc(0.25rem + 3px);
   font-size: 90%;
   opacity: 1; }
+
+.cu-input-list__item--select.has-float-label label {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal; }
 
 .cu-input {
   padding: 0.5rem 0.5rem;

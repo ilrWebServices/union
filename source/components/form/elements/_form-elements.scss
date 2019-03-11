@@ -1,3 +1,9 @@
+.cu-form {
+  summary {
+    margin-bottom: $form-element-margin-bottom;
+  }
+}
+
 .cu-fieldset {
   margin-bottom: $form-element-margin-bottom;
   padding: 1rem;
@@ -6,8 +12,7 @@
   padding: $form-element-padding;
   margin-bottom: $form-element-margin-bottom;
 
-  &--label-hidden,
-  &--select {
+  &--label-hidden {
     label {
       @include visually-hidden;
     }
@@ -36,6 +41,12 @@
   display: block;
   position: relative;
 
+  &--select {
+    label {
+      @include visually-hidden;
+    }
+  }
+
   label {
     position: absolute;
     left: calc(#{$form-element-padding} + #{$form-input-padding-x});
@@ -57,3 +68,12 @@
     }
   }
 }
+
+// @todo: Refactor once design is in hand.
+.cu-input-list__item--select.has-float-label {
+  label {
+    @include visually-hidden;
+  }
+}
+
+
