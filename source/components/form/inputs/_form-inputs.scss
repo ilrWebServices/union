@@ -11,6 +11,10 @@
     border: 1px solid $color-border;
   }
 
+  &--submit {
+    @include cu-button;
+  }
+
   &.required.is-touched,
   &.error {
     &:not(.is-filled) {

@@ -187,6 +187,17 @@ progress {
   border-radius: 3px;
   border: 1px solid #ccc; }
 
+.cu-input--submit {
+  color: #b31b1b;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 1px solid #b31b1b;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+  width: 200px; }
+
 .cu-input.required.is-touched:not(.is-filled), .cu-input.error:not(.is-filled) {
   color: #b31b1b;
   border: 1px solid #b31b1b;
