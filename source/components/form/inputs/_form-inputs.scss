@@ -3,7 +3,16 @@
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 
-  &.required.is-touched {
+  &--text,
+  &--tel,
+  &--email {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid $color-border;
+  }
+
+  &.required.is-touched,
+  &.error {
     &:not(.is-filled) {
       color: $color-alert;
       border: 1px solid $color-alert;
@@ -22,20 +31,24 @@
 // Float label specific
 // @see https: //github.com/tonystar/float-label-css
 .cu-input-list__item.has-float-label:not(.js-disabled) {
-  textarea {
+
+  .cu-input--text,
+  .cu-input--tel,
+  .cu-input--email {
     width: 100%;
+    padding: $form-input-padding-y * $float-label-offset-multiplier $form-input-padding-x $form-input-padding-y * 0.5;
   }
 
   &:not(.cu-input-list__item--select) {
     &.is-filled .cu-input,
     .cu-input.is-focused:not(.is-filled) {
       transition: all 0.2s;
-      padding: $form-input-padding-y * 1.5 $form-input-padding-x $form-input-padding-y * 0.5;
+      padding: $form-input-padding-y * $float-label-offset-multiplier $form-input-padding-x $form-input-padding-y * 0.5;
     }
   }
 
-  input,
-  select,
+  .cu-input,
+  .cu-input--select,
   textarea {
     &::placeholder {
       opacity: 1;

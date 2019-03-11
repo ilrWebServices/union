@@ -117,11 +117,15 @@ progress {
   font: inherit;
   /* 2 */ }
 
+.cu-fieldset {
+  margin-bottom: 0.75rem;
+  padding: 1rem; }
+
 .cu-input-list__item {
   padding: 0.25rem;
-  margin-bottom: 1rem; }
+  margin-bottom: 0.75rem; }
 
-.cu-input-list__item--label-hidden label, .cu-input-list__item--select label, .cu-input-list__item.js-disabled label {
+.cu-input-list__item--label-hidden label, .cu-input-list__item--select label {
   position: absolute !important;
   height: 1px;
   width: 1px;
@@ -129,14 +133,27 @@ progress {
   clip: rect(1px, 1px, 1px, 1px);
   word-wrap: normal; }
 
+.cu-input-list__item--radio {
+  display: flex;
+  padding: 0.25rem 0; }
+
+.cu-input-list__item--radio .cu-label {
+  order: 2;
+  margin-left: 1rem; }
+
+.cu-label {
+  display: block;
+  padding-bottom: 0.4rem;
+  margin-left: 1px; }
+
 .cu-input-list__item.has-float-label:not(.js-disabled) {
   display: block;
   position: relative; }
 
 .cu-input-list__item.has-float-label:not(.js-disabled) label {
   position: absolute;
-  left: calc(0.25rem + 1rem);
-  top: calc(0.25rem + 1rem);
+  left: calc(0.25rem + 0.5rem);
+  top: calc(0.25rem * 2.5 + 0.5rem);
   cursor: text;
   font-size: 125%;
   opacity: 0.5;
@@ -150,11 +167,16 @@ progress {
   opacity: 1; }
 
 .cu-input {
-  padding: 1rem 1rem;
+  padding: 0.5rem 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.2rem; }
 
-.cu-input.required.is-touched:not(.is-filled) {
+.cu-input--text, .cu-input--tel, .cu-input--email {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #ccc; }
+
+.cu-input.required.is-touched:not(.is-filled), .cu-input.error:not(.is-filled) {
   color: #b31b1b;
   border: 1px solid #b31b1b;
   background: #fef7f6; }
@@ -163,22 +185,25 @@ progress {
   color: #b31b1b;
   margin-left: 0.5rem; }
 
-.cu-input-list__item.has-float-label:not(.js-disabled) textarea {
-  width: 100%; }
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--text,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--tel,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--email {
+  width: 100%;
+  padding: 1.25rem 0.5rem 0.25rem; }
 
 .cu-input-list__item.has-float-label:not(.js-disabled):not(.cu-input-list__item--select).is-filled .cu-input,
 .cu-input-list__item.has-float-label:not(.js-disabled):not(.cu-input-list__item--select) .cu-input.is-focused:not(.is-filled) {
   transition: all 0.2s;
-  padding: 1.5rem 1rem 0.5rem; }
+  padding: 1.25rem 0.5rem 0.25rem; }
 
-.cu-input-list__item.has-float-label:not(.js-disabled) input::placeholder,
-.cu-input-list__item.has-float-label:not(.js-disabled) select::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--select::placeholder,
 .cu-input-list__item.has-float-label:not(.js-disabled) textarea::placeholder {
   opacity: 1;
   transition: all .2s; }
 
-.cu-input-list__item.has-float-label:not(.js-disabled) input:placeholder-shown:not(:focus)::placeholder,
-.cu-input-list__item.has-float-label:not(.js-disabled) select:placeholder-shown:not(:focus)::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input:placeholder-shown:not(:focus)::placeholder,
+.cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--select:placeholder-shown:not(:focus)::placeholder,
 .cu-input-list__item.has-float-label:not(.js-disabled) textarea:placeholder-shown:not(:focus)::placeholder {
   opacity: 0; }
 

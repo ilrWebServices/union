@@ -1,16 +1,36 @@
+.cu-fieldset {
+  margin-bottom: $form-element-margin-bottom;
+  padding: 1rem;
+}
 .cu-input-list__item {
   padding: $form-element-padding;
   margin-bottom: $form-element-margin-bottom;
 
   &--label-hidden,
-  &--select,
-  &.js-disabled {
+  &--select {
     label {
       @include visually-hidden;
     }
   }
+
+  &--radio {
+    display: flex;
+    padding: $form-element-padding 0;
+
+    .cu-label {
+      order: 2;
+      margin-left: 1rem;
+    }
+  }
 }
 
+.cu-label {
+  display: block;
+  padding-bottom: 0.4rem;
+  margin-left: 1px;
+}
+
+// Float label specific
 // @see https: //github.com/tonystar/float-label-css
 .cu-input-list__item.has-float-label:not(.js-disabled) {
   display: block;
@@ -19,7 +39,7 @@
   label {
     position: absolute;
     left: calc(#{$form-element-padding} + #{$form-input-padding-x});
-    top: calc(#{$form-element-padding} + #{$form-input-padding-y});
+    top: calc(#{$form-element-padding} * #{$float-label-offset-multiplier} + #{$form-input-padding-y});
     cursor: text;
     font-size: 125%;
     opacity: 0.5;
