@@ -1,4 +1,4 @@
-(function () {
+(function (document) {
   const inputs = document.querySelectorAll('.cu-input');
 
   for (let i = 0, len = inputs.length; i < len; i++) {
@@ -78,4 +78,4 @@
       }
     };
   }
-})();
+})(document);
