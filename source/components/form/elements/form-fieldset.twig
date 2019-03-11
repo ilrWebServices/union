@@ -17,7 +17,7 @@ Available variables:
 {% set legendAttributes = create_attribute(legendAttributes | default({})) %}
 {% set legendInnerAttributes = create_attribute(legendInnerAttributes | default({})) %} #}
 
-<fieldset{{ fieldsetAttributes.addClass('cu-fieldset') }}>
+<fieldset{{ attributes.addClass('cu-fieldset') }}>
   <legend{{ legendAttributes.addClass('cu-legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legendTitle }}</span>
   </legend>
