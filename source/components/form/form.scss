@@ -3,7 +3,16 @@
 \* ------------------------------------ */
 
 @import './source/global/global';
+// @import '../button/button.scss';
 @import 'form-variables';
 @import 'form-normalize';
 @import 'elements/form-elements';
 @import 'inputs/form-inputs';
+
+.cu-form {
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+  }
+}

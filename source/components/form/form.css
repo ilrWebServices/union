@@ -218,6 +218,11 @@ progress {
 .cu-input-list__item.has-float-label:not(.js-disabled) textarea:placeholder-shown:not(:focus)::placeholder {
   opacity: 0; }
 
+.cu-form *,
+.cu-form *:before,
+.cu-form *:after {
+  box-sizing: border-box; }
+
 /*# sourceMappingURL=form.css.map */
 
 /*# sourceMappingURL=form.css.map */
