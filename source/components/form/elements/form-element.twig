@@ -9,18 +9,26 @@ Available variables:
   - children (renderable) - The form inputs .
   - errors (string) - Server-side errors
   - descriptionText (string) - An optional description for this element
+  - required (boolean) - whether the element is required
 #}
 
 {% set labelDisplay = labelDisplay | default('float') %}
+{% set baseClass = 'cu-input-list__item' %}
+{% set requireModifier = (required)
+  ? '--required'
+  : '--optional'
+%}
 
-{% set _classes = ['cu-input-list__item cu-input-list__item--' ~ type]%}
+{% set _classes = [baseClass, baseClass ~ '--' ~ type, baseClass ~ requireModifier ]%}
 
 {% if (labelDisplay == 'float') %}
   {% set _classes = _classes|merge(['has-float-label', 'js-disabled']) %}
 {% elseif (labelDisplay == 'before') %}
-  {% set _classes = _classes|merge(['cu-input-list__item--before']) %}
+{% set _classes = _classes|merge([baseClass ~ '--before']) %}
+
 {% else %}
-  {% set _classes = _classes|merge(['cu-input-list__item--label-hidden']) %}
+{% set _classes = _classes|merge([baseClass ~ '--label-hidden']) %}
+
 {% endif %}
 
 {% set attributes = attributes.addClass(_classes) %}
