@@ -65,17 +65,6 @@
       if (wrapper) {
         wrapper.classList.remove('is-active');
       }
-
-
-      if (input.validationMessage) {
-        let error = document.createElement('div');
-        let messageText = document.createTextNode(input.validationMessage);
-        error.classList.add('cu-input-message');
-        error.classList.add('cu-input-message--invalid');
-        error.appendChild(messageText);
-
-        input.errors = input.insertAdjacentElement('afterend', error);
-      }
     };
   }
 })(document);
