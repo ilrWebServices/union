@@ -8,15 +8,18 @@ Available variables:
       only present because it's used in Drupal and might therefore be needed.
   - legendTitle (string) - The title to display in the legend element.
   - legendSize (enum) - A headline size to use for the legend.
+  - legend_span - A positioning wrapper for the legendTitle @see classy's fieldset.html.twig
   - children (renderable) - The form inputs .
   - errors (string) - Server-side errors
   - descriptionText (string) - An optional description for this fieldset
 #}
 
-{# {% set fieldsetAttributes = create_attribute(fieldsetAttributes | default({})) %}
-{% set legendAttributes = create_attribute(legendAttributes | default({})) %}
-{% set legendInnerAttributes = create_attribute(legendInnerAttributes | default({})) %} #}
-
+{%
+  set legend_span_classes = [
+    'fieldset-legend',
+    required ? 'form-required',
+  ]
+%}
 <fieldset{{ attributes.addClass('cu-fieldset') }}>
   <legend{{ legendAttributes.addClass('cu-legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legendTitle }}</span>
