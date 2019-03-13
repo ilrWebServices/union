@@ -1,7 +1,7 @@
-@import './source/global/_variables.scss';
+@import './source/global/global';
+@import 'button-mixins';
 
 .cu-button {
-  color: $cornell-red;
-  font-weight: bold;
-  border-radius: 2px;
+  @include cu-button;
 }
+

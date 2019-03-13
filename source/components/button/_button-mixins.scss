@@ -1,0 +1,18 @@
+@mixin cu-button($size: 'medium') {
+  color: $cornell-red;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 1px solid $cornell-red;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+
+  @if $size=='medium' {
+    width: 200px;
+  }
+
+  @if $size=='full' {
+    width: 100%;
+  }
+}

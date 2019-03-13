@@ -1,6 +1,14 @@
 .cu-button {
   color: #b31b1b;
   font-weight: bold;
-  border-radius: 2px; }
+  border-radius: 2px;
+  border: 1px solid #b31b1b;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+  width: 200px; }
+
+/*# sourceMappingURL=button.css.map */
 
 /*# sourceMappingURL=button.css.map */

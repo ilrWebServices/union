@@ -1,0 +1,66 @@
+.cu-input {
+  padding: $form-input-padding-y $form-input-padding-x;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+
+  &--text,
+  &--tel,
+  &--email {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid $color-border;
+  }
+
+  &--submit {
+    @include cu-button;
+  }
+
+  &.required.is-touched,
+  &.is-invalid {
+    &:not(.is-filled) {
+      color: $color-alert;
+      border: 1px solid $color-alert;
+      background: #fef7f6;
+    }
+  }
+}
+
+.cu-input-message {
+  &--invalid {
+    color: $color-alert;
+    margin-left: 0.5rem;
+  }
+}
+
+// Float label specific
+// @see https: //github.com/tonystar/float-label-css
+.cu-input-list__item.has-float-label:not(.js-disabled) {
+
+  .cu-input--text,
+  .cu-input--tel,
+  .cu-input--email {
+    width: 100%;
+    padding: $form-input-padding-y * $float-label-offset-multiplier $form-input-padding-x $form-input-padding-y * 0.5;
+  }
+
+  &:not(.cu-input-list__item--select) {
+    &.is-filled .cu-input,
+    .cu-input.is-focused:not(.is-filled) {
+      transition: all 0.2s;
+      padding: $form-input-padding-y * $float-label-offset-multiplier $form-input-padding-x $form-input-padding-y * 0.5;
+    }
+  }
+
+  .cu-input,
+  .cu-input--select,
+  textarea {
+    &::placeholder {
+      opacity: 1;
+      transition: all .2s;
+    }
+
+    &:placeholder-shown:not(:focus)::placeholder {
+      opacity: 0;
+    }
+  }
+}
