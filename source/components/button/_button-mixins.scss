@@ -9,7 +9,7 @@
   width: auto;
 
   @if $size=='medium' {
-    width: 200px;
+    min-width: 200px;
   }
 
   @if $size=='full' {

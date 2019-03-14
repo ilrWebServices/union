@@ -7,7 +7,7 @@
   padding: 1rem;
   margin-bottom: 1rem;
   width: auto;
-  width: 200px; }
+  min-width: 200px; }
 
 /*# sourceMappingURL=button.css.map */
 
