@@ -1,16 +1,19 @@
-@mixin cu-button($size: 'medium') {
+@mixin cu-button--dark {
+  @include cu-button;
+
+  color: white;
+  background: $cornell-red;
+}
+
+@mixin cu-button($size: 'auto') {
   color: $cornell-red;
   font-weight: bold;
   border-radius: 2px;
   border: 1px solid $cornell-red;
   background: white;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
-
-  @if $size=='medium' {
-    min-width: 200px;
-  }
 
   @if $size=='full' {
     width: 100%;
