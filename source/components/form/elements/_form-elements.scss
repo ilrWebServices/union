@@ -5,11 +5,11 @@
 }
 
 .cu-fieldset {
-  margin-bottom: $form-element-margin-bottom;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0.5rem;
 }
 .cu-input-list__item {
-  padding: $form-element-padding;
+  padding: $form-element-padding-y $form-element-padding-x;
   margin-bottom: $form-element-margin-bottom;
 
   &--label-hidden {
@@ -20,7 +20,7 @@
 
   &--radio {
     display: flex;
-    padding: $form-element-padding 0;
+    padding: $form-element-padding-y $form-element-padding-x;
 
     .cu-label {
       order: 2;
@@ -61,8 +61,8 @@
 
   label {
     position: absolute;
-    left: calc(#{$form-element-padding} + #{$form-input-padding-x});
-    top: calc(#{$form-element-padding} * #{$float-label-offset-multiplier} + #{$form-input-padding-y});
+    left: $form-input-padding-x;
+    top: calc(#{$form-element-padding-y} * #{$float-label-offset-multiplier} + #{$form-input-padding-y});
     cursor: text;
     font-size: 125%;
     transition: all .2s;
@@ -73,10 +73,9 @@
   &.is-active,
   &.is-filled {
     label {
-      top: calc(#{$form-element-padding} + 3px);
-      left: calc(#{$form-element-padding} + 3px);
-      font-size: 90%;
-      color: $black;
+      top: 6px;
+      left: 3px;
+      font-size: 75%;
     }
   }
 }
