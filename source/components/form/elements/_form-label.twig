@@ -12,6 +12,7 @@
  *    - default - no special treatment
  */
 #}
+{% set attributes = union_attributes(attributes|default([])) %}
 
 {% if displayType == "inline-radio" %}
   {% set _classes = ["cu-inline-label", "cu-inline-label--radio"] %}

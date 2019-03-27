@@ -9,7 +9,7 @@
  */
 #}
 
-{% set attributes = create_attribute(attributes | default({})) %}
+{% set attributes = union_attributes(attributes | default({})) %}
 
 {% set classes = [
   "cu-button",

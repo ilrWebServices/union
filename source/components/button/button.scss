@@ -5,3 +5,6 @@
   @include cu-button;
 }
 
+.cu-button--alt {
+  @include cu-button--dark;
+}
