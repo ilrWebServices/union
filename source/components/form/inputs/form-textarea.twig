@@ -9,7 +9,7 @@ Available variables:
   - hasErrors (boolean) - whether this textarea has server-side errors.  If true, this will invoke error styling for this
       field on page load.
 #}
-
+{% set attributes = union_attributes(attributes|default([])) %}
 {% set _classes = ['cu-input'] %}
 
 {% if hasErrors %}

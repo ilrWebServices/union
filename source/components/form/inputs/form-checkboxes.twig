@@ -18,7 +18,7 @@
  using something like a shared "container.twig" file (see Drupal form templates).
 #}
 
-{% set attributes = create_attribute(attributes | default({})) %}
+{% set attributes = union_attributes(attributes | default({})) %}
 
 {% set classes = [
   'cu-input-list'

@@ -13,7 +13,7 @@ Available variables:
   - errors (string) - Server-side errors
   - descriptionText (string) - An optional description for this fieldset
 #}
-
+{% set attributes = union_attributes(attributes|default([])) %}
 {%
   set legend_span_classes = [
     'fieldset-legend',

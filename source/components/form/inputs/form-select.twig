@@ -1,5 +1,5 @@
 {# TODO: Add hasErrors parameter to support server-side invalidation #}
-
+{% set attributes = union_attributes(attributes|default([])) %}
 {% set classes = ["cu-input", "cu-input--select"] %}
 
 {% spaceless %}

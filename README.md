@@ -56,3 +56,9 @@ $ npm start
 ```
 $ npm run build
 ```
+
+### Helper functions
+
+#### union_attributes().
+
+Abstracts Drupal Attribute functionality so that attributes can be dynamically created or added to from within a template. See the `form` component.
