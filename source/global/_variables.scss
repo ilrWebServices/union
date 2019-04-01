@@ -11,6 +11,19 @@ $body-bg: $white;
 $color-alert: $cornell-red;
 $color-border: #ccc;
 
+// Color status indictors
+$color-info: #5bc0de !default;
+$color-info--dark: darken($color-info, 30%) !default;
+$color-info--light: lighten($color-info, 30%) !default;
+$color-status: #5cb85c !default;
+$color-status--dark: darken($color-status, 20%) !default;
+$color-status--light: lighten($color-status, 38%) !default;
+$color-warning: #ffc107 !default;
+$color-warning--dark: darken($color-warning, 20%) !default;
+$color-warning--light: lighten($color-warning, 40%) !default;
+$color-error: #d9534f !default;
+$color-error--dark: darken($color-error, 20%) !default;
+$color-error--light: lighten($color-error, 33%) !default;
 // Fonts
 $font-family-base: san-serif;
 $font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
