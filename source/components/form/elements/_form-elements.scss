@@ -53,21 +53,15 @@
   display: block;
   position: relative;
 
-  &--select {
-    label {
-      @include visually-hidden;
-    }
-  }
-
   label {
     position: absolute;
     left: $form-input-padding-x;
     top: calc(#{$form-element-padding-y} * #{$float-label-offset-multiplier} + #{$form-input-padding-y});
     cursor: text;
-    font-size: 125%;
     transition: all .2s;
     z-index: 10;
     color: lighten($black, 40%);
+    line-height: 1;
   }
 
   &.is-active,
@@ -80,11 +74,16 @@
   }
 }
 
+// Fix radio alignment
+.cu-input-list__item--radio.has-float-label:not(.js-disabled) {
+  label {
+    line-height: 2;
+  }
+}
+
 // @todo: Refactor once design is in hand.
 .cu-input-list__item--select.has-float-label:not(.js-disabled) {
   label {
     @include visually-hidden;
   }
 }
-
-

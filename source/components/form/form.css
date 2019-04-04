@@ -154,28 +154,23 @@ progress {
   display: block;
   position: relative; }
 
-.cu-input-list__item.has-float-label:not(.js-disabled)--select label {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  word-wrap: normal; }
-
 .cu-input-list__item.has-float-label:not(.js-disabled) label {
   position: absolute;
   left: 0.5rem;
   top: calc(0.2rem * 2.5 + 0.4rem);
   cursor: text;
-  font-size: 125%;
   transition: all .2s;
   z-index: 10;
-  color: #888888; }
+  color: #888888;
+  line-height: 1; }
 
 .cu-input-list__item.has-float-label:not(.js-disabled).is-active label, .cu-input-list__item.has-float-label:not(.js-disabled).is-filled label {
   top: 6px;
   left: 3px;
   font-size: 75%; }
+
+.cu-input-list__item--radio.has-float-label:not(.js-disabled) label {
+  line-height: 2; }
 
 .cu-input-list__item--select.has-float-label:not(.js-disabled) label {
   position: absolute !important;
@@ -187,8 +182,7 @@ progress {
 
 .cu-input {
   padding: 0.4rem 0.5rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem; }
+  margin-bottom: 0.5rem; }
 
 .cu-input--text, .cu-input--tel, .cu-input--email {
   width: 100%;
