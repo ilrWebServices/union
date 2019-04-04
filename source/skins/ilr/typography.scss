@@ -1,0 +1,12 @@
+@import './source/global/global';
+
+html {
+  font-size: var(--cu-base-font-size, $base-font-size);
+  line-height: var(--cu-base-line-height, $base-line-height);
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}

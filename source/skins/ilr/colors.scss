@@ -1,0 +1,6 @@
+@import './source/global/global';
+
+body {
+  color: var(--cu-color-text, $color-text);
+  background-color: var(--cu-color-bg-body, $color-bg-body);
+}

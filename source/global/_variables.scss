@@ -6,8 +6,8 @@ $white: #fff;
 $cornell-red: #b31b1b;
 
 // Color usage
-$color-body: $black;
-$body-bg: $white;
+$color-text: $black;
+$color-bg-body: $white;
 $color-alert: $cornell-red;
 $color-border: #ccc;
 
@@ -48,3 +48,7 @@ $link-hover-decoration: underline;
 $table-cell-padding: 0.75rem;
 $color-table-caption: $black;
 $label-margin-bottom: 0.5rem;
+
+// Typography and rhythm
+$base-font-size: 125% !default;
+$base-line-height: 1.4 !default;
