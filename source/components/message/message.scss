@@ -30,9 +30,9 @@
   }
 
   &--error {
-    background-color: var(--cu-error-info--light, $color-error--light);
-    border-color: var(--cu-error-info, $color-error);
-    color: var(--cu-error-info--dark, $color-error--dark);
+    background-color: var(--cu-color-error--light, $color-error--light);
+    border-color: var(--cu-color-error, $color-error);
+    color: var(--cu-color-error--dark, $color-error--dark);
   }
 
   &__text {
