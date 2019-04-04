@@ -1,4 +1,5 @@
 css:
   fonts.css: {}
   colors.css: {}
+  modern-normalize.css: {}
   typography.css: {}
