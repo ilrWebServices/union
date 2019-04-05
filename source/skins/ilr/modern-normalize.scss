@@ -58,21 +58,19 @@ body {
  * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
  */
 
-// See fonts.scss
-
-// body {
-//   font-family:
-//     -apple-system,
-//     BlinkMacSystemFont,
-//     'Segoe UI',
-//     Roboto,
-//     Helvetica,
-//     Arial,
-//     sans-serif,
-//     'Apple Color Emoji',
-//     'Segoe UI Emoji',
-//     'Segoe UI Symbol';
-// }
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+}
 
 /* Grouping content
    ========================================================================== */
