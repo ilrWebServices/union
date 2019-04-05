@@ -1,0 +1,20 @@
+:root {
+  --cu-ps-ratio: var(--fifth);
+  --cu-ps0: var(--cu-ps-base, #{$ps-base});
+  --cu-ps1: calc(var(--cu-ps-ratio) * var(--cu-ps0));
+  --cu-ps2: calc(var(--cu-ps-ratio) * var(--cu-ps1));
+  --cu-ps3: calc(var(--cu-ps-ratio) * var(--cu-ps2));
+  --cu-ps4: calc(var(--cu-ps-ratio) * var(--cu-ps3));
+  --cu-ps5: calc(var(--cu-ps-ratio) * var(--cu-ps4));
+  --cu-ps6: calc(var(--cu-ps-ratio) * var(--cu-ps5));
+  --cu-ps7: calc(var(--cu-ps-ratio) * var(--cu-ps6));
+  --cu-ps8: calc(var(--cu-ps-ratio) * var(--cu-ps7));
+  --cu-ps9: calc(var(--cu-ps-ratio) * var(--cu-ps8));
+  --cu-ps10: calc(var(--cu-ps-ratio) * var(--cu-ps9));
+
+  --cu-ps-1: calc(var(--cu-ps0) / var(--cu-ps-ratio));
+  --cu-ps-2: calc(var(--cu-ps-1) / var(--cu-ps-ratio));
+  --cu-ps-3: calc(var(--cu-ps-2) / var(--cu-ps-ratio));
+  --cu-ps-4: calc(var(--cu-ps-3) / var(--cu-ps-ratio));
+  --cu-ps-5: calc(var(--cu-ps-4) / var(--cu-ps-ratio));
+}

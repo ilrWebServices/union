@@ -1,0 +1,29 @@
+@import './source/global/global';
+
+html {
+  font-size: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
+  line-height: var(--cu-vr1); // @see vertical-rhythm.scss
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    $h-size: 7 - $i;
+    font-size: var(--cu-ms#{$h-size});
+
+    aside & {
+      font-size: var(--cu-ms#{$h-size - 2});
+    }
+  }
+}
+
+p {
+  font-size: var(--cu-ms0);
+  margin-bottom: var(--cu-vr0);
+}
