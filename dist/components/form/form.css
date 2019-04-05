@@ -119,55 +119,49 @@ progress {
 .cu-input-list__item {
   padding: 0.2rem 0;
   margin-bottom: var(--cu-vr-2); }
-
-.cu-input-list__item--label-hidden label {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  word-wrap: normal; }
-
-.cu-input-list__item--radio {
-  display: flex;
-  padding: 0.2rem 0; }
-
-.cu-input-list__item--radio .cu-label {
-  order: 2;
-  margin-left: 1rem; }
+  .cu-input-list__item--label-hidden label {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    word-wrap: normal; }
+  .cu-input-list__item--radio {
+    display: flex;
+    padding: 0.2rem 0; }
+    .cu-input-list__item--radio .cu-label {
+      order: 2;
+      margin-left: 1rem; }
 
 .cu-label {
   display: block;
   padding-bottom: 0.4rem;
   margin-left: 1px; }
-
-.cu-input-list__item--required .cu-label:after {
-  content: '*';
-  color: #b31b1b;
-  font-weight: bold;
-  font-size: 80%;
-  top: -2px;
-  opacity: 2;
-  position: absolute; }
+  .cu-input-list__item--required .cu-label:after {
+    content: '*';
+    color: #b31b1b;
+    font-weight: bold;
+    font-size: 80%;
+    top: -2px;
+    opacity: 2;
+    position: absolute; }
 
 .cu-input-list__item.has-float-label:not(.js-disabled) {
   display: block;
   position: relative; }
-
-.cu-input-list__item.has-float-label:not(.js-disabled) label {
-  position: absolute;
-  left: 0.5rem;
-  top: calc(0.2rem * 2.5 + 0.4rem);
-  cursor: text;
-  transition: all .2s;
-  z-index: 10;
-  color: #888888;
-  line-height: 1; }
-
-.cu-input-list__item.has-float-label:not(.js-disabled).is-active label, .cu-input-list__item.has-float-label:not(.js-disabled).is-filled label {
-  top: 6px;
-  left: 3px;
-  font-size: 75%; }
+  .cu-input-list__item.has-float-label:not(.js-disabled) label {
+    position: absolute;
+    left: 0.5rem;
+    top: calc(0.2rem * 2.5 + 0.4rem);
+    cursor: text;
+    transition: all .2s;
+    z-index: 10;
+    color: #888888;
+    line-height: 1; }
+  .cu-input-list__item.has-float-label:not(.js-disabled).is-active label, .cu-input-list__item.has-float-label:not(.js-disabled).is-filled label {
+    top: 6px;
+    left: 3px;
+    font-size: 75%; }
 
 .cu-input-list__item--radio.has-float-label:not(.js-disabled) label {
   line-height: 2; }
@@ -183,26 +177,23 @@ progress {
 .cu-input {
   padding: 0.4rem 0.5rem;
   margin-bottom: 0.5rem; }
-
-.cu-input--text, .cu-input--tel, .cu-input--email {
-  width: 100%;
-  border-radius: 3px;
-  border: 1px solid #ccc; }
-
-.cu-input--submit {
-  color: #b31b1b;
-  font-weight: bold;
-  border-radius: 2px;
-  border: 1px solid #b31b1b;
-  background: white;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  width: auto; }
-
-.cu-input.required.is-touched:not(.is-filled), .cu-input.required.is-invalid:not(.is-filled) {
-  color: #b31b1b;
-  border: 1px solid #b31b1b;
-  background: #fef7f6; }
+  .cu-input--text, .cu-input--tel, .cu-input--email {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #ccc; }
+  .cu-input--submit {
+    color: #b31b1b;
+    font-weight: bold;
+    border-radius: 2px;
+    border: 1px solid #b31b1b;
+    background: white;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: auto; }
+  .cu-input.required.is-touched:not(.is-filled), .cu-input.required.is-invalid:not(.is-filled) {
+    color: #b31b1b;
+    border: 1px solid #b31b1b;
+    background: #fef7f6; }
 
 .cu-input-message--invalid {
   color: #b31b1b;
@@ -234,7 +225,5 @@ progress {
 .cu-form *:before,
 .cu-form *:after {
   box-sizing: border-box; }
-
-/*# sourceMappingURL=form.css.map */
 
 /*# sourceMappingURL=form.css.map */

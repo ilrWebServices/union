@@ -27,7 +27,7 @@
   },
   "scripts": {
     "setup": "npm install",
-    "build": "node-sass --source-map true --recursive source/ --output source/",
+    "build": "node-sass --source-map true --recursive source/ --output dist/",
     "start": "npm run build -- --watch source/"
   }
 }
