@@ -1,5 +1,5 @@
 :root {
-  --cu-vr-ratio: var(--golden, #{$vr-ratio});
+  --cu-vr-ratio: var(--golden);
   --cu-vr0: var(--cu-vr-base, #{$vr-base});
   --cu-vr1: calc(var(--cu-vr-ratio) * var(--cu-vr0));
   --cu-vr2: calc(var(--cu-vr-ratio) * var(--cu-vr1));
