@@ -7,8 +7,8 @@
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  padding: 0.8rem;
-  margin-bottom: 1em;
+  padding: var(--cu-ms-3) var(--cu-ms0);
+  margin-bottom: var(--cu-vr0);
   background-color: var(--cu-color-info--light, #daf1f8);
   border-color: var(--cu-color-info, #5bc0de);
   color: var(--cu-color-info--dark, #1b6d85); }

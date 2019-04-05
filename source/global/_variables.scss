@@ -24,12 +24,17 @@ $color-warning--light: lighten($color-warning, 40%) !default;
 $color-error: #d9534f !default;
 $color-error--dark: darken($color-error, 20%) !default;
 $color-error--light: lighten($color-error, 33%) !default;
-// Fonts
-$font-family-base: sans-serif;
-$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-$font-size-base: 1rem;
-$font-weight-base: 400;
-$line-height-base: 1.15;
+
+// Fonts and typography
+$base-font-size-percentage: 125% !default;
+$base-font-size: 1rem !default;
+$base-line-height: 1.4 !default;
+$ms-ratio: 1.2 !default; // Minor-third, @see modular-scale.scss
+$ps-ratio: 1.5 !default;
+$ps-base: 1em !default;
+$vr-ratio: $base-line-height !default;
+$vr-base: $base-font-size !default;
+
 
 $dt-font-weight: 700;
 $font-weight-bolder: 800;
@@ -48,7 +53,3 @@ $link-hover-decoration: underline;
 $table-cell-padding: 0.75rem;
 $color-table-caption: $black;
 $label-margin-bottom: 0.5rem;
-
-// Typography and rhythm
-$base-font-size: 125% !default;
-$base-line-height: 1.4 !default;

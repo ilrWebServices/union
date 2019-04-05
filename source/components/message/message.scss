@@ -10,8 +10,8 @@
   border-radius: 3px;
   border-style: solid;
   border-width: 1px;
-  padding: 0.8rem;
-  margin-bottom: 1em;
+  padding: var(--cu-ms-3) var(--cu-ms0);
+  margin-bottom: var(--cu-vr0);
 
   background-color: var(--cu-color-info--light, $color-info--light);
   border-color: var(--cu-color-info, $color-info);

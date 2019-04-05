@@ -2,3 +2,5 @@ css:
   form.css: {}
 js:
   form.js: {}
+dependencies:
+  - base

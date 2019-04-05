@@ -1,2 +1,4 @@
 css:
   message.css: {}
+dependencies:
+  - base

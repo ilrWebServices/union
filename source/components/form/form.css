@@ -118,7 +118,7 @@ progress {
 
 .cu-input-list__item {
   padding: 0.2rem 0;
-  margin-bottom: 0.25rem; }
+  margin-bottom: var(--cu-vr-2, 0.25rem); }
 
 .cu-input-list__item--label-hidden label {
   position: absolute !important;
