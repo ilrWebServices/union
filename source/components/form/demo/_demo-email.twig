@@ -1,0 +1,34 @@
+
+{% set email_label %}
+  {% include '@union/_form-label.twig' with {
+    title: 'Enter your email',
+    attributes: {
+      for: 'newsletter-subscribe-email'
+    }
+  } only %}
+{% endset %}
+
+{% set email_input %}
+  {% include '@union/_form-input.twig' with {
+    attributes: {
+      'aria-describedby': "newsletter-subscribe-form-mail-0-value--description",
+      'aria-required': "true",
+      class: "form-email required",
+      maxlength: "254",
+      name: "newsletter-subscribe[form][mail][0][value]",
+      placeholder: "email address",
+      required: "required",
+      size: "100",
+      type: "email",
+      value: "",
+      id: 'newsletter-subscribe-email'
+    }
+  } only %}
+{% endset %}
+
+{% include '@union/_form-element.twig' with {
+  children: email_input,
+  label: email_label,
+  required: 1,
+  type: 'email'
+} only %}

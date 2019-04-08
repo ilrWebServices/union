@@ -1,0 +1,39 @@
+{% set field = field|default({
+  label: "Default label",
+  name: 'form-field',
+  required: true,
+  placeholder: 'placeholder text'
+})%}
+
+{% set label %}
+{% include '@union/_form-label.twig' with {
+    title: field.label,
+    attributes: {
+      for: field.name
+    }
+  } only %}
+{% endset %}
+
+{% set input %}
+{% include '@union/_form-input.twig' with {
+    attributes: {
+      'aria-required': field.required ? "true" : "false",
+      class: field.name,
+      maxlength: "254",
+      name: "[form][{{ field.name }}]",
+      placeholder: field.placeholder,
+      required: field.required,
+      size: "100",
+      type: "text",
+      value: "",
+      id: field.name
+    }
+  } only %}
+{% endset %}
+
+{% include '@union/_form-element.twig' with {
+  children: input,
+  label: label,
+  required: field.required,
+  type: 'text'
+} only %}

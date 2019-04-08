@@ -1,0 +1,40 @@
+{% set demo_email %}
+  {% include '@union/_demo-email.twig' %}
+  {% include '@union/_demo-submit.twig' with {
+    alt: 1
+  }%}
+{% endset %}
+
+{% include '@union/_form.twig' with {
+  children: demo_email
+} only %}
+
+
+{# Form with fieldset #}
+{% set demo_fields %}
+  {% include '@union/_demo-textfield.twig' %}
+  {% include '@union/_demo-textfield.twig' with {
+      field: {
+        label: "Address line 2",
+        name: 'form-address-line-2',
+        required: false,
+        placeholder: 'this field is optional'
+      }
+    }%}
+  {% include '@union/_demo-radios.twig' %}
+  {% include '@union/_demo-submit.twig' with {
+    value: 'Add participant'
+  }%}
+{% endset %}
+
+{% set fieldset %}
+{% include '@union/_form-fieldset.twig' with {
+    children: demo_fields,
+    legendTitle: "We are legend"
+  } only %}
+{% endset %}
+
+<h2 class="cu-ssg__title">Form with Fieldset</h2>
+{% include '@union/_form.twig' with {
+  children: fieldset,
+} only %}

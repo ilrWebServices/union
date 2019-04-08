@@ -1,0 +1,23 @@
+{% set radios %}
+  {% include '@union/_demo-radio.twig' with{
+    field: {
+      label: 'Please add me to your mailing list.',
+      name: 'form-radio',
+      required: false,
+      value: '1'
+    }
+  }%}
+  {% include '@union/_demo-radio.twig' with{
+    field: {
+      label: 'No thanks.',
+      name: 'form-radio',
+      required: false,
+      value: '2',
+      index: 2
+    }
+  }%}
+{% endset %}
+
+{% include '@union/_form-radios.twig' with {
+  children: radios
+} only %}
