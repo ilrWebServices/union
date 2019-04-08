@@ -12,8 +12,13 @@
 
   &--submit {
     @include cu-button;
+
+    &--alt {
+      @include cu-button--dark;
+    }
   }
 
+  /*----------  Invalid indicator  ----------*/
   &.required.is-touched,
   &.required.is-invalid {
     &:not(.is-filled) {
@@ -30,11 +35,14 @@
     margin-left: 0.5rem;
   }
 }
+/*=====  End of Invalid indicator  ======*/
 
-// Float label specific
+/*=============================================
+=            Float label inputs            =
+=============================================*/
 // @see https: //github.com/tonystar/float-label-css
-.cu-input-list__item.has-float-label:not(.js-disabled) {
 
+.cu-input-list__item.has-float-label:not(.js-disabled) {
   .cu-input--text,
   .cu-input--tel,
   .cu-input--email {
@@ -43,6 +51,7 @@
   }
 
   &:not(.cu-input-list__item--select) {
+
     &.is-filled .cu-input,
     .cu-input.is-focused:not(.is-filled) {
       transition: all 0.2s;
@@ -63,3 +72,5 @@
     }
   }
 }
+
+/*=====  End of Float label inputs  ======*/

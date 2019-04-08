@@ -182,7 +182,8 @@ progress {
 
 .cu-input {
   padding: 0.4rem 0.5rem;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 0.5rem;
+  /*----------  Invalid indicator  ----------*/ }
 
 .cu-input--text, .cu-input--tel, .cu-input--email {
   width: 100%;
@@ -199,6 +200,18 @@ progress {
   margin-bottom: 1rem;
   width: auto; }
 
+.cu-input--submit--alt {
+  color: #b31b1b;
+  font-weight: bold;
+  border-radius: 2px;
+  border: 1px solid #b31b1b;
+  background: white;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+  color: white;
+  background: #b31b1b; }
+
 .cu-input.required.is-touched:not(.is-filled), .cu-input.required.is-invalid:not(.is-filled) {
   color: #b31b1b;
   border: 1px solid #b31b1b;
@@ -208,6 +221,10 @@ progress {
   color: #b31b1b;
   margin-left: 0.5rem; }
 
+/*=====  End of Invalid indicator  ======*/
+/*=============================================
+=            Float label inputs            =
+=============================================*/
 .cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--text,
 .cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--tel,
 .cu-input-list__item.has-float-label:not(.js-disabled) .cu-input--email {
@@ -230,6 +247,7 @@ progress {
 .cu-input-list__item.has-float-label:not(.js-disabled) textarea:placeholder-shown:not(:focus)::placeholder {
   opacity: 0; }
 
+/*=====  End of Float label inputs  ======*/
 .cu-form *,
 .cu-form *:before,
 .cu-form *:after {
