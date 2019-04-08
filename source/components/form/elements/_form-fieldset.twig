@@ -14,6 +14,8 @@ Available variables:
   - descriptionText (string) - An optional description for this fieldset
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
+{% set legendAttributes = union_attributes(legendAttributes|default([])) %}
+{# {% set legend_span.attributes = union_attributes(legend_span.attributes|default([])) %} #}
 {%
   set legend_span_classes = [
     'fieldset-legend',
