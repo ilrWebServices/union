@@ -1,0 +1,11 @@
+@media (min-width: 768px) {
+  .demo__checkbuttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem; } }
+
+@media (min-width: 1000px) {
+  .demo__checkbuttons {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+/*# sourceMappingURL=forms.css.map */
