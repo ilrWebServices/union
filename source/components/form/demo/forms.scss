@@ -1,0 +1,12 @@
+.demo__checkbuttons {
+  // @todo: refactor once strategy for responsive implemented
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

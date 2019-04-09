@@ -1,0 +1,31 @@
+{#
+Variables:
+  - input:
+    - type: radio|checkbox
+    - name: foo
+    - value: foo
+    - checked: true|false
+  - label_content: content
+#}
+
+{% set default_attributes = {
+  'id': 'checkbutton',
+  'type': 'radio',
+  'name': 'cu-checkbutton',
+  'value': '',
+  'checked': ''
+}%}
+
+{% set input_attributes = input|default(default_attributes) %}
+
+<div class="cu-checkbutton">
+  {% include "@union/_form-input.twig" with {
+    attributes: input_attributes
+  } %}
+  <label class="cu-checkbutton__label" for="{{ input.id }}">
+    <div class="cu-checkbutton__content">
+      {{ label_content }}
+    </div>
+    <div class="cu-checkbutton__indicator"></div>
+  </label>
+</div>
