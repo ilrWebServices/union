@@ -128,8 +128,8 @@
       flex-basis: 75%;
       padding: var(--cu-ps-1) 0;
 
-      * {
-        margin: 0;
+      p:first-of-type {
+        margin-top: 0;
       }
     }
   }

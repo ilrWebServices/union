@@ -215,8 +215,8 @@ progress {
   flex-basis: 75%;
   padding: var(--cu-ps-1) 0; }
 
-.cu-checkbutton__label .cu-checkbutton__content * {
-  margin: 0; }
+.cu-checkbutton__label .cu-checkbutton__content p:first-of-type {
+  margin-top: 0; }
 
 .cu-checkbutton .cu-input:checked + .cu-checkbutton__label {
   border: 2px solid #b31b1b;
