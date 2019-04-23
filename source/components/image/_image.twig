@@ -11,8 +11,6 @@
 } %}
 
 {# Image #}
-{# Avoid missing img_src with senseless default #}
-{% set img_src = img_src|default('https://spacergif.org/spacer.gif') %}
 {% set img_alt = img_alt|default('Accessibility text goes here and is required') %}
 {% set default_image_attributes = {
   class: 'cu-image__img',
