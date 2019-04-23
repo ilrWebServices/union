@@ -9,7 +9,7 @@
 {% set img_wrapper_attributes = {
   class: 'cu-image cu-logo cu-logo__image'
 } %}
-{% set logo_src = logo_src|default('/libraries/union/source/components/logo/union.svg') %}
+{% set logo_src = logo_src|default(union_file('components/logo/union.svg')) %}
 {% set logo_width = logo_width|default(300) %}
 {% set default_img_attributes = {
   class: 'cu-logo__image',
