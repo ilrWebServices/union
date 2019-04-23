@@ -1,0 +1,37 @@
+{{ attach_library('union_organizer/image') }}
+
+{# Wrapper #}
+{% set default_wrapper_attributes = {
+  class: 'cu-image'
+} %}
+
+{# Link #}
+{% set default_link_attributes = {
+  class: 'cu-image__link'
+} %}
+
+{# Image #}
+{# Avoid missing img_src with senseless default #}
+{% set img_src = img_src|default('https://spacergif.org/spacer.gif') %}
+{% set img_alt = img_alt|default('Accessibility text goes here and is required') %}
+{% set default_image_attributes = {
+  class: 'cu-image__img',
+  src: img_src,
+  alt: img_alt
+} %}
+
+{# Attributes #}
+{% set wrapper_attributes = union_attributes(wrapper_attributes|default(default_wrapper_attributes)) %}
+{% set link_attributes = union_attributes(link_attributes|default(default_link_attributes)) %}
+{% set attributes = union_attributes(attributes|default(default_image_attributes)) %}
+
+{# Output #}
+<div{{ wrapper_attributes }}>
+  {% if img_link_url %}
+  <a href="{{ img_link_url }}" {{ link_attributes }}>
+      <img {{ attributes }} />
+    </a>
+  {% else %}
+    <img {{ attributes }} />
+  {% endif %}
+</div>
