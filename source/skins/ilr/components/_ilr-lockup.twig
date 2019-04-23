@@ -5,8 +5,8 @@
 {% set lockup_attributes = {
   class: 'ilr__logo-image',
   width: '350',
-  alt: 'Cornell University\'s ILR School',
-  src: "/libraries/union/source/skins/ilr/images/ilr-cornell-lockup.svg"
+  alt: logo_alt|default('Cornell University\'s ILR School'),
+  src: logo_src|default('/libraries/union/source/skins/ilr/images/ilr-cornell-lockup.svg')
 } %}
 
 {% set attributes = union_attributes(lockup_attributes) %}
