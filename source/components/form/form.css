@@ -185,7 +185,7 @@ progress {
   margin-bottom: 0.5rem;
   /*----------  Invalid indicator  ----------*/ }
 
-.cu-input--text, .cu-input--tel, .cu-input--email, .cu-input--select {
+.cu-input--text, .cu-input--tel, .cu-input--email, .cu-input--password, .cu-input--select {
   width: 100%; }
 
 .cu-input--text, .cu-input--tel, .cu-input--email {
