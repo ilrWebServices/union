@@ -39,5 +39,6 @@
     "install": "patternlab install --config ./patternlab-config.json",
     "serve": "patternlab serve --config ./patternlab-config.json",
     "version": "patternlab --version"
+    "style:build": "gulp sass",
   }
 }
