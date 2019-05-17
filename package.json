@@ -33,6 +33,7 @@
   },
   "scripts": {
     "setup": "npm install && composer install",
+    "build": "npm run style:build && npm run pl:build",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "style:build": "gulp sass",
     "pl:start": "npm run pl:serve",
