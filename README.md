@@ -12,7 +12,7 @@ $ npm run setup
 
 ### Creating components
 
-1. Create a directory with your component name in the `source/components/` folder.
+1. Create a directory with your component name in the `source/patterns/components/` folder.
 2. Create a `.twig` file with markup for the component (including the class name prefixed with "`cu-`").
 3. Create a `.scss` file that does not start with an underscore. Don't create a `.css` file, as it will be added automatically.
 4. (Optional) Create a `.js` if your component required javascript enhancement.
@@ -21,7 +21,7 @@ $ npm run setup
 Component example:
 
 ```
-source/components/button/
+source/patterns/components/button/
 ├── README.md
 ├── button.scss
 ├── button.css
