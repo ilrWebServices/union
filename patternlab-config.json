@@ -55,7 +55,7 @@
   "paths": {
     "source": {
       "root": "./source/",
-      "patterns": "./source/_patterns/",
+      "patterns": "./source/patterns/",
       "data": "./source/_data/",
       "meta": "./source/_meta/",
       "annotations": "./source/_annotations/",
@@ -68,7 +68,7 @@
         "viewall": "views/viewall.mustache"
       },
       "js": "./source/js",
-      "images": "./source/images",
+      "images": "./source/patterns/skins/ilr/images",
       "fonts": "./source/fonts",
       "css": "./source/css"
     },
@@ -139,6 +139,13 @@
           "recursive": true,
           "paths": [
             "./node_modules/@pattern-lab/uikit-workshop/views-twig"
+          ]
+        },
+        {
+          "id": "union",
+          "recursive": true,
+          "paths": [
+            "./source/patterns"
           ]
         }
       ],
