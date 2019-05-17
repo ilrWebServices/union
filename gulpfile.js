@@ -6,7 +6,7 @@ var sass_config = {
   outputStyle: "nested"
 };
 
-function styles() {
+function componentStyles() {
   return gulp
     .src('source/patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
@@ -23,6 +23,7 @@ function concatComponentStyles() {
     .pipe(gulp.dest('source/css/', { sourcemaps: '.' }));
 }
 
+const allStyles = gulp.parallel(componentStyles, concatComponentStyles);
+
 // Export gulp tasks.
-exports.sass = styles
-exports.concatcss = concatComponentStyles
+exports.sass = allStyles
