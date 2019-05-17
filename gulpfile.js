@@ -23,7 +23,12 @@ function concatComponentStyles() {
     .pipe(gulp.dest('source/css/', { sourcemaps: '.' }));
 }
 
+function watchFiles() {
+  gulp.watch('source/patterns/**/*.scss', allStyles);
+}
+
 const allStyles = gulp.parallel(componentStyles, concatComponentStyles);
 
 // Export gulp tasks.
 exports.sass = allStyles
+exports.default = watchFiles;
