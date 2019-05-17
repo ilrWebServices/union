@@ -29,8 +29,7 @@
     "@pattern-lab/uikit-workshop": "^1.0.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sass": "^4.0.2"
   },
   "scripts": {
     "setup": "npm install && composer install",

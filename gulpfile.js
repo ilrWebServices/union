@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
-const sourcemaps = require("gulp-sourcemaps");
 const concat = require('gulp-concat');
 
 var sass_config = {
@@ -9,23 +8,19 @@ var sass_config = {
 
 function styles() {
   return gulp
-    .src('source/patterns/**/*.scss')
-    .pipe(sourcemaps.init())
+    .src('source/patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('source/patterns/'));
+    .pipe(gulp.dest('source/patterns/', { sourcemaps: '.' }));
 }
 
 function concatComponentStyles() {
   return gulp
-    .src('source/patterns/**/*.scss')
-    .pipe(sourcemaps.init())
+    .src('source/patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
     .pipe(concat('union.css'))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('source/css/'));
+    .pipe(gulp.dest('source/css/', { sourcemaps: '.' }));
 }
 
 // Export gulp tasks.
