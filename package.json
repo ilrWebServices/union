@@ -36,7 +36,7 @@
     "setup": "npm install && composer install",
     "build": "npm run style:build && npm run pl:build",
     "pl:build": "patternlab build --config ./patternlab-config.json",
-    "style:build": "gulp sass",
+    "style:build": "gulp sass && gulp concatcss",
     "pl:start": "npm run pl:serve",
     "pl:help": "patternlab --help",
     "pl:install": "patternlab install --config ./patternlab-config.json",
