@@ -30,7 +30,7 @@
     "@pattern-lab/uikit-workshop": "^1.0.1"
   },
   "scripts": {
-    "setup": "npm install",
+    "setup": "npm install && composer install",
     "build": "patternlab build --config ./patternlab-config.json",
     "start": "npm run serve",
     "help": "patternlab --help",
