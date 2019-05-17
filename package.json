@@ -23,11 +23,13 @@
   },
   "homepage": "https://github.com/ilrWebServices/union#readme",
   "dependencies": {
-    "node-sass": "^4.11.0",
     "@pattern-lab/cli": "^0.0.3",
     "@pattern-lab/core": "^3.0.1",
     "@pattern-lab/engine-twig-php": "^3.0.1",
-    "@pattern-lab/uikit-workshop": "^1.0.1"
+    "@pattern-lab/uikit-workshop": "^1.0.1",
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   },
   "scripts": {
     "setup": "npm install && composer install",
