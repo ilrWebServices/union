@@ -1,0 +1,1 @@
+{"version":3,"file":"image.css","sources":["components/image/image.scss"],"sourcesContent":[".cu-image {\n  img {\n    max-width: 100%;\n    height: auto;\n  }\n}\n"],"names":[],"mappings":"AAAA,AACE,SADO,CACP,GAAG,CAAC;EACF,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI,GACb"}
