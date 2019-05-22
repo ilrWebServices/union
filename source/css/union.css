@@ -77,9 +77,8 @@
 
 .cu-button {
   color: #b31b1b;
-  font-weight: bold;
   border-radius: 2px;
-  border: 1px solid #b31b1b;
+  border: 4px solid #b31b1b;
   background: white;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -87,15 +86,19 @@
 
 .cu-button--alt {
   color: #b31b1b;
-  font-weight: bold;
   border-radius: 2px;
-  border: 1px solid #b31b1b;
+  border: 4px solid #b31b1b;
   background: white;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
   color: white;
   background: #b31b1b; }
+
+.cu-button--overlay {
+  border-color: #fff;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3); }
 
 /* ------------------------------------ *\
    Forms
@@ -284,18 +287,16 @@ progress {
     border: 1px solid #ccc; }
   .cu-input--submit {
     color: #b31b1b;
-    font-weight: bold;
     border-radius: 2px;
-    border: 1px solid #b31b1b;
+    border: 4px solid #b31b1b;
     background: white;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     width: auto; }
     .cu-input--submit--alt {
       color: #b31b1b;
-      font-weight: bold;
       border-radius: 2px;
-      border: 1px solid #b31b1b;
+      border: 4px solid #b31b1b;
       background: white;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
