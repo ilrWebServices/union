@@ -1,6 +1,6 @@
 # Union - Cornell University ILR School Design System
 
-A simple, Twig-based component builder compatible with Drupal.
+A simple, Twig-based component builder and Pattern Lab styleguide compatible with Drupal.
 
 ## Setup
 
@@ -12,7 +12,7 @@ $ npm run setup
 
 ### Creating components
 
-1. Create a directory with your component name in the `source/components/` folder.
+1. Create a directory with your component name in the `source/patterns/components/` folder.
 2. Create a `.twig` file with markup for the component (including the class name prefixed with "`cu-`").
 3. Create a `.scss` file that does not start with an underscore. Don't create a `.css` file, as it will be added automatically.
 4. (Optional) Create a `.js` if your component required javascript enhancement.
@@ -21,7 +21,7 @@ $ npm run setup
 Component example:
 
 ```
-source/components/button/
+source/patterns/components/button/
 ├── README.md
 ├── button.scss
 ├── button.css
@@ -45,7 +45,7 @@ dependencies:
 
 Note that the css file you may reference in your `.libraries.yml` file is automatically compiled from your `.scss` file. See below.
 
-### Compile and watch for changes
+### Compile and watch for changes and start Pattern Lab
 
 ```
 $ npm start
@@ -56,6 +56,10 @@ $ npm start
 ```
 $ npm run build
 ```
+
+### Connect to Drupal
+
+[Union Organizer](https://github.com/ilrWebServices/union_organizer/) is a custom Drupal 8 module configures Twig namespacing and adds components and skins as Drupal libraries. See the [Union Organizer readme](https://github.com/ilrWebServices/union_organizer/blob/master/README.md) for installation and documentation.
 
 ### Helper functions
 

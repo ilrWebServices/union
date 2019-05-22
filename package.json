@@ -23,11 +23,27 @@
   },
   "homepage": "https://github.com/ilrWebServices/union#readme",
   "dependencies": {
-    "node-sass": "^4.11.0"
+    "@pattern-lab/cli": "^0.0.3",
+    "@pattern-lab/core": "^3.0.1",
+    "@pattern-lab/engine-twig-php": "^3.0.1",
+    "@pattern-lab/uikit-workshop": "^1.0.1",
+    "concurrently": "^4.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-sass": "^4.0.2"
   },
   "scripts": {
-    "setup": "npm install",
-    "build": "node-sass --source-map true --recursive source/ --output source/",
-    "start": "npm run build -- --watch source/"
+    "setup": "npm install && composer install",
+    "start": "concurrently \"gulp\" \"npm:pl:serve\"",
+    "build": "npm run union:build && npm run pl:build",
+    "pl:build": "patternlab build --config ./patternlab-config.json",
+    "union:build": "gulp all",
+    "union:build-styles": "gulp styles",
+    "pl:start": "npm run pl:serve",
+    "pl:help": "patternlab --help",
+    "pl:install": "patternlab install --config ./patternlab-config.json",
+    "pl:serve": "patternlab serve --config ./patternlab-config.json",
+    "pl:version": "patternlab --version"
   }
 }

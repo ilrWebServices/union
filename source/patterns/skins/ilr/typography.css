@@ -1,0 +1,44 @@
+html {
+  font-size: var(--cu-base-font-size-percentage, 125%);
+  line-height: var(--cu-vr1); }
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+  line-height: 1.2; }
+
+h1 {
+  font-size: var(--cu-ms6); }
+  aside h1 {
+    font-size: var(--cu-ms4); }
+
+h2 {
+  font-size: var(--cu-ms5); }
+  aside h2 {
+    font-size: var(--cu-ms3); }
+
+h3 {
+  font-size: var(--cu-ms4); }
+  aside h3 {
+    font-size: var(--cu-ms2); }
+
+h4 {
+  font-size: var(--cu-ms3); }
+  aside h4 {
+    font-size: var(--cu-ms1); }
+
+h5 {
+  font-size: var(--cu-ms2); }
+  aside h5 {
+    font-size: var(--cu-ms0); }
+
+h6 {
+  font-size: var(--cu-ms1); }
+  aside h6 {
+    font-size: var(--cu-ms-1); }
+
+p {
+  font-size: var(--cu-ms0);
+  margin-bottom: var(--cu-vr0); }
+/*# sourceMappingURL=typography.css.map */
