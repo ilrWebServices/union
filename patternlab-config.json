@@ -68,7 +68,7 @@
         "viewall": "views/viewall.mustache"
       },
       "js": "./source/js",
-      "images": "./source/patterns/skins/ilr/images",
+      "images": "./source/images",
       "fonts": "./source/patterns/skins/ilr/fonts",
       "css": "./source/css"
     },
