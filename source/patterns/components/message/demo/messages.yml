@@ -1,0 +1,16 @@
+demo:
+  status_headings:
+    info: 'Info message'
+    status: 'Status message'
+    warning: 'Warning message'
+    error: 'Error message'
+  message_list:
+    info:
+      - "I am an info message, provided as a fallback."
+    status:
+      - 'I am a status message.'
+      - 'Any message type can have multiple messages.'
+    warning:
+      - 'I am a warning message.'
+    error:
+      - 'There was an error processing your message.'

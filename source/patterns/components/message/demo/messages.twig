@@ -1,18 +1,4 @@
-{% set states = ['info', 'status', 'warning', 'error']%}
-{% set status_headings = [] %}
-{% for state in states %}
-  {% set status_headings = status_headings|merge({
-  (state): state|capitalize ~ ' message'
-  }) %}
-{% endfor %}
-{% set message_list = {
-  'info': ["I am an info message, provided as a fallback."],
-  'status': ['I am a status message.', 'Any message type can have multiple messages.'],
-  'warning': ['I am a warning message.'],
-  'error': ['There was an error processing your message.']
-} %}
-
 {% include '@union/_message-list.twig' with {
-  message_list: message_list,
-  status_headings: status_headings
-} %}
+  message_list: demo.message_list,
+  status_headings: demo.status_headings
+} only %}
