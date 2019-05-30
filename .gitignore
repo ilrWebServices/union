@@ -3,3 +3,4 @@
 composer.lock
 /public/*
 /dependencyGraph.json
+/source/css/
