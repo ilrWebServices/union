@@ -2,7 +2,7 @@
 
 html {
   font-size: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
-  line-height: var(--cu-vr1); // @see vertical-rhythm.scss
+  line-height: 1.5;
 }
 
 h1,
