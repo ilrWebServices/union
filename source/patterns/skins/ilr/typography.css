@@ -41,4 +41,9 @@ h6 {
 p {
   font-size: var(--cu-ms0);
   margin-bottom: var(--cu-vr0); }
+
+a {
+  text-decoration: none; }
+  a.underlined {
+    text-decoration: underline; }
 /*# sourceMappingURL=typography.css.map */
