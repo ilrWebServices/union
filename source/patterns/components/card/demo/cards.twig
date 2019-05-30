@@ -1,0 +1,39 @@
+<h3>Union Cards</h3>
+<p>The card component consists of a content blob (required), media and attributes (both optional). Attributes are used to set the BEM modifiers that create the style variations of cards (text-overlay, centered, light, etc.).</p>
+<p>Variations are demoed individually below, and then added to a grid.</p>
+
+{% for card in demo.cards %}
+  {% set rendered_card %}
+    {% set rendered_media %}
+      {% if card.img %}
+        {% include '@union/_image.twig' with {
+          img_src: card.img.src,
+          img_alt: card.img.alt
+        } only %}
+      {% endif %}
+    {% endset %}
+
+    {% set rendered_content %}
+      {{ card.content }}
+      {% if card.button %}
+        <div class="cu-card__button">
+          {% include '@union/_button.twig' with {
+            attributes: card.button.attributes,
+            text: card.button.text
+          } only %}
+        </div>
+      {% endif %}
+    {% endset %}
+
+    {% include '@union/_card.twig' with {
+      card_content: rendered_content,
+      card_media: rendered_media,
+      attributes: card.attributes
+    } only %}
+  {% endset %}
+
+  {# Render the card #}
+  <h3>{{ card.label}}</h3>
+  {{ rendered_card }}
+
+{% endfor %}

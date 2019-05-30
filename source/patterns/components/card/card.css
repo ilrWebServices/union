@@ -1,0 +1,63 @@
+.cu-card {
+  background: #efefef;
+  /*=============================================
+  =            Modifiers            =
+  =============================================*/
+  /*----------  Text-overlay  ----------*/
+  /*----------  Pinned card  ----------*/
+  /*----------  Centered content  ----------*/
+  /*----------  Light background  ----------*/
+  /*----------  Rounded corners  ----------*/
+  /*----------  Portrait (2 rows tall)  ----------*/
+  /*----------  Landscape (span all columns)  ----------*/
+  /*=====  End of Modifiers  ======*/ }
+  .cu-card__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: var(--cu-ps1) var(--cu-vr3); }
+  .cu-card__media :first-child {
+    width: 100%; }
+  .cu-card--text-overlay {
+    position: relative; }
+    .cu-card--text-overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(85, 85, 85, 0.5);
+      z-index: 2; }
+    .cu-card--text-overlay .cu-card__media {
+      position: absolute;
+      overflow: hidden;
+      max-width: none;
+      width: 100%;
+      height: 100%;
+      z-index: 1; }
+      .cu-card--text-overlay .cu-card__media :first-child {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; }
+    .cu-card--text-overlay .cu-card__content {
+      color: white;
+      position: relative;
+      z-index: 3; }
+  .cu-card--pinned .cu-card__content {
+    justify-content: flex-end; }
+    .cu-card--pinned .cu-card__content :first-child {
+      margin-bottom: auto; }
+  .cu-card--centered .cu-card__content {
+    text-align: center;
+    justify-content: center; }
+  .cu-card--light {
+    background: #fff; }
+  .cu-card--rounded {
+    border-radius: 2px; }
+  .cu-card--portrait {
+    grid-row-start: span 2; }
+  .cu-card--landscape {
+    grid-column: 1 / -1; }
+/*# sourceMappingURL=card.css.map */

@@ -4,12 +4,15 @@
 $black: #222; // ILR Brand black
 $white: #fff;
 $cornell-red: #b31b1b;
+$gray-light: #efefef;
 
 // Color usage
 $color-text: $black;
 $color-bg-body: $white;
 $color-alert: $cornell-red;
 $color-border: #ccc;
+$color-bg-card--default: $gray-light;
+$color-bg-card--light: $white;
 
 // Color status indictors
 $color-info: #5bc0de !default;
