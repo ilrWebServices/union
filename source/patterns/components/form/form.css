@@ -187,7 +187,7 @@ progress {
     color: #b31b1b;
     border-radius: 2px;
     border: 4px solid #b31b1b;
-    background: white;
+    background: transparent;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
     width: auto; }
@@ -195,7 +195,7 @@ progress {
       color: #b31b1b;
       border-radius: 2px;
       border: 4px solid #b31b1b;
-      background: white;
+      background: transparent;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
       width: auto;
