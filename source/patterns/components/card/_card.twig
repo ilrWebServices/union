@@ -3,13 +3,13 @@
 {% set attributes = attributes.addClass(['cu-card']) %}
 
 <div{{ attributes }}>
-  {% if card_media %}
-    <div class="cu-card__media">
-      {{ card_media }}
-    </div>
-  {% endif %}
   <div class="cu-card__content">
     {{ card_content }}
   </div>
+{% if card_media %}
+  <div class="cu-card__media">
+    {{ card_media }}
+  </div>
+{% endif %}
 </div>
 
