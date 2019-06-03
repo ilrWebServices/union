@@ -36,7 +36,7 @@
       width: 10px;
       height: 50px; }
     .cu-section-heading--framed.cu-section-heading--framed-right::before {
-      left: calc(100% - 120px); }
+      left: calc(100% - 120px - 10px); }
     .cu-section-heading--framed.cu-section-heading--framed-right::after {
-      left: 100%; }
+      left: calc(100% - 10px); }
 /*# sourceMappingURL=section-heading.css.map */

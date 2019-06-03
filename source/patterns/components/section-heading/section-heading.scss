@@ -60,11 +60,11 @@
     /*----------  Framed right  ----------*/
     &.cu-section-heading--framed-right {
       &::before {
-        left: calc(100% - #{$frame-width});
+        left: calc(100% - #{$frame-width} - #{$frame-thickness});
       }
 
       &::after {
-        left: 100%;
+        left: calc(100% - #{$frame-thickness});
       }
     }
   }
