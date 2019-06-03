@@ -1,10 +1,13 @@
 .cu-card {
-  background: #efefef;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
   /*=============================================
   =            Modifiers            =
   =============================================*/
-  /*----------  Text-overlay  ----------*/
-  /*----------  Pinned card  ----------*/
+  /*----------  Promos  ----------*/
+  /*----------  Promo with media  ----------*/
+  /*----------  Pinned ----------*/
   /*----------  Centered content  ----------*/
   /*----------  Light background  ----------*/
   /*----------  Rounded corners  ----------*/
@@ -12,16 +15,23 @@
   /*----------  Landscape (span all columns)  ----------*/
   /*=====  End of Modifiers  ======*/ }
   .cu-card__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--cu-ps1) var(--cu-vr3); }
-  .cu-card__media :first-child {
-    width: 100%; }
-  .cu-card--text-overlay {
+    order: 2; }
+  .cu-card__media {
+    order: 1; }
+    .cu-card__media :first-child {
+      width: 100%; }
+  .cu-card--promo {
+    background: #efefef; }
+    .cu-card--promo .cu-card__content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: var(--cu-vr2) var(--cu-vr3) var(--cu-vr3);
+      text-align: center; }
+  .cu-card--promo-with-media {
     position: relative; }
-    .cu-card--text-overlay::before {
+    .cu-card--promo-with-media::before {
       content: '';
       position: absolute;
       top: 0;
@@ -30,18 +40,18 @@
       height: 100%;
       background: rgba(85, 85, 85, 0.5);
       z-index: 2; }
-    .cu-card--text-overlay .cu-card__media {
+    .cu-card--promo-with-media .cu-card__media {
       position: absolute;
       overflow: hidden;
       max-width: none;
       width: 100%;
       height: 100%;
       z-index: 1; }
-      .cu-card--text-overlay .cu-card__media :first-child {
+      .cu-card--promo-with-media .cu-card__media :first-child {
         object-fit: cover;
         width: 100%;
         height: 100%; }
-    .cu-card--text-overlay .cu-card__content {
+    .cu-card--promo-with-media .cu-card__content {
       color: white;
       position: relative;
       z-index: 3; }

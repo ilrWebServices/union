@@ -1,0 +1,86 @@
+demo:
+  promo_grid:
+    cards:
+      -
+        attributes:
+          class: 'cu-card--promo'
+        content: |
+          <h2 class="cu-card__heading">New ILR Site Expands Cornell Impact in NYC</h2>
+          <p>Nine colleges, units and programs are joining ILR at its 570 Lexington Ave. headquarters, a new hub for university outreach.</p>
+        button:
+          text: 'Read More'
+      -
+        attributes:
+          class: 'cu-card--promo cu-card--landscape cu-card--promo-with-media'
+        img:
+          src: 'https://placeimg.com/1020/450/nature'
+          alt: 'Hug a tree today'
+        content: |
+          <h2 class="cu-card__heading">Your Life Journey Starts Here</h2>
+          <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+        button:
+          attributes:
+            class: 'cu-button--overlay'
+          text: 'Visit Us'
+      -
+        attributes:
+          class: 'cu-card--promo cu-card--promo-with-media'
+        img:
+          src: 'https://placeimg.com/680/600/nature'
+          alt: 'Hug a tree today'
+        content: |
+          <h2 class="cu-card__heading">700 Acres</h2>
+          <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
+        button:
+          attributes:
+            class: 'cu-button--overlay'
+          text: 'Visit Us'
+      -
+        attributes:
+          class: 'cu-card--pinned cu-card--light cu-card--promo'
+        content: |
+          <h2 class="cu-card__heading">Sponsor an ILR Internship</h2>
+          <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
+        button:
+          text: 'Learn More'
+      -
+        attributes:
+          class: 'cu-card--promo'
+        content: |
+          <h2 class="cu-card__heading">Cornell University Offers Over 4000 Courses</h2>
+          <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad. Vim ea copiosae vivendum forensibus.</p>
+
+      -
+        attributes:
+          class: 'cu-card--portrait cu-card--pinned cu-card--promo cu-card--promo-with-media'
+        img:
+          src: 'https://placeimg.com/680/1200/people'
+          alt: 'Come join the ILR party'
+        content: |
+          <h2 class="cu-card__heading">Andrea Sanders</h2>
+          <h3 class="cu-card__subheading">Undergradute Majoring in Management</h3>
+          <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
+        button:
+          attributes:
+            class: 'cu-button--overlay'
+          text: Student Life
+      -
+        attributes:
+          class: 'cu-card--promo cu-card--promo-with-media'
+        img:
+          src: 'https://placeimg.com/680/600/nature'
+          alt: 'Hug a tree today'
+        content: |
+          <h2 class="cu-card__heading">700 Acres</h2>
+          <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
+        button:
+          attributes:
+            class: 'cu-button--overlay'
+          text: 'Visit Us'
+      -
+        attributes:
+          class: 'cu-card--pinned cu-card--promo'
+        content: |
+          <p class="cu-card__heading cu-card__heading--fact">There are over 11,000 ILR Alumni working as Leaders at Fortune 500 Companies.</p>
+        button:
+          text: About ILR

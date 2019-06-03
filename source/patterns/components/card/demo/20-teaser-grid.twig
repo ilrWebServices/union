@@ -1,0 +1,40 @@
+<h3>Content teaser grid</h3>
+
+{% include '@union/_section-heading.twig' with {
+  attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
+  heading: 'ILR News',
+  link: { url: '#', text: 'View All News' }
+} only %}
+
+{% set grid_content %}
+  {% set rendered_media %}
+    {% include '@union/_image.twig' with {
+      img_src: demo.content_teaser_lead.img.src,
+      img_alt: demo.content_teaser_lead.img.alt
+    } only %}
+  {% endset %}
+  {% include '@union/_card.twig' with {
+    card_content: demo.content_teaser_lead.content,
+    card_media: rendered_media,
+    attributes: demo.content_teaser_lead.attributes
+  } only %}
+
+  {% for teaser in demo.content_teasers %}
+    {% set rendered_media %}
+      {% include '@union/_image.twig' with {
+        img_src: teaser.img.src,
+        img_alt: teaser.img.alt
+      } only %}
+    {% endset %}
+    {% include '@union/_card.twig' with {
+      card_content: teaser.content,
+      card_media: rendered_media,
+      attributes: teaser.attributes
+    } only %}
+  {% endfor %}
+{% endset %}
+
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: { class: 'cu-grid--4col-lead' }
+} %}

@@ -2,16 +2,16 @@
 
 .cu-card {
   background: $color-bg-card--default;
+  display: flex;
+  flex-direction: column;
 
   &__content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: var(--cu-ps1) var(--cu-vr3);
+    order: 2;
   }
 
   &__media {
+    order: 1;
+
     :first-child {
       width: 100%;
     }
@@ -22,8 +22,22 @@
   =            Modifiers            =
   =============================================*/
 
-  /*----------  Text-overlay  ----------*/
-  &--text-overlay {
+  /*----------  Promos  ----------*/
+  &--promo {
+    background: $color-bg-card--medium;
+
+    .cu-card__content {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: var(--cu-vr2) var(--cu-vr3) var(--cu-vr3);
+      text-align: center;
+    }
+  }
+
+  /*----------  Promo with media  ----------*/
+  &--promo-with-media {
     @include overlay;
 
     .cu-card__media {
@@ -48,7 +62,7 @@
     }
   }
 
-  /*----------  Pinned card  ----------*/
+  /*----------  Pinned ----------*/
   &--pinned {
     .cu-card__content {
       justify-content: flex-end;
@@ -79,13 +93,12 @@
 
   /*----------  Portrait (2 rows tall)  ----------*/
   &--portrait {
-    grid-row-start: span 2;
+    grid-row-start: span 2; // Must be part of a grid
   }
 
   /*----------  Landscape (span all columns)  ----------*/
   &--landscape {
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; // Must be part of a grid
   }
-
   /*=====  End of Modifiers  ======*/
 }
