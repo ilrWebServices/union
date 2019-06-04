@@ -82,7 +82,8 @@ p {
   margin-top: 0; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: #b31b1b; }
   a.underlined {
     text-decoration: underline; }
 
