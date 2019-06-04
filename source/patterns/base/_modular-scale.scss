@@ -1,5 +1,5 @@
 :root {
-  --cu-ms-ratio: var(--minor-third);
+  --cu-ms-ratio: var(--major-second);
   --cu-ms0: var(--cu-base-font-size, #{$base-font-size});
   --cu-ms1: calc(var(--cu-ms-ratio) * var(--cu-ms0));
   --cu-ms2: calc(var(--cu-ms-ratio) * var(--cu-ms1));
