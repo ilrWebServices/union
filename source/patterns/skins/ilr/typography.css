@@ -67,6 +67,7 @@ h6 {
     font-weight: 300;
     line-height: var(--cu-heading-line-height, 1.2); }
 
+/*----------  Tag-based styles  ----------*/
 p {
   font-size: var(--cu-ms0);
   margin-bottom: var(--cu-vr0);
@@ -76,4 +77,40 @@ a {
   text-decoration: none; }
   a.underlined {
     text-decoration: underline; }
+
+/*----------  Class-based sizing  ----------*/
+.cu-text--xxxl {
+  font-size: var(--cu-ms7);
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, 1.2); }
+
+.cu-text--xxl {
+  font-size: var(--cu-ms6);
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, 1.2); }
+
+.cu-text--xl {
+  font-size: var(--cu-ms5);
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, 1.2); }
+
+.cu-text--lg {
+  font-size: var(--cu-ms4);
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, 1.2); }
+
+.cu-text--md {
+  font-size: var(--cu-ms1); }
+
+.cu-text--reg {
+  font-size: var(--cu-ms0);
+  margin-bottom: var(--cu-vr0);
+  font-weight: 400; }
+
+.cu-text--sm,
+small {
+  font-size: var(--cu-ms-1); }
+
+.cu-text--xs {
+  font-size: var(--cu-ms-2); }
 /*# sourceMappingURL=typography.css.map */

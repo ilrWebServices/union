@@ -29,6 +29,7 @@ h3 {
   }
 }
 
+/*----------  Tag-based styles  ----------*/
 p {
   @include p-text;
 }
@@ -39,4 +40,38 @@ a {
   &.underlined {
     text-decoration: underline;
   }
+}
+
+/*----------  Class-based sizing  ----------*/
+.cu-text--xxxl {
+  @include set-heading(0);
+}
+
+.cu-text--xxl {
+  @include set-heading(1);
+}
+
+.cu-text--xl {
+  @include set-heading(2);
+}
+
+.cu-text--lg {
+  @include set-heading(3);
+}
+
+.cu-text--md {
+  font-size: var(--cu-ms1);
+}
+
+.cu-text--reg {
+  @include p-text;
+}
+
+.cu-text--sm,
+small {
+  font-size: var(--cu-ms-1);
+}
+
+.cu-text--xs {
+  font-size: var(--cu-ms-2);
 }
