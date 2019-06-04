@@ -105,6 +105,8 @@
       border-radius: 2px; }
     .cu-card--highlight:hover, .cu-card--highlight-active {
       color: white; }
+      .cu-card--highlight:hover .cu-icon, .cu-card--highlight-active .cu-icon {
+        fill: #fff; }
       .cu-card--highlight:hover a, .cu-card--highlight-active a {
         color: #fff;
         text-decoration: underline; }

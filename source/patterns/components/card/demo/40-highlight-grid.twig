@@ -2,9 +2,19 @@
 
 {% set rendered_cards = '' %}
 {% for card in demo.highlight_grid.cards %}
+  {% set rendered_content %}
+    <div class="cu-card__icon">
+      {% include "@union/_icon.twig" with {
+        attributes: {class: 'cu-icon--tower'},
+        title: 'Cornell University Tower',
+        src: 'images/tower.svg'
+      } only %}
+    </div>
+    {{ card.content }}
+  {% endset %}
   {% set rendered_card %}
-  {% include '@union/_card.twig' with {
-      card_content: card.content,
+    {% include '@union/_card.twig' with {
+      card_content: rendered_content,
       attributes: card.attributes
     } only %}
   {% endset %}

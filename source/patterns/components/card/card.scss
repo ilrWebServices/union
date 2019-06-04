@@ -140,6 +140,10 @@
     &:hover, &-active {
       color: white;
 
+      .cu-icon {
+        fill: $white;
+      }
+
       a {
         color: $white;
         text-decoration: underline;

@@ -13,6 +13,13 @@ demo:
       label: Highlight card
       attributes:
         class: 'cu-card--highlight'
+      icon:
+        title: Cornell University Tower
+        attributes:
+          class: 'cu-icon--tower'
+          width: 22
+          height: 32
+        src: '/images/tower.svg'
       content: |
         <h2 class="cu-card__heading">Undergraduate</h2>
         <p>The ILR major focuses on the study of people and policies in the workplace. <a href="#">Explore</a> our wide range of academic interests today.</p>
@@ -20,6 +27,13 @@ demo:
       label: Active highlight card
       attributes:
         class: 'cu-card--highlight cu-card--highlight-active'
+      icon:
+        title: Cornell University Tower
+        attributes:
+          class: 'cu-icon--tower'
+          width: 22
+          height: 32
+        src: '/images/tower.svg'
       content: |
         <h2 class="cu-card__heading">Undergraduate</h2>
         <p>The ILR major focuses on the study of people and policies in the workplace. <a href="#">Explore</a> our wide range of academic interests today.</p>

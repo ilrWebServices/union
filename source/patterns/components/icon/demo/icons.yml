@@ -1,0 +1,12 @@
+demo:
+  icons:
+    -
+      title: Cornell University
+      attributes:
+        class: 'cu-icon--cornell-seal'
+      src: '/images/cornell-seal.svg'
+    -
+      title: Cornell University Tower
+      attributes:
+        class: 'cu-icon--tower cu-icon--red'
+      src: '/images/tower.svg'

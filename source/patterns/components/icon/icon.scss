@@ -1,0 +1,17 @@
+@import './source/global/global';
+
+.cu-icon {
+  display: inline-block;
+
+  &--tower {
+    width: 22px;
+  }
+
+  &--cornell-seal {
+    max-width: 73px;
+  }
+
+  &--red {
+    fill: $cornell-red;
+  }
+}

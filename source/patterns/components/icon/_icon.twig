@@ -1,0 +1,9 @@
+{{ attach_library('union_organizer/icon') }}
+
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-icon']) %}
+{% set icon_file = union_file(src) %}
+
+<div{{ attributes }}>
+  {% include icon_file %}
+</div>

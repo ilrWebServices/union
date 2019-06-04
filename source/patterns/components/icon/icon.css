@@ -1,0 +1,9 @@
+.cu-icon {
+  display: inline-block; }
+  .cu-icon--tower {
+    width: 22px; }
+  .cu-icon--cornell-seal {
+    max-width: 73px; }
+  .cu-icon--red {
+    fill: #b31b1b; }
+/*# sourceMappingURL=icon.css.map */
