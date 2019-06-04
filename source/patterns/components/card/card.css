@@ -11,13 +11,15 @@
   /*----------  Centered content  ----------*/
   /*----------  Light background  ----------*/
   /*----------  Rounded corners  ----------*/
+  /*----------  Highlight  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
   /*=====  End of Modifiers  ======*/ }
   .cu-card__content {
     order: 2; }
   .cu-card__media {
-    order: 1; }
+    order: 1;
+    margin-bottom: var(--cu-vr0); }
     .cu-card__media :first-child {
       width: 100%; }
   .cu-card__heading {
@@ -36,7 +38,7 @@
       height: 100%;
       flex-direction: column;
       justify-content: flex-start;
-      padding: var(--cu-vr3);
+      padding: var(--cu-vr2) var(--cu-vr3);
       text-align: center; }
   .cu-card--promo-with-media {
     position: relative; }
@@ -70,11 +72,45 @@
       margin-bottom: auto; }
   .cu-card--centered .cu-card__content {
     text-align: center;
-    justify-content: center; }
+    justify-content: center;
+    padding: var(--cu-vr1); }
   .cu-card--light {
     background: #fff; }
   .cu-card--rounded {
     border-radius: 2px; }
+  .cu-card--highlight {
+    transition: 0.15s all ease;
+    position: relative; }
+    .cu-card--highlight .cu-card__heading {
+      font-size: var(--cu-ms2);
+      font-weight: 400; }
+    .cu-card--highlight .cu-card__content {
+      z-index: 2;
+      text-align: center;
+      justify-content: center;
+      padding: var(--cu-vr1); }
+      .cu-card--highlight .cu-card__content p {
+        font-size: var(--cu-ms-1); }
+    .cu-card--highlight::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      transform-origin: 50% 50%;
+      transition: all .18s;
+      z-index: 1;
+      border-radius: 2px; }
+    .cu-card--highlight:hover, .cu-card--highlight-active {
+      color: white; }
+      .cu-card--highlight:hover a, .cu-card--highlight-active a {
+        color: #fff;
+        text-decoration: underline; }
+      .cu-card--highlight:hover::before, .cu-card--highlight-active::before {
+        transform: scaleY(1.3);
+        background: #b31b1b; }
   .cu-card--portrait {
     grid-row-start: span 2; }
   .cu-card--landscape {

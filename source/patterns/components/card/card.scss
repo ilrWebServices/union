@@ -11,6 +11,7 @@
 
   &__media {
     order: 1;
+    margin-bottom: var(--cu-vr0);
 
     :first-child {
       width: 100%;
@@ -40,7 +41,7 @@
       height: 100%;
       flex-direction: column;
       justify-content: flex-start;
-      padding: var(--cu-vr3);
+      padding: var(--cu-vr2) var(--cu-vr3);
       text-align: center;
     }
   }
@@ -87,6 +88,7 @@
     .cu-card__content {
       text-align: center;
       justify-content: center;
+      padding: var(--cu-vr1);
     }
   }
 
@@ -98,6 +100,56 @@
   /*----------  Rounded corners  ----------*/
   &--rounded {
     border-radius: 2px;
+  }
+
+  /*----------  Highlight  ----------*/
+  &--highlight {
+    transition: 0.15s all ease;
+    position: relative;
+
+    .cu-card__heading {
+      font-size: var(--cu-ms2);
+      font-weight: 400;
+    }
+
+    .cu-card__content {
+      z-index: 2;
+      text-align: center;
+      justify-content: center;
+      padding: var(--cu-vr1);
+
+      p {
+        font-size: var(--cu-ms-1);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: $white;
+      transform-origin: 50% 50%;
+      transition: all .18s;
+      z-index: 1;
+      border-radius: 2px;
+    }
+
+    &:hover, &-active {
+      color: white;
+
+      a {
+        color: $white;
+        text-decoration: underline;
+      }
+
+      &::before {
+        transform: scaleY(1.3);
+        background: $cornell-red;
+      }
+    }
   }
 
   /*----------  Portrait (2 rows tall)  ----------*/
