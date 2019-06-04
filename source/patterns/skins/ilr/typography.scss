@@ -7,8 +7,9 @@ html {
 
 :root {
   @include breakpoint(md) {
-    --cu-base-font-size-percentage: 115%;
+    --cu-base-font-size-percentage: 113%;
     --cu-ms-ratio: var(--minor-third);
+    --cu-base-line-height: 1.6;
   }
 }
 

@@ -4,8 +4,9 @@ html {
 
 @media (min-width: 64rem) {
   :root {
-    --cu-base-font-size-percentage: 115%;
-    --cu-ms-ratio: var(--minor-third); } }
+    --cu-base-font-size-percentage: 113%;
+    --cu-ms-ratio: var(--minor-third);
+    --cu-base-line-height: 1.6; } }
 
 h1,
 h2,
