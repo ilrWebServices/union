@@ -36,7 +36,7 @@
       height: 100%;
       flex-direction: column;
       justify-content: flex-start;
-      padding: var(--cu-vr2) var(--cu-vr3) var(--cu-vr3);
+      padding: var(--cu-vr3);
       text-align: center; }
   .cu-card--promo-with-media {
     position: relative; }

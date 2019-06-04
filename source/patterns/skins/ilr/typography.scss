@@ -24,6 +24,8 @@ h3 {
   h#{$i} {
     @include set-heading($i);
 
+    margin-top: 0;
+
     aside & {
       @include set-heading($i + 2);
     }
@@ -33,6 +35,8 @@ h3 {
 /*----------  Tag-based styles  ----------*/
 p {
   @include p-text;
+
+  margin-top: 0;
 }
 
 a {
