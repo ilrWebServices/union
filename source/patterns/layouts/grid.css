@@ -1,7 +1,13 @@
 .cu-grid {
-  display: grid;
   grid-auto-flow: dense;
   grid-gap: var(--cu-vr0); }
+  .cu-grid > * {
+    margin-bottom: var(--cu-vr0); }
+  @media (min-width: 37.5rem) {
+    .cu-grid {
+      display: grid; }
+      .cu-grid > * {
+        margin-bottom: 0; } }
   .cu-grid--gapless {
     grid-gap: 0; }
   .cu-grid--2col {

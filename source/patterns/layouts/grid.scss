@@ -1,7 +1,17 @@
 @import './source/global/global';
 
 .cu-grid {
-  display: grid;
+  > * {
+    margin-bottom: var(--cu-vr0);
+  }
+  @include breakpoint(sm) {
+    display: grid;
+
+    > * {
+      margin-bottom: 0; // Let the grid-gap handle margins
+    }
+  }
+
   grid-auto-flow: dense;
   grid-gap: var(--cu-vr0);
 
