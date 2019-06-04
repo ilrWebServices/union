@@ -1,0 +1,23 @@
+demo:
+  highlight_grid:
+    attributes:
+      class: 'cu-grid cu-grid--3col'
+    cards:
+      -
+        attributes:
+          class: 'cu-card--highlight'
+        content: |
+          <h2 class="cu-card__heading">Undergraduate</h2>
+          <p>The ILR major focuses on the study of people and policies in the workplace. <a href="#">Explore</a> our wide range of academic interests today.</p>
+      -
+        attributes:
+          class: 'cu-card--highlight'
+        content: |
+          <h2 class="cu-card__heading">Graduate</h2>
+          <p>From students straight out of college, to professionals working for over 20 years &mdash; <a href="#">we have your program</a>.</p>
+      -
+        attributes:
+          class: 'cu-card--highlight'
+        content: |
+          <h2 class="cu-card__heading">Professional</h2>
+          <p>You can choose from a wide range of professional and academic programs, grounded in practice and focused on <a href="#">real-world application.</a></p>
