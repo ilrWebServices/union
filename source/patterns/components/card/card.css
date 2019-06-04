@@ -20,6 +20,11 @@
     order: 1; }
     .cu-card__media :first-child {
       width: 100%; }
+  .cu-card__subheading {
+    font-size: var(--cu-ms0);
+    margin-bottom: var(--cu-vr0);
+    font-weight: 400;
+    line-height: var(--cu-reduced-line-height, 1.2); }
   .cu-card--promo {
     background: #efefef; }
     .cu-card--promo .cu-card__content {

@@ -17,6 +17,11 @@
     }
   }
 
+  &__subheading {
+    @include p-text;
+
+    line-height: var(--cu-reduced-line-height, #{$reduced-line-height});
+  }
 
   /*=============================================
   =            Modifiers            =
