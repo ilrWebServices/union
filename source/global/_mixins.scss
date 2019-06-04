@@ -47,6 +47,12 @@
   }
 }
 
+@mixin set-heading($size: 2) {
+  font-size: var(--cu-ms#{7 - $size});
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, #{$heading-line-height});
+}
+
 @mixin p-text() {
   font-size: var(--cu-ms0);
   margin-bottom: var(--cu-vr0);

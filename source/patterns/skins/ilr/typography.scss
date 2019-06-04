@@ -14,11 +14,10 @@ h3 {
 
 @for $i from 1 through 6 {
   h#{$i} {
-    $h-size: 7 - $i;
-    font-size: var(--cu-ms#{$h-size});
+    @include set-heading($i);
 
     aside & {
-      font-size: var(--cu-ms#{$h-size - 2});
+      @include set-heading($i + 2);
     }
   }
 }

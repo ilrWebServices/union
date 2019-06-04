@@ -17,6 +17,10 @@
     }
   }
 
+  &__heading {
+    @include set-heading(2);
+  }
+
   &__subheading {
     @include p-text;
 
