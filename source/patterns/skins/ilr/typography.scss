@@ -5,6 +5,13 @@ html {
   line-height: var(--cu-base-line-height, #{$base-line-height});
 }
 
+:root {
+  @include breakpoint(md) {
+    --cu-base-font-size-percentage: 115%;
+    --cu-ms-ratio: var(--minor-third);
+  }
+}
+
 h1,
 h2,
 h3 {
@@ -31,12 +38,5 @@ a {
 
   &.underlined {
     text-decoration: underline;
-  }
-}
-
-:root {
-  @include breakpoint(md) {
-    --cu-base-font-size-percentage: 115%;
-    --cu-ms-ratio: var(--minor-third);
   }
 }

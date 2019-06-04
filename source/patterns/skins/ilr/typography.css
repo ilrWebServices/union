@@ -2,6 +2,11 @@ html {
   font-size: var(--cu-base-font-size-percentage, 100%);
   line-height: var(--cu-base-line-height, 1.4); }
 
+@media (min-width: 64rem) {
+  :root {
+    --cu-base-font-size-percentage: 115%;
+    --cu-ms-ratio: var(--minor-third); } }
+
 h1,
 h2,
 h3 {
@@ -71,9 +76,4 @@ a {
   text-decoration: none; }
   a.underlined {
     text-decoration: underline; }
-
-@media (min-width: 64rem) {
-  :root {
-    --cu-base-font-size-percentage: 115%;
-    --cu-ms-ratio: var(--minor-third); } }
 /*# sourceMappingURL=typography.css.map */
