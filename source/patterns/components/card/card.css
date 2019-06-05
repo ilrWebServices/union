@@ -113,6 +113,28 @@
       .cu-card--highlight:hover::before, .cu-card--highlight-active::before {
         transform: scaleY(1.3);
         background: #b31b1b; }
+  .cu-card--hover-overlay {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; }
+    .cu-card--hover-overlay .cu-card__content,
+    .cu-card--hover-overlay .cu-card__media {
+      grid-row: 1;
+      grid-column: 1;
+      color: white; }
+    .cu-card--hover-overlay .cu-card__media {
+      margin: 0;
+      z-index: 1; }
+    .cu-card--hover-overlay .cu-card__content {
+      background: rgba(179, 27, 27, 0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--cu-vr2); }
+    .cu-card--hover-overlay:hover .cu-card__content {
+      z-index: 2; }
   .cu-card--portrait {
     grid-row-start: span 2; }
   .cu-card--landscape {

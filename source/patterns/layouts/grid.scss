@@ -63,6 +63,15 @@
     grid-template-columns: 1fr 3fr;
   }
 
+  &--3col-lead {
+    grid-template-columns: repeat(3, 1fr);
+
+    :first-child {
+      grid-column-end: span 2;
+      grid-row-end: span 2;
+    }
+  }
+
   &--4col-lead {
     grid-template-columns: repeat(4, 1fr);
 

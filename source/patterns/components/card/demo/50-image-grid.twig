@@ -1,0 +1,43 @@
+<h3>Image grid</h3>
+
+{% set grid_content %}
+  {% for card in global.cards.image_grid.content %}
+    {% set rendered_media %}
+      {% include '@union/_image.twig' with {
+        img_src: card.img.src,
+        img_alt: card.img.alt
+      } only %}
+    {% endset %}
+    {% set rendered_content %}
+      {% if card.icon %}
+        <div class="cu-card__icon">
+          {% include "@union/_icon.twig" with {
+            attributes: card.icon.attributes,
+            title: card.icon.title,
+            src: card.icon.src,
+            label: card.icon.label
+          } only %}
+        </div>
+      {% endif %}
+      {{ card.content }}
+      {% if card.button %}
+        <div class="cu-card__button">
+          {% include '@union/_button.twig' with {
+            attributes: card.button.attributes,
+            text: card.button.text
+          } only %}
+        </div>
+      {% endif %}
+    {% endset %}
+    {% include '@union/_card.twig' with {
+      card_content: rendered_content,
+      card_media: rendered_media,
+      attributes: card.attributes
+    } only %}
+  {% endfor %}
+{% endset %}
+
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: global.cards.image_grid.attributes
+} %}

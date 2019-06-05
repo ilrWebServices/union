@@ -1,0 +1,78 @@
+global:
+  cards:
+    image_grid:
+      attributes:
+        class: 'cu-grid--3col-lead'
+      content:
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/nature'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/people'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/tech'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/arch'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/animals'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
+        -
+          attributes:
+            class: 'cu-card--hover-overlay'
+          img:
+            src: 'https://placeimg.com/450/450/nature'
+            alt: 'Hug a tree today'
+          content: |
+            <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+          button:
+            attributes:
+              class: 'cu-button--overlay'
+            text: 'View '
