@@ -9,32 +9,32 @@
 {% set grid_content %}
   {% set rendered_media %}
     {% include '@union/_image.twig' with {
-      img_src: demo.content_teaser_lead.img.src,
-      img_alt: demo.content_teaser_lead.img.alt
+      img_src: global.card.teasers.lead.img.src,
+      img_alt: global.card.teasers.lead.img.alt
     } only %}
   {% endset %}
   {% include '@union/_card.twig' with {
-    card_content: demo.content_teaser_lead.content,
+    card_content: global.card.teasers.lead.content,
     card_media: rendered_media,
-    attributes: demo.content_teaser_lead.attributes
+    attributes: global.card.teasers.lead.attributes
   } only %}
 
-  {% for teaser in demo.content_teasers %}
+  {% for card in global.card.teasers.cards %}
     {% set rendered_media %}
       {% include '@union/_image.twig' with {
-        img_src: teaser.img.src,
-        img_alt: teaser.img.alt
+        img_src: card.img.src,
+        img_alt: card.img.alt
       } only %}
     {% endset %}
     {% include '@union/_card.twig' with {
-      card_content: teaser.content,
+      card_content: card.content,
       card_media: rendered_media,
-      attributes: teaser.attributes
+      attributes: card.attributes
     } only %}
   {% endfor %}
 {% endset %}
 
 {% include '@union/_grid.twig' with {
   grid_content: grid_content,
-  attributes: { class: 'cu-grid--4col-lead' }
+  attributes: global.card.teasers.grid_attributes
 } %}

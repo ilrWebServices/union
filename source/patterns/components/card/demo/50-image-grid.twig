@@ -1,7 +1,7 @@
 <h3>Image grid</h3>
 
 {% set grid_content %}
-  {% for card in global.cards.image_grid.content %}
+  {% for card in global.card.image_grid.cards %}
     {% set rendered_media %}
       {% include '@union/_image.twig' with {
         img_src: card.img.src,
@@ -39,5 +39,5 @@
 
 {% include '@union/_grid.twig' with {
   grid_content: grid_content,
-  attributes: global.cards.image_grid.attributes
+  attributes: global.card.image_grid.attributes
 } %}

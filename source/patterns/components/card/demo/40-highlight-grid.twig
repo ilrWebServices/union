@@ -1,7 +1,7 @@
 <h3>Highlight grid</h3>
 
 {% set rendered_cards = '' %}
-{% for card in demo.highlight_grid.cards %}
+{% for card in global.card.highlights.cards %}
   {% set rendered_content %}
     <div class="cu-card__icon">
       {% include "@union/_icon.twig" with {
@@ -27,6 +27,6 @@
 <div style="background: #ccc; padding: 3rem;">
   {% include '@union/_grid.twig' with {
     grid_content: rendered_cards,
-    attributes: demo.highlight_grid.attributes
+    attributes: global.card.highlights.grid_attributes
   } %}
 </div>

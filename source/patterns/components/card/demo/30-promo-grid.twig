@@ -1,7 +1,7 @@
 <h3>Promo grid</h3>
 
 {% set rendered_cards = '' %}
-{% for card in demo.promo_grid.cards %}
+{% for card in global.card.promos.cards %}
   {% set rendered_card %}
     {% set rendered_media %}
       {% if card.img %}
@@ -13,6 +13,16 @@
     {% endset %}
 
     {% set rendered_content %}
+      {% if card.icon %}
+        <div class="cu-card__icon">
+          {% include "@union/_icon.twig" with {
+            attributes: card.icon.attributes,
+            title: card.icon.title,
+            src: card.icon.src,
+            label: card.icon.label
+          } only %}
+        </div>
+      {% endif %}
       {{ card.content }}
       {% if card.button %}
         <div class="cu-card__button">
@@ -38,5 +48,5 @@
 
 {% include '@union/_grid.twig' with {
   grid_content: rendered_cards,
-  attributes: { class: 'cu-grid--2col cu-grid--gapless' }
+  attributes: global.card.promos.grid_attributes
 } %}
