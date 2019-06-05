@@ -22,6 +22,8 @@
     margin-bottom: var(--cu-vr0); }
     .cu-card__media :first-child {
       width: 100%; }
+    .cu-card__media .cu-card__media-link {
+      display: block; }
   .cu-card__heading {
     font-size: var(--cu-ms5);
     font-weight: 300;

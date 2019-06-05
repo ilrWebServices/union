@@ -10,10 +10,12 @@
 {% set grid_content %}
   {% for card in global.card.image_grid.cards %}
     {% set rendered_media %}
+      <a class="cu-card__media-link" href="https://www.instagram.com/cornellilr/">
       {% include '@union/_image.twig' with {
         img_src: card.img.src,
         img_alt: card.img.alt
       } only %}
+      </a>
     {% endset %}
     {% set rendered_content %}
       {% if card.icon %}

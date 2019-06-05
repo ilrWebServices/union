@@ -16,6 +16,10 @@
     :first-child {
       width: 100%;
     }
+
+    .cu-card__media-link {
+      display: block;
+    }
   }
 
   &__heading {
