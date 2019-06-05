@@ -99,3 +99,27 @@ demo:
         attributes:
           class: 'cu-button--overlay'
         text: Student Life
+    promo_banner:
+      label: Promo banner
+      overflow_demo: true
+      attributes:
+        class: 'cu-card--promo cu-card--promo-with-media'
+      icon:
+        title: Cornell University
+        attributes:
+          class: 'cu-icon--cornell-seal'
+        src: '/images/cornell-seal.svg'
+      img:
+        src: 'https://placeimg.com/1360/656/nature'
+        alt: 'Cornell is where you want to be'
+      content: |
+        <h2 class="cu-card__heading">Visit Cornell ILR</h2>
+        <p>The ILR School and Cornell University admissions information programs and tours are offered throughout the year.</p>
+        <a class="cu-button--overlay cu-button" href="">Visit Us</a>
+        <ul class="cu-card__fact-list">
+          <li class="cu-card__fact">700<span class="cu-card__fact-label">Acre Campus</span></li>
+          <li class="cu-card__fact">4000+<span class="cu-card__fact-label">Courses</span></li>
+          <li class="cu-card__fact">1000+<span class="cu-card__fact-label">Student Organizations</span></li>
+          <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
+          <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
+        </ul>
