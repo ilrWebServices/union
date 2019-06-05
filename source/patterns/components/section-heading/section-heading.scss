@@ -10,7 +10,7 @@
 
   &__subheading {
     font-size: var(--cu-ms-1);
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 0;
   }
 
@@ -33,10 +33,6 @@
     position: relative;
     text-align: center;
     padding-top: calc(#{$frame-thickness} + #{$frame-height});
-
-    .cu-section-heading__heading {
-      margin-bottom: var(--cu-vr-2);
-    }
 
     &::before,
     &::after {

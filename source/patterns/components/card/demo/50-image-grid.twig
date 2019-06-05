@@ -1,5 +1,12 @@
 <h3>Image grid</h3>
 
+{% include '@union/_section-heading.twig' with {
+  attributes: { class: 'cu-section-heading--framed' },
+  heading: 'Campus Life',
+  subheading: 'A view of student life at Cornell University\'s ILR School in Ithaca, NY.',
+  link: { url: 'https://www.instagram.com/cornellilr/', text: 'cornellilr' }
+} only %}
+
 {% set grid_content %}
   {% for card in global.card.image_grid.cards %}
     {% set rendered_media %}

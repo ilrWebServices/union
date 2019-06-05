@@ -3,10 +3,10 @@
 {% set attributes = attributes.addClass(['cu-section-heading']) %}
 
 <div{{ attributes}}>
+  <h2 class="cu-section-heading__heading">{{ heading }}</h2>
   {% if subheading %}
     <h3 class="cu-section-heading__subheading">{{ subheading }}</h3>
   {% endif %}
-  <h2 class="cu-section-heading__heading">{{ heading }}</h2>
   {% if link %}
     <a href="{{ link.url }}" class="cu-section-heading__link">{{ link.text }}</a>
   {% endif %}
