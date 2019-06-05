@@ -156,6 +156,40 @@
     }
   }
 
+  &--hover-overlay {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    .cu-card__content,
+    .cu-card__media {
+      grid-row: 1;
+      grid-column: 1;
+      color: white;
+    }
+
+    .cu-card__media {
+      margin: 0;
+      z-index: 1;
+    }
+
+    .cu-card__content {
+      background: rgba(179, 27, 27, 0.75);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: var(--cu-vr2);
+    }
+
+    &:hover {
+      .cu-card__content {
+        z-index: 2;
+      }
+    }
+  }
+
   /*----------  Portrait (2 rows tall)  ----------*/
   &--portrait {
     grid-row-start: span 2; // Must be part of a grid

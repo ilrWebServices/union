@@ -62,6 +62,19 @@ demo:
         attributes:
           class: 'cu-button--overlay'
         text: 'Visit Us'
+    hover_overlay:
+      label: Hover overlay
+      attributes:
+        class: 'cu-card--hover-overlay'
+      img:
+        src: 'https://placeimg.com/450/450/nature'
+        alt: 'Hug a tree today'
+      content: |
+        <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+      button:
+        attributes:
+          class: 'cu-button--overlay'
+        text: 'View '
     promo_light:
       label: Promo light
       attributes:
