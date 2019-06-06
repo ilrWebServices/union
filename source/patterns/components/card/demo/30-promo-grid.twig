@@ -2,6 +2,7 @@
 
 {% set rendered_cards = '' %}
 {% for card in global.card.promos.cards %}
+
   {% set rendered_card %}
     {% set rendered_media %}
       {% if card.img %}
@@ -16,10 +17,11 @@
       {% if card.icon %}
         <div class="cu-card__icon">
           {% include "@union/_icon.twig" with {
-            attributes: card.icon.attributes,
             title: card.icon.title,
-            src: card.icon.src,
-            label: card.icon.label
+            icon: card.icon.icon,
+            size: card.icon.size,
+            label: card.icon.label,
+            attributes: card.icon.attributes
           } only %}
         </div>
       {% endif %}

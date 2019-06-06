@@ -143,10 +143,9 @@ global:
           attributes:
             class: 'cu-card--promo'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: News Phone
+            icon: news-phone
+            size: '1.5em'
             label: ILR News
           content: |
             <h2 class="cu-card__heading">New ILR Site Expands Cornell Impact in NYC</h2>
@@ -183,10 +182,9 @@ global:
           attributes:
             class: 'cu-card--pinned cu-card--light cu-card--promo'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: News Phone
+            icon: news-phone
+            size: '1.5em'
             label: Alumni News
           content: |
             <h2 class="cu-card__heading">Sponsor an ILR Internship</h2>
@@ -197,15 +195,13 @@ global:
           attributes:
             class: 'cu-card--promo'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: Speech Bubble
+            icon: speech-bubble
+            size: '1.5em'
             label: Did You Know?
           content: |
             <h2 class="cu-card__heading">Cornell University Offers Over 4000 Courses</h2>
             <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad. Vim ea copiosae vivendum forensibus.</p>
-
         -
           attributes:
             class: 'cu-card--portrait cu-card--pinned cu-card--promo cu-card--promo-with-media'
@@ -213,11 +209,12 @@ global:
             src: 'https://placeimg.com/680/1200/people'
             alt: 'Come join the ILR party'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: Student
+            icon: student
+            size: '1.5em'
             label: Student Spotlight
+            attributes:
+              class: 'cu-icon--color-light'
           content: |
             <h2 class="cu-card__heading">Andrea Sanders</h2>
             <h3 class="cu-card__subheading">Undergradute Majoring in Management</h3>
@@ -243,10 +240,9 @@ global:
           attributes:
             class: 'cu-card--pinned cu-card--promo'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: Speech Bubble
+            icon: speech-bubble
+            size: '1.5em'
             label: Did You Know?
           content: |
             <p class="cu-card__heading cu-card__heading--fact">There are over 11,000 ILR Alumni working as Leaders at Fortune 500 Companies.</p>
@@ -261,9 +257,8 @@ global:
             class: 'cu-card--highlight'
           icon:
             title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            icon: tower
+            size: '2em'
           content: |
             <h2 class="cu-card__heading">Undergraduate</h2>
             <p>The ILR major focuses on the study of people and policies in the workplace. <a href="#">Explore</a> our wide range of academic interests today.</p>
@@ -271,10 +266,9 @@ global:
           attributes:
             class: 'cu-card--highlight'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: Mortarboard
+            icon: mortarboard
+            size: '2em'
           content: |
             <h2 class="cu-card__heading">Graduate</h2>
             <p>From students straight out of college, to professionals working for over 20 years &mdash; <a href="#">we have your program</a>.</p>
@@ -282,10 +276,9 @@ global:
           attributes:
             class: 'cu-card--highlight'
           icon:
-            title: Cornell University Tower
-            attributes:
-              class: 'cu-icon--tower'
-            src: '/images/tower.svg'
+            title: Handshake
+            icon: handshake
+            size: '2em'
           content: |
             <h2 class="cu-card__heading">Professional</h2>
             <p>You can choose from a wide range of professional and academic programs, grounded in practice and focused on <a href="#">real-world application.</a></p>

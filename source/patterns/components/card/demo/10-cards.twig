@@ -19,9 +19,11 @@
     {% if card.icon %}
       <div class="cu-card__icon">
         {% include "@union/_icon.twig" with {
-          attributes: card.icon.attributes,
           title: card.icon.title,
-          src: card.icon.src
+          icon: card.icon.icon,
+          size: card.icon.size,
+          label: card.icon.label,
+          attributes: card.icon.attributes
         } only %}
       </div>
     {% endif %}

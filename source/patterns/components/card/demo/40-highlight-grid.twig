@@ -5,9 +5,9 @@
   {% set rendered_content %}
     <div class="cu-card__icon">
       {% include "@union/_icon.twig" with {
-        attributes: {class: 'cu-icon--tower'},
-        title: 'Cornell University Tower',
-        src: 'images/tower.svg'
+        title: card.icon.title,
+        icon: card.icon.icon,
+        size: card.icon.size
       } only %}
     </div>
     {{ card.content }}
