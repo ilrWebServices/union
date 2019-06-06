@@ -20,6 +20,9 @@ demo:
       size: 3em
       label: 'Shake shake shake'
     -
+      title: Instagram
+      icon: 'instagram'
+    -
       title: Mortarboard
       icon: 'mortarboard'
     -
