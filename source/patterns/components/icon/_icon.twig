@@ -1,9 +1,12 @@
 {{ attach_library('union_organizer/icon') }}
 
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-icon']) %}
-{% set icon_file = union_file(src) %}
+{% set attributes = attributes.addClass(['cu-icon', 'cu-icon--'~icon]) %}
 
 <div{{ attributes }}>
-  {% include icon_file %}
+  <svg class="cu-icon__image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <title>{{ title }} Icon</title>
+    <use href="{{ union_file('/images/icons.svg') }}#{{ icon }}" />
+  </svg>
+  {% if label %}<div class="cu-icon__label">{{ label }}</div>{% endif %}
 </div>

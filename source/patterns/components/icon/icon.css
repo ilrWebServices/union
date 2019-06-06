@@ -1,9 +1,21 @@
 .cu-icon {
-  display: inline-block; }
-  .cu-icon--tower {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .cu-icon .cu-icon__image {
+    max-width: 10em; }
+  .cu-icon--inline {
+    display: inline-flex;
+    flex-direction: row; }
+  .cu-icon--inline-centered {
+    flex-direction: row;
+    justify-content: center; }
+  .cu-icon--tower .cu-icon__image {
     width: 22px; }
-  .cu-icon--cornell-seal {
+  .cu-icon--handshake .cu-icon__image {
+    width: 2em; }
+  .cu-icon--cornell-seal .cu-icon__image {
     max-width: 73px; }
-  .cu-icon--red {
+  .cu-icon--red .cu-icon__image {
     fill: #b31b1b; }
 /*# sourceMappingURL=icon.css.map */
