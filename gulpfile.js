@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const sass = require("gulp-sass");
 const concat = require('gulp-concat');
 const livereload = require("gulp-livereload");
+const svgstore = require('gulp-svgstore');
 
 var sass_config = {
   outputStyle: "nested"
@@ -31,13 +32,21 @@ function concatScripts() {
     .pipe(gulp.dest('source/js/', { sourcemaps: '.' }));
 }
 
+function concatSVGSprites() {
+  return gulp
+    .src('source/images/icons/*.svg')
+    .pipe(svgstore())
+    .pipe(gulp.dest('source/images/'));
+}
+
 function livereloadStartServer(done) {
   livereload.listen({ 'port': 35778 });
   done();
 }
 
 function watchFiles(done) {
-  gulp.watch('source/patterns/**/*.scss', allTasks);
+  gulp.watch('source/patterns/**/*.scss', allStyles);
+  gulp.watch('source/images/icons/*.svg', concatSVGSprites);
 
   var lr_watcher = gulp.watch([
     'public/css/union.css'
@@ -47,7 +56,7 @@ function watchFiles(done) {
 }
 
 const allStyles = gulp.parallel(componentStyles, concatComponentStyles);
-const allTasks = gulp.parallel(allStyles, concatScripts);
+const allTasks = gulp.parallel(allStyles, concatScripts, concatSVGSprites);
 const watch = gulp.parallel(watchFiles, livereloadStartServer);
 
 // Export gulp tasks.
