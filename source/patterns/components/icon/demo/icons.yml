@@ -3,18 +3,21 @@ demo:
     -
       title: Cornell University Seal
       icon: 'cornell-seal'
+      size: 73px
     -
       title: Cornell University Tower
       icon: 'tower'
+      size: 18px
       label: 'In the news'
       attributes:
-        class: 'cu-icon--red'
+        class: 'cu-icon--color-brand'
     -
       title: Check Circle
       icon: 'check-circle'
     -
       title: Handshake
       icon: 'handshake'
+      size: 3em
       label: 'Shake shake shake'
     -
       title: Mortarboard

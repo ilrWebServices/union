@@ -5,13 +5,13 @@
   flex-direction: column;
   align-items: center;
 
-  .cu-icon__image {
-    max-width: 10em;
-  }
-
   &--inline {
     display: inline-flex;
     flex-direction: row;
+
+    .cu-icon__image {
+      margin-right: var(--cu-ps0);
+    }
   }
 
   &--inline-centered {
@@ -19,19 +19,26 @@
     justify-content: center;
   }
 
-  &--tower .cu-icon__image {
-    width: 22px;
+  &--color-light {
+    color: $color-light;
+
+    .cu-icon__image {
+      fill: $color-light;
+    }
   }
 
-  &--handshake .cu-icon__image {
-    width: 2em;
+  &--color-brand {
+    .cu-icon__image {
+      fill: $color-brand;
+    }
   }
+}
 
-  &--cornell-seal .cu-icon__image {
-    max-width: 73px;
-  }
+.cu-icon__image {
+  max-width: 10em;
+  fill: $color-text;
 
-  &--red .cu-icon__image {
-    fill: $cornell-red;
+  &--cornell-seal {
+    min-width: 73px;
   }
 }

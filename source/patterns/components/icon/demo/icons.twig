@@ -1,9 +1,10 @@
 {% for icon in demo.icons %}
-  <h3>{{ icon.title }}</h3>
+  <h3 style="margin-top: 2rem">{{ icon.title }}</h3>
 
   {% include "@union/_icon.twig" with {
     title: icon.title,
     icon: icon.icon,
+    size: icon.size,
     label: icon.label,
     attributes: icon.attributes
   } only %}
