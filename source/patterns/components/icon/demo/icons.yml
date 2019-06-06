@@ -29,6 +29,13 @@ demo:
       title: Newsletter
       icon: 'newsletter'
     -
+      title: Newsletter Inline
+      icon: 'newsletter'
+      size: 2em
+      label: Sign up for our newsletter!
+      attributes:
+        class: 'cu-icon--inline'
+    -
       title: Speech Bubble
       icon: 'speech-bubble'
     -
