@@ -20,7 +20,7 @@
   .cu-card__media {
     order: 1;
     margin-bottom: var(--cu-vr0); }
-    .cu-card__media :first-child {
+    .cu-card__media .cu-image, .cu-card__media .cu-video {
       width: 100%; }
     .cu-card__media .cu-card__media-link {
       display: block; }
@@ -61,7 +61,7 @@
       width: 100%;
       height: 100%;
       z-index: 1; }
-      .cu-card--promo-with-media .cu-card__media :first-child {
+      .cu-card--promo-with-media .cu-card__media > :first-child {
         object-fit: cover;
         width: 100%;
         height: 100%; }
@@ -71,12 +71,12 @@
       z-index: 3; }
     .cu-card--promo-with-media .cu-card__fact-list {
       list-style-type: none;
-      justify-content: space-between;
-      align-items: center;
       padding: 0; }
       @media (min-width: 64rem) {
         .cu-card--promo-with-media .cu-card__fact-list {
-          display: flex; } }
+          display: flex;
+          justify-content: space-between;
+          align-items: stretch; } }
     .cu-card--promo-with-media .cu-card__fact {
       font-size: var(--cu-ms5);
       font-weight: 300;
@@ -97,7 +97,7 @@
         display: block; }
   .cu-card--pinned .cu-card__content {
     justify-content: flex-end; }
-    .cu-card--pinned .cu-card__content :first-child {
+    .cu-card--pinned .cu-card__content > :first-child {
       margin-bottom: auto; }
   .cu-card--centered .cu-card__content {
     text-align: center;
@@ -134,7 +134,7 @@
       border-radius: 2px; }
     .cu-card--highlight:hover, .cu-card--highlight-active {
       color: white; }
-      .cu-card--highlight:hover .cu-icon, .cu-card--highlight-active .cu-icon {
+      .cu-card--highlight:hover .cu-icon__image, .cu-card--highlight-active .cu-icon__image {
         fill: #fff; }
       .cu-card--highlight:hover a, .cu-card--highlight-active a {
         color: #fff;
