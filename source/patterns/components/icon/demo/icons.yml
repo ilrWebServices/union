@@ -9,3 +9,25 @@ demo:
       label: 'In the news'
       attributes:
         class: 'cu-icon--red'
+    -
+      title: Check Circle
+      icon: 'check-circle'
+    -
+      title: Handshake
+      icon: 'handshake'
+      label: 'Shake shake shake'
+    -
+      title: Mortarboard
+      icon: 'mortarboard'
+    -
+      title: News Phone
+      icon: 'news-phone'
+    -
+      title: Newsletter
+      icon: 'newsletter'
+    -
+      title: Speech Bubble
+      icon: 'speech-bubble'
+    -
+      title: Student
+      icon: 'student'
