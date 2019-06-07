@@ -226,16 +226,24 @@ global:
         -
           attributes:
             class: 'cu-card--promo cu-card--promo-with-media'
+          icon:
+            title: Calendar
+            icon: calendar
+            size: '1.5em'
+            label: Upcoming Event
+            attributes:
+              class: 'cu-icon--color-light'
           img:
-            src: 'https://placeimg.com/680/600/nature'
-            alt: 'Hug a tree today'
+            src: 'https://placeimg.com/680/600/arch'
+            alt: 'Probably a building'
           content: |
-            <h2 class="cu-card__heading">700 Acres</h2>
-            <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
+            <h2 class="cu-card__heading">A New World of Work</h2>
+            <h3 class="cu-card__subheading">1/30/20</h3>
+            <p>Join the conversation of eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
           button:
             attributes:
               class: 'cu-button--overlay'
-            text: 'Visit Us'
+            text: 'View Event'
         -
           attributes:
             class: 'cu-card--pinned cu-card--promo'
