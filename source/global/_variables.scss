@@ -4,12 +4,18 @@
 $black: #222; // ILR Brand black
 $white: #fff;
 $cornell-red: #b31b1b;
+$gray-light: #efefef;
 
 // Color usage
 $color-text: $black;
+$color-light: $white;
+$color-brand: $cornell-red;
 $color-bg-body: $white;
 $color-alert: $cornell-red;
 $color-border: #ccc;
+$color-bg-card--default: transparent;
+$color-bg-card--light: $white;
+$color-bg-card--medium: $gray-light;
 
 // Color status indictors
 $color-info: #5bc0de !default;
@@ -26,9 +32,11 @@ $color-error--dark: darken($color-error, 20%) !default;
 $color-error--light: lighten($color-error, 33%) !default;
 
 // Fonts and typography
-$base-font-size-percentage: 125% !default;
+$base-font-size-percentage: 100% !default;
 $base-font-size: 1rem !default;
 $base-line-height: 1.4 !default;
+$reduced-line-height: 1.2 !default;
+$heading-line-height: 1.2 !default;
 $ps-base: 1em !default;
 $vr-base: $base-font-size !default;
 

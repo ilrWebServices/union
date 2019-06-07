@@ -1,0 +1,45 @@
+{% set grid_content %}
+  {% for i in 1..6 %}
+    {% include '@union/_message.twig' with {
+      message: "Grid item",
+      attributes: {class: 'grid-item'}
+    }%}
+  {% endfor %}
+{% endset %}
+
+<h3>Two Column</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--2col'}
+} %}
+
+<h3>Two Column Gapless</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--2col cu-grid--gapless'}
+} %}
+
+<h3>Two by One</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--2-1'}
+} %}
+
+<h3>Two by One Lead</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--2-1-lead'}
+} %}
+
+<h3>Three Column</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--3col'}
+} %}
+
+
+<h3>Four Column Gapless</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--4col cu-grid--gapless'}
+} %}

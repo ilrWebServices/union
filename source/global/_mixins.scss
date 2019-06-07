@@ -31,3 +31,30 @@
   clip: rect(1px, 1px, 1px, 1px);
   word-wrap: normal;
 }
+
+@mixin overlay($color: #555, $opacity: 0.5, $z-index: 2) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($color, $opacity);
+    z-index: $z-index;
+  }
+}
+
+@mixin set-heading($size: 2) {
+  font-size: var(--cu-ms#{7 - $size});
+  font-weight: 300;
+  line-height: var(--cu-heading-line-height, #{$heading-line-height});
+}
+
+@mixin p-text() {
+  font-size: var(--cu-ms0);
+  margin-bottom: var(--cu-vr0);
+  font-weight: 400;
+}

@@ -1,0 +1,46 @@
+@import './source/global/global';
+
+.cu-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--cu-vr0);
+
+  &--inline {
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 0;
+
+    .cu-icon__image {
+      margin-right: var(--cu-ps0);
+    }
+  }
+
+  &--inline-centered {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &--color-light {
+    color: $color-light;
+
+    .cu-icon__image {
+      fill: $color-light;
+    }
+  }
+
+  &--color-brand {
+    .cu-icon__image {
+      fill: $color-brand;
+    }
+  }
+}
+
+.cu-icon__image {
+  fill: $color-text;
+  margin-bottom: var(--cu-vr-2);
+
+  &--cornell-seal {
+    min-width: 73px;
+  }
+}

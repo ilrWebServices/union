@@ -1,0 +1,27 @@
+.cu-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--cu-vr0); }
+  .cu-icon--inline {
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 0; }
+    .cu-icon--inline .cu-icon__image {
+      margin-right: var(--cu-ps0); }
+  .cu-icon--inline-centered {
+    flex-direction: row;
+    justify-content: center; }
+  .cu-icon--color-light {
+    color: #fff; }
+    .cu-icon--color-light .cu-icon__image {
+      fill: #fff; }
+  .cu-icon--color-brand .cu-icon__image {
+    fill: #b31b1b; }
+
+.cu-icon__image {
+  fill: #222;
+  margin-bottom: var(--cu-vr-2); }
+  .cu-icon__image--cornell-seal {
+    min-width: 73px; }
+/*# sourceMappingURL=icon.css.map */

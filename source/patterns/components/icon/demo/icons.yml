@@ -1,0 +1,52 @@
+demo:
+  icons:
+    -
+      title: Calendar
+      icon: 'calendar'
+    -
+      title: Cornell University Seal
+      icon: 'cornell-seal'
+      size: 73px
+    -
+      title: Cornell University Tower
+      icon: 'tower'
+      size: 18px
+      label: 'In the news'
+      attributes:
+        class: 'cu-icon--color-brand'
+    -
+      title: Check Circle
+      icon: 'check-circle'
+    -
+      title: Drupal
+      icon: 'drupal'
+    -
+      title: Handshake
+      icon: 'handshake'
+      size: 3em
+      label: 'Shake shake shake'
+    -
+      title: Instagram
+      icon: 'instagram'
+    -
+      title: Mortarboard
+      icon: 'mortarboard'
+    -
+      title: News Phone
+      icon: 'news-phone'
+    -
+      title: Newsletter
+      icon: 'newsletter'
+    -
+      title: Newsletter Inline
+      icon: 'newsletter'
+      size: 2em
+      label: Sign up for our newsletter!
+      attributes:
+        class: 'cu-icon--inline'
+    -
+      title: Speech Bubble
+      icon: 'speech-bubble'
+    -
+      title: Student
+      icon: 'student'

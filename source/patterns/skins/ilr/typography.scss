@@ -2,28 +2,82 @@
 
 html {
   font-size: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
-  line-height: var(--cu-vr1); // @see vertical-rhythm.scss
+  line-height: var(--cu-base-line-height, #{$base-line-height});
+}
+
+:root {
+  @include breakpoint(md) {
+    --cu-base-font-size-percentage: 113%;
+    --cu-ms-ratio: var(--minor-third);
+    --cu-base-line-height: 1.6;
+  }
 }
 
 h1,
 h2,
 h3 {
   font-weight: 300;
-  line-height: 1.2;
+  line-height: var(--cu-heading-line-height, #{$heading-line-height});
 }
 
 @for $i from 1 through 6 {
   h#{$i} {
-    $h-size: 7 - $i;
-    font-size: var(--cu-ms#{$h-size});
+    @include set-heading($i);
+
+    margin-top: 0;
 
     aside & {
-      font-size: var(--cu-ms#{$h-size - 2});
+      @include set-heading($i + 2);
     }
   }
 }
 
+/*----------  Tag-based styles  ----------*/
 p {
-  font-size: var(--cu-ms0);
-  margin-bottom: var(--cu-vr0);
+  @include p-text;
+
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+
+  &.underlined {
+    text-decoration: underline;
+  }
+}
+
+/*----------  Class-based sizing  ----------*/
+.cu-text--xxxl {
+  @include set-heading(0);
+}
+
+.cu-text--xxl {
+  @include set-heading(1);
+}
+
+.cu-text--xl {
+  @include set-heading(2);
+}
+
+.cu-text--lg {
+  @include set-heading(3);
+}
+
+.cu-text--md {
+  font-size: var(--cu-ms1);
+}
+
+.cu-text--reg {
+  @include p-text;
+}
+
+.cu-text--sm,
+small {
+  font-size: var(--cu-ms-1);
+}
+
+.cu-text--xs {
+  font-size: var(--cu-ms-2);
 }

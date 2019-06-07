@@ -1,0 +1,4 @@
+css:
+  section-heading.css: {}
+dependencies:
+  - base
