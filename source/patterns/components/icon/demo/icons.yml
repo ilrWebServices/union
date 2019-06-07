@@ -1,6 +1,9 @@
 demo:
   icons:
     -
+      title: Calendar
+      icon: 'calendar'
+    -
       title: Cornell University Seal
       icon: 'cornell-seal'
       size: 73px
@@ -14,6 +17,9 @@ demo:
     -
       title: Check Circle
       icon: 'check-circle'
+    -
+      title: Drupal
+      icon: 'drupal'
     -
       title: Handshake
       icon: 'handshake'
