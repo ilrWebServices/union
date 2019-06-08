@@ -1,0 +1,7 @@
+{{ attach_library('union_organizer/message') }}
+{% set status = status|default('info') %}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass('cu-message', 'cu-message--'~status)%}
+<div{{attributes}}>
+  <p class="cu-message__text">{{ message }}</p>
+</div>
