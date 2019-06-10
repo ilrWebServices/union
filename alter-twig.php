@@ -28,7 +28,7 @@ function addCustomExtension(\Twig_Environment &$env, $config) {
    * @todo Implement this for patternlab integration.
    */
   $env->addFunction(new \Twig_SimpleFunction('union_file', function($filepath) {
-    return $filepath;
+    return '../..' . $filepath;
   }));
 
   /**
