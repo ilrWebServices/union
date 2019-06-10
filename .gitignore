@@ -4,3 +4,5 @@ composer.lock
 /public/*
 /dependencyGraph.json
 /source/css/
+/source/_meta/_00-head.mustache
+/source/_meta/_01-foot.mustache
