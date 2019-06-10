@@ -1,5 +1,5 @@
 demo:
-  ilr_lockup: '/images/ilr-cornell-lockup.svg'
-  ilr_wordmark: '/images/ilr-wordmark.svg'
-  ilr_nickname: '/images/ilr-nickname.svg'
+  ilr_lockup: '../../images/ilr-cornell-lockup.svg'
+  ilr_wordmark: '../../images/ilr-wordmark.svg'
+  ilr_nickname: '../../images/ilr-nickname.svg'
 
