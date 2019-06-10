@@ -3,7 +3,7 @@
 # This script will build the static patternlab styleguide and commit it into the
 # `gh-pages` branch that can be deployed to the main repo for viewing at
 # https://ilrwebservices.github.io/union/. The `gh-pages` branch is an orphan
-# that is NOT be part of the main branch history.
+# that is NOT part of the main branch history.
 
 # While this script is as non-destructive as possible, generating the build
 # in a dedicated worktree, it will still affect your repository. It is
@@ -16,7 +16,6 @@
 # - git (2.9 or later)
 # - composer
 # - npm
-# - trash (https://github.com/ali-rantakari/trash)
 
 # Usage:
 # $ ./build.sh [COMMIT HASH]
@@ -46,12 +45,16 @@ then
   exit 1
 fi
 
+# Configure git commit author info.
+export GIT_AUTHOR_NAME="Build Script"
+export GIT_AUTHOR_EMAIL="ilrweb@cornell.edu"
+export GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
+export GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+
 BUILD_DIR="/tmp/build-$COMMIT_HASH"
 BUILD_BRANCH="build-$COMMIT_HASH"
 BUILD_TAG="build-$COMMIT_HASH"
 COMMIT_HASH_BRANCHES=`git branch --points-at $COMMIT_HASH`
-#export GIT_AUTHOR_NAME="Build Script"
-#export GIT_AUTHOR_EMAIL="ilrweb@cornell.edu"
 
 # Create a new worktree directory for the build, and do the remaining tasks
 # there. This will create a new branch that can be removed later.
@@ -62,9 +65,8 @@ cd $BUILD_DIR
 function finish {
   echo
   echo "Cleaning up..."
-  trash $BUILD_DIR
   cd -
-  git worktree prune -v
+  git worktree remove --force $BUILD_DIR
   git branch -D $BUILD_BRANCH
 }
 
@@ -86,16 +88,15 @@ EOT
 
 # Add and commit all build assets.
 git add .
-git commit --author="Build Script <ilrweb@cornell.edu>" --no-verify -m "Build of $COMMIT_HASH" -m "$COMMIT_HASH_BRANCHES"
+git commit --no-verify -m "Build of $COMMIT_HASH" -m "$COMMIT_HASH_BRANCHES"
 
 # Filter the branch to move the `public/` directory contents to the repo root.
 git filter-branch -f --prune-empty --subdirectory-filter public $BUILD_BRANCH
 
 # Merge the filtered branch into `gh-pages`.
 git checkout gh-pages
-git merge --no-commit --allow-unrelated-histories --strategy-option theirs -m "Merge $BUILD_BRANCH" $BUILD_BRANCH
-git commit --author="Build Script <ilrweb@cornell.edu>" --no-verify -m "Build of $COMMIT_HASH" -m "$COMMIT_HASH_BRANCHES"
+git merge --allow-unrelated-histories --strategy-option theirs -m "Merge build of $BUILD_BRANCH" $BUILD_BRANCH
 
-echo 'gh-pages branch updated!'
+echo 'gh-pages branch updated! Push to github to deploy (e.g. `git push origin gh-pages`).'
 
 exit 0
