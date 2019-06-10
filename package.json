@@ -36,7 +36,7 @@
   },
   "scripts": {
     "setup": "npm install && composer install",
-    "start": "concurrently \"gulp\" \"npm:pl:serve\"",
+    "start": "npm run build && concurrently \"gulp\" \"npm:pl:serve\"",
     "build": "npm run union:build && npm run pl:build",
     "pl:build": "patternlab build --config ./patternlab-config.json",
     "union:build": "gulp all",
