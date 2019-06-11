@@ -33,10 +33,14 @@ $color-error--light: lighten($color-error, 33%) !default;
 
 // Fonts and typography
 $base-font-size-percentage: 100% !default;
+$base-font-family: Helvetica, Arial, sans-serif !default;
 $base-font-size: 1rem !default;
+$base-font-weight: 400 !default;
 $base-line-height: 1.4 !default;
 $reduced-line-height: 1.2 !default;
-$heading-line-height: 1.2 !default;
+$base-heading-line-height: 1.2 !default;
+$base-heading-font-family: $base-font-family !default;
+$base-heading-font-weight: 300 !default;
 $ps-base: 1em !default;
 $vr-base: $base-font-size !default;
 
