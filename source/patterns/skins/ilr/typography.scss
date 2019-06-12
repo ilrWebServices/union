@@ -1,76 +1,103 @@
 @import './source/global/global';
 
-html {
-  font-size: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
-  line-height: var(--cu-base-line-height, #{$base-line-height});
-}
 
+/*----------  CSS Variables  ----------*/
 :root {
+  --cu-font-family: var(--cu-base-font-family, #{$base-font-family});
+  --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
+  --cu-line-height: var(--cu-base-line-height, #{$base-line-height});
+  --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
+  --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{#{$base-heading-font-weight}});
+  --cu-heading-line-weight: var(--cu-base-heading-line-height, #{#{$base-heading-line-height}});
+  --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{#{$base-heading-font-weight}});
+  --cu-font-size-percentage: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
+  --cu-text-xxxl: var(--cu-ms6);
+  --cu-text-xxl: var(--cu-ms5);
+  --cu-text-xl: var(--cu-ms4);
+  --cu-text-lg: var(--cu-ms3);
+  --cu-text-med: var(--cu-ms2);
+  --cu-text-reg: var(--cu-ms0);
+
   @include breakpoint(md) {
-    --cu-base-font-size-percentage: 113%;
+    --cu-font-size-percentage: 113%;
     --cu-ms-ratio: var(--minor-third);
-    --cu-base-line-height: 1.6;
+    --cu-current-line-height: 1.6;
   }
 }
 
-h1,
-h2,
-h3 {
-  font-weight: 300;
-  line-height: var(--cu-heading-line-height, #{$heading-line-height});
+
+html {
+  font-size: var(--cu-font-size-percentage);
+  line-height: var(--cu-line-height);
+  font-weight: var(--cu-font-weight);
 }
 
-@for $i from 1 through 6 {
-  h#{$i} {
-    @include set-heading($i);
+[class*='cu-'] {
+  font-size: var(--cu-current-font-size, inherit);
+  font-weight: var(--cu-current-font-weight, inherit);
+  line-height: var(--cu-current-line-height, inherit);
 
+  @for $i from 1 through 6 {
+    h#{$i} {
+      --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
+      --cu-current-font-weight: var(--cu-heading-font-weight);
+      margin-top: 0;
+    }
+  }
+
+  /*----------  Tag-based styles  ----------*/
+  p {
     margin-top: 0;
+  }
 
-    aside & {
-      @include set-heading($i + 2);
+  a {
+    text-decoration: none;
+    color: $color-link;
+
+    &.underlined {
+      text-decoration: underline;
     }
   }
 }
 
-/*----------  Tag-based styles  ----------*/
-p {
-  @include p-text;
-
-  margin-top: 0;
-}
-
-a {
-  text-decoration: none;
-  color: $color-link;
-
-  &.underlined {
-    text-decoration: underline;
-  }
-}
-
 /*----------  Class-based sizing  ----------*/
+[class*='cu-text'] {
+  font-family: var(--cu-font-family);
+  font-weight: var(--cu-font-weight);
+  line-height: var(--cu-line-height);
+  font-size: var(--font-size);
+}
+
+[class*='cu-text--x'] {
+  --cu-font-family: var(--cu-heading-font-family);
+  --cu-font-weight: var(--cu-heading-font-weight);
+  --cu-line-height: var(--cu-heading-line-height);
+  --cu-font-size: var(--current-heading-size);
+  font-size: var(--current-heading-size);
+}
+
 .cu-text--xxxl {
-  @include set-heading(0);
+  --current-heading-size: var(--cu-text-xxxl);
 }
 
 .cu-text--xxl {
-  @include set-heading(1);
+  --current-heading-size: var(--cu-text-xxl);
 }
 
 .cu-text--xl {
-  @include set-heading(2);
+  --current-heading-size: var(--cu-text-xl);
 }
 
 .cu-text--lg {
-  @include set-heading(3);
+  --current-heading-size: var(--cu-text-lg);
 }
 
 .cu-text--md {
-  font-size: var(--cu-ms1);
+  --current-heading-size: var(--cu-text-med);
 }
 
 .cu-text--reg {
-  @include p-text;
+  font-size: var(--cu-base-font-size);
 }
 
 .cu-text--sm,

@@ -25,14 +25,14 @@
     .cu-card__media .cu-card__media-link {
       display: block; }
   .cu-card__heading {
-    font-size: var(--cu-ms5);
-    font-weight: 300;
-    line-height: var(--cu-heading-line-height, 1.2); }
+    --cu-current-font-size: var(--cu-text-xxl);
+    --cu-current-line-height: var(--cu-heading-line-height);
+    --cu-current-font-weight: var(--cu-heading-font-weight);
+    --cu-font-family: var(--cu-heading-font-family); }
   .cu-card__subheading {
-    font-size: var(--cu-ms0);
-    margin-bottom: var(--cu-vr0);
-    font-weight: 400;
-    line-height: var(--cu-reduced-line-height, 1.2); }
+    --cu-current-font-size: var(--cu-text-reg);
+    --cu-current-line-height: var(--cu-reduced-line-height, 1.2);
+    --cu-current-font-weight: var(--cu-font-weight); }
   .cu-card--promo {
     background: #efefef; }
     .cu-card--promo .cu-card__content {
@@ -78,9 +78,7 @@
           justify-content: space-between;
           align-items: stretch; } }
     .cu-card--promo-with-media .cu-card__fact {
-      font-size: var(--cu-ms5);
-      font-weight: 300;
-      line-height: var(--cu-heading-line-height, 1.2);
+      --cu-current-font-size: var(--cu-text-lg);
       padding: var(--cu-vr0);
       border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
       .cu-card--promo-with-media .cu-card__fact:last-child {
@@ -91,9 +89,8 @@
           border-right: 2px solid rgba(255, 255, 255, 0.2);
           padding: 0 var(--cu-vr2); } }
       .cu-card--promo-with-media .cu-card__fact-label {
-        font-size: var(--cu-ms0);
-        margin-bottom: var(--cu-vr0);
-        font-weight: 400;
+        --cu-current-font-size: var(--cu-text-reg);
+        --cu-current-font-weight: 300;
         display: block; }
   .cu-card--pinned .cu-card__content {
     justify-content: flex-end; }
@@ -111,8 +108,8 @@
     transition: 0.15s all ease;
     position: relative; }
     .cu-card--highlight .cu-card__heading {
-      font-size: var(--cu-ms2);
-      font-weight: 400; }
+      --cu-current-font-size: var(--cu-text-med);
+      --cu-current-font-weight: 400; }
     .cu-card--highlight .cu-card__content {
       z-index: 2;
       text-align: center;

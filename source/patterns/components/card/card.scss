@@ -23,13 +23,16 @@
   }
 
   &__heading {
-    @include set-heading(2);
+    --cu-current-font-size: var(--cu-text-xxl);
+    --cu-current-line-height: var(--cu-heading-line-height);
+    --cu-current-font-weight: var(--cu-heading-font-weight);
+    --cu-font-family: var(--cu-heading-font-family);
   }
 
   &__subheading {
-    @include p-text;
-
-    line-height: var(--cu-reduced-line-height, #{$reduced-line-height});
+    --cu-current-font-size: var(--cu-text-reg);
+    --cu-current-line-height: var(--cu-reduced-line-height, #{$reduced-line-height});
+    --cu-current-font-weight: var(--cu-font-weight);
   }
 
   /*=============================================
@@ -88,7 +91,7 @@
     }
 
     .cu-card__fact {
-      @include set-heading(2);
+      --cu-current-font-size: var(--cu-text-lg);
       padding: var(--cu-vr0);
       border-bottom: 2px solid rgba($white, 0.2);
 
@@ -103,7 +106,8 @@
       }
 
       &-label {
-        @include p-text;
+        --cu-current-font-size: var(--cu-text-reg);
+        --cu-current-font-weight: 300;
         display: block;
       }
     }
@@ -145,8 +149,8 @@
     position: relative;
 
     .cu-card__heading {
-      font-size: var(--cu-ms2);
-      font-weight: 400;
+      --cu-current-font-size: var(--cu-text-med);
+      --cu-current-font-weight: 400;
     }
 
     .cu-card__content {
