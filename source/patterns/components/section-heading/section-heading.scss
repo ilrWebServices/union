@@ -4,13 +4,12 @@
   margin-bottom: var(--cu-vr3);
 
   &__heading {
-    font-size: var(--cu-ms4);
+    --cu-current-font-size: var(--cu-text-xl);
     margin-top: var(--cu-vr-1)
   }
 
   &__subheading {
-    font-size: var(--cu-ms-1);
-    font-weight: 400;
+    --cu-current-font-size: var(--cu-text-reg);
   }
 
   &__link {
