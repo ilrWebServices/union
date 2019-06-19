@@ -38,6 +38,17 @@
     height: 100%;
   }
 
+  .banner__media::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34,34,34, .5);
+    z-index: 2;
+  }
+
   .banner__media img {
     object-fit: cover;
     width: 100%;
@@ -54,17 +65,33 @@
     </div>
   </div>
   <div class="banner__media">
-    <img src="http://fillmurray.com/1600/800" />
+    <img src="http://placeimg.com/1600/800/nature" />
+  </div>
+</div>
+
+<hr />
+
+<div class="banner" data-cu-frame-style="open-right">
+  <div class="banner__content" style="padding-top: 4em; padding-bottom: 3em; max-width: 100%;">
+    <h2 class="banner__heading">It Takes Work to make an impact.</h2>
+    <div class="banner__teaser">
+      <p>Our students, faculty, staff and alumni are helping evolve the modern workplace.</p>
+      <a class="learn-more" href="#">Learn more</a>
+    </div>
+  </div>
+  <div class="banner__media">
+    <img src="http://placeimg.com/1200/800/people" />
   </div>
 </div>
 
 <hr />
 
 {# data-cu-frame-style: top, left, or right #}
-<div class="cu-card--promo cu-card--promo-with-media cu-card cu-demo-frame" data-cu-frame-style="open-left" data-cu-frame-size="10">
+<div class="cu-card--promo cu-card--promo-with-media cu-card cu-demo-frame" data-cu-frame-style="open-right" data-cu-frame-size="15" data-cu-frame-color="yellow">
   <div class="cu-card__content">
     <h2 class="cu-card__heading">700 Acres</h2>
     <p>This is a test of the javascript and canvas based frame box decoration. The idea is that by adding a simple data attribute to a div or other element, a fancy line frame will be drawn in that element. It will really be a canvas element laid directly over the target element. We must be certain, however, to let <a href="#">click events</a> pass through the canvas overlay.</p>
+    <p>This example has a yellow 10px frame, just to show off some of the options.</p>
     <div class="cu-card__button">
       <button class="cu-button--overlay cu-button">Visit Us</button>
     </div>

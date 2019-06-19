@@ -278,13 +278,91 @@
         ctx.lineTo(line_2.x - line_width/2 - bevel_size, line_2.y - line_width/2);
 
         ctx.fill();
-
       }
       else if (style === 'open-right') {
         // This frame lives in the available padding of the frame target.
         // ┏━━━━━━━━
         // ┃ content
         // ┗━━━━
+        let line_0 = {
+          x: Math.ceil(frame_target_dimensions.width - padding_right),
+          y: Math.ceil(padding_top/2)
+        },
+        line_1 = {
+          x: Math.ceil(padding_left/2),
+          y: Math.ceil(padding_top/2)
+        },
+        line_2 = {
+          x: Math.ceil(padding_left/2),
+          y: Math.ceil(frame_target_dimensions.height - padding_top/2)
+        },
+        line_3 = {
+          x: Math.ceil(frame_target_dimensions.width/2),
+          y: Math.ceil(frame_target_dimensions.height - padding_top/2)
+        };
+
+        ctx.beginPath();
+        ctx.moveTo(line_0.x, line_0.y);
+        ctx.lineTo(line_1.x, line_1.y);
+        ctx.lineTo(line_2.x, line_2.y);
+        ctx.lineTo(line_3.x, line_3.y);
+        ctx.lineWidth = line_width;
+        ctx.strokeStyle = color;
+        ctx.stroke();
+
+        // Begin clipped bevels.
+        ctx.beginPath();
+        ctx.globalCompositeOperation = 'destination-out';
+
+        // Beginning of line outside.
+        ctx.moveTo(line_0.x, line_0.y - line_width/2);
+        ctx.lineTo(line_0.x, line_0.y - line_width/2 + bevel_size);
+        ctx.lineTo(line_0.x - bevel_size, line_0.y - line_width/2);
+
+        // Beginning of line inside.
+        ctx.moveTo(line_0.x, line_0.y + line_width/2);
+        ctx.lineTo(line_0.x, line_0.y + line_width/2 - bevel_size);
+        ctx.lineTo(line_0.x - bevel_size, line_0.y + line_width/2);
+
+        // End of line inside.
+        ctx.moveTo(line_3.x, line_3.y - line_width/2);
+        ctx.lineTo(line_3.x, line_3.y - line_width/2 + bevel_size);
+        ctx.lineTo(line_3.x - bevel_size, line_3.y - line_width/2);
+
+        // End of line outside.
+        ctx.moveTo(line_3.x, line_3.y + line_width/2);
+        ctx.lineTo(line_3.x, line_3.y + line_width/2 - bevel_size);
+        ctx.lineTo(line_3.x - bevel_size, line_3.y + line_width/2);
+
+        // First corner outside.
+        ctx.moveTo(line_1.x - line_width/2, line_1.y - line_width/2);
+        ctx.lineTo(line_1.x - line_width/2, line_1.y - line_width/2 + bevel_size);
+        ctx.lineTo(line_1.x - line_width/2 + bevel_size, line_1.y - line_width/2);
+
+        // Second corner outside.
+        ctx.moveTo(line_2.x - line_width/2, line_2.y + line_width/2);
+        ctx.lineTo(line_2.x - line_width/2, line_2.y + line_width/2 - bevel_size);
+        ctx.lineTo(line_2.x - line_width/2 + bevel_size, line_2.y + line_width/2);
+
+        ctx.fill();
+
+        // Inner bevels are visible in the inner corners of the frame.
+        ctx.beginPath();
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.fillStyle = color;
+
+        // First corner inside.
+        ctx.moveTo(line_1.x + line_width/2, line_1.y + line_width/2);
+        ctx.lineTo(line_1.x + line_width/2 + bevel_size, line_1.y + line_width/2);
+        ctx.lineTo(line_1.x + line_width/2, line_1.y + line_width/2 + bevel_size);
+
+        // Second corner inside.
+        ctx.moveTo(line_2.x + line_width/2, line_2.y - line_width/2);
+        ctx.lineTo(line_2.x + line_width/2, line_2.y - line_width/2 - bevel_size);
+        ctx.lineTo(line_2.x + line_width/2 + bevel_size, line_2.y - line_width/2);
+
+        ctx.fill();
+
       }
     }
   };
