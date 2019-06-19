@@ -1,0 +1,75 @@
+<style>
+  .cu-demo-frame {
+    max-width: 50%;
+    margin: 1em auto;
+  }
+
+  .banner {
+    position: relative;
+    max-width: 80%;
+    margin: 1em auto;
+  }
+
+  .banner__content {
+    padding: 2em 4em;
+    color: white;
+    max-width: 75%;
+  }
+
+  .banner__content a {
+    color: white;
+  }
+
+  .banner__heading {
+    color: white;
+    margin: 0 0 1rem 0;
+    font-family: 'Futura', 'Roboto', sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .banner__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+  .banner__media img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<div class="banner" data-cu-frame-style="open-left">
+  <div class="banner__content">
+    <h2 class="banner__heading">It Takes Work to make an impact.</h2>
+    <div class="banner__teaser">
+      <p>Our students, faculty, staff and alumni are helping evolve the modern workplace.</p>
+      <a class="learn-more" href="#">Learn more</a>
+    </div>
+  </div>
+  <div class="banner__media">
+    <img src="http://fillmurray.com/1600/800" />
+  </div>
+</div>
+
+<hr />
+
+{# data-cu-frame-style: top, left, or right #}
+<div class="cu-card--promo cu-card--promo-with-media cu-card cu-demo-frame" data-cu-frame-style="open-left" data-cu-frame-size="10">
+  <div class="cu-card__content">
+    <h2 class="cu-card__heading">700 Acres</h2>
+    <p>This is a test of the javascript and canvas based frame box decoration. The idea is that by adding a simple data attribute to a div or other element, a fancy line frame will be drawn in that element. It will really be a canvas element laid directly over the target element. We must be certain, however, to let <a href="#">click events</a> pass through the canvas overlay.</p>
+    <div class="cu-card__button">
+      <button class="cu-button--overlay cu-button">Visit Us</button>
+    </div>
+  </div>
+  <div class="cu-card__media">
+    <img src="http://fillmurray.com/1600/800" alt="Hug a tree today" class="cu-image">
+  </div>
+</div>

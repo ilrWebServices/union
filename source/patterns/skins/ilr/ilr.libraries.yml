@@ -4,3 +4,5 @@ css:
   fonts.css: {}
   colors.css: {}
   typography.css: {}
+js:
+  frame.js: {}
