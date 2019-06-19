@@ -74,24 +74,23 @@
         // text ━━━┓
         //         ┃
         // foo ━━━━┛
-        let line_start = padding_top;
+        let line_start = frame_target_dimensions.width - padding_right*2;
 
         if (frame_target.children.length) {
           let frame_target_first_child = frame_target.children[0];
-          let frame_target_first_child_padding = window.getComputedStyle(frame_target_first_child, null).getPropertyValue('padding-right');
-          line_start = frame_target_first_child.getBoundingClientRect().width - parseInt(frame_target_first_child_padding);
+          line_start = frame_target_first_child.getBoundingClientRect().width - padding_right;
         }
 
         let line_0 = {
-              x: Math.ceil(line_start),
+              x: Math.ceil(line_start + padding_right/4),
               y: Math.ceil(padding_top + line_width/2)
             },
             line_1 = {
-              x: Math.ceil(frame_target_dimensions.width - padding_right - line_width/2),
+              x: Math.ceil(frame_target_dimensions.width - padding_left - line_width/2),
               y: Math.ceil(padding_top + line_width/2)
             },
             line_2 = {
-              x: Math.ceil(frame_target_dimensions.width - padding_right - line_width/2),
+              x: Math.ceil(frame_target_dimensions.width - padding_left - line_width/2),
               y: Math.ceil(frame_target_dimensions.height - padding_top - line_width/2)
             },
             line_3 = {
