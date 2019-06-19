@@ -74,11 +74,12 @@
         // text ━━━┓
         //         ┃
         // foo ━━━━┛
-        let line_start = frame_target_dimensions.width - padding_right*2;
+        let line_start = frame_target_dimensions.width - padding_right*2,
+            content_width = frame_target.clientWidth;
 
         if (frame_target.children.length) {
-          let frame_target_first_child = frame_target.children[0];
-          line_start = frame_target_first_child.getBoundingClientRect().width - padding_right;
+          line_start = frame_target.children[0].getBoundingClientRect().width - padding_right;
+          content_width = frame_target.children[0].clientWidth;
         }
 
         let line_0 = {
@@ -97,6 +98,11 @@
               x: Math.ceil(frame_target_dimensions.width/2),
               y: Math.ceil(frame_target_dimensions.height - padding_top - line_width/2)
             };
+
+        // Skip this frame if it would overlap the content.
+        if (line_1.x - content_width < line_width) {
+          continue;
+        }
 
         ctx.beginPath();
         ctx.moveTo(line_0.x, line_0.y);
