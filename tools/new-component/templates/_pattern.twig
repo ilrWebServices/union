@@ -1,0 +1,5 @@
+{{ attach_library('union_organizer/<%= name %>') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-<%= name %>']) %}
+
+<div{{ attributes }}>{{ content }}</div>
