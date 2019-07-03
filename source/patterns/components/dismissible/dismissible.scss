@@ -1,0 +1,32 @@
+.cu-dismissible {
+  position: relative;
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em;
+  }
+
+  &__content {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  // Closed state.
+  &__input:checked + &__close + &__content {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+  }
+
+  &__input:checked + &__close {
+    display: none;
+  }
+
+  &__input {
+    display: none;
+  }
+
+}

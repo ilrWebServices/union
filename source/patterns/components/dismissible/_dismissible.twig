@@ -1,0 +1,12 @@
+{{ attach_library('union_organizer/dismissible') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-dismissible']) %}
+
+{# Generate a random id so that a page can contain multiple dismissibles. #}
+{% set id = 'cu-dismissible--' ~ random() %}
+
+<div{{ attributes }}>
+  <input id="{{ id }}" class="cu-dismissible__input" type="checkbox" />
+  <label for="{{ id }}" class="cu-dismissible__close">✖</label>
+  <div class="cu-dismissible__content">{{ content }}</div>
+</div>

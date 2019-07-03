@@ -1,0 +1,20 @@
+.cu-dismissible {
+  position: relative; }
+  .cu-dismissible__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1em; }
+  .cu-dismissible__content {
+    visibility: visible;
+    opacity: 1; }
+  .cu-dismissible__input:checked + .cu-dismissible__close + .cu-dismissible__content {
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: visibility 0.5s, opacity 0.5s linear; }
+  .cu-dismissible__input:checked + .cu-dismissible__close {
+    display: none; }
+  .cu-dismissible__input {
+    display: none; }
+/*# sourceMappingURL=dismissible.css.map */
