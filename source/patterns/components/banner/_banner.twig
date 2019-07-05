@@ -1,0 +1,15 @@
+{{ attach_library('union_organizer/banner') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-banner']) %}
+
+<div{{ attributes }}>
+  <div class="cu-banner__header">
+    <h2 class="cu-banner__heading">{{ heading }}</h2>
+  </div>
+  <div class="cu-banner__content">
+    {{ content }}
+  </div>
+  <div class="cu-banner__media">
+    {{ media }}
+  </div>
+</div>
