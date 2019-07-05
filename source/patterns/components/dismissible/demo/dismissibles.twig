@@ -1,19 +1,7 @@
-{% set card_example %}
-  {% set rendered_media %}
-    {% include '@union/_image.twig' with {
-      img_src: global.card.teasers.lead.img.src,
-      img_alt: global.card.teasers.lead.img.alt
-    } only %}
-  {% endset %}
-  {% include '@union/_card.twig' with {
-    card_content: global.card.teasers.lead.content,
-    card_media: rendered_media,
-    attributes: global.card.teasers.lead.attributes
-  } only %}
+{% set content %}
+  {% include '@union/banners.twig' %}
 {% endset %}
 
 {% include '@union/_dismissible.twig' with {
-  content: card_example
+  content: content
 } only %}
-
-<p>This content is below the dismissible. Donec id elit non mi porta gravida at eget metus. Nullam quis risus eget urna mollis ornare vel eu leo. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>

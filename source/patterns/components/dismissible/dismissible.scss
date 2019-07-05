@@ -1,11 +1,22 @@
+@import './source/global/global';
+
 .cu-dismissible {
   position: relative;
 
   &__close {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1em;
+    top: 0.75em;
+    right: 0.75em;
+    border: 1px solid var(--cu-color-brand, $color-brand);
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10;
   }
 
   &__content {
@@ -28,5 +39,4 @@
   &__input {
     display: none;
   }
-
 }

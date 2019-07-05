@@ -2,9 +2,18 @@
   position: relative; }
   .cu-dismissible__close {
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1em; }
+    top: 0.75em;
+    right: 0.75em;
+    border: 1px solid var(--cu-color-brand, #b31b1b);
+    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10; }
   .cu-dismissible__content {
     visibility: visible;
     opacity: 1; }
