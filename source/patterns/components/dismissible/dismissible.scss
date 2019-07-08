@@ -3,6 +3,10 @@
 .cu-dismissible {
   position: relative;
 
+  &--predismissed {
+    display: none;
+  }
+
   &__close {
     position: absolute;
     top: 0.75em;

@@ -1,4 +1,6 @@
 css:
   dismissible: {}
+js:
+  dismissible.js: {}
 dependencies:
   - base

@@ -1,5 +1,7 @@
 .cu-dismissible {
   position: relative; }
+  .cu-dismissible--predismissed {
+    display: none; }
   .cu-dismissible__close {
     position: absolute;
     top: 0.75em;
