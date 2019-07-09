@@ -47,9 +47,11 @@ function livereloadStartServer(done) {
 function watchFiles(done) {
   gulp.watch('source/patterns/**/*.scss', allStyles);
   gulp.watch('source/images/icons/*.svg', concatSVGSprites);
+  gulp.watch('source/patterns/**/*.js', concatScripts);
 
   var lr_watcher = gulp.watch([
-    'public/css/union.css'
+    'public/css/union.css',
+    'public/js/union.js'
   ]);
   lr_watcher.on('change', livereload.changed);
   done();
