@@ -37,4 +37,13 @@ function addCustomExtension(\Twig_Environment &$env, $config) {
   $env->addFunction(new Twig_SimpleFunction('attach_library', function($string) {
     return '';
   }));
+
+  /**
+   * Return a digest for a given string.
+   *
+   * @param string $string
+   * @return string sha1 hash of $string
+   */
+  $env->addFunction(new Twig_SimpleFunction('union_digest', 'sha1'));
+
 }

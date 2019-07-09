@@ -1,0 +1,4 @@
+css:
+  banner: {}
+dependencies:
+  - base
