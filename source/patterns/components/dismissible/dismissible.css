@@ -1,7 +1,5 @@
 .cu-dismissible {
   position: relative; }
-  .cu-dismissible--predismissed {
-    display: none; }
   .cu-dismissible__close {
     position: absolute;
     top: 0.75em;
@@ -19,6 +17,8 @@
   .cu-dismissible__content {
     visibility: visible;
     opacity: 1; }
+  .cu-dismissible--predismissed {
+    display: none; }
   .cu-dismissible__input:checked + .cu-dismissible__close + .cu-dismissible__content {
     visibility: hidden;
     opacity: 0;

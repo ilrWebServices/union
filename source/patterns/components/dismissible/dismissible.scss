@@ -3,10 +3,6 @@
 .cu-dismissible {
   position: relative;
 
-  &--predismissed {
-    display: none;
-  }
-
   &__close {
     position: absolute;
     top: 0.75em;
@@ -28,7 +24,12 @@
     opacity: 1;
   }
 
-  // Closed state.
+  // Pre-dismissed state.
+  &--predismissed {
+    display: none;
+  }
+
+  // Dismissed state.
   &__input:checked + &__close + &__content {
     visibility: hidden;
     opacity: 0;
@@ -40,6 +41,7 @@
     display: none;
   }
 
+  // Always hide the actual checkbox.
   &__input {
     display: none;
   }
