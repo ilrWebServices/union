@@ -1,5 +1,14 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  99% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 .cu-dismissible {
-  position: relative; }
+  position: relative;
+  animation: fadeIn .2s; }
   .cu-dismissible__close {
     position: absolute;
     top: 0.75em;
