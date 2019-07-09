@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1562703972488" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union" style="padding: 0 1em"><div class="cu-banner">
+  <div class="cu-banner__header">
+    <h2 class="cu-banner__heading">The simple truth is today we need to have an international perspective</h2>
+  </div>
+  <div class="cu-banner__content">
+      <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+
+  
+<button class="cu-button--overlay cu-button">Study Abroad</button>
+
+  </div>
+  <div class="cu-banner__media">
+      
+
+
+
+
+  <img  src="https://placeimg.com/870/360/arch" alt="Alt text here" class="cu-image" />
+
+  </div>
+</div><!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h2>Overview</h2>\n<p>Banners display full-width and are used to highlight and link to important content.</p>\n<h2>Description</h2>\n<p>Banners are different from cards becuase the title overlays the image while the content flows into a second column on wider displays. They will initially be used in combination with the dismissible components, as a way to include an important announcement at the top of a page. Usage may extend over time, though frequent usage should probably be avoided so that they are more visible.</p>\n","patternBreadcrumb":{"patternType":"components","patternSubtype":"banner"},"patternExtension":"twig","patternName":"Banners","patternPartial":"components-banners","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1562703972488">
+  (function() {
+    if (self != top) {
+      var cb = '1562703972488';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1562703972488">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1562703972488"></script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>

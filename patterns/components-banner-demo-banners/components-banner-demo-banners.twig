@@ -1,0 +1,21 @@
+{% set rendered_media %}
+  {% include '@union/_image.twig' with {
+    img_src: 'https://placeimg.com/870/360/arch',
+    img_alt: 'Alt text here'
+  } only %}
+{% endset %}
+
+{% set rendered_content %}
+  <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+
+  {% include '@union/_button.twig' with {
+    text: 'Study Abroad',
+    attributes: { class: 'cu-button--overlay' }
+  } only %}
+{% endset %}
+
+{% include '@union/_banner.twig' with {
+  heading: 'The simple truth is today we need to have an international perspective',
+  content: rendered_content,
+  media: rendered_media
+} only %}
