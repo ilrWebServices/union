@@ -1,0 +1,34 @@
+{{ attach_library('union_organizer/video') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-video']) %}
+
+{% if src is defined %}
+  {% set attributes = attributes.setAttribute('src', src) %}
+{% elseif sources is defined and sources is iterable %}
+  {% set source_markup %}
+    {% for source in sources %}
+      <source src="{{source.src}}" type="{{source.type}}">
+    {% endfor %}
+  {% endset %}
+{% endif %}
+
+{% if poster is not empty %}
+{% set attributes = attributes.setAttribute('poster', poster) %}
+{% endif %}
+
+{% if controls is defined %}
+{# The 'not not' syntax effectively casts the variable to a boolean,
+   which Drupal setAttributes requires. For example, `control: 0` will
+   now work as expected. #}
+{% set attributes = attributes.setAttribute('controls', not not controls) %}
+{% endif %}
+
+{% if autoplay is defined %}
+{% set attributes = attributes.setAttribute('autoplay', not not autoplay) %}
+{% endif %}
+
+{% if loop is defined %}
+{% set attributes = attributes.setAttribute('loop', not not loop) %}
+{% endif %}
+
+<video{{ attributes }}>{{ source_markup }}{{ fallback }}</video>
