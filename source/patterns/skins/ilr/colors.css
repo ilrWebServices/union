@@ -1,4 +1,16 @@
 body {
   color: var(--cu-color-text, #222);
   background-color: var(--cu-color-bg-body, #fff); }
+
+.cu-card {
+  --cu-card-background: white; }
+
+.cu-card--icon {
+  --cu-card-border-radius: 10px; }
+
+.cu-card--promo {
+  --cu-card-background: #efefef; }
+
+.cu-card--hover-overlay {
+  --cu-card-content-background: rgba(179, 27, 27, 0.75); }
 /*# sourceMappingURL=colors.css.map */

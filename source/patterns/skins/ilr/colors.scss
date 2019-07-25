@@ -4,3 +4,19 @@ body {
   color: var(--cu-color-text, $color-text);
   background-color: var(--cu-color-bg-body, $color-bg-body);
 }
+
+.cu-card {
+  --cu-card-background: white;
+}
+
+.cu-card--icon {
+  --cu-card-border-radius: 10px;
+}
+
+.cu-card--promo {
+  --cu-card-background: #{$color-bg-card--medium};
+}
+
+.cu-card--hover-overlay {
+  --cu-card-content-background: rgba(179, 27, 27, 0.75);
+}

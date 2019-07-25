@@ -1,7 +1,8 @@
 @import './source/global/global';
 
 .cu-card {
-  background: $color-bg-card--default;
+  background: var(--cu-card-background, $color-bg-card--default);
+  border-radius: var(--cu-card-border-radius);
   display: flex;
   flex-direction: column;
 
@@ -41,8 +42,6 @@
 
   /*----------  Promos  ----------*/
   &--promo {
-    background: $color-bg-card--medium;
-
     .cu-card__content {
       display: flex;
       height: 100%;
@@ -133,16 +132,6 @@
     }
   }
 
-  /*----------  Light background  ----------*/
-  &--light {
-    background: $color-bg-card--light;
-  }
-
-  /*----------  Rounded corners  ----------*/
-  &--rounded {
-    border-radius: 2px;
-  }
-
   /*----------  Icon  ----------*/
   &--icon {
     padding: 0 var(--cu-ps0);
@@ -167,7 +156,7 @@
     }
 
     .cu-card__content {
-      background: rgba(179, 27, 27, 0.75);
+      background: var(--cu-card-content-background);
       display: flex;
       flex-direction: column;
       justify-content: center;

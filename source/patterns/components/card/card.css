@@ -1,5 +1,6 @@
 .cu-card {
-  background: transparent;
+  background: var(--cu-card-background, transparent);
+  border-radius: var(--cu-card-border-radius);
   display: flex;
   flex-direction: column;
   /*=============================================
@@ -9,8 +10,6 @@
   /*----------  Promo with media  ----------*/
   /*----------  Pinned ----------*/
   /*----------  Centered content  ----------*/
-  /*----------  Light background  ----------*/
-  /*----------  Rounded corners  ----------*/
   /*----------  Icon  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
@@ -33,16 +32,14 @@
     --cu-current-font-size: var(--cu-text-reg);
     --cu-current-line-height: var(--cu-reduced-line-height, 1.2);
     --cu-current-font-weight: var(--cu-font-weight); }
-  .cu-card--promo {
-    background: #efefef; }
-    .cu-card--promo .cu-card__content {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: var(--cu-vr2) var(--cu-vr3);
-      text-align: center; }
+  .cu-card--promo .cu-card__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--cu-vr2) var(--cu-vr3);
+    text-align: center; }
   .cu-card--promo-with-media {
     position: relative; }
     .cu-card--promo-with-media::before {
@@ -100,10 +97,6 @@
     text-align: center;
     justify-content: center;
     padding: var(--cu-vr1); }
-  .cu-card--light {
-    background: #fff; }
-  .cu-card--rounded {
-    border-radius: 2px; }
   .cu-card--icon {
     padding: 0 var(--cu-ps0);
     --cu-card-border-radius: 3px; }
@@ -120,7 +113,7 @@
       margin: 0;
       z-index: 1; }
     .cu-card--hover-overlay .cu-card__content {
-      background: rgba(179, 27, 27, 0.75);
+      background: var(--cu-card-content-background);
       display: flex;
       flex-direction: column;
       justify-content: center;
