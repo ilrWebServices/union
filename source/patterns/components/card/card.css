@@ -11,7 +11,7 @@
   /*----------  Centered content  ----------*/
   /*----------  Light background  ----------*/
   /*----------  Rounded corners  ----------*/
-  /*----------  Highlight  ----------*/
+  /*----------  Icon  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
   /*=====  End of Modifiers  ======*/ }
@@ -104,41 +104,9 @@
     background: #fff; }
   .cu-card--rounded {
     border-radius: 2px; }
-  .cu-card--highlight {
-    transition: 0.15s all ease;
-    position: relative; }
-    .cu-card--highlight .cu-card__heading {
-      --cu-current-font-size: var(--cu-text-med);
-      --cu-current-font-weight: 400; }
-    .cu-card--highlight .cu-card__content {
-      z-index: 2;
-      text-align: center;
-      justify-content: center;
-      padding: var(--cu-vr1); }
-      .cu-card--highlight .cu-card__content p {
-        font-size: var(--cu-ms-1); }
-    .cu-card--highlight::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: #fff;
-      transform-origin: 50% 50%;
-      transition: all .18s;
-      z-index: 1;
-      border-radius: 2px; }
-    .cu-card--highlight:hover, .cu-card--highlight-active {
-      color: white; }
-      .cu-card--highlight:hover .cu-icon__image, .cu-card--highlight-active .cu-icon__image {
-        fill: #fff; }
-      .cu-card--highlight:hover a, .cu-card--highlight-active a {
-        color: #fff;
-        text-decoration: underline; }
-      .cu-card--highlight:hover::before, .cu-card--highlight-active::before {
-        transform: scaleY(1.3);
-        background: #b31b1b; }
+  .cu-card--icon {
+    padding: 0 var(--cu-ps0);
+    --cu-card-border-radius: 3px; }
   .cu-card--hover-overlay {
     display: grid;
     grid-template-columns: 1fr;
