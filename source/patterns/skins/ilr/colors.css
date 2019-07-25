@@ -13,4 +13,9 @@ body {
 
 .cu-card--hover-overlay {
   --cu-card-content-background: rgba(179, 27, 27, 0.75); }
+
+.cu-card--icon .cu-icon__label {
+  --cu-header-accent-width: 20%;
+  --cu-header-accent-padding: .25em 0 0 0;
+  --cu-header-accent-border: 4px solid var(--cu-color-brand, #b31b1b); }
 /*# sourceMappingURL=colors.css.map */
