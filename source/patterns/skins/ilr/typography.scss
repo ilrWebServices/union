@@ -42,6 +42,20 @@ html {
       --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
       --cu-current-font-weight: var(--cu-heading-font-weight);
       margin-top: 0;
+
+      &::after {
+        content: '';
+        display: block;
+        width: var(--cu-header-accent-width);
+        max-width: 100%;
+        padding: var(--cu-header-accent-padding);
+        border-bottom: var(--cu-header-accent-border);
+        transition: width ease-in .25s;
+      }
+
+      &:hover::after {
+        width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2));
+      }
     }
   }
 

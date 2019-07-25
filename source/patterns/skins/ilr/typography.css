@@ -34,26 +34,86 @@ html {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h1::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h1:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] h2 {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h2::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h2:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] h3 {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h3::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h3:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] h4 {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h4::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h4:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] h5 {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h5::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h5:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] h6 {
     --cu-current-line-height: var(--cu-heading-line-height, 1.2);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin-top: 0; }
+    [class*='cu-'] h6::after {
+      content: '';
+      display: block;
+      width: var(--cu-header-accent-width);
+      max-width: 100%;
+      padding: var(--cu-header-accent-padding);
+      border-bottom: var(--cu-header-accent-border);
+      transition: width ease-in .25s; }
+    [class*='cu-'] h6:hover::after {
+      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
   [class*='cu-'] p {
     margin-top: 0; }
   [class*='cu-'] a {
