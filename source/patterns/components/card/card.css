@@ -98,7 +98,7 @@
     justify-content: center;
     padding: var(--cu-vr1); }
   .cu-card--icon {
-    padding: 0 var(--cu-ps0);
+    padding: 0 var(--cu-ps-1);
     --cu-card-border-radius: 3px; }
   .cu-card--hover-overlay {
     display: grid;
