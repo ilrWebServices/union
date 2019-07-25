@@ -67,3 +67,11 @@ $ npm run build
 #### union_attributes().
 
 Abstracts Drupal Attribute functionality so that attributes can be dynamically created or added to from within a template. See the `form` component.
+
+## Roadmap
+
+- Don't always include all skins in Pattern Lab and allow selection of skin.
+- Refactor colors. Define names in global but actual colors in skins.
+- Actually use libraries to build css rather than single union.css and union.js files.
+- In all cases, skin CSS should be loaded after component CSS.
+- Cleaner separation of component and skin typography.
