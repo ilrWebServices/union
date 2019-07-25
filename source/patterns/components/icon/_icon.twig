@@ -1,6 +1,7 @@
 {{ attach_library('union_organizer/icon') }}
 
 {% set size = size|default('2em') %}
+{% set label_element = label_element|default('div') %}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-icon']) %}
 {% set attributes_svg = union_attributes({
@@ -13,5 +14,5 @@
     <title>{{ title }} Icon</title>
     <use href="{{ union_file('/images/icons.svg') }}#{{ icon }}" />
   </svg>
-  {% if label %}<div class="cu-icon__label">{{ label }}</div>{% endif %}
+  {% if label %}<{{ label_element }} class="cu-icon__label">{{ label }}</{{ label_element }}>{% endif %}
 </div>

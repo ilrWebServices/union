@@ -20,6 +20,8 @@ The following variables are available:
 
 `label`: An optional visible text label to be displayed alongside the icon. (optional)
 
+`label_element`: The HTML element for the icon label. (default: `div`)
+
 attributes: An array or Drupal attributes object for things like classes. Useful for passing in variant classes. (optional)
 
 The following variants are available:
