@@ -95,6 +95,7 @@ git filter-branch -f --prune-empty --subdirectory-filter public $BUILD_BRANCH
 
 # Merge the filtered branch into `gh-pages`.
 git checkout gh-pages
+git pull origin gh-pages
 git merge --allow-unrelated-histories --strategy-option theirs -m "Merge build of $BUILD_BRANCH" $BUILD_BRANCH
 
 echo 'gh-pages branch updated! Push to github to deploy (e.g. `git push origin gh-pages`).'
