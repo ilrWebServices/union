@@ -118,7 +118,7 @@ html {
     margin-top: 0; }
   [class*='cu-'] a {
     text-decoration: none;
-    color: #b31b1b; }
+    color: var(--cu-current-link-color, #b31b1b); }
     [class*='cu-'] a.underlined {
       text-decoration: underline; }
 

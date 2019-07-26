@@ -66,7 +66,7 @@ html {
 
   a {
     text-decoration: none;
-    color: $color-link;
+    color: var(--cu-current-link-color, $color-link);
 
     &.underlined {
       text-decoration: underline;
