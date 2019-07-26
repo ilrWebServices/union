@@ -1,0 +1,8 @@
+{{ attach_library('union_organizer/video-banner') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-video-banner']) %}
+
+<div{{ attributes }}>
+  <div class="cu-video-banner__content">{{ content }}</div>
+  <div class="cu-video-banner__media">{{ media }}</div>
+</div>

@@ -1,0 +1,59 @@
+{% set video_media %}
+{% include '@union/_video.twig' with {
+  src: 'https://www.dropbox.com/s/t7mbye0vy4gagjk/Hero%20edits%207-17-19.mp4?raw=1',
+  autoplay: TRUE,
+  loop: TRUE,
+  muted: TRUE
+} only %}
+{% endset %}
+
+{% set icon_cards %}
+  {% include '@union/_card.twig' with {
+    attributes: { class: 'cu-card--icon' },
+    card_content: include('@union/_icon.twig', {
+      title: 'Cornell University Tower',
+      label: 'Undergraduate Admissions',
+      label_element: 'h2',
+      link: '/programs/undergraduate-degree-program/undergraduate-admissions',
+      icon: 'tower',
+      size: '2.5em',
+      attributes: { class: 'cu-icon--inline-centered' }
+    }, with_context = false)
+  } only %}
+  {% include '@union/_card.twig' with {
+    attributes: { class: 'cu-card--icon' },
+    card_content: include('@union/_icon.twig', {
+      title: 'Mortarboard',
+      label: 'Graduate Programs',
+      label_element: 'h2',
+      link: '/programs/graduate-degree-programs',
+      icon: 'mortarboard',
+      size: '2.5em',
+      attributes: { class: 'cu-icon--inline-centered' }
+    }, with_context = false)
+  } only %}
+  {% include '@union/_card.twig' with {
+    attributes: { class: 'cu-card--icon' },
+    card_content: include('@union/_icon.twig', {
+      title: 'Handshake',
+      label: 'Professional Programs',
+      label_element: 'h2',
+      link: '/programs/professional-programs',
+      icon: 'handshake',
+      size: '2.5em',
+      attributes: { class: 'cu-icon--inline-centered' }
+    }, with_context = false)
+  } only %}
+{% endset %}
+
+{% set card_grid %}
+  {% include '@union/_grid.twig' with {
+    grid_content: icon_cards,
+    attributes: { class: 'cu-grid--3col' }
+  } %}
+{% endset %}
+
+{% include '@union/_video-banner.twig' with {
+  media: video_media,
+  content: card_grid
+} only %}

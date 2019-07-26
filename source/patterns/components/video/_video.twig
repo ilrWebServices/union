@@ -31,4 +31,9 @@
 {% set attributes = attributes.setAttribute('loop', not not loop) %}
 {% endif %}
 
+{% if muted is defined %}
+  {% set attributes = attributes.setAttribute('muted', not not muted) %}
+{% endif %}
+
+
 <video{{ attributes }}>{{ source_markup }}{{ fallback }}</video>

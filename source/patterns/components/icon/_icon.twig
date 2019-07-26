@@ -1,17 +1,25 @@
 {{ attach_library('union_organizer/icon') }}
 
 {% set size = size|default('2em') %}
+{% set label_element = label_element|default('div') %}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-icon']) %}
 {% set attributes_svg = union_attributes({
   class: 'cu-icon__image cu-icon__image--' ~ icon,
   width: size
 }) %}
+{% if link %}
+  {% set icon_wrapper_element = 'a' %}
+  {% set attributes = attributes.addClass(['cu-icon--link']) %}
+  {% set attributes = attributes.setAttribute('href', link) %}
+{% else %}
+  {% set icon_wrapper_element = 'div' %}
+{% endif %}
 
-<div{{ attributes }}>
+<{{icon_wrapper_element}}{{attributes}}>
   <svg{{ attributes_svg }} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
     <title>{{ title }} Icon</title>
     <use href="{{ union_file('/images/icons.svg') }}#{{ icon }}" />
   </svg>
-  {% if label %}<div class="cu-icon__label">{{ label }}</div>{% endif %}
-</div>
+  {% if label %}<{{ label_element }} class="cu-icon__label">{{ label }}</{{ label_element }}>{% endif %}
+</{{icon_wrapper_element}}>

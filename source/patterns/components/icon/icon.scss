@@ -10,15 +10,28 @@
     display: inline-flex;
     flex-direction: row;
     margin-bottom: 0;
+    padding: var(--cu-vr0) 0;
 
     .cu-icon__image {
       margin-right: var(--cu-ps0);
+      margin-bottom: 0;
     }
   }
 
   &--inline-centered {
     flex-direction: row;
     justify-content: center;
+    padding: var(--cu-vr0) 0 0;
+
+    .cu-icon__image {
+      flex-shrink: 0;
+      margin-right: var(--cu-ps0);
+      margin-bottom: 0;
+    }
+  }
+
+  .cu-icon__label {
+    margin-bottom: 0;
   }
 
   &--color-light {
