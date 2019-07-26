@@ -22,6 +22,8 @@ The following variables are available:
 
 `label_element`: The HTML element for the icon label. (default: `div`)
 
+`link`: A url/uri that will be added to an `a` tag around the icon and label.
+
 attributes: An array or Drupal attributes object for things like classes. Useful for passing in variant classes. (optional)
 
 The following variants are available:
