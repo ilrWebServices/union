@@ -6,10 +6,6 @@
   }
   @include breakpoint(sm) {
     display: grid;
-
-    > * {
-      margin-bottom: 0; // Let the grid-gap handle margins
-    }
   }
 
   grid-auto-flow: dense;

@@ -5,9 +5,7 @@
     margin-bottom: var(--cu-vr0); }
   @media (min-width: 37.5rem) {
     .cu-grid {
-      display: grid; }
-      .cu-grid > * {
-        margin-bottom: 0; } }
+      display: grid; } }
   .cu-grid--gapless {
     grid-gap: 0; }
   .cu-grid--2col {

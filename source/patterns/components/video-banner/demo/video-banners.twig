@@ -8,7 +8,6 @@
 {% endset %}
 
 {% set icon_cards %}
-<div class="menu">
   {% include '@union/_card.twig' with {
     attributes: { class: 'cu-card--icon' },
     card_content: include('@union/_icon.twig', {
@@ -45,7 +44,13 @@
       attributes: { class: 'cu-icon--inline-centered' }
     }, with_context = false)
   } only %}
-</div>
+{% endset %}
+
+{% set card_grid %}
+  {% include '@union/_grid.twig' with {
+    grid_content: icon_cards,
+    attributes: { class: 'cu-grid--3col' }
+  } %}
 {% endset %}
 
 {% include '@union/_video-banner.twig' with {
