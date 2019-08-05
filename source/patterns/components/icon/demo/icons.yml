@@ -45,6 +45,19 @@ demo:
       attributes:
         class: 'cu-icon--inline'
     -
+      title: Play button
+      icon: 'play'
+      size: 2em
+      attributes:
+        class: 'cu-icon--play'
+    -
+      title: Play button with label
+      icon: 'play'
+      size: 2em
+      label: Watch Video
+      attributes:
+        class: 'cu-icon--inline cu-icon--play'
+    -
       title: Speech Bubble
       icon: 'speech-bubble'
     -
