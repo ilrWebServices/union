@@ -6,6 +6,20 @@
   align-items: center;
   margin-bottom: var(--cu-vr0);
 
+  .cu-icon__image {
+    fill: var(--cu-current-text-color);
+    margin-bottom: var(--cu-vr-2);
+
+    &--cornell-seal {
+      min-width: 73px;
+    }
+  }
+
+  .cu-icon__label {
+    margin-bottom: 0;
+    color: var(--cu-current-text-color);
+  }
+
   &--inline {
     display: inline-flex;
     flex-direction: row;
@@ -30,30 +44,23 @@
     }
   }
 
-  .cu-icon__label {
-    margin-bottom: 0;
-  }
-
-  &--color-light {
-    color: $color-light;
-
-    .cu-icon__image {
-      fill: $color-light;
-    }
-  }
-
-  &--color-brand {
-    .cu-icon__image {
-      fill: $color-brand;
-    }
+  &--light {
+    --cu-current-text-color: var(--cu-color-text--light);
   }
 }
 
-.cu-icon__image {
-  fill: $color-text;
-  margin-bottom: var(--cu-vr-2);
-
-  &--cornell-seal {
-    min-width: 73px;
+/*=============================================
+=            Specific icon overrides            =
+=============================================*/
+.cu-icon--color-brand {
+  .cu-icon__image {
+    --cu-current-text-color: #{$color-brand};
   }
 }
+
+.cu-icon--play {
+  .cu-icon__image {
+    stroke: var(--cu-current-text-color);
+  }
+}
+/*=====  End of Specific icon overrides  ======*/

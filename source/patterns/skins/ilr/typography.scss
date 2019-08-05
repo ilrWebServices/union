@@ -11,6 +11,8 @@
   --cu-heading-line-height: var(--cu-base-heading-line-height, #{#{$base-heading-line-height}});
   --cu-heading-font-family: var(--cu-base-heading-font-family, #{#{$base-heading-font-family}});
   --cu-font-size-percentage: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
+  --cu-text-color: #{$color-text};
+  --cu-current-text-color: #{$color-text};
   --cu-text-xxxl: var(--cu-ms6);
   --cu-text-xxl: var(--cu-ms5);
   --cu-text-xl: var(--cu-ms4);

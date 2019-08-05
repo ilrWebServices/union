@@ -8,6 +8,8 @@
   --cu-heading-line-height: var(--cu-base-heading-line-height, 1.2);
   --cu-heading-font-family: var(--cu-base-heading-font-family, Helvetica, Arial, sans-serif);
   --cu-font-size-percentage: var(--cu-base-font-size-percentage, 100%);
+  --cu-text-color: #222;
+  --cu-current-text-color: #222;
   --cu-text-xxxl: var(--cu-ms6);
   --cu-text-xxl: var(--cu-ms5);
   --cu-text-xl: var(--cu-ms4);
