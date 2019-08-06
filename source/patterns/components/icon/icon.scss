@@ -59,6 +59,9 @@
 }
 
 .cu-icon--play {
+  > * {
+    pointer-events: none;
+  }
   .cu-icon__image {
     stroke: var(--cu-current-text-color);
   }

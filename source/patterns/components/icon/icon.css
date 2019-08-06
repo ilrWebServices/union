@@ -36,6 +36,9 @@
 .cu-icon--color-brand .cu-icon__image {
   --cu-current-text-color: #b31b1b; }
 
+.cu-icon--play > * {
+  pointer-events: none; }
+
 .cu-icon--play .cu-icon__image {
   stroke: var(--cu-current-text-color); }
 

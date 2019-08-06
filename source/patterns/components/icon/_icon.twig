@@ -3,9 +3,9 @@
 {% set size = size|default('2em') %}
 {% set label_element = label_element|default('div') %}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-icon']) %}
+{% set attributes = attributes.addClass(['cu-icon cu-icon--' ~ icon]) %}
 {% set attributes_svg = union_attributes({
-  class: 'cu-icon__image cu-icon__image--' ~ icon,
+  class: 'cu-icon__image',
   width: size
 }) %}
 {% if link %}

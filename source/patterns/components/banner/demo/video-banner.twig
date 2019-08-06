@@ -1,0 +1,35 @@
+{% set random_id = random(50000, 1000000) %}
+
+{% set video_media %}
+{% include '@union/_video.twig' with {
+    src: 'https://www.dropbox.com/s/t7mbye0vy4gagjk/Hero%20edits%207-17-19.mp4?raw=1',
+    poster: 'http://placeimg.com/1600/900/arch',
+    attributes: { id: random_id }
+  } only %}
+{% endset %}
+{% set rendered_content %}
+    <div class="framed framed--right">
+      <h2 class="cu-heading cu-heading--strong">It takes <span>work</span> to make an impact</h2>
+      <div class="play">
+      {% include "@union/_icon.twig" with {
+        title: 'Play video',
+        icon: 'play',
+        size: '2em',
+        label: 'Watch Video',
+        attributes: {
+          class: 'cu-icon--inline',
+          role: 'button',
+          id: 'toggle' ~ random_id,
+          'aria-pressed': "false"
+        },
+        link: '#'
+      } only %}
+      </div>
+    </div>
+{% endset %}
+
+{% include '@union/_banner.twig' with {
+  attributes: { class: 'cu-banner--video'},
+  content: rendered_content,
+  media: video_media
+} only %}

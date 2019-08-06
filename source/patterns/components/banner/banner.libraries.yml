@@ -1,4 +1,6 @@
 css:
   banner: {}
+js:
+  banner.js: {}
 dependencies:
   - base
