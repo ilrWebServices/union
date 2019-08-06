@@ -34,6 +34,7 @@
 
 @mixin overlay($color: #555, $opacity: 0.5, $z-index: 2) {
   position: relative;
+  pointer-events: none;
 
   &::before {
     content: '';
