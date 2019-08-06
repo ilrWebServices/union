@@ -162,4 +162,11 @@ small {
 
 .cu-text--xs {
   font-size: var(--cu-ms-2); }
+
+.cu-heading--strong {
+  font-family: 'futura-pt';
+  text-transform: uppercase;
+  font-size: var(--cu-ms7); }
+  .cu-heading--strong span {
+    color: #b31b1b; }
 /*# sourceMappingURL=typography.css.map */

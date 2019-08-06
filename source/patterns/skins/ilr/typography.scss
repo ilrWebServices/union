@@ -1,6 +1,5 @@
 @import './source/global/global';
 
-
 /*----------  CSS Variables  ----------*/
 :root {
   --cu-font-family: var(--cu-base-font-family, #{$base-font-family});
@@ -123,4 +122,14 @@ small {
 
 .cu-text--xs {
   font-size: var(--cu-ms-2);
+}
+
+.cu-heading--strong {
+  font-family: 'futura-pt';
+  text-transform: uppercase;
+  font-size: var(--cu-ms7);
+
+  span {
+    color: $color-brand;
+  }
 }
