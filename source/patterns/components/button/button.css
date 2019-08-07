@@ -19,7 +19,8 @@
   background: #b31b1b; }
 
 .cu-button--overlay {
+  color: #fff;
+  --cu-current-link-color: $white;
   border-color: #fff;
-  color: white;
   background-color: rgba(0, 0, 0, 0.3); }
 /*# sourceMappingURL=button.css.map */
