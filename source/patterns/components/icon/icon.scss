@@ -58,6 +58,12 @@
   }
 }
 
+.cu-icon--cornell-seal {
+  .cu-icon__image {
+    min-width: 73px;
+  }
+}
+
 .cu-icon--play {
   > * {
     pointer-events: none;

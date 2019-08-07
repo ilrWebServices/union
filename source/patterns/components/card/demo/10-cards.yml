@@ -93,7 +93,7 @@ demo:
         icon: 'cornell-seal'
         size: '2em'
         attributes:
-          class: 'cu-icon--color-light'
+          class: 'cu-icon--light'
       img:
         src: 'https://placeimg.com/1360/656/nature'
         alt: 'Cornell is where you want to be'
