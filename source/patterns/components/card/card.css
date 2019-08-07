@@ -134,13 +134,10 @@
   .cu-card--letterbox .cu-card__content {
     display: grid;
     grid-template-columns: 5% 57% 5% 28% 5%;
-    grid-template-rows: 1fr auto 2fr;
-    padding: var(--cu-vr2) var(--cu-vr1); }
+    padding: 25% 0 var(--cu-vr0); }
     .cu-card--letterbox .cu-card__content > * {
       grid-column: 2;
-      grid-row: 3; }
-      .cu-card--letterbox .cu-card__content > *:first-child {
-        grid-row: 2; }
+      grid-row: auto; }
       .cu-card--letterbox .cu-card__content > *:last-child {
         grid-column: 4;
         align-self: center;
