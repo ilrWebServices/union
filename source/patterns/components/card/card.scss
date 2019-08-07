@@ -53,8 +53,9 @@
     }
   }
 
-  /*----------  Promo with media  ----------*/
-  &--promo-with-media {
+  /*----------  Promo with media and letterbox  ----------*/
+  &--promo-with-media,
+  &--letterbox {
     @include overlay;
 
     .cu-card__media {
@@ -76,6 +77,7 @@
       color: white;
       position: relative;
       z-index: 3;
+      pointer-events: all;
     }
 
     .cu-card__fact-list {
@@ -183,5 +185,37 @@
   &--landscape {
     grid-column: 1 / -1; // Must be part of a grid
   }
+
+
+  /*----------  Letterbox  ----------*/
+  &--letterbox {
+    .cu-card__content {
+      display: grid;
+      grid-template-columns: 5% 57% 5% 28% 5%;
+      grid-template-rows: 1fr auto 2fr;
+      padding: var(--cu-vr2) var(--cu-vr1);
+
+      >* {
+        grid-column: 2;
+        grid-row: 3;
+
+        &:first-child {
+          grid-row: 2;
+
+        }
+
+        &:last-child {
+          grid-column: 4;
+          align-self: center;
+          text-align: center;
+        }
+      }
+    }
+
+    .cu-heading--strong {
+      font-size: var(--cu-text-lg);
+    }
+  }
+
   /*=====  End of Modifiers  ======*/
 }

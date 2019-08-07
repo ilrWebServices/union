@@ -108,3 +108,15 @@ demo:
           <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
           <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
         </ul>
+    letterbox:
+      label: Letterbox
+      attributes:
+        class: 'cu-card--letterbox'
+      img:
+        src: 'https://placeimg.com/700/440/people'
+        alt: 'Undergraduate Admissions'
+      content: |
+        <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
+        <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+        <a class="cu-button--overlay cu-button" href="">Explore</a>
+
