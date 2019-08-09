@@ -1,7 +1,7 @@
 @import './source/global/global';
 
 .cu-card {
-  background: var(--cu-card-background, $color-bg-card--default);
+  background: var(--cu-card-background, #{$color-bg-card--default});
   border-radius: var(--cu-card-border-radius);
   display: flex;
   flex-direction: column;
@@ -73,7 +73,8 @@
     }
 
     .cu-card__content {
-      color: white;
+      --cu-current-link-color: var(--cu-text-color-light);
+      color: var(--cu-text-color-light);
       position: relative;
       z-index: 3;
     }
@@ -92,7 +93,7 @@
     .cu-card__fact {
       --cu-current-font-size: var(--cu-text-lg);
       padding: var(--cu-vr0);
-      border-bottom: 2px solid rgba($white, 0.2);
+      border-bottom: 2px solid rgba(var(--cu-text-color-light), 0.2);
 
       &:last-child {
         border: none;
@@ -172,6 +173,11 @@
         z-index: 2;
       }
     }
+  }
+
+  /*----------  Light  ----------*/
+  &--light {
+    --cu-card-background: var(--cu-color-bg-card--light, #{$color-bg-card--light});
   }
 
   /*----------  Portrait (2 rows tall)  ----------*/

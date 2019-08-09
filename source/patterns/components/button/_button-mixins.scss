@@ -6,9 +6,9 @@
 }
 
 @mixin cu-button($size: 'auto') {
-  color: $cornell-red;
+  color: var(--cu-current-link-color);
   border-radius: 2px;
-  border: 4px solid $cornell-red;
+  border: 4px solid var(--cu-current-link-color);
   background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -20,7 +20,7 @@
 }
 
 @mixin cu-button--overlay() {
-  border-color: $white;
-  color: white;
+  --cu-current-link-color: white;
   background-color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
 }

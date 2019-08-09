@@ -1,16 +1,16 @@
 .cu-button {
-  color: #b31b1b;
+  color: var(--cu-current-link-color);
   border-radius: 2px;
-  border: 4px solid #b31b1b;
+  border: 4px solid var(--cu-current-link-color);
   background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto; }
 
 .cu-button--alt {
-  color: #b31b1b;
+  color: var(--cu-current-link-color);
   border-radius: 2px;
-  border: 4px solid #b31b1b;
+  border: 4px solid var(--cu-current-link-color);
   background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -19,7 +19,7 @@
   background: #b31b1b; }
 
 .cu-button--overlay {
-  border-color: #fff;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3); }
+  --cu-current-link-color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-decoration: none; }
 /*# sourceMappingURL=button.css.map */
