@@ -18,7 +18,12 @@ function componentStyles() {
 
 function concatComponentStyles() {
   return gulp
-    .src('source/patterns/**/*.scss', { sourcemaps: true })
+    .src([
+      'source/patterns/components/**/*.scss',
+      'source/patterns/base/*.scss',
+      'source/patterns/layouts/*.scss',
+      'source/patterns/skins/base.scss'
+    ], { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
     .pipe(concat('union.css'))
