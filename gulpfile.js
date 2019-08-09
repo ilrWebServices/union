@@ -8,6 +8,10 @@ var sass_config = {
   outputStyle: "nested"
 };
 
+var union_config =  {
+  skin: 'ilr'
+}
+
 function componentStyles() {
   return gulp
     .src('source/patterns/**/*.scss', { sourcemaps: true })
@@ -22,7 +26,8 @@ function concatComponentStyles() {
       'source/patterns/components/**/*.scss',
       'source/patterns/base/*.scss',
       'source/patterns/layouts/*.scss',
-      'source/patterns/skins/base.scss'
+      'source/patterns/skins/base.scss',
+      'source/patterns/skins/' + union_config.skin + '/**/*.scss'
     ], { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
