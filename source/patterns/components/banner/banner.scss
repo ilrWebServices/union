@@ -2,20 +2,14 @@
 
 .cu-banner {
   position: relative;
-  display: flex;
-  flex-direction: column;
   color: $color-text--light;
   color: var(--cu-color-text--light, $color-text--light);
-
-  &__media {
-    @include overlay;
-  }
 }
 
 /*=============================================
-=            Letterbox banner            =
+=            Announcement banner            =
 =============================================*/
-.cu-banner--letterbox {
+.cu-banner--announcement {
   padding: 1em 33% 1em 2em;
 
   @include breakpoint(md) {
@@ -60,6 +54,7 @@
   }
 
   .cu-banner__media {
+    @include overlay;
     position: absolute;
     overflow: hidden;
     max-width: none;
@@ -84,46 +79,30 @@
 }
 
 /*=============================================
-=            Video banner            =
+=            Video banner                     =
 =============================================*/
 .cu-banner--video {
-  --cu-current-text-color: #{$color-text--light};
-  display: grid;
-
   .cu-banner__content {
-    --cu-current-font-size: var(--cu-text-xxxl);
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    z-index: 2;
-    padding: var(--cu-vr1) var(--cu-ps1);
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    pointer-events: none;
-
-    @include breakpoint(lg) {
-      padding: var(--cu-vr1) var(--cu-ps3);
-    }
+    padding: var(--cu-vr1) var(--cu-ps1);
 
     > * {
       pointer-events: auto;
     }
 
-    .cu-icon__label {
-      --cu-current-font-size: var(--cu-text-reg);
+    @include breakpoint(lg) {
+      padding: var(--cu-vr1) var(--cu-ps3);
     }
-  }
 
-  .cu-banner__media {
-    grid-column: 1/-1;
-    grid-row: 1/-1;
-    z-index: 1;
-    pointer-events: auto;
-
-    &::before {
-      display: none;
+    &--align-bottom {
+      justify-content: flex-end;
     }
   }
 }
-
 /*=====  End of Video banner  ======*/

@@ -2,7 +2,7 @@
 
 {% set video_media %}
 {% include '@union/_video.twig' with {
-    src: 'https://www.dropbox.com/s/t7mbye0vy4gagjk/Hero%20edits%207-17-19.mp4?raw=1',
+    src: 'https://www.dropbox.com/s/2oee7izfxsl16ah/Hero%20clips%20for%20web%20-%20FINAL%20-%20Aug%202019.mp4?raw=1',
     poster: 'http://placeimg.com/1600/900/arch',
     attributes: { id: random_id }
   } only %}
@@ -14,7 +14,7 @@
       {% include "@union/_icon.twig" with {
         title: 'Play video',
         icon: 'play',
-        size: '2em',
+        size: '4em',
         label: 'Watch Video',
         attributes: {
           class: 'cu-icon--inline',
@@ -29,7 +29,7 @@
 {% endset %}
 
 {% include '@union/_banner.twig' with {
-  attributes: { class: 'cu-banner--video'},
+  attributes: { class: 'cu-banner--video' },
   content: rendered_content,
   media: video_media
 } only %}
