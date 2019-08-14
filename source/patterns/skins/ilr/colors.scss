@@ -1,12 +1,13 @@
 @import './source/global/global';
 
-body {
-  color: var(--cu-color-text, $color-text);
-  background-color: var(--cu-color-bg-body, $color-bg-body);
+:root {
+  --cu-color-brand: #{$color-brand};
+  --cu-base-color-text: #222;
+  --cu-color-bg-body: #{$white};
 }
 
 .cu-card {
-  --cu-card-background: white;
+  --cu-card-background: #{$white};
 }
 
 .cu-card--icon {

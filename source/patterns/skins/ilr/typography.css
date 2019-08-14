@@ -1,13 +1,5 @@
 /*----------  CSS Variables  ----------*/
 :root {
-  --cu-font-family: var(--cu-base-font-family, Helvetica, Arial, sans-serif);
-  --cu-font-weight: var(--cu-base-font-weight, 400);
-  --cu-line-height: var(--cu-base-line-height, 1.4);
-  --cu-font-weight: var(--cu-base-font-weight, 400);
-  --cu-heading-font-weight: var(--cu-base-heading-font-weight, 300);
-  --cu-heading-line-height: var(--cu-base-heading-line-height, 1.2);
-  --cu-heading-font-family: var(--cu-base-heading-font-family, Helvetica, Arial, sans-serif);
-  --cu-font-size-percentage: var(--cu-base-font-size-percentage, 100%);
   --cu-text-xxxl: var(--cu-ms6);
   --cu-text-xxl: var(--cu-ms5);
   --cu-text-xl: var(--cu-ms4);
@@ -20,144 +12,75 @@
       --cu-ms-ratio: var(--minor-third);
       --cu-current-line-height: 1.6; } }
 
-html {
-  font-size: var(--cu-font-size-percentage);
-  line-height: var(--cu-line-height);
-  font-weight: var(--cu-font-weight); }
+[class*='cu-'] h1::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-[class*='cu-'] {
-  font-size: var(--cu-current-font-size, inherit);
-  font-weight: var(--cu-current-font-weight, inherit);
-  line-height: var(--cu-current-line-height, inherit);
-  /*----------  Tag-based styles  ----------*/ }
-  [class*='cu-'] h1 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h1::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h1:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] h2 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h2::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h2:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] h3 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h3::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h3:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] h4 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h4::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h4:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] h5 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h5::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h5:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] h6 {
-    --cu-current-line-height: var(--cu-heading-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    margin-top: 0; }
-    [class*='cu-'] h6::after {
-      content: '';
-      display: block;
-      width: var(--cu-header-accent-width);
-      max-width: 100%;
-      padding: var(--cu-header-accent-padding);
-      border-bottom: var(--cu-header-accent-border);
-      transition: width ease-in .25s; }
-    [class*='cu-'] h6:hover::after {
-      width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
-  [class*='cu-'] p {
-    margin-top: 0; }
-  [class*='cu-'] a {
-    text-decoration: none;
-    color: var(--cu-current-link-color, #b31b1b); }
-    [class*='cu-'] a.underlined {
-      text-decoration: underline; }
+[class*='cu-'] h1:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 
-/*----------  Class-based sizing  ----------*/
-[class*='cu-text'] {
-  font-family: var(--cu-font-family);
-  font-weight: var(--cu-font-weight);
-  line-height: var(--cu-line-height);
-  font-size: var(--font-size); }
+[class*='cu-'] h2::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-[class*='cu-text--x'] {
-  --cu-font-family: var(--cu-heading-font-family);
-  --cu-font-weight: var(--cu-heading-font-weight);
-  --cu-line-height: var(--cu-heading-line-height);
-  --cu-font-size: var(--current-heading-size);
-  font-size: var(--current-heading-size); }
+[class*='cu-'] h2:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 
-.cu-text--xxxl {
-  --current-heading-size: var(--cu-text-xxxl); }
+[class*='cu-'] h3::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-.cu-text--xxl {
-  --current-heading-size: var(--cu-text-xxl); }
+[class*='cu-'] h3:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 
-.cu-text--xl {
-  --current-heading-size: var(--cu-text-xl); }
+[class*='cu-'] h4::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-.cu-text--lg {
-  --current-heading-size: var(--cu-text-lg); }
+[class*='cu-'] h4:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 
-.cu-text--md {
-  --current-heading-size: var(--cu-text-med); }
+[class*='cu-'] h5::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-.cu-text--reg {
-  font-size: var(--cu-base-font-size); }
+[class*='cu-'] h5:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 
-.cu-text--sm,
-small {
-  font-size: var(--cu-ms-1); }
+[class*='cu-'] h6::after {
+  content: '';
+  display: block;
+  width: var(--cu-header-accent-width);
+  max-width: 100%;
+  padding: var(--cu-header-accent-padding);
+  border-bottom: var(--cu-header-accent-border);
+  transition: width ease-in .25s; }
 
-.cu-text--xs {
-  font-size: var(--cu-ms-2); }
+[class*='cu-'] h6:hover::after {
+  width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
 /*# sourceMappingURL=typography.css.map */

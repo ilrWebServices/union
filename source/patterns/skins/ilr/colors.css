@@ -1,9 +1,10 @@
-body {
-  color: var(--cu-color-text, #222);
-  background-color: var(--cu-color-bg-body, #fff); }
+:root {
+  --cu-color-brand: #b31b1b;
+  --cu-base-color-text: #222;
+  --cu-color-bg-body: #fff; }
 
 .cu-card {
-  --cu-card-background: white; }
+  --cu-card-background: #fff; }
 
 .cu-card--icon {
   --cu-current-link-color: #222; }
