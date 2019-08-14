@@ -1,6 +1,7 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
 const concat = require('gulp-concat');
+const concat_css = require('gulp-concat-css');
 const livereload = require("gulp-livereload");
 const svgstore = require('gulp-svgstore');
 
@@ -21,7 +22,7 @@ function concatComponentStyles() {
     .src('source/patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
-    .pipe(concat('union.css'))
+    .pipe(concat_css('union.css', { rebaseUrls: false }))
     .pipe(gulp.dest('source/css/', { sourcemaps: '.' }));
 }
 
