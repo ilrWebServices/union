@@ -39,11 +39,12 @@
 .cu-icon--cornell-seal .cu-icon__image {
   min-width: 73px; }
 
-.cu-icon--play > * {
-  pointer-events: none; }
-
-.cu-icon--play .cu-icon__image {
-  stroke: var(--cu-current-text-color); }
+.cu-icon--play {
+  --cu-current-text-color: var(--cu-color-text--light); }
+  .cu-icon--play > * {
+    pointer-events: none; }
+  .cu-icon--play .cu-icon__image {
+    stroke: var(--cu-current-text-color); }
 
 /*=====  End of Specific icon overrides  ======*/
 /*# sourceMappingURL=icon.css.map */

@@ -65,6 +65,8 @@
 }
 
 .cu-icon--play {
+  --cu-current-text-color: var(--cu-color-text--light);
+
   > * {
     pointer-events: none;
   }
