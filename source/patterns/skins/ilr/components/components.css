@@ -4,13 +4,17 @@
     max-width: 80%; }
 
 :root {
-  --frame-width: 20px;
+  --frame-width: 10px;
   --notchSize: calc(var(--frame-width) / 10); }
+  @media (min-width: 37.5rem) {
+    :root {
+      --frame-width: 20px; } }
 
 .framed {
   position: relative;
   clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
   display: grid;
+  grid-column-gap: 1em;
   position: relative;
   height: 100%; }
   .framed::before {
@@ -24,7 +28,8 @@
   .framed > *:last-child {
     grid-column: 1 / -1;
     display: grid;
-    grid-template-columns: fit-content(50%) auto;
+    grid-column-gap: 1em;
+    grid-template-columns: 50% auto;
     justify-items: start;
     align-content: end; }
     .framed > *:last-child > * {
@@ -62,7 +67,10 @@
 
 .framed--right {
   border-right: var(--frame-width) solid white;
-  grid-template-columns: fit-content(75%) 1fr; }
+  grid-template-columns: fit-content(90%) 1fr; }
+  @media (min-width: 37.5rem) {
+    .framed--right {
+      grid-template-columns: fit-content(75%) 1fr; } }
   .framed--right::before {
     grid-column: 2;
     right: calc(var(--notchSize) * -1); }
