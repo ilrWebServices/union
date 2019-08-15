@@ -1,4 +1,4 @@
-{% set random_id = random(50000, 1000000) %}
+{% set random_id = 'cu-vid-' ~ random(50000, 1000000) %}
 
 {% set video_media %}
 {% include '@union/_video.twig' with {
@@ -19,10 +19,9 @@
         attributes: {
           class: 'cu-icon--inline',
           role: 'button',
-          id: 'toggle' ~ random_id,
+          'data-cu-video-target': '#' ~ random_id,
           'aria-pressed': "false"
-        },
-        link: '#'
+        }
       } only %}
       </div>
     </div>
