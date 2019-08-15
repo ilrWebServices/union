@@ -12,7 +12,8 @@
   {% if card.img %}
     {% include '@union/_image.twig' with {
           img_src: card.img.src,
-          img_alt: card.img.alt
+          img_alt: card.img.alt,
+          blurred: card.img.blurred
         } only %}
   {% endif %}
   {% endset %}

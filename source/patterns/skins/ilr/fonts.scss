@@ -9,6 +9,8 @@
   }
 }
 
+@import url("https://use.typekit.net/cal2bhk.css");
+
 @include fontFace('Replica', 'lineto-replica-pro-regular');
 @include fontFace('Replica', 'lineto-replica-pro-italic', normal, italic);
 @include fontFace('Replica', 'lineto-replica-pro-bold', bold);

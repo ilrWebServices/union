@@ -1,6 +1,6 @@
 {% set video_media %}
 {% include '@union/_video.twig' with {
-  src: 'https://www.dropbox.com/s/t7mbye0vy4gagjk/Hero%20edits%207-17-19.mp4?raw=1',
+  src: 'https://www.dropbox.com/s/2oee7izfxsl16ah/Hero%20clips%20for%20web%20-%20FINAL%20-%20Aug%202019.mp4?raw=1',
   autoplay: TRUE,
   loop: TRUE,
   muted: TRUE
@@ -53,7 +53,9 @@
   } %}
 {% endset %}
 
-{% include '@union/_video-banner.twig' with {
+{% include '@union/_banner.twig' with {
+  attributes: { class: 'cu-banner--video' },
+  content_attributes: { class: 'cu-banner__content--align-bottom' },
   media: video_media,
   content: card_grid
 } only %}

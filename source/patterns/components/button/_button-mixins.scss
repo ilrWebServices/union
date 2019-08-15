@@ -20,7 +20,8 @@
 }
 
 @mixin cu-button--overlay() {
+  color: $white;
+  --cu-current-link-color: $white;
   border-color: $white;
-  color: white;
   background-color: rgba(0, 0, 0, 0.3);
 }

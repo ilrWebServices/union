@@ -25,3 +25,7 @@
 {% else %}
   <img {{ attributes }} />
 {% endif %}
+
+{% if blurred %}
+<div class="cu-image--blurred" style="--cu-bg-image: url({{ img_src }})"></div>
+{% endif %}

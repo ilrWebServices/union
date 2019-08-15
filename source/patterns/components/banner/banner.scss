@@ -1,10 +1,15 @@
 @import './source/global/global';
 
 .cu-banner {
-  color: $white;
   position: relative;
-  display: flex;
-  flex-direction: column;
+  color: $color-text--light;
+  color: var(--cu-color-text--light, $color-text--light);
+}
+
+/*=============================================
+=            Announcement banner            =
+=============================================*/
+.cu-banner--announcement {
   padding: 1em 33% 1em 2em;
 
   @include breakpoint(md) {
@@ -13,7 +18,7 @@
     padding: 0;
   }
 
-  &__header {
+  .cu-banner__header {
     margin-bottom: var(--cu-vr0);
     border-bottom: 1px solid rgba(white, 0.3);
     --cu-current-font-size: var(--cu-text-xxl);
@@ -30,7 +35,7 @@
     }
   }
 
-  &__content {
+  .cu-banner__content {
     color: $color-text--light;
     color: var(--cu-color-text--light, $color-text--light);
 
@@ -48,9 +53,8 @@
     align-self: flex-start;
   }
 
-  &__media {
+  .cu-banner__media {
     @include overlay;
-
     position: absolute;
     overflow: hidden;
     max-width: none;
@@ -73,3 +77,35 @@
     }
   }
 }
+
+/*=============================================
+=            Video banner                     =
+=============================================*/
+.cu-banner--video {
+  .cu-banner__content {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--cu-vr1) var(--cu-ps1);
+
+    > * {
+      pointer-events: auto;
+    }
+
+    @include breakpoint(sm) {
+      height: 100%;
+    }
+
+    @include breakpoint(lg) {
+      padding: var(--cu-vr1) var(--cu-ps3);
+    }
+
+    &--align-bottom {
+      justify-content: flex-end;
+    }
+  }
+}
+/*=====  End of Video banner  ======*/
