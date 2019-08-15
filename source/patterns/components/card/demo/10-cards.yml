@@ -108,10 +108,10 @@ demo:
           <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
           <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
         </ul>
-    letterbox:
-      label: Letterbox
+    with-aside:
+      label: With aside
       attributes:
-        class: 'cu-card--letterbox'
+        class: 'cu-card--with-aside'
       img:
         src: 'https://placeimg.com/700/440/people'
         alt: 'Undergraduate Admissions'

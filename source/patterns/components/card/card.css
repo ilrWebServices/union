@@ -13,7 +13,7 @@
   /*----------  Icon  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
-  /*----------  Letterbox  ----------*/
+  /*----------  With aside  ----------*/
   /*=====  End of Modifiers  ======*/ }
   .cu-card__content {
     order: 2; }
@@ -41,10 +41,10 @@
     align-items: center;
     padding: var(--cu-vr2) var(--cu-vr3);
     text-align: center; }
-  .cu-card--promo-with-media, .cu-card--letterbox {
+  .cu-card--promo-with-media, .cu-card--with-aside {
     position: relative;
     pointer-events: none; }
-    .cu-card--promo-with-media::before, .cu-card--letterbox::before {
+    .cu-card--promo-with-media::before, .cu-card--with-aside::before {
       content: '';
       position: absolute;
       top: 0;
@@ -53,42 +53,42 @@
       height: 100%;
       background: rgba(85, 85, 85, 0.5);
       z-index: 2; }
-    .cu-card--promo-with-media .cu-card__media, .cu-card--letterbox .cu-card__media {
+    .cu-card--promo-with-media .cu-card__media, .cu-card--with-aside .cu-card__media {
       position: absolute;
       overflow: hidden;
       max-width: none;
       width: 100%;
       height: 100%;
       z-index: 1; }
-      .cu-card--promo-with-media .cu-card__media > :first-child, .cu-card--letterbox .cu-card__media > :first-child {
+      .cu-card--promo-with-media .cu-card__media > :first-child, .cu-card--with-aside .cu-card__media > :first-child {
         object-fit: cover;
         width: 100%;
         height: 100%; }
-    .cu-card--promo-with-media .cu-card__content, .cu-card--letterbox .cu-card__content {
+    .cu-card--promo-with-media .cu-card__content, .cu-card--with-aside .cu-card__content {
       color: white;
       position: relative;
       z-index: 3;
       pointer-events: all; }
-    .cu-card--promo-with-media .cu-card__fact-list, .cu-card--letterbox .cu-card__fact-list {
+    .cu-card--promo-with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
       list-style-type: none;
       padding: 0; }
       @media (min-width: 64rem) {
-        .cu-card--promo-with-media .cu-card__fact-list, .cu-card--letterbox .cu-card__fact-list {
+        .cu-card--promo-with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
           display: flex;
           justify-content: space-between;
           align-items: stretch; } }
-    .cu-card--promo-with-media .cu-card__fact, .cu-card--letterbox .cu-card__fact {
+    .cu-card--promo-with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
       --cu-current-font-size: var(--cu-text-lg);
       padding: var(--cu-vr0);
       border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
-      .cu-card--promo-with-media .cu-card__fact:last-child, .cu-card--letterbox .cu-card__fact:last-child {
+      .cu-card--promo-with-media .cu-card__fact:last-child, .cu-card--with-aside .cu-card__fact:last-child {
         border: none; }
       @media (min-width: 64rem) {
-        .cu-card--promo-with-media .cu-card__fact, .cu-card--letterbox .cu-card__fact {
+        .cu-card--promo-with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
           border-bottom: none;
           border-right: 2px solid rgba(255, 255, 255, 0.2);
           padding: 0 var(--cu-vr2); } }
-      .cu-card--promo-with-media .cu-card__fact-label, .cu-card--letterbox .cu-card__fact-label {
+      .cu-card--promo-with-media .cu-card__fact-label, .cu-card--with-aside .cu-card__fact-label {
         --cu-current-font-size: var(--cu-text-reg);
         --cu-current-font-weight: 300;
         display: block; }
@@ -131,17 +131,17 @@
     grid-row-start: span 2; }
   .cu-card--landscape {
     grid-column: 1 / -1; }
-  .cu-card--letterbox .cu-card__content {
+  .cu-card--with-aside .cu-card__content {
     display: grid;
     grid-template-columns: 5% 57% 5% 28% 5%;
     padding: 25% 0 var(--cu-vr0); }
-    .cu-card--letterbox .cu-card__content > * {
+    .cu-card--with-aside .cu-card__content > * {
       grid-column: 2;
       grid-row: auto; }
-      .cu-card--letterbox .cu-card__content > *:last-child {
+      .cu-card--with-aside .cu-card__content > *:last-child {
         grid-column: 4;
         align-self: center;
         text-align: center; }
-  .cu-card--letterbox .cu-heading--strong {
+  .cu-card--with-aside .cu-heading--strong {
     font-size: var(--cu-text-lg); }
 /*# sourceMappingURL=card.css.map */

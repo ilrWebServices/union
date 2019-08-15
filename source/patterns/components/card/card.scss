@@ -55,7 +55,7 @@
 
   /*----------  Promo with media and letterbox  ----------*/
   &--promo-with-media,
-  &--letterbox {
+  &--with-aside {
     @include overlay;
 
     .cu-card__media {
@@ -187,8 +187,8 @@
   }
 
 
-  /*----------  Letterbox  ----------*/
-  &--letterbox {
+  /*----------  With aside  ----------*/
+  &--with-aside {
     .cu-card__content {
       display: grid;
       grid-template-columns: 5% 57% 5% 28% 5%;
