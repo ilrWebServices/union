@@ -8,6 +8,10 @@
   class: 'cu-icon__image',
   width: size
 }) %}
+{% set attributes_label = union_attributes({ class: 'cu-icon__label' }) %}
+{% if label_element starts with 'h' %}
+{% set attributes_label = attributes_label.addClass(['cu-heading']) %}
+{% endif %}
 {% if link %}
   {% set icon_wrapper_element = 'a' %}
   {% set attributes = attributes.addClass(['cu-icon--link']) %}
@@ -21,5 +25,5 @@
     <title>{{ title }} Icon</title>
     <use href="{{ union_file('/images/icons.svg') }}#{{ icon }}" />
   </svg>
-  {% if label %}<{{ label_element }} class="cu-icon__label">{{ label }}</{{ label_element }}>{% endif %}
+  {% if label %}<{{ label_element }}{{ attributes_label }}>{{ label }}</{{ label_element }}>{% endif %}
 </{{icon_wrapper_element}}>
