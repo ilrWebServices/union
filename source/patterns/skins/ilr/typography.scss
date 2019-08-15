@@ -39,28 +39,6 @@ html {
   font-weight: var(--cu-current-font-weight, inherit);
   line-height: var(--cu-current-line-height, inherit);
 
-  @for $i from 1 through 6 {
-    h#{$i} {
-      --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
-      --cu-current-font-weight: var(--cu-heading-font-weight);
-      margin-top: 0;
-
-      &::after {
-        content: '';
-        display: block;
-        width: var(--cu-header-accent-width);
-        max-width: 100%;
-        padding: var(--cu-header-accent-padding);
-        border-bottom: var(--cu-header-accent-border);
-        transition: width ease-in .25s;
-      }
-
-      &:hover::after {
-        width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2));
-      }
-    }
-  }
-
   /*----------  Tag-based styles  ----------*/
   p {
     margin-top: 0;
@@ -73,6 +51,26 @@ html {
     &.underlined {
       text-decoration: underline;
     }
+  }
+}
+
+.cu-heading {
+  --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
+  --cu-current-font-weight: var(--cu-heading-font-weight);
+  margin-top: 0;
+
+  &::after {
+    content: '';
+    display: block;
+    width: var(--cu-header-accent-width);
+    max-width: 100%;
+    padding: var(--cu-header-accent-padding);
+    border-bottom: var(--cu-header-accent-border);
+    transition: width ease-in .25s;
+  }
+
+  &:hover::after {
+    width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2));
   }
 }
 
@@ -128,7 +126,13 @@ small {
 .cu-heading--strong {
   font-family: 'futura-pt';
   text-transform: uppercase;
-  font-size: var(--cu-ms7);
+  font-size: var(--cu-ms3);
+  --cu-current-line-height: 1;
+
+  @include breakpoint(sm) {
+    font-size: var(--cu-ms7);
+    --cu-current-line-height: 1.6;
+  }
 
   span {
     color: $color-brand;
