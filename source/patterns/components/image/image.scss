@@ -3,6 +3,7 @@
   height: auto;
   vertical-align: middle;
 
+  // @todo Refactor when https://caniuse.com/#feat=css-backdrop-filter is better supported.
   &--blurred {
     filter: blur(10px);
     min-width: 100%;
@@ -11,7 +12,10 @@
     top: 0;
     left: 0;
 
-    > * {
+    &::after {
+      content: '';
+      display: block;
+      background-image: var(--cu-bg-image);
       background-size: cover;
       width: 100%;
       height: 100%;
