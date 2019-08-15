@@ -1,5 +1,7 @@
 <h3>Union Cards</h3>
+
 <p>The card component consists of a content blob (required), media and attributes (both optional). Attributes are used to set the BEM modifiers that create the style variations of cards (text-overlay, centered, light, etc.).</p>
+
 <p>Variations are demoed individually below, and then added to a grid.</p>
 
 <div style="background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%), linear-gradient(45deg, #ccc 25%, #fff 25%, #fff 75%, #ccc 75%); background-size: 20px 20px; background-position: 0 0, 10px 10px; padding-bottom: 3rem;">
@@ -10,7 +12,8 @@
   {% if card.img %}
     {% include '@union/_image.twig' with {
           img_src: card.img.src,
-          img_alt: card.img.alt
+          img_alt: card.img.alt,
+          blurred: card.img.blurred
         } only %}
   {% endif %}
   {% endset %}
@@ -23,6 +26,7 @@
           icon: card.icon.icon,
           size: card.icon.size,
           label: card.icon.label,
+          label_element: card.icon.label_element,
           attributes: card.icon.attributes
         } only %}
       </div>
@@ -49,7 +53,7 @@
   {# Render the card #}
   <h3 style="background: white; padding: 1em 0; margin-top: 2rem;">{{ card.label}}</h3>
   {% if not card.overflow_demo %}
-  <div style="background: white; margin: 0 auto; max-width: 600px;">
+  <div style="margin: 0 auto; max-width: 600px;">
   {% endif %}
     {{ rendered_card }}
   {% if not card.overflow_demo %}

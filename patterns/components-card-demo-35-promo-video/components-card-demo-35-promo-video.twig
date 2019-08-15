@@ -1,0 +1,19 @@
+{% set rendered_video %}
+{% include '@union/videos.twig' with {
+  src: 'https://climate.nasa.gov/assets/videos/home/water.mp4',
+  poster: '',
+  loop: TRUE,
+  autoplay: TRUE,
+  controls: FALSE
+} only %}
+{% endset %}
+
+{% include '@union/_card.twig' with {
+  card_content: '<h2>Is that background picture moving?</h2><p>The media in this card is a looping video, rather than an image. Because videos are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element">replaced elements</a> like images, we can cover the background with the video even as its container is resized or its aspect ratio is changed. Neat!</p>',
+  card_media: rendered_video,
+  attributes: {
+    class: 'cu-card--promo cu-card--promo-with-media'
+  }
+} only %}
+
+{# https://climate.nasa.gov/assets/videos/home/clouds.mp4 #}
