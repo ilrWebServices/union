@@ -1,10 +1,7 @@
-{% set random_id = 'cu-vid-' ~ random(50000, 1000000) %}
-
 {% set video_media %}
 {% include '@union/_video.twig' with {
     src: 'https://www.dropbox.com/s/2oee7izfxsl16ah/Hero%20clips%20for%20web%20-%20FINAL%20-%20Aug%202019.mp4?raw=1',
-    poster: 'http://placeimg.com/1600/900/arch',
-    attributes: { id: random_id }
+    poster: 'http://placeimg.com/1600/900/arch'
   } only %}
 {% endset %}
 {% set rendered_content %}
@@ -19,7 +16,6 @@
         attributes: {
           class: 'cu-icon--inline',
           role: 'button',
-          'data-cu-video-target': '#' ~ random_id,
           'aria-pressed': "false"
         }
       } only %}
