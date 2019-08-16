@@ -3,11 +3,15 @@
   {{ patternLabFoot | raw }}
 
   <script src="../../js/union.js?{{ cacheBuster }}"></script>
-  <script type="text/javascript">
-    <!--//--><![CDATA[//><!--
-    try{Typekit.load();}catch(e){}
-    //--><!]]>
+  <script>
+    let body = document.getElementsByTagName('body')[0];
+    let js = document.createElement('script');
+    js.type = 'text/javascript';
+
+    if (window.location.hostname === 'localhost') {
+      js.src = 'http://localhost:35778/livereload.js';
+      body.appendChild(js);
+    }
   </script>
-  <script src="http://localhost:35778/livereload.js"></script>
   </body>
 </html>
