@@ -40,7 +40,8 @@
   min-width: 73px; }
 
 .cu-icon--play {
-  --cu-current-text-color: var(--cu-color-text--light); }
+  --cu-current-text-color: var(--cu-color-text--light);
+  cursor: pointer; }
   .cu-icon--play > * {
     pointer-events: none; }
   .cu-icon--play .cu-icon__image {

@@ -66,6 +66,9 @@
 
 .cu-icon--play {
   --cu-current-text-color: var(--cu-color-text--light);
+  // Amazingly, this fixes an iOS bug with click event delegation.
+  // @see https://stackoverflow.com/a/16006333
+  cursor: pointer;
 
   > * {
     pointer-events: none;
