@@ -140,8 +140,31 @@
     --cu-card-border-radius: 3px;
     flex-direction: row;
     align-items: center;
+
+    .cu-card__content {
+      width: 100%;
+    }
   }
 
+  /*----------  Hover Reveal  ----------*/
+  &--hover-content-reveal {
+    .cu-card__hover-content {
+      max-height: 0;
+      transition: max-height .25s ease, opacity .375s;
+      opacity: 0;
+      color: var(--cu-color-text, $color-text);
+      --cu-current-font-weight: 300;
+    }
+
+    &:hover {
+      .cu-card__hover-content {
+        max-height: 500px;
+        opacity: 1;
+      }
+    }
+  }
+
+  /*----------  Hover Overlay  ----------*/
   &--hover-overlay {
     display: grid;
     grid-template-columns: 1fr;

@@ -9,47 +9,47 @@
 
 {% set icon_cards %}
   {% include '@union/_card.twig' with {
-    attributes: { class: 'cu-card--icon' },
+    attributes: { class: 'cu-card--icon cu-card--hover-content-reveal' },
     card_content: include('@union/_icon.twig', {
       title: 'Cornell University Tower',
-      label: 'Undergraduate Admissions',
+      label: 'Undergraduate\nAdmissions',
       label_element: 'h2',
       link: '/programs/undergraduate-degree-program/undergraduate-admissions',
       icon: 'tower',
       size: '2.5em',
       attributes: { class: 'cu-icon--inline-centered' }
-    }, with_context = false)
+    }, with_context = false) ~ '<p class="cu-card__hover-content">Our flexible, interdisciplinary major lets students pursue a wide range of academic interests and careers.</p>'
   } only %}
   {% include '@union/_card.twig' with {
-    attributes: { class: 'cu-card--icon' },
+    attributes: { class: 'cu-card--icon cu-card--hover-content-reveal' },
     card_content: include('@union/_icon.twig', {
       title: 'Mortarboard',
-      label: 'Graduate Programs',
+      label: 'Graduate\nPrograms',
       label_element: 'h2',
       link: '/programs/graduate-degree-programs',
       icon: 'mortarboard',
       size: '2.5em',
       attributes: { class: 'cu-icon--inline-centered' }
-    }, with_context = false)
+    }, with_context = false) ~ '<p class="cu-card__hover-content">The depth and breadth of our graduate programs sets us apart.</p>'
   } only %}
   {% include '@union/_card.twig' with {
-    attributes: { class: 'cu-card--icon' },
+    attributes: { class: 'cu-card--icon cu-card--hover-content-reveal' },
     card_content: include('@union/_icon.twig', {
       title: 'Handshake',
-      label: 'Professional Programs',
+      label: 'Professional\nPrograms',
       label_element: 'h2',
       link: '/programs/professional-programs',
       icon: 'handshake',
       size: '2.5em',
       attributes: { class: 'cu-icon--inline-centered' }
-    }, with_context = false)
+    }, with_context = false) ~ '<p class="cu-card__hover-content">Professional programs bring together the leading researchers on the workplace with training grounded in practice.</p>'
   } only %}
 {% endset %}
 
 {% set card_grid %}
   {% include '@union/_grid.twig' with {
     grid_content: icon_cards,
-    attributes: { class: 'cu-grid--3col' }
+    attributes: { class: 'cu-grid--3col cu-grid--align-end' }
   } %}
 {% endset %}
 

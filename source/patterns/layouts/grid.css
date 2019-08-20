@@ -37,7 +37,9 @@
       grid-template-columns: repeat(4, 1fr); }
       .cu-grid--4col-lead :first-child {
         grid-column-end: span 2;
-        grid-row-end: span 2; } }
+        grid-row-end: span 2; }
+    .cu-grid--align-end {
+      align-items: end; } }
   .cu-grid .grid-item {
     margin: 0; }
 /*# sourceMappingURL=grid.css.map */
