@@ -1,0 +1,5 @@
+{{ attach_library('union_organizer/form') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+<form{{ attributes.addClass('cu-form') }}>
+  {{ children }}
+</form>

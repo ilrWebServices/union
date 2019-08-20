@@ -1,0 +1,45 @@
+{#
+A wrapper for multiple form elements
+
+Available variables:
+  - fieldsetAttributes (object) - A Drupal attributes object for the fieldset element.
+  - legendAttributes (object) - A Drupal attributes object for the legend element.
+  - legendInnerAttributes (object) - A Drupal attributes object for the element inside of legend.  This is really
+      only present because it's used in Drupal and might therefore be needed.
+  - legendTitle (string) - The title to display in the legend element.
+  - legendSize (enum) - A headline size to use for the legend.
+  - legend_span - A positioning wrapper for the legendTitle @see classy's fieldset.html.twig
+  - children (renderable) - The form inputs .
+  - errors (string) - Server-side errors
+  - descriptionText (string) - An optional description for this fieldset
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set legendAttributes = union_attributes(legendAttributes|default([])) %}
+{# {% set legend_span.attributes = union_attributes(legend_span.attributes|default([])) %} #}
+{%
+  set legend_span_classes = [
+    'fieldset-legend',
+    required ? 'form-required',
+  ]
+%}
+<fieldset{{ attributes.addClass('cu-fieldset') }}>
+  <legend{{ legendAttributes.addClass('cu-legend') }}>
+    <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legendTitle }}</span>
+  </legend>
+  <div>
+    {% if errors %}
+      <div class="cu-input-message cu-input-message--invalid">
+        {{ errors }}
+      </div>
+    {% endif %}
+
+    {% if descriptionText %}
+      <div class="cu-input-message">
+        {{ descriptionText }}
+      </div>
+    {% endif %}
+
+    {{ children }}
+
+  </div>
+</fieldset>
