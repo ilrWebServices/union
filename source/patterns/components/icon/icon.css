@@ -27,6 +27,8 @@
       flex-shrink: 0;
       margin-right: var(--cu-ps0);
       margin-bottom: 0; }
+    .cu-icon--inline-centered .cu-icon__label {
+      white-space: pre-line; }
   .cu-icon--light {
     --cu-current-text-color: var(--cu-color-text--light); }
 
