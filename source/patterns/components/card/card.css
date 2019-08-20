@@ -11,6 +11,8 @@
   /*----------  Pinned ----------*/
   /*----------  Centered content  ----------*/
   /*----------  Icon  ----------*/
+  /*----------  Hover Reveal  ----------*/
+  /*----------  Hover Overlay  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
   /*----------  With aside  ----------*/
@@ -105,6 +107,17 @@
     --cu-card-border-radius: 3px;
     flex-direction: row;
     align-items: center; }
+    .cu-card--icon .cu-card__content {
+      width: 100%; }
+  .cu-card--hover-content-reveal .cu-card__hover-content {
+    max-height: 0;
+    transition: max-height .25s ease, opacity .375s;
+    opacity: 0;
+    color: var(--cu-color-text, #222);
+    --cu-current-font-weight: 300; }
+  .cu-card--hover-content-reveal:hover .cu-card__hover-content {
+    max-height: 500px;
+    opacity: 1; }
   .cu-card--hover-overlay {
     display: grid;
     grid-template-columns: 1fr;
