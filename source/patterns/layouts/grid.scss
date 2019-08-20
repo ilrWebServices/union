@@ -73,6 +73,10 @@
         grid-row-end: span 2;
       }
     }
+
+    &--align-end {
+      align-items: end;
+    }
   }
 
   .grid-item {
