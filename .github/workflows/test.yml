@@ -1,0 +1,12 @@
+name: Test
+on:
+  push:
+    branches:
+    - actions_test
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Repo info
+      run: git remote -v
