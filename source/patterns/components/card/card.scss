@@ -149,6 +149,7 @@
   /*----------  Hover Reveal  ----------*/
   &--hover-content-reveal {
     .cu-card__hover-content {
+      overflow: hidden;
       max-height: 0;
       transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
       opacity: 0;
