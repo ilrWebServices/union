@@ -111,13 +111,17 @@
       width: 100%; }
   .cu-card--hover-content-reveal .cu-card__hover-content {
     max-height: 0;
-    transition: max-height .25s ease, opacity .375s;
+    transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
     opacity: 0;
     color: var(--cu-color-text, #222);
     --cu-current-font-weight: 300; }
+    .cu-card--hover-content-reveal .cu-card__hover-content:last-child {
+      margin-bottom: 0; }
   .cu-card--hover-content-reveal:hover .cu-card__hover-content {
     max-height: 500px;
     opacity: 1; }
+    .cu-card--hover-content-reveal:hover .cu-card__hover-content:last-child {
+      margin-bottom: 1em; }
   .cu-card--hover-overlay {
     display: grid;
     grid-template-columns: 1fr;
