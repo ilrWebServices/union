@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Repo info
-      run: git remote -v
+      run: git status
