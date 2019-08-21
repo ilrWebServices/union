@@ -1,0 +1,14 @@
+name: Build and Deploy Patternlab
+on:
+  push:
+    branches:
+    - master
+jobs:
+  build-and-deploy-pl:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Run the build script
+      run: ./scripts/build.sh
+    - name: Deploy the gh-pages branch
+      run: git push origin gh-pages
