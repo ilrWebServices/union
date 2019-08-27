@@ -74,4 +74,12 @@
   --cu-vr-3: calc(var(--cu-vr-2) / var(--cu-vr-ratio));
   --cu-vr-4: calc(var(--cu-vr-3) / var(--cu-vr-ratio));
   --cu-vr-5: calc(var(--cu-vr-4) / var(--cu-vr-ratio)); }
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal; }
 /*# sourceMappingURL=base.css.map */
