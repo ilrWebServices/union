@@ -1,3 +1,7 @@
 .union {
   padding: 0 1em;
 }
+
+.union .cu-breadcrumb {
+  background: #999;
+}
