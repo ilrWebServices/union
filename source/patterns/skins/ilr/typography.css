@@ -28,6 +28,9 @@ html {
   line-height: var(--cu-line-height);
   font-weight: var(--cu-font-weight); }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--current-heading-size, inherit); }
+
 [class*='cu-'] {
   font-size: var(--cu-current-font-size, inherit);
   font-weight: var(--cu-current-font-weight, inherit);
@@ -70,16 +73,16 @@ html {
   --cu-font-size: var(--current-heading-size);
   font-size: var(--current-heading-size); }
 
-.cu-text--xxxl {
+h1, .cu-text--xxxl {
   --current-heading-size: var(--cu-text-xxxl); }
 
-.cu-text--xxl {
+h2, .cu-text--xxl {
   --current-heading-size: var(--cu-text-xxl); }
 
-.cu-text--xl {
+h3, .cu-text--xl {
   --current-heading-size: var(--cu-text-xl); }
 
-.cu-text--lg {
+h4, .cu-text--lg {
   --current-heading-size: var(--cu-text-lg); }
 
 .cu-text--md {
@@ -106,4 +109,18 @@ small {
       --cu-current-line-height: 1.6; } }
   .cu-heading--strong span {
     color: #b31b1b; }
+
+.cu-section {
+  max-width: 1000px;
+  margin: 0 auto; }
+  .cu-section--wide {
+    max-width: 100%; }
+
+.cu-text--2col {
+  column-count: 2;
+  column-gap: var(--cu-vr3); }
+
+.cu-section-pad {
+  border: none;
+  height: var(--cu-vr3); }
 /*# sourceMappingURL=typography.css.map */

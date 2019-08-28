@@ -3,7 +3,7 @@
 .cu-banner {
   position: relative;
   color: $color-text--light;
-  color: var(--cu-color-text--light, $color-text--light);
+  color: var(--cu-color-text--light, #{$color-text--light});
 }
 
 /*=============================================
@@ -37,10 +37,10 @@
 
   .cu-banner__content {
     color: $color-text--light;
-    color: var(--cu-color-text--light, $color-text--light);
+    color: var(--cu-color-text--light, #{$color-text--light});
 
     @include breakpoint(md) {
-      background: var(--cu-color-bg--dark, $color-bg--dark);
+      background: var(--cu-color-bg--dark, #{$color-bg--dark});
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -77,6 +77,23 @@
     }
   }
 }
+
+/*=============================================
+=            Page banner                      =
+=============================================*/
+.cu-banner--page {
+  background: var(--cu-color-bg--dark, #{$color-bg--dark});
+  padding: var(--cu-vr1);
+  margin-bottom: var(--cu-vr3); // Revisit margins for components
+
+  .cu-breadcrumb {
+    margin-bottom: var(--cu-vr1);
+  }
+}
+
+
+/*=====  End of Page banner  ======*/
+
 
 /*=============================================
 =            Video banner                     =

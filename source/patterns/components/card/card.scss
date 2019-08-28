@@ -8,6 +8,7 @@
 
   &__content {
     order: 2;
+    padding: var(--cu-card-content-padding);
   }
 
   &__media {
@@ -48,7 +49,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: var(--cu-vr2) var(--cu-vr3);
+      --cu-card-content-padding: var(--cu-vr2) var(--cu-vr5);
       text-align: center;
 
       @include breakpoint(md) {
@@ -203,7 +204,6 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: var(--cu-vr2);
     }
 
     &:hover {
@@ -223,9 +223,7 @@
     grid-column: 1 / -1; // Must be part of a grid
 
     .cu-card__content {
-      @include breakpoint(md) {
-        padding: var(--cu-vr4) var(--cu-vr3);
-      }
+      --cu-card-content-padding: var(--cu-vr3) 25%;
     }
   }
 

@@ -1,0 +1,19 @@
+@import './source/global/global';
+
+.cu-page-nav {
+
+}
+
+.cu-page-nav__list {
+  list-style-type: none;
+  margin: 0; 
+  padding: 0;
+  width: 100%;
+  // justify-content: space-between;
+
+  --cu-current-link-color: var(--cu-color-text--light, #{$color-text--light});
+  --cu-header-accent-width: 20%;
+  --cu-header-accent-padding: .25em 0 0 0;
+  --cu-header-accent-border: 4px solid var(--cu-color-brand, #{$cornell-red});
+  --cu-current-font-size: var(--cu-ms1);
+}

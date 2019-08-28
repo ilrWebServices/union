@@ -2,14 +2,20 @@
 
 .cu-section-heading {
   margin-bottom: var(--cu-vr3);
+  display: flex;
+  flex-direction: column;
 
   &__heading {
     --cu-current-font-size: var(--cu-text-xl);
-    margin-top: var(--cu-vr-1)
+    --cu-current-font-weight: 300;
+    margin-top: 0;
+    order: 2;
   }
 
   &__subheading {
     --cu-current-font-size: var(--cu-text-reg);
+    order: 1;
+    margin-bottom: 0;
   }
 
   &__link {

@@ -72,6 +72,7 @@
       // All direct children
       grid-column: 1;
       display: inline-flex;
+      justify-content: space-between;
     }
 
     // Set the bottom frame line
@@ -127,6 +128,10 @@
 
   @include breakpoint(sm) {
     grid-template-columns: fit-content(75%) 1fr;
+  }
+
+  > * {
+    grid-column: 1;
   }
 
   &::before {

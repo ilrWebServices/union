@@ -1,0 +1,4 @@
+css:
+  page-nav: {}
+dependencies:
+  - base

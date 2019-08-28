@@ -34,7 +34,8 @@
     align-content: end; }
     .framed > *:last-child > * {
       grid-column: 1;
-      display: inline-flex; }
+      display: inline-flex;
+      justify-content: space-between; }
     .framed > *:last-child::after {
       position: relative;
       clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
@@ -71,6 +72,8 @@
   @media (min-width: 37.5rem) {
     .framed--right {
       grid-template-columns: fit-content(75%) 1fr; } }
+  .framed--right > * {
+    grid-column: 1; }
   .framed--right::before {
     grid-column: 2;
     right: calc(var(--notchSize) * -1); }

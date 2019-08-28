@@ -1,0 +1,15 @@
+{% set rendered_content %}
+  <div class="framed framed--right">
+  {% include "@union/demo/breadcrumb.twig" with {
+    attributes: { class: 'cu-pl-background-none'},
+  } %}
+    <h1 class="cu-heading cu-text--xxl">Contract Language and Interpretation</h1>
+    <p>Whether you are administering contract language or proposing it at the bargaining table, this workshop is designed to instruct labor relations practitioners on how contract language and past practices may be interpreted by an arbitrator.</p>
+    {% include '@union/demo/page-nav.twig' %}
+  </div>
+{% endset %}
+
+{% include '@union/_banner.twig' with {
+  attributes: { class: 'cu-banner--page'},
+  content: rendered_content,
+} only %}

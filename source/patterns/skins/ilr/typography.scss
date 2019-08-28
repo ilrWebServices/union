@@ -6,9 +6,9 @@
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
   --cu-line-height: var(--cu-base-line-height, #{$base-line-height});
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
-  --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{#{$base-heading-font-weight}});
-  --cu-heading-line-height: var(--cu-base-heading-line-height, #{#{$base-heading-line-height}});
-  --cu-heading-font-family: var(--cu-base-heading-font-family, #{#{$base-heading-font-family}});
+  --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{$base-heading-font-weight});
+  --cu-heading-line-height: var(--cu-base-heading-line-height, #{$base-heading-line-height});
+  --cu-heading-font-family: var(--cu-base-heading-font-family, #{$base-heading-font-family});
   --cu-font-size-percentage: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
   --cu-text-color: #{$color-text};
   --cu-color-text--light: #{$color-text--light};
@@ -32,6 +32,10 @@ html {
   font-size: var(--cu-font-size-percentage);
   line-height: var(--cu-line-height);
   font-weight: var(--cu-font-weight);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--current-heading-size, inherit);
 }
 
 [class*='cu-'] {
@@ -90,19 +94,19 @@ html {
   font-size: var(--current-heading-size);
 }
 
-.cu-text--xxxl {
+h1, .cu-text--xxxl {
   --current-heading-size: var(--cu-text-xxxl);
 }
 
-.cu-text--xxl {
+h2, .cu-text--xxl {
   --current-heading-size: var(--cu-text-xxl);
 }
 
-.cu-text--xl {
+h3, .cu-text--xl {
   --current-heading-size: var(--cu-text-xl);
 }
 
-.cu-text--lg {
+h4, .cu-text--lg {
   --current-heading-size: var(--cu-text-lg);
 }
 
@@ -138,3 +142,22 @@ small {
     color: $color-brand;
   }
 }
+
+.cu-section {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &--wide {
+    max-width: 100%;
+  }
+}
+
+.cu-text--2col {
+  column-count: 2;
+  column-gap: var(--cu-vr3);
+}
+
+.cu-section-pad {
+  border: none;
+  height: var(--cu-vr3);
+} 
