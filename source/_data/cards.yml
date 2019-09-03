@@ -290,3 +290,12 @@ global:
           content: |
             <h2 class="cu-card__heading">Professional</h2>
             <p>You can choose from a wide range of professional and academic programs, grounded in practice and focused on <a href="#">real-world application.</a></p>
+    courses:
+      grid_attributes:
+        class: 'cu-grid cu-grid--3col'
+      cards:
+        -
+          attributes:
+            class: 'cu-card--course'
+          content: |
+            <h2 class="cu-card__heading">Resolving Conflict</h2>

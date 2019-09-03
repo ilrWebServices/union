@@ -5,6 +5,8 @@
   grid-auto-flow: dense;
   grid-gap: var(--cu-vr0);
   grid-template-columns: 1fr;
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  margin: 0 auto;
 
   @include breakpoint(sm) {
 

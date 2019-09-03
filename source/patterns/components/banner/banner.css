@@ -77,8 +77,17 @@
   background: var(--cu-color-bg--dark, #333);
   padding: var(--cu-vr1);
   margin-bottom: var(--cu-vr3); }
+  @media (min-width: 37.5rem) {
+    .cu-banner--page {
+      padding: var(--cu-vr1) var(--cu-vr2); } }
+  @media (min-width: 64rem) {
+    .cu-banner--page {
+      padding: var(--cu-vr1) var(--cu-vr4); } }
   .cu-banner--page .cu-breadcrumb {
     margin-bottom: var(--cu-vr1); }
+  .cu-banner--page .cu-banner__content {
+    max-width: var(--cu-max-width-section, 1000px);
+    margin: 0 auto; }
 
 /*=====  End of Page banner  ======*/
 /*=============================================

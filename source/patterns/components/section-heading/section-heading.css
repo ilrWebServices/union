@@ -1,5 +1,5 @@
 .cu-section-heading {
-  margin-bottom: var(--cu-vr3);
+  margin: var(--cu-vr3) 0 var(--cu-vr1);
   display: flex;
   flex-direction: column;
   /*=============================================

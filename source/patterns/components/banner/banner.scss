@@ -86,11 +86,23 @@
   padding: var(--cu-vr1);
   margin-bottom: var(--cu-vr3); // Revisit margins for components
 
+  @include breakpoint(sm) {
+    padding: var(--cu-vr1) var(--cu-vr2);
+  }
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr1) var(--cu-vr4);
+  }
+
   .cu-breadcrumb {
     margin-bottom: var(--cu-vr1);
   }
-}
 
+  .cu-banner__content {
+    max-width: var(--cu-max-width-section, #{$max-width-section});
+    margin: 0 auto;
+  }
+}
 
 /*=====  End of Page banner  ======*/
 

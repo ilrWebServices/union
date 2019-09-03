@@ -1,0 +1,4 @@
+css:
+  course-teaser: {}
+dependencies:
+  - base

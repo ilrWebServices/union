@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.cu-course-teaser {
+  background: #F5F5F5;
+  padding: var(--cu-vr1) var(--cu-ps1);
+  display: flex;
+  flex-direction: column; }
+  .cu-course-teaser__label {
+    --cu-current-heading-size: var(--cu-text-reg);
+    --cu-current-font-weight: bold !important;
+    order: 1;
+    color: var(--cu-color-brand, #b31b1b); }
+  .cu-course-teaser__title {
+    order: 2; }
+  .cu-course-teaser__description {
+    order: 3; }
+  .cu-course-teaser__details {
+    order: 4;
+    list-style-type: none;
+    margin: 0 0 var(--cu-vr2);
+    padding: 0 0 0 var(--cu-ps3); }
+  .cu-course-teaser__detail {
+    --cu-current-font-weight: bold;
+    position: relative; }
+    .cu-course-teaser__detail::before {
+      content: '✓';
+      font-weight: normal;
+      font-size: var(--cu-ms2);
+      color: var(--cu-color-brand, #b31b1b);
+      position: absolute;
+      left: -3rem;
+      top: -5px; }
+  .cu-course-teaser__more-link {
+    --cu-current-font-weight: bold;
+    order: 6;
+    margin-bottom: var(--cu-vr2); }
+  .cu-course-teaser__cta {
+    order: 7; }
+/*# sourceMappingURL=course-teaser.css.map */

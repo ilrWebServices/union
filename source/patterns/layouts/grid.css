@@ -2,7 +2,9 @@
   display: grid;
   grid-auto-flow: dense;
   grid-gap: var(--cu-vr0);
-  grid-template-columns: 1fr; }
+  grid-template-columns: 1fr;
+  max-width: var(--cu-max-width-section, 1000px);
+  margin: 0 auto; }
   @media (min-width: 37.5rem) {
     .cu-grid--gapless {
       grid-gap: 0; }

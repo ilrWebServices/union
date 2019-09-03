@@ -34,10 +34,6 @@ html {
   font-weight: var(--cu-font-weight);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: var(--current-heading-size, inherit);
-}
-
 [class*='cu-'] {
   font-size: var(--cu-current-font-size, inherit);
   font-weight: var(--cu-current-font-weight, inherit);
@@ -50,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
   a {
     text-decoration: none;
-    color: var(--cu-current-link-color, $color-link);
+    color: var(--cu-current-link-color, #{$color-link});
 
     &.underlined {
       text-decoration: underline;
@@ -58,10 +54,15 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--cu-current-heading-size, inherit);
+}
+
 .cu-heading {
   --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
   --cu-current-font-weight: var(--cu-heading-font-weight);
   margin-top: 0;
+  font-size: var(--cu-current-heading-size, inherit);
 
   &::after {
     content: '';
@@ -90,28 +91,28 @@ h1, h2, h3, h4, h5, h6 {
   --cu-font-family: var(--cu-heading-font-family);
   --cu-font-weight: var(--cu-heading-font-weight);
   --cu-line-height: var(--cu-heading-line-height);
-  --cu-font-size: var(--current-heading-size);
-  font-size: var(--current-heading-size);
+  --cu-font-size: var(--cu-current-heading-size);
+  font-size: var(--cu-current-heading-size);
 }
 
 h1, .cu-text--xxxl {
-  --current-heading-size: var(--cu-text-xxxl);
+  --cu-current-heading-size: var(--cu-text-xxxl);
 }
 
 h2, .cu-text--xxl {
-  --current-heading-size: var(--cu-text-xxl);
+  --cu-current-heading-size: var(--cu-text-xxl);
 }
 
 h3, .cu-text--xl {
-  --current-heading-size: var(--cu-text-xl);
+  --cu-current-heading-size: var(--cu-text-xl);
 }
 
 h4, .cu-text--lg {
-  --current-heading-size: var(--cu-text-lg);
+  --cu-current-heading-size: var(--cu-text-lg);
 }
 
 .cu-text--md {
-  --current-heading-size: var(--cu-text-med);
+  --cu-current-heading-size: var(--cu-text-med);
 }
 
 .cu-text--reg {
@@ -144,7 +145,7 @@ small {
 }
 
 .cu-section {
-  max-width: 1000px;
+  max-width: var(--cu-max-width-section, #{$max-width-section});
   margin: 0 auto;
 
   &--wide {
@@ -155,9 +156,10 @@ small {
 .cu-text--2col {
   column-count: 2;
   column-gap: var(--cu-vr3);
+  margin-bottom: var(--cu-vr3);
 }
 
 .cu-section-pad {
   border: none;
   height: var(--cu-vr3);
-} 
+}
