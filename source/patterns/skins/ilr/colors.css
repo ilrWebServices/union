@@ -8,6 +8,9 @@ body {
 .cu-card--icon {
   --cu-current-link-color: #222; }
 
+.cu-card--light {
+  --cu-card-background: #fff !important; }
+
 .cu-card--promo {
   --cu-card-background: #efefef; }
 

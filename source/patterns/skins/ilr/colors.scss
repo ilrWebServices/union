@@ -13,6 +13,10 @@ body {
   --cu-current-link-color: #222;
 }
 
+.cu-card--light {
+  --cu-card-background: #{$color-bg-card--light} !important;
+}
+
 .cu-card--promo {
   --cu-card-background: #{$color-bg-card--medium};
 }
