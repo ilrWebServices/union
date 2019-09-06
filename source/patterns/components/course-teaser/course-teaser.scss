@@ -51,5 +51,6 @@
 
   &__cta {
     order: 7;
+    margin-top: auto; // Bottom-align the button within the flex container
   }
 }

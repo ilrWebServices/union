@@ -1,6 +1,7 @@
 .cu-grid {
   display: grid;
   grid-auto-flow: dense;
+  align-items: stretch;
   grid-gap: var(--cu-vr0);
   grid-template-columns: 1fr;
   max-width: var(--cu-max-width-section, 1000px);

@@ -34,5 +34,6 @@
     order: 6;
     margin-bottom: var(--cu-vr2); }
   .cu-course-teaser__cta {
-    order: 7; }
+    order: 7;
+    margin-top: auto; }
 /*# sourceMappingURL=course-teaser.css.map */
