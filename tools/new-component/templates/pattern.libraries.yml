@@ -1,4 +1,4 @@
 css:
-  <%= name %>: {}
+  <%= name %>.css: {}
 dependencies:
   - base
