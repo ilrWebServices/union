@@ -1,4 +1,4 @@
 css:
-  video.css: {}
+  grid.css: {}
 dependencies:
   - base

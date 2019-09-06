@@ -1,4 +1,4 @@
 css:
-  breadcrumb: {}
+  breadcrumb.css: {}
 dependencies:
   - base

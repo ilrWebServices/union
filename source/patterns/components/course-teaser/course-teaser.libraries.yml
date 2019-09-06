@@ -1,4 +1,4 @@
 css:
-  course-teaser: {}
+  course-teaser.css: {}
 dependencies:
   - base

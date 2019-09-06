@@ -1,4 +1,4 @@
 css:
-  page-nav: {}
+  page-nav.css: {}
 dependencies:
   - base
