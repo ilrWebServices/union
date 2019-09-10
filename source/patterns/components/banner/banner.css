@@ -88,6 +88,13 @@
   .cu-banner--page .cu-banner__content {
     max-width: var(--cu-max-width-section, 1000px);
     margin: 0 auto; }
+    .cu-banner--page .cu-banner__content .cu-heading, .cu-banner--page .cu-banner__content p {
+      max-width: 75%; }
+      @media (min-width: 64rem) {
+        .cu-banner--page .cu-banner__content .cu-heading, .cu-banner--page .cu-banner__content p {
+          max-width: 60%; } }
+  .cu-banner--page .cu-banner__summary {
+    margin-bottom: var(--cu-vr2); }
 
 /*=====  End of Page banner  ======*/
 /*=============================================

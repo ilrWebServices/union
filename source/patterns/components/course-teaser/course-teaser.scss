@@ -1,10 +1,15 @@
 @import './source/global/global';
 
 .cu-course-teaser {
+  --cu-current-link-color: var(--cu-text-color);
   background:#F5F5F5;
   padding: var(--cu-vr1) var(--cu-ps1);
-  display: flex;
-  flex-direction: column;
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
   &__label {
     --cu-current-heading-size: var(--cu-text-reg);
@@ -45,6 +50,7 @@
 
   &__more-link {
     --cu-current-font-weight: bold;
+    color: var(--cu-color-brand, #{$color-brand});
     order: 6;
     margin-bottom: var(--cu-vr2);
   }
