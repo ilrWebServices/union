@@ -1,0 +1,13 @@
+@import './source/global/global';
+
+.demo__checkbuttons {
+  @include breakpoint(sm) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

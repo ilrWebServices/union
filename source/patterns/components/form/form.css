@@ -174,6 +174,56 @@ progress {
   clip: rect(1px, 1px, 1px, 1px);
   word-wrap: normal; }
 
+/*=============================================
+=            Checkbuttons            =
+=============================================*/
+.cu-checkbutton__label {
+  border: 2px solid #ccc;
+  border-radius: 1px;
+  padding-top: 0.25rem;
+  display: flex;
+  min-width: 200px;
+  margin: 1rem 0; }
+  .cu-checkbutton__label .cu-checkbutton__indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    order: 1;
+    text-align: center;
+    flex-basis: 25%;
+    position: relative;
+    color: #ccc; }
+    .cu-checkbutton__label .cu-checkbutton__indicator:before {
+      position: absolute;
+      content: '';
+      width: 2rem;
+      height: 2rem;
+      border-radius: 1rem;
+      border: 1px solid #222; }
+  .cu-checkbutton__label .cu-checkbutton__content {
+    order: 2;
+    flex-basis: 75%;
+    padding: var(--cu-ps-1) 0; }
+    .cu-checkbutton__label .cu-checkbutton__content * {
+      margin: 0; }
+
+.cu-checkbutton .cu-input:checked + .cu-checkbutton__label {
+  border: 2px solid #b31b1b;
+  box-shadow: 0px 0px 0px 3px #b31b1b; }
+  .cu-checkbutton .cu-input:checked + .cu-checkbutton__label .cu-checkbutton__indicator:after {
+    content: '';
+    /*Make a small rectangle so the border will create an L-shape*/
+    width: 9px;
+    height: 18px;
+    margin-top: -3px;
+    /*Use a border to create an 'L' */
+    border: solid #222;
+    border-width: 0 2px 2px 0;
+    /*Rotate the L 45 degrees to turn it into a checkmark*/
+    transform: rotate(45deg); }
+
+/*=====  End of Checkbuttons  ======*/
 .cu-input {
   padding: 0.4rem 0.5rem;
   margin-bottom: 0.5rem;
@@ -236,8 +286,44 @@ progress {
   opacity: 0; }
 
 /*=====  End of Float label inputs  ======*/
+/*=============================================
+=            Checkbuttons            =
+=============================================*/
+.cu-checkbutton .cu-input {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal; }
+
+/*=====  End of Checkbuttons  ======*/
 .cu-form *,
 .cu-form *:before,
 .cu-form *:after {
   box-sizing: border-box; }
+
+/**
+ *
+ * Composite forms here
+ *
+ */
+.registration-form {
+  display: grid; }
+  @media (min-width: 37.5rem) {
+    .registration-form {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 2em; } }
+  @media (min-width: 64rem) {
+    .registration-form {
+      grid-template-columns: 1fr 1fr 1fr; }
+      .registration-form .cu-checkbutton__label {
+        margin: 0; }
+      .registration-form .cu-input--submit--alt {
+        margin-bottom: 0; } }
+  .registration-form .cu-input--submit--alt {
+    margin-top: var(--cu-vr0); }
+    @media (min-width: 37.5rem) {
+      .registration-form .cu-input--submit--alt {
+        margin-top: 0; } }
 /*# sourceMappingURL=form.css.map */
