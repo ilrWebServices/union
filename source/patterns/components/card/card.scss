@@ -159,6 +159,7 @@
       opacity: 0;
       color: var(--cu-color-text, $color-text);
       --cu-current-font-weight: 300;
+      padding: 0 var(--cu-ps2);
 
       &:last-child {
         margin-bottom: 0;
