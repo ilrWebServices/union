@@ -41,6 +41,9 @@
 .cu-icon--cornell-seal .cu-icon__image {
   min-width: 73px; }
 
+.cu-icon--ilr-nickname .cu-icon__image {
+  min-width: 70px; }
+
 .cu-icon--play {
   --cu-current-text-color: var(--cu-color-text--light);
   cursor: pointer; }

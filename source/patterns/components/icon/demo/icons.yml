@@ -26,6 +26,9 @@ demo:
       size: 3em
       label: 'Shake shake shake'
     -
+      title: ILR Nickname
+      icon: 'ilr-nickname'
+    -
       title: Instagram
       icon: 'instagram'
     -

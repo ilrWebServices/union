@@ -9,6 +9,8 @@ The following variables are available:
 -  check-circle
 -  cornell-seal
 -  handshake
+-  ilr-nickname
+-  instagram
 -  mortarboard
 -  news-phone
 -  newsletter

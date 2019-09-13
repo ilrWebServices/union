@@ -64,7 +64,13 @@
 
 .cu-icon--cornell-seal {
   .cu-icon__image {
-    min-width: 73px;
+    min-width: 73px; // Defined by brand guidelines
+  }
+}
+
+.cu-icon--ilr-nickname {
+  .cu-icon__image {
+    min-width: 70px; // Defined by brand guidelines
   }
 }
 
