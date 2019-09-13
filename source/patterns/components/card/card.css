@@ -43,6 +43,9 @@
     align-items: center;
     padding: var(--cu-vr2) var(--cu-vr3);
     text-align: center; }
+    @media (min-width: 64rem) {
+      .cu-card--promo .cu-card__content {
+        padding: var(--cu-vr3); } }
   .cu-card--promo-with-media, .cu-card--with-aside {
     position: relative;
     pointer-events: none; }
@@ -149,6 +152,9 @@
     grid-row-start: span 2; }
   .cu-card--landscape {
     grid-column: 1 / -1; }
+    @media (min-width: 64rem) {
+      .cu-card--landscape .cu-card__content {
+        padding: var(--cu-vr4) var(--cu-vr3); } }
   .cu-card--with-aside .cu-card__content {
     display: grid;
     grid-template-columns: 5% 57% 5% 28% 5%;

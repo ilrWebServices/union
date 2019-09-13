@@ -50,6 +50,10 @@
       align-items: center;
       padding: var(--cu-vr2) var(--cu-vr3);
       text-align: center;
+
+      @include breakpoint(md) {
+        padding: var(--cu-vr3);
+      }
     }
   }
 
@@ -216,6 +220,12 @@
   /*----------  Landscape (span all columns)  ----------*/
   &--landscape {
     grid-column: 1 / -1; // Must be part of a grid
+
+    .cu-card__content {
+      @include breakpoint(md) {
+        padding: var(--cu-vr4) var(--cu-vr3);
+      }
+    }
   }
 
 
