@@ -1,0 +1,33 @@
+{{ attach_library('union_organizer/feature-list') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-feature-list']) %}
+{% set content_attributes = union_attributes(content_attributes|default({class: 'cu-grid--3col'})) %}
+{% set content_attributes = content_attributes.addClass(['cu-feature-list__items']) %}
+
+{% set grid_content %}
+  {% for item in items %}
+    <li class="cu-feature-list__item">
+      <h3 class="cu-feature-list__name">{{ item.name }}</h3>
+      <p class="cu-feature-list__description">{{ item.description }}</p>
+      {% if item.icon %}
+        {% include "@union/_icon.twig" with {
+          title: 'Circle with checkmark',
+          icon: item.icon,
+          size: '1.5em',
+          attributes: { class: 'cu-feature-list__icon' }
+        } only %}
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endset %}
+
+<div{{ attributes }}>
+  {% if title %}
+    <h2 class="cu-heading cu-feature-list__title">{{ title }}</h2>
+  {% endif %}
+  {% include "@union/_grid.twig" with {
+    grid_element: 'ul',
+    grid_content: grid_content,
+    attributes: content_attributes
+  } only %}
+</div>

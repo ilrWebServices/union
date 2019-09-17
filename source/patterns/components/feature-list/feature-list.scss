@@ -1,0 +1,45 @@
+@import './source/global/global';
+
+.cu-feature-list {
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  background: $color-bg--lightest;
+  margin: var(--cu-vr1) auto;
+  padding: var(--cu-vr1) var(--cu-ps3);
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr2) var(--cu-ps5);
+    margin: var(--cu-vr3) auto;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    list-style-type: none;
+    padding: 0;
+    grid-column-gap: var(--cu-ps4);
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__name {
+    --cu-current-heading-size: var(--cu-text-reg);
+    --cu-heading-font-weight: 400;
+    margin-top: 0;
+  }
+
+  &__description {
+    --cu-current-font-size: var(--cu-ms-1);
+    color: lighten($color-text, 30%);
+  }
+
+  &__icon {
+    --cu-current-text-color: #{$color-brand};
+    position: absolute;
+    top: 0;
+    left: -2.5rem;
+  }
+}
