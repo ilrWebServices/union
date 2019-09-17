@@ -1,0 +1,21 @@
+{{ attach_library('union_organizer/person') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-person']) %}
+
+<div{{ attributes }}>
+  <h3 class="cu-heading cu-person__name">{{ name }}</h3>
+  {% if title %}
+  <h4 class="cu-person__title">{{ title }}</h4>
+  {% endif %}
+  <div class="cu-person__content">
+    {{ content }}
+  </div>
+  {% if img %}
+  <div class="cu-person__image">
+    {% include '@union/_image.twig' with {
+      img_src: img.src,
+      img_alt: img.alt
+    } only %}
+  </div>
+  {% endif %}
+</div>
