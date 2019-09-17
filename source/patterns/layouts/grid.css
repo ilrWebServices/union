@@ -6,6 +6,9 @@
   grid-template-columns: 1fr;
   max-width: var(--cu-max-width-section, 1000px);
   margin: 0 auto; }
+  @media (min-width: 30rem) {
+    .cu-grid--2col, .cu-grid--3col, .cu-grid--4col {
+      grid-template-columns: 1fr 1fr; } }
   @media (min-width: 37.5rem) {
     .cu-grid--gapless {
       grid-gap: 0; }

@@ -9,6 +9,14 @@
   max-width: var(--cu-max-width-section, #{$max-width-section});
   margin: 0 auto;
 
+  @include breakpoint(xs) {
+    &--2col,
+    &--3col,
+    &--4col {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
   @include breakpoint(sm) {
 
     &--gapless {
