@@ -1,0 +1,5 @@
+css:
+  registration-form.css: {}
+dependencies:
+  - base
+  - form

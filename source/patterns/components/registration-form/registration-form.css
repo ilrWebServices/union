@@ -1,0 +1,29 @@
+.cu-registration-form {
+  background: var(--cu-color-bg-light, #F5F5F5);
+  padding: var(--cu-vr1) var(--cu-ps1); }
+  .cu-registration-form__active-price {
+    --cu-current-font-size: var(--cu-text-xxl);
+    --cu-current-font-weight: var(--cu-heading-font-weight);
+    margin: 0 auto var(--cu-vr1);
+    max-width: var(--cu-max-width-section, 1000px); }
+  .cu-registration-form__form {
+    display: grid;
+    margin: 0 auto;
+    max-width: var(--cu-max-width-section, 1000px); }
+    @media (min-width: 37.5rem) {
+      .cu-registration-form__form {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2em; } }
+    @media (min-width: 64rem) {
+      .cu-registration-form__form {
+        grid-template-columns: 1fr 1fr 1fr; }
+        .cu-registration-form__form .cu-checkbutton__label {
+          margin: 0; }
+        .cu-registration-form__form .cu-input--submit--alt {
+          margin-bottom: 0; } }
+    .cu-registration-form__form .cu-input--submit--alt {
+      margin-top: var(--cu-vr0); }
+      @media (min-width: 37.5rem) {
+        .cu-registration-form__form .cu-input--submit--alt {
+          margin-top: 0; } }
+/*# sourceMappingURL=registration-form.css.map */

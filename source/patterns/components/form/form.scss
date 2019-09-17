@@ -16,39 +16,3 @@
     box-sizing: border-box;
   }
 }
-
-
-/**
- *
- * Composite forms here
- *
- */
-
-.registration-form {
-  display: grid;
-
-  @include breakpoint(sm) {
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 2em;
-  }
-
-  @include breakpoint(md) {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    .cu-checkbutton__label {
-      margin: 0;
-    }
-
-    .cu-input--submit--alt {
-      margin-bottom: 0;
-    }
-  }
-
-  .cu-input--submit--alt {
-    margin-top: var(--cu-vr0);
-
-    @include breakpoint(sm) {
-      margin-top: 0;
-    }
-  }
-}

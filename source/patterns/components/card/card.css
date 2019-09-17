@@ -153,14 +153,8 @@
     grid-row-start: span 2; }
   .cu-card--landscape {
     grid-column: 1 / -1; }
-<<<<<<< HEAD
-    @media (min-width: 64rem) {
-      .cu-card--landscape .cu-card__content {
-        padding: var(--cu-vr4) var(--cu-vr3); } }
-=======
     .cu-card--landscape .cu-card__content {
       --cu-card-content-padding: var(--cu-vr3) 25%; }
->>>>>>> _wip course demo page
   .cu-card--with-aside .cu-card__content {
     display: grid;
     grid-template-columns: 5% 57% 5% 28% 5%;

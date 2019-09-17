@@ -182,6 +182,7 @@ progress {
   border-radius: 1px;
   padding-top: 0.25rem;
   display: flex;
+  background: white;
   min-width: 200px;
   margin: 1rem 0; }
   .cu-checkbutton__label .cu-checkbutton__indicator {
@@ -302,28 +303,4 @@ progress {
 .cu-form *:before,
 .cu-form *:after {
   box-sizing: border-box; }
-
-/**
- *
- * Composite forms here
- *
- */
-.registration-form {
-  display: grid; }
-  @media (min-width: 37.5rem) {
-    .registration-form {
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 2em; } }
-  @media (min-width: 64rem) {
-    .registration-form {
-      grid-template-columns: 1fr 1fr 1fr; }
-      .registration-form .cu-checkbutton__label {
-        margin: 0; }
-      .registration-form .cu-input--submit--alt {
-        margin-bottom: 0; } }
-  .registration-form .cu-input--submit--alt {
-    margin-top: var(--cu-vr0); }
-    @media (min-width: 37.5rem) {
-      .registration-form .cu-input--submit--alt {
-        margin-top: 0; } }
 /*# sourceMappingURL=form.css.map */
