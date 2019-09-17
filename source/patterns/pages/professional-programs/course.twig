@@ -21,6 +21,14 @@
           </div>
         </div>
         {% include "@union/demo/feature-list.twig" %}
+        <div class="cu-section">
+          {% include '@union/_section-heading.twig' with {
+            attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
+            heading: 'Instructors',
+            subheading: 'Course'
+          } only %}
+          {% include "@union/instructor-grid.twig" %}
+        </div>
         <div class="cu-section cu-section--wide">
           {% include "@union/15-card-landscape.twig" %}
         </div>
