@@ -146,7 +146,7 @@ small {
 
 .cu-section {
   max-width: var(--cu-max-width-section, #{$max-width-section});
-  margin: 0 auto;
+  margin: 0 auto var(--cu-vr3);
 
   &--wide {
     max-width: 100%;

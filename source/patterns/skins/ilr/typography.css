@@ -113,7 +113,7 @@ small {
 
 .cu-section {
   max-width: var(--cu-max-width-section, 1000px);
-  margin: 0 auto; }
+  margin: 0 auto var(--cu-vr3); }
   .cu-section--wide {
     max-width: 100%; }
 
