@@ -175,7 +175,9 @@
 
   const inViewport = function(el) {
     let bounding = el.getBoundingClientRect();
-    return (bounding.top < window.innerHeight) && (bounding.bottom > 0);
+    let within_upper_bounds = (bounding.top + bounding.height / 2 < window.innerHeight);
+    let within_lower_bounds = (bounding.bottom > bounding.height / 2);
+    return within_upper_bounds && within_lower_bounds;
   };
 
   let debounce_timeout;
