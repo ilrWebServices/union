@@ -50,7 +50,11 @@
     // The gradient implementation will be extended to include variations here.
     @if $gradient {
       background: transparent;
-      background-image: linear-gradient(to bottom, transparent, rgba($color, $opacity) 100%);
+      background-image: linear-gradient(to bottom, transparent 25%, rgba($color, $opacity) 100%);
+
+      @include breakpoint(md) {
+        background-image: linear-gradient(to bottom, transparent 50%, rgba($color, $opacity) 100%);
+      }
     }
   }
 }

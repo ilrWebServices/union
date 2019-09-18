@@ -166,7 +166,10 @@
       background: rgba(0, 0, 0, 0.7);
       z-index: 2;
       background: transparent;
-      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7) 100%); }
+      background-image: linear-gradient(to bottom, transparent 25%, rgba(0, 0, 0, 0.7) 100%); }
+      @media (min-width: 64rem) {
+        .cu-card--portrait::before {
+          background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%); } }
     .cu-card--portrait .cu-card__heading {
       padding-top: var(--cu-vr4); }
   .cu-card--landscape {
