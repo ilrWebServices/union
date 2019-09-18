@@ -219,7 +219,9 @@
 
   /*----------  Portrait (2 rows tall)  ----------*/
   &--portrait {
-    grid-row-start: span 2; // Must be part of a grid
+    @include overlay($opacity: 0.7, $gradient: 1);
+
+    grid-row-start: span 2; // Must be part of a grid.
 
     .cu-card__heading {
       padding-top: var(--cu-vr4); // Add padding for mobile to make room for portrait image.

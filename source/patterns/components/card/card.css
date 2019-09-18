@@ -153,7 +153,20 @@
     .cu-card--hover-overlay:hover .cu-card__content {
       z-index: 2; }
   .cu-card--portrait {
+    position: relative;
+    pointer-events: none;
     grid-row-start: span 2; }
+    .cu-card--portrait::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 2;
+      background: transparent;
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7) 100%); }
     .cu-card--portrait .cu-card__heading {
       padding-top: var(--cu-vr4); }
   .cu-card--landscape {

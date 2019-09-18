@@ -32,7 +32,7 @@
   word-wrap: normal;
 }
 
-@mixin overlay($color: #000, $opacity: 0.5, $z-index: 2) {
+@mixin overlay($color: #000, $opacity: 0.5, $z-index: 2, $gradient: null) {
   position: relative;
   pointer-events: none;
 
@@ -45,5 +45,12 @@
     height: 100%;
     background: rgba($color, $opacity);
     z-index: $z-index;
+
+    // Initial boolean implementation for portrait gradients.
+    // The gradient implementation will be extended to include variations here.
+    @if $gradient {
+      background: transparent;
+      background-image: linear-gradient(to bottom, transparent, rgba($color, $opacity) 100%);
+    }
   }
 }
