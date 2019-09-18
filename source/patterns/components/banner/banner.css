@@ -81,7 +81,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--cu-vr1) var(--cu-ps1); }
+  padding: var(--cu-vr1) var(--cu-ps1);
+  z-index: 1; }
   .cu-banner--video .cu-banner__content > * {
     pointer-events: auto; }
   @media (min-width: 80rem) {

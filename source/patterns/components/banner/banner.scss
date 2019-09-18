@@ -91,6 +91,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: var(--cu-vr1) var(--cu-ps1);
+    z-index: 1; // Required for Chrome to see the hover state and selection in content markup.
 
     > * {
       pointer-events: auto;
