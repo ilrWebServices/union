@@ -1,4 +1,6 @@
 css:
-  video: {}
+  video.css: {}
+js:
+  video.js: {}
 dependencies:
   - base
