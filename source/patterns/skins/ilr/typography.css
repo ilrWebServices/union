@@ -112,7 +112,7 @@ small {
     color: #b31b1b; }
 
 .cu-section {
-  max-width: var(--cu-max-width-section, 1000px);
+  max-width: var(--cu-max-width-section, 1060px);
   margin: 0 auto var(--cu-vr3); }
   .cu-section--wide {
     max-width: 100%; }

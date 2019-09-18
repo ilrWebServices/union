@@ -1,5 +1,5 @@
 .cu-feature-list {
-  max-width: var(--cu-max-width-section, 1000px);
+  max-width: var(--cu-max-width-section, 1060px);
   background: #F5F5F5;
   margin: var(--cu-vr1) auto;
   padding: var(--cu-vr1) var(--cu-ps3); }

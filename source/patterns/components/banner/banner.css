@@ -86,7 +86,7 @@
   .cu-banner--page .cu-breadcrumb {
     margin-bottom: var(--cu-vr1); }
   .cu-banner--page .cu-banner__content {
-    max-width: var(--cu-max-width-section, 1000px);
+    max-width: var(--cu-max-width-section, 1060px);
     margin: 0 auto; }
     .cu-banner--page .cu-banner__content .cu-heading, .cu-banner--page .cu-banner__content p {
       max-width: 75%; }

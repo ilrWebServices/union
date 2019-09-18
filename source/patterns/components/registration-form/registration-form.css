@@ -5,11 +5,11 @@
     --cu-current-font-size: var(--cu-text-xxl);
     --cu-current-font-weight: var(--cu-heading-font-weight);
     margin: 0 auto var(--cu-vr1);
-    max-width: var(--cu-max-width-section, 1000px); }
+    max-width: var(--cu-max-width-section, 1060px); }
   .cu-registration-form__form {
     display: grid;
     margin: 0 auto;
-    max-width: var(--cu-max-width-section, 1000px); }
+    max-width: var(--cu-max-width-section, 1060px); }
     @media (min-width: 37.5rem) {
       .cu-registration-form__form {
         grid-template-columns: 1fr 1fr;
