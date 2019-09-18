@@ -41,11 +41,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: var(--cu-vr2) var(--cu-vr3);
+    padding: var(--cu-vr1) var(--cu-ps1);
     text-align: center; }
     @media (min-width: 64rem) {
       .cu-card--promo .cu-card__content {
-        padding: var(--cu-vr3); } }
+        padding: var(--cu-vr2) var(--cu-ps2); } }
+    @media (min-width: 64rem) {
+      .cu-card--promo .cu-card__content {
+        padding: var(--cu-vr3) var(--cu-ps3); } }
   .cu-card--promo-with-media, .cu-card--with-aside {
     position: relative;
     pointer-events: none; }
@@ -151,6 +154,8 @@
       z-index: 2; }
   .cu-card--portrait {
     grid-row-start: span 2; }
+    .cu-card--portrait .cu-card__heading {
+      padding-top: var(--cu-vr4); }
   .cu-card--landscape {
     grid-column: 1 / -1; }
     @media (min-width: 64rem) {
