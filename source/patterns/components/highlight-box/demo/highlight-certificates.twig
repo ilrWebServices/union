@@ -1,0 +1,69 @@
+{% set certificates = [
+  {
+    name: 'Advanced Collective Bargaining',
+    description: "The Advanced Collective Bargaining Certificate is for graduates of Cornell ILR School's Collective Bargaining Certificate and experienced labor relations professionals who wish to deepen their knowledge and skills.",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Advanced Employee Relations and Investigations',
+    description: "Through real-world based instruction, learn to handle employee situations, coach and guide managers, improve performance, develop emotional intelligence, leverage problem-solving techniques, and improve facilitation and communication skills.",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Arbitration Advocacy',
+    description: "From the perspective of both the union and management, participants practice how to develop a clear and effective theory of the case, create a proposed issue statement to be presented at the hearing, identify witnesses and evidence and prepare opening statements.",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Collective Bargaining',
+    description: "This certificate provides a comprehensive overview of the collective bargaining process from pre-bargaining preparation to final sign-off",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Contract Administration',
+    description: "Managing staff and operations within the confines of a collective bargaining agreement requires a full understanding of contract terms, legal principles, and grievance procedures.",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Diversity and Inclusion Professionals',
+    description: "Be prepared to embrace diversity and inclusion (D&I), not only as a means to enhance business performance, but also as a driving force for innovation and collaboration",
+    icon: 'check-circle'
+  },
+  {
+    name: 'EEO Professionals',
+    description: " issues surrounding EEO/Affirmative action laws and obligations of employers",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Managing Organizational Conflict',
+    description: "This certificate series will equip you with the analytical frameworks and skills to play a productive role in managing your organization's conflicts.",
+    icon: 'check-circle'
+  },
+  {
+    name: 'Professional Neutral Development',
+    description: "Corporate leaders and attorneys agree that there is a shortage of qualified dispute resolution professionals available to resolve complex commercial, international and employment law disputes.",
+    icon: 'check-circle'
+  }
+]%}
+
+{% set certificate_grid %}
+  {% include "@union/_feature-list.twig" with {
+    items: certificates,
+    content_attributes: { class: 'cu-grid--3col cu-certificate-list cu-inline-list' }
+  } only %}
+{% endset %}
+
+{% set box_content %}
+  <div class="certificate-highlights">
+    <h2 class="cu-heading">Certificates in Conflict Resolution</h2>
+    <p>Our certificate programs and workshops train people to actively solve problems – designing resilient systems for their organisations to address conflict.</p>
+    {{ certificate_grid }}
+  </div>
+{% endset %}
+
+{# Simulate the highlighted region #}
+<div class="highlighted">
+  {% include '@union/_highlight-box.twig' with {
+    content: box_content
+  } only %}
+</div>

@@ -1,0 +1,4 @@
+css:
+  highlight-box.css: {}
+dependencies:
+  - base
