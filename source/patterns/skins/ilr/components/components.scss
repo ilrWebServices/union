@@ -43,6 +43,9 @@
 }
 
 .framed {
+  display: grid;
+  min-height: 90%;
+
   >*:first-child {
     @include notch; // upper/lower cutouts of the left or right border
     display: grid;
