@@ -22,6 +22,11 @@
     "url": "https://github.com/ilrWebServices/union/issues"
   },
   "homepage": "https://github.com/ilrWebServices/union#readme",
+  "files": [
+    "source/",
+    "tools/",
+    "composer.json"
+  ],
   "dependencies": {
     "@pattern-lab/cli": "^0.0.3",
     "@pattern-lab/core": "^3.0.1",
