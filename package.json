@@ -27,7 +27,7 @@
     "tools/",
     "composer.json"
   ],
-  "dependencies": {
+  "devDependencies": {
     "@pattern-lab/cli": "^0.0.3",
     "@pattern-lab/core": "^3.0.1",
     "@pattern-lab/engine-twig-php": "^3.0.1",
