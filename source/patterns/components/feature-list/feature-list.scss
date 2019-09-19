@@ -1,16 +1,6 @@
 @import './source/global/global';
 
 .cu-feature-list {
-  max-width: var(--cu-max-width-section, #{$max-width-section});
-  background: $color-bg--lightest;
-  margin: var(--cu-vr1) auto;
-  padding: var(--cu-vr1) var(--cu-ps3);
-
-  @include breakpoint(md) {
-    padding: var(--cu-vr2) var(--cu-ps5);
-    margin: var(--cu-vr3) auto;
-  }
-
   &__title {
     text-align: center;
   }

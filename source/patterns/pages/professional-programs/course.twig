@@ -5,41 +5,41 @@
     <div class="highlighted">
       {% include "@union/page-banner.twig" %}
     </div>
-      <a id="main-content" tabindex="-1"></a>
-      <div class="main-content">
-        <div class="cu-section">
-          {% include '@union/_section-heading.twig' with {
-            attributes: { class: 'cu-section-heading--framed' },
-            heading: 'Schedule &amp; Details',
-            subheading: 'Course'
-          } only %}
+    <a id="main-content" tabindex="-1"></a>
+    <div class="main-content">
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed' },
+          heading: 'Schedule &amp; Details',
+          subheading: 'Course'
+        } only %}
+      </div>
+      <div class="cu-section">
+        <div class="cu-text cu-text--2col">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tortor vehicula, molestie libero ullamcorper, ullamcorper ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer posuere arcu sem, et sollicitudin velit placerat et. Quisque sed mattis ante. Aliquam velit ex, ultrices nec tortor id, imperdiet molestie dui. Vestibulum sed ex non lacus scelerisque facilisis et nec nunc. In tristique ultrices magna a pretium. In sollicitudin est mauris, at faucibus enim vehicula sit amet. Etiam porta quis ligula ac pretium. Nulla ullamcorper blandit hendrerit. Fusce rhoncus sollicitudin erat eget auctor. Cras lacus dui, congue eu porttitor sollicitudin, viverra vel risus. Quisque imperdiet tellus odio, vitae gravida velit tincidunt efficitur. Phasellus gravida id lorem vitae ullamcorper. Fusce ullamcorper malesuada leo quis maximus.</p>
+          <p>Cras et arcu tortor. Nam quis tellus in tellus auctor tincidunt sit amet sit amet lectus. Aliquam sed libero libero. Morbi vitae convallis elit, in rhoncus leo. Nulla est elit, posuere a dictum nec, rhoncus convallis est. Donec placerat lorem ut ante laoreet, suscipit ornare lacus dictum. Curabitur gravida interdum erat in congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas vehicula molestie risus, vitae sollicitudin leo mollis vel. Vivamus tristique pretium tincidunt. Integer accumsan interdum augue. Aliquam ac ante risus. Aenean condimentum commodo ex eget bibendum. Nunc non tortor tortor.</p>
         </div>
-        <div class="cu-section">
-          <div class="cu-text cu-text--2col">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla id tortor vehicula, molestie libero ullamcorper, ullamcorper ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer posuere arcu sem, et sollicitudin velit placerat et. Quisque sed mattis ante. Aliquam velit ex, ultrices nec tortor id, imperdiet molestie dui. Vestibulum sed ex non lacus scelerisque facilisis et nec nunc. In tristique ultrices magna a pretium. In sollicitudin est mauris, at faucibus enim vehicula sit amet. Etiam porta quis ligula ac pretium. Nulla ullamcorper blandit hendrerit. Fusce rhoncus sollicitudin erat eget auctor. Cras lacus dui, congue eu porttitor sollicitudin, viverra vel risus. Quisque imperdiet tellus odio, vitae gravida velit tincidunt efficitur. Phasellus gravida id lorem vitae ullamcorper. Fusce ullamcorper malesuada leo quis maximus.</p>
-            <p>Cras et arcu tortor. Nam quis tellus in tellus auctor tincidunt sit amet sit amet lectus. Aliquam sed libero libero. Morbi vitae convallis elit, in rhoncus leo. Nulla est elit, posuere a dictum nec, rhoncus convallis est. Donec placerat lorem ut ante laoreet, suscipit ornare lacus dictum. Curabitur gravida interdum erat in congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas vehicula molestie risus, vitae sollicitudin leo mollis vel. Vivamus tristique pretium tincidunt. Integer accumsan interdum augue. Aliquam ac ante risus. Aenean condimentum commodo ex eget bibendum. Nunc non tortor tortor.</p>
-          </div>
-        </div>
-        {% include "@union/demo/feature-list.twig" %}
-        <div class="cu-section">
-          {% include '@union/_section-heading.twig' with {
-            attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
-            heading: 'Instructors',
-            subheading: 'Course'
-          } only %}
-          {% include "@union/instructor-grid.twig" %}
-        </div>
-        <div class="cu-section cu-section--wide">
-          {% include "@union/15-card-landscape.twig" %}
-        </div>
-        <div class="cu-section">
-          {% include '@union/_section-heading.twig' with {
-            attributes: { class: 'cu-section-heading--framed' },
-            heading: 'Related &amp; Similar',
-            subheading: 'Courses'
-          } only %}
-          {% include "@union/course-teasers.twig" %}
-        </div>
-      <div>
+      </div>
+      {% include "@union/demo/highlight-box.twig" %}
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
+          heading: 'Instructors',
+          subheading: 'Course'
+        } only %}
+        {% include "@union/instructor-grid.twig" %}
+      </div>
+      <div class="cu-section cu-section--wide">
+        {% include "@union/15-card-landscape.twig" %}
+      </div>
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed' },
+          heading: 'Related &amp; Similar',
+          subheading: 'Courses'
+        } only %}
+        {% include "@union/course-teasers.twig" %}
+      </div>
+    </div>
   </main>
 </div>
