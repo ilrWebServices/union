@@ -10,42 +10,44 @@
     :root {
       --frame-width: 20px; } }
 
-.framed > *:first-child {
-  position: relative;
-  clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+.framed {
   display: grid;
-  grid-column-gap: 2em;
-  position: relative;
-  height: 100%; }
-  .framed > *:first-child::before {
+  min-height: 90%; }
+  .framed > *:first-child {
     position: relative;
     clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
-    content: '';
-    display: block;
-    grid-row: 1;
-    background: white;
-    height: var(--frame-width); }
-
-.framed > *:last-child {
-  display: grid;
-  grid-column-gap: 1em;
-  grid-template-columns: 50% auto;
-  justify-items: start;
-  align-content: end; }
-  .framed > *:last-child > * {
-    grid-column: 1;
-    display: inline-flex;
-    justify-content: space-between; }
-  .framed > *:last-child::after {
+    display: grid;
+    grid-column-gap: 2em;
     position: relative;
-    clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
-    justify-self: stretch;
-    align-self: end;
-    content: '';
-    display: block;
-    bottom: 0;
-    background: white;
-    height: var(--frame-width); }
+    height: 100%; }
+    .framed > *:first-child::before {
+      position: relative;
+      clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+      content: '';
+      display: block;
+      grid-row: 1;
+      background: white;
+      height: var(--frame-width); }
+  .framed > *:last-child {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-template-columns: 50% auto;
+    justify-items: start;
+    align-content: end; }
+    .framed > *:last-child > * {
+      grid-column: 1;
+      display: inline-flex;
+      justify-content: space-between; }
+    .framed > *:last-child::after {
+      position: relative;
+      clip-path: polygon(0% var(--notchSize), var(--notchSize) 0%, calc(100% - var(--notchSize)) 0%, 100% var(--notchSize), 100% calc(100% - var(--notchSize)), calc(100% - var(--notchSize)) 100%, var(--notchSize) 100%, 0% calc(100% - var(--notchSize)));
+      justify-self: stretch;
+      align-self: end;
+      content: '';
+      display: block;
+      bottom: 0;
+      background: white;
+      height: var(--frame-width); }
 
 .framed--left {
   border-left: var(--frame-width) solid white;

@@ -84,7 +84,6 @@
 .cu-banner--page {
   background: var(--cu-color-bg--dark, #{$color-bg--dark});
   padding: var(--cu-vr1);
-  margin-bottom: var(--cu-vr3); // Revisit margins for components
 
   @include breakpoint(sm) {
     padding: var(--cu-vr1) var(--cu-vr2);

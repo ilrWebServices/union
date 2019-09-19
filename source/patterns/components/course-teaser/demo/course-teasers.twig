@@ -1,3 +1,4 @@
+{% set show_label = show_label|default(true) %}
 {% set courses = [
   { title: 'Resolving Conflict',
     label: 'Related',
@@ -53,6 +54,7 @@
     {% include '@union/_course-teaser.twig' with {
       title: course.title,
       label: course.label,
+      show_label: show_label,
       description: course.description,
       details: course.details,
       more_link: course.more_link,

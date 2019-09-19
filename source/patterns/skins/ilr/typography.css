@@ -118,9 +118,9 @@ small {
     max-width: 100%; }
 
 .cu-text--2col {
-  column-count: 2;
-  column-gap: var(--cu-vr3);
-  margin-bottom: var(--cu-vr3); }
+  display: grid;
+  grid-column-gap: var(--cu-ps3);
+  grid-template-columns: 1fr 1fr; }
 
 .cu-section-pad {
   border: none;
