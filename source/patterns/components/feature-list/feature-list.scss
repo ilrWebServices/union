@@ -13,6 +13,12 @@
 
   &__item {
     position: relative;
+
+    &--linked {
+      --cu-header-accent-width: 15%;
+      --cu-header-accent-padding: .25em 0 0 0;
+      --cu-header-accent-border: 4px solid var(--cu-color-brand, #{$cornell-red});
+    }
   }
 
   &__name {
@@ -31,5 +37,9 @@
     position: absolute;
     top: 0;
     left: -2.5rem;
+  }
+
+  &__link {
+    --cu-current-link-color: var(--cu-text-color);
   }
 }

@@ -3,11 +3,21 @@
 {% set attributes = attributes.addClass(['cu-feature-list']) %}
 {% set content_attributes = union_attributes(content_attributes|default({class: 'cu-grid--3col'})) %}
 {% set content_attributes = content_attributes.addClass(['cu-feature-list__items']) %}
+{% set item_attributes = union_attributes(item_attributes|default([])) %}
+{% set item_attributes = item_attributes.addClass(['cu-feature-list__item']) %}
 
 {% set grid_content %}
   {% for item in items %}
-    <li class="cu-feature-list__item">
-      <h3 class="cu-feature-list__name">{{ item.name }}</h3>
+    {% if item.link %}
+      {% set link = '<a class="cu-feature-list__link" href="'~ item.link ~'">' %}
+      {% set end_link = '</a>' %}
+      {% set item_attributes = item_attributes.addClass(['cu-feature-list__item--linked'])  %}
+    {% else %}
+      {% set link = '' %}
+      {% set end_link = '' %}
+    {% endif %}
+    <li{{ item_attributes }}>
+      <h3 class="cu-heading cu-feature-list__name">{{ link }}{{ item.name }}{{ end_link }}</h3>
       <p class="cu-feature-list__description">{{ item.description }}</p>
       {% if item.icon %}
         {% include "@union/_icon.twig" with {
