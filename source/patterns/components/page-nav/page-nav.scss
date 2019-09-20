@@ -15,12 +15,13 @@
   width: 100%;
 
   --cu-current-link-color: var(--cu-color-text--light, #{$color-text--light});
-  --cu-header-accent-width: 20%;
+  --cu-header-accent-width: 40%;
   --cu-header-accent-padding: .25em 0 0 0;
   --cu-header-accent-border: 4px solid var(--cu-color-brand, #{$cornell-red});
 
 
   .cu-heading {
     --cu-current-heading-size: var(--cu-ms1);
+    max-width: 100%; // Override width constraint since heading is nested.
   }
 }

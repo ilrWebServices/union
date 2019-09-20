@@ -100,13 +100,14 @@
   .cu-banner__content {
     max-width: var(--cu-max-width-section, #{$max-width-section});
     margin: 0 auto;
+  }
 
-    .cu-heading, p {
-      max-width: 75%;
+  .cu-heading,
+  p {
+    max-width: 75%;
 
-      @include breakpoint(md) {
-        max-width: 60%;
-      }
+    @include breakpoint(md) {
+      max-width: 60%;
     }
   }
 
