@@ -1,0 +1,240 @@
+{# Email #}
+{% set demo_email %}
+  {% set email_label %}
+  {% include '@union/_form-label.twig' with {
+      title: 'Enter your email',
+      attributes: {
+        for: 'newsletter-subscribe-email'
+      }
+    } only %}
+  {% endset %}
+
+  {% set email_input %}
+  {% include '@union/_form-input.twig' with {
+      attributes: {
+        'aria-describedby': "newsletter-subscribe-form-mail-0-value--description",
+        'aria-required': "true",
+        class: "form-email required",
+        maxlength: "254",
+        name: "newsletter-subscribe[form][mail][0][value]",
+        placeholder: "email address",
+        required: "required",
+        size: "100",
+        type: "email",
+        value: "",
+        id: 'newsletter-subscribe-email'
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: email_input,
+    label: email_label,
+    required: 1,
+    type: 'email'
+  } only %}
+{% endset %}
+{# end email #}
+
+{# Submit #}
+{% set submit %}
+  {% include '@union/_form-input.twig' with {
+    attributes: {
+      class: 'cu-input--submit cu-input--submit--alt',
+      name: '[form][submit]',
+      type: 'submit',
+      value: 'Register',
+      id: 'form.submit'
+    }
+  } only %}
+{% endset %}
+{# end submit #}
+
+{# Form 1 #}
+{% set form1 %}
+  {{ demo_email }}
+  {{ submit }}
+{% endset %}
+
+{% include '@union/_form.twig' with {
+  children: form1
+} only %}
+
+
+{# Textfield--required #}
+{% set required_field %}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: "Important field",
+      attributes: {
+        for: 'field-required'
+      }
+    } only %}
+  {% endset %}
+
+  {% set input %}
+    {% include '@union/_form-input.twig' with {
+      attributes: {
+        'aria-required': "true",
+        class: "required",
+        maxlength: "254",
+        name: "field-required",
+        placeholder: 'placeholder text',
+        required: true,
+        size: "100",
+        type: "text",
+        value: "",
+        id: 'field-required'
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: true,
+    type: 'text'
+  } only %}
+{% endset %}
+{# End textfield--required #}
+
+{# Textfield--optional #}
+{% set optional_field %}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: 'Optional field',
+      attributes: {
+        for: 'field-optional'
+      }
+    } only %}
+  {% endset %}
+
+  {% set input %}
+    {% include '@union/_form-input.twig' with {
+      attributes: {
+        'aria-required': 'false',
+        maxlength: "254",
+        name: "[form][field_optional]",
+        placeholder: 'placeholder text',
+        required: false,
+        size: "100",
+        type: "text",
+        value: "",
+        id: 'field-optional'
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: false,
+    type: 'text'
+  } only %}
+{% endset %}
+{# End textfield--optional #}
+
+{# Submit2 #}
+{% set submit2 %}
+  {% include '@union/_form-input.twig' with {
+    attributes: {
+      class: 'cu-input--submit',
+      name: '[form][submit]',
+      type: 'submit',
+      value: 'Add participant',
+      id: 'form.submit2'
+    }
+  } only %}
+{% endset %}
+{# end submit #}
+
+{# Radios #}
+{% set radios %}
+  {# radio 1 #}
+  {% set field = {
+    label: 'Please add me to your newsletter.',
+    name: 'form-radio',
+    required: false,
+    value: '1'
+  }%}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: field.label,
+      attributes: {
+        for: field.name ~ field.value
+      }
+    } only %}
+  {% endset %}
+  {% set input %}
+  {% include '@union/_form-input.twig' with {
+      attributes: {
+        name: field.name,
+        type: "radio",
+        value: field.value,
+        id: field.name ~ field.value,
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: field.required,
+    type: 'radio'
+  } only %}
+
+  {# radio 2 #}
+  {% set field = {
+    label: 'No thanks.',
+    name: 'form-radio',
+    required: false,
+    value: '2',
+    index: 2
+  }%}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: field.label,
+      attributes: {
+        for: field.name ~ field.value
+      }
+    } only %}
+  {% endset %}
+  {% set input %}
+  {% include '@union/_form-input.twig' with {
+      attributes: {
+        name: field.name,
+        type: "radio",
+        value: field.value,
+        id: field.name ~ field.value,
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: field.required,
+    type: 'radio'
+  } only %}
+{% endset %}
+{# end radios #}
+
+{# Form2 #}
+{% set form2 %}
+  {{ required_field }}
+  {{ optional_field }}
+  {{ radios }}
+  {{ submit2 }}
+{% endset %}
+
+{% set fieldset %}
+  {% include '@union/_form-fieldset.twig' with {
+    children: form2,
+    legendTitle: "We are legend"
+  } only %}
+{% endset %}
+
+<h2 class="cu-ssg__title">Form with Fieldset</h2>
+{% include '@union/_form.twig' with {
+  children: fieldset,
+} only %}
