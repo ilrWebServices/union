@@ -40,4 +40,7 @@
   .cu-course-teaser__cta {
     order: 7;
     margin-top: auto; }
+
+.cu-grid.cu-certificate-courses {
+  --cu-grid-column-gap: var(--cu-vr2); }
 /*# sourceMappingURL=course-teaser.css.map */

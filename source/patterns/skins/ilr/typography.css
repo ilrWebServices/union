@@ -99,6 +99,10 @@ small {
 .cu-text--xs {
   font-size: var(--cu-ms-2); }
 
+.cu-heading--small {
+  --cu-current-heading-size: var(--cu-ms0);
+  --cu-current-font-weight: bold !important; }
+
 .cu-heading--strong {
   font-family: 'futura-pt';
   text-transform: uppercase;
@@ -125,4 +129,10 @@ small {
 .cu-section-pad {
   border: none;
   height: var(--cu-vr3); }
+
+span.strong {
+  font-weight: bold; }
+
+span.block {
+  display: block; }
 /*# sourceMappingURL=typography.css.map */

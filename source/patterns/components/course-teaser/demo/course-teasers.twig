@@ -1,3 +1,4 @@
+{% set grid_attributes = grid_attributes|default({class: 'cu-grid--3col'}) %}
 {% set show_label = show_label|default(true) %}
 {% set courses = [
   { title: 'Resolving Conflict',
@@ -65,5 +66,5 @@
 
 {% include "@union/_grid.twig" with {
   grid_content: grid_content,
-  attributes: { class: 'cu-grid--3col' }
+  attributes: grid_attributes
 } only %}

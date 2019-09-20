@@ -114,6 +114,35 @@
   .cu-banner__summary {
     margin-bottom: var(--cu-vr2);
   }
+
+  .cu-banner__list-heading {
+    --cu-current-heading-size: var(--cu-ms0);
+    --cu-current-font-weight: bold !important;
+  }
+
+  .cu-banner__list {
+    padding: 0;
+    --cu-current-font-size: var(--cu-ms-1);
+  }
+
+  .cu-banner__list-item {
+    padding-bottom: var(--cu-vr-1);
+    margin-bottom: var(--cu-vr-1);
+    max-width: 75%;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 10%;
+      max-width: 100%;
+      padding: .25em 0 0 0;
+      border-bottom: 4px solid var(--cu-color-brand, #{$cornell-red});
+    }
+  }
 }
 
 /*=====  End of Page banner  ======*/

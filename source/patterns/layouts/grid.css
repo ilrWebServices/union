@@ -1,8 +1,12 @@
+:root {
+  --cu-grid-row-gap: var(--cu-vr0);
+  --cu-grid-column-gap: var(--cu-vr0); }
+
 .cu-grid {
   display: grid;
   grid-auto-flow: dense;
   align-items: stretch;
-  grid-gap: var(--cu-vr0);
+  grid-gap: var(--cu-grid-row-gap) var(--cu-grid-column-gap);
   grid-template-columns: 1fr;
   max-width: var(--cu-max-width-section, 1060px);
   margin: 0 auto; }

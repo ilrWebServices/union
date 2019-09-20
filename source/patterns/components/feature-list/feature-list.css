@@ -2,9 +2,9 @@
   text-align: center; }
 
 .cu-feature-list__items {
+  --cu-grid-column-gap: var(--cu-ps4);
   list-style-type: none;
-  padding-left: var(--cu-vr2);
-  grid-column-gap: var(--cu-ps4); }
+  padding-left: var(--cu-vr2); }
 
 .cu-feature-list__item {
   position: relative; }
