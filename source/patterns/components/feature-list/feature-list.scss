@@ -7,7 +7,7 @@
 
   &__items {
     list-style-type: none;
-    padding: 0;
+    padding-left: var(--cu-vr2);
     grid-column-gap: var(--cu-ps4);
   }
 
@@ -36,7 +36,7 @@
     --cu-current-text-color: #{$color-brand};
     position: absolute;
     top: 0;
-    left: -2.5rem;
+    left: calc(var(--cu-vr2) * -1);
   }
 
   &__link {
