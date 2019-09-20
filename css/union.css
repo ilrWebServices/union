@@ -79,6 +79,15 @@
   --cu-vr-4: calc(var(--cu-vr-3) / var(--cu-vr-ratio));
   --cu-vr-5: calc(var(--cu-vr-4) / var(--cu-vr-ratio));
 }
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  word-wrap: normal;
+}
 .cu-grid {
   display: grid;
   grid-auto-flow: dense;
@@ -242,7 +251,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(85, 85, 85, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
@@ -268,20 +277,16 @@
   position: absolute;
   pointer-events: none;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: var(--cu-vr1) var(--cu-ps1);
+  z-index: 1;
 }
 
 .cu-banner--video .cu-banner__content > * {
   pointer-events: auto;
-}
-
-@media (min-width: 37.5rem) {
-  .cu-banner--video .cu-banner__content {
-    height: 100%;
-  }
 }
 
 @media (min-width: 80rem) {
@@ -295,48 +300,33 @@
 }
 
 /*=====  End of Video banner  ======*/
-.cu-dismissible {
-  position: relative;
+.cu-button {
+  color: #b31b1b;
+  border-radius: 2px;
+  border: 4px solid #b31b1b;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: auto;
 }
 
-.cu-dismissible__close {
-  position: absolute;
-  top: 0.75em;
-  right: 0.75em;
-  border: 1px solid var(--cu-color-brand, #b31b1b);
-  border-radius: 1em;
-  background-color: rgba(0, 0, 0, 0.35);
-  height: 2em;
-  width: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cu-button--alt {
+  color: #b31b1b;
+  border-radius: 2px;
+  border: 4px solid #b31b1b;
+  background: transparent;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: auto;
   color: white;
-  z-index: 10;
+  background: #b31b1b;
 }
 
-.cu-dismissible__content {
-  visibility: visible;
-  opacity: 1;
-}
-
-.cu-dismissible--predismissed {
-  display: none;
-}
-
-.cu-dismissible__input:checked + .cu-dismissible__close + .cu-dismissible__content {
-  visibility: hidden;
-  opacity: 0;
-  max-height: 0;
-  transition: visibility 0.5s, opacity 0.5s linear;
-}
-
-.cu-dismissible__input:checked + .cu-dismissible__close {
-  display: none;
-}
-
-.cu-dismissible__input {
-  display: none;
+.cu-button--overlay {
+  color: #fff;
+  --cu-current-link-color: $white;
+  border-color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .cu-card {
   background: var(--cu-card-background, transparent);
@@ -396,8 +386,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--cu-vr2) var(--cu-vr3);
+  padding: var(--cu-vr1) var(--cu-ps1);
   text-align: center;
+}
+
+@media (min-width: 64rem) {
+  .cu-card--promo .cu-card__content {
+    padding: var(--cu-vr2) var(--cu-ps2);
+  }
+}
+
+@media (min-width: 64rem) {
+  .cu-card--promo .cu-card__content {
+    padding: var(--cu-vr3) var(--cu-ps3);
+  }
 }
 
 .cu-card--promo-with-media,
@@ -414,7 +416,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(85, 85, 85, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
@@ -512,16 +514,26 @@
 }
 
 .cu-card--hover-content-reveal .cu-card__hover-content {
+  overflow: hidden;
   max-height: 0;
-  transition: max-height .25s ease, opacity .375s;
+  transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
   opacity: 0;
   color: var(--cu-color-text, #222);
   --cu-current-font-weight: 300;
+  padding: 0 var(--cu-ps2);
+}
+
+.cu-card--hover-content-reveal .cu-card__hover-content:last-child {
+  margin-bottom: 0;
 }
 
 .cu-card--hover-content-reveal:hover .cu-card__hover-content {
   max-height: 500px;
   opacity: 1;
+}
+
+.cu-card--hover-content-reveal:hover .cu-card__hover-content:last-child {
+  margin-bottom: 1em;
 }
 
 .cu-card--hover-overlay {
@@ -557,11 +569,42 @@
 }
 
 .cu-card--portrait {
+  position: relative;
+  pointer-events: none;
   grid-row-start: span 2;
+}
+
+.cu-card--portrait::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  background: transparent;
+  background-image: linear-gradient(to bottom, transparent 25%, rgba(0, 0, 0, 0.7) 100%);
+}
+
+@media (min-width: 64rem) {
+  .cu-card--portrait::before {
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+  }
+}
+
+.cu-card--portrait .cu-card__heading {
+  padding-top: var(--cu-vr4);
 }
 
 .cu-card--landscape {
   grid-column: 1 / -1;
+}
+
+@media (min-width: 64rem) {
+  .cu-card--landscape .cu-card__content {
+    padding: var(--cu-vr4) var(--cu-vr3);
+  }
 }
 
 .cu-card--with-aside .cu-card__content {
@@ -583,6 +626,49 @@
 
 .cu-card--with-aside .cu-heading--strong {
   font-size: var(--cu-text-lg);
+}
+.cu-dismissible {
+  position: relative;
+}
+
+.cu-dismissible__close {
+  position: absolute;
+  top: 0.75em;
+  right: 0.75em;
+  border: 1px solid var(--cu-color-brand, #b31b1b);
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.35);
+  height: 2em;
+  width: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 10;
+}
+
+.cu-dismissible__content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cu-dismissible--predismissed {
+  display: none;
+}
+
+.cu-dismissible__input:checked + .cu-dismissible__close + .cu-dismissible__content {
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+}
+
+.cu-dismissible__input:checked + .cu-dismissible__close {
+  display: none;
+}
+
+.cu-dismissible__input {
+  display: none;
 }
 /* ------------------------------------ *\
    Forms
@@ -899,33 +985,113 @@ progress {
 .cu-form *:after {
   box-sizing: border-box;
 }
-.cu-button {
-  color: #b31b1b;
-  border-radius: 2px;
-  border: 4px solid #b31b1b;
-  background: transparent;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  width: auto;
+.cu-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: var(--cu-vr0);
 }
 
-.cu-button--alt {
-  color: #b31b1b;
-  border-radius: 2px;
-  border: 4px solid #b31b1b;
-  background: transparent;
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  width: auto;
-  color: white;
-  background: #b31b1b;
+.cu-icon .cu-icon__image {
+  fill: var(--cu-current-text-color);
+  margin-bottom: var(--cu-vr-2);
 }
 
-.cu-button--overlay {
-  color: #fff;
-  --cu-current-link-color: $white;
-  border-color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
+.cu-icon .cu-icon__image--cornell-seal {
+  min-width: 73px;
+}
+
+.cu-icon .cu-icon__label {
+  margin-bottom: 0;
+  color: var(--cu-current-text-color);
+}
+
+.cu-icon--inline {
+  display: inline-flex;
+  flex-direction: row;
+  margin-bottom: 0;
+  padding: var(--cu-vr0) 0;
+}
+
+.cu-icon--inline .cu-icon__image {
+  margin-right: var(--cu-ps0);
+  margin-bottom: 0;
+}
+
+.cu-icon--inline-centered {
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--cu-vr0) 0 0;
+}
+
+.cu-icon--inline-centered .cu-icon__image {
+  flex-shrink: 0;
+  margin-right: var(--cu-ps0);
+  margin-bottom: 0;
+}
+
+.cu-icon--inline-centered .cu-icon__label {
+  white-space: pre-line;
+}
+
+.cu-icon--color-light {
+  --cu-current-text-color: var(--cu-color-text--light);
+}
+
+/*=============================================
+=            Specific icon overrides            =
+=============================================*/
+
+.cu-icon--color-brand .cu-icon__image {
+  --cu-current-text-color: #b31b1b;
+}
+
+.cu-icon--cornell-seal .cu-icon__image {
+  min-width: 73px;
+}
+
+.cu-icon--ilr-nickname .cu-icon__image {
+  min-width: 70px;
+}
+
+.cu-icon--play {
+  --cu-current-text-color: var(--cu-color-text--light);
+  cursor: pointer;
+}
+
+.cu-icon--play > * {
+  pointer-events: none;
+}
+
+.cu-icon--play .cu-icon__image {
+  stroke: var(--cu-current-text-color);
+}
+
+/*=====  End of Specific icon overrides  ======*/
+.cu-image {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.cu-image--blurred {
+  filter: blur(10px);
+  min-width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cu-image--blurred::after {
+  content: '';
+  display: block;
+  background-image: var(--cu-bg-image);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
 }
 .cu-logo--union {
   max-width: 200px;
@@ -1025,115 +1191,11 @@ progress {
 .cu-section-heading--framed.cu-section-heading--framed-right::after {
   left: calc(100% - 10px);
 }
-.cu-image {
-  max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
-
-.cu-image--blurred {
-  filter: blur(10px);
-  min-width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.cu-image--blurred::after {
-  content: '';
-  display: block;
-  background-image: var(--cu-bg-image);
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  -webkit-clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
-  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0% 100%);
-}
 .cu-video {
   width: 100%;
   max-height: 100%;
   vertical-align: bottom;
 }
-.cu-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: var(--cu-vr0);
-}
-
-.cu-icon .cu-icon__image {
-  fill: var(--cu-current-text-color);
-  margin-bottom: var(--cu-vr-2);
-}
-
-.cu-icon .cu-icon__image--cornell-seal {
-  min-width: 73px;
-}
-
-.cu-icon .cu-icon__label {
-  margin-bottom: 0;
-  color: var(--cu-current-text-color);
-}
-
-.cu-icon--inline {
-  display: inline-flex;
-  flex-direction: row;
-  margin-bottom: 0;
-  padding: var(--cu-vr0) 0;
-}
-
-.cu-icon--inline .cu-icon__image {
-  margin-right: var(--cu-ps0);
-  margin-bottom: 0;
-}
-
-.cu-icon--inline-centered {
-  flex-direction: row;
-  justify-content: center;
-  padding: var(--cu-vr0) 0 0;
-}
-
-.cu-icon--inline-centered .cu-icon__image {
-  flex-shrink: 0;
-  margin-right: var(--cu-ps0);
-  margin-bottom: 0;
-}
-
-.cu-icon--inline-centered .cu-icon__label {
-  white-space: pre-line;
-}
-
-.cu-icon--light {
-  --cu-current-text-color: var(--cu-color-text--light);
-}
-
-/*=============================================
-=            Specific icon overrides            =
-=============================================*/
-
-.cu-icon--color-brand .cu-icon__image {
-  --cu-current-text-color: #b31b1b;
-}
-
-.cu-icon--cornell-seal .cu-icon__image {
-  min-width: 73px;
-}
-
-.cu-icon--play {
-  --cu-current-text-color: var(--cu-color-text--light);
-  cursor: pointer;
-}
-
-.cu-icon--play > * {
-  pointer-events: none;
-}
-
-.cu-icon--play .cu-icon__image {
-  stroke: var(--cu-current-text-color);
-}
-
-/*=====  End of Specific icon overrides  ======*/
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /* Document
@@ -1423,6 +1485,10 @@ body {
   --cu-current-link-color: #222;
 }
 
+.cu-card--light {
+  --cu-card-background: #fff !important;
+}
+
 .cu-card--promo {
   --cu-card-background: #efefef;
 }
@@ -1624,6 +1690,15 @@ small {
 
 .cu-heading--strong span {
   color: #b31b1b;
+}
+
+.cu-section {
+  max-width: var(--cu-max-width-section, 1060px);
+  margin: 0 auto var(--cu-vr3);
+}
+
+.cu-section--wide {
+  max-width: 100%;
 }
 .cu-logo--ilr-lockup {
   max-width: 350px;
