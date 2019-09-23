@@ -252,6 +252,16 @@ progress {
       width: auto;
       color: white;
       background: #b31b1b; }
+    .cu-input--submit--light {
+      --cu-current-link-color: black;
+      border-radius: 2px;
+      border: 4px solid #b31b1b;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      width: auto;
+      color: white;
+      border: 4px solid white; }
   .cu-input.required.is-touched:not(.is-filled), .cu-input.required.is-invalid:not(.is-filled) {
     color: #b31b1b;
     border: 1px solid #b31b1b;

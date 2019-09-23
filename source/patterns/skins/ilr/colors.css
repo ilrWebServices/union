@@ -1,3 +1,6 @@
+:root {
+  --cu-color-brand: #b31b1b; }
+
 body {
   color: var(--cu-color-text, #222);
   background-color: var(--cu-color-bg-body, #fff); }

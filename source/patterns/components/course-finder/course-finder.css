@@ -1,0 +1,20 @@
+.cu-course-finder {
+  background: var(--cu-color-brand);
+  color: var(--cu-color-text--light);
+  padding: var(--cu-vr1) var(--cu-ps1);
+  margin-bottom: var(--cu-vr1); }
+  @media (min-width: 64rem) {
+    .cu-course-finder {
+      padding: var(--cu-vr2) var(--cu-ps3); } }
+  .cu-course-finder__content {
+    margin: 0 auto;
+    max-width: var(--cu-max-width-section, 1060px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .cu-course-finder .cu-form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-around; }
+/*# sourceMappingURL=course-finder.css.map */

@@ -5,6 +5,13 @@
   background: $cornell-red;
 }
 
+@mixin cu-button--light {
+  @include cu-button;
+
+  color: white;
+  border: 4px solid white;
+}
+
 @mixin cu-button($size: 'auto') {
   --cu-current-link-color: black;
   border-radius: 2px;

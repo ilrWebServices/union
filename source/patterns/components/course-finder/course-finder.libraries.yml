@@ -1,0 +1,4 @@
+css:
+  course-finder.css: {}
+dependencies:
+  - base

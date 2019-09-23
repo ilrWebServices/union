@@ -23,6 +23,10 @@
     &--alt {
       @include cu-button--dark;
     }
+
+    &--light {
+      @include cu-button--light;
+    }
   }
 
   /*----------  Invalid indicator  ----------*/
