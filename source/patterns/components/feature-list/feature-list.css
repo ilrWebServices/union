@@ -30,4 +30,10 @@
 
 .cu-feature-list__link {
   --cu-current-link-color: var(--cu-text-color); }
+
+p + .cu-feature-list {
+  margin-top: var(--cu-vr1); }
+  @media (min-width: 64rem) {
+    p + .cu-feature-list {
+      margin-top: var(--cu-vr2); } }
 /*# sourceMappingURL=feature-list.css.map */
