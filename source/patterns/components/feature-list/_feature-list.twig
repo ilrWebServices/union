@@ -17,7 +17,8 @@
       {% set end_link = '' %}
     {% endif %}
     <li{{ item_attributes }}>
-      <h3 class="cu-heading cu-feature-list__name">{{ link }}{{ item.name }}{{ end_link }}</h3>
+      {{ link }}
+      <h3 class="cu-heading cu-feature-list__name">{{ item.name }}</h3>
       <p class="cu-feature-list__description">{{ item.description }}</p>
       {% if item.icon %}
         {% include "@union/_icon.twig" with {
@@ -27,6 +28,7 @@
           attributes: { class: 'cu-feature-list__icon' }
         } only %}
       {% endif %}
+      {{ end_link }}
     </li>
   {% endfor %}
 {% endset %}
