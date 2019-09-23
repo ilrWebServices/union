@@ -68,6 +68,17 @@ $ npm run build
 
 Abstracts Drupal Attribute functionality so that attributes can be dynamically created or added to from within a template. See the `form` component.
 
+## Publishing a new Release
+
+This package is published to NPM. To create a new release:
+
+```
+$ npm login                            # As a user with access to the @cornell_ilr NPM org
+$ npm version [patch | minor | major]
+$ git push origin --follow-tags
+$ npm publish
+```
+
 ## Roadmap
 
 - Don't always include all skins in Pattern Lab and allow selection of skin.
