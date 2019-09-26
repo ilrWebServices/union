@@ -34,14 +34,11 @@
               text: 'Certificates'
             },
             { url: '',
-              text: 'Overview'
+              text: 'Programs'
             },
             { url: '',
-              text: 'Upcoming'
-            },
-            { url: '',
-              text: 'Testimonials'
-            },
+              text: 'Customized Programs'
+            }
           ]
         } only %}
       </div>
@@ -52,7 +49,6 @@
         content: rendered_banner_content,
       } only %}
 
-      {% include "@union/demo/highlight-certificates.twig" %}
     </div><!-- End highlighted -->
 
     <a id="main-content" tabindex="-1"></a>
@@ -63,10 +59,13 @@
           heading: 'A Unique Perspective',
           subheading: topic
         } only %}
-        <div class="cu-text cu-text--2col">
+        <div class="cu-text">
           <p>We, as the ILR School at Cornell, have a unique perspective on conflict in the workplace. It's part of our mission to bring together all sides in decision-making processes. Our 75-year experience in building empathy has given us the world's leading faculty on the workplace, so our professional programs use world-class research as their foundation. Our instructors and program directors collaborate with industry leaders to build real-world experience into the programs.</p>
         </div>
       </div>
+      {# <div class="cu-section"> #}
+        {% include "@union/demo/highlight-certificates.twig" %}
+      {# </div> #}
       <div class="cu-section">
         {% include '@union/_section-heading.twig' with {
           attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
@@ -83,6 +82,9 @@
         } only %}
       </div>
       <div class="cu-section">
+        {# {% include "@union/demo/" with {
+          quote: "ILR's certificate program in "~ topic ~" was a game changer for my career."
+        } only %} #}
       </div>
     </div>
   </main>
