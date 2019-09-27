@@ -1,9 +1,6 @@
 css:
   video.css: {}
-<<<<<<< HEAD
-=======
 js:
   video.js: {}
->>>>>>> master
 dependencies:
   - base
