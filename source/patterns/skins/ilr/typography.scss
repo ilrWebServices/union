@@ -8,7 +8,7 @@
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
   --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{$base-heading-font-weight});
   --cu-heading-line-height: var(--cu-base-heading-line-height, #{$base-heading-line-height});
-  --cu-heading-font-family: var(--cu-base-heading-font-family, #{$base-heading-font-family});
+  --cu-heading-font-family: var(--cu-base-heading-font-family, 'Replica');
   --cu-font-size-percentage: var(--cu-base-font-size-percentage, #{$base-font-size-percentage});
   --cu-text-color: #{$color-text};
   --cu-color-text--light: #{$color-text--light};
