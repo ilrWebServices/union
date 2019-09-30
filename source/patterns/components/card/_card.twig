@@ -1,9 +1,11 @@
 {{ attach_library('union_organizer/card') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-card']) %}
+{% set content_attributes = union_attributes(content_attributes|default([])) %}
+{% set content_attributes = content_attributes.addClass(['cu-card__content']) %}
 
 <div{{ attributes }}>
-  <div class="cu-card__content">
+  <div{{ content_attributes }}>
     {{ card_content }}
   </div>
 {% if card_media %}

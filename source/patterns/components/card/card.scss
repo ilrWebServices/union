@@ -234,6 +234,11 @@
 
     .cu-card__content {
       --cu-card-content-padding: var(--cu-vr3) 25%;
+
+      &--narrow {
+        max-width: 50%;
+        margin: 0 auto;
+      }
     }
   }
 
