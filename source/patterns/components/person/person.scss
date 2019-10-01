@@ -1,6 +1,8 @@
 @import './source/global/global';
 
 .cu-person {
+  --cu-current-font-weight: 300;
+
   &--thumb {
     display: grid;
     grid-column-gap: var(--cu-vr0);
