@@ -1,3 +1,5 @@
+<link href="/libraries/union/source/components/form/demo/forms.css" rel="stylesheet">
+
 {# Email #}
 {% set demo_email %}
   {% set email_label %}
@@ -219,8 +221,35 @@
 {% endset %}
 {# end radios #}
 
+{# checkbuttons #}
+{% set checkbuttons %}
+<div class="demo demo__checkbuttons">
+  {% for i in 0..2 %}
+    {% set input = {
+        'id': 'demo-checkbutton-'~i,
+        'type': 'radio',
+        'name': 'demo-checkbutton',
+        'value': i,
+        'checked': ''
+      } %}
+
+    {% set content %}
+    <p class="cu-checkbutton__content--date">Sep 2{{ i }}, 2021</p>
+    <time class="cu-checkbutton__content--time" datetime="2021-09-19T20:30:00Z">9:00 am - 5:00 pm</time>
+    {% endset %}
+
+    {% include '@union/_form-checkbutton.twig' with {
+        label_content: content,
+        input: input
+      } only %}
+  {% endfor %}
+</div>
+{% endset %}
+{# end checkbuttons #}
+
 {# Form2 #}
 {% set form2 %}
+  {{ checkbuttons }}
   {{ required_field }}
   {{ optional_field }}
   {{ radios }}

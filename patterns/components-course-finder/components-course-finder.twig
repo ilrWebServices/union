@@ -1,0 +1,36 @@
+{{ attach_library('union_organizer/course-finder') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-course-finder']) %}
+
+{% set form_elements %}
+  {% set select %}
+    {% include '@union/_form-select.twig' with {
+      options: options
+    } only %}
+  {% endset %}
+  {% include "@union/_form-element.twig" with {
+    label: 'Topics',
+    children: select
+  } only %}
+  {% include '@union/_form-input.twig' with {
+    attributes: {
+      class: 'cu-input--submit cu-input--submit--light',
+      name: '[form][submit]',
+      type: 'submit',
+      value: 'Find',
+      id: 'form.submit'
+    }
+  } only %}
+{% endset %}
+
+<div{{ attributes }}>
+  <div class="cu-course-finder__content">
+    {% if heading %}
+      <h2 class="cu-heading">{{ heading }}</h2>
+    {% endif %}
+
+    {% include '@union/_form.twig' with {
+      children: form_elements
+    } only %}
+  </div>
+</div>

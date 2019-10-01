@@ -1,0 +1,92 @@
+{% set topic = 'Conflict Resolution' %}
+{% set description = "A deep, practical understanding of conflict management can position you uniquely within your enterprise. Managed well, conflict can be a source of creativity and innovation in the workplace." %}
+
+<div class="demo demo--page">
+  {% include "@union/header--main.twig" %}
+
+  <main role="main" class="main">
+    <div class="highlighted">
+      {% include "@union/demo/course-finder.twig" %}
+      {% set rendered_banner_content %}
+      <div class="framed framed--right">
+        {% include "@union/demo/breadcrumb.twig" with {
+          breadcrumbs: [
+            {
+              url: '#',
+              text: 'Home'
+            },
+            {
+              url: '#',
+              text: 'Programs &amp; Admissions'
+            },
+            {
+              url: '#',
+              text: 'Professional Programs'
+            }
+          ],
+          attributes: { class: 'cu-pl-background-none'},
+        } %}
+        <h1 class="cu-heading cu-text--xxl">{{ topic }}</h1>
+        <p>{{ description }}</p>
+        {% include '@union/demo/page-nav.twig' with {
+          items: [
+            { url: '',
+              text: 'Certificates'
+            },
+            { url: '',
+              text: 'Programs'
+            },
+            { url: '',
+              text: 'Customized Programs'
+            }
+          ]
+        } only %}
+      </div>
+      {% endset %}
+
+      {% include '@union/_banner.twig' with {
+        attributes: { class: 'cu-banner--page'},
+        content: rendered_banner_content,
+      } only %}
+
+    </div><!-- End highlighted -->
+
+    <a id="main-content" tabindex="-1"></a>
+    <div class="main-content">
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed' },
+          heading: 'A Unique Perspective',
+          subheading: topic
+        } only %}
+        <div class="cu-text">
+          <p>We, as the ILR School at Cornell, have a unique perspective on conflict in the workplace. It's part of our mission to bring together all sides in decision-making processes. Our 75-year experience in building empathy has given us the world's leading faculty on the workplace, so our professional programs use world-class research as their foundation. Our instructors and program directors collaborate with industry leaders to build real-world experience into the programs.</p>
+        </div>
+      </div>
+      {# <div class="cu-section"> #}
+        {% include "@union/demo/highlight-certificates.twig" %}
+      {# </div> #}
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
+          heading: 'Upcoming Classes',
+          subheading: topic
+        } only %}
+        {% include "@union/course-teasers.twig" with {
+          show_label: 0
+        } only %}
+      </div>
+      <div class="cu-section cu-section--wide">
+        {% include "@union/15-card-landscape.twig" with {
+          quote: "ILR's certificate program in "~ topic ~" was a game changer for my career."
+        } only %}
+      </div>
+      <div class="cu-section">
+        {# {% include "@union/demo/" with {
+          quote: "ILR's certificate program in "~ topic ~" was a game changer for my career."
+        } only %} #}
+      </div>
+    </div>
+  </main>
+</div>
+

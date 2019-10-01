@@ -1,0 +1,31 @@
+{% set quote = quote|default("One of the best classes I've ever taken!") %}
+
+{% set testimonial = testimonial|default("<p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+  <p>Marya Besharov</p>") %}
+
+
+{% set rendered_media %}
+  {% include '@union/_image.twig' with {
+    img_src: 'https://www.ilr.cornell.edu/sites/default/files/styles/facebook_share/public/Besharov-posed.jpg?itok=_-9nNDww&focal_point=72,21',
+    img_alt: 'Make me accessible'
+  } only %}
+{% endset %}
+
+{% set rendered_content %}
+  <div class="cu-card__icon">
+    {% include "@union/_icon.twig" with {
+      title: 'Testimonial',
+      icon: 'student',
+      label: 'Testimonial',
+      attributes: { class: 'cu-icon--color-light' }
+    } only %}
+  </div>
+<h2 class="cu-card__heading">&ldquo;{{ quote }}&rdquo;</h2>
+{{ testimonial }}
+{% endset %}
+
+{% include '@union/_card.twig' with {
+  card_content: rendered_content,
+  card_media: rendered_media,
+  attributes: { class: 'cu-card--promo cu-card--landscape cu-card--promo-with-media' }
+} only %}

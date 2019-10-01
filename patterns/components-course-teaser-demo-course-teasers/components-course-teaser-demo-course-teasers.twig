@@ -1,0 +1,70 @@
+{% set grid_attributes = grid_attributes|default({class: 'cu-grid--3col'}) %}
+{% set show_label = show_label|default(true) %}
+{% set courses = [
+  { title: 'Resolving Conflict',
+    label: 'Related',
+    description: 'Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.',
+    details: [
+      '1-day workshop',
+      'March 25, 2020',
+      '$995'
+    ],
+    more_link: {
+      url: '#',
+      text: 'See more dates and locations'
+    },
+    cta: {
+      url: '#',
+      text: 'Learn More'
+    }
+  },
+  { title: 'Collective Bargaining for Union Activists',
+    label: 'Related',
+    description: 'This workshop is designed to develop the skills of union negotiators who do not have extensive experience in advancing a collective bargaining strategy and in conducting face-to-face negotiations at the bargaining table; or who are more experienced bargainers who would like to learn more about coordinating table tactics with membership support activities (a Contract Campaign).',
+    details: [
+      '2-day workshop',
+      'April 21-22, 2020',
+      '$995'
+    ],
+    more_link: {},
+    cta: {
+      url: '#',
+      text: 'Learn More'
+    }
+  },
+  { title: 'Leading Change',
+    label: 'Popular',
+    description: 'Sustainable organizational change is an art, not a science. Learn to artfully inspire your people and motivate them to change by meeting them where they are—with a fully realized, articulate vision for the future and concrete action steps to get there. This workshop offers a self-assessment, a method to navigate real-world scenarios and a personal action plan.',
+    details: [
+      '2-day workshop',
+      'May 15-16 2020',
+      '$550'
+    ],
+    more_link: {
+      url: '#',
+      text: 'See more dates and locations'
+    },
+    cta: {
+      url: '#',
+      text: 'Learn More'
+    }
+  }
+] %}
+{% set grid_content %}
+  {% for course in courses %}
+    {% include '@union/_course-teaser.twig' with {
+      title: course.title,
+      label: course.label,
+      show_label: show_label,
+      description: course.description,
+      details: course.details,
+      more_link: course.more_link,
+      cta: course.cta
+    } only %}
+  {% endfor %}
+{% endset %}
+
+{% include "@union/_grid.twig" with {
+  grid_content: grid_content,
+  attributes: grid_attributes
+} only %}

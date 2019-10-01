@@ -1,3 +1,12 @@
-.union {
+.pl .union {
   padding: 0 1em;
+}
+
+.pl .cu-breadcrumb {
+  background: #999;
+}
+
+/* Discuss passing a flag like "included" to all demo files */
+.pl .cu-pl-background-none {
+  background: none;
 }
