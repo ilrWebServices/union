@@ -34,7 +34,10 @@
       name: instructor.name,
       title: instructor.title,
       content: instructor.bio|raw,
-      img: instructor.img,
+      img: include('@union/_image.twig', {
+        img_src: instructor.img.src,
+        img_alt: instructor.img.alt
+      }, with_context = false),
       attributes: { class: 'cu-person--thumb'}
     } only %}
   {% endfor %}

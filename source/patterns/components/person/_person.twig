@@ -12,10 +12,7 @@
   </div>
   {% if img %}
   <div class="cu-person__image">
-    {% include '@union/_image.twig' with {
-      img_src: img.src,
-      img_alt: img.alt
-    } only %}
+    {{ img }}
   </div>
   {% endif %}
 </div>
