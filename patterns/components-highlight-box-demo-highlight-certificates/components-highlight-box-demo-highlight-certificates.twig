@@ -1,0 +1,60 @@
+{% set certificates = [
+  {
+    name: 'Advanced Collective Bargaining Certificate',
+    link: '#'
+  },
+  {
+    name: 'Advanced Employee Relations and Investigations Certificate',
+    link: '#'
+  },
+  {
+    name: 'Arbitration Advocacy Certificate',
+    link: '#'
+  },
+  {
+    name: 'Collective Bargaining Certificate',
+    link: '#'
+  },
+  {
+    name: 'Contract Administration Certificate',
+    link: '#'
+  },
+  {
+    name: 'Diversity and Inclusion Professionals Certificate',
+    link: '#'
+  },
+  {
+    name: 'EEO Professionals Certificate',
+    link: '#'
+  },
+  {
+    name: 'Managing Organizational Conflict Certificate',
+    link: '#'
+  },
+  {
+    name: 'Professional Neutral Development Certificate',
+    link: '#'
+  }
+]%}
+
+{% set certificate_grid %}
+  {% include "@union/_feature-list.twig" with {
+    items: certificates,
+    content_attributes: { class: 'cu-grid--3col cu-certificate-list' }
+  } only %}
+{% endset %}
+
+{% set box_content %}
+  <div class="certificate-highlights">
+    <h2 class="cu-heading">Certificates in Conflict Resolution</h2>
+    <p>Our certificate programs and workshops train people to actively solve problems – designing resilient systems for their organisations to address conflict.</p>
+    {{ certificate_grid }}
+  </div>
+{% endset %}
+
+{# Simulate the highlighted region #}
+<div class="highlighted">
+  {% include '@union/_highlight-box.twig' with {
+    content: box_content
+  } only %}
+</div>

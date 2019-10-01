@@ -1,0 +1,60 @@
+<h3>Image grid</h3>
+
+{% set instagram_icon %}
+{% include "@union/_icon.twig" with {
+  title: 'Instagram',
+  icon: 'instagram',
+  size: '2em',
+  label: '@cornellilr',
+  attributes: { class: 'cu-icon--inline' }
+} only %}
+{% endset %}
+
+{% include '@union/_section-heading.twig' with {
+  attributes: { class: 'cu-section-heading--framed' },
+  heading: 'Campus Life',
+  subheading: 'A view of student life at Cornell University\'s ILR School in Ithaca, NY.',
+  link: { url: 'https://www.instagram.com/cornellilr/', text: instagram_icon }
+} only %}
+
+{% set grid_content %}
+  {% for card in global.card.image_grid.cards %}
+    {% set rendered_media %}
+      <a class="cu-card__media-link" href="https://www.instagram.com/cornellilr/">
+      {% include '@union/_image.twig' with {
+        img_src: card.img.src,
+        img_alt: card.img.alt
+      } only %}
+      </a>
+    {% endset %}
+    {% set rendered_content %}
+      <div class="cu-card__icon">
+        {% include "@union/_icon.twig" with {
+          title: 'Instagram',
+          icon: 'instagram',
+          size: '2em',
+          attributes: { class: 'cu-icon--color-light' }
+        } only %}
+      </div>
+      {{ card.content }}
+      {% if card.button %}
+        <div class="cu-card__button">
+          {% include '@union/_button.twig' with {
+            attributes: card.button.attributes,
+            text: card.button.text
+          } only %}
+        </div>
+      {% endif %}
+    {% endset %}
+    {% include '@union/_card.twig' with {
+      card_content: rendered_content,
+      card_media: rendered_media,
+      attributes: card.attributes
+    } only %}
+  {% endfor %}
+{% endset %}
+
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: global.card.image_grid.attributes
+} %}

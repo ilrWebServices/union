@@ -1,0 +1,24 @@
+{{ attach_library('union_organizer/course-teaser') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-course-teaser']) %}
+
+<div{{ attributes }}>
+  <a class="cu-course-teaser__link" href="{{ cta.url }}">
+    <h3 class="cu-course-teaser__title cu-heading">{{ title }}</h3>
+    {% if show_label %}
+    <h4 class="cu-course-teaser__label cu-heading">{{ label }}</h4>
+    {% endif %}
+    <p class="cu-course-teaser__description">{{ description }}</p>
+    <ul class="cu-course-teaser__details">
+    {% for detail in details %}
+      <li class="cu-course-teaser__detail">{{ detail }}</li>
+    {% endfor %}
+    </ul>
+    {% if more_link %}
+    <p class="cu-course-teaser__more-link">{{ more_link.text }}</p>
+    {% endif %}
+    <div class="cu-course-teaser__cta">
+      <button class="cu-button cu-course-teaser__action">{{ cta.text }}</button>
+    </div>
+  </a>
+</div>

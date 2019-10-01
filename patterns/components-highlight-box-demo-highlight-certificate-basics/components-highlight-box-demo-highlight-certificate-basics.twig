@@ -1,0 +1,39 @@
+{% set basics = [
+  {
+    name: 'Required Courses',
+    description: '<span class="strong block">5 Focussed Workshops</span>Register for individual workshops to fit your schedule',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Time to Complete',
+    description: '<span class="strong block">8 months</span>Time participants have to complete the entire certificate program',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Total Cost',
+    description: '<span class="strong block">$7,580</span>Pay for individual workshops as you go',
+    icon: 'check-circle'
+  },
+]%}
+
+{% set basics_grid %}
+{% include "@union/_feature-list.twig" with {
+    items: basics,
+    content_attributes: { class: 'cu-grid--3col cu-certificate-basics cu-inline-list' }
+  } only %}
+{% endset %}
+
+{% set box_content %}
+<div class="certificate-basics">
+  <h2 class="cu-heading">Certificate Basics</h2>
+  {{ basics_grid }}
+</div>
+{% endset %}
+
+{# Simulate the highlighted region #}
+<div class="highlighted">
+  {% include '@union/_highlight-box.twig' with {
+    content: box_content
+  } only %}
+</div>
+
