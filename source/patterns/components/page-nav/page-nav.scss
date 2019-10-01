@@ -1,6 +1,8 @@
 @import './source/global/global';
 
 .cu-page-nav {
+  margin-top: var(--cu-vr1);
+  width: 100%;
 }
 
 .cu-heading--page-nav {
@@ -13,6 +15,8 @@
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   --cu-current-link-color: var(--cu-color-text--light, #{$color-text--light});
   --cu-header-accent-width: 40%;

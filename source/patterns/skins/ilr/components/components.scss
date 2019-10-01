@@ -77,8 +77,6 @@
     >* {
       // All direct children
       grid-column: 1;
-      display: inline-flex;
-      justify-content: space-between;
     }
 
     // Set the bottom frame line
@@ -131,9 +129,14 @@
 .framed--right {
   border-right: var(--frame-width) solid white;
 
+  > * {
+    max-width: 50%;
+  }
+
   >*:first-child {
     grid-template-columns: fit-content(90%) 1fr;
     margin-right: -2px;
+    max-width: 100%;
 
     @include breakpoint(sm) {
       grid-template-columns: fit-content(75%) 1fr;
@@ -151,6 +154,7 @@
   // }
 
   >*:last-child {
+    max-width: 100%;
     &::after {
       right: calc(var(--notchSize) * -1); // move over to remove notch gap
     }
