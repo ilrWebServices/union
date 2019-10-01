@@ -88,3 +88,70 @@
     @include visually-hidden;
   }
 }
+
+/*=============================================
+=            Checkbuttons            =
+=============================================*/
+
+.cu-checkbutton {
+  &__label {
+    border: 2px solid $color-border;
+    border-radius: 1px;
+    padding-top: 0.25rem;
+    display: flex;
+    background: white;
+    min-width: 200px;
+    margin: 1rem 0;
+
+    .cu-checkbutton__indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      order: 1;
+      text-align: center;
+      flex-basis: 25%;
+      position: relative;
+      color: $color-border;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        border-radius: 1rem;
+        border: 1px solid $black;
+      }
+    }
+
+    .cu-checkbutton__content {
+      order: 2;
+      flex-basis: 75%;
+      padding: var(--cu-ps-1) 0;
+
+      * {
+        margin: 0;
+      }
+    }
+  }
+
+  .cu-input:checked+.cu-checkbutton__label {
+    border: 2px solid $cornell-red;
+    box-shadow: 0px 0px 0px 3px $cornell-red;
+
+    .cu-checkbutton__indicator:after {
+      content: '';
+      /*Make a small rectangle so the border will create an L-shape*/
+      width: 9px;
+      height: 18px;
+      margin-top: -3px;
+      /*Use a border to create an 'L' */
+      border: solid $black;
+      border-width: 0 2px 2px 0;
+      /*Rotate the L 45 degrees to turn it into a checkmark*/
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/*=====  End of Checkbuttons  ======*/

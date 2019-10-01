@@ -1,0 +1,4 @@
+css:
+  grid.css: {}
+dependencies:
+  - base

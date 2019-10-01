@@ -1,3 +1,4 @@
 css:
-  component:
-    button.css: {}
+  button.css: {}
+dependencies:
+  - base

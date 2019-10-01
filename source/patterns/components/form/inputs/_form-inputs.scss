@@ -23,6 +23,10 @@
     &--alt {
       @include cu-button--dark;
     }
+
+    &--light {
+      @include cu-button--light;
+    }
   }
 
   /*----------  Invalid indicator  ----------*/
@@ -80,3 +84,15 @@
 }
 
 /*=====  End of Float label inputs  ======*/
+
+/*=============================================
+=            Checkbuttons            =
+=============================================*/
+
+.cu-checkbutton {
+  .cu-input {
+    @include visually-hidden;
+  }
+}
+
+/*=====  End of Checkbuttons  ======*/

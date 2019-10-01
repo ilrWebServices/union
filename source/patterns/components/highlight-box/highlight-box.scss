@@ -1,0 +1,27 @@
+@import './source/global/global';
+
+.cu-highlight-box {
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  background: $color-bg--lightest;
+  margin: var(--cu-vr1) auto;
+  padding: var(--cu-vr1) var(--cu-ps3);
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr2) var(--cu-ps5);
+    margin: var(--cu-vr3) auto;
+  }
+
+  .highlighted & {
+    max-width: 100%;
+    margin-top: 0;
+
+    .cu-highlight-box__content {
+      max-width: var(--cu-max-width-section, #{$max-width-section});
+      margin: 0 auto;
+
+      .cu-heading {
+        text-align: left;
+      }
+    }
+  }
+}

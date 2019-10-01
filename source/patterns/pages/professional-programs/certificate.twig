@@ -1,0 +1,89 @@
+{% set certificate = 'Advanced Collective Bargaining' %}
+{% set description = "<p>A deep, practical understanding of conflict management can position you uniquely within your enterprise. Managed well, conflict can be a source of creativity and innovation in the workplace.</p>" %}
+
+<div class="demo demo--page">
+  {% include "@union/header--main.twig" %}
+
+  <main role="main" class="main">
+    <div class="highlighted">
+      {% include "@union/demo/course-finder.twig" %}
+      {% set rendered_banner_content %}
+      <div class="framed framed--right">
+        {% include "@union/demo/breadcrumb.twig" with {
+          breadcrumbs: [
+            {
+              url: '#',
+              text: 'Home'
+            },
+            {
+              url: '#',
+              text: 'Programs &amp; Admissions'
+            },
+            {
+              url: '#',
+              text: 'Professional Programs'
+            },
+            {
+              url: '#',
+              text: 'Certificates'
+            }
+          ],
+          attributes: { class: 'cu-pl-background-none'},
+        } %}
+
+        {# This will likely become a component.
+        However, the design is inconsistent enough that
+        I thought we should discuss it more broadly before implementing #}
+        <h1 class="cu-heading cu-text--xxl">{{ certificate }}</h1>
+        <h3 class="cu-heading cu-banner__list-heading">Outcomes</h3>
+        <ul class="cu-banner__list">
+          <li class="cu-banner__list-item">Deepen skills for preparing and executing a collective bargaining strategy</li>
+          <li class="cu-banner__list-item">Foster an in depth understanding of the economics of collective bargaining</li>
+          <li class="cu-banner__list-item">Develop advanced negotiation strategies and agreement writing best practices</li>
+        </ul>
+      </div>
+      {% endset %}
+
+      {% include '@union/_banner.twig' with {
+        attributes: { class: 'cu-banner--page'},
+        content: rendered_banner_content,
+      } only %}
+
+      {% include "@union/demo/highlight-certificate-basics.twig" %}
+    </div>
+    <!-- End highlighted -->
+
+    <a id="main-content" tabindex="-1"></a>
+    <div class="main-content">
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed' },
+          heading: 'Certificate Details',
+          subheading: 'Overview'
+        } only %}
+        <div class="cu-text">
+          <p>The Advanced Collective Bargaining Certificate is for graduates of Cornell ILR School’s Collective Bargaining Certificate and experienced labor relations professionals who wish to deepen their knowledge and skills. Graduates of the Collective Bargaining Certificate have first priority for enrollment. Non-graduates will be admitted on a case-by-case basis depending on knowledge and experience.</p>
+          <p>Class sizes are limited to ensure full participation and mentoring in small group activities and simulations.</p>
+          <p>The Advanced Collective Bargaining Certificate deepens knowledge and skills in the area of the economics of collective bargaining and advanced negotiation skills and agreement writing. Courses may be taken individually or as part of a series to earn the Certificate.</p>
+        </div>
+      </div>
+      <div class="cu-section">
+        {% include '@union/_section-heading.twig' with {
+          attributes: { class: 'cu-section-heading--framed cu-section-heading--framed-right' },
+          heading: 'Core Curriculum',
+          subheading: 'Register'
+        } only %}
+        {% include "@union/course-teasers.twig" with {
+          show_label: 0,
+          grid_attributes: {class: 'cu-grid--2col cu-certificate-courses'}
+        } only %}
+      </div>
+      <div class="cu-section cu-section--wide">
+        {% include "@union/15-card-landscape.twig" with {
+          quote: "ILR's certificate program in "~ certificate ~" was a game changer for my career."
+        } only %}
+      </div>
+      <div class="cu-section"></div>
+    </div>
+  </main>
+</div>

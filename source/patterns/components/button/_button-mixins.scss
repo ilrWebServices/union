@@ -5,8 +5,15 @@
   background: $cornell-red;
 }
 
+@mixin cu-button--light {
+  @include cu-button;
+
+  color: white;
+  border: 4px solid white;
+}
+
 @mixin cu-button($size: 'auto') {
-  color: $cornell-red;
+  --cu-current-link-color: black;
   border-radius: 2px;
   border: 4px solid $cornell-red;
   background: transparent;
@@ -20,8 +27,8 @@
 }
 
 @mixin cu-button--overlay() {
+  --cu-current-link-color: #{$white};
   color: $white;
-  --cu-current-link-color: $white;
   border-color: $white;
   background-color: rgba(0, 0, 0, 0.3);
 }

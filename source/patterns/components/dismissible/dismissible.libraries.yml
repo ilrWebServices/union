@@ -1,5 +1,5 @@
 css:
-  dismissible: {}
+  dismissible.css: {}
 js:
   dismissible.js: {}
 dependencies:

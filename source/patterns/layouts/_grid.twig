@@ -2,6 +2,9 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-grid']) %}
 
-<div{{ attributes }}>
+{% set grid_element = grid_element|default('div') %}
+
+<{{ grid_element }}{{ attributes }}>
   {{ grid_content }}
-</div>
+</{{grid_element}}>
+

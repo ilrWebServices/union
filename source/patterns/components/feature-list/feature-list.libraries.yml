@@ -1,0 +1,4 @@
+css:
+  feature-list.css: {}
+dependencies:
+  - base

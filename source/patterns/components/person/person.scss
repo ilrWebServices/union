@@ -1,0 +1,46 @@
+@import './source/global/global';
+
+.cu-person {
+  --cu-current-font-weight: 300;
+
+  &--thumb {
+    display: grid;
+    grid-column-gap: var(--cu-vr0);
+    grid-template-columns: 1fr 2fr;
+
+    .cu-person__image {
+      order: 1;
+      grid-row: span 2;
+      overflow: hidden;
+
+      .cu-image {
+        border-radius: 50%;
+      }
+    }
+
+    .cu-person__title {
+      order: 2;
+      grid-row: 1;
+      grid-column: 2;
+      margin: 0;
+    }
+
+    .cu-person__name {
+      --cu-current-font-size: var(--cu-text-xxl);
+      order: 3;
+      grid-row: 2;
+      grid-column: 2;
+      margin: 0 0 var(--cu-vr1);
+    }
+
+    .cu-person__content {
+      order: 4;
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.cu-grid--people {
+  grid-column-gap: var(--cu-vr2);
+  align-items: start;
+}

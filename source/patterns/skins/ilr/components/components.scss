@@ -43,35 +43,40 @@
 }
 
 .framed {
-  @include notch; // upper/lower cutouts of the left or right border
   display: grid;
-  grid-column-gap: 1em;
-  position: relative;
-  height: 100%;
+  min-height: 90%;
 
-  // Set the top border
-  &::before {
-    @include notch;
-    content: '';
-    display: block;
-    grid-row: 1;
-    background: white;
-    height: var(--frame-width);
+  >*:first-child {
+    @include notch; // upper/lower cutouts of the left or right border
+    display: grid;
+    grid-column-gap: 2em;
+    position: relative;
+    height: 100%;
+
+    // Set the top border
+    &::before {
+      @include notch;
+      content: '';
+      display: block;
+      grid-row: 1;
+      background: white;
+      height: var(--frame-width);
+    }
   }
 
   // Prepare the last element of the grid for the frame
   >*:last-child {
-    grid-column: 1 / -1;
+    // grid-column: 1 / -1;
     display: grid;
     grid-column-gap: 1em;
     grid-template-columns: 50% auto;
     justify-items: start;
     align-content: end;
+    margin-bottom: 0;
 
     >* {
       // All direct children
       grid-column: 1;
-      display: inline-flex;
     }
 
     // Set the bottom frame line
@@ -123,18 +128,33 @@
 
 .framed--right {
   border-right: var(--frame-width) solid white;
-  grid-template-columns: fit-content(90%) 1fr;
 
-  @include breakpoint(sm) {
-    grid-template-columns: fit-content(75%) 1fr;
+  > * {
+    max-width: 50%;
   }
 
-  &::before {
-    grid-column: 2;
-    right: calc(var(--notchSize) * -1); // move over to remove notch gap
+  >*:first-child {
+    grid-template-columns: fit-content(90%) 1fr;
+    margin-right: -2px;
+    max-width: 100%;
+
+    @include breakpoint(sm) {
+      grid-template-columns: fit-content(75%) 1fr;
+    }
+
+    &::before {
+      grid-column: 2;
+      right: calc(var(--notchSize) * -1); // move over to remove notch gap
+    }
   }
+
+
+  // > * {
+  //   grid-column: 1;
+  // }
 
   >*:last-child {
+    max-width: 100%;
     &::after {
       right: calc(var(--notchSize) * -1); // move over to remove notch gap
     }

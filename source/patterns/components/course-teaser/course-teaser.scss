@@ -1,0 +1,66 @@
+@import './source/global/global';
+
+.cu-course-teaser {
+  --cu-current-link-color: var(--cu-text-color);
+  background:#F5F5F5;
+  padding: var(--cu-vr1) var(--cu-ps1);
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__label {
+    --cu-current-heading-size: var(--cu-text-reg);
+    --cu-current-font-weight: bold !important; // Note that !important within css var encapsulates it within a scope
+    order: 1;
+    color: var(--cu-color-brand, #{$color-brand});
+  }
+
+  &__title {
+    order: 2;
+  }
+
+  &__description {
+    order: 3;
+  }
+
+  &__details {
+    order: 4;
+    list-style-type: none;
+    margin: 0 0 var(--cu-vr2);
+    padding: 0 0 0 var(--cu-ps3);
+  }
+
+  &__detail {
+    --cu-current-font-weight: bold;
+    position: relative;
+
+    &::before {
+      content: '✓';
+      font-weight: normal;
+      font-size: var(--cu-ms2);
+      color: var(--cu-color-brand, #{$color-brand});
+      position: absolute;
+      left: -3rem;
+      top: -5px;
+    }
+  }
+
+  &__more-link {
+    --cu-current-font-weight: bold;
+    color: var(--cu-color-brand, #{$color-brand});
+    order: 6;
+    margin-bottom: var(--cu-vr2);
+  }
+
+  &__cta {
+    order: 7;
+    margin-top: auto; // Bottom-align the button within the flex container
+  }
+}
+
+.cu-grid.cu-certificate-courses {
+  --cu-grid-column-gap: var(--cu-vr2);
+}

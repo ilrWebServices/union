@@ -1,0 +1,54 @@
+@import './source/global/global';
+
+.cu-feature-list {
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    --cu-grid-column-gap: var(--cu-ps4);
+    list-style-type: none;
+    padding-left: var(--cu-vr2);
+  }
+
+  &__item {
+    position: relative;
+
+    &--linked {
+      --cu-header-accent-width: 15%;
+      --cu-header-accent-padding: .25em 0 0 0;
+      --cu-header-accent-border: 4px solid var(--cu-color-brand, #{$cornell-red});
+    }
+  }
+
+  &__name {
+    --cu-current-heading-size: var(--cu-text-reg);
+    --cu-heading-font-weight: 400;
+    margin-top: 0;
+  }
+
+  &__description {
+    --cu-current-font-size: var(--cu-ms-1);
+    color: lighten($color-text, 30%);
+  }
+
+  &__icon {
+    --cu-current-text-color: #{$color-brand};
+    position: absolute;
+    top: 0;
+    left: calc(var(--cu-vr2) * -1);
+  }
+
+  &__link {
+    --cu-current-link-color: var(--cu-text-color);
+  }
+}
+
+// Add a top margin when following a paragraph
+p + .cu-feature-list {
+  margin-top: var(--cu-vr1);
+
+  @include breakpoint(md) {
+    margin-top: var(--cu-vr2);
+  }
+}

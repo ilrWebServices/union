@@ -1,5 +1,5 @@
 css:
-  banner: {}
+  banner.css: {}
 js:
   banner.js: {}
 dependencies:

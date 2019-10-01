@@ -1,0 +1,27 @@
+@import './source/global/global';
+
+.cu-course-finder {
+  background: var(--cu-color-brand);
+  color: var(--cu-color-text--light);
+  padding: var(--cu-vr1) var(--cu-ps1);
+  margin-bottom: var(--cu-vr1);
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr2) var(--cu-ps3);
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: var(--cu-max-width-section, #{$max-width-section});
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cu-form {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: space-around;
+  }
+}
