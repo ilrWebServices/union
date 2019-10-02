@@ -85,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--cu-font-weight);
   line-height: var(--cu-line-height);
   font-size: var(--font-size);
+  margin-bottom: var(--cu-vr1);
 }
 
 [class*='cu-text--x'] {
@@ -129,7 +130,7 @@ small {
 }
 
 .cu-heading--small {
-  --cu-current-heading-size: var(--cu-ms0);
+  --cu-current-heading-size: var(--cu-ms-1);
   --cu-current-font-weight: bold !important;
 }
 
@@ -158,10 +159,22 @@ small {
   }
 }
 
+// @todo: Move to a component?
 .cu-text--2col {
-  display: grid;
-  grid-column-gap: var(--cu-ps3);
-  grid-template-columns: 1fr 1fr;
+  column-count: 2;
+  column-gap: var(--cu-ps3);
+}
+
+.cu-text {
+  // display: grid;
+
+  .cu-heading {
+    order: -1;
+  }
+
+  .cu-heading--small {
+    order: -2;
+  }
 }
 
 .cu-section-pad {
