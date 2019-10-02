@@ -1,0 +1,7 @@
+{% set box_content %}
+  {% include "@union/demo/feature-list.twig" %}
+{% endset %}
+
+{% include '@union/_highlight-box.twig' with {
+  content: box_content
+} only %}
