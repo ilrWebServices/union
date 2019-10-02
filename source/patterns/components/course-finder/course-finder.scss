@@ -1,6 +1,8 @@
 @import './source/global/global';
 
 .cu-course-finder {
+  position: relative;
+  z-index: 2; // Position above banner content
   background: var(--cu-color-brand);
   color: var(--cu-color-text--light);
   padding: var(--cu-vr1) var(--cu-ps1);
@@ -16,6 +18,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  &__topics-list {
+    position: relative;
+    min-width: 60%;
+
+    // Temporary display for course finder while better solution built
+    .views-element-container {
+      position: absolute;
+      left: 0;
+      top: -2rem;
+      height: 2rem;
+      padding: var(--cu-vr1) var(--cu-ps1);
+      background: white;
+      overflow: hidden;
+
+      &:hover {
+        height: auto;
+      }
+
+      :first-child {
+        margin-top: calc(var(--cu-vr1) * -.5);
+      }
+    }
+
+    a {
+      --cu-current-link-color: var(--cu-text-color);
+      display: block;
+      height: 2rem;
+
+      &:hover {
+        --cu-current-link-color: var(--cu-color-brand);
+      }
+    }
   }
 
   .cu-form {
