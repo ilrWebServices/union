@@ -1,0 +1,50 @@
+{{ attach_library('union_organizer/registration-form') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-registration-form']) %}
+
+{% set checkbuttons %}
+
+<div{{ attributes }}>
+  <div class="cu-registration-form__active-price">
+    {# This content gets populated via js #}
+  </div>
+  <div class="cu-registration-form__form">
+    {% for event in events %}
+      {% set input = {
+        'id': 'event-checkbutton-'~event.id,
+        'type': 'radio',
+        'name': 'event-checkbutton',
+        'value': event.id,
+        'data-price': '$'~event.price
+      } %}
+
+      {% include '@union/_form-checkbutton.twig' with {
+        label_content: event.content,
+        input: input
+      } only %}
+    {% endfor %}
+
+    {% if events is not empty %}
+      {% include '@union/_form-input.twig' with {
+        attributes: {
+          class: 'cu-input--submit cu-input--submit--alt',
+          name: '[form][submit]',
+          type: 'submit',
+          value: 'Register',
+          id: 'form.submit'
+        }
+      } only %}
+    {% else %}
+      {{ empty_message }}
+    {% endif %}
+
+  </div>
+  {% endset %}
+
+  {% include '@union/_form.twig' with {
+    children: checkbuttons,
+  } only %}
+
+
+</div>
+

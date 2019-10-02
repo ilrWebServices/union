@@ -1,0 +1,18 @@
+{% include '@union/_video.twig' with {
+  src: src|default('https://archive.org/download/KelloggsSugarFrostedFlakesCereal1976/Kellogg%27s%20Sugar%20Frosted%20Flakes%20Cereal%20%281976%29.mp4'),
+  fallback: fallback|default('Inline videos are Grrrreat!'),
+  controls: (controls is defined ? controls : TRUE),
+  autoplay: (autoplay is defined ? autoplay : FALSE),
+  loop: (loop is defined ? loop : FALSE),
+  poster: (poster is defined ? poster : 'http://placeimg.com/640/480/arch'),
+  sources: sources|default([
+    {
+      src: 'https://archive.org/download/KelloggsSugarFrostedFlakesCereal1976/Kellogg%27s%20Sugar%20Frosted%20Flakes%20Cereal%20%281976%29.ogv',
+      type: 'video/ogg'
+    },
+    {
+      src: 'https://archive.org/download/KelloggsSugarFrostedFlakesCereal1976/Kellogg%27s%20Sugar%20Frosted%20Flakes%20Cereal%20%281976%29.mp4',
+      type: 'video/mp4'
+    }
+  ])
+} only %}

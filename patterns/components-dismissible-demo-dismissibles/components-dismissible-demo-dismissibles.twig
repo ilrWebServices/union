@@ -1,0 +1,7 @@
+{% set content %}
+  {% include '@union/announcement-banner.twig' %}
+{% endset %}
+
+{% include '@union/_dismissible.twig' with {
+  content: content
+} only %}

@@ -1,0 +1,15 @@
+{{ attach_library('union_organizer/course-finder') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-course-finder']) %}
+
+<div{{ attributes }}>
+  <div class="cu-course-finder__content">
+    {% if heading %}
+      <h2 class="cu-heading">{{ heading }}</h2>
+    {% endif %}
+
+    <div class="cu-course-finder__topics-list">
+      {{ content }}
+    </div>
+  </div>
+</div>

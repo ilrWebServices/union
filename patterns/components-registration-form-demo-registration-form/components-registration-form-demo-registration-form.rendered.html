@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1570043948838" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1570043948838" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union"><form class="cu-form">
+  
+<div class="cu-registration-form">
+  <div class="cu-registration-form__active-price">
+      </div>
+  <div class="cu-registration-form__form">
+          
+      
+
+
+<div class="cu-checkbutton">
+  
+
+
+
+<input id="event-checkbutton-932" type="radio" name="event-checkbutton" value="932" data-price="$299" class="cu-input cu-input--radio" />
+  <label class="cu-checkbutton__label" for="event-checkbutton-932">
+    <div class="cu-checkbutton__content">
+        <p class="cu-checkbutton__content--date">Dec 09, 2020</p>
+  <time class="cu-checkbutton__content--time">9:00 am - 5:00 pm</time>
+  <p class="cu-checkbutton__content--price cu-js-price">$299</p>
+  
+    </div>
+    <div class="cu-checkbutton__indicator"></div>
+  </label>
+</div>
+          
+      
+
+
+<div class="cu-checkbutton">
+  
+
+
+
+<input id="event-checkbutton-894" type="radio" name="event-checkbutton" value="894" data-price="$199" class="cu-input cu-input--radio" />
+  <label class="cu-checkbutton__label" for="event-checkbutton-894">
+    <div class="cu-checkbutton__content">
+        <p class="cu-checkbutton__content--date">Mar 20, 2021</p>
+  <time class="cu-checkbutton__content--time">9:00 am - 5:00 pm</time>
+  <p class="cu-checkbutton__content--price cu-js-price">$199</p>
+  
+    </div>
+    <div class="cu-checkbutton__indicator"></div>
+  </label>
+</div>
+    
+          
+
+
+
+<input class="cu-input--submit cu-input--submit--alt cu-input cu-input--submit" name="[form][submit]" type="submit" value="Register" id="form.submit" />
+    
+  </div>
+  
+</form>
+
+
+</div><!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h2>Overview</h2>\n<p>Registration forms are used display the date, time and cost for events. Multiple events can be added to a form, and the price is dynamically updated via js when a form checkbutton is selected.</p>\n<h2>Description</h2>\n<p>The following variables are available:</p>\n<p><code>events</code>: an array of objects that include an <code>id</code>, <code>price</code> and <code>content</code>. The content gets displayed in the label of the checkbutton.</p>\n<p><code>empty_message</code>: If the events array is empty, this message will be displayed instead of the form.</p>\n","patternBreadcrumb":{"patternType":"components","patternSubtype":"registration-form"},"patternExtension":"twig","patternName":"Registration Form","patternPartial":"components-registration-form","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1570043948838">
+  (function() {
+    if (self != top) {
+      var cb = '1570043948838';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1570043948838">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1570043948838"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    try{Typekit.load();}catch(e){}
+    //--><!]]>
+  </script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+{{ attach_library('union_organizer/breadcrumb') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-breadcrumb']) %}
+{% set attributes = attributes.setAttribute('role', 'navigation') %}
+{% set attributes = attributes.setAttribute('aria-labelledby', 'system-breadcrumb') %}
+
+<nav{{ attributes }}>
+  <h2 id="system-breadcrumb" class="visually-hidden">{{ 'Breadcrumb' }}</h2>
+  <ol class="cu-breadcrumb__list">
+  {% for item in breadcrumb %}
+    <li class="cu-breadcrumb__item">
+      {% if item.url %}
+        <a href="{{ item.url }}" class="cu-breadcrumb__link">{{ item.text }}</a>
+      {% else %}
+        {{ item.text }}
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+</nav>
