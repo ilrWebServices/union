@@ -11,7 +11,8 @@
     margin: var(--cu-vr3) auto;
   }
 
-  .highlighted & {
+  .highlighted &,
+  .cu-section--wide & {
     max-width: 100%;
     margin-top: 0;
 
