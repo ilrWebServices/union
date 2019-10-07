@@ -1,6 +1,7 @@
 css:
   00-modern-normalize.css: {}
   components/components.css: {}
+  components/main-menu.css: {}
   colors.css: {}
   fonts.css: {}
   layout.css: {}
