@@ -25,9 +25,9 @@
 }
 
 label[for="nav-trigger"] {
-  position: fixed;
+  position: absolute;
   right: var(--cu-vr1);
-  top: 40px;
+  top: 30px;
   z-index: 2;
   cursor: pointer;
 
