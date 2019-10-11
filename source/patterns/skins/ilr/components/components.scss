@@ -10,6 +10,11 @@
   }
 }
 
+.cu-logo--ilr-wordmark {
+  margin-bottom: var(--cu-vr2);
+  width: 175px;
+}
+
 :root {
   --frame-width: 10px;
 
@@ -66,13 +71,16 @@
 
   // Prepare the last element of the grid for the frame
   >*:last-child {
-    // grid-column: 1 / -1;
     display: grid;
     grid-column-gap: 1em;
-    grid-template-columns: 50% auto;
+    grid-template-columns: fit-content(75%) auto;
     justify-items: start;
     align-content: end;
     margin-bottom: 0;
+
+    @include breakpoint(lg) {
+      grid-template-columns: fit-content(50%) auto;
+    }
 
     >* {
       // All direct children
@@ -129,8 +137,19 @@
 .framed--right {
   border-right: var(--frame-width) solid white;
 
+  // Note this gets overridden by `:last-child`. So content that is not the
+  // last child behaves slightly differently than the last child itself,
+  // which gets the frame.
   > * {
-    max-width: 50%;
+    max-width: 75%;
+
+    @include breakpoint(sm) {
+      max-width: 60%;
+    }
+
+    @include breakpoint(md) {
+      max-width: 50%;
+    }
   }
 
   >*:first-child {
@@ -147,11 +166,6 @@
       right: calc(var(--notchSize) * -1); // move over to remove notch gap
     }
   }
-
-
-  // > * {
-  //   grid-column: 1;
-  // }
 
   >*:last-child {
     max-width: 100%;

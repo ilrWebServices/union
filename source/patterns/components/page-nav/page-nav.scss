@@ -29,3 +29,7 @@
     max-width: 100%; // Override width constraint since heading is nested.
   }
 }
+
+.cu-page-nav__item {
+  margin-right: var(--cu-vr2);
+}
