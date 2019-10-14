@@ -1,5 +1,7 @@
 css:
   registration-form.css: {}
+js:
+  registration-form.js: {}
 dependencies:
   - base
   - form
