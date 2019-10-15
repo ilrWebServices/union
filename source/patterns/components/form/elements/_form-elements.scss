@@ -127,10 +127,14 @@
     .cu-checkbutton__content {
       order: 2;
       flex-basis: 75%;
-      padding: var(--cu-ps-1) 0;
+      padding: var(--cu-ps-1) var(--cu-ps-1) var(--cu-ps-1) 0;
 
       * {
         margin: 0;
+      }
+
+      .cu-button {
+        margin-top: var(--cu-vr0);
       }
     }
   }

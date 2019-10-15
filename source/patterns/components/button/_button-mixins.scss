@@ -1,7 +1,7 @@
 @mixin cu-button--dark {
   @include cu-button;
 
-  color: white;
+  --cu-current-link-color: white;
   background: $cornell-red;
 }
 
@@ -20,6 +20,9 @@
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @if $size=='full' {
     width: 100%;
