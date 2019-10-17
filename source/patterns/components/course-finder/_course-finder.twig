@@ -1,8 +1,7 @@
 {{ attach_library('union_organizer/course-finder') }}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-course-finder']) %}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass(['cu-course-finder']) }}>
   <div class="cu-course-finder__content">
     {% if heading %}
       <h2 class="cu-heading">{{ heading }}</h2>
@@ -11,5 +10,10 @@
     <div class="cu-course-finder__topics-list">
       {{ content }}
     </div>
+
+    <form class="cu-course-finder__search" action="/programs/professional-programs/search" method="get">
+      <input class="cu-course-finder__search__input" type="text" name="s" placeholder="Search" />
+      <input class="cu-course-finder__search__input" type="submit" value="Go" />
+    </form>
   </div>
 </div>

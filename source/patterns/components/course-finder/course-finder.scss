@@ -18,35 +18,37 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    & .cu-heading {
+      white-space: nowrap;
+      margin: 0;
+    }
   }
 
   &__topics-list {
-    position: relative;
-    min-width: 60%;
+    margin: 0 1em;
 
     // Temporary display for course finder while better solution built
     .views-element-container {
-      position: absolute;
-      left: 0;
-      top: -2rem;
-      height: 2rem;
-      padding: var(--cu-vr1) var(--cu-ps1);
-      background: white;
+      height: 3rem;
       overflow: hidden;
 
-      &:hover {
-        height: auto;
+      & > * {
+        background: white;
+        display: block;
+        min-height: 3rem;
+        padding: 1em;
+        line-height: 1;
       }
 
-      :first-child {
-        margin-top: calc(var(--cu-vr1) * -.5);
+      &:hover {
+        overflow: visible;
       }
     }
 
     a {
       --cu-current-link-color: var(--cu-text-color);
       display: block;
-      height: 2rem;
 
       &:hover {
         --cu-current-link-color: var(--cu-color-brand);
@@ -54,10 +56,16 @@
     }
   }
 
-  .cu-form {
+  .cu-course-finder__search {
     display: flex;
     align-items: center;
     flex-grow: 1;
     justify-content: space-around;
+  }
+
+  .cu-course-finder__search__input {
+    height: 3rem;
+    padding: 0 var(--cu-ps1);
+    border: none;
   }
 }
