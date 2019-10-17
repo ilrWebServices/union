@@ -33,14 +33,6 @@
       height: 3rem;
       overflow: hidden;
 
-      & > * {
-        background: white;
-        display: block;
-        min-height: 3rem;
-        padding: 1em;
-        line-height: 1;
-      }
-
       &:hover {
         overflow: visible;
       }
@@ -49,6 +41,10 @@
     a {
       --cu-current-link-color: var(--cu-text-color);
       display: block;
+      background: white;
+      min-height: 3rem;
+      padding: 1em;
+      line-height: 1;
 
       &:hover {
         --cu-current-link-color: var(--cu-color-brand);
