@@ -1,0 +1,15 @@
+@import './source/global/global';
+
+.cu-section {
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  margin: var(--cu-vr3) auto;
+
+  &--wide {
+    max-width: 100%;
+  }
+}
+
+.cu-text--2col {
+  column-count: 2;
+  column-gap: var(--cu-vr3);
+}
