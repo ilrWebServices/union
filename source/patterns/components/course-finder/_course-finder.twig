@@ -8,12 +8,14 @@
     {% endif %}
 
     <div class="cu-course-finder__topics-list">
+      <span class="cu-course-finder__label">- Choose a topic -</span>
+      <a href="#" class="cu-course-finder__trigger">&#9660;</a>
       {{ content }}
     </div>
 
     <form class="cu-course-finder__search" action="/programs/professional-programs/search" method="get">
       <input class="cu-course-finder__search__input" type="text" name="s" placeholder="Search" />
-      <input class="cu-course-finder__search__input" type="submit" value="Go" />
+      <input class="cu-course-finder__search__input" type="submit" value="Find" />
     </form>
   </div>
 </div>
