@@ -1,4 +1,6 @@
 css:
   course-finder.css: {}
+js:
+  course-finder.js: {}
 dependencies:
   - base
