@@ -150,24 +150,7 @@ small {
   }
 }
 
-.cu-section {
-  max-width: var(--cu-max-width-section, #{$max-width-section});
-  margin: 0 auto var(--cu-vr3);
-
-  &--wide {
-    max-width: 100%;
-  }
-}
-
-// @todo: Move to a component?
-.cu-text--2col {
-  column-count: 2;
-  column-gap: var(--cu-ps3);
-}
-
 .cu-text {
-  // display: grid;
-
   .cu-heading {
     order: -1;
   }

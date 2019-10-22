@@ -1,0 +1,7 @@
+{{ attach_library('union_organizer/layouts') }}
+
+{% set attributes = union_attributes(attributes|default([])) %}
+
+<section{{attributes.addClass('cu-section')}}>
+  {{ content }}
+</section>
