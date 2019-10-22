@@ -41,6 +41,10 @@
     width: 100%;
     overflow: hidden;
 
+    &:hover {
+      overflow: visible;
+    }
+
     @include breakpoint(md) {
       width: 300px;
       margin: 0 var(--cu-ps1) 0 0;
@@ -50,7 +54,7 @@
       overflow: visible;
 
       .cu-course-finder__trigger {
-        visibility: hidden;
+        transform: rotate(180deg);
       }
     }
 
@@ -95,6 +99,11 @@
     top: 0;
     right: 0;
     color: $color-text--medium;
+    border: none;
+    background: transparent;
+    min-height: 3rem;
+    transition-duration: 0.25s;
+    transition-property: transform;
 
     @include breakpoint(md) {
       display: none;

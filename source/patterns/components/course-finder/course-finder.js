@@ -1,29 +1,25 @@
-(function (document) {
+(function(document) {
 
-  const displayTopicList = function () {
-    const listContainers = document.querySelectorAll('.cu-course-finder__topics-list');
-
-    // Show the list.
-    listContainers.forEach(function (container) {
-      container.classList.add('topics-list--expanded');
-    });
-  }
-
-  document.addEventListener('click', function (event) {
+  document.addEventListener('click', function(event) {
     if (event.target.matches('.cu-course-finder__trigger')) {
-      displayTopicList(event.target);
+      if (event.target.parentNode.matches('.topics-list--expanded')) {
+        event.target.parentNode.classList.remove('topics-list--expanded');
+        event.target.setAttribute('aria-expanded', 'false');
+      }
+      else {
+        event.target.parentNode.classList.add('topics-list--expanded');
+        event.target.setAttribute('aria-expanded', 'true');
+      }
     }
   }, false);
 
-  // Able to close topic list by hitting escape
-  document.addEventListener('keydown', function (event) {
+  // Enable topic list collapse by hitting escape.
+  document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
-      // Find element that was active when escape was hit
-      const activeContainers = document.querySelectorAll('.topics-list--expanded');
+      const topic_triggers = document.querySelectorAll('.topics-list--expanded .cu-course-finder__trigger');
 
-      // Hide the list.
-      activeContainers.forEach(function (container) {
-        container.classList.remove('topics-list--expanded');
+      topic_triggers.forEach(function(topic_trigger) {
+        topic_trigger.click();
       });
     }
   });
