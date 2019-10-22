@@ -38,7 +38,6 @@
     margin: 0 0 var(--cu-vr1) 0;
     background: white;
     height: 3rem;
-    width: 100%;
     overflow: hidden;
 
     &:hover {
@@ -46,7 +45,6 @@
     }
 
     @include breakpoint(md) {
-      width: 300px;
       margin: 0 var(--cu-ps1) 0 0;
     }
 
@@ -62,14 +60,11 @@
     .views-element-container > div {
       background: white;
       box-shadow: 0px 5px 16px 0 rgba(0, 0, 0, 0.05);
-      padding: 0 0 var(--cu-vr1) 0;
       display: grid;
 
       @include breakpoint(md) {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        padding: var(--cu-vr1) var(--cu-ps2);
-        width: 250%;
-        margin-left: -75%;
+        grid-template-columns: 1fr 1fr;
+        width: 150%;
       }
     }
 
