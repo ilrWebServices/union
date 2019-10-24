@@ -100,6 +100,8 @@
   .cu-banner__content {
     max-width: var(--cu-max-width-section, #{$max-width-section});
     margin: 0 auto;
+    z-index: 2;
+    position: relative;
   }
 
   .cu-banner__summary {
@@ -133,6 +135,24 @@
       max-width: 100%;
       padding: .25em 0 0 0;
       border-bottom: 4px solid var(--cu-color-brand, #{$cornell-red});
+    }
+  }
+
+  .cu-banner__media {
+    @include overlay;
+    position: absolute;
+    overflow: hidden;
+    max-width: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    > :first-child {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 }
