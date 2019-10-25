@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1572023656773" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1572023656773" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1572023656773" media="all">
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union"><!-- View All Patterns in a Pattern Sub-Type -->
+<div class="pl-c-main">
+  
+	<!-- Index of Patterns -->
+	<div class="pl-c-pattern-index">
+	
+<div id="viewall-components-message" class="pl-c-category">
+		
+	<h2 class="pl-c-category__title">
+		<a href="../../patterns/components-message-demo&#x2F;index.html" class="pl-c-category__title-link patternLink" data-patternpartial="viewall-components-message">message</a>
+	</h2><!--end pl-c-category__title-->
+
+	<div class="pl-c-category__description pl-c-text-passage">
+		
+	</div><!--end pl-c-category__description-->
+	
+</div><!--end pl-c-category-->
+	<div id="components-messages" class="pl-c-pattern">
+
+	<div class="pl-c-pattern__header">
+
+		<h3 class="pl-c-pattern__title">
+				
+			<a href="../../patterns/components-message-demo-messages&#x2F;components-message-demo-messages.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-messages" title="Link to Pattern">
+				Messages
+				
+
+			</a><!--end pl-c-pattern__title-link-->
+
+		</h3><!--end pl-c-pattern__title-->
+
+		<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-messages" data-patternpartial="components-messages" title="View Pattern Info">
+			<span class="pl-c-pattern__toggle-icon">&#9660;</span>
+		</button><!--end pl-c-pattern__extra-toggle-->
+		
+	</div><!--end pl-c-pattern__header-->
+  
+	<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-messages">
+    </div><!--end pl-c-pattern__extra-->
+
+	<div class="pl-js-pattern-example">
+	<div role="contentinfo" aria-label="Info message"  class="cu-message-list">
+          <h2 class="visually-hidden">Info message</h2>
+              
+<div class="cu-message cu-message--info">
+  <p class="cu-message__text">I am an info message, provided as a fallback.</p>
+</div>
+      </div>
+  <div role="contentinfo" aria-label="Status message"  class="cu-message-list">
+          <h2 class="visually-hidden">Status message</h2>
+              <ul class="cu-message-list__list">
+                  <li class="cu-message-list__list-item">
+<div class="cu-message cu-message--status">
+  <p class="cu-message__text">I am a status message.</p>
+</div>
+</li>
+                  <li class="cu-message-list__list-item">
+<div class="cu-message cu-message--status">
+  <p class="cu-message__text">Any message type can have multiple messages.</p>
+</div>
+</li>
+              </ul>
+      </div>
+  <div role="contentinfo" aria-label="Warning message"  class="cu-message-list">
+          <h2 class="visually-hidden">Warning message</h2>
+              
+<div class="cu-message cu-message--warning">
+  <p class="cu-message__text">I am a warning message.</p>
+</div>
+      </div>
+  <div role="contentinfo" aria-label="Error message"  class="cu-message-list">
+          <h2 class="visually-hidden">Error message</h2>
+              
+<div class="cu-message cu-message--error">
+  <p class="cu-message__text">There was an error processing your message.</p>
+</div>
+      </div>
+	</div><!--end pl-js-pattern-example-->
+
+	<script type="text/json" id="pl-pattern-data-components-messages" class="pl-js-pattern-data">
+	{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"message"},"patternExtension":"twig","patternName":"Messages","patternPartial":"components-messages","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+	</script>
+
+</div><!--end pl-c-pattern-->
+  </div><!--end pl-c-pattern-index-->
+
+</div><!--end pl-c-main-->
+<!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"patternPartial":"viewall-components-message"}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1572023656773">
+  (function() {
+    if (self != top) {
+      var cb = '1572023656773';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1572023656773">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1572023656773"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    try{Typekit.load();}catch(e){}
+    //--><!]]>
+  </script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>

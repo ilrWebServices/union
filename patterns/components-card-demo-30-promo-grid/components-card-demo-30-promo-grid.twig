@@ -1,0 +1,54 @@
+<h3>Promo grid</h3>
+
+{% set rendered_cards = '' %}
+{% for card in global.card.promos.cards %}
+
+  {% set rendered_card %}
+    {% set rendered_media %}
+      {% if card.img %}
+        {% include '@union/_image.twig' with {
+          img_src: card.img.src,
+          img_alt: card.img.alt
+        } only %}
+      {% endif %}
+    {% endset %}
+
+    {% set rendered_content %}
+      {% if card.icon %}
+        <div class="cu-card__icon">
+          {% include "@union/_icon.twig" with {
+            title: card.icon.title,
+            icon: card.icon.icon,
+            size: card.icon.size,
+            label: card.icon.label,
+            attributes: card.icon.attributes
+          } only %}
+        </div>
+      {% endif %}
+      {{ card.content }}
+      {% if card.button %}
+        <div class="cu-card__button">
+          {% include '@union/_button.twig' with {
+            attributes: card.button.attributes,
+            text: card.button.text
+          } only %}
+        </div>
+      {% endif %}
+    {% endset %}
+
+    {% include '@union/_card.twig' with {
+      card_content: rendered_content,
+      card_media: rendered_media,
+      attributes: card.attributes
+    } only %}
+  {% endset %}
+
+  {# Concatenate it for the grid #}
+  {% set rendered_cards = rendered_cards ~ rendered_card %}
+{% endfor %}
+
+
+{% include '@union/_grid.twig' with {
+  grid_content: rendered_cards,
+  attributes: global.card.promos.grid_attributes
+} %}

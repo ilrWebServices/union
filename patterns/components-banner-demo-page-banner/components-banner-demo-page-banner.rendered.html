@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1572023656773" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1572023656773" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union"><h3>Page Banner with Media</h3>
+
+
+
+
+
+<div class="cu-banner--page cu-banner">
+  <div class="cu-banner__header">
+    <h2 class="cu-banner__heading"></h2>
+  </div>
+  <div class="cu-banner__content">
+    <div class="framed framed--right">
+  
+
+
+<nav class="cu-pl-background-none cu-breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+  <ol class="cu-breadcrumb__list">
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Home</a>
+          </li>
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Programs &amp; Admissions</a>
+          </li>
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Professional</a>
+          </li>
+    </ol>
+</nav>
+  <h1 class="cu-heading cu-text--xxl">Contract Language and Interpretation</h1>
+  <p>Whether you are administering contract language or proposing it at the bargaining table, this workshop is designed to instruct labor relations practitioners on how contract language and past practices may be interpreted by an arbitrator.</p>
+  
+
+
+<nav class="cu-page-nav">
+  <h3 class="cu-heading cu-heading--page-nav">Explore</h3>
+  <ul class="cu-page-nav__list">
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">Course Details</h4></a></li>
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">The Instructors</h4></a></li>
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">Related Courses</h4></a></li>
+    </ul>
+</nav>
+</div>
+
+  </div>
+  <div class="cu-banner__media">
+    
+
+
+
+
+  <img  src="https://www.ilr.cornell.edu/sites/default/files/styles/facebook_share/public/Besharov-posed.jpg?itok=_-9nNDww&amp;focal_point=72,21" alt="Make me accessible" class="cu-image" />
+
+
+  </div>
+</div>
+
+<h3>Page Banner without Media</h3>
+
+
+
+
+<div class="cu-banner--page cu-banner">
+  <div class="cu-banner__header">
+    <h2 class="cu-banner__heading"></h2>
+  </div>
+  <div class="cu-banner__content">
+    <div class="framed framed--right">
+  
+
+
+<nav class="cu-pl-background-none cu-breadcrumb" role="navigation" aria-labelledby="system-breadcrumb">
+  <h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+  <ol class="cu-breadcrumb__list">
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Home</a>
+          </li>
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Programs &amp; Admissions</a>
+          </li>
+      <li class="cu-breadcrumb__item">
+              <a href="#" class="cu-breadcrumb__link">Professional</a>
+          </li>
+    </ol>
+</nav>
+  <h1 class="cu-heading cu-text--xxl">Contract Language and Interpretation</h1>
+  <p>Whether you are administering contract language or proposing it at the bargaining table, this workshop is designed to instruct labor relations practitioners on how contract language and past practices may be interpreted by an arbitrator.</p>
+  
+
+
+<nav class="cu-page-nav">
+  <h3 class="cu-heading cu-heading--page-nav">Explore</h3>
+  <ul class="cu-page-nav__list">
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">Course Details</h4></a></li>
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">The Instructors</h4></a></li>
+      <li class="cu-page-nav__item"><a href="#" class="cu-page-nav__link"><h4 class="cu-heading">Related Courses</h4></a></li>
+    </ul>
+</nav>
+</div>
+
+  </div>
+  <div class="cu-banner__media">
+    
+  </div>
+</div><!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"banner"},"patternExtension":"twig","patternName":"Page Banner","patternPartial":"components-page-banner","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1572023656773">
+  (function() {
+    if (self != top) {
+      var cb = '1572023656773';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1572023656773">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1572023656773"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    try{Typekit.load();}catch(e){}
+    //--><!]]>
+  </script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>
