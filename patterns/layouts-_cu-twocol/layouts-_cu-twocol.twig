@@ -1,0 +1,7 @@
+{# library attached in _cu-section #}
+{% set attributes = union_attributes(attributes|default([])) %}
+
+{% include '@union/_cu-section.twig' with {
+  content: content,
+  attributes: attributes.addClass('cu-section--twocol')
+} %}

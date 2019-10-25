@@ -1,0 +1,37 @@
+{% set items = [
+  {
+    name: 'Feature 1',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Feature 2',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Feature 3',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Feature 4',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Feature 5',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+  {
+    name: 'Feature 6',
+    description: 'In consequat malesuada ultricies. Nunc luctus, dolor non dapibus molestie',
+    icon: 'check-circle'
+  },
+] %}
+
+{% include '@union/_feature-list.twig' with {
+  title: 'Take Aways',
+  items: items
+} only %}

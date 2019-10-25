@@ -1,0 +1,10 @@
+{{ attach_library('union_organizer/layouts') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-grid']) %}
+
+{% set grid_element = grid_element|default('div') %}
+
+<{{ grid_element }}{{ attributes }}>
+  {{ grid_content }}
+</{{grid_element}}>
+

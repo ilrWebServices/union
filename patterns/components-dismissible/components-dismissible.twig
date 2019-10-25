@@ -1,0 +1,11 @@
+{{ attach_library('union_organizer/dismissible') }}
+{% set content_digest = union_digest(content) %}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-dismissible']) %}
+{% set attributes = attributes.setAttribute('data-cu-digest', content_digest) %}
+
+<div{{ attributes }}>
+  <input id="cu-dismissible--{{ content_digest }}" class="cu-dismissible__input" type="checkbox" />
+  <label for="cu-dismissible--{{ content_digest }}" class="cu-dismissible__close" aria-label="Close">╳</label>
+  <div class="cu-dismissible__content">{{ content }}</div>
+</div>
