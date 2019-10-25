@@ -3,7 +3,7 @@
 
 .cu-course-finder {
   position: relative;
-  z-index: 2; // Position above banner content
+  z-index: 5; // Position above banner content
   background: var(--cu-color-brand);
   color: var(--cu-color-text--light);
   padding: var(--cu-vr1) var(--cu-ps1);
