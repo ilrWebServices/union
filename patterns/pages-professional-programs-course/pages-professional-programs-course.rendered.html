@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="../../css/union.css?1570043948838" media="all" />
-    <link rel="stylesheet" href="../../css/pl.css?1570043948838" media="all" />
+    <link rel="stylesheet" href="../../css/union.css?1572023513538" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1572023513538" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     
@@ -36,6 +36,10 @@
 </div>
 
 <nav class="cu-menu cu-menu--main">
+  <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+  <label aria-expanded='false' for="nav-trigger">
+    <span class="cu-accessible">Toggle menu</span>
+  </label>
   <ul class="cu-menu__list">
     <li class="cu-menu__item"><a class="cu-menu__link" href="#">About ILR</a></li>
     <li class="cu-menu__item cu-menu__item--active"><a class="cu-menu__link" href="#">Programs &amp; Admissions</a></li>
@@ -56,16 +60,23 @@
           <h2 class="cu-heading">Course Finder</h2>
     
     <div class="cu-course-finder__topics-list">
-      <div class="views-element-container"><a href="#" hreflang="en">Employee relations</a>
+      <span class="cu-course-finder__label">- Choose a topic -</span>
+      <button class="cu-course-finder__trigger" aria-expanded="false" value="Expand Topic List" aria-label="Expand Topic List">&#9660;</button>
+      <div class="views-element-container"><div><a href="#" hreflang="en">Employee relations</a>
             <a href="#" hreflang="en">Diversity and inclusion</a>
             <a href="#" hreflang="en">Leadership development and organizational change</a>
             <a href="#" hreflang="en">Disability and employment</a>
             <a href="#" hreflang="en">Labor relations</a>
             <a href="#" hreflang="en">Employment law</a>
             <a href="#" hreflang="en">Conflict Resolution</a>
-            <a href="#" hreflang="en">Human resources</a></div>
+            <a href="#" hreflang="en">Human resources</a></div></div>
             
     </div>
+
+    <form class="cu-course-finder__search" action="/programs/professional-programs/search" method="get">
+      <input class="cu-course-finder__search__input cu-input" type="text" name="s" placeholder="Search" />
+      <input class="cu-course-finder__search__input cu-input" type="submit" value="Find" />
+    </form>
   </div>
 </div>
       
@@ -114,6 +125,61 @@
     
   </div>
 </div>
+      
+            
+
+
+
+
+<form class="cu-registration-form cu-form">
+    <div class="cu-registration-form__active-price">  </div>
+  <div class="cu-registration-form__form">
+                  
+        
+
+
+<div class="cu-checkbutton">
+  
+
+
+
+<input id="event-checkbutton-932" type="radio" name="event-checkbutton-1" value="http://example.com" data-price="$299" class="cu-checkbutton__input cu-input cu-input--radio" />
+  <label class="cu-checkbutton__label" for="event-checkbutton-932">
+    <div class="cu-checkbutton__content">
+        <p class="cu-checkbutton__content--date">Dec 09, 2020</p>
+  <time class="cu-checkbutton__content--time">9:00 am - 5:00 pm</time>
+  <p class="cu-checkbutton__content--price cu-js-price">$299</p>
+  <a href="http://example.com" class="cu-button cu-button--alt">Register</a>
+  
+    </div>
+    <div class="cu-checkbutton__indicator"></div>
+  </label>
+</div>
+              
+        
+
+
+<div class="cu-checkbutton">
+  
+
+
+
+<input id="event-checkbutton-894" type="radio" name="event-checkbutton-1" value="http://example.net" data-price="$199" class="cu-checkbutton__input cu-input cu-input--radio" />
+  <label class="cu-checkbutton__label" for="event-checkbutton-894">
+    <div class="cu-checkbutton__content">
+        <p class="cu-checkbutton__content--date">Mar 20, 2021</p>
+  <time class="cu-checkbutton__content--time">9:00 am - 5:00 pm</time>
+  <p class="cu-checkbutton__content--price cu-js-price">$199</p>
+  <a href="http://example.net" class="cu-button cu-button--alt">Register</a>
+  
+    </div>
+    <div class="cu-checkbutton__indicator"></div>
+  </label>
+</div>
+            </div>
+
+</form>
+
     </div>
     <a id="main-content" tabindex="-1"></a>
     <div class="main-content">
@@ -372,7 +438,7 @@
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Resolving Conflict</h3>
         <h4 class="cu-course-teaser__label cu-heading">Related</h4>
-        <p class="cu-course-teaser__description">Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.</p>
+        <div class="cu-course-teaser__description">Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">1-day workshop</li>
           <li class="cu-course-teaser__detail">March 25, 2020</li>
@@ -390,7 +456,7 @@
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Collective Bargaining for Union Activists</h3>
         <h4 class="cu-course-teaser__label cu-heading">Related</h4>
-        <p class="cu-course-teaser__description">This workshop is designed to develop the skills of union negotiators who do not have extensive experience in advancing a collective bargaining strategy and in conducting face-to-face negotiations at the bargaining table; or who are more experienced bargainers who would like to learn more about coordinating table tactics with membership support activities (a Contract Campaign).</p>
+        <div class="cu-course-teaser__description">This workshop is designed to develop the skills of union negotiators who do not have extensive experience in advancing a collective bargaining strategy and in conducting face-to-face negotiations at the bargaining table; or who are more experienced bargainers who would like to learn more about coordinating table tactics with membership support activities (a Contract Campaign).</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">2-day workshop</li>
           <li class="cu-course-teaser__detail">April 21-22, 2020</li>
@@ -407,7 +473,7 @@
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Leading Change</h3>
         <h4 class="cu-course-teaser__label cu-heading">Popular</h4>
-        <p class="cu-course-teaser__description">Sustainable organizational change is an art, not a science. Learn to artfully inspire your people and motivate them to change by meeting them where they are—with a fully realized, articulate vision for the future and concrete action steps to get there. This workshop offers a self-assessment, a method to navigate real-world scenarios and a personal action plan.</p>
+        <div class="cu-course-teaser__description">Sustainable organizational change is an art, not a science. Learn to artfully inspire your people and motivate them to change by meeting them where they are—with a fully realized, articulate vision for the future and concrete action steps to get there. This workshop offers a self-assessment, a method to navigate real-world scenarios and a personal action plan.</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">2-day workshop</li>
           <li class="cu-course-teaser__detail">May 15-16 2020</li>
@@ -463,17 +529,17 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1570043948838">
+<script id="pl-js-polyfill-insert-1572023513538">
   (function() {
     if (self != top) {
-      var cb = '1570043948838';
+      var cb = '1572023513538';
       var js = [];
       scriptLoader.run(js,cb,'pl-js-polyfill-insert');
     }
   })();
 </script>
 
-<script id="pl-js-insert-1570043948838">
+<script id="pl-js-insert-1572023513538">
   /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
   !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
 
@@ -485,7 +551,7 @@
 </script>
 
 
-  <script src="../../js/union.js?1570043948838"></script>
+  <script src="../../js/union.js?1572023513538"></script>
   <script type="text/javascript">
     <!--//--><![CDATA[//><!--
     try{Typekit.load();}catch(e){}

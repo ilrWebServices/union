@@ -22,6 +22,10 @@
 </div>
 
 <nav class="cu-menu cu-menu--main">
+  <input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+  <label aria-expanded='false' for="nav-trigger">
+    <span class="cu-accessible">Toggle menu</span>
+  </label>
   <ul class="cu-menu__list">
     <li class="cu-menu__item"><a class="cu-menu__link" href="#">About ILR</a></li>
     <li class="cu-menu__item cu-menu__item--active"><a class="cu-menu__link" href="#">Programs &amp; Admissions</a></li>
@@ -42,16 +46,23 @@
           <h2 class="cu-heading">Course Finder</h2>
     
     <div class="cu-course-finder__topics-list">
-      <div class="views-element-container"><a href="#" hreflang="en">Employee relations</a>
+      <span class="cu-course-finder__label">- Choose a topic -</span>
+      <button class="cu-course-finder__trigger" aria-expanded="false" value="Expand Topic List" aria-label="Expand Topic List">&#9660;</button>
+      <div class="views-element-container"><div><a href="#" hreflang="en">Employee relations</a>
             <a href="#" hreflang="en">Diversity and inclusion</a>
             <a href="#" hreflang="en">Leadership development and organizational change</a>
             <a href="#" hreflang="en">Disability and employment</a>
             <a href="#" hreflang="en">Labor relations</a>
             <a href="#" hreflang="en">Employment law</a>
             <a href="#" hreflang="en">Conflict Resolution</a>
-            <a href="#" hreflang="en">Human resources</a></div>
+            <a href="#" hreflang="en">Human resources</a></div></div>
             
     </div>
+
+    <form class="cu-course-finder__search" action="/programs/professional-programs/search" method="get">
+      <input class="cu-course-finder__search__input cu-input" type="text" name="s" placeholder="Search" />
+      <input class="cu-course-finder__search__input cu-input" type="submit" value="Find" />
+    </form>
   </div>
 </div>
       
@@ -206,7 +217,7 @@
 <div class="cu-course-teaser">
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Resolving Conflict</h3>
-        <p class="cu-course-teaser__description">Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.</p>
+        <div class="cu-course-teaser__description">Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">1-day workshop</li>
           <li class="cu-course-teaser__detail">March 25, 2020</li>
@@ -223,7 +234,7 @@
 <div class="cu-course-teaser">
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Collective Bargaining for Union Activists</h3>
-        <p class="cu-course-teaser__description">This workshop is designed to develop the skills of union negotiators who do not have extensive experience in advancing a collective bargaining strategy and in conducting face-to-face negotiations at the bargaining table; or who are more experienced bargainers who would like to learn more about coordinating table tactics with membership support activities (a Contract Campaign).</p>
+        <div class="cu-course-teaser__description">This workshop is designed to develop the skills of union negotiators who do not have extensive experience in advancing a collective bargaining strategy and in conducting face-to-face negotiations at the bargaining table; or who are more experienced bargainers who would like to learn more about coordinating table tactics with membership support activities (a Contract Campaign).</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">2-day workshop</li>
           <li class="cu-course-teaser__detail">April 21-22, 2020</li>
@@ -239,7 +250,7 @@
 <div class="cu-course-teaser">
   <a class="cu-course-teaser__link" href="#">
     <h3 class="cu-course-teaser__title cu-heading">Leading Change</h3>
-        <p class="cu-course-teaser__description">Sustainable organizational change is an art, not a science. Learn to artfully inspire your people and motivate them to change by meeting them where they are—with a fully realized, articulate vision for the future and concrete action steps to get there. This workshop offers a self-assessment, a method to navigate real-world scenarios and a personal action plan.</p>
+        <div class="cu-course-teaser__description">Sustainable organizational change is an art, not a science. Learn to artfully inspire your people and motivate them to change by meeting them where they are—with a fully realized, articulate vision for the future and concrete action steps to get there. This workshop offers a self-assessment, a method to navigate real-world scenarios and a personal action plan.</div>
     <ul class="cu-course-teaser__details">
           <li class="cu-course-teaser__detail">2-day workshop</li>
           <li class="cu-course-teaser__detail">May 15-16 2020</li>

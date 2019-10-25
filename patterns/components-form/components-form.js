@@ -6,11 +6,15 @@
 
       if (event.target.value) {
         event.target.classList.add('is-filled');
-        wrapper.classList.add('is-filled');
+        if (wrapper) {
+          wrapper.classList.add('is-filled');
+        }
       }
       else {
         event.target.classList.remove('is-filled');
-        wrapper.classList.remove('is-filled');
+        if (wrapper) {
+          wrapper.classList.remove('is-filled');
+        }
       }
     }
   }, false);

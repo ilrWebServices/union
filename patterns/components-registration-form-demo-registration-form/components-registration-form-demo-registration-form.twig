@@ -1,33 +1,35 @@
 {% set classes = [
   {
     id: 932,
+    group: 1,
     date: "Dec 09, 2020",
     time: "9:00 am - 5:00 pm",
-    price: 299
+    price: 299,
+    url: 'http://example.com'
   },
   {
     id: 894,
+    group: 1,
     date: "Mar 20, 2021",
     time: "9:00 am - 5:00 pm",
-    price: 199
+    price: 199,
+    url: 'http://example.net'
   }
 ]%}
 
-{% set class_details = [] %}
+{% set classes_with_content = [] %}
 {% for class in classes %}
-  {% set content %}
+  {% set class_content %}
   <p class="cu-checkbutton__content--date">{{ class.date }}</p>
   <time class="cu-checkbutton__content--time">{{ class.time }}</time>
   <p class="cu-checkbutton__content--price cu-js-price">${{ class.price }}</p>
+  <a href="{{ class.url }}" class="cu-button cu-button--alt">Register</a>
   {% endset %}
-  {% set class_details = class_details|merge([{
-      id: class.id,
-      price: class.price,
-      content: content
-    }]) %}
+  {% set class = class|merge({content: class_content}) %}
+  {% set classes_with_content = classes_with_content|merge([class]) %}
 {% endfor %}
 
 {% include '@union/_registration-form.twig' with {
-  events: class_details
+  events: classes_with_content
 } only %}
 

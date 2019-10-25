@@ -1,50 +1,75 @@
-(function (document) {
-  const registrationForms = document.querySelectorAll('.cu-registration-form');
+(function(window, document) {
 
-  if (registrationForms == null) {
-    return;
-  }
+  const processRegistrationForms = function() {
+    const registrationForms = document.querySelectorAll('.cu-registration-form');
 
-  for (const registrationForm of registrationForms) {
-    let activePriceSet = false;
-    const prices = registrationForm.querySelectorAll('.cu-registration-form .cu-js-price');
+    if (registrationForms == null) {
+      return;
+    }
 
-    // Loop through and hide all price displays on the checkbuttons,
-    // and store the price value on the associated input for later use.
-    for (const price of prices) {
-      price.style.display = 'none';
-      price.stringValue = price.textContent;
-      let inputId = price.closest('label').getAttribute('for');
-      let input = document.getElementById(inputId);
-      input.price = price.stringValue;
+    for (const registrationForm of registrationForms) {
+      const prices = registrationForm.querySelectorAll('.cu-js-price');
+      const buttons = registrationForm.querySelectorAll('.cu-button');
+      const input_name = registrationForm.querySelector('.cu-checkbutton__input').getAttribute('name');
 
-      // Set the active price if the radio is checked.
-      if (input.checked) {
-        setActivePrice(registrationForm, input);
+      // Hide any displayed prices.
+      prices.forEach(function(price) {
+        price.style.display = 'none';
+      });
+
+      // Hide any checkbutton registration links.
+      buttons.forEach(function (button) {
+        button.style.display = 'none';
+      });
+
+      let first_input = registrationForm.querySelector('input[name="' + input_name + '"]')
+      let checked_input = registrationForm.querySelector('input[name="' + input_name + '"]:checked');
+
+      // If there is a checked input, activate its price.
+      if (checked_input) {
+        setActivePrice(registrationForm, checked_input);
+        addRegistrationButton(registrationForm, checked_input);
+      }
+      // Otherwise, activate the price of the first input.
+      else {
+        first_input.checked = true;
+        setActivePrice(registrationForm, first_input);
+        addRegistrationButton(registrationForm, first_input);
       }
     }
-
-    // Set the active price based on the first element if none are checked.
-    if (!activePriceSet) {
-      let input = registrationForm.querySelector('input[type=radio][name="event-checkbutton"]');
-      input.checked = true;
-      setActivePrice(registrationForm, input);
-    }
   }
 
-  function checkButtonChangeHandler(event) {
-    setActivePrice(event.target.closest('form'), event.target);
+  const checkButtonChangeHandler = function(checkbutton_input) {
+    let registrationForm = checkbutton_input.closest('form');
+    setActivePrice(registrationForm, checkbutton_input);
+    setRegisterLink(registrationForm, checkbutton_input);
   }
 
-  function setActivePrice(registrationForm, input) {
+  const setActivePrice = function(registrationForm, input) {
     let priceElement = registrationForm.querySelector('.cu-registration-form__active-price');
-    priceElement.textContent = input.getAttribute('data-price');
+    priceElement.textContent = input.dataset.price;
     activePriceSet = true;
   }
 
-  let checkbuttons = document.querySelectorAll('input[type=radio][name="event-checkbutton"]');
+  const addRegistrationButton = function (registrationForm, checked_input) {
+    let registerButton = document.createElement('a');
+    registerButton.setAttribute('class', 'cu-button cu-button--alt cu-js-register-link');
+    registerButton.setAttribute('href', checked_input.value);
+    registerButton.innerHTML = 'Register';
+    checked_input.parentNode.parentNode.appendChild(registerButton, registrationForm);
+  }
 
-  Array.prototype.forEach.call(checkbuttons, function (checkbutton) {
-    checkbutton.addEventListener('change', checkButtonChangeHandler);
-  });
-})(document);
+  const setRegisterLink = function (registrationForm, checked_input) {
+    let registerButton = registrationForm.querySelector('.cu-js-register-link');
+    registerButton.setAttribute('href', checked_input.value);
+  }
+
+  window.addEventListener('DOMContentLoaded', processRegistrationForms);
+
+  document.addEventListener('change', function(event) {
+    if (event.target.matches('.cu-checkbutton__input')) {
+      checkButtonChangeHandler(event.target);
+    }
+  }, false);
+
+})(window, document);
