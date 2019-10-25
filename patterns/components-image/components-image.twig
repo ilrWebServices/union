@@ -1,0 +1,31 @@
+{{ attach_library('union_organizer/image') }}
+
+{# Link #}
+{% set default_link_attributes = {
+  class: 'cu-image__link'
+} %}
+
+{# Image #}
+{% set img_alt = img_alt|default('Accessibility text goes here and is required') %}
+{% set default_image_attributes = {
+  src: img_src,
+  alt: img_alt
+} %}
+
+{# Attributes #}
+{% set link_attributes = union_attributes(link_attributes|default(default_link_attributes)) %}
+{% set attributes = union_attributes(attributes|default(default_image_attributes)) %}
+{% set attributes = attributes.addClass('cu-image') %}
+
+{# Output #}
+{% if img_link_url %}
+  <a href="{{ img_link_url }}" {{ link_attributes }}>
+    <img {{ attributes }} />
+  </a>
+{% else %}
+  <img {{ attributes }} />
+{% endif %}
+
+{% if blurred %}
+<div class="cu-image--blurred" style="--cu-bg-image: url({{ img_src }})"></div>
+{% endif %}
