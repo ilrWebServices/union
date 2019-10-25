@@ -34,6 +34,7 @@
     }
 
     .cu-person__content {
+      --cu-current-font-size: var(--cu-ms-1);
       order: 4;
       grid-column: 1 / -1;
     }
