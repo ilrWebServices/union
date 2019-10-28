@@ -19,7 +19,7 @@
     <li{{ item_attributes }}>
       {{ link|raw }}
       <h3 class="cu-heading cu-feature-list__name">{{ item.name }}</h3>
-      <p class="cu-feature-list__description">{{ item.description|raw }}</p>
+      <div class="cu-feature-list__description">{{ item.description|raw }}</div>
       {% if item.icon %}
         {% include "@union/_icon.twig" with {
           title: 'Circle with checkmark',
