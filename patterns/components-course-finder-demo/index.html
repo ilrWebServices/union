@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1572289767595" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1572289767595" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    <link rel="stylesheet" href="../../styleguide/css/pattern-lab.css?1572289767595" media="all">
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union"><!-- View All Patterns in a Pattern Sub-Type -->
+<div class="pl-c-main">
+  
+	<!-- Index of Patterns -->
+	<div class="pl-c-pattern-index">
+	
+<div id="viewall-components-course-finder" class="pl-c-category">
+		
+	<h2 class="pl-c-category__title">
+		<a href="../../patterns/components-course-finder-demo&#x2F;index.html" class="pl-c-category__title-link patternLink" data-patternpartial="viewall-components-course-finder">course-finder</a>
+	</h2><!--end pl-c-category__title-->
+
+	<div class="pl-c-category__description pl-c-text-passage">
+		
+	</div><!--end pl-c-category__description-->
+	
+</div><!--end pl-c-category-->
+	<div id="components-course-finder" class="pl-c-pattern">
+
+	<div class="pl-c-pattern__header">
+
+		<h3 class="pl-c-pattern__title">
+				
+			<a href="../../patterns/components-course-finder-demo-course-finder&#x2F;components-course-finder-demo-course-finder.rendered.html" class="pl-c-pattern__title-link patternLink" data-patternpartial="components-course-finder" title="Link to Pattern">
+				Course Finder
+				
+
+			</a><!--end pl-c-pattern__title-link-->
+
+		</h3><!--end pl-c-pattern__title-->
+
+		<button class="pl-c-pattern__extra-toggle pl-js-pattern-extra-toggle" id="pl-pattern-extra-toggle-components-course-finder" data-patternpartial="components-course-finder" title="View Pattern Info">
+			<span class="pl-c-pattern__toggle-icon">&#9660;</span>
+		</button><!--end pl-c-pattern__extra-toggle-->
+		
+	</div><!--end pl-c-pattern__header-->
+  
+	<div class="pl-c-pattern__extra pl-js-pattern-extra" id="pl-pattern-extra-components-course-finder">
+    </div><!--end pl-c-pattern__extra-->
+
+	<div class="pl-js-pattern-example">
+	<div class="cu-course-finder">
+  <div class="cu-course-finder__content">
+          <h2 class="cu-heading">Course Finder</h2>
+    
+    <div class="cu-course-finder__topics-list">
+      <span class="cu-course-finder__label">- Choose a topic -</span>
+      <button class="cu-course-finder__trigger" aria-expanded="false" value="Expand Topic List" aria-label="Expand Topic List">&#9660;</button>
+      <div class="views-element-container"><div><a href="#" hreflang="en">Employee relations</a>
+            <a href="#" hreflang="en">Diversity and inclusion</a>
+            <a href="#" hreflang="en">Leadership development and organizational change</a>
+            <a href="#" hreflang="en">Disability and employment</a>
+            <a href="#" hreflang="en">Labor relations</a>
+            <a href="#" hreflang="en">Employment law</a>
+            <a href="#" hreflang="en">Conflict Resolution</a>
+            <a href="#" hreflang="en">Human resources</a></div></div>
+            
+    </div>
+
+    <form class="cu-course-finder__search" action="/programs/professional-programs/search" method="get">
+      <input class="cu-course-finder__search__input cu-input" type="text" name="s" placeholder="Search" />
+      <input class="cu-course-finder__search__input cu-input" type="submit" value="Find" />
+    </form>
+  </div>
+</div>
+	</div><!--end pl-js-pattern-example-->
+
+	<script type="text/json" id="pl-pattern-data-components-course-finder" class="pl-js-pattern-data">
+	{"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"<h2>Overview</h2>\n<p>Add basic information for course-finder components here.</p>\n<h2>Description</h2>\n<p>Add detailed information for course-finder components here.</p>\n","patternBreadcrumb":{"patternType":"components","patternSubtype":"course-finder"},"patternExtension":"twig","patternName":"Course Finder","patternPartial":"components-course-finder","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+	</script>
+
+</div><!--end pl-c-pattern-->
+  </div><!--end pl-c-pattern-index-->
+
+</div><!--end pl-c-main-->
+<!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"patternPartial":"viewall-components-course-finder"}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1572289767595">
+  (function() {
+    if (self != top) {
+      var cb = '1572289767595';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1572289767595">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1572289767595"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    try{Typekit.load();}catch(e){}
+    //--><!]]>
+  </script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>

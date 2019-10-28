@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="pl">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="../../css/union.css?1572289767595" media="all" />
+    <link rel="stylesheet" href="../../css/pl.css?1572289767595" media="all" />
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="union"><div class="cu-grid--3col cu-grid--people cu-grid">
+        
+
+<div class="cu-person--thumb cu-person">
+  <h3 class="cu-heading cu-person__name">Jerry Bannerhoff</h3>
+    <h4 class="cu-person__title">Instructor</h4>
+    <div class="cu-person__content">
+    <p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>
+  </div>
+    <div class="cu-person__image">
+    
+
+
+
+
+  <img  src="https://placeimg.com/100/100/people" alt="Jerry personifies workplace studies" class="cu-image" />
+
+
+  </div>
+  </div>
+      
+
+<div class="cu-person--thumb cu-person">
+  <h3 class="cu-heading cu-person__name">Jerry Bannerhoff</h3>
+    <h4 class="cu-person__title">Instructor</h4>
+    <div class="cu-person__content">
+    <p>Etiam sollicitudin lectus sit amet lacus pulvinar accumsan. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum. Praesent sagittis pretium ultricies. Ut commodo suscipit mauris, sit amet cursus massa commodo eget.</p>
+  </div>
+    <div class="cu-person__image">
+    
+
+
+
+
+  <img  src="https://placeimg.com/100/100/people" alt="Jerry personifies workplace studies" class="cu-image" />
+
+
+  </div>
+  </div>
+      
+
+<div class="cu-person--thumb cu-person">
+  <h3 class="cu-heading cu-person__name">Jerry Bannerhoff</h3>
+    <h4 class="cu-person__title">Instructor</h4>
+    <div class="cu-person__content">
+    <p>Vivamus scelerisque tortor ac felis sollicitudin, laoreet sodales quam cursus. Praesent porttitor tellus ut elit viverra tincidunt. Mauris sed consectetur orci, eu varius sem. Nunc mi turpis, cursus vel nulla a, iaculis luctus libero.</p>
+  </div>
+    <div class="cu-person__image">
+    
+
+
+
+
+  <img  src="https://placeimg.com/100/100/people" alt="Jerry personifies workplace studies" class="cu-image" />
+
+
+  </div>
+  </div>
+  
+</div><!--DO NOT REMOVE-->
+  <script type="text/json" id="pl-pattern-data-footer" class="pl-js-pattern-data">
+  {"cssEnabled":false,"patternLineageExists":false,"patternLineages":[],"lineage":[],"patternLineageRExists":false,"patternLineagesR":[],"lineageR":[],"patternLineageEExists":false,"patternDesc":"","patternBreadcrumb":{"patternType":"components","patternSubtype":"person"},"patternExtension":"twig","patternName":"Instructor Grid","patternPartial":"components-instructor-grid","patternState":"","patternEngineName":"twig-php","extraOutput":{}}
+</script>
+
+<script>
+  /*!
+   * scriptLoader - v0.1
+   *
+   * Copyright (c) 2014 Dave Olsen, http://dmolsen.com
+   * Licensed under the MIT license
+   *
+   */
+
+  var scriptLoader = {
+
+    run: function(js,cb,target) {
+      var s  = document.getElementById(target+'-'+cb);
+      for (var i = 0; i < js.length; i++) {
+        var src = (typeof js[i] != 'string') ? js[i].src : js[i];
+        var c   = document.createElement('script');
+        c.src   = '../../'+src+'?'+cb;
+        if (typeof js[i] != 'string') {
+          if (js[i].dep !== undefined) {
+            c.onload = function(dep,cb,target) {
+              return function() {
+                scriptLoader.run(dep,cb,target);
+              }
+            }(js[i].dep,cb,target);
+          }
+        }
+        s.parentNode.insertBefore(c,s);
+      }
+    }
+
+  }
+</script>
+
+<script id="pl-js-polyfill-insert-1572289767595">
+  (function() {
+    if (self != top) {
+      var cb = '1572289767595';
+      var js = [];
+      scriptLoader.run(js,cb,'pl-js-polyfill-insert');
+    }
+  })();
+</script>
+
+<script id="pl-js-insert-1572289767595">
+  /*! loadJS: load a JS file asynchronously. [c]2014 @scottjehl, Filament Group, Inc. (Based on http://goo.gl/REQGQ by Paul Irish). Licensed MIT */
+  !function(e){var t=function(t,n){"use strict";var o=e.document.getElementsByTagName("script")[0],r=e.document.createElement("script");return r.src=t,r.async=!0,o.parentNode.insertBefore(r,o),n&&"function"==typeof n&&(r.onload=n),r};"undefined"!=typeof module?module.exports=t:e.loadJS=t}("undefined"!=typeof global?global:this);
+
+  (function() {
+    if (self != top) {
+      loadJS('../../styleguide/js/patternlab-pattern.js');
+    }
+  })();
+</script>
+
+
+  <script src="../../js/union.js?1572289767595"></script>
+  <script type="text/javascript">
+    <!--//--><![CDATA[//><!--
+    try{Typekit.load();}catch(e){}
+    //--><!]]>
+  </script>
+  <script src="http://localhost:35778/livereload.js"></script>
+  </body>
+</html>

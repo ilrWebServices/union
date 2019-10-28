@@ -1,0 +1,49 @@
+{% set instructors = [
+  {
+    name: "Jerry Bannerhoff",
+    title: "Instructor",
+    bio: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>',
+    img: {
+      src: 'https://placeimg.com/100/100/people',
+      alt: 'Jerry personifies workplace studies'
+    }
+  },
+  {
+    name: "Jerry Bannerhoff",
+    title: "Instructor",
+    bio: '<p>Etiam sollicitudin lectus sit amet lacus pulvinar accumsan. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum. Praesent sagittis pretium ultricies. Ut commodo suscipit mauris, sit amet cursus massa commodo eget.</p>',
+    img: {
+      src: 'https://placeimg.com/100/100/people',
+      alt: 'Jerry personifies workplace studies'
+    }
+  },
+  {
+    name: "Jerry Bannerhoff",
+    title: "Instructor",
+    bio: '<p>Vivamus scelerisque tortor ac felis sollicitudin, laoreet sodales quam cursus. Praesent porttitor tellus ut elit viverra tincidunt. Mauris sed consectetur orci, eu varius sem. Nunc mi turpis, cursus vel nulla a, iaculis luctus libero.</p>',
+    img: {
+      src: 'https://placeimg.com/100/100/people',
+      alt: 'Jerry personifies workplace studies'
+    }
+  }
+]%}
+
+{% set grid_content %}
+  {% for instructor in instructors %}
+    {% include "@union/_person.twig" with {
+      name: instructor.name,
+      title: instructor.title,
+      content: instructor.bio|raw,
+      img: include('@union/_image.twig', {
+        img_src: instructor.img.src,
+        img_alt: instructor.img.alt
+      }, with_context = false),
+      attributes: { class: 'cu-person--thumb'}
+    } only %}
+  {% endfor %}
+{% endset %}
+
+{% include "@union/_grid.twig" with {
+  grid_content: grid_content,
+  attributes: { class: 'cu-grid--3col cu-grid--people'}
+} %}

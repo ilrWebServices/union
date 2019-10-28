@@ -1,0 +1,30 @@
+{% set video_media %}
+{% include '@union/_video.twig' with {
+    src: 'https://www.dropbox.com/s/2oee7izfxsl16ah/Hero%20clips%20for%20web%20-%20FINAL%20-%20Aug%202019.mp4?raw=1',
+    poster: 'http://placeimg.com/1600/900/arch'
+  } only %}
+{% endset %}
+{% set rendered_content %}
+    <div class="framed framed--right">
+      <div><h2 class="cu-heading cu-heading--strong">It takes <span>work</span> to make an impact</h2></div>
+      <div class="play">
+      {% include "@union/_icon.twig" with {
+        title: 'Play video',
+        icon: 'play',
+        size: '4em',
+        label: 'Watch Video',
+        attributes: {
+          class: 'cu-icon--inline',
+          role: 'button',
+          'aria-pressed': "false"
+        }
+      } only %}
+      </div>
+    </div>
+{% endset %}
+
+{% include '@union/_banner.twig' with {
+  attributes: { class: 'cu-banner--video' },
+  content: rendered_content,
+  media: video_media
+} only %}
