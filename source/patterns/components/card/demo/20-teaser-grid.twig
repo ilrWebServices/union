@@ -16,6 +16,8 @@
   {% include '@union/_card.twig' with {
     card_content: global.card.teasers.lead.content,
     card_media: rendered_media,
+    card_link_url: global.card.teasers.lead.link_url,
+    card_link_alt: global.card.teasers.lead.link_alt,
     attributes: global.card.teasers.lead.attributes
   } only %}
 
@@ -29,6 +31,8 @@
     {% include '@union/_card.twig' with {
       card_content: card.content,
       card_media: rendered_media,
+      card_link_url: card.link_url,
+      card_link_alt: card.link_alt,
       attributes: card.attributes
     } only %}
   {% endfor %}
