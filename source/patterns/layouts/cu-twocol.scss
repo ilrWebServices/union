@@ -7,5 +7,10 @@
 
   @include breakpoint(md) {
     grid-template-columns: 1fr 1fr;
+    row-gap: 0;
+
+    .cu-section-heading {
+      grid-column: 1/-1;
+    }
   }
 }
