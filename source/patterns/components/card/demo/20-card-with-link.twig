@@ -1,0 +1,11 @@
+{% include '@union/_card.twig' with {
+  card_content: card_content|default('<h2 class="cu-card__heading">Your Life Journey Starts Here</h2>
+    <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>'),
+  card_media: card_media|default('<img class="cu-image" src="http://placeimg.com/640/480/arch" alt="Random image" />'),
+  card_link_url: card_link_url|default('https://www.example.com'),
+  card_link_alt: card_link_alt|default('Card title or other accessible descriptive link text'),
+  attributes: attributes|default({ 'class': 'cu-card--promo cu-card--promo-with-media' })
+} only %}
+
+{# attributes: attributes|default({ 'class': 'cu-card--promo cu-card--promo-with-media' }) #}
+{# attributes: attributes|default({ 'class': 'cu-card--hover-overlay' }) #}

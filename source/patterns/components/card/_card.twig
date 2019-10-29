@@ -13,5 +13,8 @@
     {{ card_media }}
   </div>
 {% endif %}
+{% if card_link_url %}
+  <a class="cu-card__link" href="{{ card_link_url }}">{{ card_link_alt }}</a>
+{% endif %}
 </div>
 
