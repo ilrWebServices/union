@@ -35,7 +35,7 @@
     color: lighten($color-text, 30%);
   }
 
-  &__icon {
+  &__icon.cu-icon {
     --cu-current-text-color: #{$color-brand};
     margin-right: 1em;
     margin-bottom: 0;
