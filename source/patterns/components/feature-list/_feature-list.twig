@@ -18,8 +18,6 @@
     {% endif %}
     <li{{ item_attributes }}>
       {{ link|raw }}
-      <h3 class="cu-heading cu-feature-list__name">{{ item.name }}</h3>
-      <div class="cu-feature-list__description">{{ item.description|raw }}</div>
       {% if item.icon %}
         {% include "@union/_icon.twig" with {
           title: 'Circle with checkmark',
@@ -28,6 +26,12 @@
           attributes: { class: 'cu-feature-list__icon' }
         } only %}
       {% endif %}
+      <div class="cu-feature-list__item-content">
+        <div class="cu-heading cu-feature-list__name">{{ item.name }}</div>
+        {% if item.description %}
+        <div class="cu-feature-list__description">{{ item.description|raw }}</div>
+        {% endif %}
+      </div>
       {{ end_link|raw }}
     </li>
   {% endfor %}
