@@ -22,7 +22,7 @@
         {% include "@union/_icon.twig" with {
           title: 'Circle with checkmark',
           icon: item.icon,
-          size: '1.5em',
+          size: item.icon_size|default('1.5em'),
           attributes: { class: 'cu-feature-list__icon' }
         } only %}
       {% endif %}
