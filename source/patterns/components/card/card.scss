@@ -1,13 +1,17 @@
 @import './source/global/global';
 
 .cu-card {
-  background: var(--cu-card-background, $color-bg-card--default);
+  background: var(--cu-card-background, #{$color-bg-card--default});
   border-radius: var(--cu-card-border-radius);
   display: flex;
   flex-direction: column;
   position: relative;
 
   &__content {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
     order: 2;
     padding: var(--cu-card-content-padding);
   }
@@ -45,9 +49,6 @@
   /*----------  Promos  ----------*/
   &--promo {
     .cu-card__content {
-      display: flex;
-      height: 100%;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: var(--cu-vr1) var(--cu-ps1);
@@ -141,6 +142,13 @@
       text-align: center;
       justify-content: center;
       padding: var(--cu-vr1);
+    }
+  }
+
+  /*----------  Padded  ----------*/
+  &--padded {
+    .cu-card__content {
+      padding: var(--cu-vr1) var(--cu-ps1);
     }
   }
 
