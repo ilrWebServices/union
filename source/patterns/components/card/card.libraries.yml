@@ -1,4 +1,6 @@
 css:
   card.css: {}
+js:
+  card.js: {}
 dependencies:
   - base
