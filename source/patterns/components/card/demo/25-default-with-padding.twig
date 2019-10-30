@@ -1,0 +1,45 @@
+{% include '@union/_card.twig' with {
+  card_content: card_content|default('<div class="pinned-wrapper">
+<h3 class="cu-heading"><span>Resolving Conflict</span></h3>
+
+<p>Conflict may have constructive or destructive consequences on individual or team performance. Acquire the ability to identify, confront, manage and resolve conflict.</p>
+
+<hr class="pad">
+
+<div class="cu-feature-list">
+
+<ul class="cu-grid cu-feature-list__items">
+  <li class="cu-feature-list__item">
+    <div class="cu-feature-list__icon cu-icon cu-icon--check-circle">
+      <svg class="cu-icon__image" width="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <title>Circle with checkmark Icon</title>
+        <use href="/images/icons.svg#check-circle"></use>
+      </svg>
+    </div>
+    <div class="cu-feature-list__item-content">
+      <div class="cu-heading cu-feature-list__name">Dec 11, 2019</div>
+    </div>
+  </li>
+  <li class="cu-feature-list__item">
+    <div class="cu-feature-list__icon cu-icon cu-icon--check-circle">
+      <svg class="cu-icon__image" width="1em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <title>Circle with checkmark Icon</title>
+        <use href="/images/icons.svg#check-circle"></use>
+      </svg>
+    </div>
+    <div class="cu-feature-list__item-content">
+      <div class="cu-heading cu-feature-list__name">1495.00</div>
+    </div>
+  </li>
+</ul>
+</div>
+
+<hr class="pad">
+
+<a href="/programs/professional-programs/co336/resolving-conflict">See more dates and locations</a><hr class="pad"></div>
+
+<a href="/programs/professional-programs/co336/resolving-conflict" class="cu-button">Learn more</a>'),
+  card_link_url: card_link_url|default('https://www.example.com'),
+  card_link_alt: card_link_alt|default('Card title or other accessible descriptive link text'),
+  attributes: attributes|default({ 'class': 'cu-card--padded cu-card--pinned course-teaser-demo' })
+} only %}
