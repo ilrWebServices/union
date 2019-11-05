@@ -12,6 +12,28 @@
 }
 
 .cu-breadcrumb__item {
+  display: none;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+
+  &:last-child {
+    display: block;
+
+    &::before {
+      content: var(--cu-breadcrumb-previous, '\27E8');
+
+      @include breakpoint(sm) {
+        content: '';
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+  }
+
   &::after {
     content: var(--cu-breadcrumb-separator, '/');
     padding: 0 .4em;
