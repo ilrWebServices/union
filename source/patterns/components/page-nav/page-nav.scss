@@ -16,6 +16,7 @@
   padding: 0;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 
   --cu-current-link-color: var(--cu-color-text--light, #{$color-text--light});
@@ -23,6 +24,9 @@
   --cu-header-accent-padding: .25em 0 0 0;
   --cu-header-accent-border: 4px solid var(--cu-color-brand, #{$cornell-red});
 
+  @include breakpoint(md) {
+    flex-direction: row;
+  }
 
   .cu-heading {
     --cu-current-heading-size: var(--cu-ms1);
