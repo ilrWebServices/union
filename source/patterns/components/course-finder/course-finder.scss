@@ -7,7 +7,7 @@
   background: var(--cu-color-brand);
   color: var(--cu-color-text--light);
   padding: var(--cu-vr1) var(--cu-ps1);
-  margin: var(--cu-component-top-margin, var(--cu-vr1)) 0 var(--cu-component-bottom-margin, var(--cu-vr1)) 0;
+  margin: var(--cu-component-margin-top, var(--cu-vr1)) 0 var(--cu-component-margin-bottom, var(--cu-vr1)) 0;
 
   @include breakpoint(md) {
     padding: var(--cu-vr2) var(--cu-ps3);

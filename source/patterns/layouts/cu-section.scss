@@ -2,7 +2,7 @@
 
 .cu-section {
   max-width: var(--cu-max-width-section, #{$max-width-section});
-  margin: var(--cu-component-top-margin, var(--cu-vr1)) auto var(--cu-component-bottom-margin, var(--cu-vr1)) auto;
+  margin: var(--cu-component-margin-top, var(--cu-vr1)) auto var(--cu-component-margin-bottom, var(--cu-vr1)) auto;
 
   &--wide {
     max-width: 100%;
@@ -10,11 +10,11 @@
 
   &--gapless {
     --cu-grid-gap: 0;
-    --cu-component-top-margin: 0;
+    --cu-component-margin-top: 0;
   }
 
   [class*='cu-']:first-of-type {
-    --cu-component-top-margin: 0;
+    --cu-component-margin-top: 0;
   }
 
 }

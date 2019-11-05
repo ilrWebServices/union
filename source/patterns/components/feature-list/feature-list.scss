@@ -1,7 +1,7 @@
 @import './source/global/global';
 
 .cu-feature-list {
-  margin: var(--cu-component-top-margin, 0) 0 var(--cu-component-bottom-margin, 0) 0;
+  margin: var(--cu-component-margin-top, 0) 0 var(--cu-component-margin-bottom, 0) 0;
 
   &__title {
     text-align: center;
