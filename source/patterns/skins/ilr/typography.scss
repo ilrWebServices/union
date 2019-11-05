@@ -61,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
 .cu-heading {
   --cu-current-line-height: var(--cu-heading-line-height, #{$base-heading-line-height});
   --cu-current-font-weight: var(--cu-heading-font-weight);
-  margin: 0 0 var(--cu-vr0);
+  margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
   font-size: var(--cu-current-heading-size, inherit);
 
   &::after {
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: var(--cu-font-weight);
   line-height: var(--cu-line-height);
   font-size: var(--font-size);
-  margin-bottom: var(--cu-vr1);
+  margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr1));
 }
 
 [class*='cu-text--x'] {

@@ -3,7 +3,7 @@
 .cu-highlight-box {
   max-width: var(--cu-max-width-section, #{$max-width-section});
   background: $color-bg--lightest;
-  margin: var(--cu-vr1) auto;
+  margin: var(--cu-component-top-margin, var(--cu-vr1)) auto var(--cu-component-bottom-margin, var(--cu-vr1)) auto;
   padding: var(--cu-vr1) var(--cu-ps3);
 
   @include breakpoint(md) {

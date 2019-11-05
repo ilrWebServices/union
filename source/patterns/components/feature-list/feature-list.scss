@@ -1,6 +1,8 @@
 @import './source/global/global';
 
 .cu-feature-list {
+  margin: var(--cu-component-top-margin, 0) 0 var(--cu-component-bottom-margin, 0) 0;
+
   &__title {
     text-align: center;
   }
@@ -27,7 +29,7 @@
     --cu-current-heading-size: var(--cu-text-reg);
     --cu-heading-font-weight: 400;
     --cu-current-line-height: 1;
-    margin-top: 0;
+    --cu-component-margin-bottom: 0;
   }
 
   &__description {
@@ -38,20 +40,11 @@
 
   &__icon.cu-icon {
     --cu-current-text-color: #{$color-brand};
+    --cu-component-margin-bottom: 0;
     margin-right: 1em;
-    margin-bottom: 0;
   }
 
   &__link {
     --cu-current-link-color: var(--cu-text-color);
-  }
-}
-
-// Add a top margin when following a paragraph
-p + .cu-feature-list {
-  margin-top: var(--cu-vr1);
-
-  @include breakpoint(md) {
-    margin-top: var(--cu-vr2);
   }
 }

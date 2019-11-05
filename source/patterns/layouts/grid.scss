@@ -13,7 +13,7 @@
   grid-gap: var(--cu-grid-row-gap) var(--cu-grid-column-gap);
   grid-template-columns: 1fr;
   max-width: var(--cu-max-width-section, #{$max-width-section});
-  margin: 0 auto;
+  margin: var(--cu-component-top-margin, 0) auto var(--cu-component-bottom-margin, 0) auto;
 
   @include breakpoint(xs) {
     &--2col,

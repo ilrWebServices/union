@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   padding-top: var(--cu-vr1);
-  margin-bottom: var(--cu-vr1);
+  margin-bottom: var(--cu-component-margin-bottom, 0);
   border-bottom: 1px solid var(--cu-color-border, #{$color-border});
 
   // @todo: Refactor? Where should this be?
