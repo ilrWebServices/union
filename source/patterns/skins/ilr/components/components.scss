@@ -135,6 +135,7 @@
 }
 
 .framed--right {
+  @include notch;
   border-right: var(--frame-width) solid white;
 
   // Note this gets overridden by `:last-child`. So content that is not the
@@ -155,7 +156,7 @@
   >*:first-child {
     grid-template-columns: fit-content(90%) 1fr;
     margin-right: -2px;
-    max-width: 100%;
+    max-width: 110%; // Make sure there is room for the negative margin.
 
     @include breakpoint(sm) {
       grid-template-columns: fit-content(75%) 1fr;
