@@ -1,7 +1,0 @@
-{{ attach_library('union_organizer/registration-form') }}
-{% set attributes = union_attributes(attributes|default([])) %}
-
-{% include '@union/_form.twig' with {
-  children: checkbuttons,
-  attributes: attributes.addClass(['cu-registration-form'])
-} only %}
