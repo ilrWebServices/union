@@ -10,6 +10,7 @@ Variables:
 #}
 
 {% set attributes = union_attributes(attributes|default([])) %}
+{% set indicator_attributes = union_attributes(indicator_attributes|default([])) %}
 
 {% if disabled %}
   {% set attributes = attributes.addClass('cu-checkbutton--disabled') %}
@@ -33,6 +34,6 @@ Variables:
     <div class="cu-checkbutton__content">
       {{ label_content }}
     </div>
-    <div class="cu-checkbutton__indicator"></div>
+    <div{{ indicator_attributes.addClass('cu-checkbutton__indicator')}}></div>
   </label>
 </div>

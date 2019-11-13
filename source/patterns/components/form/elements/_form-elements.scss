@@ -100,6 +100,7 @@
     padding-top: 0.25rem;
     display: flex;
     background: white;
+    position: relative;
     min-width: 200px;
     margin: 1rem 0;
 
@@ -111,7 +112,6 @@
       order: 1;
       text-align: center;
       flex-basis: 25%;
-      position: relative;
       color: $color-border;
 
       &::before {
@@ -125,14 +125,30 @@
 
       // Hide if the button is disabled
       .cu-checkbutton--disabled & {
-        // visibility: hidden;
+        &:hover {
+          &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            height: 100%;
+            background: white;
+            border: none;
+            border-radius: 0;
+            color: $black;
+            content: attr(data-message);
+          }
+        }
 
         &::before {
           border-color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
         }
 
         &::after {
-          content: '\00d7';
+          content: '?';
           border: none;
         }
       }
