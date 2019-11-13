@@ -233,14 +233,24 @@
         'checked': ''
       } %}
 
+    {% set disabled = (i == 1) ? '1' : '0' %}
+
+    {% if disabled %}
+      {% set input = input|merge({disabled: 'disabled'}) %}
+    {% endif %}
+
     {% set content %}
+    {% if disabled %}
+      <p class="message message--disabled">Cancelled</p>
+    {% endif %}
     <p class="cu-checkbutton__content--date">Sep 2{{ i }}, 2021</p>
     <time class="cu-checkbutton__content--time" datetime="2021-09-19T20:30:00Z">9:00 am - 5:00 pm</time>
     {% endset %}
 
     {% include '@union/_form-checkbutton.twig' with {
         label_content: content,
-        input: input
+        input_attributes: input,
+        disabled: disabled
       } only %}
   {% endfor %}
 </div>

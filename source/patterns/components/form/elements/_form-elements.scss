@@ -36,7 +36,7 @@
   margin-left: 1px;
 
   .cu-input-list__item--required & {
-    &:after {
+    &::after {
       content: '*';
       color: $color-alert;
       font-weight: bold;
@@ -61,7 +61,7 @@
     cursor: text;
     transition: all .2s;
     z-index: 10;
-    color: lighten($black, 40%);
+    color: var(--cu-color-text-disabled, lighten($black, 40%));
     line-height: 1;
   }
 
@@ -114,13 +114,27 @@
       position: relative;
       color: $color-border;
 
-      &:before {
+      &::before {
         position: absolute;
         content: '';
         width: 2rem;
         height: 2rem;
         border-radius: 1rem;
         border: 1px solid $black;
+      }
+
+      // Hide if the button is disabled
+      .cu-checkbutton--disabled & {
+        // visibility: hidden;
+
+        &::before {
+          border-color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
+        }
+
+        &::after {
+          content: '\00d7';
+          border: none;
+        }
       }
     }
 
@@ -154,6 +168,19 @@
       border-width: 0 2px 2px 0;
       /*Rotate the L 45 degrees to turn it into a checkmark*/
       transform: rotate(45deg);
+    }
+  }
+
+  &--disabled {
+    .cu-checkbutton__label {
+      border: 2px solid rgba(black, .1);
+      background: $color-bg--lightest;
+      color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
+
+      .message--disabled,
+      &::before {
+        text-decoration: none;
+      }
     }
   }
 }

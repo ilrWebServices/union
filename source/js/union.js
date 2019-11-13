@@ -222,7 +222,7 @@
         button.style.display = 'none';
       });
 
-      let first_input = registrationForm.querySelector('input[name="' + input_name + '"]')
+      let first_input = registrationForm.querySelector('input[name="' + input_name + '"]:not([disabled])')
       let checked_input = registrationForm.querySelector('input[name="' + input_name + '"]:checked');
 
       // If there is a checked input, activate its price.
