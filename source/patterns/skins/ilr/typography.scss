@@ -172,3 +172,9 @@ span.strong {
 span.block {
   display: block;
 }
+
+.touchscreen-only {
+  @media (hover: hover) and (pointer: fine) {
+    @include visually-hidden;
+  }
+}
