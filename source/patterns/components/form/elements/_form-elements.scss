@@ -148,8 +148,13 @@
         }
 
         &::after {
-          content: '?';
+          content: '\00D7';
           border: none;
+
+          /* mouse, touch pad */
+          @media (hover: hover) and (pointer: fine) {
+            content: '?';
+          }
         }
       }
     }
@@ -193,7 +198,10 @@
       background: $color-bg--lightest;
       color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
 
-      .message--disabled,
+      .message {
+        color: var(--cu-text-color);
+      }
+
       &::before {
         text-decoration: none;
       }
