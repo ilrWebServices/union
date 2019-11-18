@@ -1,7 +1,6 @@
 {{ attach_library('union_organizer/breadcrumb') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-breadcrumb']) %}
-{% set attributes = attributes.setAttribute('role', 'navigation') %}
 {% set attributes = attributes.setAttribute('aria-labelledby', 'system-breadcrumb') %}
 
 <nav{{ attributes }}>
