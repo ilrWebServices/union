@@ -23,6 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 
   @if $size=='full' {
     width: 100%;
