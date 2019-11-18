@@ -171,3 +171,10 @@ span.strong {
 span.block {
   display: block;
 }
+
+// Allows you to style text as a link to avoid duplicate link errors for a11y.
+// Useful, for example, with cards since the entire element is clickable.
+.cu-style--link {
+  color: var(--cu-current-link-color, #{$color-link});
+  text-decoration: underline;
+}
