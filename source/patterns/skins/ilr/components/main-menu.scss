@@ -105,6 +105,7 @@ label[for="nav-trigger"] {
 
 .cu-menu__link {
   display: block;
+  text-decoration: none;
   padding: var(--cu-vr0) 0;
 
   @include breakpoint(md) {

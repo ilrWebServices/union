@@ -14,7 +14,8 @@
 {% set default_img_attributes = {
   class: 'cu-logo__image',
   width: logo_width,
-  src: logo_src
+  src: logo_src,
+  alt: logo_alt|default('Home')
 } %}
 
 {# @todo: implement more robust attributes that can be additive #}

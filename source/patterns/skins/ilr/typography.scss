@@ -45,12 +45,7 @@ html {
   }
 
   a {
-    text-decoration: none;
     color: var(--cu-current-link-color, #{$color-link});
-
-    &.underlined {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -63,6 +58,10 @@ h1, h2, h3, h4, h5, h6 {
   --cu-current-font-weight: var(--cu-heading-font-weight);
   margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
   font-size: var(--cu-current-heading-size, inherit);
+
+  a {
+    text-decoration: none;
+  }
 
   &::after {
     content: '';
@@ -177,4 +176,11 @@ span.block {
   @media (hover: hover) and (pointer: fine) {
     @include visually-hidden;
   }
+}
+
+// Allows you to style text as a link to avoid duplicate link errors for a11y.
+// Useful, for example, with cards since the entire element is clickable.
+.cu-style--link {
+  color: var(--cu-current-link-color, #{$color-link});
+  text-decoration: underline;
 }

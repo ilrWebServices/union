@@ -5,9 +5,11 @@
 {% set content_attributes = content_attributes.addClass(['cu-banner__content']) %}
 
 <div{{ attributes }}>
+  {% if heading %}
   <div class="cu-banner__header">
     <h2 class="cu-banner__heading">{{ heading }}</h2>
   </div>
+  {% endif %}
   <div{{ content_attributes }}>
     {{ content }}
   </div>
