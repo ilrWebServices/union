@@ -36,7 +36,7 @@
   margin-left: 1px;
 
   .cu-input-list__item--required & {
-    &:after {
+    &::after {
       content: '*';
       color: $color-alert;
       font-weight: bold;
@@ -61,7 +61,7 @@
     cursor: text;
     transition: all .2s;
     z-index: 10;
-    color: lighten($black, 40%);
+    color: var(--cu-color-text-disabled, lighten($black, 40%));
     line-height: 1;
   }
 
@@ -100,6 +100,7 @@
     padding-top: 0.25rem;
     display: flex;
     background: white;
+    position: relative;
     min-width: 200px;
     margin: 1rem 0;
 
@@ -111,16 +112,50 @@
       order: 1;
       text-align: center;
       flex-basis: 25%;
-      position: relative;
       color: $color-border;
 
-      &:before {
+      &::before {
         position: absolute;
         content: '';
         width: 2rem;
         height: 2rem;
         border-radius: 1rem;
         border: 1px solid $black;
+      }
+
+      // Hide if the button is disabled
+      .cu-checkbutton--disabled & {
+        &:hover {
+          &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 0;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            height: 100%;
+            background: white;
+            border: none;
+            border-radius: 0;
+            color: $black;
+            content: attr(data-message);
+          }
+        }
+
+        &::before {
+          border-color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
+        }
+
+        &::after {
+          content: '\00D7';
+          border: none;
+
+          /* mouse, touch pad */
+          @media (hover: hover) and (pointer: fine) {
+            content: '?';
+          }
+        }
       }
     }
 
@@ -154,6 +189,22 @@
       border-width: 0 2px 2px 0;
       /*Rotate the L 45 degrees to turn it into a checkmark*/
       transform: rotate(45deg);
+    }
+  }
+
+  &--disabled {
+    .cu-checkbutton__label {
+      border: 2px solid rgba(black, .1);
+      background: $color-bg--lightest;
+      color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
+
+      .message {
+        color: var(--cu-text-color);
+      }
+
+      &::before {
+        text-decoration: none;
+      }
     }
   }
 }

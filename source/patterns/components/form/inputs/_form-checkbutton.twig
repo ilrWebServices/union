@@ -5,8 +5,16 @@ Variables:
     - name: foo
     - value: foo
     - checked: true|false
+    - disabled: disabled|null
   - label_content: content
 #}
+
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set indicator_attributes = union_attributes(indicator_attributes|default([])) %}
+
+{% if disabled %}
+  {% set attributes = attributes.addClass('cu-checkbutton--disabled') %}
+{% endif %}
 
 {% set default_input_attributes = {
   'id': 'checkbutton',
@@ -18,7 +26,7 @@ Variables:
 
 {% set input_attributes = union_attributes(input_attributes|default(default_input_attributes)) %}
 
-<div class="cu-checkbutton">
+<div{{ attributes.addClass('cu-checkbutton') }}>
   {% include "@union/_form-input.twig" with {
     attributes: input_attributes.addClass(['cu-checkbutton__input'])
   } %}
@@ -26,6 +34,6 @@ Variables:
     <div class="cu-checkbutton__content">
       {{ label_content }}
     </div>
-    <div class="cu-checkbutton__indicator"></div>
+    <div{{ indicator_attributes.addClass('cu-checkbutton__indicator')}}></div>
   </label>
 </div>

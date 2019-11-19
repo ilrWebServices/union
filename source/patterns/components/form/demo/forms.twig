@@ -233,6 +233,13 @@
         'checked': ''
       } %}
 
+    {% set disabled = (i == 1) ? '1' : '0' %}
+
+    {% if disabled %}
+      {% set input = input|merge({disabled: 'disabled'}) %}
+      {% set indicator_attributes = {'data-message': 'Sorry, but this session was cancelled.'} %}
+    {% endif %}
+
     {% set content %}
     <p class="cu-checkbutton__content--date">Sep 2{{ i }}, 2021</p>
     <time class="cu-checkbutton__content--time" datetime="2021-09-19T20:30:00Z">9:00 am - 5:00 pm</time>
@@ -240,7 +247,9 @@
 
     {% include '@union/_form-checkbutton.twig' with {
         label_content: content,
-        input: input
+        input_attributes: input,
+        disabled: disabled,
+        indicator_attributes: indicator_attributes
       } only %}
   {% endfor %}
 </div>
