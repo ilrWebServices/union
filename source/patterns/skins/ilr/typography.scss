@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
   font-size: var(--cu-current-heading-size, inherit);
 
-  a {
+  a:hover {
     text-decoration: none;
   }
 
