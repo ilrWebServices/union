@@ -196,7 +196,7 @@
     .cu-checkbutton__label {
       border: 2px solid rgba(black, .1);
       background: $color-bg--lightest;
-      color: var(--cu-color-text-disabled, lighten($gray-medium, 25%));
+      color: var(--cu-color-text-disabled, $gray-dark);
 
       .message {
         color: var(--cu-text-color);
