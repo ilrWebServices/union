@@ -25,6 +25,10 @@ body {
   --cu-card-background: #{$color-bg-card--medium};
 }
 
+.cu-card--promo-with-media {
+  --cu-card-background: #{$color-bg-card--dark};
+}
+
 .cu-card--hover-overlay {
   --cu-card-content-background: rgba(179, 27, 27, 0.75);
 }
