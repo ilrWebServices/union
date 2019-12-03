@@ -256,12 +256,45 @@
 {% endset %}
 {# end checkbuttons #}
 
+{# textarea #}
+{% set textarea %}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: 'Long text (textarea)',
+      attributes: {
+        for: 'field-textarea'
+      }
+    } only %}
+  {% endset %}
+
+  {% set input %}
+    {% include '@union/_form-textarea.twig' with {
+      attributes: {
+        'aria-required': 'false',
+        name: "[form][field_optional]",
+        placeholder: 'Add your comments',
+        required: false,
+        id: 'field-textarea'
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: false,
+    type: 'textarea'
+  } only %}
+{% endset %}
+{# End textarea #}
+
 {# Form2 #}
 {% set form2 %}
   {{ checkbuttons }}
   {{ required_field }}
   {{ optional_field }}
   {{ radios }}
+  {{ textarea }}
   {{ submit2 }}
 {% endset %}
 
