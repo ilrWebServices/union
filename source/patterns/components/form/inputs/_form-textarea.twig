@@ -10,7 +10,7 @@ Available variables:
       field on page load.
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set _classes = ['cu-input'] %}
+{% set _classes = ['cu-input', 'cu-input--textarea'] %}
 
 {% if hasErrors %}
   {% set _classes = _classes|merge(['is-invalid']) %}
