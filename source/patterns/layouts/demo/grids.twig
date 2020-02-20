@@ -31,6 +31,18 @@
   attributes: {class: 'cu-grid--2-1-lead'}
 } %}
 
+<h3>Autogrid One by Two</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--1x2'}
+} %}
+
+<h3>Autogrid Two by One</h3>
+{% include '@union/_grid.twig' with {
+  grid_content: grid_content,
+  attributes: {class: 'cu-grid--2x1'}
+} %}
+
 <h3>Three Column</h3>
 {% include '@union/_grid.twig' with {
   grid_content: grid_content,
@@ -43,3 +55,4 @@
   grid_content: grid_content,
   attributes: {class: 'cu-grid--4col cu-grid--gapless'}
 } %}
+

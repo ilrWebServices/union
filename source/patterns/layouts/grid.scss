@@ -12,7 +12,6 @@
   align-items: stretch;
   grid-gap: var(--cu-grid-row-gap) var(--cu-grid-column-gap);
   grid-template-columns: 1fr;
-  max-width: var(--cu-max-width-section, #{$max-width-section});
   margin: var(--cu-component-margin-top, 0) auto var(--cu-component-margin-bottom, 0) auto;
 
   @include breakpoint(xs) {
@@ -93,6 +92,22 @@
 
     &--align-end {
       align-items: end;
+    }
+
+    &--1x2 {
+      grid-template-columns: 1fr 1fr;
+
+      > *:nth-child(3n+1) {
+        grid-column: 1/-1;
+      }
+    }
+
+    &--2x1 {
+      grid-template-columns: 1fr 1fr;
+
+      > *:nth-child(3n+3) {
+        grid-column: 1/-1;
+      }
     }
   }
 
