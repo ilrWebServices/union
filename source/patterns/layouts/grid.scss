@@ -86,7 +86,8 @@
       align-items: end;
     }
 
-    &--1x2 {
+    &--1x2,
+    &--two-down {
       grid-template-columns: 1fr 1fr;
 
       > *:nth-child(3n+1) {
@@ -94,11 +95,28 @@
       }
     }
 
-    &--2x1 {
+    &--2x1,
+    &--two-up {
       grid-template-columns: 1fr 1fr;
 
       > *:nth-child(3n+3) {
         grid-column: 1/-1;
+      }
+    }
+
+    &--two-left {
+      grid-template-columns: 1fr 1fr;
+
+      > *:nth-child(3n+2) {
+        grid-row: span 2;
+      }
+    }
+
+    &--two-right {
+      grid-template-columns: 1fr 1fr;
+
+      > *:nth-child(3n+1) {
+        grid-row: span 2;
       }
     }
   }
