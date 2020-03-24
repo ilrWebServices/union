@@ -14,14 +14,6 @@
   grid-template-columns: 1fr;
   margin: var(--cu-component-margin-top, 0) auto var(--cu-component-margin-bottom, 0) auto;
 
-  @include breakpoint(xs) {
-    &--2col,
-    &--3col,
-    &--4col {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
   @include breakpoint(sm) {
 
     &--gapless {
