@@ -1,12 +1,13 @@
 @import './source/global/global';
 
 .cu-section-heading {
-  margin: var(--cu-component-margin-top, var(--cu-vr2)) 0 var(--cu-component-margin-bottom, var(--cu-vr1));
+  margin: var(--cu-component-margin-top, var(--cu-vr2)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
+  max-width: var(--cu-max-width-section, #{$max-width-section});
   display: flex;
   flex-direction: column;
 
   @include breakpoint(md) {
-    margin: var(--cu-component-margin-top, var(--cu-vr3)) 0 var(--cu-component-margin-bottom, var(--cu-vr1));
+    margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
   }
 
   &__heading {
