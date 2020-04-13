@@ -1,9 +1,10 @@
 {{ attach_library('union_organizer/section-heading') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-section-heading']) %}
+{% set heading_element = heading_element|default('h2') %}
 
 <div{{ attributes}}>
-  <h2 class="cu-section-heading__heading">{{ heading }}</h2>
+  <{{ heading_element }} class="cu-section-heading__heading">{{ heading }}</{{ heading_element }}>
   {% if subheading %}
     <h3 class="cu-section-heading__subheading">{{ subheading }}</h3>
   {% endif %}
