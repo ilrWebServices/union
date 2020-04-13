@@ -1,6 +1,6 @@
 {
   "name": "@cornell_ilr/union",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A component library.",
   "main": "index.js",
   "repository": {
