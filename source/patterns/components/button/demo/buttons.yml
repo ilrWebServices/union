@@ -1,2 +1,6 @@
 demo:
   text: 'Get Involved'
+  pills:
+    - 'Vulnerable Workers'
+    - 'COVID 19'
+    - 'Employers'

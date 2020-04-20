@@ -9,3 +9,12 @@
     attributes: { class: 'cu-button--overlay' }
   } %}
 </div>
+
+<h3>Pills</h3>
+{% for i in 0..2 %}
+  {% include '@union/_button.twig' with {
+    text: demo.pills[i],
+    attributes: { class: 'cu-button--pill' }
+  } %}
+{% endfor %}
+
