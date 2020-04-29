@@ -14,10 +14,8 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 100%;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
 
   --cu-current-link-color: var(--cu-color-text--light, #{$color-text--light});
   --cu-header-accent-width: 40%;
@@ -39,5 +37,5 @@
 }
 
 .cu-page-nav__item {
-  margin-right: var(--cu-vr2);
+  margin-right: var(--cu-ps2);
 }

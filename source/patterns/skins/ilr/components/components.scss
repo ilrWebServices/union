@@ -78,10 +78,6 @@
     align-content: end;
     margin-bottom: 0;
 
-    @include breakpoint(lg) {
-      grid-template-columns: fit-content(50%) auto;
-    }
-
     >* {
       // All direct children
       grid-column: 1;
@@ -146,10 +142,6 @@
 
     @include breakpoint(sm) {
       max-width: 60%;
-    }
-
-    @include breakpoint(md) {
-      max-width: 50%;
     }
   }
 
