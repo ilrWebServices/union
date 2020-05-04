@@ -221,6 +221,42 @@
 {% endset %}
 {# end radios #}
 
+{# Checkbox #}
+{% set checkbox %}
+  {% set field = {
+    label: 'Please add me to your mailing list.',
+    name: 'form-checkbox',
+    required: false,
+    value: '1'
+  }%}
+  {% set label %}
+    {% include '@union/_form-label.twig' with {
+      title: field.label,
+      attributes: {
+        for: field.name ~ field.value
+      }
+    } only %}
+  {% endset %}
+  {% set input %}
+  {% include '@union/_form-input.twig' with {
+      attributes: {
+        name: field.name,
+        type: "checkbox",
+        value: field.value,
+        id: field.name ~ field.value,
+      }
+    } only %}
+  {% endset %}
+
+  {% include '@union/_form-element.twig' with {
+    children: input,
+    label: label,
+    required: field.required,
+    type: 'checkbox'
+  } only %}
+{% endset %}
+{# end checkbox #}
+
 {# checkbuttons #}
 {% set checkbuttons %}
 <div class="demo demo__checkbuttons">
@@ -294,6 +330,7 @@
   {{ required_field }}
   {{ optional_field }}
   {{ radios }}
+  {{ checkbox }}
   {{ textarea }}
   {{ submit2 }}
 {% endset %}

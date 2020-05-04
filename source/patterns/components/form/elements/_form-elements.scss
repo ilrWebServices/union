@@ -82,6 +82,21 @@
   }
 }
 
+// Fix checkbox alignment
+.cu-input-list__item--checkbox.has-float-label:not(.js-disabled) {
+  display: flex;
+
+  .cu-input {
+    order: 1;
+    margin: 5px 5px 0 0;
+  }
+
+  .cu-label {
+    position: relative;
+    order: 2;
+  }
+}
+
 // @todo: Refactor once design is in hand.
 .cu-input-list__item--select.has-float-label:not(.js-disabled) {
   label {
