@@ -11,10 +11,9 @@
 </div>
 
 <h3>Pills</h3>
-{% for i in 0..2 %}
+{% for pill in demo.pills %}
   {% include '@union/_button.twig' with {
-    text: demo.pills[i],
+    text: pill,
     attributes: { class: 'cu-button--pill' }
   } %}
 {% endfor %}
-
