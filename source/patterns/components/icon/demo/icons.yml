@@ -26,6 +26,10 @@ demo:
       size: 3em
       label: 'Shake shake shake'
     -
+      title: ILRie
+      icon: 'ilrie'
+      size: 440px
+    -
       title: ILR Nickname
       icon: 'ilr-nickname'
     -
