@@ -11,14 +11,15 @@
   }
 
   &__heading {
-    --cu-current-font-size: var(--cu-text-xl);
+    --cu-current-heading-size: var(--cu-ms7);
     --cu-current-font-weight: 300;
     margin-top: 0;
     order: 2;
   }
 
   &__subheading {
-    --cu-current-font-size: var(--cu-text-reg);
+    --cu-current-font-size: var(--cu-ms-1);
+    --cu-current-font-weight: 800;
     order: 1;
     margin-bottom: 0;
   }

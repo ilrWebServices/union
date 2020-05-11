@@ -14,6 +14,7 @@
 
 @mixin cu-button($size: 'auto') {
   --cu-current-link-color: black;
+  --cu-current-font-size: var(--cu-ms1);
   border-radius: 2px;
   border: 4px solid $cornell-red;
   background: transparent;
