@@ -4,7 +4,7 @@
 {% set heading_element = heading_element|default('h2') %}
 
 <div{{ attributes}}>
-  <{{ heading_element }} class="cu-section-heading__heading">{{ heading }}</{{ heading_element }}>
+  <{{ heading_element }} class="cu-heading cu-section-heading__heading">{{ heading }}</{{ heading_element }}>
   {% if subheading %}
     <h3 class="cu-section-heading__subheading">{{ subheading }}</h3>
   {% endif %}
