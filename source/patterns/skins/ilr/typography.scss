@@ -16,9 +16,9 @@
   --cu-current-text-color: #{$color-text};
   --cu-text-xxxl: var(--cu-ms6);
   --cu-text-xxl: var(--cu-ms5);
-  --cu-text-xl: var(--cu-ms4);
-  --cu-text-lg: var(--cu-ms3);
-  --cu-text-med: var(--cu-ms2);
+  --cu-text-xl: var(--cu-ms3);
+  --cu-text-lg: var(--cu-ms2);
+  --cu-text-med: var(--cu-ms1);
   --cu-text-reg: var(--cu-ms0);
 
   @include breakpoint(md) {
