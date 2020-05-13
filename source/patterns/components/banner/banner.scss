@@ -64,10 +64,19 @@
     height: 100%;
     z-index: -2;
 
-    > :first-child {
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
       object-fit: cover;
       width: 100%;
       height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
     }
 
     @include breakpoint(md) {
@@ -149,10 +158,19 @@
     height: 100%;
     z-index: 1;
 
-    > :first-child {
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
       object-fit: cover;
       width: 100%;
       height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
     }
   }
 }
