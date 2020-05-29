@@ -44,6 +44,7 @@
     width: 100%;
     height: 100%;
     background: rgba($color, $opacity);
+    background: rgba($color, var(--cu-overlay-opacity, #{$opacity}));
     z-index: $z-index;
 
     // Initial boolean implementation for portrait gradients.
