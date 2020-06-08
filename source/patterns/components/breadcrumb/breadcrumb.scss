@@ -20,12 +20,13 @@
 
   &:last-child {
     display: block;
+    -webkit-padding-start: 5px;
 
     &::before {
       content: var(--cu-breadcrumb-previous, '\27E8');
 
       @include breakpoint(sm) {
-        content: '';
+        content: none;
       }
     }
   }
