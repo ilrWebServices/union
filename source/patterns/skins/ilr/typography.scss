@@ -20,8 +20,10 @@
   --cu-text-lg: var(--cu-ms2);
   --cu-text-med: var(--cu-ms1);
   --cu-text-reg: var(--cu-ms0);
+}
 
-  @include breakpoint(md) {
+@media (min-width: 1024px) {
+  :root {
     --cu-font-size-percentage: 113%;
     --cu-ms-ratio: var(--minor-third);
     --cu-current-line-height: 1.5;
