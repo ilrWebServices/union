@@ -8,15 +8,19 @@ The following variables are available:
 
 -  check-circle
 -  cornell-seal
+-  facebook
 -  handshake
 -  ilr-nickname
 -  instagram
+-  linkedin
 -  mortarboard
 -  news-phone
 -  newsletter
 -  speech-bubble
 -  student
 -  tower
+-  twitter
+-  youtube
 
 `size`: The size of the icon in CSS units (e.g. 18px, 2em). (optional; default: 2em)
 

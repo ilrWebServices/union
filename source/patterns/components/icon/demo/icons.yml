@@ -21,6 +21,9 @@ demo:
       title: Drupal
       icon: 'drupal'
     -
+      title: Facebook
+      icon: 'facebook'
+    -
       title: Handshake
       icon: 'handshake'
       size: 3em
@@ -31,6 +34,9 @@ demo:
     -
       title: Instagram
       icon: 'instagram'
+    -
+      title: LinkedIn
+      icon: 'linkedin'
     -
       title: Mortarboard
       icon: 'mortarboard'
@@ -66,3 +72,9 @@ demo:
     -
       title: Student
       icon: 'student'
+    -
+      title: Twitter
+      icon: 'twitter'
+    -
+      title: Youtube
+      icon: 'youtube'
