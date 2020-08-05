@@ -20,6 +20,7 @@ The following variables are available:
 -  student
 -  tower
 -  twitter
+-  video play/pause
 -  youtube
 
 `size`: The size of the icon in CSS units (e.g. 18px, 2em). (optional; default: 2em)

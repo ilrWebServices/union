@@ -67,6 +67,12 @@ demo:
       attributes:
         class: 'cu-icon--inline cu-icon--play'
     -
+      title: Pause button
+      icon: 'pause'
+      size: 2em
+      attributes:
+        class: 'cu-icon--pause'
+    -
       title: Speech Bubble
       icon: 'speech-bubble'
     -

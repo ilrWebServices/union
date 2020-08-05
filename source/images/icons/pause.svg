@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Pause video</title>
+  <circle cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#FFFFFF" />
+  <rect x="65" y="60" width="25" height="80" fill="#FFFFFF" />
+  <rect x="115" y="60" width="25" height="80" fill="#FFFFFF" />
+</svg>
