@@ -42,6 +42,9 @@
 }
 
 .cu-input-message {
+  --cu-current-font-size: var(--cu-ms-1);
+  color: var(--cu-color-text-disabled, lighten($black, 40%));
+
   &--invalid {
     color: $color-alert;
     margin-left: 0.5rem;
@@ -63,7 +66,7 @@
 
   &:not(.cu-input-list__item--select) {
 
-    &.is-filled .cu-input,
+    &.is-filled .cu-input:not(.button),
     .cu-input.is-focused:not(.is-filled) {
       transition: all 0.2s;
       padding: $form-input-padding-y * $float-label-offset-multiplier $form-input-padding-x $form-input-padding-y * 0.5;
