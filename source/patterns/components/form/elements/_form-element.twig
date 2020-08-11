@@ -12,7 +12,7 @@ Available variables:
   - required (boolean) - whether the element is required
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set labelDisplay = labelDisplay | default('float') %}
+{% set labelDisplay = labelDisplay | default('before') %}
 {% set baseClass = 'cu-input-list__item' %}
 {% set requireModifier = (required)
   ? '--required'
