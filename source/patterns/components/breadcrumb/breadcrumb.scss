@@ -9,10 +9,12 @@
   padding: 0;
   margin: 0;
   display: inline-flex;
+  flex-wrap: wrap;
 }
 
 .cu-breadcrumb__item {
   display: none;
+  white-space: nowrap;
 
   @include breakpoint(sm) {
     display: block;
