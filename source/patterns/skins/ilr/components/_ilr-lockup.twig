@@ -4,7 +4,7 @@
 
 {% set lockup_attributes = {
   class: 'ilr__logo-image',
-  width: '350',
+  width: logo_width|default('350'),
   alt: logo_alt|default('Cornell University\'s ILR School'),
   src: logo_src|default(union_file('patterns/skins/ilr/images/ilr-cornell-lockup.svg'))
 } %}
