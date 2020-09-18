@@ -18,11 +18,17 @@
       }
     }
 
-    .cu-person__title {
+    .cu-person__titles {
       order: 2;
       grid-row: 1;
       grid-column: 2;
       margin: 0;
+      list-style: none;
+      padding: 0;
+    }
+
+    .cu-person__title:not(:last-child) {
+      margin-bottom: var(--cu-vr0);
     }
 
     .cu-person__name {

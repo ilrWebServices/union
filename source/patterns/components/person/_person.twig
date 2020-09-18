@@ -4,8 +4,16 @@
 
 <div{{ attributes }}>
   <h3 class="cu-heading cu-person__name">{{ name }}</h3>
-  {% if title %}
-  <h4 class="cu-person__title">{{ title }}</h4>
+  {% if title is iterable %}
+  <ul class="cu-person__titles">
+    {% for title_item in title %}
+    <li class="cu-person__title">{{ title_item }}</li>
+    {% endfor %}
+  </ul>
+  {% elseif title %}
+  <ul class="cu-person__titles">
+    <li class="cu-person__title">{{ title }}</li>
+  </ul>
   {% endif %}
   <div class="cu-person__content">
     {{ content }}
