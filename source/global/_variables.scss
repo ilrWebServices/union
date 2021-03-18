@@ -52,7 +52,9 @@ $ps-base: 1em !default;
 $vr-base: $base-font-size !default;
 
 $dt-font-weight: 700;
-$font-weight-bolder: 800;
+// There is a discrepency between Mac and Windows weight rendering.
+// 600 appears to be a happy medium between the two systems.
+$font-weight-bolder: 600;
 
 // Spacing
 $headings-margin-bottom: 0.5rem;

@@ -6,6 +6,7 @@
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
   --cu-line-height: var(--cu-base-line-height, #{$base-line-height});
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
+  --cu-font-weight--bold: var(--cu-base-font-weight--bold, #{$font-weight-bolder});
   --cu-current-font-size: var(--cu-ms1);
   --cu-heading-font-weight: var(--cu-base-heading-font-weight, #{$base-heading-font-weight});
   --cu-heading-line-height: var(--cu-base-heading-line-height, #{$base-heading-line-height});
@@ -168,8 +169,8 @@ small {
   height: var(--cu-vr3);
 }
 
-span.strong {
-  font-weight: bold;
+b, strong, span.strong {
+  font-weight: var(--cu-font-weight--bold);
 }
 
 span.block {
