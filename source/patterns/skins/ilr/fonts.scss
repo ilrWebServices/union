@@ -17,18 +17,3 @@
 @include fontFace('Replica', 'lineto-replica-pro-bolditalic', bold, italic);
 @include fontFace('Replica', 'lineto-replica-pro-light', 300);
 @include fontFace('Replica', 'lineto-replica-pro-lightitalic', 300, italic);
-
-body {
-  font-family:
-    var(--cu-font-primary),
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji',
-    'Segoe UI Symbol';
-}

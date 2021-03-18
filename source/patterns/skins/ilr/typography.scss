@@ -2,7 +2,7 @@
 
 /*----------  CSS Variables  ----------*/
 :root {
-  --cu-font-family: var(--cu-base-font-family, #{$base-font-family});
+  --cu-font-family: Replica, #{$base-font-family};
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
   --cu-line-height: var(--cu-base-line-height, #{$base-line-height});
   --cu-font-weight: var(--cu-base-font-weight, #{$base-font-weight});
@@ -30,9 +30,8 @@
   }
 }
 
-
-html {
-  --cu-font-primary: Replica;
+body {
+  font-family: var(--cu-font-family);
   font-size: var(--cu-font-size-percentage);
   line-height: var(--cu-line-height);
   font-weight: var(--cu-font-weight);
@@ -84,7 +83,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /*----------  Class-based sizing  ----------*/
 [class*='cu-text'] {
-  font-family: var(--cu-font-family);
   font-weight: var(--cu-font-weight);
   line-height: var(--cu-line-height);
   font-size: var(--font-size);
