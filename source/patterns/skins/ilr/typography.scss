@@ -30,9 +30,13 @@
   }
 }
 
+html {
+  // html's font-size is used as a base for rem calculation.
+  font-size: var(--cu-font-size-percentage);
+}
+
 body {
   font-family: var(--cu-font-family);
-  font-size: var(--cu-font-size-percentage);
   line-height: var(--cu-line-height);
   font-weight: var(--cu-font-weight);
 }
