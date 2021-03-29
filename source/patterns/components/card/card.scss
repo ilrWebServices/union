@@ -180,6 +180,10 @@
 
   /*----------  Hover Reveal  ----------*/
   &--hover-content-reveal {
+    .cu-card__content {
+      display: block;
+    }
+
     .cu-card__hover-content {
       overflow: hidden;
       max-height: 0;
