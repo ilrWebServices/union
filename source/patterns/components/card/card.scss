@@ -139,6 +139,18 @@
     }
   }
 
+  &--use-aspect-ratio {
+    display: grid;
+
+    .cu-card__content,
+    .cu-card__media {
+      grid-column: 1;
+      grid-row: 1;
+
+      position: relative;
+    }
+  }
+
   /*----------  Pinned ----------*/
   &--pinned {
     .cu-card__content {
