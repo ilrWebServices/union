@@ -51,6 +51,10 @@
   &--color-light {
     --cu-current-text-color: var(--cu-color-text--light);
   }
+
+  &--link {
+    text-decoration: none;
+  }
 }
 
 /*=============================================
