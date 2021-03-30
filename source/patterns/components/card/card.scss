@@ -162,6 +162,19 @@
     }
   }
 
+  &--pinned-bottom {
+    .cu-card__content {
+      justify-content: flex-end;
+    }
+  }
+
+  &--pinned-top {
+    .cu-card__content {
+      justify-content: flex-start;
+    }
+  }
+
+
   /*----------  Centered content  ----------*/
   &--centered {
     .cu-card__content {
