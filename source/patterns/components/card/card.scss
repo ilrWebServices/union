@@ -89,7 +89,7 @@
       // Any element in the media section that isn't a replaced element should
       // be ignored. This will allow the object-fit property to work even if the
       // img or video is nested in other markup.
-      :not(img):not(video) {
+      :not(img):not(video):not(.cu-image--blurred) {
         display: contents;
       }
     }
