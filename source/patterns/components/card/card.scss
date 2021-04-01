@@ -296,6 +296,8 @@
 
   /*----------  With aside  ----------*/
   &--with-aside {
+    display: grid; // This fixes an issue in Safari when display is flex.
+
     .cu-card__content {
       display: grid;
       grid-template-columns: 5% 57% 5% 28% 5%;
