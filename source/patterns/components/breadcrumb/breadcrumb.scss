@@ -14,10 +14,10 @@
 
 .cu-breadcrumb__item {
   display: none;
-  white-space: nowrap;
 
   @include breakpoint(sm) {
     display: block;
+    white-space: nowrap;
   }
 
   &:last-child {
