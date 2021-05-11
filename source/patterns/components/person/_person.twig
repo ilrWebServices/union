@@ -3,24 +3,31 @@
 {% set attributes = attributes.addClass(['cu-person']) %}
 
 <div{{ attributes }}>
-  <h3 class="cu-heading cu-person__name">{{ name }}</h3>
-  {% if title is iterable %}
-  <ul class="cu-person__titles">
-    {% for title_item in title %}
-    <li class="cu-person__title">{{ title_item }}</li>
-    {% endfor %}
-  </ul>
-  {% elseif title %}
-  <ul class="cu-person__titles">
-    <li class="cu-person__title">{{ title }}</li>
-  </ul>
-  {% endif %}
-  <div class="cu-person__content">
-    {{ content }}
+  <div class="cu-person__info">
+    <h3 class="cu-heading cu-person__name">{{ name }}</h3>
+    {% if title is iterable %}
+    <ul class="cu-person__titles">
+      {% for title_item in title %}
+      <li class="cu-person__title">{{ title_item }}</li>
+      {% endfor %}
+    </ul>
+    {% elseif title %}
+    <ul class="cu-person__titles">
+      <li class="cu-person__title">{{ title }}</li>
+    </ul>
+    {% endif %}
+    {% if additional_info %}
+    <div class="cu-person__additional_info">
+      {{ additional_info }}
+    </div>
+    {% endif %}
   </div>
   {% if img %}
   <div class="cu-person__image">
     {{ img }}
   </div>
   {% endif %}
+  <div class="cu-person__content">
+    {{ content }}
+  </div>
 </div>

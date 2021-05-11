@@ -2,17 +2,24 @@
 
 .cu-person {
   --cu-current-font-weight: 300;
+  --cu-current-font-size: var(--cu-ms-1);
 
   &--thumb {
     display: grid;
-    grid-row-gap: var(--cu-vr-1);
     grid-column-gap: var(--cu-vr0);
     grid-template-columns: 1fr 2fr;
 
+    .cu-person__info {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+    }
+
     .cu-person__image {
-      order: 1;
-      grid-row: span 2;
+      grid-column: 1;
+      grid-row: 1;
       overflow: hidden;
+      margin-bottom: var(--cu-vr-1);
 
       .cu-image {
         border-radius: 50%;
@@ -20,9 +27,6 @@
     }
 
     .cu-person__titles {
-      order: 3;
-      grid-row: 2;
-      grid-column: 2;
       margin: 0;
       list-style: none;
       padding: 0;
@@ -34,15 +38,12 @@
 
     .cu-person__name {
       --cu-current-font-size: var(--cu-text-xxl);
-      order: 2;
       grid-row: 1;
       grid-column: 2;
-      margin: 0;
+      margin: 0 0 var(--cu-vr-3);
     }
 
     .cu-person__content {
-      --cu-current-font-size: var(--cu-ms-1);
-      order: 4;
       grid-column: 1 / -1;
     }
   }
