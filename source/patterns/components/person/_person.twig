@@ -16,14 +16,9 @@
       <li class="cu-person__title">{{ title }}</li>
     </ul>
     {% endif %}
-    {% if email %}
-    <div class="cu-person__email">
-        {{ email }}
-    </div>
-    {% endif %}
-    {% if phone %}
-    <div class="cu-person__phone">
-      {{ phone }}
+    {% if additional_info %}
+    <div class="cu-person__additional_info">
+      {{ additional_info }}
     </div>
     {% endif %}
   </div>

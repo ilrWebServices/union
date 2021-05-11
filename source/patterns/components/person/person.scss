@@ -43,15 +43,6 @@
       margin: 0 0 var(--cu-vr-3);
     }
 
-    .cu-person__email {
-      overflow: hidden; // Prevent the email from breaking the layout on small screens.
-    }
-
-    .cu-person__phone {
-      --cu-current-font-size: var(--cu-ms-2);
-      margin-bottom: var(--cu-vr-1);
-    }
-
     .cu-person__content {
       grid-column: 1 / -1;
     }
