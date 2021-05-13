@@ -3,6 +3,8 @@
 {% set attributes = attributes.addClass(['cu-card']) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set content_attributes = content_attributes.addClass(['cu-card__content']) %}
+{% set link_attributes = union_attributes(link_attributes|default([])) %}
+{% set link_attributes = link_attributes.addClass(['cu-card__link']) %}
 
 <div{{ attributes }}>
   <div{{ content_attributes }}>
@@ -14,7 +16,7 @@
   </div>
 {% endif %}
 {% if card_link_url %}
-  <a class="cu-card__link" href="{{ card_link_url }}">{{ card_link_alt }}</a>
+  <a{{ link_attributes }} href="{{ card_link_url }}">{{ card_link_alt }}</a>
 {% endif %}
 </div>
 
