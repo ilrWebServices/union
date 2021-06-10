@@ -1,0 +1,9 @@
+{% include '@union/_card.twig' with {
+  card_content: card_content|default('<h2 class="cu-card__heading cu-heading">Full Speed Ahead!</h2>
+    <p>Jordan Berman \'95 leads fellow alumni beyond COVID-19.</p><div class="cu-card__button">
+    <button class="cu-button--overlay cu-button">Read Jordan\'s Story</button></div>'),
+  card_media: card_media|default('<img class="cu-image" src="http://placeimg.com/450/316/arch" alt="Random image" />'),
+  card_link_url: card_link_url|default('https://www.example.com'),
+  card_link_alt: card_link_alt|default('Card title or other accessible descriptive link text'),
+  attributes: attributes|default({ 'class': 'cu-card--popout cu-card--popout-left' })
+} only %}
