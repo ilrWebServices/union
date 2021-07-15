@@ -43,7 +43,7 @@
   padding-bottom: 0.4rem;
   margin-left: 1px;
 
-  .cu-input-list__item--required & {
+  &--required {
     &::after {
       content: '*';
       color: $color-alert;

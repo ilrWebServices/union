@@ -10,7 +10,6 @@
  *    - before
  *    - after
  *    - float - Default. Enhanced by js. @see form.js
- * - required: (boolean) Whether the element is required.
  * - children: The child form elements.
  * - errors: (optional) Any errors for this form element, may not be set.
  * - descriptionText: (string) An optional description for this element.
@@ -19,11 +18,7 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set labelDisplay = labelDisplay | default('before') %}
 {% set baseClass = 'cu-input-list__item' %}
-{% set requireModifier = (required)
-  ? '--required'
-  : '--optional'
-%}
-{% set _classes = [baseClass, baseClass ~ '--' ~ type, baseClass ~ requireModifier ]%}
+{% set _classes = [baseClass, baseClass ~ '--' ~ type ]%}
 {% if (labelDisplay == 'float') %}
   {% set _classes = _classes|merge(['has-float-label', 'js-disabled']) %}
 {% elseif (labelDisplay == 'before') %}

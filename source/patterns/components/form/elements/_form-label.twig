@@ -4,22 +4,16 @@
  * Pattern for form labels
  *
  * Available variables:
- * - title (string) - The title to be displayed in this label
- * - attributes (object) - A Drupal attributes object
- * - displayType (enum)
- *    - inline-radio - display the label inline next to a radio button
- *    - inline-checkbox - display the label inline next to a checkbox
- *    - default - no special treatment
+ * - attributes: A Drupal attributes object.
+ * - title:  The title to be displayed in this label.
+ * - required: A boolean indicating if this field is required.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-
-{% if displayType == "inline-radio" %}
-  {% set _classes = ["cu-inline-label", "cu-inline-label--radio"] %}
-{% elseif displayType == "inline-checkbox" %}
-  {% set _classes = ["cu-inline-label", "cu-inline-label--checkbox"] %}
-{% else %}
-  {% set _classes = ["cu-label"] %}
-{% endif %}
-
-<label{{ attributes.addClass(_classes) }}>{{ title }}</label>
+{%
+  set classes = [
+    'cu-label',
+    required ? 'cu-label--required',
+  ]
+%}
+<label{{ attributes.addClass(classes) }}>{{ title }}</label>
