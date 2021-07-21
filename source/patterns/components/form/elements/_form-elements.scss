@@ -42,18 +42,17 @@
   display: block;
   padding-bottom: 0.4rem;
   margin-left: 1px;
+}
 
-  &--required {
-    &::after {
-      content: '*';
-      color: $color-alert;
-      font-weight: bold;
-      font-size: 80%;
-      display: inline-block;
-      margin-left: 0.25em;
-      vertical-align: super;
-    }
-  }
+.cu-label--required::after,
+.cu-legend .form-required::after {
+  content: '*';
+  color: $color-alert;
+  font-weight: bold;
+  font-size: 80%;
+  display: inline-block;
+  margin-left: 0.25em;
+  vertical-align: super;
 }
 
 // Float label specific
