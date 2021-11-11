@@ -30,7 +30,13 @@
 {% endif %}
 <div{{ attributes.addClass(_classes) }}>
   {{ label }}
+  {% if prefix is not empty %}
+    <span class="cu-input__prefix">{{ prefix }}</span>
+  {% endif %}
   {{ children }}
+  {% if suffix is not empty %}
+    <span class="cu-input__suffix">{{ suffix }}</span>
+  {% endif %}
   {% if errors %}
     <div class="cu-input-message cu-input-message--invalid">
       {{ errors }}
