@@ -2,18 +2,6 @@
   class: 'cu-logo cu-logo--ilr-lockup'
 } %}
 
-{% set lockup_attributes = {
-  class: 'ilr__logo-image',
-  width: logo_width|default('350'),
-  alt: logo_alt|default('Cornell University\'s ILR School'),
-  src: logo_src|default(union_file('patterns/skins/ilr/images/ilr-cornell-lockup.svg'))
-} %}
-
-{% set attributes = union_attributes(lockup_attributes) %}
-{% set logo_link = logo_link|default('/') %}
-
-{% include '@union/_logo.twig' with {
-  logo_link: logo_link,
-  attributes: attributes,
-  wrapper_attributes: wrapper_attributes
-} only %}
+<div {{ union_attributes(wrapper_attributes) }}>
+{{ source(union_file('patterns/skins/ilr/images/ilr-cornell-lockup.svg')) }}
+</div>
