@@ -61,7 +61,7 @@
   display: block;
   position: relative;
 
-  label {
+  .cu-label {
     position: absolute;
     left: $form-input-padding-x;
     top: calc(#{$form-element-padding-y} * #{$float-label-offset-multiplier} + #{$form-input-padding-y});
@@ -70,6 +70,7 @@
     z-index: 10;
     color: var(--cu-color-text-disabled, lighten($black, 40%));
     line-height: 1;
+    user-select: none;
   }
 
   &.is-active,
