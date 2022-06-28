@@ -17,5 +17,10 @@
     "require": {
         "twig/twig": "^2",
         "drupal/core": "^9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Union\\": "src/"
+        }
     }
 }
