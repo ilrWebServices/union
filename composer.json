@@ -2,7 +2,7 @@
     "name": "cornell/union",
     "description": "A component-based design system",
     "type": "library",
-    "version": "0.0.1",
+    "version": "2.0.0-dev",
     "license": "MIT",
     "authors": [
         {
@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "twig/twig": "1.38.2",
-        "drupal/core": "^8.7"
+        "twig/twig": "^2",
+        "drupal/core": "^9.4"
     }
 }

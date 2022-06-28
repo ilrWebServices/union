@@ -1,10 +1,1 @@
 /vendor/
-/node_modules/
-composer.lock
-/public/*
-/dependencyGraph.json
-/source/patterns/**/*.css
-/source/patterns/**/*.css.map
-/source/css/union.css*
-/source/_meta/_00-head.mustache
-/source/_meta/_01-foot.mustache

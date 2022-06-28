@@ -1,0 +1,29 @@
+.cu-message-list__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+.cu-message {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  padding: var(--cu-ms-3) var(--cu-ms0);
+  margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr0));
+  background-color: var(--cu-color-info--light, #daf1f8);
+  border-color: var(--cu-color-info, #5bc0de);
+  color: var(--cu-color-info--dark, #1b6d85); }
+  .cu-message--status {
+    background-color: var(--cu-color-status--light, #e3f3e3);
+    border-color: var(--cu-color-status, #5cb85c);
+    color: var(--cu-color-status--dark, #357935); }
+  .cu-message--warning {
+    background-color: var(--cu-color-warning--light, #fff4d3);
+    border-color: var(--cu-color-warning, #ffc107);
+    color: var(--cu-color-warning--dark, #a07800); }
+  .cu-message--error {
+    background-color: var(--cu-color-error--light, #f7dad9);
+    border-color: var(--cu-color-error, #d9534f);
+    color: var(--cu-color-error--dark, #a02622); }
+  .cu-message__text {
+    margin: 0; }
+/*# sourceMappingURL=message.css.map */
