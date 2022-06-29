@@ -15,12 +15,9 @@
         }
     ],
     "require": {
-        "twig/twig": "^2",
-        "drupal/core": "^9.4"
+        "twig/twig": "^2"
     },
     "autoload": {
-        "psr-4": {
-            "Union\\": "src/"
-        }
+        "psr-4": { "Union\\": "src" }
     }
 }
