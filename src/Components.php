@@ -2,7 +2,7 @@
 
 namespace Union;
 
-class Union implements UnionInterface {
+class Components implements ComponentsInterface {
 
   protected $components = [];
 
@@ -20,11 +20,11 @@ class Union implements UnionInterface {
       $css = new \SplFileInfo(dirname($template->getRealPath()) . '/' . str_replace('_', '', $component_id . '.css'));
       $js = new \SplFileInfo(dirname($template->getRealPath()) . '/' . str_replace('_', '', $component_id . '.js'));
 
-      $this->components[$component_id] = new UnionComponent(
+      $this->components[$component_id] = new Component(
         $component_id,
         $template,
-        $css->isFile() ? $css : FALSE,
-        $js->isFile() ? $js : FALSE,
+        $css->isFile() ? [$css] : [],
+        $js->isFile() ? [$js] : [],
       );
     }
 

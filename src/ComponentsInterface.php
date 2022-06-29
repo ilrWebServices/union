@@ -2,7 +2,7 @@
 
 namespace Union;
 
-interface UnionInterface {
+interface ComponentsInterface {
 
   /**
    * Get all components.
