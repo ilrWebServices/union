@@ -1,6 +1,4 @@
 css:
-  grid.css: {}
   cu-section.css: {}
-  cu-twocol.css: {}
 dependencies:
   - base
