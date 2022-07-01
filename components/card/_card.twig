@@ -1,3 +1,23 @@
+{#
+/**
+ * Card
+ *
+ * A card represents a small piece of content, like an article teaser or a promo.
+ * An optional media element, an image or a video, may be included. There are
+ * multiple card variants, including:
+ *
+ * - promo
+ * - teaser
+ *
+ * @var string $card_content The primary content of the card, often markup.
+ * @var string $card_media Optional media (img, video, or any other CSS replaced element).
+ * @var string $card_link_url An optional URL for link over the entire card.
+ * @var string $card_link_alt Alt text for the card link.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire card.
+ * @var Drupal\Core\Template\Attribute $content_attributes Attributes for the card content region.
+ * @var Drupal\Core\Template\Attribute $link_attributes Attributes for the card link.
+ */
+#}
 {{ attach_library('union_organizer/card') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-card']) %}
@@ -19,4 +39,3 @@
   <a{{ link_attributes }} href="{{ card_link_url }}">{{ card_link_alt }}</a>
 {% endif %}
 </div>
-
