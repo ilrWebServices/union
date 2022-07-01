@@ -15,7 +15,8 @@
         }
     ],
     "require": {
-        "twig/twig": "^2"
+        "twig/twig": "^2",
+        "phpdocumentor/reflection-docblock": "^5.3"
     },
     "autoload": {
         "psr-4": { "Union\\": "src/" }
