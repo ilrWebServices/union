@@ -17,15 +17,25 @@ class Components implements ComponentsInterface {
     /** @var \SplFileInfo $file */
     foreach ($it as $template) {
       $component_id = $template->getBasename('.twig');
-      $css = new \SplFileInfo(dirname($template->getRealPath()) . '/' . str_replace('_', '', $component_id . '.css'));
-      $js = new \SplFileInfo(dirname($template->getRealPath()) . '/' . str_replace('_', '', $component_id . '.js'));
 
       $this->components[$component_id] = new Component(
         $component_id,
-        $template,
-        $css->isFile() ? [$css] : [],
-        $js->isFile() ? [$js] : [],
+        $template
       );
+
+      $css_it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
+      $css_it = new \RegexIterator($css_it, '/.+\.css$/');
+
+      foreach ($css_it as $css_file) {
+        $this->components[$component_id]->addCss($css_file);
+      }
+
+      $js_it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
+      $js_it = new \RegexIterator($js_it, '/.+\.js$/');
+
+      foreach ($js_it as $js_file) {
+        $this->components[$component_id]->addJs($js_file);
+      }
     }
 
     return $this->components;

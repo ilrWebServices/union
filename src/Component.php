@@ -10,9 +10,19 @@ class Component {
 
   public $template;
 
-  public $css = [];
+  /**
+   * Component CSS
+   *
+   * @var array An array of \SplFileInfo objects representing CSS files.
+   */
+  protected $css = [];
 
-  public $js = [];
+  /**
+   * Component JavaScript
+   *
+   * @var array An array of \SplFileInfo objects representing JS files.
+   */
+  protected $js = [];
 
   protected $docblock;
 
@@ -23,16 +33,26 @@ class Component {
    *   The component machine name.
    * @param \SplFileInfo $template
    *   The twig template file.
-   * @param array $css
-   *   An array of \SplFileInfo objects representing CSS files.
-   * @param array $js
-   *   An array of \SplFileInfo objects representing JS files.
    */
-  public function __construct(string $component_id, \SplFileInfo $template, array $css = [], array $js = []) {
+  public function __construct(string $component_id, \SplFileInfo $template) {
     $this->componentId = $component_id;
     $this->template = $template;
-    $this->css = $css;
-    $this->js = $js;
+  }
+
+  public function addCss(\SplFileInfo $css) {
+    $this->css[] = $css;
+  }
+
+  public function addJs(\SplFileInfo $js) {
+    $this->js[] = $js;
+  }
+
+  public function getCss() {
+    return $this->css;
+  }
+
+  public function getJs() {
+    return $this->js;
   }
 
   /**
