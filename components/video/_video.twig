@@ -1,3 +1,19 @@
+{#
+/**
+ * Video
+ *
+ * Video components are low-level video elements with some helper functionality.
+ *
+ * @var string $src A string with the video URL. Or:
+ * @var string $sources An array of objects with two keys: `src` and `type`. Ignored if `src` is set.
+ * @var string $poster A string with an image URL. Default ''.
+ * @var string $controls A boolean to enable or disable video player controls. Default TRUE.
+ * @var string $autoplay A boolean to enable or disable immediate playback. Default FALSE.
+ * @var string $loop A boolean to enable or disable video replay. Default FALSE.
+ * @var string $fallback A string with text or markup to display if the browser doesn't support the `video` element.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire card.
+ */
+#}
 {{ attach_library('union_organizer/video') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-video']) %}
@@ -34,6 +50,5 @@
 {% if muted is defined %}
   {% set attributes = attributes.setAttribute('muted', not not muted) %}
 {% endif %}
-
 
 <video{{ attributes }}>{{ source_markup }}{{ fallback }}</video>
