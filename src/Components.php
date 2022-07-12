@@ -27,6 +27,7 @@ class Components implements ComponentsInterface {
       $css_it = new \RegexIterator($css_it, '/.+\.css$/');
 
       foreach ($css_it as $css_file) {
+        // dump($css_file);
         $this->components[$component_id]->addCss($css_file);
       }
 
@@ -35,6 +36,13 @@ class Components implements ComponentsInterface {
 
       foreach ($js_it as $js_file) {
         $this->components[$component_id]->addJs($js_file);
+      }
+
+      $yml_it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
+      $yml_it = new \RegexIterator($yml_it, '/.+\.yml$/');
+
+      foreach ($yml_it as $data_file) {
+        $this->components[$component_id]->addData($data_file);
       }
     }
 

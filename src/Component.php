@@ -3,6 +3,10 @@
 namespace Union;
 
 use phpDocumentor\Reflection\DocBlockFactory;
+use Symfony\Component\Yaml\Yaml;
+use Twig\Environment;
+use Twig\Extension\EscaperExtension;
+use Twig\Loader\FilesystemLoader;
 
 class Component {
 
@@ -23,6 +27,13 @@ class Component {
    * @var array An array of \SplFileInfo objects representing JS files.
    */
   protected $js = [];
+
+  /**
+   * Component data
+   *
+   * @var array An array of data that can be used for rendering.
+   */
+  protected $data = [];
 
   protected $docblock;
 
@@ -53,6 +64,19 @@ class Component {
 
   public function getJs() {
     return $this->js;
+  }
+
+  public function getData() {
+    if (!empty($this->data)) {
+      return $this->data;
+    }
+
+    // Load the yml file
+    if ($data = Yaml::parseFile($this->template->getPath() . '/' . $this->id() . '.yml')) {
+      $this->data = $data;
+    }
+
+    return $this->data;
   }
 
   /**
@@ -120,8 +144,23 @@ class Component {
    * @return string
    *   HTML markup or ???.
    */
-  public function render() {
+  public function render($use_placeholder_data = FALSE) {
+    $data = [];
 
+    $loader = new FilesystemLoader($this->template->getPath());
+
+    $twig = new Environment($loader, [
+      'autoescape' => FALSE,
+      // 'cache' => '/path/to/compilation_cache',
+    ]);
+
+    $template = $twig->load($this->template->getBasename());
+
+    if ($use_placeholder_data) {
+      $data = $this->getData();
+    }
+
+    return $template->render($data);
   }
 
   public function getLibrary() {

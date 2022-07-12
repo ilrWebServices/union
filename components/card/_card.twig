@@ -18,12 +18,12 @@
  * @var Drupal\Core\Template\Attribute $link_attributes Attributes for the card link.
  */
 #}
-{{ attach_library('union_organizer/card') }}
-{% set attributes = union_attributes(attributes|default([])) %}
+{# {{ attach_library('union_organizer/card') }} #}
+{# {% set attributes = union_attributes(attributes|default([])) %} #}
 {% set attributes = attributes.addClass(['cu-card']) %}
-{% set content_attributes = union_attributes(content_attributes|default([])) %}
+{# {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set content_attributes = content_attributes.addClass(['cu-card__content']) %}
-{% set link_attributes = union_attributes(link_attributes|default([])) %}
+{% set link_attributes = union_attributes(link_attributes|default([])) %} #}
 {% set link_attributes = link_attributes.addClass(['cu-card__link']) %}
 
 <div{{ attributes }}>
