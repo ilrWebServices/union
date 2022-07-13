@@ -14,7 +14,7 @@ function componentStyles() {
     .src('source/patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
-    .pipe(gulp.dest('source/patterns/', { sourcemaps: '.' }));
+    .pipe(gulp.dest('source/_patterns/', { sourcemaps: '.' }));
 }
 
 function concatComponentStyles() {

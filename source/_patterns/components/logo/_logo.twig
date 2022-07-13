@@ -1,0 +1,35 @@
+{{ attach_library('union_organizer/logo') }}
+
+{# Wrapper #}
+{% set default_wrapper_attributes = {
+  class: 'cu-logo cu-logo--union'
+} %}
+
+{# Image #}
+{% set img_wrapper_attributes = {
+  class: 'cu-image cu-logo cu-logo__image'
+} %}
+{% set logo_src = logo_src|default(union_file('../../images/union.svg')) %}
+{% set logo_width = logo_width|default(300) %}
+{% set default_img_attributes = {
+  class: 'cu-logo__image',
+  width: logo_width,
+  src: logo_src,
+  alt: logo_alt|default('Home')
+} %}
+
+{# @todo: implement more robust attributes that can be additive #}
+{% set wrapper_attributes = union_attributes(wrapper_attributes|default(default_wrapper_attributes)) %}
+{% set attributes = union_attributes(attributes|default(default_img_attributes)) %}
+
+{# Link #}
+{% set logo_link = logo_link|default('/')%}
+
+<div{{ wrapper_attributes }}>
+  {% include '@union/_image.twig' with {
+    img_link_url: logo_link,
+    attributes: attributes,
+    wrapper_attributes: img_wrapper_attributes
+  } only %}
+</div>
+

@@ -1,0 +1,113 @@
+.cu-course-finder {
+  position: relative;
+  z-index: 5;
+  background: var(--cu-color-brand);
+  color: var(--cu-color-text--light);
+  padding: var(--cu-vr1) var(--cu-ps1);
+  margin: var(--cu-component-margin-top, var(--cu-vr1)) 0 var(--cu-component-margin-bottom, var(--cu-vr1)) 0; }
+  @media (min-width: 61rem) {
+    .cu-course-finder {
+      padding: var(--cu-vr2) var(--cu-ps3); } }
+  .cu-course-finder__content {
+    margin: 0 auto;
+    max-width: var(--cu-max-width-section, 1060px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    @media (min-width: 61rem) {
+      .cu-course-finder__content {
+        flex-direction: row;
+        align-items: center; } }
+    @media (min-width: 61rem) {
+      .cu-course-finder__content .cu-heading {
+        margin: 0 var(--cu-vr2) 0 0; } }
+  .cu-course-finder__topics-list {
+    z-index: 10;
+    position: relative;
+    margin: 0 0 var(--cu-vr1) 0;
+    background: white;
+    height: 3rem;
+    overflow: hidden; }
+    .cu-course-finder__topics-list:hover {
+      overflow: visible; }
+    @media (min-width: 61rem) {
+      .cu-course-finder__topics-list {
+        margin: 0 var(--cu-ps1) 0 0; } }
+    .cu-course-finder__topics-list.topics-list--expanded {
+      overflow: visible; }
+      .cu-course-finder__topics-list.topics-list--expanded .cu-course-finder__trigger {
+        transform: rotate(180deg); }
+    .cu-course-finder__topics-list .views-element-container > div {
+      background: white;
+      box-shadow: 0px 5px 16px 0 rgba(0, 0, 0, 0.05);
+      display: grid; }
+      @media (min-width: 61rem) {
+        .cu-course-finder__topics-list .views-element-container > div {
+          grid-template-columns: 1fr 1fr;
+          width: 150%; } }
+    .cu-course-finder__topics-list a {
+      --cu-current-link-color: var(--cu-text-color);
+      text-decoration: none;
+      display: block;
+      background: white;
+      min-height: 3rem;
+      padding: 1em;
+      line-height: 1; }
+      .cu-course-finder__topics-list a:hover {
+        --cu-current-link-color: var(--cu-color-brand); }
+  .cu-course-finder .cu-course-finder__label {
+    display: block;
+    line-height: 1;
+    padding: var(--cu-vr0);
+    color: #757575; }
+  .cu-course-finder .cu-course-finder__trigger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #757575;
+    border: none;
+    background: transparent;
+    min-height: 3rem;
+    transition-duration: 0.25s;
+    transition-property: transform; }
+    @media (min-width: 61rem) {
+      .cu-course-finder .cu-course-finder__trigger {
+        display: none; } }
+  .cu-course-finder .cu-course-finder__search {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; }
+    @media (min-width: 61rem) {
+      .cu-course-finder .cu-course-finder__search {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; } }
+    .cu-course-finder .cu-course-finder__search input[type="text"] {
+      margin-bottom: var(--cu-vr1); }
+      @media (min-width: 61rem) {
+        .cu-course-finder .cu-course-finder__search input[type="text"] {
+          margin-bottom: 0; } }
+    .cu-course-finder .cu-course-finder__search input[type="submit"] {
+      --cu-current-link-color: black;
+      --cu-current-font-size: var(--cu-ms1);
+      border-radius: 2px;
+      border: 4px solid #b31b1b;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      margin-bottom: 1rem;
+      width: auto;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      border: 4px solid white;
+      margin: 0;
+      align-self: flex-start; }
+      @media (min-width: 61rem) {
+        .cu-course-finder .cu-course-finder__search input[type="submit"] {
+          margin-left: var(--cu-ps1); } }
+  .cu-course-finder .cu-course-finder__search__input {
+    height: 3rem;
+    padding: 0 var(--cu-ps1);
+    border: none; }
+/*# sourceMappingURL=course-finder.css.map */

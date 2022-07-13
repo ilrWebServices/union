@@ -1,0 +1,150 @@
+/*----------  CSS Variables  ----------*/
+:root {
+  --cu-font-family: Replica, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --cu-font-weight: var(--cu-base-font-weight, 300);
+  --cu-line-height: var(--cu-base-line-height, 1.5);
+  --cu-font-weight: var(--cu-base-font-weight, 300);
+  --cu-current-font-size: var(--cu-ms1);
+  --cu-heading-font-weight: var(--cu-base-heading-font-weight, 300);
+  --cu-heading-line-height: var(--cu-base-heading-line-height, 1.2);
+  --cu-heading-font-family: var(--cu-base-heading-font-family, 'Replica');
+  --cu-font-size-percentage: var(--cu-base-font-size-percentage, 100%);
+  --cu-text-color: #222;
+  --cu-color-text--light: #fff;
+  --cu-current-text-color: #222;
+  --cu-text-xxxl: var(--cu-ms6);
+  --cu-text-xxl: var(--cu-ms5);
+  --cu-text-xl: var(--cu-ms3);
+  --cu-text-lg: var(--cu-ms2);
+  --cu-text-med: var(--cu-ms1);
+  --cu-text-reg: var(--cu-ms0); }
+
+@media (min-width: 1024px) {
+  :root {
+    --cu-font-size-percentage: 113%;
+    --cu-ms-ratio: var(--minor-third);
+    --cu-current-line-height: 1.5; } }
+
+html {
+  font-size: var(--cu-font-size-percentage); }
+
+body {
+  font-family: var(--cu-font-family);
+  line-height: var(--cu-line-height);
+  font-weight: var(--cu-font-weight); }
+
+[class*='cu-'] {
+  font-size: var(--cu-current-font-size, inherit);
+  font-weight: var(--cu-current-font-weight, inherit);
+  line-height: var(--cu-current-line-height, inherit);
+  /*----------  Tag-based styles  ----------*/ }
+  [class*='cu-'] p {
+    margin-top: 0; }
+  [class*='cu-'] a {
+    color: var(--cu-current-link-color, #b31b1b); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: var(--cu-current-heading-size, inherit); }
+
+.cu-heading {
+  --cu-current-line-height: var(--cu-heading-line-height, 1.2);
+  --cu-current-font-weight: var(--cu-heading-font-weight);
+  margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
+  font-size: var(--cu-current-heading-size, inherit); }
+  .cu-heading a:hover {
+    text-decoration: none; }
+  .cu-heading::after {
+    content: '';
+    display: block;
+    width: var(--cu-header-accent-width);
+    max-width: 100%;
+    padding: var(--cu-header-accent-padding);
+    border-bottom: var(--cu-header-accent-border);
+    transition: width ease-in .25s; }
+  .cu-heading:hover::after {
+    width: var(--cu-header-accent-width-hover, calc(var(--cu-header-accent-width) * 2)); }
+
+/*----------  Class-based sizing  ----------*/
+[class*='cu-text'] {
+  font-weight: var(--cu-font-weight);
+  line-height: var(--cu-line-height);
+  font-size: var(--font-size);
+  margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr1)); }
+
+[class*='cu-text--x'] {
+  --cu-font-family: var(--cu-heading-font-family);
+  --cu-font-weight: var(--cu-heading-font-weight);
+  --cu-line-height: var(--cu-heading-line-height);
+  --cu-font-size: var(--cu-current-heading-size);
+  font-size: var(--cu-current-heading-size); }
+
+h1, .cu-text--xxxl {
+  --cu-current-heading-size: var(--cu-text-xxxl); }
+
+h2, .cu-text--xxl {
+  --cu-current-heading-size: var(--cu-text-xxl); }
+
+h3, .cu-text--xl {
+  --cu-current-heading-size: var(--cu-text-xl); }
+
+h4, .cu-text--lg {
+  --cu-current-heading-size: var(--cu-text-lg); }
+
+.cu-text--md {
+  --cu-current-heading-size: var(--cu-text-med); }
+
+.cu-text--reg {
+  font-size: var(--cu-base-font-size); }
+
+.cu-text--sm,
+small {
+  font-size: var(--cu-ms-1); }
+
+.cu-text--xs {
+  font-size: var(--cu-ms-2); }
+
+.cu-heading--small {
+  --cu-current-heading-size: var(--cu-ms-1);
+  --cu-current-font-weight: bold !important; }
+
+.cu-heading--strong {
+  font-family: 'futura-pt';
+  text-transform: uppercase;
+  font-size: var(--cu-ms3);
+  --cu-current-line-height: 1; }
+  @media (min-width: 37.5rem) {
+    .cu-heading--strong {
+      font-size: var(--cu-ms7);
+      --cu-current-line-height: 1.6; } }
+  .cu-heading--strong span {
+    color: #b31b1b; }
+
+.cu-text .cu-heading {
+  order: -1; }
+
+.cu-text .cu-heading--small {
+  order: -2; }
+
+.cu-section-pad {
+  border: none;
+  height: var(--cu-vr3); }
+
+span.strong {
+  font-weight: bold; }
+
+span.block {
+  display: block; }
+
+@media (hover: hover) and (pointer: fine) {
+  .touchscreen-only {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    word-wrap: normal; } }
+
+.cu-style--link {
+  color: var(--cu-current-link-color, #b31b1b);
+  text-decoration: underline; }
+/*# sourceMappingURL=typography.css.map */

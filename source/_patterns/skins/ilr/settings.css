@@ -1,0 +1,11 @@
+:root {
+  --cu-color-background: #fff;
+  --cu-vertical-margin: var(--cu-vr1);
+  --cu-card-border-radius: 3px; }
+
+.cu-card--promo {
+  --cu-card-color-background: #efefef; }
+
+.cu-card--light {
+  --cu-card-color-background: #fff !important; }
+/*# sourceMappingURL=settings.css.map */

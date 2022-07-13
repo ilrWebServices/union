@@ -1,0 +1,11 @@
+.cu-layout--twocol {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--cu-grid-gap, var(--cu-vr3, 3rem)); }
+  @media (min-width: 61rem) {
+    .cu-layout--twocol {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 0; }
+      .cu-layout--twocol .cu-section-heading {
+        grid-column: 1/-1; } }
+/*# sourceMappingURL=cu-twocol.css.map */

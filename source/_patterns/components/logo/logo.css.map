@@ -1,0 +1,1 @@
+{"version":3,"file":"components/logo/logo.css","sources":["components/logo/logo.scss"],"sourcesContent":[".cu-logo {\n  &--union {\n    max-width: 200px;\n  }\n}\n"],"names":[],"mappings":"AACG,AAAD,eAAQ,CAAC;EACP,SAAS,EAAE,KAAK,GACjB"}

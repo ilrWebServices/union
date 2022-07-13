@@ -1,7 +1,7 @@
 {
   "cacheBust": true,
   "cleanPublic": true,
-  "defaultPattern": "pages-welcome",
+  "defaultPattern": "all",
   "defaultShowPatternInfo": false,
   "ishControlsHide": {
     "s": false,
@@ -55,7 +55,7 @@
   "paths": {
     "source": {
       "root": "./source/",
-      "patterns": "./source/patterns/",
+      "patterns": "./source/_patterns/",
       "data": "./source/_data/",
       "meta": "./source/_meta/",
       "annotations": "./source/_annotations/",
@@ -69,7 +69,7 @@
       },
       "js": "./source/js",
       "images": "./source/images",
-      "fonts": "./source/patterns/skins/ilr/fonts",
+      "fonts": "./source/_patterns/skins/ilr/fonts",
       "css": "./source/css"
     },
     "public": {
@@ -96,8 +96,13 @@
     "inreview",
     "complete"
   ],
-  "patternExportDirectory": "./pattern_exports/",
+  "patternExportAll": false,
+  "patternExportDirectory": "pattern_exports",
   "patternExportPatternPartials": [],
+  "patternExportPreserveDirectoryStructure": true,
+  "patternExportRaw": false,
+  "patternMergeVariantArrays": true,
+  "renderFlatPatternsOnViewAllPages": false,
   "serverOptions": {
     "wait": 1000
   },
@@ -106,10 +111,12 @@
   "theme": {
     "color": "light",
     "density": "compact",
-    "layout": "horizontal"
+    "layout": "horizontal",
+    "noViewAll": false
   },
   "uikits": [
     {
+      "name": "uikit-workshop",
       "package": "@pattern-lab/uikit-workshop",
       "outputDir": "",
       "enabled": true,
@@ -131,7 +138,14 @@
           "id": "union",
           "recursive": true,
           "paths": [
-            "./source/patterns"
+            "./source/_patterns"
+          ]
+        },
+        {
+          "id": "components",
+          "recursive": true,
+          "paths": [
+            "./source/_patterns/components"
           ]
         }
       ],
