@@ -1,7 +1,7 @@
 const { join, relative } = require('path');
 const Generator = require('yeoman-generator');
 
-let componentPath = join(__dirname, '../../source/patterns/components/');
+let componentPath = join(__dirname, '../../source/_patterns/components/');
 
 const prompts = [
   {
