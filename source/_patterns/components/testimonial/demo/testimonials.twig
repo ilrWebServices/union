@@ -1,0 +1,11 @@
+{% for testimonial in demo.testimonials %}
+  {% include '@union/_testimonial.twig' with {
+    quote: testimonial.quote,
+    name: testimonial.name,
+    title: testimonial.title,
+    media: include('@union/_image.twig', {
+      img_src: 'https://placeimg.com/600/840/people',
+      img_alt: 'Alt text on img',
+    }, with_context = false),
+  } only %}
+{% endfor %}

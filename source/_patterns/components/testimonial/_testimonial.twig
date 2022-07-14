@@ -1,0 +1,15 @@
+{{ attach_library('union_organizer/testimonial') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-testimonial']) %}
+<div{{ attributes }}>
+  <div class="cu-testimonial__content">
+    <div class="cu-testimonial__quote">{{ quote }}</div>
+    <div class="cu-testimonial__name">&ndash; {{ name }}</div>
+    <div class="cu-testimonial__title">{{ title }}</div>
+  </div>
+  {% if media %}
+  <div class="cu-testimonial__media">
+    {{ media }}
+  </div>
+  {% endif %}
+</div>
