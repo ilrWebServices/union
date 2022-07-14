@@ -206,6 +206,17 @@
 
 })(document);
 
+(function (document) {
+  document.addEventListener('click', function(event) {
+    if (event.target.matches('.cu-testimonial__media .cu-image')) {
+      let chosen = event.target.closest('.cu-testimonial');
+      let deck = event.target.closest('.cu-testimonial-deck');
+      let testimonials = deck.getElementsByClassName('cu-testimonial');
+      deck.insertBefore(chosen, testimonials[0]);
+    }
+  }, false);
+})(document);
+
 // A simple script to pause videos when they aren't visible in the viewport.
 // @todo Add logic to deal with videos added to the DOM via ajax or other.
 // @todo Deal with videos in iframes. See https://stackoverflow.com/a/15251023 and https://stackoverflow.com/q/12336031

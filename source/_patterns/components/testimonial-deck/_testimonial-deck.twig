@@ -1,0 +1,25 @@
+{{ attach_library('union_organizer/testimonial-deck') }}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-testimonial-deck']) %}
+
+<div{{ attributes }}>
+  {% for testimonial in testimonials %}
+    {% set rendered_media %}
+      {% if testimonial.media %}
+        {{ testimonial.media }}
+      {% else %}
+        {% include '@union/_image.twig' with {
+          img_src: testimonial.img.src,
+          img_alt: testimonial.img.alt
+        } only %}
+      {% endif %}
+    {% endset %}
+
+    {% include '@union/_testimonial.twig' with {
+      quote: testimonial.quote,
+      name: testimonial.name,
+      title: testimonial.title,
+      media: rendered_media,
+    } only %}
+  {% endfor %}
+</div>
