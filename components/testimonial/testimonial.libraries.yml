@@ -1,0 +1,4 @@
+css:
+  testimonial.css: {}
+dependencies:
+  - base

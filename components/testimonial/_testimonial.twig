@@ -1,0 +1,26 @@
+{#
+/**
+ * Testimonial
+ *
+ * A testimonial is a quote by a person, along with optional media.
+ *
+ * @var string $quote The quotation.
+ * @var string $name The name of the person quoted.
+ * @var string $title Title of the person quoted.
+ * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+<div{{ attributes.addClass(['cu-testimonial']) }}>
+  <div class="cu-testimonial__content">
+    <div class="cu-testimonial__quote">{{ quote }}</div>
+    <div class="cu-testimonial__name">&ndash; {{ name }}</div>
+    <div class="cu-testimonial__title">{{ title }}</div>
+  </div>
+  {% if media %}
+  <div class="cu-testimonial__media">
+    {{ media }}
+  </div>
+  {% endif %}
+</div>
