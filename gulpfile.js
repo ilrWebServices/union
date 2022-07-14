@@ -11,7 +11,7 @@ var sass_config = {
 
 function componentStyles() {
   return gulp
-    .src('source/patterns/**/*.scss', { sourcemaps: true })
+    .src('source/_patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
     .pipe(gulp.dest('source/_patterns/', { sourcemaps: '.' }));
@@ -19,7 +19,7 @@ function componentStyles() {
 
 function concatComponentStyles() {
   return gulp
-    .src('source/patterns/**/*.scss', { sourcemaps: true })
+    .src('source/_patterns/**/*.scss', { sourcemaps: true })
     .pipe(sass(sass_config)
       .on('error', sass.logError))
     .pipe(concat_css('union.css', { rebaseUrls: false }))
@@ -28,7 +28,7 @@ function concatComponentStyles() {
 
 function concatScripts() {
   return gulp
-    .src('source/patterns/**/*.js', { sourcemaps: true })
+    .src('source/_patterns/**/*.js', { sourcemaps: true })
     .pipe(concat('union.js'))
     .pipe(gulp.dest('source/js/', { sourcemaps: '.' }));
 }
@@ -46,9 +46,9 @@ function livereloadStartServer(done) {
 }
 
 function watchFiles(done) {
-  gulp.watch('source/patterns/**/*.scss', allStyles);
+  gulp.watch('source/_patterns/**/*.scss', allStyles);
   gulp.watch('source/images/icons/*.svg', concatSVGSprites);
-  gulp.watch('source/patterns/**/*.js', concatScripts);
+  gulp.watch('source/_patterns/**/*.js', concatScripts);
 
   var lr_watcher = gulp.watch([
     'public/css/union.css',
