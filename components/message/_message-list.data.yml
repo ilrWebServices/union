@@ -1,4 +1,4 @@
-demo:
+-
   status_headings:
     info: 'Info message'
     status: 'Status message'

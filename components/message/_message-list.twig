@@ -1,22 +1,12 @@
 {#
 /**
- * @file
- * Union status message list component.
+ * Message list
  *
  * Displays status, error, and warning messages, grouped by type.
  *
- * An invisible heading identifies the messages for assistive technology.
- * Sighted users see a colored box. See http://www.w3.org/TR/WCAG-TECHS/H69.html
- * for info.
- *
- * Add an ARIA label to the contentinfo area so that assistive technology
- * user agents will better describe this landmark.
- *
- * Available variables:
- * - message_list: List of messages to be displayed, grouped by type.
- * - status_headings: List of all status types.
- * - attributes: HTML attributes for the element, including:
- *   - class: HTML classes.
+ * @var array $message_list List of messages to be displayed, grouped by type (info, status, warning, error).
+ * @var array $status_headings List of all status types.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the list.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}

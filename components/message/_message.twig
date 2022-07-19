@@ -1,4 +1,14 @@
-{{ attach_library('union_organizer/message') }}
+{#
+/**
+ * Message
+ *
+ * Displays a status, error, or warning message.
+ *
+ * @var string $status The message status (e.g. info, status, warning, error).
+ * @var string $message The message text.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the message.
+ */
+#}
 {% set status = status|default('info') %}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass('cu-message', 'cu-message--'~status)%}
