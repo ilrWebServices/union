@@ -13,12 +13,11 @@
  * @var string $card_media Optional media (img, video, or any other CSS replaced element).
  * @var string $card_link_url An optional URL for link over the entire card.
  * @var string $card_link_alt Alt text for the card link.
- * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire card.
- * @var Drupal\Core\Template\Attribute $content_attributes Attributes for the card content region.
- * @var Drupal\Core\Template\Attribute $link_attributes Attributes for the card link.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
+ * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the card content region.
+ * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
  */
 #}
-{{ attach_library('union_organizer/card') }}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-card']) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}

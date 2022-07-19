@@ -1,0 +1,118 @@
+-
+  demo_label: Default teaser
+  card_link_url: '#'
+  card_link_alt: 'People are people'
+  card_content: |
+    <p class="cu-card__date">July 24, 2019</p>
+    <h2 class="cu-card__heading cu-card__heading">Once an ILRie, Always an ILRie</h2>
+    <p class="cu-card__teaser">Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/720/480/people" />
+-
+  demo_label: Icon card
+  attributes:
+    class: cu-card--icon cu-text--xl
+  icon:
+    title: Cornell University Tower
+    label: Undergraduate Admissions
+    label_element: h2
+    icon: tower
+    size: 2.5em
+    attributes:
+      class: cu-icon--inline-centered
+-
+  demo_label: Promo
+  attributes:
+    class: 'cu-card--promo'
+  card_content: |
+    <h2 class="cu-card__heading">Your Life Journey Starts Here</h2>
+    <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+  button:
+    attributes:
+      class: 'cu-button--overlay'
+    text: 'Visit Us'
+-
+  demo_label: Promo with media
+  attributes:
+    class: 'cu-card--promo cu-card--promo-with-media'
+  card_content: |
+    <h2 class="cu-card__heading">700 Acres</h2>
+    <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/1020/450/nature" alt="Hug a tree today" />
+  button:
+    attributes:
+      class: 'cu-button--overlay'
+    text: 'Visit Us'
+-
+  demo_label: Hover overlay
+  attributes:
+    class: 'cu-card--hover-overlay'
+  card_content: |
+    <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+  button:
+    attributes:
+      class: 'cu-button--overlay'
+    text: 'View '
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/450/450/nature" alt="Hug a tree today" />
+-
+  demo_label: Promo light
+  attributes:
+    class: 'cu-card--pinned cu-card--light cu-card--promo'
+  card_content: |
+    <h2 class="cu-card__heading">Sponsor an ILR Internship</h2>
+    <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
+  button:
+    text: 'Learn More'
+-
+  demo_label: Promo portrait
+  attributes:
+    class: 'cu-card--portrait cu-card--pinned cu-card--promo cu-card--promo-with-media'
+  card_content: |
+    <h2 class="cu-card__heading">Andrea Sanders</h2>
+    <h3 class="cu-card__subheading">Undergradute Majoring in Management</h3>
+    <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
+  button:
+    attributes:
+      class: 'cu-button--overlay'
+    text: Student Life
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/680/1200/people" alt="Come join the ILR party" />
+-
+  demo_label: Promo banner
+  overflow_demo: true
+  attributes:
+    class: 'cu-card--promo cu-card--promo-with-media'
+  icon:
+    title: Cornell University
+    icon: 'cornell-seal'
+    size: '2em'
+    attributes:
+      class: 'cu-icon--light'
+  card_content: |
+    <h2 class="cu-card__heading">Visit Cornell ILR</h2>
+    <p>The ILR School and Cornell University admissions information programs and tours are offered throughout the year.</p>
+    <a class="cu-button--overlay cu-button" href="">Visit Us</a>
+    <ul class="cu-card__fact-list">
+      <li class="cu-card__fact">700<span class="cu-card__fact-label">Acre Campus</span></li>
+      <li class="cu-card__fact">4000+<span class="cu-card__fact-label">Courses</span></li>
+      <li class="cu-card__fact">1000+<span class="cu-card__fact-label">Student Organizations</span></li>
+      <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
+      <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
+    </ul>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/1360/656/nature" alt="Cornell is where you want to be" />
+-
+  demo_label: With aside
+  attributes:
+    class: 'cu-card--with-aside'
+  img:
+    blurred: true
+  card_content: |
+    <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
+    <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+    <a class="cu-button--overlay cu-button" href="">Explore</a>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/700/440/people" alt="Undergraduate Admissions" />
+    <div class="cu-image--blurred" style="--cu-bg-image: url(https://placeimg.com/700/440/people)"></div>
