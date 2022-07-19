@@ -1,4 +1,15 @@
-{{ attach_library('union_organizer/breadcrumb') }}
+{#
+/**
+ * Breadcrumb
+ *
+ * A breadcrumb is a list of links that navigate a user up the content hierarchy back to the home page.
+ *
+ * @var array $breadcrumb An array of item objects. Each item should have a `url` and `text` property.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the breadcrumb wrapper.
+ *
+ * @requires base
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-breadcrumb']) %}
 {% set attributes = attributes.setAttribute('aria-labelledby', 'system-breadcrumb') %}
