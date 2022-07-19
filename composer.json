@@ -17,7 +17,8 @@
     "require": {
         "twig/twig": "^2",
         "phpdocumentor/reflection-docblock": "^5.3",
-        "erusev/parsedown": "^1.7"
+        "erusev/parsedown": "^1.7",
+        "symfony/yaml": "^4.4.19"
     },
     "autoload": {
         "psr-4": { "Union\\": "src/" }

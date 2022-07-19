@@ -3,6 +3,7 @@
 namespace Union;
 
 use phpDocumentor\Reflection\DocBlockFactory;
+use Symfony\Component\Yaml\Yaml;
 
 class Component {
 
@@ -25,6 +26,8 @@ class Component {
   protected $js = [];
 
   protected $docblock;
+
+  protected $demoData;
 
   /**
    * Construct a new component.
@@ -53,6 +56,14 @@ class Component {
 
   public function getJs() {
     return $this->js;
+  }
+
+  public function addDemoData(\SplFileInfo $demo_data) {
+    $this->demoData = Yaml::parseFile($demo_data->getPathname());
+  }
+
+  public function getDemoData() {
+    return $this->demoData ?? [];
   }
 
   /**

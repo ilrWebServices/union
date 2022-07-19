@@ -20,8 +20,7 @@ Component example:
 
 ```
 components/button/
-├── buttons.md
-├── buttons.yml
+├── buttons.data.yml
 ├── button.twig
 ├── button.css
 └── button.libraries.yml

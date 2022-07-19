@@ -16,8 +16,10 @@ interface ComponentsInterface {
    * Get a component by ID.
    *
    * @param string $component_id
+   * @param bool $include_demo_data
+   *
    * @return UnionComponent
    */
-  public function getComponent($component_id);
+  public function getComponent($component_id, $include_demo_data);
 
 }

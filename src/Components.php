@@ -9,7 +9,7 @@ class Components implements ComponentsInterface {
   /**
    * {@inheritdoc}
    */
-  public function getComponents() {
+  public function getComponents($include_demo_data = FALSE) {
     $it = new \RecursiveDirectoryIterator(__DIR__ . '/../components');
     $it = new \RecursiveIteratorIterator($it);
     $it = new \RegexIterator($it, '/.+_.*\.twig$/');
@@ -23,18 +23,25 @@ class Components implements ComponentsInterface {
         $template
       );
 
-      $css_it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
-      $css_it = new \RegexIterator($css_it, '/.+\.css$/');
+      $it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
+      $css_it = new \RegexIterator($it, '/.+\.css$/');
 
       foreach ($css_it as $css_file) {
         $this->components[$component_id]->addCss($css_file);
       }
 
-      $js_it = new \RecursiveDirectoryIterator(dirname($template->getRealPath()));
-      $js_it = new \RegexIterator($js_it, '/.+\.js$/');
+      $js_it = new \RegexIterator($it, '/.+\.js$/');
 
       foreach ($js_it as $js_file) {
         $this->components[$component_id]->addJs($js_file);
+      }
+
+      if ($include_demo_data) {
+        $data_it = new \RegexIterator($it, "/$component_id\.data\.yml$/");
+
+        foreach ($data_it as $data_file) {
+          $this->components[$component_id]->addDemoData($data_file);
+        }
       }
     }
 
@@ -44,9 +51,9 @@ class Components implements ComponentsInterface {
   /**
    * {@inheritdoc}
    */
-  public function getComponent($component_id) {
+  public function getComponent($component_id, $include_demo_data = FALSE) {
     if (empty($this->components)) {
-      $this->getComponents();
+      $this->getComponents($include_demo_data);
     }
 
     if (isset($this->components[$component_id])) {
