@@ -1,37 +1,46 @@
+@import './global/global';
+
 .cu-testimonial {
   padding: var(--cu-vr0) var(--cu-vr0);
   display: flex;
   flex-direction: column;
-  gap: var(--cu-vr1); }
-  @media (min-width: 61rem) {
-    .cu-testimonial {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 50%;
-      padding: 0;
-      gap: var(--cu-vr3); } }
+  gap: var(--cu-vr1);
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 50%;
+    padding: 0;
+    gap: var(--cu-vr3);
+  }
+}
 
 .cu-testimonial__content {
   align-self: center;
   order: 2;
   position: relative;
-  padding-top: var(--cu-vr2); }
-  @media (min-width: 61rem) {
-    .cu-testimonial__content {
-      grid-column: 4; } }
-  .cu-testimonial__content::before {
+  padding-top: var(--cu-vr2);
+
+  @include breakpoint(md) {
+    grid-column: 4;
+  }
+
+  &::before {
     content: '';
     display: block;
     width: 100px;
     height: 8px;
-    background: var(--cu-color-brand, #b31b1b);
+    background: var(--cu-color-brand, #{$cornell-red});
     position: absolute;
-    top: 0; }
+    top: 0;
+  }
+}
 
 .cu-testimonial__quote {
   --cu-current-font-size: var(--cu-text-xl);
   --cu-current-font-weight: 600;
   font-family: 'FreightText Pro';
-  margin-bottom: var(--cu-vr1); }
+  margin-bottom: var(--cu-vr1);
+}
 
 .cu-testimonial__name,
 .cu-testimonial__title {
@@ -39,9 +48,14 @@
   --cu-current-font-weight: 700;
   line-height: 20px;
   color: #6C6C6C;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 .cu-testimonial__media {
   order: 1;
-  grid-column: 1 / 4; }
-/*# sourceMappingURL=testimonial.css.map */
+  grid-column: 1 / 4;
+}
+
+
+
+
