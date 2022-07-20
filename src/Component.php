@@ -104,6 +104,15 @@ class Component {
   }
 
   /**
+   * Get a list of references (links) for this component.
+   *
+   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Var_ objects.
+   */
+  public function getReferences() {
+    return $this->getDockblock() ? $this->getDockblock()->getTagsByName('see') : [];
+  }
+
+  /**
    * Get the docblock for this template, if it exists.
    *
    * @return phpDocumentor\Reflection\DocBlock|FALSE
