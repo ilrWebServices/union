@@ -1,0 +1,36 @@
+{
+  "name": "@cornell_ilr/union",
+  "version": "2.0.0-alpha.1",
+  "description": "A component library.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilrWebServices/union.git"
+  },
+  "author": {
+    "name": "Aaron Froehlich",
+    "email": "aaronfroehlich@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Jeff Amaral",
+      "email": "jeff@freethoughtdesign.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ilrWebServices/union/issues"
+  },
+  "homepage": "https://github.com/ilrWebServices/union#readme",
+  "devDependencies": {
+    "gulp": "^4",
+    "gulp-livereload": "^4",
+    "gulp-sass": "^4",
+    "gulp-svgstore": "^7"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp all",
+    "build-styles": "gulp styles"
+  }
+}
