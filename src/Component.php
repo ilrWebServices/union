@@ -25,6 +25,13 @@ class Component {
    */
   protected $js = [];
 
+  /**
+   * Component Fonts
+   *
+   * @var array An array of \SplFileInfo objects representing font files.
+   */
+  protected $fonts = [];
+
   protected $docblock;
 
   protected $demoData;
@@ -50,12 +57,20 @@ class Component {
     $this->js[] = $js;
   }
 
+  public function addFont(\SplFileInfo $font) {
+    $this->fonts[] = $font;
+  }
+
   public function getCss() {
     return $this->css;
   }
 
   public function getJs() {
     return $this->js;
+  }
+
+  public function getFonts() {
+    return $this->fonts;
   }
 
   public function addDemoData(\SplFileInfo $demo_data) {
