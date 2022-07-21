@@ -1,0 +1,53 @@
+{#
+/**
+ * Topic List
+ *
+ * A topic list is a media box with some basic info and a list of links.
+ *
+ * @var string $heading The main heading.
+ * @var string $subheading An optional subheading, displayed unironically _above_ the heading.
+ * @var string $description A short bit of text.
+ * @var string $link The main link for the component.
+ * @var array $items An array of link items. These must contain both `url` and `text` keys.
+ * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=868%3A6877 Image + Articles (which this is based on) in Figma
+ * @see https://www.figma.com/file/7bmAlNTcZzMQa1zB1d5QLZ/ILR-Pillar-Pages?node-id=1945%3A38902 Dave Yantorno's variation
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-topic-list']) %}
+
+<div{{ attributes }}>
+  <div class="cu-topic-list__content">
+    <div class="cu-topic-list__heading">
+      {{ heading }}
+    </div>
+    <div class="cu-topic-list__subheading">
+      {{ subheading }}
+    </div>
+    <div class="cu-topic-list__description">
+      {{ description }}
+    </div>
+    {% if link %}
+    <div class="cu-topic-list__link">
+    {% include '@union/_button.twig' with {
+      text: link
+    } only %}
+    </div>
+    {% endif %}
+    <ul class="cu-topic-list__items">
+    {% for item in items %}
+      <li class="cu-topic-list__item">
+        <a class="cu-topic-list__item-link" href="{{ item.url }}">{{ item.text }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+  {% if media %}
+  <div class="cu-topic-list__media">
+    {{ media }}
+  </div>
+  {% endif %}
+</div>

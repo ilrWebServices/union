@@ -1,0 +1,25 @@
+-
+  heading: Endless Career Paths
+  subheading: One Major
+  description: "One of the greatest strengths of the ILR degree is that it prepares you for jobs and graduate programs in a variety of fields:"
+  media: '<img src="https://placeimg.com/600/840/people" />'
+  link: '<a href="https://www.ilr.cornell.edu/programs/undergraduate-degree-program/undergraduate-admissions/careers">Explore ILR career paths</a>'
+  items:
+    -
+      text: Business
+      url: '#'
+    -
+      text: Law
+      url: '#'
+    -
+      text: Government
+      url: '#'
+    -
+      text: Human Resources
+      url: '#'
+    -
+      text: Labor and Labor Relations
+      url: '#'
+    -
+      text: Social Justice
+      url: '#'

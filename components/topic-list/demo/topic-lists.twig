@@ -1,0 +1,11 @@
+{% include '@union/_topic-list.twig' with {
+  heading: demo.topic_list.heading,
+  subheading: demo.topic_list.subheading,
+  description: demo.topic_list.description,
+  link: '<a class="cu-button" href="https://www.ilr.cornell.edu/programs/undergraduate-degree-program/undergraduate-admissions/careers">Explore ILR career paths</a>',
+  items: demo.topic_list.items,
+  media: include('@union/_image.twig', {
+    img_src: 'https://placeimg.com/600/840/people',
+    img_alt: 'Alt text on img',
+  }, with_context = false),
+} only %}
