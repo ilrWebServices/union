@@ -1,0 +1,41 @@
+@import './global/global';
+
+@include breakpoint(md) {
+  .cu-testimonial-deck {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: var(--cu-vr-1);
+  }
+
+  .cu-testimonial-deck .cu-testimonial__content {
+    display: none;
+  }
+
+  .cu-testimonial__media .cu-image {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+  }
+}
+
+.cu-testimonial-deck .cu-testimonial {
+  display: flex;
+}
+
+.cu-testimonial-deck .cu-testimonial:first-of-type {
+  grid-column: 1 / -1;
+  display: grid;
+
+  .cu-testimonial__content {
+    display: block;
+  }
+
+  .cu-testimonial__media {
+    grid-column: 1 / 4;
+
+    .cu-image {
+      aspect-ratio: initial;
+      cursor: initial;
+    }
+  }
+}

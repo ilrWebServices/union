@@ -1,0 +1,25 @@
+{#
+/**
+ * Testimonial Deck
+ *
+ * A testimonial deck is a carousel-like collection of testimonials.
+ *
+ * @var array $testimonials An array of testimonial data.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=888%3A6805 Image grid testimonial in Figma
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-testimonial-deck']) %}
+
+<div{{ attributes }}>
+  {% for testimonial in testimonials %}
+    {% include '@union/_testimonial.twig' with {
+      quote: testimonial.quote,
+      name: testimonial.name,
+      title: testimonial.title,
+      media: testimonial.media,
+    } only %}
+  {% endfor %}
+</div>

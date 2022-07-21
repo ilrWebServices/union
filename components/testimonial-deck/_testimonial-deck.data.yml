@@ -1,0 +1,23 @@
+-
+  demo_label: Sample
+  testimonials:
+  -
+    quote: "I came to Cornell knowing I wanted a rigorous program and the ability to learn outside of the classroom. I found the perfect balance at ILR through challenging, interdisciplinary courses and opportunities to study in Dublin, work with the Congressional Black Caucus Foundation in Washington, D.C. and create my own radio show here in Ithaca."
+    name: Betty Rubble
+    title: Actress
+    media: '<img class="cu-image" src="https://placeimg.com/600/840/people" alt="Hug a tree today" />'
+  -
+    quote: "Creating a life that reflects your values and satisfies your soul is a rare achievement. In a culture that relentlessly promotes avarice and excess as the good life, a person happy doing his own work is usually considered an eccentric, if not a subversive. Ambition is only understood if it's to rise to the top of some imaginary ladder of success. Someone who takes an undemanding job because it affords him the time to pursue other interests and activities is considered a flake. A person who abandons a career in order to stay home and raise children is considered not to be living up to his potential-as if a job title and salary are the sole measure of human worth."
+    name: Bill Watterson
+    title: Cartoonist
+    media: '<img class="cu-image" src="https://placeimg.com/600/840/arch" alt="Hug a tree today" />'
+  -
+    quote: “Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Donec sed odio dui. Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.”
+    name: Fred Flinstone
+    title: Stoner
+    media: '<img class="cu-image" src="https://placeimg.com/600/840/nature" alt="Hug a tree today" />'
+  -
+    quote: “Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.”
+    name: Wilma Flinstone
+    title: Actress
+    media: '<img class="cu-image" src="https://placeimg.com/600/840/animals" alt="Hug a tree today" />'

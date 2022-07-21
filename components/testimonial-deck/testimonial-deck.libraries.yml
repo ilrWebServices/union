@@ -1,0 +1,6 @@
+css:
+  testimonial-deck.css: {}
+js:
+  testimonial-deck.js: {}
+dependencies:
+  - base
