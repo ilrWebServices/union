@@ -1,7 +1,0 @@
-demo:
-  text: 'Get Involved'
-  pills:
-    - '<a href="#">Vulnerable Workers</a>'
-    - '<a href="#">COVID 19</a>'
-    - '<a href="#">Employers</a>'
-    - 'No link'

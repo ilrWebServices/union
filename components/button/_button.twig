@@ -1,4 +1,13 @@
-{{ attach_library('union_organizer/button') }}
+{#
+/**
+ * Button
+ *
+ * A button is a cute little thing that is generally used for a call to action.
+ *
+ * @var string $text The text of the button. It can be a link.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the button.
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-button']) %}
 <button{{ attributes }}>{{ text }}</button>

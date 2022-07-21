@@ -1,0 +1,23 @@
+-
+  demo_label: Default
+  text: 'Get involved'
+-
+  demo_label: Alt
+  text: '<a href="#">Get involved</a>'
+  attributes:
+    class: 'cu-button--alt'
+-
+  demo_label: Overlay Button
+  text: '<a href="#">Visit us</a>'
+  attributes:
+    class: 'cu-button--overlay'
+-
+  demo_label: Pill
+  text: '<a href="#">Vulnerable Workers</a>'
+  attributes:
+    class: 'cu-button--pill'
+-
+  demo_label: Pill with no link
+  text: 'No link'
+  attributes:
+    class: 'cu-button--pill'
