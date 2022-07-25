@@ -116,3 +116,33 @@
   card_media: |
     <img class="cu-image" src="https://placeimg.com/700/440/people" alt="Undergraduate Admissions" />
     <div class="cu-image--blurred" style="--cu-bg-image: url(https://placeimg.com/700/440/people)"></div>
+-
+  demo_label: Popout (Dark)
+  attributes:
+    class: 'cu-card--popout-right cu-card--popout cu-card--dark'
+  card_content: |
+    <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
+      The Popout Experience</div>
+    <p>Cornell and ILR
+      provide countless opportunities for
+      personal and professional growth through clubs, research experiences, international
+      internships, global service learning programs and study abroad.</p>
+    <div class="cu-button cu-button--overlay">Read more</div>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/1360/700/nature" alt="Cornell is where you want to be" />
+-
+  demo_label: Popout (Vibrant)
+  attributes:
+    class: 'cu-card--popout-right cu-card--popout cu-card--vibrant'
+  card_content: |
+    <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
+      The Popout Experience</div>
+    <p>Cornell and ILR
+      provide countless opportunities for
+      personal and professional growth through clubs, research experiences, international
+      internships, global service learning programs and study abroad.</p>
+    <div class="cu-button cu-button--overlay">Read more</div>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/1360/700/arch" alt="Cornell is where you want to be" />
+  card_link_url: '/news/alumni/david-m-cohen-professorship-endowed'
+  card_link_alt: 'Read more'
