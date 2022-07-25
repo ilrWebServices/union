@@ -72,4 +72,8 @@ class Components implements ComponentsInterface {
     return FALSE;
   }
 
+  public function getImagePath() {
+    return realpath(__DIR__ . '/../images');
+  }
+
 }
