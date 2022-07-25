@@ -1,5 +1,17 @@
-{{ attach_library('union_organizer/logo') }}
-
+{#
+/**
+ * Logo
+ *
+ * A logo image, with optional width constraints, link, and default wrapper attributes.
+ *
+ * @var string $logo_src The URL to a PNG, jpeg, svg, etc. image file. Required. For small files, base64 encoded data URIs work well.
+ * @var string $logo_width The width of the logo image in px. Defaults to 300.
+ * @var string $logo_alt Alt text for the logo image. Defaults to 'Home'.
+ * @var string $logo_link URL for the logo link. Defaults to '/'.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the image.
+ * @var Drupal\Core\Template\Attribute|array $wrapper_attributes Attributes (class, data, etc.) for the logo wrapper.
+ */
+#}
 {# Wrapper #}
 {% set default_wrapper_attributes = {
   class: 'cu-logo cu-logo--union'
@@ -9,7 +21,6 @@
 {% set img_wrapper_attributes = {
   class: 'cu-image cu-logo cu-logo__image'
 } %}
-{% set logo_src = logo_src|default(union_file('components/logo/union.svg')) %}
 {% set logo_width = logo_width|default(300) %}
 {% set default_img_attributes = {
   class: 'cu-logo__image',
