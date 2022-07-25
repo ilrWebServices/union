@@ -1,0 +1,114 @@
+-
+  demo_label: 'calendar'
+  title: Calendar
+  icon: 'calendar'
+-
+  demo_label: 'cornell-seal'
+  title: Cornell University Seal
+  icon: 'cornell-seal'
+  size: 73px
+-
+  demo_label: 'tower'
+  title: Cornell University Tower
+  icon: 'tower'
+  size: 18px
+  label: 'In the news'
+  attributes:
+    class: 'cu-icon--color-brand'
+-
+  demo_label: 'check-circle'
+  title: Check Circle
+  icon: 'check-circle'
+-
+  demo_label: 'drupal'
+  title: Drupal
+  icon: 'drupal'
+-
+  demo_label: 'facebook'
+  title: Facebook
+  icon: 'facebook'
+-
+  demo_label: 'handshake'
+  title: Handshake
+  icon: 'handshake'
+  size: 3em
+  label: 'Shake shake shake'
+-
+  demo_label: 'ilr-nickname'
+  title: ILR Nickname
+  icon: 'ilr-nickname'
+-
+  demo_label: 'instagram'
+  title: Instagram
+  icon: 'instagram'
+-
+  demo_label: 'linkedin'
+  title: LinkedIn
+  icon: 'linkedin'
+-
+  demo_label: 'mortarboard'
+  title: Mortarboard
+  icon: 'mortarboard'
+-
+  demo_label: 'news-phone'
+  title: News Phone
+  icon: 'news-phone'
+-
+  demo_label: 'newsletter'
+  title: Newsletter
+  icon: 'newsletter'
+-
+  demo_label: 'newsletter'
+  title: Newsletter Inline
+  icon: 'newsletter'
+  size: 2em
+  label: Sign up for our newsletter!
+  attributes:
+    class: 'cu-icon--inline'
+-
+  demo_label: 'play'
+  title: Play button
+  icon: 'play'
+  size: 2em
+  attributes:
+    class: 'cu-icon--play'
+-
+  demo_label: 'play'
+  title: Play button with label
+  icon: 'play'
+  size: 2em
+  label: Watch Video
+  attributes:
+    class: 'cu-icon--inline cu-icon--play'
+-
+  demo_label: 'pause'
+  title: Pause button
+  icon: 'pause'
+  size: 2em
+  attributes:
+    class: 'cu-icon--pause'
+-
+  demo_label: 'speech-bubble'
+  title: Speech Bubble
+  icon: 'speech-bubble'
+-
+  demo_label: 'student'
+  title: Student
+  icon: 'student'
+-
+  demo_label: 'twitter'
+  title: Twitter
+  icon: 'twitter'
+-
+  demo_label: 'youtube'
+  title: Youtube
+  icon: 'youtube'
+-
+  demo_label: 'Test'
+  title: Cornell University Tower
+  label: Undergraduate Admissions
+  label_element: h2
+  icon: tower
+  size: 2.5em
+  attributes:
+    class: cu-icon--inline-centered

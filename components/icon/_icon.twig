@@ -1,5 +1,48 @@
-{{ attach_library('union_organizer/icon') }}
-
+{#
+/**
+ * Icon
+ *
+ * A vector-based icon. Icons are svg data embedded in an inline `svg` element via the `use` element and svg fragment identifiers.
+ *
+ * Currently available icons:
+ *
+ * - check-circle
+ * - cornell-seal
+ * - facebook
+ * - handshake
+ * - ilr-nickname
+ * - instagram
+ * - linkedin
+ * - mortarboard
+ * - news-phone
+ * - newsletter
+ * - speech-bubble
+ * - student
+ * - tower
+ * - twitter
+ * - play
+ * - pause
+ * - youtube
+ *
+ * The following variants are available:
+ *
+ * `.cu-icon--inline`: Places the icon, label, and wrapper inline.
+ *
+ * `.cu-icon--inline-centered`: Places the label inline and centers the wrapper.
+ *
+ * `.cu-icon--color-light`: Uses a lighter color for the icon and label for use with dark backgrounds.
+ *
+ * `.cu-icon--color-brand`: Uses the brand color for the icon and label.
+ *
+ * @var string $icon The name if the desired icon.
+ * @var string $title A title for the icon. Generally used for tooltips and accessibility.
+ * @var string $size The size of the icon in CSS units (e.g. 18px, 2em). (optional; default: 2em)
+ * @var string $label A visible text label to be displayed alongside the icon. (optional)
+ * @var string $label_element The HTML element for the icon label. (default: `div`)
+ * @var string $link A URL/URI that will be added to an `a` element around the icon and label.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the icon. Useful for passing in variant classes. (optional)
+ */
+#}
 {% set size = size|default('2em') %}
 {% set label_element = label_element|default('div') %}
 {% set attributes = union_attributes(attributes|default([])) %}
