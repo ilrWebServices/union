@@ -15,7 +15,6 @@
     align-items: flex-start;
     order: 2;
     padding: var(--cu-card-content-padding);
-    background: var(--cu-card-background);
   }
 
   &__media {
@@ -75,6 +74,7 @@
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;
       align-items: center;
       text-align: center;
+      background: var(--cu-card-background);
 
       &::before {
         content: '';

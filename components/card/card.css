@@ -27,8 +27,7 @@
     flex-direction: column;
     align-items: flex-start;
     order: 2;
-    padding: var(--cu-card-content-padding);
-    background: var(--cu-card-background); }
+    padding: var(--cu-card-content-padding); }
   .cu-card__media {
     order: 1;
     margin-bottom: var(--cu-vr0); }
@@ -62,7 +61,8 @@
       padding: var(--cu-vr2) var(--cu-ps2);
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;
       align-items: center;
-      text-align: center; }
+      text-align: center;
+      background: var(--cu-card-background); }
       .cu-card--popout .cu-card__content::before {
         content: '';
         width: 25%;
