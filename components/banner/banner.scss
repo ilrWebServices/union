@@ -1,0 +1,252 @@
+@import './global/global';
+
+.cu-banner {
+  position: relative;
+  color: $color-text--light;
+  color: var(--cu-color-text--light, #{$color-text--light});
+}
+
+/*=============================================
+=            Panel banner            =
+=============================================*/
+.cu-banner--panel {
+  padding: 1em 33% 1em 2em;
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: 66% 34%;
+    padding: 0;
+  }
+
+  .cu-banner__header {
+    margin-bottom: var(--cu-vr0);
+    border-bottom: 1px solid rgba(white, 0.3);
+    --cu-current-font-size: var(--cu-text-xxl);
+
+    @include breakpoint(md) {
+      grid-column: 1;
+      grid-row: 1;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--cu-vr1) var(--cu-ps2);
+      margin: 0;
+    }
+  }
+
+  .cu-banner__content {
+    color: $color-text--light;
+    color: var(--cu-color-text--light, #{$color-text--light});
+
+    @include breakpoint(md) {
+      background: var(--cu-color-bg--dark, #{$color-bg--dark});
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      justify-content: center;
+      padding: var(--cu-vr1) var(--cu-ps2);
+    }
+  }
+
+  .cu-button {
+    align-self: flex-start;
+    --cu-current-link-color: white;
+  }
+
+  .cu-banner__media {
+    @include overlay;
+    position: absolute;
+    overflow: hidden;
+    max-width: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // z-index: -2;
+
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
+    }
+
+    @include breakpoint(md) {
+      position: relative;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+}
+
+.cu-banner--panel-left {
+  @include breakpoint(md) {
+    grid-template-columns: 34% 66%;
+  }
+
+  .cu-banner__media {
+    @include breakpoint(md) {
+      grid-column: 2;
+    }
+  }
+}
+
+/*=============================================
+=            Page banner                      =
+=============================================*/
+.cu-banner--page {
+  background: var(--cu-color-bg--dark, #{$color-bg--dark});
+  padding: var(--cu-vr1);
+
+  @include breakpoint(sm) {
+    padding: var(--cu-vr1) var(--cu-vr2);
+  }
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr1) var(--cu-vr4);
+  }
+
+  .cu-breadcrumb {
+    margin-bottom: var(--cu-vr1);
+  }
+
+  .cu-banner__content {
+    max-width: var(--cu-max-width-section, #{$max-width-section});
+    margin: 0 auto;
+    // z-index: 2;
+    // position: relative;
+  }
+
+  .cu-banner__summary {
+    margin-bottom: var(--cu-vr2);
+  }
+
+  .cu-banner__list-heading {
+    --cu-current-heading-size: var(--cu-ms0);
+    --cu-current-font-weight: bold !important;
+  }
+
+  .cu-banner__list {
+    --cu-current-font-size: var(--cu-ms-1);
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .cu-banner__list-item {
+    padding-bottom: var(--cu-vr-1);
+    margin-bottom: var(--cu-vr-1);
+    max-width: 75%;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 10%;
+      max-width: 100%;
+      padding: .25em 0 0 0;
+      border-bottom: 4px solid var(--cu-color-brand, #{$cornell-red});
+    }
+  }
+
+  .cu-banner__media {
+    @include overlay;
+    // position: absolute;
+    overflow: hidden;
+    max-width: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // z-index: 1;
+
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
+    }
+  }
+}
+
+/*=====  End of Page banner  ======*/
+
+
+/*=============================================
+=            Video banner                     =
+=============================================*/
+.cu-banner--video {
+  .cu-banner__content {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--cu-vr1) var(--cu-ps1);
+    // z-index: 1; // Required for Chrome to see the hover state and selection in content markup.
+
+    > * {
+      pointer-events: auto;
+    }
+
+    @include breakpoint(lg) {
+      padding: var(--cu-vr1) var(--cu-ps3);
+    }
+
+    &--align-bottom {
+      justify-content: flex-end;
+    }
+  }
+
+  .cu-banner__media {
+    overflow: hidden;
+    max-width: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
+    }
+  }
+
+  .video-pause {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+  }
+}
+/*=====  End of Video banner  ======*/

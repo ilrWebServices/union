@@ -20,6 +20,12 @@
     size: 2.5em
     attributes:
       class: cu-icon--inline-centered
+  card_content: |
+    <svg class="cu-icon__image" width="2.5em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <title>Cornell University Tower Icon</title>
+      <use href="/sites/default/files-d8/union/images/icons.svg#tower"></use>
+    </svg>
+    <h2 class="cu-icon__label">Undergraduate Admissions</h2>
 -
   demo_label: Promo
   attributes:

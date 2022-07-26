@@ -1,17 +1,63 @@
-{{ attach_library('union_organizer/banner') }}
+{#
+/**
+ * Banner
+ *
+ * Banners are similar to cards, but they are ususally displayed full-width and behave differently when resized.
+ *
+ * They display full-width and are used to:
+ *
+ * - display page headers with navigation
+ * - highlight and link to important announcements
+ * - display videos with content overlays
+ *
+ * ## Variations
+ *
+ * ### Announcement Banner
+ *
+ * Announcement banners (`cu-banner--announcement`) place the title over the image while the content flows into a second column on wider displays. They will initially be used in combination with the dismissible components, as a way to include an important announcement at the top of a page. Usage may extend over time, though frequent usage should probably be avoided so that they are more visible.
+ *
+ * ### Video Banner
+ *
+ * Video banners (`cu-banner--video`) display a video component with overlayed content. If the content contains a `play` icon, that icon will control the playback of any video found inside the media section.
+ *
+ * @var string $content The primary content of the banner, often markup.
+ * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var string $heading Main heading title for the banner.
+ * @var string $subheading Secondary heading for the banner, ironically displayed _above_ the heading.
+ * @var string $link_url An optional URL for the banner.
+ * @var string $link_text The link text.
+ * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire banner.
+ * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=473%3A2463 Image + Dark Panel/Left/Content (AKA Banner) in Figma
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-banner']) %}
+{% set attributes = attributes.addClass(['cu-banner ']) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set content_attributes = content_attributes.addClass(['cu-banner__content']) %}
 
 <div{{ attributes }}>
-  {% if heading %}
-  <div class="cu-banner__header">
-    <h2 class="cu-banner__heading">{{ heading }}</h2>
-  </div>
-  {% endif %}
   <div{{ content_attributes }}>
+    {% if icon_data %}
+    {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-icon--color-light cu-icon--inline' }}) %}
+    {% include '@union/_icon.twig' with icon_data only %}
+    {% endif %}
+    {% if heading %}
+    <h2 class="cu-banner__heading cu-heading">{{ heading }}</h2>
+    {% endif %}
+    {% if subheading %}
+    <h3 class="cu-banner__subheading cu-heading">{{ subheading }}</h3>
+    {% endif %}
     {{ content }}
+    {% if link_url %}
+    {% include '@union/_button.twig' with {
+      text: link_text,
+      url: link_url,
+      attributes: { 'class': 'cu-banner__link' }
+    } only %}
+    {% endif %}
   </div>
   <div class="cu-banner__media">
     {{ media }}

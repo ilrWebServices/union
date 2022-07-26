@@ -1,0 +1,51 @@
+-
+  demo_label: Page
+  attributes:
+    class: 'cu-banner--page'
+  heading: 'The simple truth is today we need to have an international perspective'
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p> Button TBA
+  media: |
+    <img class="cu-image" src="https://placeimg.com/870/360/arch" alt="Undergraduate Admissions" />
+-
+  demo_label: Video
+  attributes:
+    class: 'cu-banner--video'
+  content: |
+    <div class="cu-icon--inline cu-icon cu-icon--play" role="button" aria-pressed="false">
+      <svg class="cu-icon__image" width="4em" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <title>Play video Icon</title>
+        <use href="/sites/default/files-d8/union/images/icons.svg#play"></use>
+      </svg>
+      <div class="cu-icon__label">Watch Video</div>
+    </div>
+  media: |
+    <video class="cu-video" loop="" muted="" src="https://ilr-images.s3.amazonaws.com/video/ilr_hero_clip_75_202008_500.mp4" />
+-
+  demo_label: Panel (Default)
+  attributes:
+    class: 'cu-banner--panel'
+  heading: 'Barney Rubble'
+  subheading: 'Associate Professor'
+  icon_data:
+    icon: student
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  media: |
+    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+  link_url: '#'
+  link_text: 'Read more about ILR faculty'
+-
+  demo_label: Panel (`cu-banner--panel-left`)
+  attributes:
+    class: 'cu-banner--panel cu-banner--panel-left'
+  heading: 'Barney Rubble'
+  subheading: 'Associate Professor'
+  icon_data:
+    icon: student
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  media: |
+    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+  link_url: '#'
+  link_text: 'Read more about ILR faculty'

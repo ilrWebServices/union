@@ -4,21 +4,21 @@
   color: var(--cu-color-text--light, #fff); }
 
 /*=============================================
-=            Announcement banner            =
+=            Panel banner            =
 =============================================*/
-.cu-banner--announcement {
+.cu-banner--panel {
   padding: 1em 33% 1em 2em; }
   @media (min-width: 61rem) {
-    .cu-banner--announcement {
+    .cu-banner--panel {
       display: grid;
       grid-template-columns: 66% 34%;
       padding: 0; } }
-  .cu-banner--announcement .cu-banner__header {
+  .cu-banner--panel .cu-banner__header {
     margin-bottom: var(--cu-vr0);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     --cu-current-font-size: var(--cu-text-xxl); }
     @media (min-width: 61rem) {
-      .cu-banner--announcement .cu-banner__header {
+      .cu-banner--panel .cu-banner__header {
         grid-column: 1;
         grid-row: 1;
         border: none;
@@ -27,20 +27,20 @@
         justify-content: center;
         padding: var(--cu-vr1) var(--cu-ps2);
         margin: 0; } }
-  .cu-banner--announcement .cu-banner__content {
+  .cu-banner--panel .cu-banner__content {
     color: #fff;
     color: var(--cu-color-text--light, #fff); }
     @media (min-width: 61rem) {
-      .cu-banner--announcement .cu-banner__content {
+      .cu-banner--panel .cu-banner__content {
         background: var(--cu-color-bg--dark, #333);
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         padding: var(--cu-vr1) var(--cu-ps2); } }
-  .cu-banner--announcement .cu-button {
-    align-self: flex-start; }
-  .cu-banner--announcement .cu-banner__media {
+  .cu-banner--panel .cu-button {
+    align-self: flex-start;
+    --cu-current-link-color: white; }
+  .cu-banner--panel .cu-banner__media {
     position: relative;
     pointer-events: none;
     position: absolute;
@@ -49,9 +49,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: -2; }
-    .cu-banner--announcement .cu-banner__media::before {
+    height: 100%; }
+    .cu-banner--panel .cu-banner__media::before {
       content: '';
       position: absolute;
       top: 0;
@@ -61,17 +60,25 @@
       background: rgba(0, 0, 0, 0.5);
       background: rgba(0, 0, 0, var(--cu-overlay-opacity, 0.5));
       z-index: 2; }
-    .cu-banner--announcement .cu-banner__media img, .cu-banner--announcement .cu-banner__media video {
+    .cu-banner--panel .cu-banner__media img, .cu-banner--panel .cu-banner__media video {
       object-fit: cover;
       width: 100%;
       height: 100%; }
-    .cu-banner--announcement .cu-banner__media :not(img):not(video) {
+    .cu-banner--panel .cu-banner__media :not(img):not(video) {
       display: contents; }
     @media (min-width: 61rem) {
-      .cu-banner--announcement .cu-banner__media {
+      .cu-banner--panel .cu-banner__media {
         position: relative;
         grid-column: 1;
         grid-row: 1; } }
+
+@media (min-width: 61rem) {
+  .cu-banner--panel-left {
+    grid-template-columns: 34% 66%; } }
+
+@media (min-width: 61rem) {
+  .cu-banner--panel-left .cu-banner__media {
+    grid-column: 2; } }
 
 /*=============================================
 =            Page banner                      =
@@ -89,9 +96,7 @@
     margin-bottom: var(--cu-vr1); }
   .cu-banner--page .cu-banner__content {
     max-width: var(--cu-max-width-section, 1060px);
-    margin: 0 auto;
-    z-index: 2;
-    position: relative; }
+    margin: 0 auto; }
   .cu-banner--page .cu-banner__summary {
     margin-bottom: var(--cu-vr2); }
   .cu-banner--page .cu-banner__list-heading {
@@ -119,14 +124,12 @@
   .cu-banner--page .cu-banner__media {
     position: relative;
     pointer-events: none;
-    position: absolute;
     overflow: hidden;
     max-width: none;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    z-index: 1; }
+    height: 100%; }
     .cu-banner--page .cu-banner__media::before {
       content: '';
       position: absolute;
@@ -156,8 +159,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--cu-vr1) var(--cu-ps1);
-  z-index: 1; }
+  padding: var(--cu-vr1) var(--cu-ps1); }
   .cu-banner--video .cu-banner__content > * {
     pointer-events: auto; }
   @media (min-width: 80rem) {
@@ -165,6 +167,20 @@
       padding: var(--cu-vr1) var(--cu-ps3); } }
   .cu-banner--video .cu-banner__content--align-bottom {
     justify-content: flex-end; }
+
+.cu-banner--video .cu-banner__media {
+  overflow: hidden;
+  max-width: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .cu-banner--video .cu-banner__media img, .cu-banner--video .cu-banner__media video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
+  .cu-banner--video .cu-banner__media :not(img):not(video) {
+    display: contents; }
 
 .cu-banner--video .video-pause {
   position: absolute;
