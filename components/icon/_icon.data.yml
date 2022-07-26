@@ -96,6 +96,10 @@
   title: Student
   icon: 'student'
 -
+  demo_label: 'profile'
+  title: Profile
+  icon: 'profile'
+-
   demo_label: 'twitter'
   title: Twitter
   icon: 'twitter'

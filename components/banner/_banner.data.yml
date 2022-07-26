@@ -30,7 +30,7 @@
   heading: 'Barney Rubble'
   subheading: 'Associate Professor'
   icon_data:
-    icon: student
+    icon: profile
   content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   media: |
@@ -44,7 +44,7 @@
   heading: 'Barney Rubble'
   subheading: 'Associate Professor'
   icon_data:
-    icon: student
+    icon: profile
   content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   media: |
