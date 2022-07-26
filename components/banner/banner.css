@@ -15,20 +15,6 @@
       display: grid;
       grid-template-columns: 66% 34%;
       padding: 0; } }
-  .cu-banner--panel .cu-banner__header {
-    margin-bottom: var(--cu-vr0);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    --cu-current-font-size: var(--cu-text-xxl); }
-    @media (min-width: 61rem) {
-      .cu-banner--panel .cu-banner__header {
-        grid-column: 1;
-        grid-row: 1;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: var(--cu-vr1) var(--cu-ps2);
-        margin: 0; } }
   .cu-banner--panel .cu-banner__content {
     color: #fff;
     color: var(--cu-color-text--light, #fff); }
@@ -39,6 +25,26 @@
         flex-direction: column;
         justify-content: center;
         padding: var(--cu-vr1) var(--cu-ps2); } }
+  .cu-banner--panel .cu-banner__heading {
+    --cu-current-heading-size: 50px;
+    font-family: 'futura-pt';
+    text-transform: uppercase;
+    line-height: 1; }
+    .cu-banner--panel .cu-banner__heading::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 8px;
+      margin-top: var(--cu-vr0);
+      background: var(--cu-color-brand, #b31b1b); }
+  .cu-banner--panel .cu-banner__eyebrow-heading {
+    --cu-current-heading-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--cu-vr0); }
+  .cu-banner--panel .cu-banner__icon {
+    margin-bottom: var(--cu-vr0); }
   .cu-banner--panel .cu-button {
     align-self: flex-start; }
   .cu-banner--panel .cu-banner__media {

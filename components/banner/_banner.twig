@@ -23,7 +23,7 @@
  * @var string $content The primary content of the banner, often markup.
  * @var string $media Optional media (img, video, or any other CSS replaced element).
  * @var string $heading Main heading title for the banner.
- * @var string $subheading Secondary heading for the banner, ironically displayed _above_ the heading.
+ * @var string $eyebrow_heading A descriptive keyword or phrase placed above the main heading and content.
  * @var string $link_url An optional URL for the banner.
  * @var string $link_text The link text.
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
@@ -41,14 +41,14 @@
 <div{{ attributes }}>
   <div{{ content_attributes }}>
     {% if icon_data %}
-    {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-icon--color-light cu-icon--inline' }}) %}
+    {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-banner__icon cu-icon--color-light cu-icon--inline' }}) %}
     {% include '@union/_icon.twig' with icon_data only %}
+    {% endif %}
+    {% if eyebrow_heading %}
+    <div class="cu-banner__eyebrow-heading cu-heading">{{ eyebrow_heading }}</div>
     {% endif %}
     {% if heading %}
     <h2 class="cu-banner__heading cu-heading">{{ heading }}</h2>
-    {% endif %}
-    {% if subheading %}
-    <h3 class="cu-banner__subheading cu-heading">{{ subheading }}</h3>
     {% endif %}
     {{ content }}
     {% if link_url %}

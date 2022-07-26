@@ -28,7 +28,7 @@
   attributes:
     class: 'cu-banner--panel'
   heading: 'Barney Rubble'
-  subheading: 'Associate Professor'
+  eyebrow_heading: 'Associate Professor'
   icon_data:
     icon: profile
   content: |
@@ -42,7 +42,7 @@
   attributes:
     class: 'cu-banner--panel cu-banner--panel-left'
   heading: 'Barney Rubble'
-  subheading: 'Associate Professor'
+  eyebrow_heading: 'Associate Professor'
   icon_data:
     icon: profile
   content: |
