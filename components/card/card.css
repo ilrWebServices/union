@@ -10,6 +10,7 @@
   =============================================*/
   /*----------  Promos  ----------*/
   /*----------  Popouts  ----------*/
+  /*----------  Panel  ----------*/
   /*----------  Promo with media and letterbox  ----------*/
   /*----------  Pinned ----------*/
   /*----------  Centered content  ----------*/
@@ -87,6 +88,65 @@
           padding: var(--cu-vr3) var(--cu-ps3); }
         .cu-card--popout.cu-card--popout-left .cu-card__content {
           grid-column: 1; } }
+  .cu-card--panel {
+    padding: 1em 33% 1em 2em; }
+    @media (min-width: 61rem) {
+      .cu-card--panel {
+        display: grid;
+        grid-template-columns: 66% 34%;
+        padding: 0; } }
+    .cu-card--panel .cu-card__content {
+      color: #fff;
+      color: var(--cu-color-text--light, #fff); }
+      @media (min-width: 61rem) {
+        .cu-card--panel .cu-card__content {
+          background: var(--cu-color-bg--dark, #222);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: var(--cu-vr1) var(--cu-ps2); } }
+    .cu-card--panel .cu-card__heading {
+      --cu-current-heading-size: 50px;
+      font-family: 'futura-pt';
+      text-transform: uppercase;
+      line-height: 1; }
+      .cu-card--panel .cu-card__heading::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 8px;
+        margin-top: var(--cu-vr0);
+        background: var(--cu-color-brand, #b31b1b); }
+    .cu-card--panel .cu-card__eyebrow-heading {
+      --cu-current-heading-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--cu-vr0); }
+    .cu-card--panel .cu-card__icon {
+      margin-bottom: var(--cu-vr0); }
+    .cu-card--panel .cu-button {
+      align-self: flex-start; }
+    .cu-card--panel .cu-card__media {
+      width: 100%;
+      height: 100%; }
+      .cu-card--panel .cu-card__media img, .cu-card--panel .cu-card__media video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%; }
+      .cu-card--panel .cu-card__media :not(img):not(video) {
+        display: contents; }
+      @media (min-width: 61rem) {
+        .cu-card--panel .cu-card__media {
+          position: relative;
+          grid-column: 1;
+          grid-row: 1; } }
+  @media (min-width: 61rem) {
+    .cu-card--panel-left {
+      grid-template-columns: 34% 66%; } }
+  @media (min-width: 61rem) {
+    .cu-card--panel-left .cu-card__media {
+      grid-column: 2; } }
   .cu-card--promo-with-media, .cu-card--with-aside {
     position: relative;
     pointer-events: none; }

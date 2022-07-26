@@ -111,6 +111,100 @@
     }
   }
 
+  /*----------  Panel  ----------*/
+  &--panel {
+    padding: 1em 33% 1em 2em;
+
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: 66% 34%;
+      padding: 0;
+    }
+
+    .cu-card__content {
+      color: $color-text--light;
+      color: var(--cu-color-text--light, #{$color-text--light});
+
+      @include breakpoint(md) {
+        background: var(--cu-color-bg--dark, #{$color-bg--dark});
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--cu-vr1) var(--cu-ps2);
+      }
+    }
+
+    .cu-card__heading {
+      --cu-current-heading-size: 50px;
+      font-family: 'futura-pt';
+      text-transform: uppercase;
+      line-height: 1;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 8px;
+        margin-top: var(--cu-vr0);
+        background: var(--cu-color-brand, #{$cornell-red});
+      }
+    }
+
+    .cu-card__eyebrow-heading {
+      --cu-current-heading-size: 12px;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      margin-bottom: var(--cu-vr0);
+    }
+
+    .cu-card__icon {
+      margin-bottom: var(--cu-vr0);
+    }
+
+    .cu-button {
+      align-self: flex-start;
+    }
+
+    .cu-card__media {
+      width: 100%;
+      height: 100%;
+
+      // Only specific Replaced Elements can cover the media div.
+      // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+      img, video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      // Any element in the media section that isn't a replaced element should
+      // be ignored. This will allow the object-fit property to work even if the
+      // img or video is nested in other markup.
+      :not(img):not(video) {
+        display: contents;
+      }
+
+      @include breakpoint(md) {
+        position: relative;
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+
+  &--panel-left {
+    @include breakpoint(md) {
+      grid-template-columns: 34% 66%;
+    }
+
+    .cu-card__media {
+      @include breakpoint(md) {
+        grid-column: 2;
+      }
+    }
+  }
+
   /*----------  Promo with media and letterbox  ----------*/
   &--promo-with-media,
   &--with-aside {
