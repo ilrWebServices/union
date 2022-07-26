@@ -2,6 +2,8 @@
   position: relative;
   color: #fff;
   color: var(--cu-color-text--light, #fff); }
+  .cu-banner .cu-button {
+    --cu-current-link-color: white; }
 
 /*=============================================
 =            Panel banner            =
@@ -32,14 +34,13 @@
     color: var(--cu-color-text--light, #fff); }
     @media (min-width: 61rem) {
       .cu-banner--panel .cu-banner__content {
-        background: var(--cu-color-bg--dark, #333);
+        background: var(--cu-color-bg--dark, #222);
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding: var(--cu-vr1) var(--cu-ps2); } }
   .cu-banner--panel .cu-button {
-    align-self: flex-start;
-    --cu-current-link-color: white; }
+    align-self: flex-start; }
   .cu-banner--panel .cu-banner__media {
     position: relative;
     pointer-events: none;
@@ -84,7 +85,7 @@
 =            Page banner                      =
 =============================================*/
 .cu-banner--page {
-  background: var(--cu-color-bg--dark, #333);
+  background: var(--cu-color-bg--dark, #222);
   padding: var(--cu-vr1); }
   @media (min-width: 37.5rem) {
     .cu-banner--page {
@@ -96,7 +97,9 @@
     margin-bottom: var(--cu-vr1); }
   .cu-banner--page .cu-banner__content {
     max-width: var(--cu-max-width-section, 1060px);
-    margin: 0 auto; }
+    margin: 0 auto;
+    z-index: 2;
+    position: relative; }
   .cu-banner--page .cu-banner__summary {
     margin-bottom: var(--cu-vr2); }
   .cu-banner--page .cu-banner__list-heading {
@@ -124,12 +127,14 @@
   .cu-banner--page .cu-banner__media {
     position: relative;
     pointer-events: none;
+    position: absolute;
     overflow: hidden;
     max-width: none;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    z-index: 1; }
     .cu-banner--page .cu-banner__media::before {
       content: '';
       position: absolute;

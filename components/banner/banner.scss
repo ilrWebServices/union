@@ -4,6 +4,10 @@
   position: relative;
   color: $color-text--light;
   color: var(--cu-color-text--light, #{$color-text--light});
+
+  .cu-button {
+    --cu-current-link-color: white;
+  }
 }
 
 /*=============================================
@@ -51,7 +55,6 @@
 
   .cu-button {
     align-self: flex-start;
-    --cu-current-link-color: white;
   }
 
   .cu-banner__media {
@@ -122,8 +125,8 @@
   .cu-banner__content {
     max-width: var(--cu-max-width-section, #{$max-width-section});
     margin: 0 auto;
-    // z-index: 2;
-    // position: relative;
+    z-index: 2;
+    position: relative;
   }
 
   .cu-banner__summary {
@@ -162,14 +165,14 @@
 
   .cu-banner__media {
     @include overlay;
-    // position: absolute;
+    position: absolute;
     overflow: hidden;
     max-width: none;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    // z-index: 1;
+    z-index: 1;
 
     // Only specific Replaced Elements can cover the media div.
     // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
