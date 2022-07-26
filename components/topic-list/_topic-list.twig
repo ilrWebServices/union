@@ -7,7 +7,8 @@
  * @var string $heading The main heading.
  * @var string $subheading An optional subheading, displayed unironically _above_ the heading.
  * @var string $description A short bit of text.
- * @var string $link The main link for the component.
+ * @var string $link_url The main link for the component.
+ * @var string $link_text The main link text for the component.
  * @var array $items An array of link items. These must contain both `url` and `text` keys.
  * @var string $media Optional media (img, video, or any other CSS replaced element).
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
@@ -30,10 +31,11 @@
     <div class="cu-topic-list__description">
       {{ description }}
     </div>
-    {% if link %}
+    {% if link_url %}
     <div class="cu-topic-list__link">
     {% include '@union/_button.twig' with {
-      text: link
+      text: link_text
+      url: link_url
     } only %}
     </div>
     {% endif %}
