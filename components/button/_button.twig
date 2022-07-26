@@ -4,10 +4,15 @@
  *
  * A button is a cute little thing that is generally used for a call to action.
  *
- * @var string $text The text of the button. It can be a link.
- * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the button.
+ * @var string $text The text of the button.
+ * @var string $url Optional URL if this button is a link.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, target, etc.) for the button.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set attributes = attributes.addClass(['cu-button']) %}
+{% if url %}
+<a{{ attributes }} href="{{ url }}">{{ text }}</a>
+{% else %}
 <button{{ attributes }}>{{ text }}</button>
+{% endif %}

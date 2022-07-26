@@ -3,17 +3,20 @@
   text: 'Get involved'
 -
   demo_label: Alt
-  text: '<a href="#">Get involved</a>'
+  text: 'Get involved'
+  url: '#'
   attributes:
     class: 'cu-button--alt'
 -
   demo_label: Overlay Button
-  text: '<a href="#">Visit us</a>'
+  text: 'Visit us'
+  url: '#'
   attributes:
     class: 'cu-button--overlay'
 -
   demo_label: Pill
-  text: '<a href="#">Vulnerable Workers</a>'
+  text: 'Vulnerable Workers'
+  url: '#'
   attributes:
     class: 'cu-button--pill'
 -

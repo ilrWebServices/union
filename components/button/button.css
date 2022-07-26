@@ -1,6 +1,7 @@
 .cu-button {
   --cu-current-link-color: black;
   --cu-current-font-size: var(--cu-ms1);
+  color: var(--cu-current-link-color);
   border-radius: 2px;
   border: 4px solid #b31b1b;
   background: transparent;
@@ -13,6 +14,7 @@
 .cu-button--alt {
   --cu-current-link-color: black;
   --cu-current-font-size: var(--cu-ms1);
+  color: var(--cu-current-link-color);
   border-radius: 2px;
   border: 4px solid #b31b1b;
   background: transparent;
