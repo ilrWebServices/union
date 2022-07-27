@@ -113,7 +113,6 @@
 
   /*----------  Panel  ----------*/
   &--panel {
-    padding: 1em 33% 1em 2em;
 
     @include breakpoint(md) {
       display: grid;
@@ -124,9 +123,10 @@
     .cu-card__content {
       color: $color-text--light;
       color: var(--cu-color-text--light, #{$color-text--light});
+      background: var(--cu-color-bg--dark, #{$color-bg--dark});
+      padding: var(--cu-vr1) var(--cu-ps1);
 
       @include breakpoint(md) {
-        background: var(--cu-color-bg--dark, #{$color-bg--dark});
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -150,13 +150,20 @@
       }
     }
 
-    .cu-button {
-      align-self: flex-start;
+    .cu-button,
+    .cu-card__link {
+      --cu-current-link-color: white;
+      width: 100%;
+
+      @include breakpoint(md) {
+        width: auto;
+      }
     }
 
     .cu-card__media {
       width: 100%;
       height: 100%;
+      margin: 0;
 
       // Only specific Replaced Elements can cover the media div.
       // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements

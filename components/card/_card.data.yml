@@ -187,8 +187,6 @@
   card_link_alt: 'Read more about ILR faculty'
   button_data:
     text: 'Read more about ILR faculty'
-    attributes:
-      class: 'cu-button--overlay'
 -
   demo_label: Panel (`cu-card--panel-left`)
   attributes:
@@ -205,8 +203,6 @@
   card_link_alt: 'Read more about ILR faculty'
   button_data:
     text: 'Read more about ILR faculty'
-    attributes:
-      class: 'cu-button--overlay'
 -
   demo_label: Cinematic (Default)
   attributes:
