@@ -30,15 +30,19 @@
 
 <div{{ attributes.addClass(['cu-card']) }}>
   <div{{ content_attributes.addClass(['cu-card__content']) }}>
-    {% if icon_data %}
-    {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-card__icon cu-icon--color-light cu-icon--inline' }}) %}
-    {% include '@union/_icon.twig' with icon_data only %}
-    {% endif %}
-    {% if eyebrow_heading %}
-    <div class="cu-card__eyebrow-heading cu-heading">{{ eyebrow_heading }}</div>
-    {% endif %}
-    {% if heading %}
-    <h2 class="cu-card__heading cu-heading">{{ heading }}</h2>
+    {% if icon_data or eyebrow_heading or heading %}
+    <div class="cu-card__meta">
+      {% if icon_data %}
+      {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-card__icon cu-icon--color-light cu-icon--inline' }}) %}
+      {% include '@union/_icon.twig' with icon_data only %}
+      {% endif %}
+      {% if eyebrow_heading %}
+      <div class="cu-card__eyebrow-heading cu-heading">{{ eyebrow_heading }}</div>
+      {% endif %}
+      {% if heading %}
+      <h2 class="cu-card__heading cu-heading">{{ heading }}</h2>
+      {% endif %}
+    </div>
     {% endif %}
     {{ card_content }}
     {% if button_data %}

@@ -330,6 +330,95 @@
     }
   }
 
+  /*----------  Cinematic  ----------*/
+  &--cinematic {
+    padding: var(--cu-vr1) var(--cu-ps1);
+    --cu-card-background: #{$gray-light};
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      padding: var(--cu-vr3) var(--cu-ps2);
+
+      .cu-card__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr; // Fix for Safari bug.
+
+        &>* {
+          grid-column: 2;
+        }
+
+        .cu-card__meta {
+          grid-column: 1;
+          grid-row: 1 / -1;
+          padding-left: var(--cu-ps5);
+        }
+      }
+    }
+
+    .cu-icon--color-light { // Default bg is light, so icon should be dark.
+      --cu-current-text-color: #{$black};
+    }
+
+    .cu-card__heading {
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 8px;
+        margin-top: var(--cu-vr0);
+        background: var(--cu-color-brand, #{$cornell-red});
+      }
+    }
+
+    .cu-button,
+    .cu-card__link {
+      width: 100%;
+      justify-self: start;
+
+      @include breakpoint(md) {
+        width: auto;
+      }
+    }
+
+    .cu-card__media {
+      margin-bottom: var(--cu-vr1);
+
+      @include breakpoint(md) {
+        margin-bottom: var(--cu-vr2);
+      }
+    }
+  }
+
+  &--cinematic-reversed {
+    .cu-card__media {
+      order: 10;
+      margin: var(--cu-vr1) 0 0;
+
+      @include breakpoint(md) {
+        margin-top: var(--cu-vr2);
+      }
+    }
+  }
+
+  &--cinematic-dark {
+    --cu-card-background: #{$black};
+    color: $white;
+
+    .cu-icon--color-light { // Default bg is light, so icon should be dark.
+      --cu-current-text-color: #{$white};
+    }
+
+    .cu-button {
+      --cu-current-link-color: #{$white};
+    }
+
+    .cu-card__content {
+      --cu-current-text-color: #{$white};
+    }
+  }
+
   /*----------  Icon  ----------*/
   &--icon {
     padding: 0 var(--cu-ps-1);
@@ -340,6 +429,19 @@
     .cu-card__content {
       width: 100%;
     }
+  }
+
+  .cu-card__icon {
+    margin-bottom: var(--cu-vr0);
+  }
+
+  /*----------  Eyebrow  ----------*/
+  .cu-card__eyebrow-heading {
+    --cu-current-heading-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--cu-vr0);
   }
 
   /*----------  Hover Reveal  ----------*/
