@@ -9,12 +9,19 @@
   position: relative;
 
   &__content {
+    background: var(--cu-card-content-background);
     display: flex;
     height: 100%;
     flex-direction: column;
     align-items: flex-start;
     order: 2;
     padding: var(--cu-card-content-padding);
+  }
+
+  .cu-card__content,
+  .cu-card__content a,
+  .cu-button {
+    color: var(--cu-current-text-color);
   }
 
   &__media {
@@ -67,19 +74,18 @@
 
   /*----------  Popouts  ----------*/
   &--popout {
-    background: transparent;
+    --cu-card-background: transparent !important;
 
     .cu-card__content {
       padding: var(--cu-vr2) var(--cu-ps2);
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;
       align-items: center;
       text-align: center;
-      background: var(--cu-card-background);
 
       &::before {
         content: '';
         width: 25%;
-        border-top: 8px solid $cornell-red;
+        border-top: 8px solid var(--cu-color-brand, #{$cornell-red});
         padding-bottom: var(--cu-vr1);
       }
     }
@@ -113,6 +119,8 @@
 
   /*----------  Panel  ----------*/
   &--panel {
+    --cu-card-background: #{$gray-light};
+    --cu-card-content-background: #{$gray-light};
 
     @include breakpoint(md) {
       display: grid;
@@ -121,9 +129,6 @@
     }
 
     .cu-card__content {
-      color: $color-text--light;
-      color: var(--cu-color-text--light, #{$color-text--light});
-      background: var(--cu-color-bg--dark, #{$color-bg--dark});
       padding: var(--cu-vr1) var(--cu-ps1);
 
       @include breakpoint(md) {
@@ -152,7 +157,6 @@
 
     .cu-button,
     .cu-card__link {
-      --cu-current-link-color: white;
       width: 100%;
 
       @include breakpoint(md) {
@@ -204,6 +208,7 @@
   &--promo-with-media,
   &--with-aside {
     @include overlay;
+    --cu-current-text-color: #{$white};
 
     .cu-card__media {
       position: absolute;
@@ -230,14 +235,9 @@
     }
 
     .cu-card__content {
-      color: white;
       position: relative;
       z-index: 3;
       pointer-events: all;
-    }
-
-    .cu-card__content a {
-      color: white;
     }
 
     .cu-card__fact-list {
@@ -327,8 +327,10 @@
 
   /*----------  Cinematic  ----------*/
   &--cinematic {
-    padding: var(--cu-vr1) var(--cu-ps1);
     --cu-card-background: #{$gray-light};
+    --cu-card-content-background: #{$gray-light};
+    --cu-current-text-color: #{$black};
+    padding: var(--cu-vr1) var(--cu-ps1);
     display: flex;
     flex-direction: column;
 
@@ -397,23 +399,6 @@
     }
   }
 
-  &--cinematic-dark {
-    --cu-card-background: #{$black};
-    color: $white;
-
-    .cu-icon--color-light { // Default bg is light, so icon should be dark.
-      --cu-current-text-color: #{$white};
-    }
-
-    .cu-button {
-      --cu-current-link-color: #{$white};
-    }
-
-    .cu-card__content {
-      --cu-current-text-color: #{$white};
-    }
-  }
-
   /*----------  Icon  ----------*/
   &--icon {
     padding: 0 var(--cu-ps-1);
@@ -426,7 +411,7 @@
     }
   }
 
-  .cu-card__icon {
+  .cu-icon {
     margin-bottom: var(--cu-vr0);
   }
 
@@ -450,7 +435,6 @@
       max-height: 0;
       transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
       opacity: 0;
-      color: var(--cu-color-text, $color-text);
       --cu-current-font-weight: 300;
       padding: 0 var(--cu-ps2);
 
@@ -473,6 +457,7 @@
 
   /*----------  Hover Overlay  ----------*/
   &--hover-overlay {
+    --cu-current-text-color: #{$white};
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -481,7 +466,6 @@
     .cu-card__media {
       grid-row: 1;
       grid-column: 1;
-      color: white;
     }
 
     .cu-card__media {
@@ -490,7 +474,6 @@
     }
 
     .cu-card__content {
-      background: var(--cu-card-content-background);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -560,21 +543,21 @@
   // Content modifiers
   &--vibrant {
     --cu-card-background: #{$cornell-red};
+    --cu-card-content-background: #{$cornell-red};
+    --cu-current-text-color: #{$white};
+    --cu-color-brand: #{$white}
+  }
 
-    .cu-card__content::before {
-      border-top: 8px solid $white;
-    }
+  &--light {
+    --cu-card-background: #{$gray-light};
+    --cu-card-content-background: #{$gray-light};
+    --cu-current-text-color: #{$black};
   }
 
   &--dark {
     --cu-card-background: #{$black};
-  }
-
-  &--vibrant, &--dark {
-    .cu-card__content,
-    .cu-card__content a {
-      color: white;
-    }
+    --cu-card-content-background: #{$black};
+    --cu-current-text-color: #{$white};
   }
 
   /*=====  End of Modifiers  ======*/

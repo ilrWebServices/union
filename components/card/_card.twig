@@ -33,7 +33,6 @@
     {% if icon_data or eyebrow_heading or heading %}
     <div class="cu-card__meta">
       {% if icon_data %}
-      {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-card__icon cu-icon--color-light cu-icon--inline' }}) %}
       {% include '@union/_icon.twig' with icon_data only %}
       {% endif %}
       {% if eyebrow_heading %}

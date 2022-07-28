@@ -188,6 +188,22 @@
   button_data:
     text: 'Read more about ILR faculty'
 -
+  demo_label: Panel (with Dark modifier)
+  attributes:
+    class: 'cu-card--panel cu-card--dark'
+  heading: 'Barney Rubble'
+  eyebrow_heading: 'Associate Professor'
+  icon_data:
+    icon: profile
+  card_content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+  card_link_url: '#3'
+  card_link_alt: 'Read more about ILR faculty'
+  button_data:
+    text: 'Read more about ILR faculty'
+-
   demo_label: Panel (`cu-card--panel-left`)
   attributes:
     class: 'cu-card--panel cu-card--panel-left'
@@ -234,7 +250,7 @@
 -
   demo_label: Cinematic (Dark)
   attributes:
-    class: 'cu-card--cinematic cu-card--cinematic-dark'
+    class: 'cu-card--cinematic cu-card--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |
@@ -248,7 +264,7 @@
 -
   demo_label: Cinematic (Dark, Reversed)
   attributes:
-    class: 'cu-card--cinematic cu-card--cinematic-reversed cu-card--cinematic-dark'
+    class: 'cu-card--cinematic cu-card--cinematic-reversed cu-card--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |
