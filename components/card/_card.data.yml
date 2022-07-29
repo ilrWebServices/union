@@ -179,6 +179,8 @@
   eyebrow_heading: 'Associate Professor'
   icon_data:
     icon: profile
+    attributes:
+      class: 'cu-icon--inline'
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
@@ -195,6 +197,8 @@
   eyebrow_heading: 'Associate Professor'
   icon_data:
     icon: profile
+    attributes:
+      class: 'cu-icon--inline'
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
@@ -211,6 +215,8 @@
   eyebrow_heading: 'Associate Professor'
   icon_data:
     icon: profile
+    attributes:
+      class: 'cu-icon--inline'
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
