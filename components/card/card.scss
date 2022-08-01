@@ -541,6 +541,7 @@
   }
 
   // Content modifiers
+  // @todo Move these to the ilr-base component.
   &--vibrant {
     --cu-card-background: #{$cornell-red};
     --cu-card-content-background: #{$cornell-red};
