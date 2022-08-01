@@ -1,0 +1,20 @@
+-
+  attributes:
+    class: 'cu-section-heading--framed'
+  heading: Campus Life
+  link:
+    url: "#"
+    text: cornellilr
+-
+  attributes:
+    class: 'cu-section-heading--framed cu-section-heading--framed-right'
+  heading: ILR News
+  subheading: test
+  link:
+    url: "#"
+    text: View All News
+-
+  heading: 'Incoming Students'
+  subheading: 'From the Dean'
+  icon_data:
+    icon: tower

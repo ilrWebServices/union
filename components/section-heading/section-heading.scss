@@ -1,0 +1,81 @@
+@import './global/global';
+
+.cu-section-heading {
+  margin: var(--cu-component-margin-top, var(--cu-vr2)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint(md) {
+    margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
+  }
+
+  .cu-icon {
+    order: -2;
+  }
+
+  &__heading {
+    --cu-current-heading-size: var(--cu-ms7);
+    --cu-current-font-weight: 300;
+    margin-top: 0;
+  }
+
+  &__subheading {
+    --cu-current-font-size: var(--cu-ms-1);
+    --cu-current-font-weight: 800;
+    order: -1;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    color: $cornell-red;
+    font-weight: bold;
+    font-size: var(--cu-ms-1);
+  }
+
+  /*=============================================
+  =            Variations            =
+  =============================================*/
+
+  /*----------  Framed  ----------*/
+  &--framed {
+    $frame-thickness: 10px;
+    $frame-width: 120px;
+    $frame-height: 50px;
+
+    position: relative;
+    padding-top: calc(#{$frame-thickness} + #{$frame-height});
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $black;
+    }
+
+    &::before {
+      width: $frame-width;
+      height: $frame-thickness;
+    }
+
+    &::after {
+      width: $frame-thickness;
+      height: $frame-height;
+    }
+
+    /*----------  Framed right  ----------*/
+    &.cu-section-heading--framed-right {
+      &::before {
+        left: calc(100% - #{$frame-width} - #{$frame-thickness});
+      }
+
+      &::after {
+        left: calc(100% - #{$frame-thickness});
+      }
+    }
+  }
+  /*=====  End of Variations  ======*/
+}

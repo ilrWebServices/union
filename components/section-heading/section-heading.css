@@ -3,6 +3,7 @@
   max-width: var(--cu-max-width-section, 1060px);
   display: flex;
   flex-direction: column;
+  align-items: center;
   /*=============================================
   =            Variations            =
   =============================================*/
@@ -11,15 +12,16 @@
   @media (min-width: 61rem) {
     .cu-section-heading {
       margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1)); } }
+  .cu-section-heading .cu-icon {
+    order: -2; }
   .cu-section-heading__heading {
     --cu-current-heading-size: var(--cu-ms7);
     --cu-current-font-weight: 300;
-    margin-top: 0;
-    order: 2; }
+    margin-top: 0; }
   .cu-section-heading__subheading {
     --cu-current-font-size: var(--cu-ms-1);
     --cu-current-font-weight: 800;
-    order: 1;
+    order: -1;
     margin-bottom: 0; }
   .cu-section-heading__link {
     color: #b31b1b;
@@ -27,7 +29,6 @@
     font-size: var(--cu-ms-1); }
   .cu-section-heading--framed {
     position: relative;
-    text-align: center;
     padding-top: calc(10px + 50px);
     /*----------  Framed right  ----------*/ }
     .cu-section-heading--framed::before, .cu-section-heading--framed::after {

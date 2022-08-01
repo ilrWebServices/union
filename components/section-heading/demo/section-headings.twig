@@ -1,8 +1,0 @@
-{% for section_heading in demo.section_headings %}
-  {% include '@union/_section-heading.twig' with {
-    attributes: section_heading.attributes,
-    heading: section_heading.heading,
-    subheading: section_heading.subheading,
-    link: section_heading.link
-  } only %}
-{% endfor %}
