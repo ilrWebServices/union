@@ -229,16 +229,16 @@
   demo_label: Cinematic (Default)
   attributes:
     class: 'cu-card--cinematic'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
+  heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
+  eyebrow_heading: 'Welcome to Cornell'
   card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+    <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
   card_media: |
     <img class="cu-image" src="https://placeimg.com/1200/514/arch" alt="Undergraduate Admissions" />
   card_link_url: '#0'
-  card_link_alt: 'Read more about ILR faculty'
+  card_link_alt: 'Read more about Cornell'
   button_data:
-    text: 'Read more about ILR faculty'
+    text: 'Read more about Cornell'
 -
   demo_label: Cinematic (Reversed)
   attributes:
