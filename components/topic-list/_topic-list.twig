@@ -9,7 +9,7 @@
  * @var string $description A short bit of text.
  * @var string $link_url The main link for the component.
  * @var string $link_text The main link text for the component.
- * @var array $items An array of link items. These must contain both `url` and `text` keys.
+ * @var array $items An array of link items. These must contain both `url` and `content` keys.
  * @var string $media Optional media (img, video, or any other CSS replaced element).
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  *
@@ -42,7 +42,7 @@
     <ul class="cu-topic-list__items">
     {% for item in items %}
       <li class="cu-topic-list__item">
-        <a class="cu-topic-list__item-link" href="{{ item.url }}">{{ item.text }}</a>
+        <a class="cu-topic-list__item-link" href="{{ item.url }}">{{ item.content }}</a>
       </li>
     {% endfor %}
     </ul>

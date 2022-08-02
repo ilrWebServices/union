@@ -56,7 +56,8 @@
   --cu-current-link-color: #222;
   display: flex;
   flex-grow: 1;
-  align-items: center; }
+  align-items: center;
+  text-decoration: none; }
 
 .cu-topic-list__media {
   order: 1; }

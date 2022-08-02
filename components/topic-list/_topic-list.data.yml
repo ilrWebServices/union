@@ -1,4 +1,5 @@
 -
+  demo_label: Default
   heading: Endless Career Paths
   subheading: One Major
   description: "One of the greatest strengths of the ILR degree is that it prepares you for jobs and graduate programs in a variety of fields:"
@@ -7,20 +8,20 @@
   link_text: 'Explore ILR career paths'
   items:
     -
-      text: Business
+      content: Business
       url: '#'
     -
-      text: Law
+      content: Law
       url: '#'
     -
-      text: Government
+      content: Government
       url: '#'
     -
-      text: Human Resources
+      content: Human Resources
       url: '#'
     -
-      text: Labor and Labor Relations
+      content: Labor and Labor Relations
       url: '#'
     -
-      text: Social Justice
+      content: Social Justice
       url: '#'
