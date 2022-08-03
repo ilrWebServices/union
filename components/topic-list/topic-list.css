@@ -1,7 +1,16 @@
 .cu-topic-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--cu-vr3); }
+  --cu-card-background: #efefef;
+  padding: var(--cu-vr1) var(--cu-ps1);
+  display: flex;
+  flex-direction: column;
+  background: var(--cu-card-background, transparent); }
+
+@media (min-width: 61rem) {
+  .cu-topic-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--cu-vr3);
+    padding: var(--cu-vr3) var(--cu-ps4); } }
 
 .cu-topic-list__content {
   order: 2;
@@ -60,5 +69,9 @@
   text-decoration: none; }
 
 .cu-topic-list__media {
-  order: 1; }
+  order: 1;
+  margin-bottom: var(--cu-vr1); }
+  @media (min-width: 61rem) {
+    .cu-topic-list__media {
+      margin-bottom: 0; } }
 /*# sourceMappingURL=topic-list.css.map */

@@ -1,9 +1,20 @@
 @import './global/global';
 
 .cu-topic-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--cu-vr3);
+  --cu-card-background: #{$gray-light};
+  padding: var(--cu-vr1) var(--cu-ps1);
+  display: flex;
+  flex-direction: column;
+  background: var(--cu-card-background, #{$color-bg-card--default});
+}
+
+@include breakpoint(md) {
+  .cu-topic-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--cu-vr3);
+    padding: var(--cu-vr3) var(--cu-ps4);
+  }
 }
 
 .cu-topic-list__content {
@@ -75,5 +86,10 @@
 
 .cu-topic-list__media {
   order: 1;
+  margin-bottom: var(--cu-vr1);
+
+  @include breakpoint(md) {
+    margin-bottom: 0;
+  }
 }
 
