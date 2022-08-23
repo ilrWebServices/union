@@ -42,7 +42,11 @@
     <ul class="cu-topic-list__items">
     {% for item in items %}
       <li class="cu-topic-list__item">
+        {% if item.url %}
         <a class="cu-topic-list__item-link" href="{{ item.url }}">{{ item.content }}</a>
+        {% else %}
+        {{ item.content }}
+        {% endif %}
       </li>
     {% endfor %}
     </ul>
