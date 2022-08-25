@@ -13,6 +13,7 @@
 
   .cu-testimonial__media .cu-image {
     object-fit: cover;
+    object-position: var(--cu-image-position, 50% 0);
     aspect-ratio: 1/1;
     cursor: pointer;
   }
