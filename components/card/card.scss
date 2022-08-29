@@ -159,7 +159,7 @@
     .cu-card__link {
       width: 100%;
 
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         width: auto;
       }
     }
