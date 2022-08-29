@@ -375,7 +375,7 @@
       width: 100%;
       justify-self: start;
 
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         width: auto;
       }
     }

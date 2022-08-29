@@ -125,7 +125,7 @@
     .cu-card--panel .cu-button,
     .cu-card--panel .cu-card__link {
       width: 100%; }
-      @media (min-width: 61rem) {
+      @media (min-width: 37.5rem) {
         .cu-card--panel .cu-button,
         .cu-card--panel .cu-card__link {
           width: auto; } }
@@ -259,7 +259,7 @@
     .cu-card--cinematic .cu-card__link {
       width: 100%;
       justify-self: start; }
-      @media (min-width: 61rem) {
+      @media (min-width: 37.5rem) {
         .cu-card--cinematic .cu-button,
         .cu-card--cinematic .cu-card__link {
           width: auto; } }
