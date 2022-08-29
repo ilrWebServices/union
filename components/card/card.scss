@@ -72,6 +72,31 @@
     }
   }
 
+  /*----------  Inset  ----------*/
+  &--inset {
+    display: block;
+
+    .cu-card__content {
+      position: absolute;
+      bottom: var(--cu-vr1);
+      left: var(--cu-ps1);
+      right: var(--cu-ps1);
+      height: unset;
+      max-height: 60%;
+      overflow: auto;
+      align-items: center;
+      padding: var(--cu-vr1) var(--cu-ps1);
+      text-align: center;
+
+      @include breakpoint(md) {
+        bottom: var(--cu-vr3);
+        left: var(--cu-ps3);
+        right: var(--cu-ps3);
+        max-height: 50%;
+      }
+    }
+  }
+
   /*----------  Popouts  ----------*/
   &--popout {
     --cu-card-background: transparent !important;

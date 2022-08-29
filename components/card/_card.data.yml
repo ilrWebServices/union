@@ -172,6 +172,34 @@
     attributes:
       class: 'cu-button--overlay'
 -
+  demo_label: Inset (light)
+  attributes:
+    class: 'cu-card--inset cu-card--light'
+  heading: Betty Rubble
+  eyebrow_heading: Faculty Member
+  card_content: |
+    <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/500/800/people" alt="Cornell is where you want to be" />
+  button_data:
+    text: 'Read the interview'
+  card_link_url: '#'
+  card_link_alt: 'Read the interview'
+-
+  demo_label: Inset (dark)
+  attributes:
+    class: 'cu-card--inset cu-card--dark'
+  heading: Betty Rubble
+  eyebrow_heading: Faculty Member
+  card_content: |
+    <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/500/800/people" alt="Cornell is where you want to be" />
+  button_data:
+    text: 'Read the interview'
+  card_link_url: '#'
+  card_link_alt: 'Read the interview'
+-
   demo_label: Panel (Default)
   attributes:
     class: 'cu-card--panel'

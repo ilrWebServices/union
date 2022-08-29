@@ -9,6 +9,7 @@
   =            Modifiers            =
   =============================================*/
   /*----------  Promos  ----------*/
+  /*----------  Inset  ----------*/
   /*----------  Popouts  ----------*/
   /*----------  Panel  ----------*/
   /*----------  Promo with media and letterbox  ----------*/
@@ -63,6 +64,25 @@
     @media (min-width: 61rem) {
       .cu-card--promo .cu-card__content {
         padding: var(--cu-vr3) var(--cu-ps3); } }
+  .cu-card--inset {
+    display: block; }
+    .cu-card--inset .cu-card__content {
+      position: absolute;
+      bottom: var(--cu-vr1);
+      left: var(--cu-ps1);
+      right: var(--cu-ps1);
+      height: unset;
+      max-height: 60%;
+      overflow: auto;
+      align-items: center;
+      padding: var(--cu-vr1) var(--cu-ps1);
+      text-align: center; }
+      @media (min-width: 61rem) {
+        .cu-card--inset .cu-card__content {
+          bottom: var(--cu-vr3);
+          left: var(--cu-ps3);
+          right: var(--cu-ps3);
+          max-height: 50%; } }
   .cu-card--popout {
     --cu-card-background: transparent !important; }
     .cu-card--popout .cu-card__content {
