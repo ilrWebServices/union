@@ -83,6 +83,17 @@
           left: var(--cu-ps3);
           right: var(--cu-ps3);
           max-height: 50%; } }
+    .cu-card--inset .cu-card__media {
+      margin-bottom: 0;
+      height: 100%; }
+      .cu-card--inset .cu-card__media img, .cu-card--inset .cu-card__media video {
+        object-fit: cover;
+        object-position: var(--image-focal-point, 50% 0);
+        aspect-ratio: var(--image-aspect-ratio);
+        width: 100%;
+        height: 100%; }
+      .cu-card--inset .cu-card__media :not(img):not(video) {
+        display: contents; }
   .cu-card--popout {
     --cu-card-background: transparent !important; }
     .cu-card--popout .cu-card__content {
