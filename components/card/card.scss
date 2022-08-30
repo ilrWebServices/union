@@ -75,6 +75,9 @@
   /*----------  Inset  ----------*/
   &--inset {
     display: block;
+    overflow: auto;
+    --cu-card-background: #{$gray-light};
+    --cu-card-content-background: #{$gray-light};
 
     .cu-card__content {
       position: absolute;
@@ -82,8 +85,6 @@
       left: var(--cu-ps1);
       right: var(--cu-ps1);
       height: unset;
-      max-height: 60%;
-      overflow: auto;
       align-items: center;
       padding: var(--cu-vr1) var(--cu-ps1);
       text-align: center;
@@ -92,7 +93,6 @@
         bottom: var(--cu-vr3);
         left: var(--cu-ps3);
         right: var(--cu-ps3);
-        max-height: 50%;
       }
     }
 
@@ -103,9 +103,13 @@
       img, video {
         object-fit: cover;
         object-position: var(--image-focal-point, 50% 0);
-        aspect-ratio: var(--image-aspect-ratio);
+        aspect-ratio: 1/2;
         width: 100%;
         height: 100%;
+
+        @include breakpoint(sm) {
+          aspect-ratio: var(--image-aspect-ratio);
+        }
       }
 
       // Any element in the media section that isn't a replaced element should

@@ -65,15 +65,16 @@
       .cu-card--promo .cu-card__content {
         padding: var(--cu-vr3) var(--cu-ps3); } }
   .cu-card--inset {
-    display: block; }
+    display: block;
+    overflow: auto;
+    --cu-card-background: #efefef;
+    --cu-card-content-background: #efefef; }
     .cu-card--inset .cu-card__content {
       position: absolute;
       bottom: var(--cu-vr1);
       left: var(--cu-ps1);
       right: var(--cu-ps1);
       height: unset;
-      max-height: 60%;
-      overflow: auto;
       align-items: center;
       padding: var(--cu-vr1) var(--cu-ps1);
       text-align: center; }
@@ -81,17 +82,19 @@
         .cu-card--inset .cu-card__content {
           bottom: var(--cu-vr3);
           left: var(--cu-ps3);
-          right: var(--cu-ps3);
-          max-height: 50%; } }
+          right: var(--cu-ps3); } }
     .cu-card--inset .cu-card__media {
       margin-bottom: 0;
       height: 100%; }
       .cu-card--inset .cu-card__media img, .cu-card--inset .cu-card__media video {
         object-fit: cover;
         object-position: var(--image-focal-point, 50% 0);
-        aspect-ratio: var(--image-aspect-ratio);
+        aspect-ratio: 1/2;
         width: 100%;
         height: 100%; }
+        @media (min-width: 37.5rem) {
+          .cu-card--inset .cu-card__media img, .cu-card--inset .cu-card__media video {
+            aspect-ratio: var(--image-aspect-ratio); } }
       .cu-card--inset .cu-card__media :not(img):not(video) {
         display: contents; }
   .cu-card--popout {
