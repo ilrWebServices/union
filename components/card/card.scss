@@ -120,6 +120,7 @@
   /*----------  Popouts  ----------*/
   &--popout {
     --cu-card-background: transparent !important;
+    --cu-card-content-background: #{$gray-light};
 
     .cu-card__content {
       padding: var(--cu-vr2) var(--cu-ps2);
