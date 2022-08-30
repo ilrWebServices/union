@@ -185,11 +185,11 @@
   @media (min-width: 61rem) {
     .cu-card--panel-left .cu-card__media {
       grid-column: 2; } }
-  .cu-card--promo-with-media, .cu-card--with-aside {
+  .cu-card--promo.cu-card--with-media, .cu-card--with-aside {
     position: relative;
     pointer-events: none;
     --cu-current-text-color: #fff; }
-    .cu-card--promo-with-media::before, .cu-card--with-aside::before {
+    .cu-card--promo.cu-card--with-media::before, .cu-card--with-aside::before {
       content: '';
       position: absolute;
       top: 0;
@@ -199,43 +199,43 @@
       background: rgba(0, 0, 0, 0.5);
       background: rgba(0, 0, 0, var(--cu-overlay-opacity, 0.5));
       z-index: 2; }
-    .cu-card--promo-with-media .cu-card__media, .cu-card--with-aside .cu-card__media {
+    .cu-card--promo.cu-card--with-media .cu-card__media, .cu-card--with-aside .cu-card__media {
       position: absolute;
       overflow: hidden;
       max-width: none;
       width: 100%;
       height: 100%;
       z-index: 1; }
-      .cu-card--promo-with-media .cu-card__media img, .cu-card--promo-with-media .cu-card__media video, .cu-card--with-aside .cu-card__media img, .cu-card--with-aside .cu-card__media video {
+      .cu-card--promo.cu-card--with-media .cu-card__media img, .cu-card--promo.cu-card--with-media .cu-card__media video, .cu-card--with-aside .cu-card__media img, .cu-card--with-aside .cu-card__media video {
         object-fit: cover;
         width: 100%;
         height: 100%; }
-      .cu-card--promo-with-media .cu-card__media :not(img):not(video), .cu-card--with-aside .cu-card__media :not(img):not(video) {
+      .cu-card--promo.cu-card--with-media .cu-card__media :not(img):not(video), .cu-card--with-aside .cu-card__media :not(img):not(video) {
         display: contents; }
-    .cu-card--promo-with-media .cu-card__content, .cu-card--with-aside .cu-card__content {
+    .cu-card--promo.cu-card--with-media .cu-card__content, .cu-card--with-aside .cu-card__content {
       position: relative;
       z-index: 3;
       pointer-events: all; }
-    .cu-card--promo-with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
+    .cu-card--promo.cu-card--with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
       list-style-type: none;
       padding: 0; }
       @media (min-width: 61rem) {
-        .cu-card--promo-with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
+        .cu-card--promo.cu-card--with-media .cu-card__fact-list, .cu-card--with-aside .cu-card__fact-list {
           display: flex;
           justify-content: space-between;
           align-items: stretch; } }
-    .cu-card--promo-with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
+    .cu-card--promo.cu-card--with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
       --cu-current-font-size: var(--cu-text-lg);
       padding: var(--cu-vr0);
       border-bottom: 2px solid rgba(255, 255, 255, 0.2); }
-      .cu-card--promo-with-media .cu-card__fact:last-child, .cu-card--with-aside .cu-card__fact:last-child {
+      .cu-card--promo.cu-card--with-media .cu-card__fact:last-child, .cu-card--with-aside .cu-card__fact:last-child {
         border: none; }
       @media (min-width: 61rem) {
-        .cu-card--promo-with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
+        .cu-card--promo.cu-card--with-media .cu-card__fact, .cu-card--with-aside .cu-card__fact {
           border-bottom: none;
           border-right: 2px solid rgba(255, 255, 255, 0.2);
           padding: 0 var(--cu-vr2); } }
-      .cu-card--promo-with-media .cu-card__fact-label, .cu-card--with-aside .cu-card__fact-label {
+      .cu-card--promo.cu-card--with-media .cu-card__fact-label, .cu-card--with-aside .cu-card__fact-label {
         --cu-current-font-size: var(--cu-text-reg);
         --cu-current-font-weight: 300;
         display: block; }

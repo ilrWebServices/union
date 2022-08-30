@@ -28,7 +28,10 @@
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
 
-<div{{ attributes.addClass(['cu-card']) }}>
+<div{{ attributes.addClass([
+    'cu-card',
+    card_media ? 'cu-card--with-media'
+  ]) }}>
   <div{{ content_attributes.addClass(['cu-card__content']) }}>
     {% if icon_data or eyebrow_heading or heading %}
     <div class="cu-card__meta">

@@ -255,7 +255,7 @@
   }
 
   /*----------  Promo with media and letterbox  ----------*/
-  &--promo-with-media,
+  &--promo.cu-card--with-media,
   &--with-aside {
     @include overlay;
     --cu-current-text-color: #{$white};

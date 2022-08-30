@@ -36,7 +36,7 @@
 -
   demo_label: Promo with media
   attributes:
-    class: 'cu-card--promo cu-card--promo-with-media'
+    class: 'cu-card--promo'
   card_content: |
     <h2 class="cu-card__heading">700 Acres</h2>
     <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
@@ -76,7 +76,7 @@
 -
   demo_label: Promo portrait
   attributes:
-    class: 'cu-card--portrait cu-card--pinned cu-card--promo cu-card--promo-with-media'
+    class: 'cu-card--portrait cu-card--pinned cu-card--promo'
   card_content: |
     <h2 class="cu-card__heading">Andrea Sanders</h2>
     <h3 class="cu-card__subheading">Undergradute Majoring in Management</h3>
@@ -99,7 +99,7 @@
   demo_label: Promo banner
   overflow_demo: true
   attributes:
-    class: 'cu-card--promo cu-card--promo-with-media'
+    class: 'cu-card--promo'
   icon_data:
     title: Cornell University
     icon: 'cornell-seal'
