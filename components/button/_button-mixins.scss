@@ -34,7 +34,7 @@
 @mixin cu-button--overlay() {
   --cu-current-link-color: #{$white};
   color: $white;
-  border-color: var(--cu-color-brand, #{$white});
+  border-color: $white;
   background-color: rgba(0, 0, 0, 0.3);
 }
 

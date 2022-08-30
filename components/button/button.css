@@ -29,7 +29,7 @@
 .cu-button--overlay {
   --cu-current-link-color: #fff;
   color: #fff;
-  border-color: var(--cu-color-brand, #fff);
+  border-color: #fff;
   background-color: rgba(0, 0, 0, 0.3); }
 
 .cu-button--pill {
