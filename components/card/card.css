@@ -278,12 +278,14 @@
             grid-column: 2; }
           .cu-card--cinematic .cu-card__content .cu-card__meta {
             grid-column: 1;
-            grid-row: 1 / -1;
-            padding-left: var(--cu-ps5);
-            padding-right: var(--cu-ps2); } }
+            grid-row: 1 / 10; } }
     .cu-card--cinematic .cu-icon--color-light {
       --cu-current-text-color: #222; }
-    .cu-card--cinematic .cu-card__heading::after {
+    @media (min-width: 61rem) {
+      .cu-card--cinematic.cu-card--with-media .cu-card__meta {
+        padding-left: var(--cu-ps5);
+        padding-right: var(--cu-ps2); } }
+    .cu-card--cinematic.cu-card--with-media .cu-card__heading::after {
       content: '';
       display: block;
       width: 100px;

@@ -398,9 +398,7 @@
 
         .cu-card__meta {
           grid-column: 1;
-          grid-row: 1 / -1;
-          padding-left: var(--cu-ps5);
-          padding-right: var(--cu-ps2);
+          grid-row: 1 / 10; // For some reason, "-1" isn't working so we choose a large #.
         }
       }
     }
@@ -409,8 +407,15 @@
       --cu-current-text-color: #{$black};
     }
 
-    .cu-card__heading {
-      &::after {
+    &.cu-card--with-media {
+      @include breakpoint (md) {
+        .cu-card__meta {
+          padding-left: var(--cu-ps5);
+          padding-right: var(--cu-ps2);
+        }
+      }
+
+      .cu-card__heading::after {
         content: '';
         display: block;
         width: 100px;
