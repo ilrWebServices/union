@@ -1,4 +1,5 @@
 @import './global/global';
+@import '../button/button-mixins';
 
 .cu-card {
   --cu-current-font-size: var(--cu-ms0);
@@ -615,6 +616,48 @@
     --cu-card-background: #{$black};
     --cu-card-content-background: #{$black};
     --cu-current-text-color: #{$white};
+  }
+
+  /*----------  Accentuated  ----------*/
+  &--accentuated {
+    &:not(.cu-card--with-media) {
+      .cu-card__content {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        @include breakpoint(md) {
+          padding: 0 var(--cu-ps5);
+        }
+
+        .cu-card__meta {
+          text-align: center;
+          padding: 0;
+        }
+
+        .cu-card__heading::after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 8px;
+          margin: 0 auto;
+          margin-top: var(--cu-vr0);
+          background: var(--cu-color-brand, #{$cornell-red});
+        }
+
+        .cu-button {
+          margin: 0 auto; // For mobile.
+          justify-self: center;
+        }
+
+        >* {
+          grid-column: 1;
+        }
+      }
+    }
+
+    .cu-card__content .cu-button {
+      @include cu-button--dark;
+    }
   }
 
   /*=====  End of Modifiers  ======*/

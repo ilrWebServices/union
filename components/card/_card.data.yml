@@ -266,6 +266,20 @@
   button_data:
     text: 'Read more about Cornell'
 -
+  demo_label: Callout (accentuated)
+  attributes:
+    class: 'cu-card--cinematic cu-card--accentuated'
+  heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
+  eyebrow_heading: 'Welcome to Cornell'
+  icon_data:
+    icon: tower
+  card_content: |
+    <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
+  card_link_url: '#0'
+  card_link_alt: 'Read more about Cornell'
+  button_data:
+    text: 'Read more about Cornell'
+-
   demo_label: Cinematic (Default)
   attributes:
     class: 'cu-card--cinematic'
@@ -282,9 +296,13 @@
 -
   demo_label: Cinematic (Reversed)
   attributes:
-    class: 'cu-card--cinematic cu-card--cinematic-reversed'
+    class: 'cu-card--cinematic cu-card--cinematic-reversed cu-card--accentuated'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
+  icon_data:
+    icon: tower
+    attributes:
+      class: 'cu-icon--inline'
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
@@ -296,7 +314,7 @@
 -
   demo_label: Cinematic (Dark)
   attributes:
-    class: 'cu-card--cinematic cu-card--dark'
+    class: 'cu-card--cinematic cu-card--dark cu-card--accentuated'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |

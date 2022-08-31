@@ -24,6 +24,7 @@
   /*----------  Portrait (2 rows tall)  ----------*/
   /*----------  Landscape (span all columns)  ----------*/
   /*----------  With aside  ----------*/
+  /*----------  Accentuated  ----------*/
   /*=====  End of Modifiers  ======*/ }
   .cu-card__content {
     background: var(--cu-card-content-background);
@@ -419,6 +420,42 @@
     --cu-card-background: #222;
     --cu-card-content-background: #222;
     --cu-current-text-color: #fff; }
+  .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content {
+    grid-template-columns: 1fr;
+    text-align: center; }
+    @media (min-width: 61rem) {
+      .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content {
+        padding: 0 var(--cu-ps5); } }
+    .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content .cu-card__meta {
+      text-align: center;
+      padding: 0; }
+    .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content .cu-card__heading::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 8px;
+      margin: 0 auto;
+      margin-top: var(--cu-vr0);
+      background: var(--cu-color-brand, #b31b1b); }
+    .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content .cu-button {
+      margin: 0 auto;
+      justify-self: center; }
+    .cu-card--accentuated:not(.cu-card--with-media) .cu-card__content > * {
+      grid-column: 1; }
+  .cu-card--accentuated .cu-card__content .cu-button {
+    --cu-current-link-color: black;
+    --cu-current-font-size: var(--cu-ms1);
+    color: var(--cu-current-link-color);
+    border-radius: 2px;
+    border: 2px solid var(--cu-color-brand, #b31b1b);
+    background: transparent;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    width: auto;
+    display: inline-block;
+    text-decoration: none;
+    --cu-current-link-color: white;
+    background: #b31b1b; }
 
 .cu-card__link {
   cursor: pointer;
