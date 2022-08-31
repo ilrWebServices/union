@@ -324,7 +324,7 @@
     }
   }
 
-  &--use-aspect-ratio {
+  &--use-aspect-ratio.cu-card--promo {
     display: grid;
 
     .cu-card__content,

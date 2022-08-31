@@ -239,10 +239,10 @@
         --cu-current-font-size: var(--cu-text-reg);
         --cu-current-font-weight: 300;
         display: block; }
-  .cu-card--use-aspect-ratio {
+  .cu-card--use-aspect-ratio.cu-card--promo {
     display: grid; }
-    .cu-card--use-aspect-ratio .cu-card__content,
-    .cu-card--use-aspect-ratio .cu-card__media {
+    .cu-card--use-aspect-ratio.cu-card--promo .cu-card__content,
+    .cu-card--use-aspect-ratio.cu-card--promo .cu-card__media {
       grid-column: 1;
       grid-row: 1;
       position: relative; }
