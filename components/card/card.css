@@ -110,6 +110,8 @@
         width: 25%;
         border-top: 8px solid var(--cu-color-brand, #b31b1b);
         padding-bottom: var(--cu-vr1); }
+      .cu-card--popout .cu-card__content > * {
+        word-wrap: anywhere; }
     @media (min-width: 61rem) {
       .cu-card--popout {
         display: grid;

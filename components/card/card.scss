@@ -138,6 +138,10 @@
         border-top: 8px solid var(--cu-color-brand, #{$cornell-red});
         padding-bottom: var(--cu-vr1);
       }
+
+      > * {
+        word-wrap: anywhere;
+      }
     }
 
     @include breakpoint(md) {
