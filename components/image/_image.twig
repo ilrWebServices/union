@@ -1,25 +1,27 @@
-{{ attach_library('union_organizer/image') }}
-
-{# Link #}
-{% set default_link_attributes = {
-  class: 'cu-image__link'
-} %}
-
+{#
+/**
+ * Image
+ *
+ * An image is a two-dimensional slice of paradise.
+ *
+ * @var string $img_src The URL of the image.
+ * @var string $img_alt The alt text for the image.
+ * @var string $img_link_url Optional URL if this image should be wrapped in a link.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, style etc.) for the image.
+ * @var Drupal\Core\Template\Attribute $link_attributes Attributes (class, target, etc.) for the link.
+ */
+#}
 {# Image #}
 {% set img_alt = img_alt|default('Accessibility text goes here and is required') %}
-{% set default_image_attributes = {
-  src: img_src,
-  alt: img_alt
-} %}
 
 {# Attributes #}
-{% set link_attributes = union_attributes(link_attributes|default(default_link_attributes)) %}
-{% set attributes = union_attributes(attributes|default(default_image_attributes)) %}
-{% set attributes = attributes.addClass('cu-image') %}
+{% set link_attributes = union_attributes(link_attributes|default([])) %}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass('cu-image').setAttribute('src', img_src).setAttribute('alt', img_alt) %}
 
 {# Output #}
 {% if img_link_url %}
-  <a href="{{ img_link_url }}" {{ link_attributes }}>
+  <a href="{{ img_link_url }}" {{ link_attributes.addClass('cu-image__link') }}>
     <img {{ attributes }} />
   </a>
 {% else %}
