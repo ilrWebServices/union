@@ -2,6 +2,8 @@
   max-width: 100%;
   height: auto;
   vertical-align: middle;
+  object-fit: cover;
+  object-position: var(--cu-image-position);
 
   // @todo Refactor when https://caniuse.com/#feat=css-backdrop-filter is better supported.
   &--blurred {

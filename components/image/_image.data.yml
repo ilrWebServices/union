@@ -2,3 +2,9 @@
   demo_label: Default image
   img_src: 'https://placeimg.com/640/480/nature'
   img_alt: 'Hug a tree today'
+-
+  demo_label: Positioned and constrained example
+  img_src: 'https://placeimg.com/1200/800/arch'
+  img_alt: 'Smooth Jazz'
+  attributes:
+    style: "--cu-image-position: 10% 10%; aspect-ratio: 1/1; width: 100%"

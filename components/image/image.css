@@ -1,7 +1,9 @@
 .cu-image {
   max-width: 100%;
   height: auto;
-  vertical-align: middle; }
+  vertical-align: middle;
+  object-fit: cover;
+  object-position: var(--cu-image-position); }
   .cu-image--blurred {
     filter: blur(10px);
     min-width: 100%;
