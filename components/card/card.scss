@@ -441,6 +441,14 @@
       @include breakpoint(md) {
         margin-bottom: var(--cu-vr2);
       }
+
+      .cu-image {
+        aspect-ratio: 3/2;
+
+        @include breakpoint(md) {
+          aspect-ratio: unset;
+        }
+      }
     }
   }
 

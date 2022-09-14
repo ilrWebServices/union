@@ -303,6 +303,11 @@
       @media (min-width: 61rem) {
         .cu-card--cinematic .cu-card__media {
           margin-bottom: var(--cu-vr2); } }
+      .cu-card--cinematic .cu-card__media .cu-image {
+        aspect-ratio: 3/2; }
+        @media (min-width: 61rem) {
+          .cu-card--cinematic .cu-card__media .cu-image {
+            aspect-ratio: unset; } }
   .cu-card--cinematic-reversed .cu-card__media {
     order: 10;
     margin: var(--cu-vr1) 0 0; }
