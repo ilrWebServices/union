@@ -8,39 +8,19 @@
  * @var string $logo_width The width of the logo image in px. Defaults to 300.
  * @var string $logo_alt Alt text for the logo image. Defaults to 'Home'.
  * @var string $logo_link URL for the logo link. Defaults to '/'.
- * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the image.
- * @var Drupal\Core\Template\Attribute|array $wrapper_attributes Attributes (class, data, etc.) for the logo wrapper.
+ * @var Drupal\Core\Template\Attribute|array $image_attributes Attributes (class, data, etc.) for the image.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the logo wrapper.
  */
 #}
-{# Wrapper #}
-{% set default_wrapper_attributes = {
-  class: 'cu-logo cu-logo--union'
-} %}
+{% set image_attributes = union_attributes(image_attributes|default([])) %}
+{% set attributes = union_attributes(attributes|default({ class: 'cu-logo--union' })) %}
 
-{# Image #}
-{% set img_wrapper_attributes = {
-  class: 'cu-image cu-logo cu-logo__image'
-} %}
-{% set logo_width = logo_width|default(300) %}
-{% set default_img_attributes = {
-  class: 'cu-logo__image',
-  width: logo_width,
-  src: logo_src,
-  alt: logo_alt|default('Home')
-} %}
-
-{# @todo: implement more robust attributes that can be additive #}
-{% set wrapper_attributes = union_attributes(wrapper_attributes|default(default_wrapper_attributes)) %}
-{% set attributes = union_attributes(attributes|default(default_img_attributes)) %}
-
-{# Link #}
-{% set logo_link = logo_link|default('/')%}
-
-<div{{ wrapper_attributes }}>
+<div{{ attributes.addClass('cu-logo') }}>
   {% include '@union/_image.twig' with {
-    img_link_url: logo_link,
-    attributes: attributes,
-    wrapper_attributes: img_wrapper_attributes
+    img_link_url: logo_link|default('/'),
+    img_src: logo_src,
+    img_alt: logo_alt|default('Home'),
+    attributes: image_attributes.addClass('cu-logo__image').setAttribute('width', logo_width|default(300))
   } only %}
 </div>
 
