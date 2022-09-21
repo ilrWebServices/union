@@ -1,0 +1,4 @@
+css:
+  composite-heading.css: {}
+dependencies:
+  - base

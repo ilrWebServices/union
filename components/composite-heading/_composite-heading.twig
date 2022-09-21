@@ -1,0 +1,47 @@
+{#
+/**
+ * Composite heading
+ *
+ * A composite heading is a heading with supporting items.
+ *
+ * @var string $heading The main heading.
+ * @var string $eyebrow_heading The eyebrow heading.
+ * @var string $body Generally short text or blurb.
+ * @var array $link An optional array with `url` and `text` keys.
+ * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
+ * @var string $heading_element The HTML element for the heading. Defaults to `h2`.
+ * @var string $eyebrow_heading_element The HTML element for the eyebrow_heading. Defaults to `h3`.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=227%3A308 Header Sections in Figma
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set heading_element = heading_element|default('h2') %}
+{% set eyebrow_heading_element = eyebrow_heading_element|default('h3') %}
+
+<div{{ attributes.addClass(['cu-composite-heading']) }}>
+  {% if icon_data %}
+    {% include '@union/_icon.twig' with icon_data only %}
+  {% endif %}
+  {% if heading %}
+    <{{ heading_element }} class="cu-heading cu-composite-heading__heading">{{ heading }}</{{ heading_element }}>
+  {% endif %}
+  {% if eyebrow_heading %}
+    <{{ eyebrow_heading_element }} class="cu-heading cu-composite-heading__eyebrow-heading">{{ eyebrow_heading }}</{{ eyebrow_heading_element }}>
+  {% endif %}
+  {% if body %}
+    <div class="cu-composite-heading__body">{{ body }}</div>
+  {% endif %}
+  {% if link %}
+    {% if attributes.hasClass('cu-composite-heading--left') %}
+    {% include '@union/_button.twig' with {
+      text: link.text,
+      url: link.url,
+      attributes: { class: 'cu-composite-heading__link' }
+    } only %}
+    {% else %}
+    <a href="{{ link.url }}" class="cu-composite-heading__link">{{ link.text }}</a>
+    {% endif %}
+  {% endif %}
+</div>

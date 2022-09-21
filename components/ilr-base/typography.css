@@ -44,7 +44,8 @@ body {
     color: var(--cu-current-link-color, #b31b1b); }
 
 h1, h2, h3, h4, h5, h6 {
-  font-size: var(--cu-current-heading-size, inherit); }
+  font-size: var(--cu-current-heading-size, inherit);
+  font-family: var(--cu-heading-font-family); }
 
 .cu-heading {
   --cu-current-line-height: var(--cu-heading-line-height, 1.2);

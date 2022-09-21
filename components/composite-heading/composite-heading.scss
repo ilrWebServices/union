@@ -1,0 +1,91 @@
+@import './global/global';
+
+.cu-composite-heading {
+  // margin: var(--cu-component-margin-top, var(--cu-vr2)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
+  max-width: var(--cu-max-width-section, #{$max-width-section});
+  display: flex;
+  gap: var(--cu-vr-1);
+  flex-direction: column;
+  align-items: var(--cu-composite-heading-align, center);
+
+  @include breakpoint(md) {
+    // margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
+  }
+
+  .cu-icon {
+    order: 1;
+    margin: 0 0 var(--cu-vr-1) 0;
+  }
+
+  &__heading {
+    --cu-current-heading-size: var(--cu-ms6);
+    --cu-current-font-weight: 300;
+    order: 3;
+    margin: 0;
+    line-height: 1;
+    margin: 0 0 var(--cu-vr-1) 0;
+  }
+
+  &__eyebrow-heading {
+    --cu-current-heading-size: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    order: 2;
+    margin: 0;
+  }
+
+  &__body {
+    text-align: var(--cu-composite-heading-text-align, center);
+    order: 4;
+    margin: 0;
+
+    p:last-of-type {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    color: $cornell-red;
+    font-weight: bold;
+    font-size: var(--cu-ms-1);
+    order: 5;
+    // !important because the .cu-button class, used when using the --left
+    // variant, will still add the margin.
+    margin: var(--cu-vr-1) 0 0 !important;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 8px;
+    background: var(--cu-color-brand, #{$cornell-red});
+    order: 6;
+    margin: 0;
+    margin: var(--cu-vr-1) 0 0;
+  }
+
+  &--minimal::after {
+    display: none;
+  }
+
+  // Variations
+  &--left {
+    --cu-composite-heading-align: flex-start;
+    --cu-composite-heading-text-align: left;
+
+    &::after {
+      order: 3;
+      margin: 0 0 var(--cu-vr-1) 0;
+    }
+  }
+
+  &--bold {
+    .cu-composite-heading__heading {
+      --cu-heading-font-family: 'futura-pt';
+      --cu-current-heading-size: var(--cu-ms8);
+      text-transform: uppercase;
+    }
+  }
+}
