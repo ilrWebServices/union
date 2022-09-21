@@ -18,7 +18,6 @@
   /*----------  Padded  ----------*/
   /*----------  Cinematic  ----------*/
   /*----------  Icon  ----------*/
-  /*----------  Eyebrow  ----------*/
   /*----------  Hover Reveal  ----------*/
   /*----------  Hover Overlay  ----------*/
   /*----------  Portrait (2 rows tall)  ----------*/
@@ -37,6 +36,8 @@
   .cu-card .cu-card__content a,
   .cu-card .cu-button {
     color: var(--cu-current-text-color); }
+  .cu-card__meta {
+    margin-bottom: var(--cu-vr1); }
   .cu-card__media {
     order: 1;
     margin-bottom: var(--cu-vr0); }
@@ -44,15 +45,6 @@
       width: 100%; }
     .cu-card__media .cu-card__media-link {
       display: block; }
-  .cu-card__heading {
-    --cu-current-font-size: var(--cu-text-xxl);
-    --cu-current-line-height: var(--cu-heading-line-height);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    --cu-font-family: var(--cu-heading-font-family); }
-  .cu-card__subheading {
-    --cu-current-font-size: var(--cu-text-reg);
-    --cu-current-line-height: var(--cu-reduced-line-height, 1.2);
-    --cu-current-font-weight: var(--cu-font-weight); }
   .cu-card--promo .cu-card__content {
     justify-content: center;
     align-items: center;
@@ -145,18 +137,6 @@
           flex-direction: column;
           justify-content: center;
           padding: var(--cu-vr1) var(--cu-ps2); } }
-    .cu-card--panel .cu-card__heading {
-      --cu-current-heading-size: 50px;
-      font-family: 'futura-pt';
-      text-transform: uppercase;
-      line-height: 1; }
-      .cu-card--panel .cu-card__heading::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 8px;
-        margin-top: var(--cu-vr0);
-        background: var(--cu-color-brand, #b31b1b); }
     .cu-card--panel .cu-button,
     .cu-card--panel .cu-card__link {
       width: 100%; }
@@ -283,13 +263,6 @@
       .cu-card--cinematic.cu-card--with-media .cu-card__meta {
         padding-left: var(--cu-ps5);
         padding-right: var(--cu-ps2); } }
-    .cu-card--cinematic.cu-card--with-media .cu-card__heading::after {
-      content: '';
-      display: block;
-      width: 100px;
-      height: 8px;
-      margin-top: var(--cu-vr0);
-      background: var(--cu-color-brand, #b31b1b); }
     .cu-card--cinematic .cu-button,
     .cu-card--cinematic .cu-card__link {
       width: 100%;
@@ -322,12 +295,6 @@
     .cu-card--icon .cu-card__content {
       width: 100%; }
   .cu-card .cu-icon {
-    margin-bottom: var(--cu-vr0); }
-  .cu-card .cu-card__eyebrow-heading {
-    --cu-current-heading-size: 12px;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 0.1em;
     margin-bottom: var(--cu-vr0); }
   .cu-card--hover-content-reveal .cu-card__content {
     display: block; }

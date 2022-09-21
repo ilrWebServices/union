@@ -11,7 +11,10 @@
 -
   demo_label: Icon card
   attributes:
-    class: cu-card--icon cu-card--dark cu-text--xl
+    class:
+      - 'cu-card--icon'
+      - 'cu-card--dark'
+      - 'cu-text--xl'
   icon_data:
     title: Cornell University Tower
     label: Undergraduate Admissions
@@ -24,8 +27,8 @@
   demo_label: Promo
   attributes:
     class: 'cu-card--promo'
+  heading: Your Life Journey Starts Here
   card_content: |
-    <h2 class="cu-card__heading">Your Life Journey Starts Here</h2>
     <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
   card_link_url: '#'
   card_link_alt: 'Visit Us'
@@ -65,7 +68,10 @@
 -
   demo_label: Promo light
   attributes:
-    class: 'cu-card--pinned cu-card--light cu-card--promo'
+    class:
+      - 'cu-card--pinned'
+      - 'cu-card--light'
+      - 'cu-card--promo'
   card_content: |
     <h2 class="cu-card__heading">Sponsor an ILR Internship</h2>
     <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
@@ -76,7 +82,10 @@
 -
   demo_label: Promo portrait
   attributes:
-    class: 'cu-card--portrait cu-card--pinned cu-card--promo'
+    class:
+      - 'cu-card--portrait'
+      - 'cu-card--pinned'
+      - 'cu-card--promo'
   card_content: |
     <h2 class="cu-card__heading">Andrea Sanders</h2>
     <h3 class="cu-card__subheading">Undergradute Majoring in Management</h3>
@@ -138,7 +147,10 @@
 -
   demo_label: Popout (Dark)
   attributes:
-    class: 'cu-card--popout-right cu-card--popout cu-card--dark'
+    class:
+      - 'cu-card--popout-right'
+      - 'cu-card--popout'
+      - 'cu-card--dark'
   card_content: |
     <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
       The Popout Experience</div>
@@ -155,7 +167,10 @@
 -
   demo_label: Popout (Vibrant)
   attributes:
-    class: 'cu-card--popout-right cu-card--popout cu-card--vibrant'
+    class:
+      - 'cu-card--popout-right'
+      - 'cu-card--popout'
+      - 'cu-card--vibrant'
   card_content: |
     <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
       The Popout Experience</div>
@@ -174,7 +189,9 @@
 -
   demo_label: Inset (light)
   attributes:
-    class: 'cu-card--inset cu-card--light'
+    class:
+      - 'cu-card--inset'
+      - 'cu-card--light'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
   card_content: |
@@ -188,7 +205,9 @@
 -
   demo_label: Inset (dark)
   attributes:
-    class: 'cu-card--inset cu-card--dark'
+    class:
+      - 'cu-card--inset'
+      - 'cu-card--dark'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
   card_content: |
@@ -220,7 +239,9 @@
 -
   demo_label: Panel (with Dark modifier)
   attributes:
-    class: 'cu-card--panel cu-card--dark'
+    class:
+      - 'cu-card--panel'
+      - 'cu-card--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   icon_data:
@@ -238,7 +259,9 @@
 -
   demo_label: Panel (`cu-card--panel-left`)
   attributes:
-    class: 'cu-card--panel cu-card--panel-left'
+    class:
+      - 'cu-card--panel'
+      - 'cu-card--panel-left'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   icon_data:
@@ -282,7 +305,9 @@
 -
   demo_label: Cinematic (Reversed)
   attributes:
-    class: 'cu-card--cinematic cu-card--cinematic-reversed'
+    class:
+      - 'cu-card--cinematic'
+      - 'cu-card--cinematic-reversed'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |
@@ -296,7 +321,9 @@
 -
   demo_label: Cinematic (Dark)
   attributes:
-    class: 'cu-card--cinematic cu-card--dark'
+    class:
+      - 'cu-card--cinematic'
+      - 'cu-card--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |
@@ -310,7 +337,10 @@
 -
   demo_label: Cinematic (Dark, Reversed)
   attributes:
-    class: 'cu-card--cinematic cu-card--cinematic-reversed cu-card--dark'
+    class:
+      - 'cu-card--cinematic'
+      - 'cu-card--cinematic-reversed'
+      - 'cu-card--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |

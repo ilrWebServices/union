@@ -24,6 +24,10 @@
     color: var(--cu-current-text-color);
   }
 
+  &__meta {
+    margin-bottom: var(--cu-vr1);
+  }
+
   &__media {
     order: 1;
     margin-bottom: var(--cu-vr0);
@@ -35,19 +39,6 @@
     .cu-card__media-link {
       display: block;
     }
-  }
-
-  &__heading {
-    --cu-current-font-size: var(--cu-text-xxl);
-    --cu-current-line-height: var(--cu-heading-line-height);
-    --cu-current-font-weight: var(--cu-heading-font-weight);
-    --cu-font-family: var(--cu-heading-font-family);
-  }
-
-  &__subheading {
-    --cu-current-font-size: var(--cu-text-reg);
-    --cu-current-line-height: var(--cu-reduced-line-height, #{$reduced-line-height});
-    --cu-current-font-weight: var(--cu-font-weight);
   }
 
   /*=============================================
@@ -188,22 +179,6 @@
         flex-direction: column;
         justify-content: center;
         padding: var(--cu-vr1) var(--cu-ps2);
-      }
-    }
-
-    .cu-card__heading {
-      --cu-current-heading-size: 50px;
-      font-family: 'futura-pt';
-      text-transform: uppercase;
-      line-height: 1;
-
-      &::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 8px;
-        margin-top: var(--cu-vr0);
-        background: var(--cu-color-brand, #{$cornell-red});
       }
     }
 
@@ -414,15 +389,6 @@
           padding-right: var(--cu-ps2);
         }
       }
-
-      .cu-card__heading::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 8px;
-        margin-top: var(--cu-vr0);
-        background: var(--cu-color-brand, #{$cornell-red});
-      }
     }
 
     .cu-button,
@@ -476,15 +442,6 @@
   }
 
   .cu-icon {
-    margin-bottom: var(--cu-vr0);
-  }
-
-  /*----------  Eyebrow  ----------*/
-  .cu-card__eyebrow-heading {
-    --cu-current-heading-size: 12px;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 0.1em;
     margin-bottom: var(--cu-vr0);
   }
 

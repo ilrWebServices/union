@@ -35,15 +35,18 @@
   <div{{ content_attributes.addClass(['cu-card__content']) }}>
     {% if icon_data or eyebrow_heading or heading %}
     <div class="cu-card__meta">
-      {% if icon_data %}
-      {% include '@union/_icon.twig' with icon_data only %}
-      {% endif %}
-      {% if eyebrow_heading %}
-      <div class="cu-card__eyebrow-heading cu-heading">{{ eyebrow_heading }}</div>
-      {% endif %}
-      {% if heading %}
-      <h2 class="cu-card__heading cu-heading">{{ heading }}</h2>
-      {% endif %}
+      {% include '@union/_composite-heading.twig' with {
+        icon_data: icon_data,
+        eyebrow_heading: eyebrow_heading,
+        heading: heading,
+        attributes: {
+          class: [
+            attributes.hasClass('cu-card--panel') or attributes.hasClass('cu-card--cinematic') ? 'cu-composite-heading--left',
+            attributes.hasClass('cu-card--panel') ? 'cu-composite-heading--bold',
+            not heading or attributes.hasClass('cu-card--promo') ? 'cu-composite-heading--minimal',
+          ]
+        }
+      } only %}
     </div>
     {% endif %}
     {{ card_content }}
