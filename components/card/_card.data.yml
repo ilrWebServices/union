@@ -351,3 +351,14 @@
   card_link_alt: 'Read more about ILR faculty'
   button_data:
     text: 'Read more about ILR faculty'
+-
+  demo_label: Post Small
+  attributes:
+    class:
+      - 'cu-card--post-small'
+  heading: 'Explainer: How to form a union'
+  eyebrow_heading: 'Sept 27, 2052'
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/100/100/arch" alt="Photo of architecture" />
+  card_link_url: '#0'
+  card_link_alt: 'Read more'

@@ -22,6 +22,7 @@
  * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
  *
  * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=380%3A1454 Card Below/Text Right (AKA Popout) in Figma
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=371%3A1031 News Article/Small (--cu-card--post-small)
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
@@ -34,25 +35,23 @@
   ]) }}>
   <div{{ content_attributes.addClass(['cu-card__content']) }}>
     {% if icon_data or eyebrow_heading or heading %}
-    <div class="cu-card__meta">
-      {% include '@union/_composite-heading.twig' with {
-        icon_data: icon_data,
-        eyebrow_heading: eyebrow_heading,
-        heading: heading,
-        attributes: {
-          class: [
-            attributes.hasClass('cu-card--panel') or attributes.hasClass('cu-card--cinematic') ? 'cu-composite-heading--left',
-            attributes.hasClass('cu-card--panel') ? 'cu-composite-heading--bold',
-            not heading or attributes.hasClass('cu-card--promo') ? 'cu-composite-heading--minimal',
-          ]
-        }
-      } only %}
-    </div>
+    {% include '@union/_composite-heading.twig' with {
+      icon_data: icon_data,
+      eyebrow_heading: eyebrow_heading,
+      heading: heading,
+      attributes: {
+        class: [
+          'cu-card__meta',
+          attributes.hasClass('cu-card--panel') or attributes.hasClass('cu-card--cinematic') or attributes.hasClass('cu-card--post-small') ? 'cu-composite-heading--left',
+          attributes.hasClass('cu-card--panel') ? 'cu-composite-heading--bold',
+          not heading or (attributes.hasClass('cu-card--promo') or attributes.hasClass('cu-card--post-small')) ? 'cu-composite-heading--minimal',
+        ]
+      }
+    } only %}
     {% endif %}
     {{ card_content }}
     {% if button_data %}
     {% include '@union/_button.twig' with button_data only %}
-      {# attributes: link_attributes.addClass('cu-card__button') #}
     {% endif %}
   </div>
 {% if card_media %}

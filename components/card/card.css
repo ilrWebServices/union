@@ -287,6 +287,24 @@
     @media (min-width: 61rem) {
       .cu-card--cinematic-reversed .cu-card__media {
         margin-top: var(--cu-vr2); } }
+  .cu-card--post-small {
+    background: transparent;
+    display: grid;
+    grid-template-columns: 88px auto;
+    gap: var(--cu-ps0);
+    align-items: center; }
+    .cu-card--post-small .cu-card__content {
+      height: unset; }
+    .cu-card--post-small .cu-card__media {
+      margin-bottom: 0;
+      line-height: 1; }
+    .cu-card--post-small .cu-card__meta {
+      margin: 0; }
+    .cu-card--post-small .cu-composite-heading__heading {
+      --cu-current-heading-size: var(--cu-ms1); }
+    .cu-card--post-small .cu-composite-heading__eyebrow-heading {
+      color: #6c6c6c;
+      font-weight: 700; }
   .cu-card--icon {
     padding: 0 var(--cu-ps-1);
     --cu-card-border-radius: 3px;
