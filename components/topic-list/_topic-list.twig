@@ -22,23 +22,21 @@
 
 <div{{ attributes }}>
   <div class="cu-topic-list__content">
-    <div class="cu-topic-list__heading">
-      {{ heading }}
-    </div>
-    <div class="cu-topic-list__subheading">
-      {{ subheading }}
-    </div>
-    <div class="cu-topic-list__description">
-      {{ description }}
-    </div>
-    {% if link_url %}
-    <div class="cu-topic-list__link">
-    {% include '@union/_button.twig' with {
-      text: link_text,
-      url: link_url
+    {% include '@union/_composite-heading.twig' with {
+      icon_data: icon_data,
+      eyebrow_heading: subheading,
+      heading: heading,
+      body: description,
+      link: {
+        url: link_url,
+        text: link_text
+      },
+      attributes: {
+        class: [
+          'cu-composite-heading--left',
+        ]
+      }
     } only %}
-    </div>
-    {% endif %}
     <ul class="cu-topic-list__items">
     {% for item in items %}
       <li class="cu-topic-list__item">
