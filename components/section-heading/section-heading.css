@@ -15,18 +15,17 @@
   .cu-section-heading .cu-icon {
     order: -2; }
   .cu-section-heading__heading {
-    --cu-current-heading-size: var(--cu-ms7);
-    --cu-current-font-weight: 300;
+    --cu-font-size: var(--cu-ms6);
     margin-top: 0; }
   .cu-section-heading__subheading {
-    --cu-current-font-size: var(--cu-ms-1);
-    --cu-current-font-weight: 800;
+    --cu-font-size: var(--cu-ms-1);
+    --cu-font-weight: 800;
     order: -1;
     margin-bottom: 0; }
   .cu-section-heading__link {
-    color: #b31b1b;
-    font-weight: bold;
-    font-size: var(--cu-ms-1); }
+    --cu-text-color: #b31b1b;
+    --cu-font-weight: bold;
+    --cu-font-size: var(--cu-ms-2); }
   .cu-section-heading--framed {
     position: relative;
     padding-top: calc(10px + 50px);

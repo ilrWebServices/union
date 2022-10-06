@@ -4,13 +4,13 @@
   align-items: center;
   margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr0)); }
   .cu-icon .cu-icon__image {
-    fill: var(--cu-current-text-color);
+    fill: var(--cu-text-color);
     margin-bottom: var(--cu-vr-2); }
     .cu-icon .cu-icon__image--cornell-seal {
       min-width: 73px; }
   .cu-icon .cu-icon__label {
-    margin-bottom: 0;
-    color: var(--cu-current-text-color); }
+    --cu-line-height: 1.2;
+    margin-bottom: 0; }
   .cu-icon--inline {
     display: inline-flex;
     flex-direction: row;
@@ -29,8 +29,6 @@
       margin-bottom: 0; }
     .cu-icon--inline-centered .cu-icon__label {
       white-space: pre-line; }
-  .cu-icon--color-light {
-    --cu-current-text-color: var(--cu-color-text--light); }
   .cu-icon--link {
     text-decoration: none; }
 
@@ -38,7 +36,7 @@
 =            Specific icon overrides            =
 =============================================*/
 .cu-icon--color-brand .cu-icon__image {
-  --cu-current-text-color: #b31b1b; }
+  --cu-text-color: #b31b1b; }
 
 .cu-icon--cornell-seal .cu-icon__image {
   min-width: 73px; }
@@ -47,12 +45,12 @@
   min-width: 70px; }
 
 .cu-icon--play {
-  --cu-current-text-color: var(--cu-color-text--light);
+  --cu-text-color: white;
   cursor: pointer; }
   .cu-icon--play > * {
     pointer-events: none; }
   .cu-icon--play .cu-icon__image {
-    stroke: var(--cu-current-text-color); }
+    stroke: var(--cu-text-color); }
 
 /*=====  End of Specific icon overrides  ======*/
 /*# sourceMappingURL=icon.css.map */

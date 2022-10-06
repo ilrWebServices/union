@@ -42,6 +42,7 @@
  * @var string $label_element The HTML element for the icon label. (default: `div`)
  * @var string $link A URL/URI that will be added to an `a` element around the icon and label.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the icon. Useful for passing in variant classes. (optional)
+ * @var Drupal\Core\Template\Attribute|array $attributes_label Attributes (class, data, etc.) for the icon label. (optional)
  */
 #}
 {% set size = size|default('2em') %}
@@ -52,7 +53,7 @@
   class: 'cu-icon__image',
   width: size
 }) %}
-{% set attributes_label = union_attributes({ class: 'cu-icon__label' }) %}
+{% set attributes_label = union_attributes(attributes_label|default([])) %}
 {% if label_element starts with 'h' %}
 {% set attributes_label = attributes_label.addClass(['cu-heading']) %}
 {% endif %}
@@ -69,5 +70,5 @@
     <title>{{ title }} Icon</title>
     <use href="{{ union_file('/images/icons.svg') }}#{{ icon }}" />
   </svg>
-  {% if label %}<{{ label_element }}{{ attributes_label }}>{{ label }}</{{ label_element }}>{% endif %}
+  {% if label %}<{{ label_element }}{{ attributes_label.addClass('cu-icon__label') }}>{{ label }}</{{ label_element }}>{% endif %}
 </{{icon_wrapper_element}}>

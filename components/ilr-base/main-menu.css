@@ -44,8 +44,7 @@ label[for="nav-trigger"] {
   align-self: flex-end; }
 
 .cu-menu__list {
-  --cu-current-link-color: var(--cu-current-text-color);
-  --cu-current-font-size: var(--cu-ms-1);
+  --cu-font-size: var(--cu-ms-1);
   background: white;
   list-style-type: none;
   margin: 0;

@@ -1,6 +1,4 @@
 @charset "UTF-8";
-.cu-breadcrumb {
-  --cu-current-link-color: var(--cu-color-text--light, #fff); }
 
 .cu-breadcrumb__list {
   list-style: none;
@@ -27,8 +25,7 @@
     content: ''; }
   .cu-breadcrumb__item::after {
     content: var(--cu-breadcrumb-separator, "/");
-    padding: 0 .4em;
-    color: var(--cu-current-link-color); }
+    padding: 0 .4em; }
   .cu-breadcrumb__item:last-child::after {
     display: none; }
 

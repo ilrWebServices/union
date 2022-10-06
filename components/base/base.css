@@ -1,4 +1,10 @@
 :root {
+  --cu-font-family: system-ui;
+  --cu-font-weight: 300;
+  --cu-font-size: 1rem;
+  --cu-line-height: 1.5;
+  --cu-text-color: #222;
+
   --augmented-fourth: 1.414;
   --double-octave: 4;
   --fifth: 1.5;
@@ -16,11 +22,10 @@
   --minor-sixth: 1.6;
   --minor-third: 1.2;
   --octave: 2;
-  --phi: 1.618; }
+  --phi: 1.618;
 
-:root {
   --cu-ms-ratio: var(--major-second);
-  --cu-ms0: var(--cu-base-font-size, 1rem);
+  --cu-ms0: var(--cu-font-size, 1rem);
   --cu-ms1: calc(var(--cu-ms-ratio) * var(--cu-ms0));
   --cu-ms2: calc(var(--cu-ms-ratio) * var(--cu-ms1));
   --cu-ms3: calc(var(--cu-ms-ratio) * var(--cu-ms2));
@@ -35,11 +40,10 @@
   --cu-ms-2: calc(var(--cu-ms-1) / var(--cu-ms-ratio));
   --cu-ms-3: calc(var(--cu-ms-2) / var(--cu-ms-ratio));
   --cu-ms-4: calc(var(--cu-ms-3) / var(--cu-ms-ratio));
-  --cu-ms-5: calc(var(--cu-ms-4) / var(--cu-ms-ratio)); }
+  --cu-ms-5: calc(var(--cu-ms-4) / var(--cu-ms-ratio));
 
-:root {
   --cu-ps-ratio: var(--fifth);
-  --cu-ps0: var(--cu-ps-base, 1em);
+  --cu-ps0: var(--cu-font-size, 1rem);
   --cu-ps1: calc(var(--cu-ps-ratio) * var(--cu-ps0));
   --cu-ps2: calc(var(--cu-ps-ratio) * var(--cu-ps1));
   --cu-ps3: calc(var(--cu-ps-ratio) * var(--cu-ps2));
@@ -54,11 +58,10 @@
   --cu-ps-2: calc(var(--cu-ps-1) / var(--cu-ps-ratio));
   --cu-ps-3: calc(var(--cu-ps-2) / var(--cu-ps-ratio));
   --cu-ps-4: calc(var(--cu-ps-3) / var(--cu-ps-ratio));
-  --cu-ps-5: calc(var(--cu-ps-4) / var(--cu-ps-ratio)); }
+  --cu-ps-5: calc(var(--cu-ps-4) / var(--cu-ps-ratio));
 
-:root {
   --cu-vr-ratio: var(--golden);
-  --cu-vr0: var(--cu-vr-base, 1rem);
+  --cu-vr0: 1rem;
   --cu-vr1: calc(var(--cu-vr-ratio) * var(--cu-vr0));
   --cu-vr2: calc(var(--cu-vr-ratio) * var(--cu-vr1));
   --cu-vr3: calc(var(--cu-vr-ratio) * var(--cu-vr2));
@@ -73,7 +76,36 @@
   --cu-vr-2: calc(var(--cu-vr-1) / var(--cu-vr-ratio));
   --cu-vr-3: calc(var(--cu-vr-2) / var(--cu-vr-ratio));
   --cu-vr-4: calc(var(--cu-vr-3) / var(--cu-vr-ratio));
-  --cu-vr-5: calc(var(--cu-vr-4) / var(--cu-vr-ratio)); }
+  --cu-vr-5: calc(var(--cu-vr-4) / var(--cu-vr-ratio));
+}
+
+[class*='cu-'], [class*='cu-'] a {
+  font-family: var(--cu-font-family, inherit);
+  font-size: var(--cu-font-size, inherit);
+  font-weight: var(--cu-font-weight, inherit);
+  line-height: var(--cu-line-height, inherit);
+  color: var(--cu-text-color, inherit);
+}
+
+h1 {
+  --cu-font-size: var(--cu-ms5);
+}
+
+h2 {
+  --cu-font-size: var(--cu-ms4);
+}
+
+h3 {
+  --cu-font-size: var(--cu-ms3);
+}
+
+h4 {
+  --cu-font-size: var(--cu-ms2);
+}
+
+h5 {
+  --cu-font-size: var(--cu-ms1);
+}
 
 .visually-hidden {
   position: absolute !important;
@@ -82,4 +114,3 @@
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   word-wrap: normal; }
-/*# sourceMappingURL=base.css.map */

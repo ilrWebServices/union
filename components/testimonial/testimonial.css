@@ -28,17 +28,18 @@
     top: 0; }
 
 .cu-testimonial__quote {
-  --cu-current-font-size: var(--cu-text-xl);
-  --cu-current-font-weight: 600;
-  font-family: 'FreightText Pro';
+  --cu-font-size: var(--cu-ms4);
+  --cu-font-weight: 600;
+  --cu-line-height: 1.3;
+  --cu-font-family: "freight-text-pro", serif;
   margin-bottom: var(--cu-vr1); }
 
 .cu-testimonial__name,
 .cu-testimonial__title {
-  --cu-current-font-size: var(--cu-ms-1);
-  --cu-current-font-weight: 700;
-  line-height: 20px;
-  color: #6C6C6C;
+  --cu-font-size: var(--cu-ms-4);
+  --cu-font-weight: 700;
+  --cu-text-color: #6C6C6C;
+  letter-spacing: 0.1em;
   text-transform: uppercase; }
 
 .cu-testimonial__media {

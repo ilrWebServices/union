@@ -1,7 +1,6 @@
 @import './global/global';
 
 .cu-card {
-  --cu-current-font-size: var(--cu-ms0);
   background: var(--cu-card-background, #{$color-bg-card--default});
   border-radius: var(--cu-card-border-radius);
   display: flex;
@@ -16,12 +15,6 @@
     align-items: flex-start;
     order: 2;
     padding: var(--cu-card-content-padding);
-  }
-
-  .cu-card__content,
-  .cu-card__content a,
-  .cu-button {
-    color: var(--cu-current-text-color);
   }
 
   &__meta {
@@ -234,7 +227,7 @@
   &--promo.cu-card--with-media,
   &--with-aside {
     @include overlay;
-    --cu-current-text-color: #{$white};
+    --cu-text-color: #{$white};
 
     .cu-card__media {
       position: absolute;
@@ -277,7 +270,8 @@
     }
 
     .cu-card__fact {
-      --cu-current-font-size: var(--cu-text-lg);
+      --cu-font-size: var(--cu-ms5);
+      --cu-line-height: 1.2;
       padding: var(--cu-vr0);
       border-bottom: 2px solid rgba($white, 0.2);
 
@@ -292,8 +286,8 @@
       }
 
       &-label {
-        --cu-current-font-size: var(--cu-text-reg);
-        --cu-current-font-weight: 300;
+        --cu-font-size: var(--cu-ms0);
+        --cu-font-weight: 300;
         display: block;
       }
     }
@@ -354,7 +348,7 @@
   &--cinematic {
     --cu-card-background: #{$gray-light};
     --cu-card-content-background: #{$gray-light};
-    --cu-current-text-color: #{$black};
+    --cu-text-color: #{$black};
     padding: var(--cu-vr1) var(--cu-ps1);
     display: flex;
     flex-direction: column;
@@ -379,7 +373,7 @@
     }
 
     .cu-icon--color-light { // Default bg is light, so icon should be dark.
-      --cu-current-text-color: #{$black};
+      --cu-text-color: #{$black};
     }
 
     &.cu-card--with-media {
@@ -444,13 +438,12 @@
     }
 
     .cu-composite-heading__heading {
-      --cu-current-heading-size: var(--cu-ms1);
+      --cu-font-size: var(--cu-ms0) !important;
     }
 
     .cu-composite-heading__eyebrow-heading {
-      // @todo: Use a custom property here if possible.
-      color: $gray-medium-new;
-      font-weight: 700;
+      --cu-text-color: #{$gray-medium-new};
+      --cu-font-weight: 700;
     }
 
     background: transparent;
@@ -472,10 +465,6 @@
     }
   }
 
-  .cu-icon {
-    margin-bottom: var(--cu-vr0);
-  }
-
   /*----------  Hover Reveal  ----------*/
   &--hover-content-reveal {
     .cu-card__content {
@@ -487,7 +476,7 @@
       max-height: 0;
       transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
       opacity: 0;
-      --cu-current-font-weight: 300;
+      --cu-font-weight: 300;
       padding: 0 var(--cu-ps2);
 
       &:last-child {
@@ -509,7 +498,8 @@
 
   /*----------  Hover Overlay  ----------*/
   &--hover-overlay {
-    --cu-current-text-color: #{$white};
+    --cu-text-color: #{$white};
+    --cu-font-size: var(--cu-ms-1);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -588,7 +578,7 @@
     }
 
     .cu-heading--strong {
-      font-size: var(--cu-text-lg);
+      --cu-font-size: var(--cu-ms2);
     }
   }
 
@@ -597,20 +587,20 @@
   &--vibrant {
     --cu-card-background: #{$cornell-red};
     --cu-card-content-background: #{$cornell-red};
-    --cu-current-text-color: #{$white};
+    --cu-text-color: #{$white};
     --cu-color-brand: #{$white}
   }
 
   &--light {
     --cu-card-background: #{$gray-light};
     --cu-card-content-background: #{$gray-light};
-    --cu-current-text-color: #{$black};
+    --cu-text-color: #{$black};
   }
 
   &--dark {
     --cu-card-background: #{$black};
     --cu-card-content-background: #{$black};
-    --cu-current-text-color: #{$white};
+    --cu-text-color: #{$white};
   }
 
   /*=====  End of Modifiers  ======*/

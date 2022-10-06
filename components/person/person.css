@@ -1,6 +1,5 @@
 .cu-person {
-  --cu-current-font-weight: 300;
-  --cu-current-font-size: var(--cu-ms-1); }
+  --cu-font-size: var(--cu-ms-1); }
   .cu-person--thumb {
     display: grid;
     grid-column-gap: var(--cu-vr0);
@@ -23,7 +22,6 @@
     .cu-person--thumb .cu-person__title:not(:last-child) {
       margin-bottom: var(--cu-vr-2); }
     .cu-person--thumb .cu-person__name {
-      --cu-current-font-size: var(--cu-text-xxl);
       grid-row: 1;
       grid-column: 2;
       margin: 0 0 var(--cu-vr-3); }
@@ -33,4 +31,3 @@
 .cu-grid--people {
   grid-column-gap: var(--cu-vr2);
   align-items: start; }
-/*# sourceMappingURL=person.css.map */

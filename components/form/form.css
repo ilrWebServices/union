@@ -265,8 +265,6 @@ progress {
     border-radius: 3px;
     border: 1px solid #ccc; }
   .cu-input--submit {
-    --cu-current-link-color: black;
-    --cu-current-font-size: var(--cu-ms1);
     border-radius: 2px;
     border: 4px solid #b31b1b;
     background: transparent;
@@ -276,8 +274,6 @@ progress {
     display: inline-block;
     text-decoration: none; }
     .cu-input--submit--alt {
-      --cu-current-link-color: black;
-      --cu-current-font-size: var(--cu-ms1);
       border-radius: 2px;
       border: 4px solid #b31b1b;
       background: transparent;
@@ -286,11 +282,9 @@ progress {
       width: auto;
       display: inline-block;
       text-decoration: none;
-      --cu-current-link-color: white;
+      --cu-text-color: white;
       background: #b31b1b; }
     .cu-input--submit--light {
-      --cu-current-link-color: black;
-      --cu-current-font-size: var(--cu-ms1);
       border-radius: 2px;
       border: 4px solid #b31b1b;
       background: transparent;
@@ -307,7 +301,7 @@ progress {
     background: #fef7f6; }
 
 .cu-input-message {
-  --cu-current-font-size: var(--cu-ms-1);
+  --cu-font-size: var(--cu-ms-1);
   color: var(--cu-color-text-disabled, #888888); }
   .cu-input-message--invalid {
     color: #b31b1b;

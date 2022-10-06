@@ -2,14 +2,24 @@
   --cu-color-brand: #b31b1b; }
 
 body {
-  color: var(--cu-color-text, #222);
   background-color: var(--cu-color-bg-body, #fff); }
+
+/* Color non-component links within Union components. This is any <a> element
+without a class that starts with 'cu-' and is nested inside a 'cu-*' component.
+We do not set --cu-text-color for all <a> elements here, because the CSS
+specificity would be higher than most single-class overrides. */
+/* [class*='cu-'] a:not([class*='cu-']) {
+  --cu-text-color: #b31b1b; } */
+.cu-text a:not([class*='cu-']) {
+  --cu-text-color: #b31b1b;
+  --cu-font-weight: 400;
+}
+.cu-text .cu-heading a {
+  --cu-text-color: inherit;
+}
 
 .cu-card {
   --cu-card-background: white; }
-
-.cu-card--icon {
-  --cu-current-link-color: #222; }
 
 .cu-card--light {
   --cu-card-background: #fff; }
@@ -22,10 +32,3 @@ body {
 
 .cu-card--hover-overlay {
   --cu-card-content-background: rgba(179, 27, 27, 0.75); }
-
-.cu-card--icon .cu-heading {
-  --cu-header-accent-width: 20%;
-  --cu-header-accent-padding: .25em 0 0 0;
-  --cu-header-accent-border: 4px solid var(--cu-color-brand, #b31b1b);
-  --cu-current-font-size: var(--cu-text-med); }
-/*# sourceMappingURL=colors.css.map */

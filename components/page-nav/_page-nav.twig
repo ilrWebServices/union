@@ -1,12 +1,10 @@
-{{ attach_library('union_organizer/page-nav') }}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-page-nav']) %}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass(['cu-page-nav']) }}>
   {% if heading %}<h2 class="cu-heading cu-heading--page-nav">{{ heading }}</h2>{% endif %}
   <ul class="cu-page-nav__list">
   {% for item in items %}
-    <li class="cu-page-nav__item"><a href="{{ item.url }}" class="cu-page-nav__link"><h4 class="cu-heading">{{ item.text }}</h4></a></li>
+    <li class="cu-page-nav__item"><a href="{{ item.url }}" class="cu-page-nav__link"><h4 class="cu-heading cu--accented">{{ item.text }}</h4></a></li>
   {% endfor %}
   </ul>
 </div>
