@@ -108,6 +108,10 @@
     --cu-card-background: transparent !important;
     --cu-card-content-background: #{$gray-light};
 
+    .cu-composite-heading::after {
+      content: none;
+    }
+
     .cu-card__content {
       padding: var(--cu-vr2) var(--cu-ps2);
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;

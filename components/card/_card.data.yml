@@ -153,9 +153,8 @@
       - 'cu-card--popout-right'
       - 'cu-card--popout'
       - 'cu-card--dark'
+  heading: The Popout Experience
   card_content: |
-    <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
-      The Popout Experience</div>
     <p>Cornell and ILR
       provide countless opportunities for
       personal and professional growth through clubs, research experiences, international
@@ -173,9 +172,8 @@
       - 'cu-card--popout-right'
       - 'cu-card--popout'
       - 'cu-card--vibrant'
+  heading: The Popout Experience
   card_content: |
-    <div class="cu-heading cu-text--xxxl field field--field-heading field-type--string field--label-hidden field__item">
-      The Popout Experience</div>
     <p>Cornell and ILR
       provide countless opportunities for
       personal and professional growth through clubs, research experiences, international
