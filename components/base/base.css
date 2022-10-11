@@ -25,7 +25,7 @@
   --phi: 1.618;
 
   --cu-ms-ratio: var(--major-second);
-  --cu-ms0: var(--cu-font-size, 1rem);
+  --cu-ms0: 1rem;
   --cu-ms1: calc(var(--cu-ms-ratio) * var(--cu-ms0));
   --cu-ms2: calc(var(--cu-ms-ratio) * var(--cu-ms1));
   --cu-ms3: calc(var(--cu-ms-ratio) * var(--cu-ms2));
@@ -43,7 +43,7 @@
   --cu-ms-5: calc(var(--cu-ms-4) / var(--cu-ms-ratio));
 
   --cu-ps-ratio: var(--fifth);
-  --cu-ps0: var(--cu-font-size, 1rem);
+  --cu-ps0: 1rem;
   --cu-ps1: calc(var(--cu-ps-ratio) * var(--cu-ps0));
   --cu-ps2: calc(var(--cu-ps-ratio) * var(--cu-ps1));
   --cu-ps3: calc(var(--cu-ps-ratio) * var(--cu-ps2));
