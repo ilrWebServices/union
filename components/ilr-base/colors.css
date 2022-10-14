@@ -13,6 +13,7 @@ specificity would be higher than most single-class overrides. */
 .cu-text a:not([class*='cu-']) {
   --cu-text-color: #b31b1b;
   --cu-font-weight: 400;
+  text-decoration-thickness: 2px;
 }
 .cu-text .cu-heading a {
   --cu-text-color: inherit;
