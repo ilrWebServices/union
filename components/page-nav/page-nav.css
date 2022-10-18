@@ -11,6 +11,7 @@
   margin: 0;
   padding: 0;
   display: inline-flex;
+  gap: var(--cu-ps2);
   flex-direction: column;
   --cu-text-color: var(--cu-color-text--light, #fff);
   --cu-accent-width: 40%;
