@@ -289,8 +289,7 @@
     background: transparent;
     display: grid;
     grid-template-columns: 88px auto;
-    gap: var(--cu-ps0);
-    align-items: center; }
+    gap: var(--cu-ps0); }
     .cu-card--post-small .cu-card__content {
       height: unset; }
     .cu-card--post-small .cu-card__media {
