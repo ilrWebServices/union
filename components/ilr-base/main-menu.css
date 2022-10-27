@@ -1,11 +1,18 @@
 .cu-header {
   display: flex;
+  gap: var(--cu-ps-1);
   align-items: center;
   padding-top: var(--cu-vr1);
   margin-bottom: var(--cu-component-margin-bottom, 0);
   border-bottom: 1px solid var(--cu-color-border, #ccc); }
   .cu-header .cu-logo {
     padding-bottom: var(--cu-vr1); }
+
+@media (min-width: 61rem) {
+  .cu-header {
+    gap: var(--cu-ps1);
+  }
+}
 
 /* Nav Trigger */
 .nav-trigger {
@@ -16,9 +23,8 @@
       display: none; } }
 
 label[for="nav-trigger"] {
-  position: absolute;
-  right: var(--cu-vr1);
-  top: 30px;
+  display: inline-block;
+  width: 24px;
   z-index: 2;
   cursor: pointer; }
   @media (min-width: 61rem) {
@@ -40,11 +46,11 @@ label[for="nav-trigger"] {
   content: "\2573"; }
 
 .cu-menu--main {
-  flex-grow: 1;
-  align-self: flex-end; }
+  flex-grow: 1; }
 
 .cu-menu__list {
   --cu-font-size: var(--cu-ms-1);
+  text-align: left;
   background: white;
   list-style-type: none;
   margin: 0;
@@ -52,9 +58,8 @@ label[for="nav-trigger"] {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 80px;
   width: 92vw;
-  left: 4vw;
+  right: 0;
   box-shadow: 0px 0px 26px -3px rgba(0, 0, 0, 0.37);
   z-index: 10;
   flex-grow: 1; }
@@ -69,7 +74,10 @@ label[for="nav-trigger"] {
       display: flex;
       flex-direction: row;
       position: relative;
-      justify-content: space-between; } }
+      /* space-around has been supported for almost 5 additional years, so why not? */
+      justify-content: space-around;
+      justify-content: space-evenly;
+      align-items: flex-end; } }
 
 .cu-menu__item {
   margin: 0 .5em; }
