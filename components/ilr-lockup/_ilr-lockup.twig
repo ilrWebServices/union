@@ -4,12 +4,10 @@
  *
  * A Cornell seal and ILR logo combo, with separate links to each.
  *
- * @var Drupal\Core\Template\Attribute|array $wrapper_attributes Attributes (class, data, etc.) for the lockup wrapper.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the lockup wrapper.
  */
 #}
-{% set wrapper_attributes = {
-  class: 'cu-logo cu-logo--ilr-lockup'
-} %}
-<div{{ union_attributes(wrapper_attributes) }}>
+{% set attributes = union_attributes(attributes|default([])) %}
+<div{{ attributes.addClass(['cu-logo', 'cu-logo--ilr-lockup']) }}>
 {{ source('@union/_ilr-cornell-lockup.svg.twig') }}
 </div>
