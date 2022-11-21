@@ -4,9 +4,10 @@
     position: absolute;
     top: 0.75em;
     right: 0.75em;
-    border: 1px solid var(--cu-color-brand, #b31b1b);
+    border: 2px solid white;
     border-radius: 1em;
-    background-color: rgba(0, 0, 0, 0.35);
+    background-color: var(--cu-color-brand, #b31b1b);
+    opacity: .5;
     height: 2em;
     width: 2em;
     display: flex;
@@ -14,6 +15,8 @@
     justify-content: center;
     color: white;
     z-index: 10; }
+  .cu-dismissible__close:hover {
+    opacity: 1; }
   .cu-dismissible__content {
     visibility: visible;
     opacity: 1; }
@@ -28,4 +31,6 @@
     display: none; }
   .cu-dismissible__input {
     display: none; }
-/*# sourceMappingURL=dismissible.css.map */
+  .cu-dismissible .cu-component {
+    margin: 0;
+  }

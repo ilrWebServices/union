@@ -1,0 +1,12 @@
+-
+  demo_label: Default
+  content: |
+    <div
+      class="cu-card--panel cu-card--panel-left cu-card--use-aspect-ratio cu-card--vibrant cu-component cu-component--promo cu-card cu-card--with-media"
+      data-pid="10138">
+
+      <div class="cu-card__media">
+        <img src="https://placeimg.com/720/480/people"
+          alt="your money" loading="lazy" class="cu-image" width="1200" height="459">
+      </div>
+    </div>
