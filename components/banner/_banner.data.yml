@@ -40,7 +40,9 @@
 -
   demo_label: Panel (`cu-banner--panel-left`)
   attributes:
-    class: 'cu-banner--panel cu-banner--panel-left'
+    class:
+      - 'cu-banner--panel'
+      - 'cu-banner--panel-left'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   icon_data:

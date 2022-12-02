@@ -40,15 +40,21 @@
 
 <div{{ attributes }}>
   <div{{ content_attributes }}>
-    {% if icon_data %}
-    {% set icon_data = icon_data|merge({ attributes: { 'class': 'cu-banner__icon cu-icon--color-light cu-icon--inline' }}) %}
-    {% include '@union/_icon.twig' with icon_data only %}
-    {% endif %}
-    {% if eyebrow_heading %}
-    <div class="cu-banner__eyebrow-heading cu-heading">{{ eyebrow_heading }}</div>
-    {% endif %}
-    {% if heading %}
-    <h2 class="cu-banner__heading cu-heading">{{ heading }}</h2>
+
+    {% if icon_data or eyebrow_heading or heading %}
+    {% include '@union/_composite-heading.twig' with {
+      icon_data: icon_data,
+      eyebrow_heading: eyebrow_heading,
+      heading: heading,
+      attributes: {
+        class: [
+          'cu-banner__meta',
+          'cu-composite-heading--minimal',
+          attributes.hasClass('cu-banner--panel') ? 'cu-composite-heading--left',
+          attributes.hasClass('cu-banner--panel') ? 'cu-composite-heading--bold',
+        ]
+      }
+    } only %}
     {% endif %}
     {{ content }}
     {% if link_url %}

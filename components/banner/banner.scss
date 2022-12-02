@@ -25,39 +25,10 @@
       background: var(--cu-color-bg--dark, #{$color-bg--dark});
       display: flex;
       flex-direction: column;
-      // align-items: center;
       justify-content: center;
       padding: var(--cu-vr1) var(--cu-ps2);
     }
 
-  }
-
-  .cu-banner__heading {
-    --cu-font-size: 50px;
-    font-family: 'futura-pt';
-    text-transform: uppercase;
-    line-height: 1;
-
-    &::after {
-      content: '';
-      display: block;
-      width: 100px;
-      height: 8px;
-      margin-top: var(--cu-vr0);
-      background: var(--cu-color-brand, #{$cornell-red});
-    }
-  }
-
-  .cu-banner__eyebrow-heading {
-    --cu-font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 0.1em;
-    margin-bottom: var(--cu-vr0);
-  }
-
-  .cu-banner__icon {
-    margin-bottom: var(--cu-vr0);
   }
 
   .cu-button {
