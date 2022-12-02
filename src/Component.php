@@ -110,6 +110,21 @@ class Component {
   }
 
   /**
+   * Get a short description of the component.
+   *
+   * @return string|null The first line of the description for this component.
+   *   Can be markdown.
+   */
+  public function getShortDescription() {
+    if ($this->getDockblock()) {
+      $line = preg_split('#\r?\n#', ltrim($this->getDockblock()->getDescription()), 2)[0];
+      return $line;
+    }
+
+    return null;
+  }
+
+  /**
    * Get a list of variables used in the template for this component.
    *
    * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Var_ objects.
