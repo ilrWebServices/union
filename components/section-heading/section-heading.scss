@@ -11,25 +11,14 @@
     margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
   }
 
-  .cu-icon {
-    order: -2;
-  }
-
-  &__heading {
+  .cu-composite-heading .cu-composite-heading__heading {
     --cu-font-size: var(--cu-ms6);
     margin-top: 0;
   }
 
-  &__subheading {
-    --cu-font-size: var(--cu-ms-1);
-    --cu-font-weight: 800;
-    order: -1;
-    margin-bottom: 0;
-  }
-
-  &__link {
+  .cu-composite-heading .cu-composite-heading__link {
     --cu-text-color: #{$cornell-red};
-    --cu-font-weight: bold;
+    --cu-font-weight: 400;
     --cu-font-size: var(--cu-ms-2);
   }
 

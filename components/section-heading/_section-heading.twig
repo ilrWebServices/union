@@ -9,21 +9,25 @@
  * @var array $link An optional array with `url` and `text` keys.
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @todo Deprecate with Composite Heading if frame option is retired and heading and link style overrides are removed.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-section-heading']) %}
 {% set heading_element = heading_element|default('h2') %}
 
-<div{{ attributes}}>
-  {% if icon_data %}
-    {% include '@union/_icon.twig' with icon_data only %}
-  {% endif %}
-  <{{ heading_element }} class="cu-heading cu-section-heading__heading">{{ heading }}</{{ heading_element }}>
-  {% if subheading %}
-    <h3 class="cu-section-heading__subheading">{{ subheading }}</h3>
-  {% endif %}
-  {% if link %}
-    <a href="{{ link.url }}" class="cu-section-heading__link">{{ link.text }}</a>
-  {% endif %}
+<div{{ attributes.addClass('cu-section-heading')}}>
+{% include '@union/_composite-heading.twig' with {
+  icon_data: icon_data,
+  eyebrow_heading: subheading,
+  heading: heading,
+  heading_element: heading_element,
+  link: link,
+  attributes: {
+    class: [
+      'cu-section-heading--meta',
+      'cu-composite-heading--minimal'
+    ]
+  }
+} only %}
 </div>

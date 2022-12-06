@@ -12,19 +12,12 @@
   @media (min-width: 61rem) {
     .cu-section-heading {
       margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1)); } }
-  .cu-section-heading .cu-icon {
-    order: -2; }
-  .cu-section-heading__heading {
+  .cu-section-heading .cu-composite-heading .cu-composite-heading__heading {
     --cu-font-size: var(--cu-ms6);
     margin-top: 0; }
-  .cu-section-heading__subheading {
-    --cu-font-size: var(--cu-ms-1);
-    --cu-font-weight: 800;
-    order: -1;
-    margin-bottom: 0; }
-  .cu-section-heading__link {
+  .cu-section-heading .cu-composite-heading .cu-composite-heading__link {
     --cu-text-color: #b31b1b;
-    --cu-font-weight: bold;
+    --cu-font-weight: 400;
     --cu-font-size: var(--cu-ms-2); }
   .cu-section-heading--framed {
     position: relative;
