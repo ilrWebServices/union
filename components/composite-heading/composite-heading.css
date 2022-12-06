@@ -1,5 +1,4 @@
 .cu-composite-heading {
-  max-width: var(--cu-max-width-section, 1060px);
   display: flex;
   gap: var(--cu-vr-1);
   flex-direction: column;
