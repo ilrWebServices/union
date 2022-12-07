@@ -176,7 +176,7 @@ class Component {
 
     if (preg_match_all("/{#([^}]*)#}/", $twig_code, $matches)) {
       if ($doc_comment = $matches[1][0] ?? FALSE) {
-        return $factory->create($doc_comment);
+        return $this->docblock = $factory->create($doc_comment);
       }
     }
 
