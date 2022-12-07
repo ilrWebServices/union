@@ -136,7 +136,7 @@ class Component {
   /**
    * Get a list of references (links) for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Var_ objects.
+   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\See objects.
    */
   public function getReferences() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('see') : [];
@@ -145,7 +145,7 @@ class Component {
   /**
    * Get a list of todos for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Var_ objects.
+   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Generic objects.
    */
   public function getTodos() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('todo') : [];
