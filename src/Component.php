@@ -4,6 +4,7 @@ namespace Union;
 
 use phpDocumentor\Reflection\DocBlockFactory;
 use Symfony\Component\Yaml\Yaml;
+use Union\DocBlock\Tags\UnionVariation;
 
 class Component {
 
@@ -152,6 +153,15 @@ class Component {
   }
 
   /**
+   * Get a list of variations for this component.
+   *
+   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Generic objects.
+   */
+  public function getVariations() {
+    return $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-variation') : [];
+  }
+
+  /**
    * Get the docblock for this template, if it exists.
    *
    * @return phpDocumentor\Reflection\DocBlock|FALSE
@@ -162,7 +172,7 @@ class Component {
     }
 
     $twig_code = file_get_contents($this->template->getRealPath());
-    $factory = DocBlockFactory::createInstance();
+    $factory = DocBlockFactory::createInstance(['union-variation' => UnionVariation::class]);
 
     if (preg_match_all("/{#([^}]*)#}/", $twig_code, $matches)) {
       if ($doc_comment = $matches[1][0] ?? FALSE) {
