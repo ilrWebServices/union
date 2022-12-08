@@ -1,4 +1,4 @@
 css:
-  cu-section.css: {}
+  section.css: {}
 dependencies:
   - base

@@ -1,0 +1,53 @@
+-
+  demo_label: 'Basic'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  content: |
+    <p>Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+-
+  demo_label: 'Framed'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  link:
+    url: http://example.com
+    text: Learn more
+  content: |
+    <p class="cu-card">Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+  attributes:
+    class:
+      - cu-section--framed
+-
+  demo_label: 'Left'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  icon_data:
+    icon: tower
+  link:
+    url: http://example.com
+    text: Learn more
+  blurb: |
+    <p>This is the blurb. It is generally shorter content meant to summarize the main section content.</p>
+  content: |
+    <p>This is the content. It will most likely be other components.</p>
+    <p>Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+  attributes:
+    class:
+      - cu-section--left
+-
+  demo_label: 'Left with Centered Content'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  icon_data:
+    icon: tower
+  link:
+    url: http://example.com
+    text: Learn more
+  blurb: |
+    <p>This is the blurb. It is generally shorter content meant to summarize the main section content.</p>
+  content: |
+    <p>This is the content. It will most likely be other components.</p>
+    <p>Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+  attributes:
+    class:
+      - cu-section--left
+      - cu-section--centered

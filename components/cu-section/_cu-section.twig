@@ -1,7 +1,0 @@
-{{ attach_library('union_organizer/cu-section') }}
-
-{% set attributes = union_attributes(attributes|default([])) %}
-
-<section{{attributes.addClass('cu-section')}}>
-  {{ content }}
-</section>
