@@ -162,6 +162,15 @@ class Component {
   }
 
   /**
+   * Get a list of deprecations for this component.
+   *
+   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Deprecated objects.
+   */
+  public function getDeprecations() {
+    return $this->getDockblock() ? $this->getDockblock()->getTagsByName('deprecated') : [];
+  }
+
+  /**
    * Get the docblock for this template, if it exists.
    *
    * @return phpDocumentor\Reflection\DocBlock|FALSE
