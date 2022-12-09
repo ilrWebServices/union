@@ -37,7 +37,11 @@
     left: calc(100% - 10px); }
 
 .cu-section__heading {
-  margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr1));
+  margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr2));
+}
+
+.cu-section--left > .cu-section__heading {
+  margin-bottom: unset;
 }
 
 @media (min-width: 80rem) {
@@ -63,7 +67,7 @@
 }
 
 /* The following overrides are from the legacy Section Heading component. */
-.cu-section__heading .cu-composite-heading__heading {
+.cu-section__heading.cu-composite-heading .cu-composite-heading__heading {
   --cu-font-size: var(--cu-ms6);
 }
 .cu-section__heading .cu-composite-heading__link {
