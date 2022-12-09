@@ -1,17 +1,16 @@
 .cu-composite-heading {
   display: flex;
-  gap: var(--cu-vr-1);
+  gap: var(--cu-vr0);
   flex-direction: column;
   align-items: var(--cu-composite-heading-align, center); }
   .cu-composite-heading .cu-icon {
     order: 1;
-    margin: 0 0 var(--cu-vr-1) 0; }
+    margin: 0; }
   .cu-composite-heading .cu-composite-heading__heading {
     --cu-font-size: var(--cu-ms5);
     --cu-font-weight: 300;
     order: 3;
-    margin: 0;
-    margin: 0 0 var(--cu-vr-1) 0; }
+    margin: 0; }
   .cu-composite-heading__eyebrow-heading {
     --cu-font-size: 12px !important;
     --cu-line-height: 1 !important;
@@ -19,7 +18,8 @@
     font-weight: 900;
     letter-spacing: 0.1em;
     order: 2;
-    margin: 0; }
+    margin: 0;
+    margin-bottom: calc(var(--cu-vr-1) * -1); }
   .cu-composite-heading__body {
     text-align: var(--cu-composite-heading-text-align, center);
     order: 4;
@@ -31,7 +31,7 @@
     font-weight: bold;
     font-size: var(--cu-ms-1);
     order: 5;
-    margin: var(--cu-vr-1) 0 0 !important; }
+    margin: 0 !important; }
   .cu-composite-heading::after {
     content: '';
     display: block;
@@ -39,8 +39,7 @@
     height: 8px;
     background: var(--cu-color-brand, #b31b1b);
     order: 6;
-    margin: 0;
-    margin: var(--cu-vr-1) 0 0; }
+    margin: 0; }
   .cu-composite-heading--minimal::after {
     display: none; }
   .cu-composite-heading--left {
@@ -48,7 +47,7 @@
     --cu-composite-heading-text-align: left; }
     .cu-composite-heading--left::after {
       order: 3;
-      margin: 0 0 var(--cu-vr-1) 0; }
+      margin: 0; }
   .cu-composite-heading--bold .cu-composite-heading__heading {
     --cu-font-family: 'futura-pt';
     --cu-font-size: var(--cu-ms7);

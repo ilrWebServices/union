@@ -2,13 +2,13 @@
 
 .cu-composite-heading {
   display: flex;
-  gap: var(--cu-vr-1);
+  gap: var(--cu-vr0);
   flex-direction: column;
   align-items: var(--cu-composite-heading-align, center);
 
   .cu-icon {
     order: 1;
-    margin: 0 0 var(--cu-vr-1) 0;
+    margin: 0;
   }
 
   & &__heading {
@@ -16,7 +16,6 @@
     --cu-font-weight: 300;
     order: 3;
     margin: 0;
-    margin: 0 0 var(--cu-vr-1) 0;
   }
 
   &__eyebrow-heading {
@@ -27,6 +26,8 @@
     letter-spacing: 0.1em;
     order: 2;
     margin: 0;
+    // This effectively narrows the flex row gap below this item.
+    margin-bottom: calc(var(--cu-vr-1) * -1);
   }
 
   &__body {
@@ -44,9 +45,7 @@
     font-weight: bold;
     font-size: var(--cu-ms-1);
     order: 5;
-    // !important because the .cu-button class, used when using the --left
-    // variant, will still add the margin.
-    margin: var(--cu-vr-1) 0 0 !important;
+    margin: 0 !important;
   }
 
   &::after {
@@ -57,7 +56,6 @@
     background: var(--cu-color-brand, #{$cornell-red});
     order: 6;
     margin: 0;
-    margin: var(--cu-vr-1) 0 0;
   }
 
   &--minimal::after {
@@ -71,7 +69,7 @@
 
     &::after {
       order: 3;
-      margin: 0 0 var(--cu-vr-1) 0;
+      margin: 0;
     }
   }
 
