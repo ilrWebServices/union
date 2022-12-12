@@ -1,6 +1,6 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 
-{% include '@union/_cu-section.twig' with {
+{% include '@union/_section.twig' with {
   content: content,
   attributes: attributes.addClass('cu-layout--twocol')
 } %}
