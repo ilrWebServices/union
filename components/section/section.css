@@ -44,6 +44,14 @@
   margin-bottom: unset;
 }
 
+.cu-section__content {
+  display: contents;
+}
+
+.cu-section--left > .cu-section__content {
+  display: block;
+}
+
 @media (min-width: 80rem) {
   .cu-section--left {
     display: grid;
