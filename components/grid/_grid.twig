@@ -1,10 +1,39 @@
-{{ attach_library('union_organizer/grid') }}
+{#
+/**
+ * Grid
+ *
+ * A grid is a grid. Rows and columns, right?
+ *
+ * @var string $grid_content The items for the grid.
+ * @var string $grid_element The HTML element for the grid. Defaults to `div`.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the grid.
+ *
+ * @union-variation cu-grid--gapless
+ * @union-variation cu-grid--2col
+ * @union-variation cu-grid--3col
+ * @union-variation cu-grid--4col
+ * @union-variation cu-grid--2-1
+ * @union-variation cu-grid--2-1-lead
+ * @union-variation cu-grid--3-1
+ * @union-variation cu-grid--1-2
+ * @union-variation cu-grid--1-3
+ * @union-variation cu-grid--3col-lead
+ * @union-variation cu-grid--4col-lead
+ * @union-variation cu-grid--align-end
+ * @union-variation cu-grid--1x2
+ * @union-variation cu-grid--two-down
+ * @union-variation cu-grid--2x1
+ * @union-variation cu-grid--two-up
+ * @union-variation cu-grid--two-left
+ * @union-variation cu-grid--two-right
+ *
+ * @union-css-category layout
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-grid']) %}
-
 {% set grid_element = grid_element|default('div') %}
 
-<{{ grid_element }}{{ attributes }}>
+<{{ grid_element }}{{ attributes.addClass(['cu-grid']) }}>
   {{ grid_content }}
 </{{grid_element}}>
 

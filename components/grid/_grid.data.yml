@@ -1,0 +1,35 @@
+-
+  demo_label: 3col
+  grid_content: |
+    <div class="grid-item">one</div>
+    <div class="grid-item">two</div>
+    <div class="grid-item">three</div>
+    <div class="grid-item">four</div>
+    <div class="grid-item">five</div>
+    <div class="grid-item">six</div>
+    <style>
+    .grid-item {
+      background: gold;
+      padding: 1em;
+      border: 1px solid black;
+    }
+    </style>
+  attributes:
+    class:
+      - cu-grid--3col
+-
+  demo_label: two-up
+  grid_content: |
+    <div class="grid-item">one</div>
+    <div class="grid-item">two</div>
+    <div class="grid-item">three</div>
+    <style>
+    .grid-item {
+      background: gold;
+      padding: 1em;
+      border: 1px solid black;
+    }
+    </style>
+  attributes:
+    class:
+      - cu-grid--two-up
