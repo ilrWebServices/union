@@ -37,6 +37,8 @@ class Component {
 
   protected $demoData;
 
+  const CSS_CATEGORIES = ['base', 'layout', 'component', 'state', 'theme'];
+
   /**
    * Construct a new component.
    *
@@ -159,6 +161,30 @@ class Component {
    */
   public function getVariations() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-variation') : [];
+  }
+
+  /**
+   * Get the CSS category for this component.
+   *
+   * @return string
+   *   The first `union-css-category` tag, e.g. `base`, `layout`, etc. or `component` if not set.
+   *
+   * @see http://smacss.com/book/categorizing
+   * @see https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-9#separate-concerns
+   */
+  public function getCssCategory() {
+    $categories = $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-css-category') : [];
+
+    if ($categories) {
+      $first_category = (string) $categories[0]->getDescription();
+
+      if (in_array($first_category, self::CSS_CATEGORIES)) {
+        return $first_category;
+      }
+    }
+
+    // If no category tag is present, default to 'component'.
+    return 'component';
   }
 
   /**
