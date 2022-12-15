@@ -2,42 +2,35 @@
 
 namespace Union;
 
+use phpDocumentor\Reflection\DocBlock;
 use phpDocumentor\Reflection\DocBlockFactory;
 use Symfony\Component\Yaml\Yaml;
 use Union\DocBlock\Tags\UnionVariation;
 
-class Component {
+class Component implements ComponentInterface {
 
-  protected $componentId;
+  protected string $componentId;
 
-  public $template;
-
-  /**
-   * Component CSS
-   *
-   * @var array An array of \SplFileInfo objects representing CSS files.
-   */
-  protected $css = [];
+  public \SplFileInfo $template;
 
   /**
-   * Component JavaScript
-   *
-   * @var array An array of \SplFileInfo objects representing JS files.
+   * @var \SplFileInfo[].
    */
-  protected $js = [];
+  protected array $css = [];
 
   /**
-   * Component Fonts
-   *
-   * @var array An array of \SplFileInfo objects representing font files.
+   * @var \SplFileInfo[].
    */
-  protected $fonts = [];
+  protected array $js = [];
 
-  protected $docblock;
+  /**
+   * @var \SplFileInfo[].
+   */
+  protected array $fonts = [];
 
-  protected $demoData;
+  protected ?DocBlock $docblock = null;
 
-  const CSS_CATEGORIES = ['base', 'layout', 'component', 'state', 'theme'];
+  protected array $demoData = [];
 
   /**
    * Construct a new component.
@@ -52,15 +45,15 @@ class Component {
     $this->template = $template;
   }
 
-  public function addCss(\SplFileInfo $css) {
+  public function addCss(\SplFileInfo $css): void {
     $this->css[] = $css;
   }
 
-  public function addJs(\SplFileInfo $js) {
+  public function addJs(\SplFileInfo $js): void {
     $this->js[] = $js;
   }
 
-  public function addFont(\SplFileInfo $font) {
+  public function addFont(\SplFileInfo $font): void {
     $this->fonts[] = $font;
   }
 
@@ -76,49 +69,27 @@ class Component {
     return $this->fonts;
   }
 
-  public function addDemoData(\SplFileInfo $demo_data) {
+  public function addDemoData(\SplFileInfo $demo_data): void {
     $this->demoData = Yaml::parseFile($demo_data->getPathname());
   }
 
-  public function getDemoData() {
+  public function getDemoData(): array {
     return $this->demoData ?? [];
   }
 
-  /**
-   * Get the component machine name.
-   *
-   * @return string The machine name identifier.
-   */
-  public function id() {
+  public function id(): string {
     return $this->componentId;
   }
 
-  /**
-   * Get the component label.
-   *
-   * @return string|null The human readable label.
-   */
-  public function getLabel() {
+  public function getLabel(): ?string {
     return $this->getDockblock() ? $this->getDockblock()->getSummary() : null;
   }
 
-  /**
-   * Get the component description.
-   *
-   * @return string|null The long description for this component. Can be
-   *   markdown for use in other tools.
-   */
-  public function getDescription() {
+  public function getDescription(): ?string {
     return $this->getDockblock() ? $this->getDockblock()->getDescription() : null;
   }
 
-  /**
-   * Get a short description of the component.
-   *
-   * @return string|null The first line of the description for this component.
-   *   Can be markdown.
-   */
-  public function getShortDescription() {
+  public function getShortDescription(): ?string {
     if ($this->getDockblock()) {
       $line = preg_split('#\r?\n#', ltrim($this->getDockblock()->getDescription()), 2)[0];
       return $line;
@@ -127,52 +98,23 @@ class Component {
     return null;
   }
 
-  /**
-   * Get a list of variables used in the template for this component.
-   *
-   * @return \phpDocumentor\Reflection\DocBlock\Tags\Var_[].
-   */
   public function getTemplateVars() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('var') : [];
   }
 
-  /**
-   * Get a list of references (links) for this component.
-   *
-   * @return \phpDocumentor\Reflection\DocBlock\Tags\See[].
-   */
   public function getReferences() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('see') : [];
   }
 
-  /**
-   * Get a list of todos for this component.
-   *
-   * @return \phpDocumentor\Reflection\DocBlock\Tags\Generic[].
-   */
   public function getTodos() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('todo') : [];
   }
 
-  /**
-   * Get a list of variations for this component.
-   *
-   * @return \Union\DocBlock\Tags\UnionVariation[].
-   */
   public function getVariations() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-variation') : [];
   }
 
-  /**
-   * Get the CSS category for this component.
-   *
-   * @return string
-   *   The first `union-css-category` tag, e.g. `base`, `layout`, etc. or `component` if not set.
-   *
-   * @see http://smacss.com/book/categorizing
-   * @see https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-9#separate-concerns
-   */
-  public function getCssCategory() {
+  public function getCssCategory(): string {
     $categories = $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-css-category') : [];
 
     if ($categories) {
@@ -187,21 +129,14 @@ class Component {
     return 'component';
   }
 
-  /**
-   * Get a list of deprecations for this component.
-   *
-   * @return \phpDocumentor\Reflection\DocBlock\Tags\Deprecated[].
-   */
   public function getDeprecations() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('deprecated') : [];
   }
 
   /**
    * Get the docblock for this template, if it exists.
-   *
-   * @return phpDocumentor\Reflection\DocBlock|FALSE
    */
-  protected function getDockblock() {
+  protected function getDockblock(): ?DocBlock {
     if (!is_null($this->docblock)) {
       return $this->docblock;
     }
@@ -215,35 +150,7 @@ class Component {
       }
     }
 
-    return FALSE;
-  }
-
-  /**
-   * Render this component.
-   *
-   * @return string
-   *   HTML markup or ???.
-   */
-  public function render() {
-
-  }
-
-  public function getLibrary() {
-    $library = [];
-
-    if ($this->css) {
-      foreach ($this->css as $css_file) {
-        $library['css'][] = $css_file->getRealPath();
-      }
-    }
-
-    if ($this->js) {
-      foreach ($this->js as $js_file) {
-        $library['js'][] = $js_file->getRealPath();
-      }
-    }
-
-    return $library;
+    return null;
   }
 
 }

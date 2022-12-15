@@ -4,12 +4,14 @@ namespace Union;
 
 class Components implements ComponentsInterface {
 
+  /**
+   * An array of all `Component`s.
+   *
+   * @var Component[]
+   */
   protected $components = [];
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getComponents($include_demo_data = FALSE) {
+  public function getComponents($include_demo_data = false) {
     $it = new \RecursiveDirectoryIterator(__DIR__ . '/../components');
     $it = new \RecursiveIteratorIterator($it);
     $it = new \RegexIterator($it, '/.+_.*\.twig$/');
@@ -57,10 +59,7 @@ class Components implements ComponentsInterface {
     return $this->components;
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getComponent($component_id, $include_demo_data = FALSE) {
+  public function getComponent($component_id, $include_demo_data = FALSE): ?Component {
     if (empty($this->components)) {
       $this->getComponents($include_demo_data);
     }
@@ -69,10 +68,10 @@ class Components implements ComponentsInterface {
       return $this->components[$component_id];
     }
 
-    return FALSE;
+    return null;
   }
 
-  public function getImagePath() {
+  public function getImagePath(): string {
     return realpath(__DIR__ . '/../images');
   }
 
