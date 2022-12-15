@@ -52,7 +52,7 @@
   display: block;
 }
 
-@media (min-width: 80rem) {
+@media (min-width: 61rem) {
   .cu-section--left {
     display: grid;
     grid-template-columns: 1fr 2fr;
