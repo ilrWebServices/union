@@ -120,9 +120,14 @@ class Component implements ComponentInterface {
     if ($categories) {
       $first_category = (string) $categories[0]->getDescription();
 
-      if (in_array($first_category, self::CSS_CATEGORIES)) {
-        return $first_category;
+      if (!in_array($first_category, self::CSS_CATEGORIES)) {
+        throw new \Exception(strtr('Illegal CSS category "%category" for "%component" component', [
+          '%category' => $first_category,
+          '%component' => $this->id(),
+        ]));
       }
+
+      return $first_category;
     }
 
     // If no category tag is present, default to 'component'.
