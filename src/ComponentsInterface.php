@@ -7,8 +7,7 @@ interface ComponentsInterface {
   /**
    * Get all components.
    *
-   * @return array
-   *   An array of UnionComponent objects.
+   * @return Component[]
    */
   public function getComponents();
 
@@ -18,7 +17,7 @@ interface ComponentsInterface {
    * @param string $component_id
    * @param bool $include_demo_data
    *
-   * @return UnionComponent
+   * @return Component
    */
   public function getComponent($component_id, $include_demo_data);
 

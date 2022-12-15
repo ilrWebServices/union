@@ -130,7 +130,7 @@ class Component {
   /**
    * Get a list of variables used in the template for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Var_ objects.
+   * @return \phpDocumentor\Reflection\DocBlock\Tags\Var_[].
    */
   public function getTemplateVars() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('var') : [];
@@ -139,7 +139,7 @@ class Component {
   /**
    * Get a list of references (links) for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\See objects.
+   * @return \phpDocumentor\Reflection\DocBlock\Tags\See[].
    */
   public function getReferences() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('see') : [];
@@ -148,7 +148,7 @@ class Component {
   /**
    * Get a list of todos for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Generic objects.
+   * @return \phpDocumentor\Reflection\DocBlock\Tags\Generic[].
    */
   public function getTodos() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('todo') : [];
@@ -157,7 +157,7 @@ class Component {
   /**
    * Get a list of variations for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Generic objects.
+   * @return \Union\DocBlock\Tags\UnionVariation[].
    */
   public function getVariations() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('union-variation') : [];
@@ -190,7 +190,7 @@ class Component {
   /**
    * Get a list of deprecations for this component.
    *
-   * @return array An array of phpDocumentor\Reflection\DocBlock\Tags\Deprecated objects.
+   * @return \phpDocumentor\Reflection\DocBlock\Tags\Deprecated[].
    */
   public function getDeprecations() {
     return $this->getDockblock() ? $this->getDockblock()->getTagsByName('deprecated') : [];
