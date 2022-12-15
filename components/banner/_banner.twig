@@ -10,16 +10,6 @@
  * - highlight and link to important announcements
  * - display videos with content overlays
  *
- * ## Variations
- *
- * ### Announcement Banner
- *
- * Announcement banners (`cu-banner--announcement`) place the title over the image while the content flows into a second column on wider displays. They will initially be used in combination with the dismissible components, as a way to include an important announcement at the top of a page. Usage may extend over time, though frequent usage should probably be avoided so that they are more visible.
- *
- * ### Video Banner
- *
- * Video banners (`cu-banner--video`) display a video component with overlayed content. If the content contains a `play` icon, that icon will control the playback of any video found inside the media section.
- *
  * @var string $content The primary content of the banner, often markup.
  * @var string $media Optional media (img, video, or any other CSS replaced element).
  * @var string $heading Main heading title for the banner.
@@ -30,11 +20,20 @@
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire banner.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
  *
+ * @union-variation cu-banner--announcement Places the title over the image while the content flows into a second column on wider displays.
+ * @union-variation cu-banner--video Display a video component with overlayed content. If the content contains a `play` icon, that icon will control the playback of any video found inside the media section.
+ * @union-variation cu-banner--panel Displays the content and the media side-by-side, with the content on the right. Similar to the Card `panel` variation.
+ * @union-variation cu-banner--panel-left A variation of `cu-banner--panel` with the content on the left.
+ * @union-variation cu-banner--page A simple banner with the content over the media.
+ *
+ * @todo Fix the announcement variation. Seems to have been lost in the refactoring.
+ * @todo Make the default (no variation) display better.
+ *
  * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=473%3A2463 Image + Dark Panel/Left/Content (AKA Banner) in Figma
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-banner ']) %}
+{% set attributes = attributes.addClass(['cu-banner']) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set content_attributes = content_attributes.addClass(['cu-banner__content']) %}
 
