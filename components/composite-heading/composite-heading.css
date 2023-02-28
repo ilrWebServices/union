@@ -50,6 +50,14 @@
       margin: 0; }
   .cu-composite-heading--bold .cu-composite-heading__heading {
     --cu-font-family: 'futura-pt';
-    --cu-font-size: var(--cu-ms7);
-    text-transform: uppercase; }
+    --cu-font-size: var(--cu-ms4);
+    text-transform: uppercase;
+    word-wrap: anywhere; }
+    @media (min-width: 37.5rem) {
+      .cu-composite-heading--bold .cu-composite-heading__heading {
+        --cu-font-size: var(--cu-ms6);
+        word-wrap: normal; } }
+    @media (min-width: 61rem) {
+      .cu-composite-heading--bold .cu-composite-heading__heading {
+        --cu-font-size: var(--cu-ms7); } }
 /*# sourceMappingURL=composite-heading.css.map */
