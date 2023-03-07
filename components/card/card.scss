@@ -164,7 +164,9 @@
 
     @include breakpoint(md) {
       display: grid;
-      grid-template-columns: 66% 34%;
+      // Using fr here instead of percent to allow wide text to push the width
+      // of a column if necessary.
+      grid-template-columns: 2fr 1fr;
       padding: 0;
     }
 
@@ -217,7 +219,7 @@
 
   &--panel-left {
     @include breakpoint(md) {
-      grid-template-columns: 34% 66%;
+      grid-template-columns: 1fr 2fr;
     }
 
     .cu-card__media {

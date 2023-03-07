@@ -124,7 +124,7 @@
     @media (min-width: 61rem) {
       .cu-card--panel {
         display: grid;
-        grid-template-columns: 66% 34%;
+        grid-template-columns: 2fr 1fr;
         padding: 0; } }
     .cu-card--panel .cu-card__content {
       padding: var(--cu-vr1) var(--cu-ps1); }
@@ -157,7 +157,7 @@
           grid-row: 1; } }
   @media (min-width: 61rem) {
     .cu-card--panel-left {
-      grid-template-columns: 34% 66%; } }
+      grid-template-columns: 1fr 2fr; } }
   @media (min-width: 61rem) {
     .cu-card--panel-left .cu-card__media {
       grid-column: 2; } }
