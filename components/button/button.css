@@ -2,7 +2,7 @@
   --cu-font-weight: 400;
   --cu-font-size: var(--cu-ms-2);
   border-radius: 2px;
-  border: 2px solid var(--cu-color-brand, #b31b1b);
+  border: 2px solid var(--cu-colorscheme-accent);
   background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
@@ -14,7 +14,7 @@
   --cu-font-weight: 400;
   --cu-font-size: var(--cu-ms-2);
   border-radius: 2px;
-  border: 2px solid var(--cu-color-brand, #b31b1b);
+  border: 2px solid var(--cu-colorscheme-accent);
   background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
