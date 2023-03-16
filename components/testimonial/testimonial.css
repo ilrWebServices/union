@@ -23,7 +23,7 @@
     display: block;
     width: 100px;
     height: 8px;
-    background: var(--cu-color-brand, #b31b1b);
+    background: var(--cu-colorscheme-accent);
     position: absolute;
     top: 0; }
 

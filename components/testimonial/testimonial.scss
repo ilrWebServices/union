@@ -29,7 +29,7 @@
     display: block;
     width: 100px;
     height: 8px;
-    background: var(--cu-color-brand, #{$cornell-red});
+    background: var(--cu-colorscheme-accent);
     position: absolute;
     top: 0;
   }
