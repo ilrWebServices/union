@@ -20,9 +20,10 @@
 
   &__eyebrow-heading {
     --cu-font-size: 12px !important;
+    --cu-font-weight: 700;
     --cu-line-height: 1 !important;
+    opacity: .75;
     text-transform: uppercase;
-    font-weight: 900;
     letter-spacing: 0.1em;
     order: 2;
     margin: 0;
@@ -53,7 +54,7 @@
     display: block;
     width: 100px;
     height: 8px;
-    background: var(--cu-color-brand, #{$cornell-red});
+    background: var(--cu-colorscheme-accent);
     order: 6;
     margin: 0;
   }
