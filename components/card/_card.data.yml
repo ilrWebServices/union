@@ -13,7 +13,6 @@
   attributes:
     class:
       - 'cu-card--icon'
-      - 'cu-colorscheme--dark'
       - 'cu-text--xl'
   icon_data:
     title: Cornell University Tower
@@ -28,7 +27,8 @@
 -
   demo_label: Promo
   attributes:
-    class: 'cu-card--promo'
+    class:
+      - 'cu-card--promo'
   heading: Your Life Journey Starts Here
   card_content: |
     <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
@@ -41,7 +41,8 @@
 -
   demo_label: Promo with media
   attributes:
-    class: 'cu-card--promo'
+    class:
+      - 'cu-card--promo'
   card_content: |
     <h2 class="cu-card__heading">700 Acres</h2>
     <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
@@ -54,40 +55,11 @@
     attributes:
       class: 'cu-button--overlay'
 -
-  demo_label: Hover overlay
-  attributes:
-    class:
-      - 'cu-card--hover-overlay'
-      - 'cu-colorscheme--vibrant'
-  card_content: |
-    <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/450/450/nature" alt="Hug a tree today" />
-  card_link_url: '#'
-  card_link_alt: 'View'
-  button_data:
-    text: 'View'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: Promo light
-  attributes:
-    class:
-      - 'cu-card--pinned'
-      - 'cu-colorscheme--light'
-      - 'cu-card--promo'
-  card_content: |
-    <h2 class="cu-card__heading">Sponsor an ILR Internship</h2>
-    <p>Usu graeci putent an, modo tation consulatu pri id, ne eum augue prodesset. Omnium vocibus vim eu. Ad tollit recusabo vel, meis integre nam ad.</p>
-  card_link_url: '#'
-  card_link_alt: 'Learn More'
-  button_data:
-    text: 'Learn More'
--
-  demo_label: Promo banner
+  demo_label: Promo with complex content
   overflow_demo: true
   attributes:
-    class: 'cu-card--promo'
+    class:
+      - 'cu-card--promo'
   icon_data:
     title: Cornell University
     icon: 'cornell-seal'
@@ -108,9 +80,25 @@
   card_media: |
     <img class="cu-image" src="https://placeimg.com/1360/656/nature" alt="Cornell is where you want to be" />
 -
+  demo_label: Hover overlay
+  attributes:
+    class:
+      - 'cu-card--hover-overlay'
+  card_content: |
+    <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+  card_media: |
+    <img class="cu-image" src="https://placeimg.com/450/450/nature" alt="Hug a tree today" />
+  card_link_url: '#'
+  card_link_alt: 'View'
+  button_data:
+    text: 'View'
+    attributes:
+      class: 'cu-button--overlay'
+-
   demo_label: With aside
   attributes:
-    class: 'cu-card--with-aside'
+    class:
+      - 'cu-card--with-aside'
   card_content: |
     <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
     <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
@@ -124,12 +112,11 @@
     attributes:
       class: 'cu-button--overlay'
 -
-  demo_label: Popout (Dark)
+  demo_label: Popout
   attributes:
     class:
       - 'cu-card--popout-right'
       - 'cu-card--popout'
-      - 'cu-colorscheme--dark'
   heading: The Popout Experience
   card_content: |
     <p>Cornell and ILR
@@ -140,35 +127,11 @@
     <img class="cu-image" src="https://placeimg.com/1360/700/nature" alt="Cornell is where you want to be" />
   button_data:
     text: 'Read more'
-    attributes:
-      class: 'cu-button--overlay'
 -
-  demo_label: Popout (Vibrant)
-  attributes:
-    class:
-      - 'cu-card--popout-right'
-      - 'cu-card--popout'
-      - 'cu-colorscheme--vibrant'
-  heading: The Popout Experience
-  card_content: |
-    <p>Cornell and ILR
-      provide countless opportunities for
-      personal and professional growth through clubs, research experiences, international
-      internships, global service learning programs and study abroad.</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/1360/700/arch" alt="Cornell is where you want to be" />
-  card_link_url: '/news/alumni/david-m-cohen-professorship-endowed'
-  card_link_alt: 'Read more'
-  button_data:
-    text: 'Read more'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: Inset (light)
+  demo_label: Inset
   attributes:
     class:
       - 'cu-card--inset'
-      - 'cu-colorscheme--light'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
   card_content: |
@@ -180,27 +143,10 @@
   card_link_url: '#'
   card_link_alt: 'Read the interview'
 -
-  demo_label: Inset (dark)
-  attributes:
-    class:
-      - 'cu-card--inset'
-      - 'cu-colorscheme--dark'
-  heading: Betty Rubble
-  eyebrow_heading: Faculty Member
-  card_content: |
-    <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/500/800/people" alt="Cornell is where you want to be" />
-  button_data:
-    text: 'Read the interview'
-  card_link_url: '#'
-  card_link_alt: 'Read the interview'
--
-  demo_label: Panel (Light)
+  demo_label: Panel
   attributes:
     class:
       - 'cu-card--panel'
-      - 'cu-colorscheme--light'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   icon_data:
@@ -216,32 +162,11 @@
   button_data:
     text: 'Read more about ILR faculty'
 -
-  demo_label: Panel (Dark)
-  attributes:
-    class:
-      - 'cu-card--panel'
-      - 'cu-colorscheme--dark'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  icon_data:
-    icon: profile
-    attributes:
-      class: 'cu-icon--inline'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
-  card_link_url: '#3'
-  card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Panel (`cu-card--panel-left`, Vibrant)
+  demo_label: Panel (`cu-card--panel-left`)
   attributes:
     class:
       - 'cu-card--panel'
       - 'cu-card--panel-left'
-      - 'cu-colorscheme--vibrant'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   icon_data:
@@ -261,7 +186,6 @@
   attributes:
     class:
       - 'cu-card--cinematic'
-      - 'cu-colorscheme--light'
   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
   eyebrow_heading: 'Welcome to Cornell'
   card_content: |
@@ -271,11 +195,10 @@
   button_data:
     text: 'Read more about Cornell'
 -
-  demo_label: Cinematic (Light)
+  demo_label: Cinematic
   attributes:
     class:
       - 'cu-card--cinematic'
-      - 'cu-colorscheme--light'
   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
   eyebrow_heading: 'Welcome to Cornell'
   card_content: |
@@ -287,45 +210,11 @@
   button_data:
     text: 'Read more about Cornell'
 -
-  demo_label: Cinematic (Reversed, Light)
+  demo_label: Cinematic (Reversed)
   attributes:
     class:
       - 'cu-card--cinematic'
       - 'cu-card--cinematic-reversed'
-      - 'cu-colorscheme--light'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/1200/514/arch" alt="Undergraduate Admissions" />
-  card_link_url: '#0'
-  card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Cinematic (Dark)
-  attributes:
-    class:
-      - 'cu-card--cinematic'
-      - 'cu-colorscheme--dark'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://placeimg.com/1200/514/arch" alt="Undergraduate Admissions" />
-  # card_link_url: '#0'
-  # card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Cinematic (Reversed, Dark)
-  attributes:
-    class:
-      - 'cu-card--cinematic'
-      - 'cu-card--cinematic-reversed'
-      - 'cu-colorscheme--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
   card_content: |
