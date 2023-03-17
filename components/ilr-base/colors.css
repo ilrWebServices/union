@@ -9,7 +9,7 @@
   --cu-colorscheme-accent: var(--cu-color-brand);
 }
 
-.cu-colorscheme {
+*[class*='cu-colorscheme'] {
   background-color: var(--cu-colorscheme-background);
 }
 

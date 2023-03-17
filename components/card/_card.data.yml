@@ -13,7 +13,6 @@
   attributes:
     class:
       - 'cu-card--icon'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
       - 'cu-text--xl'
   icon_data:
@@ -59,7 +58,6 @@
   attributes:
     class:
       - 'cu-card--hover-overlay'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--vibrant'
   card_content: |
     <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
@@ -76,7 +74,6 @@
   attributes:
     class:
       - 'cu-card--pinned'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
       - 'cu-card--promo'
   card_content: |
@@ -132,7 +129,6 @@
     class:
       - 'cu-card--popout-right'
       - 'cu-card--popout'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
   heading: The Popout Experience
   card_content: |
@@ -152,7 +148,6 @@
     class:
       - 'cu-card--popout-right'
       - 'cu-card--popout'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--vibrant'
   heading: The Popout Experience
   card_content: |
@@ -173,7 +168,6 @@
   attributes:
     class:
       - 'cu-card--inset'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
@@ -190,7 +184,6 @@
   attributes:
     class:
       - 'cu-card--inset'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
@@ -207,7 +200,6 @@
   attributes:
     class:
       - 'cu-card--panel'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
@@ -228,7 +220,6 @@
   attributes:
     class:
       - 'cu-card--panel'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
@@ -250,7 +241,6 @@
     class:
       - 'cu-card--panel'
       - 'cu-card--panel-left'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--vibrant'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
@@ -271,7 +261,6 @@
   attributes:
     class:
       - 'cu-card--cinematic'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
   eyebrow_heading: 'Welcome to Cornell'
@@ -286,7 +275,6 @@
   attributes:
     class:
       - 'cu-card--cinematic'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
   eyebrow_heading: 'Welcome to Cornell'
@@ -304,7 +292,6 @@
     class:
       - 'cu-card--cinematic'
       - 'cu-card--cinematic-reversed'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--light'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
@@ -321,7 +308,6 @@
   attributes:
     class:
       - 'cu-card--cinematic'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
@@ -339,7 +325,6 @@
     class:
       - 'cu-card--cinematic'
       - 'cu-card--cinematic-reversed'
-      - 'cu-colorscheme'
       - 'cu-colorscheme--dark'
   heading: 'Barney Rubble'
   eyebrow_heading: 'Associate Professor'
