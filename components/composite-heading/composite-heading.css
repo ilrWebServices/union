@@ -28,7 +28,6 @@
     .cu-composite-heading__body p:last-of-type {
       margin: 0; }
   .cu-composite-heading__link {
-    color: #b31b1b;
     font-weight: bold;
     font-size: var(--cu-ms-1);
     order: 5;

@@ -16,7 +16,6 @@
   --cu-font-size: var(--cu-ms-2);
   border-radius: 2px;
   border: 2px solid var(--cu-colorscheme-accent);
-  background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
@@ -35,9 +34,7 @@
 }
 
 @mixin cu-button--pill() {
-  --cu-font-size: var(--cu-ms-2);
   border: none;
   border-radius: 1rem;
-  background-color: $gray-light;
   padding: 5px var(--cu-ps1);
 }

@@ -2,7 +2,6 @@
 
 .cu-banner {
   position: relative;
-  --cu-text-color: white;
 }
 
 /*=============================================
@@ -18,11 +17,7 @@
   }
 
   .cu-banner__content {
-    color: $color-text--light;
-    color: var(--cu-color-text--light, #{$color-text--light});
-
     @include breakpoint(md) {
-      background: var(--cu-color-bg--dark, #{$color-bg--dark});
       display: flex;
       flex-direction: column;
       justify-content: center;

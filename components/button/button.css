@@ -3,7 +3,6 @@
   --cu-font-size: var(--cu-ms-2);
   border-radius: 2px;
   border: 2px solid var(--cu-colorscheme-accent);
-  background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
@@ -15,7 +14,6 @@
   --cu-font-size: var(--cu-ms-2);
   border-radius: 2px;
   border: 2px solid var(--cu-colorscheme-accent);
-  background: transparent;
   padding: 0.5rem 1rem;
   margin-bottom: 1rem;
   width: auto;
@@ -30,9 +28,7 @@
   background-color: rgba(0, 0, 0, 0.3); }
 
 .cu-button--pill {
-  --cu-font-size: var(--cu-ms-2);
   border: none;
   border-radius: 1rem;
-  background-color: #efefef;
   padding: 5px var(--cu-ps1); }
 /*# sourceMappingURL=button.css.map */

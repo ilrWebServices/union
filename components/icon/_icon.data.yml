@@ -13,8 +13,6 @@
   icon: 'tower'
   size: 18px
   label: 'In the news'
-  attributes:
-    class: 'cu-icon--color-brand'
 -
   demo_label: 'check-circle'
   title: Check Circle

@@ -13,7 +13,6 @@
   display: inline-flex;
   gap: var(--cu-ps2);
   flex-direction: column;
-  --cu-text-color: var(--cu-color-text--light, #fff);
   --cu-accent-width: 40%;
   --cu-accent-margin: .25em 0 0 0;
   --cu-accent-color: var(--cu-color-brand, #b31b1b); }

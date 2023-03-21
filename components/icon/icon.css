@@ -35,9 +35,6 @@
 /*=============================================
 =            Specific icon overrides            =
 =============================================*/
-.cu-icon--color-brand .cu-icon__image {
-  --cu-text-color: #b31b1b; }
-
 .cu-icon--cornell-seal .cu-icon__image {
   min-width: 73px; }
 

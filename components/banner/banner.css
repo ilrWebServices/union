@@ -1,6 +1,5 @@
 .cu-banner {
-  position: relative;
-  --cu-text-color: white; }
+  position: relative; }
 
 /*=============================================
 =            Panel banner            =
@@ -12,16 +11,12 @@
       display: grid;
       grid-template-columns: 66% 34%;
       padding: 0; } }
-  .cu-banner--panel .cu-banner__content {
-    color: #fff;
-    color: var(--cu-color-text--light, #fff); }
-    @media (min-width: 61rem) {
-      .cu-banner--panel .cu-banner__content {
-        background: var(--cu-color-bg--dark, #222);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: var(--cu-vr1) var(--cu-ps2); } }
+  @media (min-width: 61rem) {
+    .cu-banner--panel .cu-banner__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--cu-vr1) var(--cu-ps2); } }
   .cu-banner--panel .cu-button {
     align-self: flex-start; }
   .cu-banner--panel .cu-banner__media {
