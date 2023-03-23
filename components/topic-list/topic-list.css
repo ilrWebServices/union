@@ -1,9 +1,7 @@
 .cu-topic-list {
-  --cu-card-background: #efefef;
   padding: var(--cu-vr1) var(--cu-ps1);
   display: flex;
-  flex-direction: column;
-  background: var(--cu-card-background, transparent); }
+  flex-direction: column; }
 
 @media (min-width: 61rem) {
   .cu-topic-list {
@@ -35,7 +33,6 @@
   padding-bottom: 0; }
 
 .cu-topic-list__item-link {
-  --cu-text-color: #222;
   display: flex;
   flex-grow: 1;
   align-items: center;

@@ -1,5 +1,32 @@
 :root {
-  --cu-color-brand: #b31b1b; }
+  --cu-color-brand: #b31b1b;
+  --cu-color-white: white;
+  --cu-color-light-gray: #efefef;
+  --cu-color-dark: #222;
+
+  --cu-colorscheme-background: transparent;
+  /* Can this be overridden in themes and such? */
+  --cu-colorscheme-accent: var(--cu-color-brand);
+}
+
+*[class*='cu-colorscheme'] {
+  background-color: var(--cu-colorscheme-background);
+}
+
+.cu-colorscheme--vibrant {
+  --cu-colorscheme-background: var(--cu-color-brand);
+  --cu-text-color: var(--cu-color-white);
+  --cu-colorscheme-accent: var(--cu-color-white);
+}
+
+.cu-colorscheme--light {
+  --cu-colorscheme-background: var(--cu-color-light-gray);
+}
+
+.cu-colorscheme--dark {
+  --cu-colorscheme-background: var(--cu-color-dark);
+  --cu-text-color: var(--cu-color-white);
+}
 
 body {
   background-color: var(--cu-color-bg-body, #fff); }
@@ -17,18 +44,3 @@ specificity would be higher than most single-class overrides. */
 .cu-text .cu-heading a {
   --cu-text-color: inherit;
 }
-
-.cu-card {
-  --cu-card-background: white; }
-
-.cu-card--light {
-  --cu-card-background: #fff; }
-
-.cu-card--promo {
-  --cu-card-background: #efefef; }
-
-.cu-card--promo-with-media {
-  --cu-card-background: #464646; }
-
-.cu-card--hover-overlay {
-  --cu-card-content-background: rgba(179, 27, 27, 0.75); }

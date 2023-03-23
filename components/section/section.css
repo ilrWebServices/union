@@ -24,7 +24,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: #222; }
+    background: var(--cu-text-color); }
   .cu-section--framed::before {
     width: 120px;
     height: 10px; }
@@ -79,9 +79,12 @@
   --cu-font-size: var(--cu-ms6);
 }
 .cu-section__heading .cu-composite-heading__link {
-  --cu-text-color: var(--cu-color-brand);
   --cu-font-weight: 400;
   --cu-font-size: var(--cu-ms-2);
+}
+
+.cu-section__heading .cu-composite-heading__link:not(.cu-button) {
+  --cu-text-color: var(--cu-colorscheme-accent);
 }
 
 .cu-text--2col {

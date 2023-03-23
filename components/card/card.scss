@@ -1,14 +1,12 @@
 @import './global/global';
 
 .cu-card {
-  background: var(--cu-card-background, #{$color-bg-card--default});
   border-radius: var(--cu-card-border-radius);
   display: flex;
   flex-direction: column;
   position: relative;
 
   &__content {
-    background: var(--cu-card-content-background);
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -60,8 +58,6 @@
   &--inset {
     display: block;
     overflow: auto;
-    --cu-card-background: #{$gray-light};
-    --cu-card-content-background: #{$gray-light};
 
     .cu-card__content {
       position: absolute;
@@ -72,6 +68,7 @@
       align-items: center;
       padding: var(--cu-vr1) var(--cu-ps1);
       text-align: center;
+      background-color: var(--cu-colorscheme-background);
 
       @include breakpoint(md) {
         bottom: var(--cu-vr3);
@@ -105,14 +102,14 @@
 
   /*----------  Popouts  ----------*/
   &--popout {
-    --cu-card-background: transparent !important;
-    --cu-card-content-background: #{$gray-light};
+    background-color: transparent;
 
     .cu-composite-heading::after {
       content: none;
     }
 
     .cu-card__content {
+      background-color: var(--cu-colorscheme-background);
       padding: var(--cu-vr2) var(--cu-ps2);
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;
       align-items: center;
@@ -121,7 +118,7 @@
       &::before {
         content: '';
         width: 25%;
-        border-top: 8px solid var(--cu-color-brand, #{$cornell-red});
+        border-top: 8px solid var(--cu-colorscheme-accent);
         padding-bottom: var(--cu-vr1);
       }
 
@@ -159,9 +156,6 @@
 
   /*----------  Panel  ----------*/
   &--panel {
-    --cu-card-background: #{$gray-light};
-    --cu-card-content-background: #{$gray-light};
-
     @include breakpoint(md) {
       display: grid;
       // Using fr here instead of percent to allow wide text to push the width
@@ -352,9 +346,6 @@
 
   /*----------  Cinematic  ----------*/
   &--cinematic {
-    --cu-card-background: #{$gray-light};
-    --cu-card-content-background: #{$gray-light};
-    --cu-text-color: #{$black};
     padding: var(--cu-vr1) var(--cu-ps1);
     display: flex;
     flex-direction: column;
@@ -447,12 +438,6 @@
       --cu-font-size: var(--cu-ms0) !important;
     }
 
-    .cu-composite-heading__eyebrow-heading {
-      --cu-text-color: #{$gray-medium-new};
-      --cu-font-weight: 700;
-    }
-
-    background: transparent;
     display: grid;
     grid-template-columns: 88px auto;
     gap: var(--cu-ps0);
@@ -503,8 +488,6 @@
 
   /*----------  Hover Overlay  ----------*/
   &--hover-overlay {
-    --cu-text-color: #{$white};
-    --cu-font-size: var(--cu-ms-1);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
@@ -526,6 +509,18 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+
+      // The background color is set here on a pseudo-element, rather than on
+      // .cu-card__content, so that we can adjust its opacity without affecting
+      // the opacity of the other card content.
+      &::before {
+        content: '';
+        background-color: var(--cu-colorscheme-background);
+        opacity: var(--cu-overlay-opacity, 0.75);
+        position: absolute;
+        inset: 0 0 0 0;
+        z-index: -1;
+      }
     }
 
     &:hover {
@@ -560,7 +555,6 @@
     }
   }
 
-
   /*----------  With aside  ----------*/
   &--with-aside {
     display: grid; // This fixes an issue in Safari when display is flex.
@@ -586,28 +580,6 @@
       --cu-font-size: var(--cu-ms2);
     }
   }
-
-  // Content modifiers
-  // @todo Move these to the ilr-base component.
-  &--vibrant {
-    --cu-card-background: #{$cornell-red};
-    --cu-card-content-background: #{$cornell-red};
-    --cu-text-color: #{$white};
-    --cu-color-brand: #{$white}
-  }
-
-  &--light {
-    --cu-card-background: #{$gray-light};
-    --cu-card-content-background: #{$gray-light};
-    --cu-text-color: #{$black};
-  }
-
-  &--dark {
-    --cu-card-background: #{$black};
-    --cu-card-content-background: #{$black};
-    --cu-text-color: #{$white};
-  }
-
   /*=====  End of Modifiers  ======*/
 }
 

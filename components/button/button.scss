@@ -1,18 +1,32 @@
 @import './global/global';
-@import 'button-mixins';
 
 .cu-button {
-  @include cu-button;
+  --cu-font-weight: 400;
+  --cu-font-size: var(--cu-ms-2);
+  background-color: var(--cu-colorscheme-background);
+  border-radius: 2px;
+  border: 2px solid var(--cu-colorscheme-accent);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: auto;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .cu-button--alt {
-  @include cu-button--dark;
+  --cu-text-color: var(--cu-color-white);
+  border-color: var(--cu-color-brand);
+  background-color: var(--cu-color-brand);
 }
 
 .cu-button--overlay {
-  @include cu-button--overlay;
+  --cu-text-color: var(--cu-color-white);
+  border-color: var(--cu-color-white);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .cu-button--pill {
-  @include cu-button--pill;
+  border: none;
+  border-radius: 1rem;
+  padding: 5px var(--cu-ps1);
 }

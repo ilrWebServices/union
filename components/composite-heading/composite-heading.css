@@ -13,9 +13,10 @@
     margin: 0; }
   .cu-composite-heading__eyebrow-heading {
     --cu-font-size: 12px !important;
+    --cu-font-weight: 700;
     --cu-line-height: 1 !important;
+    opacity: .75;
     text-transform: uppercase;
-    font-weight: 900;
     letter-spacing: 0.1em;
     order: 2;
     margin: 0;
@@ -27,7 +28,6 @@
     .cu-composite-heading__body p:last-of-type {
       margin: 0; }
   .cu-composite-heading__link {
-    color: #b31b1b;
     font-weight: bold;
     font-size: var(--cu-ms-1);
     order: 5;
@@ -37,7 +37,7 @@
     display: block;
     width: 100px;
     height: 8px;
-    background: var(--cu-color-brand, #b31b1b);
+    background: var(--cu-colorscheme-accent);
     order: 6;
     margin: 0; }
   .cu-composite-heading--minimal::after {

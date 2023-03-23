@@ -52,7 +52,7 @@
   max-width: 100%;
   height: var(--cu-accent-height, 4px);
   margin: var(--cu-accent-margin, .25em 0 0 0);
-  background-color: var(--cu-accent-color, var(--cu-color-brand, #b31b1b));
+  background-color: var(--cu-colorscheme-accent, var(--cu-accent-color, var(--cu-color-brand, #b31b1b)));
   transition: width ease-in .25s;
 }
 

@@ -1,11 +1,9 @@
 @import './global/global';
 
 .cu-topic-list {
-  --cu-card-background: #{$gray-light};
   padding: var(--cu-vr1) var(--cu-ps1);
   display: flex;
   flex-direction: column;
-  background: var(--cu-card-background, #{$color-bg-card--default});
 }
 
 @include breakpoint(md) {
@@ -44,7 +42,6 @@
 }
 
 .cu-topic-list__item-link {
-  --cu-text-color: #{$black};
   display: flex;
   flex-grow: 1;
   align-items: center;
