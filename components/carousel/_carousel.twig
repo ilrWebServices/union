@@ -1,0 +1,83 @@
+{#
+/**
+ * Carousel
+ *
+ * A carousel is a media box with some basic info and a list of links.
+ *
+ * @var string $heading The main heading.
+ * @var string $eyebrow_heading An optional subheading, displayed unironically _above_ the heading.
+ * @var string $description A short bit of text.
+ * @var string $link_url The main link for the component.
+ * @var string $link_text The main link text for the component.
+ * @var array $items An array of items, typically vertical videos or cards.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=473-2462&t=DyExIcUs7MK5J1nt-4 Carousels in Figma
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-carousel']) %}
+
+<div{{ attributes }}>
+  <div class="cu-carousel__content">
+    {% include '@union/_composite-heading.twig' with {
+      icon_data: icon_data,
+      eyebrow_heading: eyebrow_heading,
+      heading: heading,
+      body: description,
+      link: link_url ? {
+        url: link_url,
+        text: link_text
+      },
+      attributes: {
+        class: [
+          'cu-carousel__meta',
+          'cu-composite-heading--left',
+        ]
+      }
+    } only %}
+    <ul class="cu-carousel__navigation">
+      <li class="cu-carousel__navigation-item">
+        <button class="cu-carousel__navigation-button" data-direction="prev"><svg
+          width="37"
+          height="37"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          version="1.1"
+          viewBox="0 0 37 37"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"><path
+            d="M21.5 24.5l-6-6 6-6" /></svg></button>
+      </li>
+      <li class="cu-carousel__navigation-item">
+        <button class="cu-carousel__navigation-button" data-direction="next"><svg
+          width="37"
+          height="37"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          version="1.1"
+          viewBox="0 0 37 37"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg"><path
+            d="m15.5,24.5 6,-6 -6,-6" /></svg></button>
+      </li>
+    </ul>
+  </div>
+  <div class="cu-carousel__item-wrapper">
+    <ul class="cu-carousel__items">
+    {% for item in items %}
+      <li class="cu-carousel__item">
+        {{ item|raw }}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+@import './global/global';
+
+.cu-carousel {
+  display: grid;
+  gap: var(--cu-vr1);
+  align-items: stretch;
+  padding: var(--cu-vr1) 0 var(--cu-vr1) var(--cu-ps1);
+  --background-accent-color: #222;
+
+  &.cu-colorscheme--dark {
+    --background-accent-color: #6C6C6C;
+  }
+}
+
+@include breakpoint(md) {
+  .cu-carousel {
+    grid-template-columns: 2fr 3fr;
+    gap: var(--cu-ps3);
+    padding: var(--cu-vr3) 0 var(--cu-vr3) var(--cu-ps4);
+  }
+}
+
+.cu-carousel__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: var(--cu-ps1);
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr3) 0;
+  }
+}
+
+.cu-carousel__item-wrapper {
+  padding: var(--cu-vr1) 0;
+  margin: 0;
+  background: linear-gradient(to right,rgba(0, 0, 0, 0) 132px, var(--background-accent-color) 132px);
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+
+  @include breakpoint(md) {
+    padding: var(--cu-vr3) 0;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cu-carousel__items {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--cu-ps1);
+  list-style-type: none;
+}
+
+.cu-carousel__item {
+  scroll-snap-align: start;
+  flex-basis: content;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  > * {
+    max-height: 400px;
+  }
+
+  // YouTube videos, mainly.
+  iframe {
+    height: 400px;
+    width: auto;
+    aspect-ratio: 9/16;
+    border: none;
+    border-radius: 10px;
+  }
+}
+
+.cu-carousel__navigation {
+  display: none;
+
+  @include breakpoint(md) {
+    padding-left: 0;
+    position: absolute;
+    margin: 0;
+    bottom: 25px;
+    right: calc((var(--cu-ps3) + 79px + 25px) * -1);
+    display: flex;
+    gap: 5px;
+    list-style-type: none;
+
+    .cu-carousel__navigation-button {
+      padding: 0;
+      background-color: transparent;
+      border: none;
+      // background-color: var(--cu-colorscheme-accent);
+      // stroke: white;
+      cursor: pointer;
+
+      > * {
+        display: block;
+        border: 2px solid var(--cu-colorscheme-accent);
+      }
+    }
+  }
+}

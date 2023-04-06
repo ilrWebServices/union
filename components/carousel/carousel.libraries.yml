@@ -1,0 +1,6 @@
+css:
+  carousel.css: {}
+js:
+  carousel.js: {}
+dependencies:
+  - base
