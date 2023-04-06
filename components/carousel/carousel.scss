@@ -51,6 +51,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
   gap: var(--cu-ps1);
   list-style-type: none;
 }
@@ -61,7 +62,7 @@
   flex-grow: 0;
   flex-shrink: 0;
 
-  > * {
+  > .cu-image {
     max-height: 400px;
   }
 
@@ -72,6 +73,10 @@
     aspect-ratio: 9/16;
     border: none;
     border-radius: 10px;
+  }
+
+  .cu-card {
+    max-width: 400px;
   }
 }
 

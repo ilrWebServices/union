@@ -18,7 +18,7 @@
       <!-- Example of regular youtube video -->
       <iframe width="560" height="315" src="https://www.youtube.com/embed/kpv63PRWxPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 -
-  demo_label: Random things
+  demo_label: Random images
   heading: Endless Career Paths
   eyebrow_heading: One Major
   description: "One of the greatest strengths of the ILR degree is that it prepares you for jobs and graduate programs in a variety of fields:"
@@ -39,3 +39,52 @@
       <img class="cu-image" src="https://picsum.photos/450/800" alt="Cornell is where you want to be" />
     - |
       <img class="cu-image" src="https://picsum.photos/450/800" alt="Cornell is where you want to be" />
+-
+  demo_label: Cards
+  heading: Endless Career Paths
+  eyebrow_heading: One Major
+  description: "One of the greatest strengths of the ILR degree is that it prepares you for jobs and graduate programs in a variety of fields:"
+  link_url: 'https://www.ilr.cornell.edu/programs/undergraduate-degree-program/undergraduate-admissions/careers'
+  link_text: 'Explore ILR career paths'
+  icon_data:
+    title: Cornell University Tower
+    icon: tower
+    size: 2.5em
+  items:
+    - |
+      <img class="cu-image" src="https://picsum.photos/450/800" alt="Cornell is where you want to be" />
+    - |
+      <div class="cu-card--promo cu-card cu-colorscheme--light" data-component="_card">
+        <div class="cu-card__content">
+          <div class="cu-card__meta cu-composite-heading--minimal cu-composite-heading">
+            <h2 class="cu-heading cu-composite-heading__heading">Your Life Journey Starts Here</h2>
+          </div>
+
+          <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+
+          <button class="cu-button--overlay cu-button">Read more</button>
+        </div>
+        <a class="cu-card__link" href="#">Visit Us</a>
+      </div>
+    - |
+      <div class="cu-card--promo cu-card cu-colorscheme--light" data-component="_card">
+        <div class="cu-card__content">
+          <div class="cu-card__meta cu-composite-heading--minimal cu-composite-heading">
+            <h2 class="cu-heading cu-composite-heading__heading">Title</h2>
+          </div>
+
+          <p>Body.</p>
+        </div>
+        <a class="cu-card__link" href="#">Read more</a>
+      </div>
+    - |
+      <div class="cu-card--promo cu-card cu-colorscheme--light" data-component="_card">
+        <div class="cu-card__content">
+          <div class="cu-card__meta cu-composite-heading--minimal cu-composite-heading">
+            <h2 class="cu-heading cu-composite-heading__heading">Title</h2>
+          </div>
+
+          <p>Body.</p>
+        </div>
+        <a class="cu-card__link" href="#">Read more</a>
+      </div>
