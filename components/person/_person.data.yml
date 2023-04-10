@@ -1,0 +1,10 @@
+-
+  demo_label: Thumb
+  name: "Jerry Bannerhoff"
+  title: "Instructor"
+  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>'
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/823/300/300" />
+  attributes:
+    class:
+      - 'cu-person--thumb'

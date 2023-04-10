@@ -1,8 +1,25 @@
-{{ attach_library('union_organizer/person') }}
+{#
+/**
+ * Person card
+ *
+ * A person card represents a small piece of content related to a person.
+ *
+ * @var string $name The person's name.
+ * @var string|array $title One or more titles for the person.
+ * @var string $additional_info ???
+ * @var string $img A photo of the person.
+ * @var string $content Freeform content, generally used for a bio.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
+ *
+ * @union-variation cu-person--thumb A compact, two-column layout with the photo image in a circle.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=353-1025&t=ewGBpvAopkUGAoMH-4 People Rows in Figma
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=365-1078&t=ewGBpvAopkUGAoMH-4 People Cards in Figma
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-person']) %}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass(['cu-person']) }}>
   <div class="cu-person__info">
     <h3 class="cu-heading cu-person__name">{{ name }}</h3>
     {% if title is iterable %}
