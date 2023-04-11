@@ -42,8 +42,6 @@
   @include breakpoint(md) {
     padding: var(--cu-vr3) 0;
     overflow-x: hidden;
-    display: flex;
-    align-items: center;
   }
 }
 
@@ -51,6 +49,9 @@
   margin: 0;
   padding: 0;
   display: flex;
+  align-items: center;
+  height: 100%;
+  width: 250vw;
   gap: var(--cu-ps1);
   list-style-type: none;
 }
