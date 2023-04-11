@@ -8,3 +8,53 @@
   attributes:
     class:
       - 'cu-person--thumb'
+-
+  demo_label: Horizontal
+  name: "Amanda Hugginkiss"
+  title:
+    - Instructor
+    - Chief Warlock
+  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>'
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/978/500/400" />
+  attributes:
+    class:
+      - 'cu-person--horizontal'
+-
+  demo_label: Horizontal (Multiple)
+  demo_count: 3
+  name: Albus Dumbledore
+  eyebrow_heading: Department
+  title:
+    - Chief Mugwump
+    - Head Honcho
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/1062/500/800" />
+  attributes:
+    class:
+      - 'cu-person--horizontal'
+-
+  demo_label: Horizontal (Multiple w/ additional info)
+  demo_count: 6
+  name: Albus Dumbledore
+  eyebrow_heading: Department
+  title:
+    - Chief Mugwump
+    - Head Honcho
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/1011/500/800" />
+  additional_info: |
+    <div class="field-type--email"><a href="mailto:pec1@cornell.edu">pec1@cornell.edu</a></div>
+  attributes:
+    class:
+      - 'cu-person--horizontal'
+# 64
+# 550
+# 783
+# 823
+# 978
+# 996
+# 1011
+# 1027
+# 1062
+# 1074
