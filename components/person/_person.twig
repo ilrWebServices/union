@@ -19,6 +19,7 @@
  * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=365-1078&t=ewGBpvAopkUGAoMH-4 People Cards in Figma
  */
 #}
+{% set wrapper_attributes = union_attributes(wrapper_attributes|default([])) %}
 {% set attributes = union_attributes(attributes|default([])) %}
 
 {% set composite_heading_body %}
@@ -40,6 +41,7 @@
 {% endif %}
 {% endset %}
 
+<div{{ wrapper_attributes.addClass(['cu-person-wrapper']) }}>
 <div{{ attributes.addClass(['cu-person']) }}>
   {% if eyebrow_heading or name %}
   {% include '@union/_composite-heading.twig' with {
@@ -71,4 +73,5 @@
     {{ content }}
   </div>
   {% endif %}
+</div>
 </div>

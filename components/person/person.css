@@ -18,6 +18,7 @@
 
 .cu-person__additional_info {
   margin-top: var(--cu-vr0);
+  --cu-font-size: var(--cu-ms-2);
 }
 
 .cu-person .cu-composite-heading {
@@ -32,6 +33,7 @@
 .cu-person--thumb {
   grid-column-gap: var(--cu-vr0);
   grid-template-columns: 1fr 2fr;
+  background-color: transparent;
 }
 
 .cu-person--thumb .cu-person__info {
@@ -64,40 +66,55 @@
   grid-column: 1 / -1;
 }
 
-
-.cu-person--horizontal {
-  grid-template-columns: 1fr 1.5fr;
-  grid-template-rows: repeat(2, auto);
+.cu-person-wrapper {
+  container-type: inline-size;
 }
 
-.cu-person--horizontal .cu-person__name {
+
+.cu-person--adaptive {
+  align-content: start;
+  background-color: var(--cu-color-light-gray);
+  height: 100%;
+}
+
+.cu-person--adaptive .cu-person__info,
+.cu-person--adaptive .cu-person__content {
+  padding: var(--cu-vr0) var(--cu-ps0);
+  word-wrap: anywhere;
+}
+
+.cu-person--adaptive .cu-person__image {
+  order: -1;
+}
+
+.cu-person--adaptive .cu-person__image .cu-image {
+  width: 100%;
+  aspect-ratio: 1.4;
+}
+
+.cu-person--adaptive .cu-person__image *:not(.cu-image) {
+  display: contents;
+}
+
+.cu-person--adaptive .cu-person__name {
   --cu-font-size: var(--cu-ms0);
   --cu-font-weight: 400;
 }
 
-.cu-person--horizontal .cu-person__image {
-  grid-column: 1;
-  grid-row: 1 / -1;
-}
+@container (min-width: 326px) {
+  .cu-person--adaptive {
+    grid-template-columns: 1fr 1.5fr;
+    align-content: unset;
+  }
 
-.cu-person--horizontal .cu-person__image *:not(.cu-image) {
-  display: contents;
-}
+  .cu-person--adaptive .cu-person__image .cu-image {
+    height: 100%;
+    aspect-ratio: 0.9;
+  }
 
-.cu-person--horizontal .cu-person__image .cu-image {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1.2;
-}
-
-.cu-person--horizontal .cu-person__content {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.cu-person--horizontal .cu-person__info,
-.cu-person--horizontal .cu-person__content {
-  padding: var(--cu-vr0) var(--cu-ps0);
+  .cu-person--adaptive .cu-person__content {
+    grid-column: 1 / -1;
+  }
 }
 
 .cu-grid--people {
