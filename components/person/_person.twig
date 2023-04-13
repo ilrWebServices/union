@@ -1,33 +1,77 @@
-{{ attach_library('union_organizer/person') }}
+{#
+/**
+ * Person card
+ *
+ * A person card represents a small piece of content related to a person.
+ *
+ * @var string $name The person's name.
+ * @var string|array $title One or more titles for the person.
+ * @var string $eyebrow_heading A descriptive keyword or phrase placed above the name.
+ * @var string $additional_info Extra person information like email, phone, etc.
+ * @var string $img A photo of the person.
+ * @var string $content Freeform content, generally used for a bio.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
+ *
+ * @union-variation cu-person--thumb The legacy compact, two-column layout with the photo image in a circle.
+ * @union-variation cu-person--horizontal A compact, two-column layout with the photo image on the left.
+ *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=353-1025&t=ewGBpvAopkUGAoMH-4 People Rows in Figma
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=365-1078&t=ewGBpvAopkUGAoMH-4 People Cards in Figma
+ */
+#}
+{% set wrapper_attributes = union_attributes(wrapper_attributes|default([])) %}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-person']) %}
 
-<div{{ attributes }}>
-  <div class="cu-person__info">
-    <h3 class="cu-heading cu-person__name">{{ name }}</h3>
-    {% if title is iterable %}
-    <ul class="cu-person__titles">
-      {% for title_item in title %}
-      <li class="cu-person__title">{{ title_item }}</li>
-      {% endfor %}
-    </ul>
-    {% elseif title %}
-    <ul class="cu-person__titles">
-      <li class="cu-person__title">{{ title }}</li>
-    </ul>
-    {% endif %}
-    {% if additional_info %}
-    <div class="cu-person__additional_info">
-      {{ additional_info }}
-    </div>
-    {% endif %}
-  </div>
+{% set composite_heading_body %}
+{% if title is iterable %}
+<ul class="cu-person__titles">
+  {% for title_item in title %}
+  <li class="cu-person__title">{{ title_item }}</li>
+  {% endfor %}
+</ul>
+{% elseif title %}
+<ul class="cu-person__titles">
+  <li class="cu-person__title">{{ title }}</li>
+</ul>
+{% endif %}
+{% if additional_info %}
+<div class="cu-person__additional_info">
+  {{ additional_info }}
+</div>
+{% endif %}
+{% endset %}
+
+<div{{ wrapper_attributes.addClass(['cu-person-wrapper']) }}>
+<div{{ attributes.addClass(['cu-person']) }}>
+  {% if eyebrow_heading or name %}
+  {% include '@union/_composite-heading.twig' with {
+    eyebrow_heading: eyebrow_heading,
+    eyebrow_heading_element: 'h4',
+    heading_element: 'h3',
+    heading: name,
+    body: composite_heading_body,
+    attributes: {
+      class: [
+        'cu-person__info',
+        'cu-composite-heading--minimal'
+      ]
+    },
+    heading_attributes: {
+      class: [
+        'cu-person__name'
+      ]
+    }
+  } only %}
+  {% endif %}
   {% if img %}
   <div class="cu-person__image">
     {{ img }}
   </div>
   {% endif %}
+  {% if content %}
   <div class="cu-person__content">
     {{ content }}
   </div>
+  {% endif %}
+</div>
 </div>

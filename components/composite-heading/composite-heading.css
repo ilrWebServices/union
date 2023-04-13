@@ -6,7 +6,7 @@
   .cu-composite-heading .cu-icon {
     order: 1;
     margin: 0; }
-  .cu-composite-heading .cu-composite-heading__heading {
+  .cu-composite-heading__heading {
     --cu-font-size: var(--cu-ms5);
     --cu-font-weight: 300;
     order: 3;

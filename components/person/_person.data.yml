@@ -1,0 +1,50 @@
+-
+  demo_label: Thumb
+  demo_count: 3
+  name: "Jerry Bannerhoff"
+  title: "Instructor"
+  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>'
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/823/300/300" />
+  attributes:
+    class:
+      - 'cu-person--thumb'
+-
+  demo_label: Adaptive
+  demo_count: 2
+  demo_columns: 2
+  name: Albus Dumbledore
+  eyebrow_heading: Department
+  title:
+    - Chief Mugwump
+    - Head Honcho
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/1011/500/400" />
+  additional_info: |
+    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
+  attributes:
+    class:
+      - 'cu-person--adaptive'
+-
+  demo_label: Adaptive
+  demo_count: 5
+  demo_columns: 5
+  name: Saul Goodman
+  title: Honest Lawyer
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/1074/500/500" />
+  additional_info: |
+    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
+  attributes:
+    class:
+      - 'cu-person--adaptive'
+# 64
+# 550
+# 783
+# 823
+# 978
+# 996
+# 1011
+# 1027
+# 1062
+# 1074
