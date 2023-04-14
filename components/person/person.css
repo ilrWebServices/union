@@ -5,10 +5,14 @@
 }
 
 .cu-person__titles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cu-vr-2);
   margin: 0;
   list-style: none;
   padding: 0;
   --cu-font-size: var(--cu-ms-2);
+  --cu-line-height: 1.25;
 }
 
 .cu-person__info {

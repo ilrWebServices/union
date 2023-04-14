@@ -30,7 +30,9 @@
   demo_count: 5
   demo_columns: 5
   name: Saul Goodman
-  title: Honest Lawyer
+  title:
+    - Senior Associate Dean for Academic Affairs
+    - ILR Professor of Economics and International & Comparative Labor
   img: |
     <img class="cu-image" src="https://picsum.photos/id/1074/500/500" />
   additional_info: |
