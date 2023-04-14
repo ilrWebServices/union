@@ -108,6 +108,7 @@
 @container (min-width: 326px) {
   .cu-person--adaptive {
     grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
   }
 
   .cu-person--adaptive .cu-person__image .cu-image {
