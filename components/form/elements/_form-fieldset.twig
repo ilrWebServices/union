@@ -26,7 +26,7 @@ Available variables:
   <legend{{ legendAttributes.addClass('cu-legend') }}>
     <span{{ legend_span.attributes.addClass(legend_span_classes) }}>{{ legendTitle }}</span>
   </legend>
-  <div>
+  <div class="cu-fieldset__wrapper">
     {% if errors %}
       <div class="cu-input-message cu-input-message--invalid">
         {{ errors }}
