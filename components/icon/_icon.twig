@@ -25,16 +25,6 @@
  * - pause
  * - youtube
  *
- * The following variants are available:
- *
- * `.cu-icon--inline`: Places the icon, label, and wrapper inline.
- *
- * `.cu-icon--inline-centered`: Places the label inline and centers the wrapper.
- *
- * `.cu-icon--color-light`: Uses a lighter color for the icon and label for use with dark backgrounds.
- *
- * `.cu-icon--color-brand`: Uses the brand color for the icon and label.
- *
  * @var string $icon The name if the desired icon.
  * @var string $title A title for the icon. Generally used for tooltips and accessibility.
  * @var string $size The size of the icon in CSS units (e.g. 18px, 2em). (optional; default: 2em)
@@ -43,6 +33,12 @@
  * @var string $link A URL/URI that will be added to an `a` element around the icon and label.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the icon. Useful for passing in variant classes. (optional)
  * @var Drupal\Core\Template\Attribute|array $attributes_label Attributes (class, data, etc.) for the icon label. (optional)
+ *
+ * @union-variation cu-icon--inline Places the icon, label, and wrapper inline.
+ * @union-variation cu-icon--inline-centered Places the label inline and centers the wrapper.
+ * @union-variation cu-icon--color-light Deprecated. All icons should now follow the current color scheme.
+ * @union-variation cu-icon--color-brand Deprecated. All icons should now follow the current color scheme.
+ *
  */
 #}
 {% set size = size|default('2em') %}
