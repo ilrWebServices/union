@@ -76,7 +76,7 @@
 
 
 .cu-person--adaptive {
-  align-content: start;
+  grid-template-rows: auto 1fr;
   background-color: var(--cu-color-light-gray);
   height: 100%;
 }
@@ -108,7 +108,6 @@
 @container (min-width: 326px) {
   .cu-person--adaptive {
     grid-template-columns: 1fr 1.5fr;
-    align-content: unset;
   }
 
   .cu-person--adaptive .cu-person__image .cu-image {
