@@ -7,7 +7,7 @@
     <h2 class="cu-heading cu-card__heading">Once an ILRie, Always an ILRie</h2>
     <p class="cu-card__teaser">Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/720/480/people" />
+    <img class="cu-image" src="https://picsum.photos/720/480" />
 -
   demo_label: Icon card
   attributes:
@@ -47,7 +47,7 @@
     <h2 class="cu-card__heading">700 Acres</h2>
     <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/1020/450/nature" alt="Hug a tree today" />
+    <img class="cu-image" src="https://picsum.photos/1020/450" alt="Hug a tree today" />
   card_link_url: '#'
   card_link_alt: 'Visit Us'
   button_data:
@@ -78,7 +78,7 @@
       <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
     </ul>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/1360/656/nature" alt="Cornell is where you want to be" />
+    <img class="cu-image" src="https://picsum.photos/1360/656" alt="Cornell is where you want to be" />
 -
   demo_label: Hover overlay
   attributes:
@@ -87,7 +87,7 @@
   card_content: |
     <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/450/450/nature" alt="Hug a tree today" />
+    <img class="cu-image" src="https://picsum.photos/450/450" alt="Hug a tree today" />
   card_link_url: '#'
   card_link_alt: 'View'
   button_data:
@@ -103,8 +103,8 @@
     <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
     <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/700/440/people" alt="Undergraduate Admissions" />
-    <div class="cu-image--blurred" style="--cu-bg-image: url(https://placeimg.com/700/440/people)"></div>
+    <img class="cu-image" src="https://picsum.photos/700/440" alt="Undergraduate Admissions" />
+    <div class="cu-image--blurred" style="--cu-bg-image: url(https://picsum.photos/700/440)"></div>
   card_link_url: '#'
   card_link_alt: 'Explore'
   button_data:
@@ -124,7 +124,7 @@
       personal and professional growth through clubs, research experiences, international
       internships, global service learning programs and study abroad.</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/1360/700/nature" alt="Cornell is where you want to be" />
+    <img class="cu-image" src="https://picsum.photos/1360/700" alt="Cornell is where you want to be" />
   button_data:
     text: 'Read more'
 -
@@ -137,7 +137,7 @@
   card_content: |
     <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/500/800/people" alt="Cornell is where you want to be" />
+    <img class="cu-image" src="https://picsum.photos/500/800" alt="Cornell is where you want to be" />
   button_data:
     text: 'Read the interview'
   card_link_url: '#'
@@ -156,7 +156,7 @@
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
   card_link_url: '#3'
   card_link_alt: 'Read more about ILR faculty'
   button_data:
@@ -176,7 +176,7 @@
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
   card_link_url: '#0'
   card_link_alt: 'Read more about ILR faculty'
   button_data:
@@ -204,7 +204,7 @@
   card_content: |
     <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/1200/514/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
   card_link_url: '#0'
   card_link_alt: 'Read more about Cornell'
   button_data:
@@ -220,7 +220,7 @@
   card_content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/1200/514/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
   card_link_url: '#0'
   card_link_alt: 'Read more about ILR faculty'
   button_data:
@@ -233,6 +233,6 @@
   heading: 'Explainer: How to form a union'
   eyebrow_heading: 'Sept 27, 2052'
   card_media: |
-    <img class="cu-image" src="https://placeimg.com/100/100/arch" alt="Photo of architecture" />
+    <img class="cu-image" src="https://picsum.photos/100/100" alt="Photo of architecture" />
   card_link_url: '#0'
   card_link_alt: 'Read more'
