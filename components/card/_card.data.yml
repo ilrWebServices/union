@@ -240,3 +240,19 @@
     <img class="cu-image" src="https://picsum.photos/100/100" alt="Photo of architecture" />
   card_link_url: '#0'
   card_link_alt: 'Read more'
+-
+  demo_label: Stacked
+  attributes:
+    class:
+      - 'cu-card--stacked'
+  demo_count: 3
+  demo_columns: 3
+  heading: 'Undergraduate'
+  card_content: |
+    <p>Our flexible, interdisciplinary major lets students pursue a wide range of academic interests and careers in: business, economics, government, history, international relations, labor relations, law, public policy, and social justice."</p>
+  card_media: |
+    <img class="cu-image" src="https://picsum.photos/432/460" />
+  card_link_url: '#'
+  card_link_alt: 'Undergraduate Admissions'
+  button_data:
+    text: 'Undergraduate Admissions'

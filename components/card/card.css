@@ -6,6 +6,7 @@
   /*=============================================
   =            Modifiers            =
   =============================================*/
+  /*----------  Stacked  ----------*/
   /*----------  Promos  ----------*/
   /*----------  Inset  ----------*/
   /*----------  Popouts  ----------*/
@@ -38,6 +39,15 @@
       width: 100%; }
     .cu-card__media .cu-card__media-link {
       display: block; }
+  .cu-card--stacked .cu-card__meta + * {
+    flex-grow: 2; }
+  .cu-card--stacked .cu-card__content {
+    align-items: center;
+    text-align: center; }
+    .cu-card--stacked .cu-card__content .cu-button {
+      margin-top: var(--cu-vr-1); }
+  .cu-card--stacked[class*="cu-colorscheme--"] .cu-card__content {
+    padding: 0 var(--cu-ps1); }
   .cu-card--promo .cu-card__content {
     justify-content: center;
     align-items: center;
