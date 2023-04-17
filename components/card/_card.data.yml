@@ -1,5 +1,7 @@
 -
   demo_label: Default teaser
+  demo_count: 3
+  demo_columns: 3
   card_link_url: '#'
   card_link_alt: 'People are people'
   card_content: |
@@ -129,6 +131,8 @@
     text: 'Read more'
 -
   demo_label: Inset
+  demo_count: 2
+  demo_columns: 2
   attributes:
     class:
       - 'cu-card--inset'
