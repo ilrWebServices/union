@@ -5,7 +5,7 @@
  * A card represents a small piece of content, like an article teaser or a promo.
  * An optional media element, an image or a video, may be included.
  *
- * Cards can contain any content, but there are a few structured elements that can be added - specifically, the `heading`, `eyebrow_heading`, and 'icon_data`. If these or related variables are included, they will be placed in a `composite-heading` component within the content area of the card.
+ * Cards can contain any content, but there are a few structured elements that can be added - specifically, the `heading`, `eyebrow_heading`, and `icon_data`. If these or related variables are included, they will be placed in a `composite-heading` component within the content area of the card.
  *
  * By default, cards appear as a teaser, with the media above unpadded content.
  *
@@ -21,6 +21,7 @@
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the card content region.
  * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
  *
+ * @union-variation cu-card--stacked Centered content below the media.
  * @union-variation cu-card--with-media Not a layout, but an indication that the card includes media.
  * @union-variation cu-card--with-aside
  * @union-variation cu-card--promo Legacy. Centered content over the background or media.
