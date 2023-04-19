@@ -241,21 +241,23 @@
   .cu-card--padded .cu-card__content {
     padding: var(--cu-vr1) var(--cu-ps1); }
   .cu-card--cinematic {
-    padding: var(--cu-vr1) var(--cu-ps1);
     display: flex;
     flex-direction: column; }
+    .cu-card--cinematic[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr1) var(--cu-ps1); }
     @media (min-width: 61rem) {
-      .cu-card--cinematic {
-        padding: var(--cu-vr3) var(--cu-ps2); }
-        .cu-card--cinematic .cu-card__content {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          grid-template-rows: 1fr; }
-          .cu-card--cinematic .cu-card__content > * {
-            grid-column: 2; }
-          .cu-card--cinematic .cu-card__content .cu-card__meta {
-            grid-column: 1;
-            grid-row: 1 / 10; } }
+      .cu-card--cinematic .cu-card__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: var(--cu-vr1); }
+        .cu-card--cinematic .cu-card__content > * {
+          grid-column: 2; }
+        .cu-card--cinematic .cu-card__content .cu-card__meta {
+          grid-column: 1;
+          grid-row: 1 / 10; }
+      .cu-card--cinematic[class*="cu-colorscheme--"] {
+        padding: var(--cu-vr3) var(--cu-ps2); } }
     .cu-card--cinematic .cu-icon--color-light {
       --cu-text-color: #222; }
     @media (min-width: 61rem) {

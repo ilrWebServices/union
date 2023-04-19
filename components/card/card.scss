@@ -370,17 +370,19 @@
 
   /*----------  Cinematic  ----------*/
   &--cinematic {
-    padding: var(--cu-vr1) var(--cu-ps1);
     display: flex;
     flex-direction: column;
 
-    @include breakpoint(md) {
-      padding: var(--cu-vr3) var(--cu-ps2);
+    &[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr1) var(--cu-ps1);
+    }
 
+    @include breakpoint(md) {
       .cu-card__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr; // Fix for Safari bug.
+        column-gap: var(--cu-vr1);
 
         &>* {
           grid-column: 2;
@@ -390,6 +392,10 @@
           grid-column: 1;
           grid-row: 1 / 10; // For some reason, "-1" isn't working so we choose a large #.
         }
+      }
+
+      &[class*="cu-colorscheme--"] {
+        padding: var(--cu-vr3) var(--cu-ps2);
       }
     }
 
