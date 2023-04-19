@@ -1,9 +1,12 @@
 @import './global/global';
 
 .cu-topic-list {
-  padding: var(--cu-vr1) var(--cu-ps1);
   display: flex;
   flex-direction: column;
+
+  &[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr1) var(--cu-ps1);
+  }
 }
 
 @include breakpoint(md) {
@@ -11,7 +14,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--cu-vr3);
-    padding: var(--cu-vr3) var(--cu-ps4);
+
+
+    &[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr3) var(--cu-ps4);
+    }
   }
 }
 
