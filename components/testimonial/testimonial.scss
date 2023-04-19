@@ -6,11 +6,25 @@
   flex-direction: column;
   gap: var(--cu-vr1);
 
-  @include breakpoint(md) {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 50%;
-    padding: 0;
-    gap: var(--cu-vr3);
+  &--with-media {
+    @include breakpoint(md) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 50%;
+      padding: 0;
+      gap: var(--cu-vr3);
+    }
+  }
+
+  &[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr1) var(--cu-ps1);
+
+    @include breakpoint(md) {
+      padding: var(--cu-vr2) var(--cu-ps2);
+    }
+
+    @include breakpoint(md) {
+      padding: var(--cu-vr3) var(--cu-ps3);
+    }
   }
 }
 
@@ -18,20 +32,25 @@
   align-self: center;
   order: 2;
   position: relative;
-  padding-top: var(--cu-vr2);
+  text-align: center;
 
-  @include breakpoint(md) {
-    grid-column: 4;
-  }
+  .cu-testimonial--with-media & {
+    text-align: left;
+    padding-top: var(--cu-vr2);
 
-  &::before {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 8px;
-    background: var(--cu-colorscheme-accent);
-    position: absolute;
-    top: 0;
+    @include breakpoint(md) {
+      grid-column: 4;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 8px;
+      background: var(--cu-colorscheme-accent);
+      position: absolute;
+      top: 0;
+    }
   }
 }
 

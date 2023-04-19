@@ -2,4 +2,14 @@
   quote: "I came to Cornell knowing I wanted a rigorous program and the ability to learn outside of the classroom. I found the perfect balance at ILR through challenging, interdisciplinary courses and opportunities to study in Dublin, work with the Congressional Black Caucus Foundation in Washington, D.C. and create my own radio show here in Ithaca."
   name: Betty Rubble
   title: Actress
-  media: '<img class="cu-image" src="https://placeimg.com/450/450/nature" alt="Hug a tree today" />'
+  icon_data:
+    icon: handshake
+-
+  quote: "I came to Cornell knowing I wanted a rigorous program and the ability to learn outside of the classroom. I found the perfect balance at ILR through challenging, interdisciplinary courses and opportunities to study in Dublin, work with the Congressional Black Caucus Foundation in Washington, D.C. and create my own radio show here in Ithaca."
+  name: Betty Rubble
+  title: Actress
+  media: '<img class="cu-image" src="https://picsum.photos/548/778" alt="Hug a tree today" />'
+  icon_data:
+    icon: profile
+    attributes:
+      class: 'cu-icon--inline'

@@ -8,17 +8,29 @@
  * @var string $name The name of the person quoted.
  * @var string $title Title of the person quoted.
  * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  *
+ * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=383-1536&t=pnqZYepkqgwiqHes-4 Standard testimonial in Figma
  * @see https://www.figma.com/file/uFwXUY837P752PL8MndgBN/ILR-Design-System?node-id=888%3A6836 Image grid testimonial in Figma
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-<div{{ attributes.addClass(['cu-testimonial']) }}>
+
+<div{{ attributes.addClass([
+    'cu-testimonial',
+    media ? 'cu-testimonial--with-media'
+  ]) }}>
   <div class="cu-testimonial__content">
+  {% if icon_data %}
+    {% include '@union/_icon.twig' with icon_data only %}
+  {% endif %}
     <div class="cu-testimonial__quote">{{ quote }}</div>
-    <div class="cu-testimonial__name">&ndash; {{ name }}</div>
-    <div class="cu-testimonial__title">{{ title }}</div>
+    {% if name or title %}
+    <div class="cu-testimonial__attribution">
+      &ndash; <span class="cu-testimonial__name">{{ name }}</span>{% if title %}<span class="cu-testimonial__title">, {{ title }}</span>{% endif %}
+    </div>
+    {% endif %}
   </div>
   {% if media %}
   <div class="cu-testimonial__media">
