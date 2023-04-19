@@ -22,7 +22,8 @@
   align-self: center;
   order: 2;
   position: relative;
-  text-align: center; }
+  text-align: center;
+  max-width: 45rem; }
   .cu-testimonial--with-media .cu-testimonial__content {
     text-align: left;
     padding-top: var(--cu-vr2); }
@@ -45,12 +46,12 @@
   --cu-font-family: "freight-text-pro", serif;
   margin-bottom: var(--cu-vr1); }
 
-.cu-testimonial__name,
-.cu-testimonial__title {
+.cu-testimonial__attribution {
   --cu-font-size: var(--cu-ms-4);
   --cu-font-weight: 700;
   opacity: .75;
   letter-spacing: 0.1em;
+  line-height: 1.3;
   text-transform: uppercase; }
 
 .cu-testimonial__media {

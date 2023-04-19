@@ -33,6 +33,7 @@
   order: 2;
   position: relative;
   text-align: center;
+  max-width: 45rem;
 
   .cu-testimonial--with-media & {
     text-align: left;
@@ -62,12 +63,12 @@
   margin-bottom: var(--cu-vr1);
 }
 
-.cu-testimonial__name,
-.cu-testimonial__title {
+.cu-testimonial__attribution {
   --cu-font-size: var(--cu-ms-4);
   --cu-font-weight: 700;
   opacity: .75;
   letter-spacing: 0.1em;
+  line-height: 1.3;
   text-transform: uppercase;
 }
 
