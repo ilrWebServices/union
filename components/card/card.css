@@ -71,7 +71,7 @@
       align-items: center;
       padding: var(--cu-vr1) var(--cu-ps1);
       text-align: center;
-      background-color: var(--cu-colorscheme-background); }
+      background-color: var(--cu-colorscheme-background, white); }
       @media (min-width: 61rem) {
         .cu-card--inset .cu-card__content {
           bottom: var(--cu-vr3);
@@ -94,7 +94,7 @@
     .cu-card--popout .cu-composite-heading::after {
       content: none; }
     .cu-card--popout .cu-card__content {
-      background-color: var(--cu-colorscheme-background);
+      background-color: var(--cu-colorscheme-background, #FCFCFC);
       padding: var(--cu-vr2) var(--cu-ps2);
       margin: calc(var(--cu-vr2) * -1) var(--cu-vr1) 0;
       align-items: center;

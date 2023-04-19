@@ -4,7 +4,6 @@
   --cu-color-light-gray: #efefef;
   --cu-color-dark: #222;
 
-  --cu-colorscheme-background: transparent;
   /* Can this be overridden in themes and such? */
   --cu-colorscheme-accent: var(--cu-color-brand);
 }
