@@ -2,16 +2,18 @@
   display: grid;
   gap: var(--cu-vr1);
   align-items: stretch;
-  padding: var(--cu-vr1) 0 var(--cu-vr1) var(--cu-ps1);
   --background-accent-color: #222; }
   .cu-carousel.cu-colorscheme--dark {
     --background-accent-color: #6C6C6C; }
+  .cu-carousel[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr1) 0 var(--cu-vr1) var(--cu-ps1); }
 
 @media (min-width: 61rem) {
   .cu-carousel {
     grid-template-columns: 2fr 3fr;
-    gap: var(--cu-ps3);
-    padding: var(--cu-vr3) 0 var(--cu-vr3) var(--cu-ps4); } }
+    gap: var(--cu-ps3); }
+    .cu-carousel[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr3) 0 var(--cu-vr3) var(--cu-ps4); } }
 
 .cu-carousel__content {
   position: relative;
