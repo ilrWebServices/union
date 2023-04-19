@@ -474,6 +474,7 @@
   }
 
   /*----------  Icon  ----------*/
+  // @deprecated
   &--icon {
     padding: 0 var(--cu-ps-1);
     --cu-card-border-radius: 3px;
@@ -482,6 +483,26 @@
 
     .cu-card__content {
       width: 100%;
+    }
+  }
+
+  /*----------  Dynamic  ----------*/
+  &--dynamic {
+    --cu-card-border-radius: 3px;
+    padding: var(--cu-vr1) var(--cu-ps1) var(--cu-vr0);
+    background-color: var(--cu-colorscheme-background, #FCFCFC);
+
+    .cu-card__meta {
+      margin-bottom: var(--cu-vr0);
+    }
+
+    .cu-card__content {
+      align-items: center;
+      text-align: center;
+    }
+
+    .cu-composite-heading__heading {
+      --cu-font-size: var(--cu-ms3);
     }
   }
 
@@ -496,12 +517,14 @@
       max-height: 0;
       transition: max-height .25s ease, opacity .375s, margin-bottom .25s;
       opacity: 0;
-      --cu-font-weight: 300;
-      padding: 0 var(--cu-ps2);
 
       &:last-child {
-        margin-bottom: 0;
+        margin-bottom: unset;
       }
+    }
+
+    .cu-composite-heading::after {
+      display: none;
     }
 
     &:hover {
@@ -510,8 +533,12 @@
         opacity: 1;
 
         &:last-child {
-          margin-bottom: 1em;
+          margin-bottom: revert;
         }
+      }
+
+      .cu-composite-heading::after {
+        display: revert;
       }
     }
   }
