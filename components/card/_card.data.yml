@@ -1,5 +1,5 @@
 -
-  demo_label: Default teaser
+  demo_label: Default
   demo_count: 3
   demo_columns: 3
   card_link_url: '#'
@@ -7,9 +7,24 @@
   card_content: |
     <p class="cu-card__date">July 24, 2019</p>
     <h2 class="cu-heading cu-card__heading">Once an ILRie, Always an ILRie</h2>
-    <p class="cu-card__teaser">Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
+    <p>Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
   card_media: |
     <img class="cu-image" src="https://picsum.photos/720/480" />
+-
+  demo_label: Teaser card
+  demo_count: 3
+  demo_columns: 3
+  card_link_url: '#'
+  card_link_alt: 'People are people'
+  heading: Once an ILRie, Always an ILRie
+  eyebrow_heading: July 24, 2048
+  card_content: |
+    <p>Class of 2048 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
+  card_media: |
+    <img class="cu-image" src="https://picsum.photos/720/480" />
+  attributes:
+    class:
+      - 'cu-card--teaser'
 -
   demo_label: Icon card
   attributes:

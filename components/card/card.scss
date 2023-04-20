@@ -36,6 +36,26 @@
   =            Modifiers            =
   =============================================*/
 
+  /*----------  Teaser  ----------*/
+  &--teaser {
+    --cu-composite-heading-align: left;
+    --cu-composite-heading-accent-display: none;
+
+    .cu-card__meta {
+      margin-bottom: var(--cu-vr-1);
+    }
+
+    &[class*="cu-colorscheme--"] {
+      .cu-card__content {
+        padding: 0 var(--cu-ps0) var(--cu-vr1);
+
+        @include breakpoint(md) {
+          padding: 0 var(--cu-ps1) var(--cu-vr1);
+        }
+      }
+    }
+  }
+
   /*----------  Stacked  ----------*/
   &--stacked {
     --cu-composite-heading-accent-display: none;

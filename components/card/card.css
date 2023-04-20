@@ -6,6 +6,7 @@
   /*=============================================
   =            Modifiers            =
   =============================================*/
+  /*----------  Teaser  ----------*/
   /*----------  Stacked  ----------*/
   /*----------  Promos  ----------*/
   /*----------  Inset  ----------*/
@@ -40,6 +41,16 @@
       width: 100%; }
     .cu-card__media .cu-card__media-link {
       display: block; }
+  .cu-card--teaser {
+    --cu-composite-heading-align: left;
+    --cu-composite-heading-accent-display: none; }
+    .cu-card--teaser .cu-card__meta {
+      margin-bottom: var(--cu-vr-1); }
+    .cu-card--teaser[class*="cu-colorscheme--"] .cu-card__content {
+      padding: 0 var(--cu-ps0) var(--cu-vr1); }
+      @media (min-width: 61rem) {
+        .cu-card--teaser[class*="cu-colorscheme--"] .cu-card__content {
+          padding: 0 var(--cu-ps1) var(--cu-vr1); } }
   .cu-card--stacked {
     --cu-composite-heading-accent-display: none; }
     .cu-card--stacked .cu-card__meta + * {
