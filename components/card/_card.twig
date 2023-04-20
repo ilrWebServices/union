@@ -13,6 +13,8 @@
  * @var string $card_media Optional media (img, video, or any other CSS replaced element).
  * @var string $heading Main heading title for the card.
  * @var string $eyebrow_heading A descriptive keyword or phrase placed above the main heading.
+ * @var string $heading_element The HTML element for the heading. Defaults to `h2`.
+ * @var string $eyebrow_heading_element The HTML element for the eyebrow_heading. Defaults to `h3`.
  * @var string $card_link_url An optional URL for link over the entire card.
  * @var string $card_link_alt Alt text for the card link.
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
@@ -62,6 +64,8 @@
       icon_data: icon_data,
       eyebrow_heading: eyebrow_heading,
       heading: heading,
+      eyebrow_heading_element: eyebrow_heading_element,
+      heading_element: heading_element,
       attributes: {
         class: [
           'cu-card__meta',
