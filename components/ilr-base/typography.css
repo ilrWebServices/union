@@ -25,6 +25,11 @@
 .cu-heading {
   margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
   --cu-line-height: 1.2;
+  --cu-font-weight: 400;
+}
+
+.cu-heading strong {
+  font-weight: var(--cu-font-weight, inherit);
 }
 
 .cu-heading--strong {

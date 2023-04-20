@@ -75,9 +75,6 @@
 }
 
 /* The following overrides are from the legacy Section Heading component. */
-.cu-section__heading.cu-composite-heading .cu-composite-heading__heading {
-  --cu-font-size: var(--cu-ms6);
-}
 .cu-section__heading .cu-composite-heading__link {
   --cu-font-weight: 400;
   --cu-font-size: var(--cu-ms-2);
