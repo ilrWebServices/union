@@ -38,6 +38,7 @@
 
   /*----------  Stacked  ----------*/
   &--stacked {
+    --cu-composite-heading-accent-display: none;
     // Push the last element (often a button, to the bottom).
     .cu-card__meta + * {
       flex-grow: 2;
@@ -62,6 +63,8 @@
 
   /*----------  Promos  ----------*/
   &--promo {
+    --cu-composite-heading-accent-display: none;
+
     .cu-card__content {
       justify-content: center;
       align-items: center;
@@ -451,6 +454,8 @@
   }
 
   &--post-small {
+    --cu-composite-heading-accent-display: none;
+
     .cu-card__content {
       height: unset;
     }

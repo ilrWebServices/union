@@ -50,7 +50,7 @@
 
   &::after {
     content: '';
-    display: block;
+    display: var(--cu-composite-heading-accent-display, block);
     width: 100px;
     height: 8px;
     background: var(--cu-colorscheme-accent);

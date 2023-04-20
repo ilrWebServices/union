@@ -40,26 +40,30 @@
       width: 100%; }
     .cu-card__media .cu-card__media-link {
       display: block; }
-  .cu-card--stacked .cu-card__meta + * {
-    flex-grow: 2; }
-  .cu-card--stacked .cu-card__content {
-    align-items: center;
-    text-align: center; }
-    .cu-card--stacked .cu-card__content .cu-button {
-      margin-top: var(--cu-vr-1); }
+  .cu-card--stacked {
+    --cu-composite-heading-accent-display: none; }
+    .cu-card--stacked .cu-card__meta + * {
+      flex-grow: 2; }
+    .cu-card--stacked .cu-card__content {
+      align-items: center;
+      text-align: center; }
+      .cu-card--stacked .cu-card__content .cu-button {
+        margin-top: var(--cu-vr-1); }
   .cu-card--stacked[class*="cu-colorscheme--"] .cu-card__content {
     padding: 0 var(--cu-ps1); }
-  .cu-card--promo .cu-card__content {
-    justify-content: center;
-    align-items: center;
-    padding: var(--cu-vr1) var(--cu-ps1);
-    text-align: center; }
-    @media (min-width: 61rem) {
-      .cu-card--promo .cu-card__content {
-        padding: var(--cu-vr2) var(--cu-ps2); } }
-    @media (min-width: 61rem) {
-      .cu-card--promo .cu-card__content {
-        padding: var(--cu-vr3) var(--cu-ps3); } }
+  .cu-card--promo {
+    --cu-composite-heading-accent-display: none; }
+    .cu-card--promo .cu-card__content {
+      justify-content: center;
+      align-items: center;
+      padding: var(--cu-vr1) var(--cu-ps1);
+      text-align: center; }
+      @media (min-width: 61rem) {
+        .cu-card--promo .cu-card__content {
+          padding: var(--cu-vr2) var(--cu-ps2); } }
+      @media (min-width: 61rem) {
+        .cu-card--promo .cu-card__content {
+          padding: var(--cu-vr3) var(--cu-ps3); } }
   .cu-card--inset {
     display: block;
     overflow: auto; }
@@ -290,6 +294,7 @@
       .cu-card--cinematic-reversed .cu-card__media {
         margin-top: var(--cu-vr2); } }
   .cu-card--post-small {
+    --cu-composite-heading-accent-display: none;
     display: grid;
     grid-template-columns: 88px auto;
     gap: var(--cu-ps0); }
