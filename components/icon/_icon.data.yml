@@ -3,6 +3,10 @@
   title: Calendar
   icon: 'calendar'
 -
+  demo_label: 'simple calendar'
+  title: Calendar
+  icon: 'calendar-simple'
+-
   demo_label: 'cornell-seal'
   title: Cornell University Seal
   icon: 'cornell-seal'
@@ -110,6 +114,11 @@
   title: Right Arrow
   icon: 'right-arrow'
   size: 32px
+-
+  demo_label: 'Geomarker'
+  title: Geomarker
+  icon: 'geomarker'
+  size: 20px
 -
   demo_label: 'Test'
   title: Cornell University Tower
