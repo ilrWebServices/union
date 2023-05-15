@@ -26,13 +26,40 @@
   --cu-component-margin-top: 0;
 }
 
-.cu-section--framed {
+.cu-section[class*="cu-colorscheme"] {
+  position: relative;
+  padding: var(--cu-vr1) 0;
+}
+
+@media (min-width: 61rem) {
+  .cu-section[class*="cu-colorscheme"] {
+    padding: var(--cu-vr2) 0;
+  }
+}
+
+.cu-section[class*="cu-colorscheme"] > * {
+  /* This is required to give the heading and body a stacking context. Otherwise, the before pseudo element defined below will cover the content. */
+  position: inherit;
+}
+
+/* Backgrounds on sections with colorschemes are always full bleed. */
+.cu-section[class*="cu-colorscheme"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  width: calc(2 * 100vw);
+  height: 100%;
+  background-color: var(--cu-colorscheme-background);
+}
+
+.cu-section--framed:not([class*="cu-colorscheme"]) {
   position: relative;
   padding-top: 50px;
 }
 
-.cu-section--framed::before,
-.cu-section--framed::after {
+.cu-section--framed:not([class*="cu-colorscheme"])::before,
+.cu-section--framed:not([class*="cu-colorscheme"])::after {
   content: '';
   position: absolute;
   top: 0;
@@ -40,21 +67,21 @@
   background: var(--cu-text-color);
 }
 
-.cu-section--framed::before {
+.cu-section--framed:not([class*="cu-colorscheme"])::before {
   width: 120px;
   height: 10px;
 }
 
-.cu-section--framed::after {
+.cu-section--framed:not([class*="cu-colorscheme"])::after {
   width: 10px;
   height: 50px;
 }
 
-.cu-section--framed.cu-section--framed-right::before {
+.cu-section--framed:not([class*="cu-colorscheme"]).cu-section--framed-right::before {
   left: calc(100% - 120px - 10px);
 }
 
-.cu-section--framed.cu-section--framed-right::after {
+.cu-section--framed:not([class*="cu-colorscheme"]).cu-section--framed-right::after {
   left: calc(100% - 10px);
 }
 
