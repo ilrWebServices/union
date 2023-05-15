@@ -1,40 +1,62 @@
 .cu-section {
   max-width: var(--cu-max-width-section, 1060px);
-  margin: 0 auto;  }
-  .cu-section--wide {
-    max-width: 100%; }
-  .cu-section--gapless {
-    --cu-grid-gap: 0;
-    --cu-component-margin-top: 0;
-    --cu-component-margin-bottom: 0; }
-    .cu-section--gapless * {
-      --cu-component-margin-top: initial;
-      --cu-component-margin-bottom: initial; }
-    .cu-section--gapless > :first-child {
-      --cu-component-margin-top: 0; }
-      .cu-section--gapless > :first-child > [class*='cu-']:first-of-type {
-        --cu-component-margin-top: 0; }
+  margin: 0 auto;
+}
+
+.cu-section--wide {
+  max-width: 100%;
+}
+
+.cu-section--gapless {
+  --cu-grid-gap: 0;
+  --cu-component-margin-top: 0;
+  --cu-component-margin-bottom: 0;
+}
+
+.cu-section--gapless * {
+  --cu-component-margin-top: initial;
+  --cu-component-margin-bottom: initial;
+}
+
+.cu-section--gapless> :first-child {
+  --cu-component-margin-top: 0;
+}
+
+.cu-section--gapless> :first-child>[class*='cu-']:first-of-type {
+  --cu-component-margin-top: 0;
+}
 
 .cu-section--framed {
   position: relative;
   padding-top: 50px;
-  /*----------  Framed right  ----------*/ }
-  .cu-section--framed::before, .cu-section--framed::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: var(--cu-text-color); }
-  .cu-section--framed::before {
-    width: 120px;
-    height: 10px; }
-  .cu-section--framed::after {
-    width: 10px;
-    height: 50px; }
-  .cu-section--framed.cu-section--framed-right::before {
-    left: calc(100% - 120px - 10px); }
-  .cu-section--framed.cu-section--framed-right::after {
-    left: calc(100% - 10px); }
+}
+
+.cu-section--framed::before,
+.cu-section--framed::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--cu-text-color);
+}
+
+.cu-section--framed::before {
+  width: 120px;
+  height: 10px;
+}
+
+.cu-section--framed::after {
+  width: 10px;
+  height: 50px;
+}
+
+.cu-section--framed.cu-section--framed-right::before {
+  left: calc(100% - 120px - 10px);
+}
+
+.cu-section--framed.cu-section--framed-right::after {
+  left: calc(100% - 10px);
+}
 
 .cu-section__heading {
   margin-bottom: var(--cu-component-margin-bottom, var(--cu-vr2));
@@ -86,4 +108,5 @@
 
 .cu-text--2col {
   column-count: 2;
-  column-gap: var(--cu-vr3); }
+  column-gap: var(--cu-vr3);
+}
