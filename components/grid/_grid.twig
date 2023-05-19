@@ -4,7 +4,7 @@
  *
  * A grid is a grid. Rows and columns, right?
  *
- * @var string $grid_content The items for the grid.
+ * @var string|iterable $grid_content The items for the grid.
  * @var string $grid_element The HTML element for the grid. Defaults to `div`.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the grid.
  *
@@ -34,6 +34,12 @@
 {% set grid_element = grid_element|default('div') %}
 
 <{{ grid_element }}{{ attributes.addClass(['cu-grid']) }}>
+{% if grid_content is iterable %}
+{% for grid_item in grid_content %}
+  {{ grid_item }}
+{% endfor %}
+{% else %}
   {{ grid_content }}
+{% endif %}
 </{{grid_element}}>
 

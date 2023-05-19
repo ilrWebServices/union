@@ -18,6 +18,15 @@
     class:
       - cu-grid--3col
 -
+  demo_label: 3col (array)
+  grid_content:
+    - "<div style='background: gold; border: 1px solid black; padding: 1em;'>One</div>"
+    - "<div style='background: gold; border: 1px solid black; padding: 1em;'>Two</div>"
+    - "<div style='background: gold; border: 1px solid black; padding: 1em;'>Three</div>"
+  attributes:
+    class:
+      - cu-grid--3col
+-
   demo_label: two-up
   grid_content: |
     <div class="grid-item">one</div>
