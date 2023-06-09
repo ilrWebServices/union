@@ -1,0 +1,80 @@
+.cu-event-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cu-event-card .cu-event-card__media {
+  order: -1;
+}
+
+.cu-event-card .cu-event-card__media .cu-image {
+  width: 100%;
+  aspect-ratio: 1.75;
+}
+
+.cu-event-card .cu-event-card__content {
+  padding: var(--cu-vr1) var(--cu-ps1);
+  position: relative;
+  border: 1px solid #ccc;
+  border-top: unset;
+}
+
+.cu-event-card.cu-colorscheme--dark .cu-event-card__content,
+.cu-event-card.cu-colorscheme--vibrant .cu-event-card__content {
+  border: unset;
+}
+
+.cu-event-card .cu-composite-heading {
+  gap: var(--cu-vr1);
+}
+
+.cu-event-card .cu-composite-heading__eyebrow-heading {
+  --cu-font-size: 16px !important;
+  --cu-font-weight: 400;
+}
+
+.cu-event-card .cu-event-card__icon {
+  position: absolute;
+  top: calc(var(--cu-vr2) * -1);
+  right: var(--cu-ps1);
+  --cu-text-color: var(--cu-color-white);
+  background-color: var(--cu-color-dark);
+  border: 4px solid white;
+  padding: var(--cu-vr-1) var(--cu-ps-1);
+}
+
+.cu-event-card .cu-event-card__icon_month,
+.cu-event-card .cu-event-card__icon_day {
+  display: block;
+  text-align: center;
+  --cu-line-height: 1;
+}
+
+.cu-event-card .cu-event-card__icon_month {
+  --cu-font-size: var(--cu-ms-2);
+  text-transform: uppercase;
+  /* margin-bottom: var(--cu-vr-2); */
+}
+
+.cu-event-card .cu-event-card__icon_day {
+  --cu-font-size: var(--cu-ms8);
+  --cu-font-family: 'futura-pt';
+}
+
+.cu-event-card__link {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  z-index: 4;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap;
+  background: transparent;
+  pointer-events: all;
+}
