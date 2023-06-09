@@ -25,18 +25,18 @@
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
 
 {% set event_date_time_element %}
-<time datetime="{{ event_date|date("c", false) }}">{{ event_date|date("M j, Y", false) }}{% if show_time|default(false) %}
+<time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("M j, Y", false) }}{% if show_time|default(false) %}
  {{ event_date|date("g:i a", false) }}{% endif %}</time>
 {% endset %}
 
 {% set event_date_time_icon %}
-<time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
+<time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}" itemprop="startDate"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
 {% endset %}
 
 <div{{ attributes.addClass([
     'cu-event-card',
     media ? 'cu-event-card--with-media'
-  ]) }}>
+  ]) }} itemscope itemtype="http://schema.org/Event">
   <div{{ content_attributes.addClass(['cu-event-card__content']) }}>
     {% if heading or event_date %}
     {% include '@union/_composite-heading.twig' with {
@@ -44,6 +44,9 @@
       heading: heading,
       eyebrow_heading_element: eyebrow_heading_element,
       heading_element: heading_element,
+      heading_attributes: {
+        itemprop: 'name'
+      },
       attributes: {
         class: [
           'cu-event-card__meta',
