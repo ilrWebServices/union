@@ -18,6 +18,7 @@
   position: relative;
   border: 1px solid #ccc;
   border-top: unset;
+  flex-grow: 1;
 }
 
 .cu-event-card.cu-colorscheme--dark .cu-event-card__content,
