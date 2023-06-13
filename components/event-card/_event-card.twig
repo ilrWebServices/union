@@ -26,11 +26,7 @@
 
 {% set event_date_time_element %}
 <time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("M j, Y", false) }}{% if show_time|default(false) %}
- {{ event_date|date("g:i a", false) }}{% endif %}</time>
-{% endset %}
-
-{% set event_date_time_icon %}
-<time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}" itemprop="startDate"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
+ • {{ event_date|date("g:i a", false) }}{% endif %}</time>
 {% endset %}
 
 <div{{ attributes.addClass([
@@ -57,7 +53,7 @@
     } only %}
     {% endif %}
     {{ content }}
-    {{ event_date_time_icon }}
+    <time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
   </div>
 {% if media %}
   <div class="cu-event-card__media">
