@@ -14,11 +14,15 @@
 }
 
 .cu-event-card .cu-event-card__content {
-  padding: var(--cu-vr1) var(--cu-ps1);
+  padding: var(--cu-vr4) var(--cu-ps1) var(--cu-vr1);
   position: relative;
   border: 1px solid #ccc;
-  border-top: unset;
   flex-grow: 1;
+}
+
+.cu-event-card.cu-event-card--with-media .cu-event-card__content {
+  padding: var(--cu-vr1) var(--cu-ps1);
+  border-top: unset;
 }
 
 .cu-event-card.cu-colorscheme--dark .cu-event-card__content,
@@ -40,7 +44,7 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  top: calc(var(--cu-vr2) * -1);
+  top: var(--cu-vr1);
   right: var(--cu-ps1);
   --cu-text-color: var(--cu-color-white);
   background-color: var(--cu-color-dark);
@@ -49,6 +53,10 @@
   --cu-line-height: 1;
   text-align: center;
   aspect-ratio: 1/1;
+}
+
+.cu-event-card.cu-event-card--with-media .cu-event-card__icon {
+  top: calc(var(--cu-vr2) * -1);
 }
 
 .cu-event-card .cu-event-card__icon_month,
