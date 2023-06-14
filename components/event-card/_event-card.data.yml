@@ -40,3 +40,29 @@
   link_alt: 'Tube steaks!'
   media: |
     <img class="cu-image" src="https://picsum.photos/700/700" />
+-
+  demo_label: Mini
+  demo_count: 2
+  demo_columns: 2
+  heading: Past, Present, and Future Connections
+  event_date: 2525-11-12 10:30am
+  show_time: false
+  # link_url: '#'
+  link_alt: 'Tube steaks!'
+  media: |
+    <img class="cu-image" src="https://picsum.photos/700/700" />
+  attributes:
+    class:
+      - 'cu-event-card--mini'
+-
+  demo_label: Mini w/o media
+  demo_count: 2
+  demo_columns: 2
+  heading: Evolving Perspectives on Fostering Connection, Community, and Culture in the Remote and Hybrid Workplace Virt Working Group
+  event_date: 2525-11-12 10:30am
+  show_time: false
+  # link_url: '#'
+  link_alt: 'Tube steaks!'
+  attributes:
+    class:
+      - 'cu-event-card--mini'

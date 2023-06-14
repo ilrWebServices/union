@@ -9,6 +9,7 @@
 }
 
 .cu-event-card .cu-event-card__media .cu-image {
+  display: block;
   width: 100%;
   aspect-ratio: 1.75;
 }
@@ -90,4 +91,39 @@
   white-space: nowrap;
   background: transparent;
   pointer-events: all;
+}
+
+.cu-event-card.cu-event-card--mini {
+  flex-direction: row;
+}
+
+.cu-event-card.cu-event-card--mini .cu-event-card__media .cu-image {
+  aspect-ratio: 1/1;
+  width: 94px;
+  max-width: unset;
+}
+
+.cu-event-card.cu-event-card--mini .cu-event-card__content {
+  border: unset;
+  display: flex;
+  gap: var(--cu-ps0);
+  padding: 0;
+}
+
+.cu-event-card.cu-event-card--mini .cu-event-card__icon {
+  position: static;
+  order: -1;
+  border: unset;
+}
+
+.cu-event-card.cu-event-card--mini .cu-composite-heading {
+  gap: var(--cu-vr0);
+}
+
+.cu-event-card.cu-event-card--mini .cu-composite-heading__heading {
+  --cu-font-size: var(--cu-ms0);
+}
+
+.cu-event-card.cu-event-card--mini .cu-composite-heading__eyebrow-heading {
+  --cu-font-size: 12px !important;
 }
