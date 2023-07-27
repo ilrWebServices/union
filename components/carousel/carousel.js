@@ -20,6 +20,30 @@
         moveCarousel(carousel, element.dataset.direction);
       });
     });
+
+    let carouselItemWrappers = document.querySelectorAll('.cu-carousel__item-wrapper');
+
+    carouselItemWrappers.forEach(element => {
+      element.addEventListener('scrollend', function(event) {
+        let wrapperRect = event.target.getBoundingClientRect();
+        let firstItem = event.target.querySelector('.cu-carousel__item:first-of-type');
+        let lastItem = event.target.querySelector('.cu-carousel__item:last-of-type');
+        let firstItemRect = firstItem.getBoundingClientRect();
+        let lastItemRect = lastItem.getBoundingClientRect();
+        let carousel = event.target.closest('.cu-carousel');
+
+        carousel.setAttribute('data-scrollposition', '');
+
+        // This math stuff is here to deal with subpixel fractional values.
+        if (Math.round(wrapperRect.left / firstItemRect.left * 100) === 100) {
+          carousel.setAttribute('data-scrollposition', 'start');
+        }
+
+        if (Math.round(wrapperRect.right / lastItemRect.right * 100) === 100) {
+          carousel.setAttribute('data-scrollposition', 'end');
+        }
+      });
+    });
   });
 
 })(window, document);

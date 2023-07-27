@@ -57,7 +57,6 @@
   display: flex;
   align-items: center;
   height: 100%;
-  width: 250vw;
   gap: var(--cu-ps1);
   list-style-type: none;
 }
@@ -67,6 +66,10 @@
   flex-basis: content;
   flex-grow: 0;
   flex-shrink: 0;
+
+  &:last-of-type {
+    padding-right: var(--cu-ps1);
+  }
 
   > * {
     max-height: 400px;
@@ -109,4 +112,10 @@
       }
     }
   }
+}
+
+.cu-carousel[data-scrollposition="start"] .cu-carousel__navigation-button[data-direction="prev"],
+.cu-carousel[data-scrollposition="end"] .cu-carousel__navigation-button[data-direction="next"] {
+  opacity: .25;
+  cursor: initial;
 }
