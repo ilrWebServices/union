@@ -24,7 +24,8 @@
     let carouselItemWrappers = document.querySelectorAll('.cu-carousel__item-wrapper');
 
     carouselItemWrappers.forEach(element => {
-      element.addEventListener('scrollend', function(event) {
+      // @TODO Switch from debounce to `scrollend` event when Safari gains support.
+      element.addEventListener('scroll', debounce(function(event) {
         let wrapperRect = event.target.getBoundingClientRect();
         let firstItem = event.target.querySelector('.cu-carousel__item:first-of-type');
         let lastItem = event.target.querySelector('.cu-carousel__item:last-of-type');
@@ -42,8 +43,30 @@
         if (Math.round(wrapperRect.right / lastItemRect.right * 100) === 100) {
           carousel.setAttribute('data-scrollposition', 'end');
         }
-      });
+      }, 150));
     });
   });
+
+  // @see Drupal.debounce.
+  const debounce = function (func, wait, immediate) {
+    let timeout;
+    let result;
+    return function (...args) {
+      const context = this;
+      const later = function () {
+        timeout = null;
+        if (!immediate) {
+          result = func.apply(context, args);
+        }
+      };
+      const callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) {
+        result = func.apply(context, args);
+      }
+      return result;
+    };
+  };
 
 })(window, document);
