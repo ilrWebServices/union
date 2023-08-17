@@ -6,6 +6,7 @@
  *
  * @var string $heading Main heading title for the card.
  * @var string|\DateTime $event_date The date of the event.
+ * @var string|\DateTime $event_date_end The end date of the event.
  * @var bool $show_time Display the time of the event.
  * @var string $media (optional) media (img, video, or any other CSS replaced element).
  * @var string $content (optional) Additional content for the card.
@@ -29,6 +30,10 @@
 {% set event_date_time_element %}
 <time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("D, M j", false) }}{% if show_time|default(false) %}
  • {{ event_date|date("g:i a", false) }}{% endif %}</time>
+  {% if event_date_end %}
+  - <time datetime="{{ event_date_end|date("c", false) }}" itemprop="endDate">{{ event_date_end|date("D, M j", false) }}{% if show_time|default(false) %}
+ • {{ event_date_end|date("g:i a", false) }}{% endif %}</time>
+  {% endif %}
 {% endset %}
 
 <div{{ attributes.addClass([

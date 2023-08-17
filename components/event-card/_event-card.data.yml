@@ -4,6 +4,7 @@
   demo_columns: 3
   heading: Reducing Bias in Hiring
   event_date: 2023-06-09 11:30am
+  event_date_end: 2023-06-16 10:30am
   link_url: '#'
   link_alt: 'Events are events'
   media: |
@@ -24,6 +25,7 @@
   demo_columns: 3
   heading: Haggis Day
   event_date: 2525-11-12 10:30am
+  event_date_end: 2525-11-15 10:30am
   show_time: false
   link_url: '#'
   link_alt: 'Tube steaks!'
