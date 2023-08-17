@@ -27,7 +27,7 @@
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
 
 {% set event_date_time_element %}
-<time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("M j, Y", false) }}{% if show_time|default(false) %}
+<time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("D, M j", false) }}{% if show_time|default(false) %}
  • {{ event_date|date("g:i a", false) }}{% endif %}</time>
 {% endset %}
 
