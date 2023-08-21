@@ -13,6 +13,7 @@
  * @var string $eyebrow_heading_element The HTML element for the eyebrow_heading. Defaults to `h3`.
  * @var string $link_url (optional) A URL for link over the entire card.
  * @var string $link_alt Alt text for the card link.
+ * @var Drupal\Core\Template\Attribute|array $wrapper_attributes Attributes (class, data, etc.) for the card wrapper.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the card content region.
  * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
@@ -22,6 +23,7 @@
  * @see https://www.figma.com/file/pfhQCvR2YmyHyKjEXS9gnK/23_ILR-WIP?type=design&node-id=945-13551&t=iMguE6zBDTf8L53V-4 WIP in Figma
  */
 #}
+{% set wrapper_attributes = union_attributes(wrapper_attributes|default([])) %}
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
@@ -30,7 +32,7 @@
 <time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("D, M j", false) }}{% if show_time|default(false) %}
  • {{ event_date|date("g:i a", false) }}{% endif %}</time>
 {% endset %}
-
+<div{{ wrapper_attributes.addClass(['cu-event-card-wrapper']) }}>
 <div{{ attributes.addClass([
     'cu-event-card',
     media ? 'cu-event-card--with-media'
@@ -65,4 +67,5 @@
 {% if link_url %}
   <a{{ link_attributes.addClass(['cu-event-card__link']) }} href="{{ link_url }}" title="{{ heading }}">{{ link_alt }}</a>
 {% endif %}
+</div>
 </div>
