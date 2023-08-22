@@ -149,7 +149,7 @@
 
   /* Try to prevent the header from being covered by the date icon. */
   .cu-event-card:not(.cu-event-card--mini) .cu-composite-heading {
-    padding-right: var(--cu-vr3);
+    padding-top: var(--cu-ps3);
   }
 
   .cu-event-card:not(.cu-event-card--mini) .cu-event-card__media .cu-image {
