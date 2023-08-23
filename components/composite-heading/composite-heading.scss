@@ -5,6 +5,7 @@
   gap: var(--cu-vr0);
   flex-direction: column;
   align-items: var(--cu-composite-heading-align, center);
+  text-align: var(--cu-composite-heading-text-align, center);
 
   .cu-icon {
     order: 1;
@@ -31,7 +32,6 @@
   }
 
   &__body {
-    text-align: var(--cu-composite-heading-text-align, center);
     order: 4;
     margin: 0;
 

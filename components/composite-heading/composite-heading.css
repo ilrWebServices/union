@@ -2,7 +2,8 @@
   display: flex;
   gap: var(--cu-vr0);
   flex-direction: column;
-  align-items: var(--cu-composite-heading-align, center); }
+  align-items: var(--cu-composite-heading-align, center);
+  text-align: var(--cu-composite-heading-text-align, center); }
   .cu-composite-heading .cu-icon {
     order: 1;
     margin: 0; }
@@ -21,7 +22,6 @@
     margin: 0;
     margin-bottom: calc(var(--cu-vr-1) * -1); }
   .cu-composite-heading__body {
-    text-align: var(--cu-composite-heading-text-align, center);
     order: 4;
     margin: 0; }
     .cu-composite-heading__body p:last-of-type {
