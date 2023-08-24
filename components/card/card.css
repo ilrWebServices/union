@@ -43,6 +43,7 @@
       display: block; }
   .cu-card--teaser {
     --cu-composite-heading-align: left;
+    --cu-composite-heading-text-align: left;
     --cu-composite-heading-accent-display: none; }
     .cu-card--teaser .cu-card__meta {
       margin-bottom: var(--cu-vr-1); }
