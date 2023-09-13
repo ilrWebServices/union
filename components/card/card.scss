@@ -204,7 +204,7 @@
 
   /*----------  Panel  ----------*/
   &--panel {
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       display: grid;
       // Using fr here instead of percent to allow wide text to push the width
       // of a column if necessary.
@@ -215,7 +215,7 @@
     .cu-card__content {
       padding: var(--cu-vr1) var(--cu-ps1);
 
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -242,6 +242,14 @@
       img, video {
         width: 100%;
         height: 100%;
+
+        @include breakpoint(xs) {
+          aspect-ratio: 1.7/1;
+        }
+
+        @include breakpoint(sm) {
+          aspect-ratio: initial;
+        }
       }
 
       // Any element in the media section that isn't a replaced element should
@@ -251,7 +259,7 @@
         display: contents;
       }
 
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         position: relative;
         grid-column: 1;
         grid-row: 1;
@@ -260,12 +268,12 @@
   }
 
   &--panel-left {
-    @include breakpoint(md) {
+    @include breakpoint(sm) {
       grid-template-columns: 1fr 2fr;
     }
 
     .cu-card__media {
-      @include breakpoint(md) {
+      @include breakpoint(sm) {
         grid-column: 2;
       }
     }
