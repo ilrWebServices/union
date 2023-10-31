@@ -63,8 +63,11 @@
 =            Page banner                      =
 =============================================*/
 .cu-banner--page {
-  background: var(--cu-color-bg--dark, #222);
   padding: var(--cu-vr1); }
+  .cu-banner--page.cu-banner--with-media {
+    --cu-text-color: #fff; }
+  .cu-banner--page.cu-banner--with-media.cu-colorscheme--light .cu-button {
+    --cu-text-color: #222; }
   @media (min-width: 37.5rem) {
     .cu-banner--page {
       padding: var(--cu-vr1) var(--cu-vr2); } }

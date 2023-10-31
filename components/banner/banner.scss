@@ -80,7 +80,19 @@
 =            Page banner                      =
 =============================================*/
 .cu-banner--page {
-  background: var(--cu-color-bg--dark, #{$color-bg--dark});
+
+  &.cu-banner--with-media {
+    // Override any colorscheme.
+    // @todo Use ::has(.cu-banner__media) once supported in Firefox.
+    --cu-text-color: #{$white};
+  }
+
+  &.cu-banner--with-media.cu-colorscheme--light {
+    .cu-button {
+      --cu-text-color: #{$black};
+    }
+  }
+
   padding: var(--cu-vr1);
 
   @include breakpoint(sm) {

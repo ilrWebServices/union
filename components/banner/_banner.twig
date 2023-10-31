@@ -33,13 +33,14 @@
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-banner']) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
-{% set content_attributes = content_attributes.addClass(['cu-banner__content']) %}
 
-<div{{ attributes }}>
-  <div{{ content_attributes }}>
-
+{# @todo Replace media check here with css ::has() when support is better. #}
+<div{{ attributes.addClass([
+    'cu-banner',
+    media ? 'cu-banner--with-media'
+  ]) }}>
+  <div{{ content_attributes.addClass(['cu-banner__content']) }}>
     {% if icon_data or eyebrow_heading or heading %}
     {% include '@union/_composite-heading.twig' with {
       icon_data: icon_data,
@@ -64,7 +65,9 @@
     } only %}
     {% endif %}
   </div>
+  {% if media %}
   <div class="cu-banner__media">
     {{ media }}
   </div>
+  {% endif %}
 </div>

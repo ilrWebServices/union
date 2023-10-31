@@ -1,4 +1,13 @@
 -
+  demo_label: Default
+  heading: 'The simple truth is today we need to have an international perspective'
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  media: |
+    <img class="cu-image" src="https://picsum.photos/870/360" alt="Undergraduate Admissions" />
+  link_url: '#1'
+  link_text: 'Enjoy your cake'
+-
   demo_label: Page
   attributes:
     class: 'cu-banner--page'
@@ -6,7 +15,16 @@
   content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   media: |
-    <img class="cu-image" src="https://placeimg.com/870/360/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/870/360" alt="Undergraduate Admissions" />
+  link_url: '#1'
+  link_text: 'Enjoy your cake'
+-
+  demo_label: Page w/ no media
+  attributes:
+    class: 'cu-banner--page'
+  heading: 'The simple truth is today we need to have an international perspective'
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   link_url: '#1'
   link_text: 'Enjoy your cake'
 -
@@ -34,7 +52,7 @@
   content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   media: |
-    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
   link_url: '#3'
   link_text: 'Read more about ILR faculty'
 -
@@ -50,6 +68,6 @@
   content: |
     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
   media: |
-    <img class="cu-image" src="https://placeimg.com/896/752/arch" alt="Undergraduate Admissions" />
+    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
   link_url: '#0'
   link_text: 'Read more about ILR faculty'
