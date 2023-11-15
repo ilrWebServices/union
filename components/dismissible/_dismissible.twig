@@ -19,8 +19,8 @@
 #}
 {% set content_digest = union_digest(content) %}
 {% set attributes = union_attributes(attributes|default([])) %}
-<div{{ attributes.addClass('cu-dismissible').setAttribute('data-cu-digest', content_digest) }}>
+<cu-dismissible digest="{{ content_digest }}" {{ attributes.addClass('cu-dismissible') }}>
   <input id="cu-dismissible--{{ content_digest }}" class="cu-dismissible__input" type="checkbox" />
   <label for="cu-dismissible--{{ content_digest }}" class="cu-dismissible__close" aria-label="Close">✕</label>
   <div class="cu-dismissible__content">{{ content }}</div>
-</div>
+</cu-dismissible>

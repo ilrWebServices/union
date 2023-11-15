@@ -6,7 +6,14 @@
       data-pid="10138">
 
       <div class="cu-card__media">
-        <img src="https://placeimg.com/720/480/people"
+        <img src="https://picsum.photos/720/480"
           alt="your money" loading="lazy" class="cu-image" width="1200" height="459">
       </div>
+    </div>
+-
+  demo_label: Default (with different content)
+  content: |
+    <div style="margin: 1em;">
+      <h2>This is just some text without an image</h2>
+      <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor!</p>
     </div>
