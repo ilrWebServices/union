@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "twig/twig": "^2",
+        "twig/twig": "^2 || ^3",
         "phpdocumentor/reflection-docblock": "^5.3",
         "erusev/parsedown": "^1.7",
         "symfony/yaml": "^4.4.19 || ^5 || ^6"
