@@ -28,7 +28,7 @@
     <div class="cu-testimonial__quote">{{ quote }}</div>
     {% if name or title %}
     <div class="cu-testimonial__attribution">
-      &ndash; {% spaceless %}<span class="cu-testimonial__name">{{ name }}</span>{% if title %}<span class="cu-testimonial__title">, {{ title }}</span>{% endif %}{% endspaceless %}
+      &ndash; {% apply spaceless %}<span class="cu-testimonial__name">{{ name }}</span>{% if title %}<span class="cu-testimonial__title">, {{ title }}</span>{% endif %}{% endapply %}
     </div>
     {% endif %}
   </div>
