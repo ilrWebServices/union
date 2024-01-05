@@ -36,7 +36,7 @@
   demo_columns: 3
   heading: Haggis Day
   event_date: 2525-11-12 10:30am
-  show_time: false
+  datetime_format: 'M j, Y'
   link_url: '#'
   link_alt: 'Tube steaks!'
 -
@@ -45,7 +45,7 @@
   demo_columns: 3
   heading: Hot Dog Day
   event_date: 2525-05-05 10:30am
-  show_time: true
+  datetime_format: D M j • g:ia
   content: |
     <p>This is some more stuff.</p>
   link_url: '#'
@@ -58,7 +58,6 @@
   demo_columns: 2
   heading: Past, Present, and Future Connections
   event_date: 2525-11-12 10:30am
-  show_time: false
   # link_url: '#'
   link_alt: 'Tube steaks!'
   media: |
@@ -72,7 +71,18 @@
   demo_columns: 2
   heading: Evolving Perspectives on Fostering Connection, Community, and Culture in the Remote and Hybrid Workplace Virt Working Group
   event_date: 2525-11-12 10:30am
-  show_time: false
+  # link_url: '#'
+  link_alt: 'Tube steaks!'
+  attributes:
+    class:
+      - 'cu-event-card--mini'
+-
+  demo_label: Mini w/o media w/ year
+  demo_count: 2
+  demo_columns: 2
+  heading: Evolving Perspectives on Fostering Connection, Community, and Culture in the Remote and Hybrid Workplace Virt Working Group
+  event_date: 2525-11-12 10:30am
+  datetime_format: 'M j, Y'
   # link_url: '#'
   link_alt: 'Tube steaks!'
   attributes:

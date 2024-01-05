@@ -6,7 +6,7 @@
  *
  * @var string $heading Main heading title for the card.
  * @var string|\DateTime $event_date The date of the event.
- * @var bool $show_time Display the time of the event.
+ * @var bool $datetime_format (optional) Display the time of the event. Defaults to `D, M j` e.g. Mon, Nov 12.
  * @var string $media (optional) media (img, video, or any other CSS replaced element).
  * @var string $content (optional) Additional content for the card.
  * @var string $heading_element The HTML element for the heading. Defaults to `h2`.
@@ -29,8 +29,7 @@
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
 
 {% set event_date_time_element %}
-<time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date("D, M j", false) }}{% if show_time|default(false) %}
- • {{ event_date|date("g:i a", false) }}{% endif %}</time>
+<time datetime="{{ event_date|date("c", false) }}" itemprop="startDate">{{ event_date|date(datetime_format|default('D, M j'), false) }}</time>
 {% endset %}
 <div{{ wrapper_attributes.addClass(['cu-event-card-wrapper']) }}>
 <div{{ attributes.addClass([
