@@ -106,6 +106,10 @@
   title: Twitter
   icon: 'twitter'
 -
+  demo_label: 'x'
+  title: X
+  icon: 'x'
+-
   demo_label: 'youtube'
   title: Youtube
   icon: 'youtube'
