@@ -10,6 +10,20 @@
     class:
       - 'cu-person--thumb'
 -
+  demo_label: Featured
+  demo_count: 1
+  demo_columns: 1
+  name: Albus Dumbledore
+  title:
+    - Chief Mugwump
+    - Head Honcho
+  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum. Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>'
+  img: |
+    <img class="cu-image" src="https://picsum.photos/id/1011/500/500" />
+  attributes:
+    class:
+      - 'cu-person--featured'
+-
   demo_label: Adaptive
   demo_count: 2
   demo_columns: 2

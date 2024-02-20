@@ -105,6 +105,31 @@
   --cu-font-weight: 400;
 }
 
+.cu-person--featured {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: var(--cu-vr1);
+  --cu-font-size: var(--cu-ms0);
+}
+
+.cu-person--featured > .cu-person__image {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.cu-person--featured .cu-person__name {
+  --cu-font-family: 'futura-pt';
+  --cu-font-size: var(--cu-ms3);
+  text-transform: uppercase;
+}
+
+.cu-person--featured .cu-person__titles {
+  gap: var(--cu-vr-4);
+  --cu-font-size: var(--cu-ms0);
+  --cu-line-height: 1.25;
+  --cu-text-color: var(--cu-color-medium-gray);
+}
+
 @container (min-width: 326px) {
   .cu-person--adaptive {
     grid-template-columns: 1fr 1.5fr;
@@ -118,6 +143,24 @@
 
   .cu-person--adaptive .cu-person__content {
     grid-column: 1 / -1;
+  }
+}
+
+@container (min-width: 550px) {
+  .cu-person--featured {
+    grid-template-columns: 44% auto;
+  }
+
+  .cu-person--featured .cu-person__info {
+    align-self: center;
+  }
+
+  .cu-person--featured > * {
+    grid-column: 2;
+  }
+
+  .cu-person--featured > .cu-person__content {
+    grid-column: 1/-1;
   }
 }
 
