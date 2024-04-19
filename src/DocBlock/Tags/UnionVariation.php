@@ -17,7 +17,7 @@ use Webmozart\Assert\Assert;
 final class UnionVariation extends BaseTag {
 
     /** @var string Name of the tag */
-    protected $name = 'union-variation';
+    protected string $name = 'union-variation';
 
     /** @var string CSS class name of the variant */
     protected $className;
