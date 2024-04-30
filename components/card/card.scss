@@ -78,7 +78,11 @@
   // Only pad the content if a colorscheme is applied.
   &--stacked[class*="cu-colorscheme--"] {
     .cu-card__content {
-      padding: 0 var(--cu-ps1);
+      padding: var(--cu-vr1) var(--cu-ps1);
+    }
+
+    &.cu-card--with-media .cu-card__content {
+      padding-top: 0;
     }
   }
 
