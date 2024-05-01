@@ -132,3 +132,15 @@
   size: 2.5em
   attributes:
     class: cu-icon--inline-centered
+-
+  demo_label: 'envelope'
+  title: Envelope
+  icon: 'envelope'
+-
+  demo_label: 'laptop'
+  title: Laptop
+  icon: 'laptop'
+-
+  demo_label: 'phone'
+  title: Phone
+  icon: 'phone'
