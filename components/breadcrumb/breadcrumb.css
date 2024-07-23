@@ -4,31 +4,49 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: inline-flex;
-  flex-wrap: wrap; }
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .cu-breadcrumb__item {
   display: none;
-  white-space: nowrap; }
-  @media (min-width: 37.5rem) {
-    .cu-breadcrumb__item {
-      display: block; } }
-  .cu-breadcrumb__item:last-child {
+  white-space: nowrap;
+}
+
+@media (min-width: 37.5rem) {
+  .cu-breadcrumb__item {
     display: block;
-    -webkit-padding-start: 5px; }
-    .cu-breadcrumb__item:last-child::before {
-      content: var(--cu-breadcrumb-previous, "⟨"); }
-      @media (min-width: 37.5rem) {
-        .cu-breadcrumb__item:last-child::before {
-          content: none; } }
-  .cu-breadcrumb__item::before {
-    content: ''; }
-  .cu-breadcrumb__item::after {
-    content: var(--cu-breadcrumb-separator, "/");
-    padding: 0 .4em; }
-  .cu-breadcrumb__item:last-child::after {
-    display: none; }
+  }
+}
+
+.cu-breadcrumb__item:last-child {
+  display: block;
+  -webkit-padding-start: 5px;
+}
+
+.cu-breadcrumb__item:last-child::before {
+  content: var(--cu-breadcrumb-previous, "⟨");
+}
+
+@media (min-width: 37.5rem) {
+  .cu-breadcrumb__item:last-child::before {
+    content: none;
+  }
+}
+
+.cu-breadcrumb__item::before {
+  content: '';
+}
+
+.cu-breadcrumb__item::after {
+  content: var(--cu-breadcrumb-separator, "/");
+  padding: 0 .4em;
+}
+
+.cu-breadcrumb__item:last-child::after {
+  display: none;
+}
 
 .cu-breadcrumb__link {
-  text-decoration: none; }
-/*# sourceMappingURL=breadcrumb.css.map */
+  text-decoration: none;
+}
