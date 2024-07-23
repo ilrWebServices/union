@@ -286,8 +286,8 @@
   /*----------  Promo with media and letterbox  ----------*/
   &--promo.cu-card--with-media,
   &--with-aside {
-    @include overlay;
     --cu-text-color: #{$white};
+    @include overlay;
 
     .cu-card__media {
       position: absolute;
@@ -488,6 +488,9 @@
 
   &--post-small {
     --cu-composite-heading-accent-display: none;
+    display: grid;
+    grid-template-columns: 88px auto;
+    gap: var(--cu-ps0);
 
     .cu-card__content {
       height: unset;
@@ -505,10 +508,6 @@
     .cu-composite-heading__heading {
       --cu-font-size: var(--cu-ms0) !important;
     }
-
-    display: grid;
-    grid-template-columns: 88px auto;
-    gap: var(--cu-ps0);
   }
 
   /*----------  Icon  ----------*/
@@ -627,9 +626,8 @@
 
   /*----------  Portrait (2 rows tall)  ----------*/
   &--portrait {
-    @include overlay($opacity: 0.7, $gradient: 1);
-
     grid-row-start: span 2; // Must be part of a grid.
+    @include overlay($opacity: 0.7, $gradient: 1);
 
     .cu-card__heading {
       padding-top: var(--cu-vr4); // Add padding for mobile to make room for portrait image.

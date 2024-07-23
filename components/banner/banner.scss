@@ -31,7 +31,6 @@
   }
 
   .cu-banner__media {
-    @include overlay;
     position: absolute;
     overflow: hidden;
     max-width: none;
@@ -40,6 +39,7 @@
     width: 100%;
     height: 100%;
     // z-index: -2;
+    @include overlay;
 
     // Only specific Replaced Elements can cover the media div.
     // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
@@ -80,6 +80,7 @@
 =            Page banner                      =
 =============================================*/
 .cu-banner--page {
+  padding: var(--cu-vr1);
 
   &.cu-banner--with-media {
     // Override any colorscheme.
@@ -92,8 +93,6 @@
       --cu-text-color: #{$black};
     }
   }
-
-  padding: var(--cu-vr1);
 
   @include breakpoint(sm) {
     padding: var(--cu-vr1) var(--cu-vr2);
@@ -149,7 +148,6 @@
   }
 
   .cu-banner__media {
-    @include overlay;
     position: absolute;
     overflow: hidden;
     max-width: none;
@@ -158,6 +156,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    @include overlay;
 
     // Only specific Replaced Elements can cover the media div.
     // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements

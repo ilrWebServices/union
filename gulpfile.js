@@ -1,17 +1,20 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+const sass = require("gulp-sass")(require('sass'));
+const sourcemaps = require("gulp-sourcemaps");
 const livereload = require("gulp-livereload");
 const svgstore = require('gulp-svgstore');
 
 var sass_config = {
-  outputStyle: "nested"
+  outputStyle: "expanded"
 };
 
 function componentStyles() {
   return gulp
-    .src('components/**/*.scss', { sourcemaps: true })
+    .src('components/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass(sass_config)
       .on('error', sass.logError))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('components/', { sourcemaps: '.' }));
 }
 
