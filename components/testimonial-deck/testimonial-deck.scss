@@ -23,6 +23,10 @@
   display: flex;
 }
 
+.cu-testimonial[data-selected] {
+  opacity: 0.5;
+}
+
 .cu-testimonial-deck .cu-testimonial:first-of-type {
   grid-column: 1 / -1;
   display: grid;
