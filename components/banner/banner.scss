@@ -148,15 +148,15 @@
   }
 
   .cu-banner__media {
-    position: absolute;
-    overflow: hidden;
-    max-width: none;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
     @include overlay;
+
+    & {
+      position: absolute;
+      overflow: hidden;
+      max-width: none;
+      inset: 0;
+      z-index: 1;
+    }
 
     // Only specific Replaced Elements can cover the media div.
     // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
