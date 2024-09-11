@@ -45,3 +45,14 @@
     class:
       - 'cu-composite-heading--left'
       - 'cu-composite-heading--bold'
+-
+  demo_label: 'Heading link'
+  heading: 'ILR in the News'
+  eyebrow_heading: 'News! News! News!'
+  body: <p>All the stuff that's fit to glow.</p>
+  icon_data:
+    icon: tower
+  link:
+    url: "#"
+    text: View All News
+  link_location: heading
