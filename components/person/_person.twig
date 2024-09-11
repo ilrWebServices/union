@@ -10,6 +10,7 @@
  * @var string $additional_info Extra person information like email, phone, etc.
  * @var string $img A photo of the person.
  * @var string $content Freeform content, generally used for a bio.
+ * @var string $url An optional url.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
  *
  * @union-variation cu-person--thumb The legacy compact, two-column layout with the photo image in a circle.
@@ -60,7 +61,9 @@
       class: [
         'cu-person__name'
       ]
-    }
+    },
+    link: url ? {url: url},
+    link_location: 'heading'
   } only %}
   {% endif %}
   {% if img %}
