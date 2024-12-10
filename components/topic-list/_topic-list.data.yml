@@ -25,3 +25,43 @@
     -
       content: Social Justice
       url: '#'
+-
+  demo_label: Default w/ shorter content
+  heading: Areas of Focus
+  media: '<img class="cu-image" src="https://picsum.photos/600/840" style="--cu-image-position: 50% 50%;" />'
+  items:
+    -
+      content: Workplace Issues
+      url: '#'
+    -
+      content: Education & Learning
+      url: '#'
+    -
+      content: Community Membership
+      url: '#'
+    -
+      content: Health & Wellbeing
+      url: '#'
+    -
+      content: Data
+      url: '#'
+    -
+      content: Emerging Topics
+      url: '#'
+    -
+      content: Courses & Products
+      url: '#'
+-
+  demo_label: Default w/ minimal content
+  heading: Areas of Focus
+  media: '<img class="cu-image" src="https://picsum.photos/582/388" style="--cu-image-position: 50% 50%;" />'
+  items:
+    -
+      content: Workplace Issues
+      url: '#'
+    -
+      content: Education & Learning
+      url: '#'
+    -
+      content: Community Membership
+      url: '#'
