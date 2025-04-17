@@ -408,6 +408,7 @@
   &--cinematic {
     display: flex;
     flex-direction: column;
+    --cu-card-content-padding: 0 var(--cu-ps4);
 
     &[class*="cu-colorscheme--"] {
       padding: var(--cu-vr1) var(--cu-ps1);
@@ -418,7 +419,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr; // Fix for Safari bug.
-        column-gap: var(--cu-vr1);
+        column-gap: var(--cu-ps4);
 
         &>* {
           grid-column: 2;
@@ -437,15 +438,6 @@
 
     .cu-icon--color-light { // Default bg is light, so icon should be dark.
       --cu-text-color: #{$black};
-    }
-
-    &.cu-card--with-media {
-      @include breakpoint (md) {
-        .cu-card__meta {
-          padding-left: var(--cu-ps5);
-          padding-right: var(--cu-ps2);
-        }
-      }
     }
 
     .cu-button,
