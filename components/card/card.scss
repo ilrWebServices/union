@@ -408,13 +408,18 @@
   &--cinematic {
     display: flex;
     flex-direction: column;
-    --cu-card-content-padding: 0 var(--cu-ps4);
 
     &[class*="cu-colorscheme--"] {
       padding: var(--cu-vr1) var(--cu-ps1);
     }
 
+    @include breakpoint(sm) {
+      --cu-card-content-padding: 0 var(--cu-ps3);
+    }
+
     @include breakpoint(md) {
+      --cu-card-content-padding: 0 var(--cu-ps4);
+
       .cu-card__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
