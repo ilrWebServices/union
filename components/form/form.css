@@ -266,7 +266,7 @@ progress {
     border: 1px solid #ccc; }
   .cu-input--submit {
     border-radius: 2px;
-    border: 4px solid #b31b1b;
+    border: 2px solid #b31b1b;
     background: transparent;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
@@ -275,7 +275,7 @@ progress {
     text-decoration: none; }
     .cu-input--submit--alt {
       border-radius: 2px;
-      border: 4px solid #b31b1b;
+      border: 2px solid #b31b1b;
       background: transparent;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
@@ -286,7 +286,7 @@ progress {
       background: #b31b1b; }
     .cu-input--submit--light {
       border-radius: 2px;
-      border: 4px solid #b31b1b;
+      border: 2px solid #b31b1b;
       background: transparent;
       padding: 0.5rem 1rem;
       margin-bottom: 1rem;
@@ -294,7 +294,7 @@ progress {
       display: inline-block;
       text-decoration: none;
       color: white;
-      border: 4px solid white; }
+      border: 2px solid white; }
   .cu-input.required.is-touched:not(.is-filled), .cu-input.required.is-invalid:not(.is-filled) {
     color: #b31b1b;
     border: 1px solid #b31b1b;
