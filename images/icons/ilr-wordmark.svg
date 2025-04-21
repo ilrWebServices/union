@@ -6,46 +6,11 @@
    width="1080.0005"
    height="306"
    viewBox="0 0 1080 305.99986"
-   sodipodi:docname="ilr-wordmark.svg"
-   inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
    id="svg10"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs1" />
-  <sodipodi:namedview
-     inkscape:showpageshadow="true"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="false"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.412664"
-     inkscape:cx="567.04729"
-     inkscape:cy="43.619022"
-     inkscape:window-width="1536"
-     inkscape:window-height="907"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:antialias-rendering="true"
-     inkscape:clip-to-page="false"
-     borderlayer="true"
-     showborder="false"
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0">
-    <inkscape:page
-       x="0"
-       y="6.2109311e-06"
-       inkscape:label="1"
-       id="page1"
-       width="1080.0005"
-       height="305.03275"
-       margin="0"
-       bleed="0" />
-  </sodipodi:namedview>
   <path
      d="M 1080.0005,227.25049 V 76.882741 l -2.2125,-2.2125 h -26.535 l -2.2125,2.2125 V 227.25049 l 2.2125,2.21175 h 26.535 l 2.2125,-2.21175"
      style="stroke-width:0.25"

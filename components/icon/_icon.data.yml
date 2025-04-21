@@ -40,6 +40,11 @@
   title: ILR Nickname
   icon: 'ilr-nickname'
 -
+  demo_label: 'ilr-wordmark'
+  title: ILR Wordmark
+  icon: 'ilr-wordmark'
+  size: 200px
+-
   demo_label: 'instagram'
   title: Instagram
   icon: 'instagram'
