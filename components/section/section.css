@@ -48,12 +48,18 @@
   content: '';
   background-color: var(--cu-colorscheme-background);
   position: absolute;
-  /* 100vw only works if the section is centered on the page, so we increase the width to cover for off-centered sections (for example, in columns). */
-  width: 150vw;
+  width: 100vw;
   height: 100%;
   top: 0;
   left: 50%;
   margin-left: -50vw;
+}
+
+@media (min-width: 61rem) {
+  .cu-section[class*="cu-colorscheme"]::before {
+    /* 100vw only works if the section is centered on the page, so we increase the width to cover for off-centered sections (for example, in columns). */
+    width: 150vw;
+  }
 }
 
 .cu-section--framed:not([class*="cu-colorscheme"]) {
