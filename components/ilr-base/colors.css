@@ -5,8 +5,8 @@
   --cu-color-dark: #222;
   --cu-color-medium-gray: #6c6c6c;
 
-  /* Can this be overridden in themes and such?
-  --cu-colorscheme-accent: var(--cu-color-brand); */
+  /* Can this be overridden in themes and such? */
+  --cu-colorscheme-accent: var(--cu-color-brand);
 }
 
 *[class*='cu-colorscheme'] {
