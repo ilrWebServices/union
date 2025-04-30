@@ -21,10 +21,16 @@
 
 .cu-testimonial-deck .cu-testimonial {
   display: flex;
+  margin-bottom: var(--cu-vr2);
 }
 
 .cu-testimonial[data-selected] {
-  opacity: 0.5;
+  display: none;
+
+  @include breakpoint(md) {
+    display: revert;
+    opacity: .5;
+  }
 }
 
 .cu-testimonial-deck .cu-testimonial:first-of-type {
