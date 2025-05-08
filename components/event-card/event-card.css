@@ -22,7 +22,7 @@
 .cu-event-card .cu-event-card__content {
   padding: var(--cu-vr4) var(--cu-ps1) var(--cu-vr1);
   position: relative;
-  border: 1px solid #ccc;
+  border: 1px solid var(--cu-color-gray);
   flex-grow: 1;
 }
 
@@ -135,7 +135,7 @@
   }
 
   .cu-event-card.cu-event-card--with-media:not(.cu-event-card--mini) .cu-event-card__content {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--cu-color-gray);
     border-left: unset;
     display: flex;
     flex-direction: column;
