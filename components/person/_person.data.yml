@@ -33,7 +33,7 @@
     - Chief Mugwump
     - Head Honcho
   img: |
-    <img class="cu-image" src="https://picsum.photos/id/1011/500/400" />
+    <img class="cu-image" src="https://picsum.photos/id/1011/800/600" />
   additional_info: |
     <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
   attributes:
@@ -48,7 +48,21 @@
     - Senior Associate Dean for Academic Affairs
     - ILR Professor of Economics and International & Comparative Labor
   img: |
-    <img class="cu-image" src="https://picsum.photos/id/1074/500/500" />
+    <img class="cu-image" src="https://picsum.photos/id/1074/800/600" />
+  additional_info: |
+    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
+  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt.</p>'
+  attributes:
+    class:
+      - 'cu-person--adaptive'
+-
+  demo_label: Adaptive (missing image)
+  demo_count: 5
+  demo_columns: 5
+  name: Saul Goodman
+  title:
+    - Senior Associate Dean for Academic Affairs
+    - ILR Professor of Economics and International & Comparative Labor
   additional_info: |
     <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
   attributes:
