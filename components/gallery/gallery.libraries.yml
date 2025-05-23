@@ -1,0 +1,6 @@
+css:
+  gallery.css: {}
+js:
+  gallery.js: {}
+dependencies:
+  - base

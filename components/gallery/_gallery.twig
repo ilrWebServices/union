@@ -1,0 +1,34 @@
+{#
+/**
+ * Gallery
+ *
+ * A gallery is a series of images and maybe videos.
+ *
+ * @var string $title The gallery title.
+ * @var string $attribution Some text attributing the photographer/videographer and maybe some copyright info.
+ * @var array $items An array of items, typically images.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-gallery']) %}
+
+<cu-gallery{{ attributes }}>
+  <div class="cu-gallery__title">
+    <h2 class="cu-heading">{{ title }}</h2>
+  </div>
+
+  <div class="cu-gallery__item-wrapper">
+    <div class="cu-gallery__items">
+    {% for item in items %}
+      <div class="cu-gallery__item">
+        {{ item|raw }}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+
+  {% if attribution %}
+  <div class="cu-gallery__attribution">{{ attribution }}</div>
+  {% endif %}
+</cu-gallery>

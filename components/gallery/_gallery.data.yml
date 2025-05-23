@@ -1,0 +1,44 @@
+-
+  demo_label: Default (images only)
+  title: Lots of images
+  items:
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/10/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/11/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/12/1000/1000" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/13/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/14/1600/900" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/15/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/16/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/17/800/1200" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/18/1200/800" />
+-
+  demo_label: Default (images, video, iframes, and text)
+  title: Quite an assortment
+  attribution: "<p>Images and video by Cornell University photographers and others.</p>"
+  items:
+    - |
+      <video class="cu-video" src="https://archive.org/download/KelloggsSugarFrostedFlakesCereal1976/Kellogg%27s%20Sugar%20Frosted%20Flakes%20Cereal%20%281976%29.mp4" poster="https://archive.org/download/KelloggsSugarFrostedFlakesCereal1976/KelloggsSugarFrostedFlakesCereal1976.thumbs/Kellogg%27s%20Sugar%20Frosted%20Flakes%20Cereal%20%281976%29_000007.jpg" autoplay="" loop="" muted=""></video>
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/10/1200/800" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/12/1000/1000" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/14/2600/900" />
+    - |
+      <div>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper.</div>
+    - |
+      <!-- Example of regular youtube video -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/kpv63PRWxPc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/17/800/1200" />
+    - |
+      <img class="cu-image" src="https://picsum.photos/id/18/1200/800" />

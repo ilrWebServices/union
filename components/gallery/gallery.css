@@ -1,0 +1,133 @@
+cu-gallery {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  container-type: inline-size;
+}
+
+cu-gallery[class*="cu-colorscheme--"] {
+  padding: var(--cu-vr1) var(--cu-ps1);
+}
+
+.cu-gallery__item-wrapper {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+.cu-gallery__items {
+  display: flex;
+  gap: var(--cu-ps1);
+}
+
+.cu-gallery__item {
+  max-width: 80cqw;
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: opacity .5s;
+}
+@container (min-width: 740px) {
+  .cu-gallery__item {
+    max-width: 720px;
+  }
+}
+
+.cu-gallery__item.obscured {
+  opacity: .5;
+}
+
+.cu-gallery__item--blank {
+  aspect-ratio: 1.5;
+  background: var(--cu-gallery-item-blank-bg, black);
+  opacity: .5;
+}
+
+.cu-gallery__item img,
+.cu-gallery__item video,
+.cu-gallery__item iframe {
+  object-fit: contain;
+}
+
+.cu-gallery__item,
+.cu-gallery__item > * {
+  height: 180px;
+}
+@media (min-width: 37.5rem) {
+  .cu-gallery__item,
+  .cu-gallery__item > * {
+    height: 270px;
+  }
+}
+@media (min-width: 61rem) {
+  .cu-gallery__item,
+  .cu-gallery__item > * {
+    height: 360px;
+  }
+}
+
+.cu-gallery__navigation {
+  position: absolute;
+  top: calc(50% - 25px);
+  cursor: pointer;
+}
+
+.cu-gallery__navigation-next {
+  right: 0;
+}
+
+.cu-gallery__navigation-prev,
+.cu-gallery__navigation-next {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgba(255,255,255,.5);
+  background-size: cover;
+}
+
+.cu-gallery__navigation-prev {
+  background-image: url("data:image/svg+xml,%3Csvg width='37' height='37' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' version='1.1' viewBox='0 0 37 37' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.5 24.5l-6-6 6-6' /%3E%3C/svg%3E");
+  border-radius: 0 5px 5px 0;
+}
+
+.cu-gallery__navigation-next {
+  background-image: url("data:image/svg+xml,%3Csvg width='37' height='37' fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' version='1.1' viewBox='0 0 37 37' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'%3E%3Cpath d='m15.5,24.5 6,-6 -6,-6' /%3E%3C/svg%3E");
+  border-radius: 5px 0 0 5px;
+}
+
+.cu-gallery__thumbnails {
+  display: flex;
+  gap: var(--cu-ps0);
+  justify-content: center;
+  margin: 0;
+  padding: var(--cu-vr0) 0 0 0;
+  list-style-type: none;
+}
+
+.cu-gallery__thumbnail {
+  cursor: pointer;
+}
+
+.cu-gallery__thumbnail::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  border: 1px solid var(--cu-text-color, black);
+  border-radius: 7.5em;
+}
+
+.cu-gallery__thumbnail.active::before {
+  background-color: var(--cu-text-color, black);
+}
+
+.cu-gallery__attribution {
+  order: 1;
+  padding: var(--cu-vr0) var(--cu-ps0) 0;
+}
+
+.cu-gallery__attribution > *:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
