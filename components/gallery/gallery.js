@@ -67,10 +67,10 @@
       }
 
       if (this.#thumbs[this.#items.length - 1].dataset.thumb) {
-        img_blank_start.style.setProperty('--cu-gallery-item-blank-bg', "no-repeat center/contain url('" + this.#thumbs[this.#items.length - 1].dataset.thumb + "')");
+        img_blank_start.style.setProperty('--cu-gallery-item-blank-bg', "no-repeat center/cover url('" + this.#thumbs[this.#items.length - 1].dataset.thumb + "')");
       }
       if (this.#thumbs[0].dataset.thumb) {
-        img_blank_end.style.setProperty('--cu-gallery-item-blank-bg', "no-repeat center/contain url('" + this.#thumbs[0].dataset.thumb + "')");
+        img_blank_end.style.setProperty('--cu-gallery-item-blank-bg', "no-repeat center/cover url('" + this.#thumbs[0].dataset.thumb + "')");
       }
 
       this.#thumbs[this.#currentItem].classList.add('active');
