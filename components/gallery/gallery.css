@@ -50,18 +50,24 @@ cu-gallery[class*="cu-colorscheme--"] {
 }
 
 .cu-gallery__item,
-.cu-gallery__item > * {
+.cu-gallery__item img,
+.cu-gallery__item video,
+.cu-gallery__item iframe {
   height: 180px;
 }
 @media (min-width: 37.5rem) {
   .cu-gallery__item,
-  .cu-gallery__item > * {
+  .cu-gallery__item img,
+  .cu-gallery__item video,
+  .cu-gallery__item iframe {
     height: 270px;
   }
 }
 @media (min-width: 61rem) {
   .cu-gallery__item,
-  .cu-gallery__item > * {
+  .cu-gallery__item img,
+  .cu-gallery__item video,
+  .cu-gallery__item iframe {
     height: 360px;
   }
 }
