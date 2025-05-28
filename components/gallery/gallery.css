@@ -27,11 +27,6 @@ cu-gallery[class*="cu-colorscheme--"] {
   overflow: hidden;
   transition: opacity .5s;
 }
-@container (min-width: 740px) {
-  .cu-gallery__item {
-    max-width: 720px;
-  }
-}
 
 .cu-gallery__item.obscured {
   opacity: .5;
