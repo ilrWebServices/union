@@ -15,6 +15,7 @@
 
     connectedCallback() {
       this.addEventListener('click', this.navigate);
+      this.classList.add('js');
       this.#items = this.querySelectorAll('.cu-gallery__item');
       this.#itemsArray = Array.from(this.#items);
 
@@ -26,7 +27,6 @@
       let img_blank_end = document.createElement('div');
       let thumbs = document.createElement('ul');
 
-      item_wrapper.style.overflowX = 'hidden';
       nav_prev.classList.add('cu-gallery__navigation', 'cu-gallery__navigation-prev');
       nav_next.classList.add('cu-gallery__navigation', 'cu-gallery__navigation-next');
       img_blank_start.classList.add('cu-gallery__item', 'cu-gallery__item--blank', 'cu-gallery__item--blank-start');

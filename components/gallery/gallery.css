@@ -15,6 +15,12 @@ cu-gallery[class*="cu-colorscheme--"] {
   width: 100%;
 }
 
+@media (min-width: 37.5rem) {
+  cu-gallery.js .cu-gallery__item-wrapper {
+    overflow-x: hidden;
+  }
+}
+
 .cu-gallery__items {
   display: flex;
   gap: var(--cu-ps1);
