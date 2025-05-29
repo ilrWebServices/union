@@ -13,8 +13,23 @@
     #thumbs = [];
     #observer;
 
+    constructor() {
+      super();
+
+      // tabindex is set so that this component is focusable, but the value is
+      // -1 so it can't be reached by the `tab` key.
+      this.setAttribute('tabindex', '-1');
+    }
+
     connectedCallback() {
       this.addEventListener('click', this.navigate);
+      this.addEventListener('keydown', this.navigate);
+      this.addEventListener('mouseover', () => {
+        this.focus();
+      });
+      this.addEventListener('mouseout', () => {
+        this.blur();
+      });
       this.classList.add('js');
       this.#items = this.querySelectorAll('.cu-gallery__item');
       this.#itemsArray = Array.from(this.#items);
@@ -120,7 +135,7 @@
         this.moveCenter(selected_item);
       }
 
-      if (event.target.matches('.cu-gallery__navigation-prev')) {
+      if (event.target.matches('.cu-gallery__navigation-prev') || (event.type === 'keydown' && event.key === 'ArrowLeft')) {
         this.#currentItem--;
         if (this.#currentItem < 0) {
           this.#currentItem = this.#items.length - 1;
@@ -128,7 +143,7 @@
         this.moveCenter(this.#items[this.#currentItem]);
       }
 
-      if (event.target.matches('.cu-gallery__navigation-next')) {
+      if (event.target.matches('.cu-gallery__navigation-next') || (event.type === 'keydown' && event.key === 'ArrowRight')) {
         this.#currentItem++;
         if (this.#currentItem > this.#items.length - 1) {
           this.#currentItem = 0;

@@ -5,6 +5,10 @@ cu-gallery {
   container-type: inline-size;
 }
 
+cu-gallery:focus {
+  outline: 2px solid var(--cu-colorscheme-accent, rgba(0,0,0,.5));
+}
+
 cu-gallery[class*="cu-colorscheme--"] {
   padding: var(--cu-vr1) var(--cu-ps1);
 }
