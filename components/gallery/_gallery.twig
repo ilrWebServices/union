@@ -14,9 +14,11 @@
 {% set attributes = attributes.addClass(['cu-gallery']) %}
 
 <cu-gallery{{ attributes }}>
+  {% if title %}
   <div class="cu-gallery__title">
     <h2 class="cu-heading">{{ title }}</h2>
   </div>
+  {% endif %}
 
   <div class="cu-gallery__item-wrapper">
     <div class="cu-gallery__items">
