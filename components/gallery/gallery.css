@@ -104,29 +104,34 @@ cu-gallery[class*="cu-colorscheme--"] {
 }
 
 .cu-gallery__thumbnails {
-  display: flex;
-  gap: var(--cu-ps0);
-  justify-content: center;
-  margin: 0;
-  padding: var(--cu-vr0) 0 0 0;
-  list-style-type: none;
+  display: none;
 }
+@media (min-width: 37.5rem) {
+  .cu-gallery__thumbnails {
+    display: flex;
+    gap: var(--cu-ps0);
+    justify-content: center;
+    margin: 0;
+    padding: var(--cu-vr0) 0 0 0;
+    list-style-type: none;
+  }
 
-.cu-gallery__thumbnail {
-  cursor: pointer;
-}
+  .cu-gallery__thumbnail {
+    cursor: pointer;
+  }
 
-.cu-gallery__thumbnail::before {
-  content: '';
-  width: 15px;
-  height: 15px;
-  display: block;
-  border: 1px solid var(--cu-text-color, black);
-  border-radius: 7.5em;
-}
+  .cu-gallery__thumbnail::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+    border: 1px solid var(--cu-text-color, black);
+    border-radius: 7.5em;
+  }
 
-.cu-gallery__thumbnail.active::before {
-  background-color: var(--cu-text-color, black);
+  .cu-gallery__thumbnail.active::before {
+    background-color: var(--cu-text-color, black);
+  }
 }
 
 .cu-gallery__attribution {
