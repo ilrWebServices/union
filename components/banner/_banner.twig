@@ -19,12 +19,14 @@
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire banner.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
+ * @var string $overlay_content Optional overlay content for the hero variant (e.g., the 90 YEARS graphic).
  *
  * @union-variation cu-banner--announcement Places the title over the image while the content flows into a second column on wider displays.
  * @union-variation cu-banner--video Display a video component with overlayed content. If the content contains a `play` icon, that icon will control the playback of any video found inside the media section.
  * @union-variation cu-banner--panel Displays the content and the media side-by-side, with the content on the right. Similar to the Card `panel` variation.
  * @union-variation cu-banner--panel-left A variation of `cu-banner--panel` with the content on the left.
  * @union-variation cu-banner--page A simple banner with the content over the media.
+ * @union-variation cu-banner--hero A homepage hero banner with bold heading and optional overlay graphic.
  *
  * @todo Fix the announcement variation. Seems to have been lost in the refactoring.
  * @todo Make the default (no variation) display better.
@@ -68,6 +70,11 @@
   {% if media %}
   <div class="cu-banner__media">
     {{ media }}
+  </div>
+  {% endif %}
+  {% if overlay_content and attributes.hasClass('cu-banner--hero') %}
+  <div class="cu-banner__overlay">
+    {{ overlay_content }}
   </div>
   {% endif %}
 </div>
