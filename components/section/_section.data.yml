@@ -51,3 +51,38 @@
     class:
       - cu-section--left
       - cu-section--centered
+-
+  demo_label: 'Right'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  icon_data:
+    icon: tower
+  link:
+    url: http://example.com
+    text: Learn more
+  blurb: |
+    <p>This is the blurb. It is generally shorter content meant to summarize the main section content.</p>
+  content: |
+    <p>This is the content. It will most likely be other components.</p>
+    <p>Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+  attributes:
+    class:
+      - cu-section--right
+-
+  demo_label: 'Right with Centered Content'
+  heading: 'About'
+  eyebrow_heading: 'Look at me!'
+  icon_data:
+    icon: tower
+  link:
+    url: http://example.com
+    text: Learn more
+  blurb: |
+    <p>This is the blurb. It is generally shorter content meant to summarize the main section content.</p>
+  content: |
+    <p>This is the content. It will most likely be other components.</p>
+    <p>Maecenas faucibus mollis interdum. Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas faucibus mollis interdum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+  attributes:
+    class:
+      - cu-section--right
+      - cu-section--centered

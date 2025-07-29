@@ -124,6 +124,32 @@
   }
 }
 
+.cu-section--right > .cu-section__heading {
+  margin-bottom: unset;
+}
+
+@media (min-width: 61rem) {
+  .cu-section--right {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-flow: dense;
+    column-gap: var(--cu-grid-gap, var(--cu-ps2));
+  }
+
+  .cu-section--right.cu-section--centered {
+    align-items: center;
+  }
+
+  .cu-section--right > .cu_section__content {
+    grid-column: 1;
+  }
+
+  .cu-section--right > .cu-section__heading {
+    grid-column: 2;
+    padding-bottom: 0;
+  }
+}
+
 /* The following overrides are from the legacy Section Heading component. */
 .cu-section__heading .cu-composite-heading__link {
   --cu-font-weight: 400;
