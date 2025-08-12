@@ -19,7 +19,7 @@
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire banner.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
- * @var string $overlay_content Optional overlay content for the hero variant (e.g., the 0 YEARS graphic).
+ * @var string $content_side Optional side content for the hero variant (e.g., the 0 YEARS graphic). Displays over media or to the right.
  *
  * @union-variation cu-banner--announcement Places the title over the image while the content flows into a second column on wider displays.
  * @union-variation cu-banner--video Display a video component with overlayed content. If the content contains a `play` icon, that icon will control the playback of any video found inside the media section.
@@ -72,9 +72,9 @@
     {{ media }}
   </div>
   {% endif %}
-  {% if overlay_content and attributes.hasClass('cu-banner--hero') %}
-  <div class="cu-banner__overlay">
-    {{ overlay_content }}
+  {% if content_side and attributes.hasClass('cu-banner--hero') %}
+  <div class="cu-banner__content_side">
+    {{ content_side }}
   </div>
   {% endif %}
 </div>

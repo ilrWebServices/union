@@ -12,13 +12,12 @@
   attributes:
     class:
      - 'cu-banner--hero'
-     - 'cu-component--desktop'
   heading: 'Built for the future of work'
   content: |
     <p>80 years of pioneering research, education, and real-world impact.</p>
   media: |
     <img class="cu-image" src="https://picsum.photos/1200/500" alt="ILR School Building" />
-  overlay_content: |
+  content_side: |
     <img src="https://dummyimage.com/300x150/B31B1B/FFFFFF?text=80+YEARS" alt="80 Years" />
   link_url: '#'
   link_text: 'Some CTA Here'
