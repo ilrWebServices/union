@@ -237,3 +237,151 @@
   }
 }
 /*=====  End of Video banner  ======*/
+
+/*=============================================
+=            Hero banner                      =
+=============================================*/
+.cu-banner--hero {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+
+  > * {
+    grid-column: 1;
+  }
+
+  @include breakpoint(md) {
+    min-height: 500px;
+    display: block;
+  }
+
+  .cu-banner__content {
+    position: relative;
+    z-index: 2;
+    grid-row: 2;
+    padding: var(--cu-vr1) var(--cu-ps1);
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+    pointer-events: none;
+
+    @include breakpoint(md) {
+      padding: var(--cu-vr4) var(--cu-ps3);
+      max-width: 40%;
+    }
+
+    .cu-banner__meta {
+      .cu-heading {
+        text-transform: uppercase;
+        font-family: 'futura-pt', sans-serif;
+        text-align: left;
+        color: var(--cu-color-dark);
+        line-height: 1.05;
+
+        @include breakpoint(md) {
+          --cu-font-size: 67px;
+          line-height: 63px;
+        }
+      }
+    }
+
+    p {
+      font-size: var(--cu-ms-2);
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--cu-text-color);
+    }
+
+    > * {
+      margin-bottom: var(--cu-vr0);
+      max-width: 70%;
+
+      @include breakpoint(md) {
+        margin-bottom: var(--cu-vr1);
+        max-width: unset;
+      }
+    }
+
+    // Remove bottom margin from last content item.
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .cu-banner__media {
+    grid-row: 1;
+    overflow: hidden;
+    max-width: none;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint(md) {
+      position: absolute;
+      inset: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: color-mix(in srgb, var(--cu-color-white) 70%, transparent);
+      z-index: 1;
+    }
+
+    // Only specific Replaced Elements can cover the media div.
+    // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
+    img, video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+
+    // Any element in the media section that isn't a replaced element should
+    // be ignored. This will allow the object-fit property to work even if the
+    // img or video is nested in other markup.
+    :not(img):not(video) {
+      display: contents;
+    }
+  }
+
+  .cu-banner__content_side {
+    position: relative;
+    grid-row: 1;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(md) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.cu-banner__link {
+  background-color: var(--cu-color-brand);
+  color: var(--cu-color-white);
+  border: 1px solid var(--cu-color-brand);
+
+  &:hover {
+    background-color: darken($cornell-red, 10%);
+  }
+}
+/*=====  End of Hero banner  ======*/
