@@ -265,7 +265,6 @@
     justify-content: space-between;
     align-items: start;
     flex-direction: column;
-    pointer-events: none;
 
     @include breakpoint(md) {
       padding: var(--cu-vr4) var(--cu-ps3);
@@ -373,15 +372,13 @@
       height: auto;
     }
   }
-}
 
-.cu-banner__link {
-  background-color: var(--cu-color-brand);
-  color: var(--cu-color-white);
-  border: 1px solid var(--cu-color-brand);
-
-  &:hover {
-    background-color: darken($cornell-red, 10%);
+  .cu-banner__link {
+    @include breakpoint(md) {
+      background-color: var(--cu-color-brand);
+      color: var(--cu-color-white);
+      border: 1px solid var(--cu-color-brand);
+    }
   }
 }
 /*=====  End of Hero banner  ======*/
