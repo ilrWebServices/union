@@ -1,0 +1,83 @@
+{#
+/**
+ * Side by Side
+ *
+ * A component that displays content and media side by side, with variants for
+ * image positioning and styling.
+ *
+ * @var string $content The primary content of the component.
+ * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var string $heading Main heading title.
+ * @var string $eyebrow_heading A descriptive keyword or phrase placed above the main heading.
+ * @var string $heading_element The HTML element for the heading. Defaults to `h2`.
+ * @var string $eyebrow_heading_element The HTML element for the eyebrow_heading. Defaults to `h3`.
+ * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
+ * @var string $link_url An optional URL for link over the entire component.
+ * @var string $link_alt Alt text for the component link.
+ * @var string $button_text Text for the Read More button. Defaults to "Read More".
+ * @var string $button_url URL for the Read More button.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire component.
+ * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
+ * @var Drupal\Core\Template\Attribute|array $media_attributes Attributes for the media region.
+ * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the component link.
+ *
+ * @union-variation cu-side-by-side--image-left Image appears on the left side instead of right.
+ * @union-variation cu-side-by-side--bordered Adds a red border around the image.
+ */
+#}
+
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set content_attributes = union_attributes(content_attributes|default([])) %}
+{% set media_attributes = union_attributes(media_attributes|default([])) %}
+{% set link_attributes = union_attributes(link_attributes|default([])) %}
+
+{% set classes = [
+  'cu-side-by-side',
+  media ? 'cu-side-by-side--with-media'
+] %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% if link_url %}
+    <a{{ link_attributes.addClass(['cu-side-by-side__link']).setAttribute('href', link_url).setAttribute('aria-label', link_alt) }}>
+  {% endif %}
+  
+  <div{{ content_attributes.addClass(['cu-side-by-side__content']) }}>
+    {% if icon_data or eyebrow_heading or heading %}
+    {% include '@union/_composite-heading.twig' with {
+      icon_data: icon_data,
+      eyebrow_heading: eyebrow_heading,
+      heading: heading,
+      eyebrow_heading_element: eyebrow_heading_element,
+      heading_element: heading_element,
+      attributes: {
+        class: [
+          'cu-side-by-side__meta',
+          'cu-composite-heading--left'
+        ]
+      }
+    } only %}
+    {% endif %}
+    
+    {% if content %}
+      <div class="cu-side-by-side__body cu-text">
+        {{ content }}
+      </div>
+    {% endif %}
+    
+    {% if button_url %}
+      <div class="cu-side-by-side__button">
+        <a href="{{ button_url }}" class="cu-button cu-button--outline">{{ button_text|default('Read More') }}</a>
+      </div>
+    {% endif %}
+  </div>
+  
+  {% if media %}
+    <div{{ media_attributes.addClass(['cu-side-by-side__media']) }}>
+      {{ media }}
+    </div>
+  {% endif %}
+  
+  {% if link_url %}
+    </a>
+  {% endif %}
+</div>

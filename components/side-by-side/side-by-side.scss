@@ -1,0 +1,208 @@
+// Side by Side Component
+// Leverages design patterns from ilr-base and global styles
+
+@import '../../global/global';
+
+.cu-side-by-side {
+  display: grid;
+  gap: var(--cu-vr2);
+  align-items: center;
+  margin-bottom: var(--cu-vr2);
+
+  // Mobile-first: always stack vertically on small screens
+  grid-template-columns: 1fr;
+
+  .cu-side-by-side__media {
+    order: -1; // Image always appears first on mobile
+  }
+
+  .cu-side-by-side__content {
+    order: 1;
+  }
+
+  // Desktop: side by side layout
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--cu-vr3);
+
+    // Reset order for desktop - variants will handle positioning
+    .cu-side-by-side__media {
+      order: initial;
+    }
+
+    .cu-side-by-side__content {
+      order: initial;
+    }
+  }
+}
+
+// Content area styling
+.cu-side-by-side__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cu-vr1);
+}
+
+.cu-side-by-side__eyebrow {
+  color: var(--cu-colorscheme-accent);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cu-side-by-side__heading {
+  margin: 0;
+  color: var(--cu-text-color);
+
+  // Use existing heading styles from the design system
+  font-size: var(--cu-font-size-h2);
+  font-weight: var(--cu-font-weight-bold);
+  line-height: var(--cu-line-height-heading);
+}
+
+.cu-side-by-side__body {
+  margin: 0;
+  color: var(--cu-text-color);
+
+  p {
+    margin-bottom: var(--cu-vr1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Button styling
+.cu-side-by-side__button {
+  margin-top: var(--cu-vr1);
+
+  .cu-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--cu-color-brand);
+    color: var(--cu-color-brand);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--cu-border-radius);
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--cu-color-brand);
+      color: var(--cu-color-white);
+    }
+
+    &:focus {
+      outline: 2px solid var(--cu-color-brand);
+      outline-offset: 2px;
+    }
+  }
+}
+
+// Media area styling
+.cu-side-by-side__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--cu-border-radius);
+  }
+}
+
+// Variant: Image on left (desktop only)
+.cu-side-by-side--image-left {
+  @include breakpoint(sm) {
+    .cu-side-by-side__media {
+      order: -1;
+    }
+
+    .cu-side-by-side__content {
+      order: 1;
+    }
+  }
+}
+
+// Responsive adjustments
+@include breakpoint(lg) {
+  .cu-side-by-side {
+    gap: var(--cu-vr4);
+  }
+
+  .cu-side-by-side__heading {
+    font-size: var(--cu-font-size-h1);
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .cu-side-by-side__button .cu-button {
+    transition: none;
+  }
+}
+
+// High contrast mode support
+@media (prefers-contrast: more) {
+  .cu-side-by-side--bordered .cu-side-by-side__media img {
+    border-width: 4px;
+  }
+
+  .cu-side-by-side__button .cu-button:focus {
+    outline-width: 3px;
+  }
+}
+
+.cu-side-by-side--bordered
+{
+  .cu-image {
+    position: relative;
+    z-index: 1;
+  }
+  .cu-side-by-side__media {
+    position: relative;
+    padding: 8px;
+    margin: 0;
+
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      background: var(--cu-color-brand, #{$cornell-red});
+      z-index: 0;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      width: 75%;
+      height: 8px;
+    }
+
+    &::after {
+      bottom: 0;
+      right: 0;
+      width: 10%;
+      height: calc(100% - 8px);
+    }
+  }
+  &.cu-side-by-side--image-left {
+    .cu-side-by-side__media {
+      &::before {
+        left: 0;
+        right:unset;
+      }
+
+      &::after {
+        left: 0;
+        right:unset;
+      }
+    }
+  }
+}
+
