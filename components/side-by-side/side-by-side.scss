@@ -41,25 +41,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--cu-vr1);
-}
 
-.cu-side-by-side__eyebrow {
-  color: var(--cu-colorscheme-accent);
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-
-.cu-side-by-side__heading {
-  margin: 0;
-  color: var(--cu-text-color);
-
-  // Use existing heading styles from the design system
-  font-size: var(--cu-font-size-h2);
-  font-weight: var(--cu-font-weight-bold);
-  line-height: var(--cu-line-height-heading);
+  .cu-button {
+    align-self: flex-start;
+  }
 }
 
 .cu-side-by-side__body {
@@ -71,32 +56,6 @@
 
     &:last-child {
       margin-bottom: 0;
-    }
-  }
-}
-
-// Button styling
-.cu-side-by-side__button {
-  margin-top: var(--cu-vr1);
-
-  .cu-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    border: 2px solid var(--cu-color-brand);
-    color: var(--cu-color-brand);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: var(--cu-border-radius);
-    transition: all 0.2s ease;
-
-    &:hover {
-      background-color: var(--cu-color-brand);
-      color: var(--cu-color-white);
-    }
-
-    &:focus {
-      outline: 2px solid var(--cu-color-brand);
-      outline-offset: 2px;
     }
   }
 }
@@ -115,8 +74,8 @@
   }
 }
 
-// Variant: Image on left (desktop only)
-.cu-side-by-side--image-left {
+// Variant: Reversed layout (media on left, content on right)
+.cu-side-by-side--reversed {
   @include breakpoint(sm) {
     .cu-side-by-side__media {
       order: -1;
@@ -133,23 +92,45 @@
   .cu-side-by-side {
     gap: var(--cu-vr4);
   }
-
-  .cu-side-by-side__heading {
-    font-size: var(--cu-font-size-h1);
-  }
 }
 
-// Accessibility improvements
-@media (prefers-reduced-motion: reduce) {
-  .cu-side-by-side__button .cu-button {
-    transition: none;
-  }
-}
+// Frame styling for side-by-side component
+// Based on cu-component__frame pattern from ILR project
+.cu-side-by-side.cu-component__frame {
+  --frame-color: #ccc;
+  --frame-width: 16px;
 
-// High contrast mode support
-@media (prefers-contrast: more) {
-  .cu-side-by-side__button .cu-button:focus {
-    outline-width: 3px;
+  .cu-image,
+  iframe {
+    padding: var(--frame-width) var(--frame-width) var(--frame-width) 0;
+    background:
+      linear-gradient(var(--frame-color) 0 0) top right / 75% var(--frame-width),
+      linear-gradient(var(--frame-color) 0 0) right / var(--frame-width) 100%,
+      linear-gradient(var(--frame-color) 0 0) bottom right / 15% var(--frame-width), transparent;
+    background-repeat: no-repeat;
+  }
+
+  // Vibrant (brand color) variant
+  &.cu-component__frame--vibrant {
+    --frame-color: var(--cu-color-brand, #{$cornell-red});
+  }
+
+  // Dark variant
+  &.cu-component__frame--dark {
+    --frame-color: #222;
+  }
+
+  // Mirror the frame for reversed layouts
+  &.cu-side-by-side--reversed {
+    .cu-image,
+    iframe {
+      padding: var(--frame-width) 0 var(--frame-width) var(--frame-width);
+      background:
+        linear-gradient(var(--frame-color) 0 0) bottom left / 75% var(--frame-width),
+        linear-gradient(var(--frame-color) 0 0) left / var(--frame-width) 100%,
+        linear-gradient(var(--frame-color) 0 0) top left / 15% var(--frame-width), transparent;
+      background-repeat: no-repeat;
+    }
   }
 }
 
