@@ -21,16 +21,11 @@
  * @union-variation cu-side-by-side--reversed Flips the orientation, placing media on the left and content on the right.
  */
 #}
-
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
-{% set media_attributes = union_attributes(media_attributes|default([])) %}
+{% set media_attributes = union_attributes(media_attributes|default([])) -%}
 
-{% set classes = [
-  'cu-side-by-side'
-] %}
-
-<div{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass('cu-side-by-side') }}>
   <div{{ content_attributes.addClass(['cu-side-by-side__content']) }}>
     {% if icon_data or eyebrow_heading or heading %}
     {% include '@union/_composite-heading.twig' with {
