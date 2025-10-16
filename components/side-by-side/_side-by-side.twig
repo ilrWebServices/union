@@ -62,10 +62,7 @@
     } only %}
     {% endif %}
   </div>
-  
-  {% if media %}
-    <div{{ media_attributes.addClass(['cu-side-by-side__media']) }}>
-      {{ media }}
-    </div>
-  {% endif %}
+  <div{{ media_attributes.addClass(['cu-side-by-side__media']) }}>
+    {{ media }}
+  </div>
 </div>
