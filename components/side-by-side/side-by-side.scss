@@ -7,7 +7,6 @@
   display: grid;
   gap: var(--cu-vr2);
   align-items: center;
-  margin-bottom: var(--cu-vr2);
 
   // Mobile-first: always stack vertically on small screens
   grid-template-columns: 1fr;
@@ -44,6 +43,17 @@
 
   .cu-button {
     align-self: flex-start;
+  }
+}
+
+// Add padding when a colorscheme is applied
+.cu-side-by-side[class*="cu-colorscheme--"] {
+  .cu-side-by-side__content {
+    padding: 0 var(--cu-ps0) var(--cu-vr1);
+
+    @include breakpoint(md) {
+      padding: 0 var(--cu-ps1) var(--cu-vr1);
+    }
   }
 }
 

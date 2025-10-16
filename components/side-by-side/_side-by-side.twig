@@ -27,8 +27,7 @@
 {% set media_attributes = union_attributes(media_attributes|default([])) %}
 
 {% set classes = [
-  'cu-side-by-side',
-  media ? 'cu-side-by-side--with-media'
+  'cu-side-by-side'
 ] %}
 
 <div{{ attributes.addClass(classes) }}>
