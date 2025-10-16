@@ -42,13 +42,13 @@
       }
     } only %}
     {% endif %}
-    
+
     {% if content %}
       <div class="cu-side-by-side__body cu-text">
         {{ content }}
       </div>
     {% endif %}
-    
+
     {% if button_url %}
     {% include '@union/_button.twig' with {
       text: button_text|default('Read More'),
