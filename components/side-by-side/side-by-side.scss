@@ -1,0 +1,146 @@
+// Side by Side Component
+// Leverages design patterns from ilr-base and global styles
+
+@import '../../global/global';
+
+.cu-side-by-side {
+  display: grid;
+  gap: var(--cu-vr2);
+  align-items: center;
+
+  // Mobile-first: always stack vertically on small screens
+  grid-template-columns: 1fr;
+
+  .cu-side-by-side__media {
+    order: -1; // Image always appears first on mobile
+  }
+
+  .cu-side-by-side__content {
+    order: 1;
+  }
+
+  // Desktop: side by side layout
+  @include breakpoint(sm) {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--cu-vr3);
+
+    // Reset order for desktop - variants will handle positioning
+    .cu-side-by-side__media {
+      order: initial;
+    }
+
+    .cu-side-by-side__content {
+      order: initial;
+    }
+  }
+}
+
+// Content area styling
+.cu-side-by-side__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cu-vr1);
+
+  .cu-button {
+    align-self: flex-start;
+  }
+}
+
+// Add padding when a colorscheme is applied
+.cu-side-by-side[class*="cu-colorscheme--"] {
+  .cu-side-by-side__content {
+    padding: 0 var(--cu-ps0) var(--cu-vr1);
+
+    @include breakpoint(md) {
+      padding: 0 var(--cu-ps1) var(--cu-vr1);
+    }
+  }
+}
+
+.cu-side-by-side__body {
+  margin: 0;
+  color: var(--cu-text-color);
+
+  p {
+    margin-bottom: var(--cu-vr1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Media area styling
+.cu-side-by-side__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--cu-border-radius);
+  }
+}
+
+// Variant: Reversed layout (media on left, content on right)
+.cu-side-by-side--reversed {
+  @include breakpoint(sm) {
+    .cu-side-by-side__media {
+      order: -1;
+    }
+
+    .cu-side-by-side__content {
+      order: 1;
+    }
+  }
+}
+
+// Responsive adjustments
+@include breakpoint(lg) {
+  .cu-side-by-side {
+    gap: var(--cu-vr4);
+  }
+}
+
+// Frame styling for side-by-side component
+// Based on cu-component__frame pattern from ILR project
+.cu-side-by-side.cu-component__frame {
+  --frame-color: #ccc;
+  --frame-width: 16px;
+
+  .cu-image,
+  iframe {
+    padding: var(--frame-width) var(--frame-width) var(--frame-width) 0;
+    background:
+      linear-gradient(var(--frame-color) 0 0) top right / 75% var(--frame-width),
+      linear-gradient(var(--frame-color) 0 0) right / var(--frame-width) 100%,
+      linear-gradient(var(--frame-color) 0 0) bottom right / 15% var(--frame-width), transparent;
+    background-repeat: no-repeat;
+  }
+
+  // Vibrant (brand color) variant
+  &.cu-component__frame--vibrant {
+    --frame-color: var(--cu-color-brand, #{$cornell-red});
+  }
+
+  // Dark variant
+  &.cu-component__frame--dark {
+    --frame-color: #222;
+  }
+
+  // Mirror the frame for reversed layouts
+  &.cu-side-by-side--reversed {
+    .cu-image,
+    iframe {
+      padding: var(--frame-width) 0 var(--frame-width) var(--frame-width);
+      background:
+        linear-gradient(var(--frame-color) 0 0) bottom left / 75% var(--frame-width),
+        linear-gradient(var(--frame-color) 0 0) left / var(--frame-width) 100%,
+        linear-gradient(var(--frame-color) 0 0) top left / 15% var(--frame-width), transparent;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
