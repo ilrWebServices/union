@@ -8,6 +8,16 @@ A simple, Twig-based component builder and styleguide compatible with Drupal.
 $ composer install
 ```
 
+## Basics
+
+Most components are standalone, self-documenting `.twig` files, with independent `.css` and `.js` files organized into libraries.
+
+Although components are meant to be standalone, they share certain 'schemes' that they can optionally honor.
+
+1. `cu-colorscheme--` - Currently implemented. Any component can choose to deal with things like padding when a colorscheme is set.
+2. `cu-layoutscheme--` - Proposed. The first option would be `--reversed`. Any component that has top-down or right-left layouts could choose to honor this and flip if/when set. It would replace some component-specific variants, since it's so common.
+3. `cu-spacingscheme--` - Proposed. This scheme would mostly affect the outer margins of components. Currently component margins are inconsistent, and a design-system-global setting like this could help. Values could be things like `none`, `compact`, `airy`.
+
 ## Usage
 
 ### Creating components
