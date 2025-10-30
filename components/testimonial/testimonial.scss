@@ -1,30 +1,25 @@
 @import './global/global';
 
 .cu-testimonial {
-  padding: var(--cu-vr0) var(--cu-vr0);
-  display: flex;
-  flex-direction: column;
-  gap: var(--cu-vr1);
-
-  &--with-media {
-    @include breakpoint(md) {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 50%;
-      padding: 0;
-      gap: var(--cu-vr3);
-    }
-  }
+  container-type: inline-size;
 
   &[class*="cu-colorscheme--"] {
     padding: var(--cu-vr1) var(--cu-ps1);
+  }
+}
 
-    @include breakpoint(md) {
-      padding: var(--cu-vr2) var(--cu-ps2);
-    }
+.cu-testimonial__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--cu-vr1);
+  align-items: center;
+  justify-items: center;
+}
 
-    @include breakpoint(md) {
-      padding: var(--cu-vr3) var(--cu-ps3);
-    }
+@container (min-width: 500px) {
+  .cu-testimonial:has(.cu-testimonial__media) .cu-testimonial__inner {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--cu-vr2);
   }
 }
 
@@ -61,6 +56,18 @@
   --cu-line-height: 1.3;
   --cu-font-family: "freight-text-pro", serif;
   margin-bottom: var(--cu-vr1);
+  margin-top: -.5rem;
+}
+
+.cu-testimonial:has(.cu-testimonial__media) .cu-testimonial__quote  {
+  --cu-font-weight: 400;
+  --cu-line-height: 1.2;
+}
+
+@container (min-width: 500px) {
+  .cu-testimonial__quote {
+    margin-top: revert;
+  }
 }
 
 .cu-testimonial__attribution {
@@ -74,9 +81,36 @@
 
 .cu-testimonial__media {
   order: 1;
-  grid-column: 1 / 4;
+
+  img, video {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 6 / 5;
+  }
 }
 
+@container (min-width: 500px) {
+  .cu-testimonial__media {
+    img, video {
+      aspect-ratio: unset;
+    }
+  }
+}
 
+.cu-testimonial:has(.cu-testimonial__media) > .cu-testimonial__inner::after {
+  content: '';
+  display: block;
+  height: 10px;
+  width: 80px;
+  background-color: var(--cu-colorscheme-accent);
+  order: 1;
+  // justify-self: start;
+}
 
-
+@container (min-width: 500px) {
+  .cu-testimonial:has(.cu-testimonial__media) > .cu-testimonial__inner::after {
+    display: none;
+  }
+}

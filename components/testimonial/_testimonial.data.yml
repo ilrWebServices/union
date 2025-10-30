@@ -1,11 +1,19 @@
 -
+  demo_label: No image
   quote: "The ILR major focuses on the study of people and policies in the workplace. Students learn how individuals, groups and organizations address many of the most pressing issues that affect businesses, society, the economy and international affairs."
   name: Betty Rubble
   title: Actress
   icon_data:
     icon: handshake
 -
+  demo_label: Tall image
+  quote: "No matter where you go, there you are."
+  name: Buckaroo Banzai
+  title: Adventurer
+  media: '<img class="cu-image" src="https://picsum.photos/548/778" alt="Hug a tree today" />'
+-
+  demo_label: Long text
   quote: "I came to Cornell knowing I wanted a rigorous program and the ability to learn outside of the classroom. I found the perfect balance at ILR through challenging, interdisciplinary courses and opportunities to study in Dublin, work with the Congressional Black Caucus Foundation in Washington, D.C. and create my own radio show here in Ithaca."
   name: Betty Rubble
   title: Actress
-  media: '<img class="cu-image" src="https://picsum.photos/548/778" alt="Hug a tree today" />'
+  media: '<img class="cu-image" src="https://picsum.photos/600/600" alt="Hug a tree today" />'
