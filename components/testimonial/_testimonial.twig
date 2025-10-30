@@ -7,7 +7,7 @@
  * @var string $quote The quotation.
  * @var string $name The name of the person quoted.
  * @var string $title Title of the person quoted.
- * @var string $media Optional media (img, video, or any other CSS replaced element).
+ * @var string $media Optional media (image component with `img_src` and `img_alt` keys or <img>, <video>, or any other CSS replaced element).
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  *
@@ -17,10 +17,8 @@
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
 
-<div{{ attributes.addClass([
-    'cu-testimonial',
-    media ? 'cu-testimonial--with-media'
-  ]) }}>
+<div{{ attributes.addClass('cu-testimonial') }}>
+<div class="cu-testimonial__inner">
   <div class="cu-testimonial__content">
   {% if icon_data %}
     {% include '@union/_icon.twig' with icon_data only %}
@@ -34,7 +32,12 @@
   </div>
   {% if media %}
   <div class="cu-testimonial__media">
-    {{ media }}
+    {% if media.img_src is defined %}
+      {% include '@union/_image.twig' with media only %}
+    {% else %}
+      {{ media }}
+    {% endif %}
   </div>
   {% endif %}
+</div>
 </div>
