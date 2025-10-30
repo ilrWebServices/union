@@ -1,52 +1,87 @@
 @import './global/global';
 
-@include breakpoint(md) {
-  .cu-testimonial-deck {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: var(--cu-vr-1);
-  }
-
-  .cu-testimonial-deck .cu-testimonial__content {
-    display: none;
-  }
-
-  .cu-testimonial__media .cu-image {
-    object-fit: cover;
-    object-position: var(--cu-image-position, 50% 0);
-    aspect-ratio: 1/1;
-    cursor: pointer;
-  }
-}
-
-.cu-testimonial-deck .cu-testimonial {
+// Custom elements need a `display` property before things like background colors will work. Who knew!?
+cu-testimonials {
   display: flex;
-  margin-bottom: var(--cu-vr2);
-}
-
-.cu-testimonial[data-selected] {
-  display: none;
-
-  @include breakpoint(md) {
-    display: revert;
-    opacity: .5;
-  }
-}
-
-.cu-testimonial-deck .cu-testimonial:first-of-type {
-  grid-column: 1 / -1;
-  display: grid;
+  flex-direction: column;
+  position: relative;
+  container-type: inline-size;
 
   .cu-testimonial__content {
-    display: block;
+    text-align: left;
   }
 
-  .cu-testimonial__media {
-    grid-column: 1 / 4;
-
-    .cu-image {
-      aspect-ratio: initial;
-      cursor: initial;
-    }
+  .cu-testimonial:has(.cu-testimonial__media) > .cu-testimonial__inner::after {
+    justify-self: start;
   }
 }
+
+.cu-testimonial-deck__item-wrapper {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+.cu-testimonial-deck__items {
+  display: flex;
+  gap: var(--cu-ps1);
+}
+
+.cu-testimonial-deck__item {
+  width: 100cqw;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: opacity .5s;
+}
+
+// @include breakpoint(md) {
+//   .cu-testimonial-deck {
+//     display: grid;
+//     grid-template-columns: repeat(7, 1fr);
+//     gap: var(--cu-vr-1);
+//   }
+
+//   .cu-testimonial-deck .cu-testimonial__content {
+//     display: none;
+//   }
+
+//   .cu-testimonial__media .cu-image {
+//     object-fit: cover;
+//     object-position: var(--cu-image-position, 50% 0);
+//     aspect-ratio: 1/1;
+//     cursor: pointer;
+//   }
+// }
+
+// .cu-testimonial-deck .cu-testimonial {
+//   display: flex;
+//   margin-bottom: var(--cu-vr2);
+// }
+
+// .cu-testimonial[data-selected] {
+//   display: none;
+
+//   @include breakpoint(md) {
+//     display: revert;
+//     opacity: .5;
+//   }
+// }
+
+// .cu-testimonial-deck .cu-testimonial:first-of-type {
+//   grid-column: 1 / -1;
+//   display: grid;
+
+//   .cu-testimonial__content {
+//     display: block;
+//   }
+
+//   .cu-testimonial__media {
+//     grid-column: 1 / 4;
+
+//     .cu-image {
+//       aspect-ratio: initial;
+//       cursor: initial;
+//     }
+//   }
+// }
