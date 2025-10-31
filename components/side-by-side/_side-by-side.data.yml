@@ -14,6 +14,22 @@
     class: []
 
 -
+  demo_label: Mucho text (Image Right)
+  demo_count: 1
+  demo_columns: 1
+  heading: Every ILRie Has a Story
+  eyebrow_heading: Featured Content
+  content: |
+    <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
+    <p>Nullam id dolor id nibh ultricies vehicula ut id elit. Cras mattis consectetur purus sit amet fermentum. Nullam quis risus eget urna mollis ornare vel eu leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+  media: |
+    <img class="cu-image" src="https://picsum.photos/600/400" alt="Sample image" />
+  button_url: '#'
+  button_text: 'Read More'
+  attributes:
+    class: []
+
+-
   demo_label: Reversed Variant (Media Left)
   demo_count: 1
   demo_columns: 1
@@ -38,7 +54,7 @@
   content: |
     <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
   media: |
-    <img class="cu-image" src="https://picsum.photos/600/400" alt="Sample image" />
+    <img class="cu-image" src="https://picsum.photos/400/500" alt="Sample image" />
   button_url: '#'
   button_text: 'Read More'
   attributes:
@@ -91,7 +107,7 @@
   content: |
     <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
   media: |
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Palz1MzCDNQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qR_sAV_3pGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   button_url: '#'
   button_text: 'Read More'
   attributes:
@@ -106,7 +122,7 @@
   content: |
     <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
   media: |
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Palz1MzCDNQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qR_sAV_3pGs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
   button_url: '#'
   button_text: 'Read More'
   attributes:
