@@ -85,7 +85,7 @@
 }
 
 // Variant: Reversed layout (media on left, content on right)
-.cu-side-by-side--reversed {
+.cu-layoutscheme--reversed {
   @include breakpoint(sm) {
     .cu-side-by-side__media {
       order: -1;
@@ -131,7 +131,7 @@
   }
 
   // Mirror the frame for reversed layouts
-  &.cu-side-by-side--reversed {
+  &.cu-layoutscheme--reversed {
     .cu-image,
     iframe {
       padding: var(--frame-width) 0 var(--frame-width) var(--frame-width);

@@ -27,7 +27,7 @@
   button_text: 'Read More'
   attributes:
     class:
-      - 'cu-side-by-side--reversed'
+      - 'cu-layoutscheme--reversed'
 
 -
   demo_label: With Frame (Default Gray)
@@ -59,7 +59,7 @@
   button_text: 'Read More'
   attributes:
     class:
-      - 'cu-side-by-side--reversed'
+      - 'cu-layoutscheme--reversed'
       - 'cu-component__frame'
       - 'cu-component__frame--vibrant'
 
