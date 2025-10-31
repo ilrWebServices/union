@@ -21,8 +21,12 @@
 
   // Desktop: side by side layout
   @include breakpoint(sm) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 50%;
     gap: var(--cu-vr3);
+
+    &.cu-layoutscheme--reversed {
+      grid-template-columns: 50% auto;
+    }
 
     // Reset order for desktop - variants will handle positioning
     .cu-side-by-side__media {
@@ -96,13 +100,6 @@
     .cu-side-by-side__content {
       order: 1;
     }
-  }
-}
-
-// Responsive adjustments
-@include breakpoint(lg) {
-  .cu-side-by-side {
-    gap: var(--cu-vr4);
   }
 }
 
