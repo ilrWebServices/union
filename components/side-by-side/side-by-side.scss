@@ -35,6 +35,11 @@
   }
 }
 
+// Add padding when a colorscheme is applied
+.cu-side-by-side[class*="cu-colorscheme--"] {
+  padding: var(--cu-vr1) var(--cu-ps1);
+}
+
 // Content area styling
 .cu-side-by-side__content {
   display: flex;
@@ -43,17 +48,6 @@
 
   .cu-button {
     align-self: flex-start;
-  }
-}
-
-// Add padding when a colorscheme is applied
-.cu-side-by-side[class*="cu-colorscheme--"] {
-  .cu-side-by-side__content {
-    padding: 0 var(--cu-ps0) var(--cu-vr1);
-
-    @include breakpoint(md) {
-      padding: 0 var(--cu-ps1) var(--cu-vr1);
-    }
   }
 }
 
@@ -70,17 +64,25 @@
   }
 }
 
+.cu-side-by-side__button {
+  margin-bottom: 0;
+}
+
 // Media area styling
 .cu-side-by-side__media {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  img {
+  img, video {
     width: 100%;
     height: auto;
     display: block;
     border-radius: var(--cu-border-radius);
+  }
+
+  iframe {
+    width: 100%;
   }
 }
 
@@ -143,4 +145,3 @@
     }
   }
 }
-
