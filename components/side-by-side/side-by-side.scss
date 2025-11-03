@@ -74,9 +74,7 @@
 
 // Media area styling
 .cu-side-by-side__media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  line-height: 0;
 
   img, video {
     width: 100%;
@@ -87,6 +85,8 @@
 
   iframe {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
   }
 }
 
@@ -117,6 +117,10 @@
       linear-gradient(var(--frame-color) 0 0) right / var(--frame-width) 100%,
       linear-gradient(var(--frame-color) 0 0) bottom right / 15% var(--frame-width), transparent;
     background-repeat: no-repeat;
+  }
+
+  iframe {
+    aspect-ratio: 16 / 10;
   }
 
   // Vibrant (brand color) variant
