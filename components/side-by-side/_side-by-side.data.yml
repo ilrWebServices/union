@@ -1,5 +1,5 @@
 -
-  demo_label: Default (Image Right)
+  demo_label: Default
   demo_count: 1
   demo_columns: 1
   heading: Every ILRie Has a Story
@@ -14,7 +14,7 @@
     class: []
 
 -
-  demo_label: Mucho text (Image Right)
+  demo_label: Mucho text
   demo_count: 1
   demo_columns: 1
   heading: Every ILRie Has a Story
@@ -28,22 +28,6 @@
   button_text: 'Read More'
   attributes:
     class: []
-
--
-  demo_label: Reversed Variant (Media Left)
-  demo_count: 1
-  demo_columns: 1
-  heading: Every ILRie Has a Story
-  eyebrow_heading: Featured Content
-  content: |
-    <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
-  media: |
-    <img class="cu-image" src="https://picsum.photos/600/400" alt="Sample image" />
-  button_url: '#'
-  button_text: 'Read More'
-  attributes:
-    class:
-      - 'cu-layoutscheme--reversed'
 
 -
   demo_label: With Frame (Default Gray)
@@ -60,24 +44,6 @@
   attributes:
     class:
       - 'cu-component__frame'
-
--
-  demo_label: Reversed + Frame (Vibrant)
-  demo_count: 1
-  demo_columns: 1
-  heading: Every ILRie Has a Story
-  eyebrow_heading: Featured Content
-  content: |
-    <p>Alumna Tricia Turley Brandenburg '99 created her own learning and career opportunities through sports and now advocates for college student-athletes.</p>
-  media: |
-    <img class="cu-image" src="https://picsum.photos/600/400" alt="Sample image" />
-  button_url: '#'
-  button_text: 'Read More'
-  attributes:
-    class:
-      - 'cu-layoutscheme--reversed'
-      - 'cu-component__frame'
-      - 'cu-component__frame--vibrant'
 
 -
   demo_label: With Icon
