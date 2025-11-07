@@ -44,13 +44,13 @@ cu-testimonial-deck {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(12cqw);
-  height: calc(12cqw);
+  width: 12cqw;
+  height: 12cqw;
   border-radius: 50%;
   background-color: rgba(217,217,217,.5);
   backdrop-filter: blur(2px);
   position: absolute;
-  top: calc(68cqw);
+  top: 68cqw;
   right: 16px;
   cursor: pointer;
 }
@@ -108,4 +108,28 @@ cu-testimonial-deck[data-state="paused"] .cu-testimonial-deck__playpause::before
 
 cu-testimonial-deck[data-state="playing"] .cu-testimonial-deck__thumbnail::after {
   transition: width var(--cu-testimonials-duration, 5s) linear;
+}
+
+@container (min-width: 500px) {
+  .cu-testimonial-deck__thumbnails {
+    // @see .cu-testimonial:has(.cu-testimonial__media) .cu-testimonial__inner { grid-template-columns }
+    width: 40.3cqw;
+  }
+
+  .cu-testimonial-deck__playpause {
+    width: 12cqw;
+    height: 12cqw;
+    width: 44px;
+    height: 44px;
+    top: calc(50% - 22px);
+    left: calc(20cqw - 22px);
+    opacity: 0;
+    transition: opacity .125s linear;
+  }
+}
+
+// It's nuts that this works! Also, awesome!
+cu-testimonial-deck:has(.cu-testimonial__media:hover) .cu-testimonial-deck__playpause,
+cu-testimonial-deck .cu-testimonial-deck__playpause:hover {
+  opacity: 1;
 }
