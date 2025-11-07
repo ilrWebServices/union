@@ -18,7 +18,7 @@
 
 @container (min-width: 500px) {
   .cu-testimonial:has(.cu-testimonial__media) .cu-testimonial__inner {
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 40.3% 1fr;
     gap: var(--cu-vr2);
   }
 }
@@ -51,7 +51,7 @@
 }
 
 .cu-testimonial__quote {
-  --cu-font-size: var(--cu-ms4);
+  --cu-font-size: var(--cu-ms2);
   --cu-font-weight: 600;
   --cu-line-height: 1.3;
   --cu-font-family: "freight-text-pro", serif;
@@ -67,6 +67,12 @@
 @container (min-width: 500px) {
   .cu-testimonial__quote {
     margin-top: revert;
+  }
+}
+
+@container (min-width: 700px) {
+  .cu-testimonial__quote {
+    --cu-font-size: var(--cu-ms4);
   }
 }
 
