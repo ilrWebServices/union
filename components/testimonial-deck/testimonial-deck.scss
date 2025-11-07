@@ -1,52 +1,111 @@
 @import './global/global';
 
-@include breakpoint(md) {
-  .cu-testimonial-deck {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: var(--cu-vr-1);
-  }
-
-  .cu-testimonial-deck .cu-testimonial__content {
-    display: none;
-  }
-
-  .cu-testimonial__media .cu-image {
-    object-fit: cover;
-    object-position: var(--cu-image-position, 50% 0);
-    aspect-ratio: 1/1;
-    cursor: pointer;
-  }
-}
-
-.cu-testimonial-deck .cu-testimonial {
+// Custom elements need a `display` property before things like background colors will work. Who knew!?
+cu-testimonial-deck {
   display: flex;
-  margin-bottom: var(--cu-vr2);
-}
-
-.cu-testimonial[data-selected] {
-  display: none;
-
-  @include breakpoint(md) {
-    display: revert;
-    opacity: .5;
-  }
-}
-
-.cu-testimonial-deck .cu-testimonial:first-of-type {
-  grid-column: 1 / -1;
-  display: grid;
+  flex-direction: column;
+  position: relative;
+  container-type: inline-size;
 
   .cu-testimonial__content {
+    text-align: left;
+  }
+
+  .cu-testimonial:has(.cu-testimonial__media) > .cu-testimonial__inner::after {
+    justify-self: start;
+  }
+}
+
+.cu-testimonial-deck__item-wrapper {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  width: 100%;
+}
+
+.cu-testimonial-deck__items {
+  display: flex;
+  gap: var(--cu-ps1);
+}
+
+.cu-testimonial-deck__item {
+  width: 100cqw;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: opacity .5s;
+}
+
+.cu-testimonial-deck__playpause {
+  &::before {
+    content: url("data:image/svg+xml,%3Csvg width='16.5' height='21' viewBox='0 0 11 14' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='4' height='14' x='0' y='0' style='fill:white' /%3E%3Crect width='4' height='14' x='6' y='0' style='fill:white' /%3E%3C/svg%3E");
+    line-height: 0;
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(12cqw);
+  height: calc(12cqw);
+  border-radius: 50%;
+  background-color: rgba(217,217,217,.5);
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: calc(68cqw);
+  right: 16px;
+  cursor: pointer;
+}
+
+cu-testimonial-deck[data-state="paused"] .cu-testimonial-deck__playpause::before {
+  content: url("data:image/svg+xml,%3Csvg width='16.5' height='21' viewBox='0 0 11 14' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 0,0 11,7 0,14 Z' style='fill:white' /%3E%3C/svg%3E");
+  padding-left: 4px;
+}
+
+.cu-testimonial-deck__thumbnails {
+  display: flex;
+  gap: 5px;
+  margin: 0;
+  padding: 0 10px;
+  width: 100%;
+  height: 32px;
+  position: absolute;
+}
+
+.cu-testimonial-deck__thumbnail {
+  display: block;
+  flex-grow: 1;
+  height: 100%;
+  padding-top: 12px;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    content: '';
     display: block;
+    width: 0;
+    height: 5px;
+    background-color: white;
+    visibility: hidden;
+    position: absolute;
+    border-radius: 2.5px;
   }
 
-  .cu-testimonial__media {
-    grid-column: 1 / 4;
-
-    .cu-image {
-      aspect-ratio: initial;
-      cursor: initial;
-    }
+  &.active::after {
+    width: 100%;
+    visibility: visible;
   }
+
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    background-color: rgba(217,217,217,.5);
+    backdrop-filter: blur(2px);
+    border-radius: 2.5px;
+  }
+}
+
+cu-testimonial-deck[data-state="playing"] .cu-testimonial-deck__thumbnail::after {
+  transition: width var(--cu-testimonials-duration, 5s) linear;
 }
