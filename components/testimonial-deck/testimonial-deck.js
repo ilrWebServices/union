@@ -13,7 +13,10 @@
     #thumbs = [];
     #elements = {
       play_pause: document.createElement('div'),
-      thumb_container: document.createElement('ul')
+      thumb_container: document.createElement('ul'),
+      nav_container: document.createElement('div'),
+      nav_prev: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-direction="prev"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="M21.5 24.5l-6-6 6-6"></path></svg></button>`),
+      nav_next: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-direction="next"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="m15.5,24.5 6,-6 -6,-6"></path></svg></button>`)
     };
     #observer;
     #timer;
@@ -33,9 +36,13 @@
 
       this.#elements.play_pause.classList.add('cu-testimonial-deck__playpause');
       this.#elements.thumb_container.classList.add('cu-testimonial-deck__thumbnails');
+      this.#elements.nav_container.classList.add('cu-testimonial-deck__nav');
 
       this.append(this.#elements.play_pause);
       this.append(this.#elements.thumb_container);
+      this.append(this.#elements.nav_container);
+      this.#elements.nav_container.append(this.#elements.nav_prev);
+      this.#elements.nav_container.append(this.#elements.nav_next);
 
       // TODO: Honor https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion
       if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
@@ -68,6 +75,13 @@
         thumb.dataset.item = this.#itemsArray.indexOf(item);
         this.#thumbs.push(thumb);
         this.#elements.thumb_container.append(thumb);
+
+        // Use media src or poster as background image.
+        let media = item.querySelector('.cu-testimonial__media img');
+
+        if (media) {
+          media.closest('.cu-testimonial__media').style.setProperty('--cu-testimonial-deck-media-url', "url('" + media.getAttribute('src') + "')");
+        }
       }
 
       // Set #isVisible if this deck is partially in the viewport.
@@ -115,6 +129,17 @@
         this.moveCenter(this.#items[this.#currentItem]);
       }
 
+      if (event.target.closest('.cu-testimonial-deck__nav-button')) {
+        let direction = event.target.closest('.cu-testimonial-deck__nav-button').dataset.direction;
+
+        if (direction === 'next') {
+          this.next();
+        }
+        else {
+          this.prev();
+        }
+      }
+
       this.pause();
     }
 
@@ -126,7 +151,13 @@
       this.moveCenter(this.#items[this.#currentItem]);
     }
 
-    prev() {}
+    prev() {
+      this.#currentItem--;
+      if (this.#currentItem < 0) {
+        this.#currentItem = this.#items.length - 1;
+      }
+      this.moveCenter(this.#items[this.#currentItem]);
+    }
 
     pause() {
       this.dataset.state = 'paused';
@@ -145,6 +176,12 @@
 
     moveCenter(item) {
       item.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" });
+    }
+
+    createElementFromTemplate(html) {
+      const template = document.createElement('template');
+      template.innerHTML = html.trim();
+      return template.content.firstChild;
     }
 
   }

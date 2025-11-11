@@ -16,6 +16,35 @@ cu-testimonial-deck {
   }
 }
 
+@container (min-width: 500px) {
+
+  cu-testimonial-deck .cu-testimonial__inner,
+  cu-testimonial-deck .cu-testimonial__media {
+    height: 100%;
+  }
+  cu-testimonial-deck .cu-testimonial__media {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      background-image: var(--cu-testimonial-deck-media-url);
+      background-position: center;
+      background-size: cover;
+      filter: blur(50px);
+    }
+  }
+  cu-testimonial-deck .cu-testimonial__media img {
+    position: relative;
+    height: unset;
+  }
+
+}
+
 .cu-testimonial-deck__item-wrapper {
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -132,4 +161,33 @@ cu-testimonial-deck[data-state="playing"] .cu-testimonial-deck__thumbnail::after
 cu-testimonial-deck:has(.cu-testimonial__media:hover) .cu-testimonial-deck__playpause,
 cu-testimonial-deck .cu-testimonial-deck__playpause:hover {
   opacity: 1;
+}
+
+.cu-testimonial-deck__nav {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  top: 86cqw;
+  right: 0;
+}
+
+@container (min-width: 500px) {
+  .cu-testimonial-deck__nav {
+    justify-content: center;
+    gap: 2px;
+    top: unset;
+    right: unset;
+    bottom: 0;
+    width: 40.3cqw;
+  }
+}
+
+.cu-testimonial-deck__nav-button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  color: white;
+  background-color: var(--cu-color-brand);
+  border: 2px solid var(--cu-colorscheme-accent);
+  cursor: pointer;
 }
