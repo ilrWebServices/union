@@ -2,9 +2,21 @@
 
 .cu-testimonial {
   container-type: inline-size;
+}
 
-  &[class*="cu-colorscheme--"] {
-    padding: var(--cu-vr1) var(--cu-ps1);
+.cu-testimonial[class*="cu-colorscheme--"],
+cu-testimonial-deck[class*="cu-colorscheme--"] .cu-testimonial {
+  .cu-testimonial__content {
+    padding: 0 var(--cu-ps0) var(--cu-vr0);
+  }
+}
+
+@container (min-width: 500px) {
+  .cu-testimonial[class*="cu-colorscheme--"],
+  cu-testimonial-deck[class*="cu-colorscheme--"] .cu-testimonial {
+    .cu-testimonial__content {
+      padding: var(--cu-vr0) var(--cu-ps1) var(--cu-vr0) 0;
+    }
   }
 }
 
@@ -36,7 +48,6 @@
 
   .cu-testimonial:has(.cu-testimonial__media) & {
     text-align: left;
-    padding-top: calc(var(--cu-vr1) + 10px);
 
     &::before {
       content: '';
@@ -44,8 +55,7 @@
       width: 80px;
       height: 10px;
       background: var(--cu-colorscheme-accent);
-      position: absolute;
-      top: 0;
+      margin-bottom: var(--cu-vr1);
     }
   }
 }
