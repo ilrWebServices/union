@@ -12,11 +12,14 @@
     #itemsArray;
     #thumbs = [];
     #elements = {
-      play_pause: document.createElement('div'),
       thumb_container: document.createElement('ul'),
       nav_container: document.createElement('div'),
-      nav_prev: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-direction="prev"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="M21.5 24.5l-6-6 6-6"></path></svg></button>`),
-      nav_next: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-direction="next"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="m15.5,24.5 6,-6 -6,-6"></path></svg></button>`)
+      nav_prev: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-operation="prev"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="M21.5 24.5l-6-6 6-6"></path></svg></button>`),
+      play_pause: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button cu-testimonial-deck__playpause" data-operation="playtoggle"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <path class="play" d="m 15.5,24.5 9.5,-6 -9.5,-6 v 12"></path>
+        <path class="pause" d="M 15.5,24.5 v -12 M 20.5, 12.5 v 12"></path>
+      </svg></button>`),
+      nav_next: this.createElementFromTemplate(`<button class="cu-testimonial-deck__nav-button" data-operation="next"><svg width="37" height="37" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.1" viewBox="0 0 37 37" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><path d="m15.5,24.5 6,-6 -6,-6"></path></svg></button>`)
     };
     #observer;
     #timer;
@@ -34,14 +37,13 @@
       this.#items = this.querySelectorAll('.cu-testimonial');
       this.#itemsArray = Array.from(this.#items);
 
-      this.#elements.play_pause.classList.add('cu-testimonial-deck__playpause');
       this.#elements.thumb_container.classList.add('cu-testimonial-deck__thumbnails');
       this.#elements.nav_container.classList.add('cu-testimonial-deck__nav');
 
-      this.append(this.#elements.play_pause);
       this.append(this.#elements.thumb_container);
       this.append(this.#elements.nav_container);
       this.#elements.nav_container.append(this.#elements.nav_prev);
+      this.#elements.nav_container.append(this.#elements.play_pause);
       this.#elements.nav_container.append(this.#elements.nav_next);
 
       // TODO: Honor https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion
@@ -130,14 +132,25 @@
       }
 
       if (event.target.closest('.cu-testimonial-deck__nav-button')) {
-        let direction = event.target.closest('.cu-testimonial-deck__nav-button').dataset.direction;
+        let operation = event.target.closest('.cu-testimonial-deck__nav-button').dataset.operation;
 
-        if (direction === 'next') {
+        if (operation === 'prev') {
+          this.prev();
+        }
+        else if (operation === 'next') {
           this.next();
         }
         else {
-          this.prev();
+          if (this.dataset.state === 'playing') {
+            this.pause();
+          }
+          else {
+            this.play();
+          }
+
+          return;
         }
+
       }
 
       this.pause();
