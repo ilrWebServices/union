@@ -1,0 +1,32 @@
+{#
+/**
+ * Link Cloud
+ *
+ * A flexible list of links styled as buttons, arranged in a cloud/wrap layout.
+ *
+ * @var string $heading Optional heading for the link cloud.
+ * @var array $items An array of link items. Each item must contain both `url` and `content` keys.
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @see Figma design for "Explore Our Work in Other States"
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set attributes = attributes.addClass(['cu-link-cloud']) %}
+
+<div{{ attributes }}>
+  {% if heading %}
+  <h2 class="cu-link-cloud__heading">{{ heading }}</h2>
+  {% endif %}
+  <ul class="cu-link-cloud__items">
+  {% for item in items %}
+    <li class="cu-link-cloud__item">
+      {% if item.url %}
+      <a class="cu-link-cloud__link" href="{{ item.url }}">{{ item.content }}</a>
+      {% else %}
+      <span class="cu-link-cloud__link">{{ item.content }}</span>
+      {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>

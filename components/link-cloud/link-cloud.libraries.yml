@@ -1,0 +1,4 @@
+link-cloud:
+  css:
+    component:
+      link-cloud.css: {}
