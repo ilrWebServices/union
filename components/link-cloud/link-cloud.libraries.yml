@@ -1,4 +1,4 @@
-link-cloud:
-  css:
-    component:
-      link-cloud.css: {}
+css:
+  link-cloud.css: {}
+dependencies:
+  - base
