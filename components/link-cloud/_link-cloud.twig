@@ -12,9 +12,8 @@
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-link-cloud']) %}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass(['cu-link-cloud']) }}>
   {% if heading %}
   <h2 class="cu-link-cloud__heading">{{ heading }}</h2>
   {% endif %}
