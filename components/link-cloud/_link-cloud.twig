@@ -12,19 +12,16 @@
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
-{% set attributes = attributes.addClass(['cu-link-cloud']) %}
 
-<div{{ attributes }}>
+<div{{ attributes.addClass(['cu-link-cloud']) }}>
   {% if heading %}
   <h2 class="cu-link-cloud__heading">{{ heading }}</h2>
   {% endif %}
   <ul class="cu-link-cloud__items">
   {% for item in items %}
     <li class="cu-link-cloud__item">
-      {% if item.url %}
-      <a class="cu-link-cloud__link" href="{{ item.url }}">{{ item.content }}</a>
-      {% else %}
-      <span class="cu-link-cloud__link">{{ item.content }}</span>
+      {% if item.text and item.url %}
+      {% include '@union/_button.twig' with item|merge({attributes: { 'class': 'cu-link-cloud__link' }}) only %}
       {% endif %}
     </li>
   {% endfor %}
