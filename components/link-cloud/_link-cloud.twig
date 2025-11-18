@@ -21,9 +21,7 @@
   {% for item in items %}
     <li class="cu-link-cloud__item">
       {% if item.url %}
-      <a class="cu-link-cloud__link" href="{{ item.url }}">{{ item.content }}</a>
-      {% else %}
-      <span class="cu-link-cloud__link">{{ item.content }}</span>
+      {% include '@union/_button.twig' with item|merge({attributes: { 'class': 'cu-link-cloud__link' }}) only %}
       {% endif %}
     </li>
   {% endfor %}

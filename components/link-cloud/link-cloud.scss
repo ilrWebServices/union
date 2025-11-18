@@ -37,30 +37,17 @@
 }
 
 .cu-link-cloud__link {
-  // Base button styles
+  // Override some button styles.
   --cu-font-weight: 700;
-  --cu-font-size: 16px;
-  background-color: var(--cu-colorscheme-background, var(--cu-color-white));
-  border-radius: 2px;
-  border: 2px solid var(--cu-color-brand);
-  padding: 0.5rem 1rem;
+  background-color: var(--cu-color-white);
+  --cu-text-color: var(--cu-color-dark);
   margin-bottom: 0;
-  width: auto;
-  display: inline-block;
-  text-decoration: none;
   white-space: nowrap;
-  min-width: 150px;
+  min-width: 7rem;
   text-align: center;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  color: var(--cu-color-brand);
-  
+
   &:hover {
-    text-decoration: none;
     background-color: var(--cu-color-brand);
-    border-color: var(--cu-color-brand);
     color: var(--cu-color-white);
   }
 }
