@@ -22,7 +22,7 @@
   // Desktop: side by side layout
   @include breakpoint(sm) {
     grid-template-columns: auto 50%;
-    gap: var(--cu-vr3);
+    gap: var(--cu-vr4);
 
     &.cu-layoutscheme--reversed {
       grid-template-columns: 50% auto;
@@ -68,8 +68,18 @@
   }
 }
 
+// Larger heading for side-by-side
+.cu-side-by-side__meta {
+  .cu-composite-heading__heading {
+    font-size: var(--cu-ms7);
+    line-height: 1.1;
+  }
+}
+
 .cu-side-by-side__button {
   margin-bottom: 0;
+  --cu-font-weight: 700;
+  padding: 12px 40px;
 }
 
 // Media area styling
@@ -107,15 +117,15 @@
 // Based on cu-component__frame pattern from ILR project
 .cu-side-by-side.cu-component__frame {
   --frame-color: #ccc;
-  --frame-width: 16px;
+  --frame-width: 20px;
 
   .cu-image,
   iframe {
     padding: var(--frame-width) var(--frame-width) var(--frame-width) 0;
     background:
-      linear-gradient(var(--frame-color) 0 0) top right / 75% var(--frame-width),
+      linear-gradient(var(--frame-color) 0 0) top right / 30% var(--frame-width),
       linear-gradient(var(--frame-color) 0 0) right / var(--frame-width) 100%,
-      linear-gradient(var(--frame-color) 0 0) bottom right / 15% var(--frame-width), transparent;
+      linear-gradient(var(--frame-color) 0 0) bottom right / 70% var(--frame-width), transparent;
     background-repeat: no-repeat;
   }
 
@@ -131,18 +141,5 @@
   // Dark variant
   &.cu-component__frame--dark {
     --frame-color: #222;
-  }
-
-  // Mirror the frame for reversed layouts
-  &.cu-layoutscheme--reversed {
-    .cu-image,
-    iframe {
-      padding: var(--frame-width) 0 var(--frame-width) var(--frame-width);
-      background:
-        linear-gradient(var(--frame-color) 0 0) bottom left / 75% var(--frame-width),
-        linear-gradient(var(--frame-color) 0 0) left / var(--frame-width) 100%,
-        linear-gradient(var(--frame-color) 0 0) top left / 15% var(--frame-width), transparent;
-      background-repeat: no-repeat;
-    }
   }
 }

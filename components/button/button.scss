@@ -30,3 +30,14 @@
   border-radius: 1rem;
   padding: 5px var(--cu-ps1);
 }
+
+.cu-button--outlined {
+  --cu-text-color: var(--cu-color-brand);
+  border-color: var(--cu-color-brand);
+  background-color: transparent;
+
+  &:hover {
+    background-color: var(--cu-color-brand);
+    --cu-text-color: var(--cu-color-white);
+  }
+}
