@@ -124,8 +124,8 @@
       background-color: var(--cu-colorscheme-background, white);
 
       @container (min-width: 37.5rem) {
-        left: auto;
-        max-width: 55%;
+        left: unset;
+        max-width: 45%;
       }
     }
 
