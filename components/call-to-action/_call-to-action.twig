@@ -1,0 +1,42 @@
+{#
+/**
+ * Call to Action
+ *
+ * A call to action component is typically displayed full-width at the top of a page
+ * to highlight important information and encourage user action. It's similar to a banner
+ * but without media, focusing on text content and a prominent link/button.
+ *
+ * @var string $heading Optional main heading for the call to action.
+ * @var string $content Required text content of the call to action.
+ * @var string $link_url Required URL for the call to action button.
+ * @var string $link_text Required text for the call to action button.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire component.
+ * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
+ *
+ * @union-variation cu-call-to-action--centered Centers the content horizontally.
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set content_attributes = union_attributes(content_attributes|default([])) %}
+
+<div{{ attributes.addClass(['cu-call-to-action']) }}>
+  {% if heading %}
+  <div class="cu-call-to-action__heading-wrapper">
+    <h2 class="cu-call-to-action__heading">{{ heading }}</h2>
+  </div>
+  {% endif %}
+  <div{{ content_attributes.addClass(['cu-call-to-action__content']) }}>
+    {% if content %}
+    <div class="cu-call-to-action__text">
+      {{ content }}
+    </div>
+    {% endif %}
+    {% if link_url and link_text %}
+    {% include '@union/_button.twig' with {
+      text: link_text,
+      url: link_url,
+      attributes: { 'class': 'cu-call-to-action__button' }
+    } only %}
+    {% endif %}
+  </div>
+</div>
