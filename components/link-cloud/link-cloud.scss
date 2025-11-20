@@ -1,0 +1,53 @@
+@import './global/global';
+
+.cu-link-cloud {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cu-vr1);
+
+  &[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr1) var(--cu-ps1);
+  }
+
+  @include breakpoint(md) {
+    &[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr3) var(--cu-ps4);
+    }
+  }
+}
+
+.cu-link-cloud__heading {
+  margin: 0 0 var(--cu-vr1) 0;
+  text-align: center;
+}
+
+.cu-link-cloud__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cu-vr0);
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cu-link-cloud__item {
+  margin: 0;
+  padding: 0;
+}
+
+.cu-link-cloud__link {
+  // Override some button styles.
+  --cu-font-weight: 700;
+  background-color: var(--cu-color-white);
+  --cu-text-color: var(--cu-color-dark);
+  margin-bottom: 0;
+  white-space: nowrap;
+  min-width: 7rem;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--cu-color-brand);
+    color: var(--cu-color-white);
+  }
+}

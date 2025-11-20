@@ -1,0 +1,4 @@
+css:
+  link-cloud.css: {}
+dependencies:
+  - base
