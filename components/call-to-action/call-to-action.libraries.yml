@@ -1,4 +1,4 @@
-call-to-action:
-  css:
-    component:
-      call-to-action.css: {}
+css:
+  call-to-action.css: {}
+dependencies:
+  - base
