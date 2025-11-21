@@ -170,6 +170,15 @@
     }
   }
 
+  &--inset.cu-layoutscheme--reversed {
+    .cu-card__content {
+      @container (min-width: 37.5rem) {
+        right: unset;
+        left: var(--cu-ps1);
+      }
+    }
+  }
+
   /*----------  Popouts  ----------*/
   &--popout {
     background-color: transparent;
