@@ -1,4 +1,5 @@
 default:
+  demo_label: Default
   heading: "Get Involved"
   content: "<p>Explore fellowships, events, partnerships, and ways to contribute whether you're a student, policymaker, or community leader.</p>"
   link_url: "#"
@@ -8,6 +9,7 @@ default:
       - cu-colorscheme--vibrant
 
 centered:
+  demo_label: Centered
   heading: "Get Started Today"
   content: "<p>Take the first step towards advancing your career with our comprehensive programs.</p>"
   link_url: "#"
@@ -19,6 +21,7 @@ centered:
 
 light:
   heading: "Stay Connected"
+  demo_label: No heading
   content: "<p>Subscribe to our newsletter for the latest updates on research, events, and opportunities.</p>"
   link_url: "#"
   link_text: "Subscribe Now"
