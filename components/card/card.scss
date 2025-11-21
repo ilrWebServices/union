@@ -110,6 +110,7 @@
   &--inset {
     display: block;
     overflow: auto;
+    container-type: inline-size;
 
     .cu-card__content {
       position: absolute;
@@ -122,10 +123,27 @@
       text-align: center;
       background-color: var(--cu-colorscheme-background, white);
 
-      @include breakpoint(md) {
-        bottom: var(--cu-vr3);
-        left: var(--cu-ps3);
-        right: var(--cu-ps3);
+      @container (min-width: 37.5rem) {
+        left: unset;
+        max-width: 45%;
+      }
+    }
+
+    .cu-composite-heading {
+      &::after {
+        display: none;
+      }
+
+      // Only add the top accent bar after the inset is moved to the edge.
+      @container (min-width: 37.5rem) {
+        &::before {
+          content: '';
+          display: block;
+          width: 80px;
+          height: 8px;
+          background-color: var(--cu-colorscheme-accent, #b31b1b);
+          margin-bottom: var(--cu-vr0);
+        }
       }
     }
 
@@ -138,7 +156,7 @@
         width: 100%;
         height: 100%;
 
-        @include breakpoint(sm) {
+        @container (min-width: 37.5rem) {
           aspect-ratio: var(--image-aspect-ratio);
         }
       }
@@ -148,6 +166,15 @@
       // img or video is nested in other markup.
       :not(img):not(video) {
         display: contents;
+      }
+    }
+  }
+
+  &--inset.cu-layoutscheme--reversed {
+    .cu-card__content {
+      @container (min-width: 37.5rem) {
+        right: unset;
+        left: var(--cu-ps1);
       }
     }
   }
