@@ -15,8 +15,7 @@ centered:
     class:
       - cu-call-to-action--centered
 
-light:
-  heading: "Stay Connected"
+headingless:
   demo_label: No heading
   content: "<p>Subscribe to our newsletter for the latest updates on research, events, and opportunities.</p>"
   link_url: "#"
