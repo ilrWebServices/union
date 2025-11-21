@@ -162,6 +162,21 @@
   button_data:
     text: 'Read more'
 -
+  demo_label: Inset (single)
+  attributes:
+    class:
+      - 'cu-card--inset'
+  heading: Betty Rubble
+  eyebrow_heading: Faculty Member
+  card_content: |
+    <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
+  card_media: |
+    <img class="cu-image" src="https://picsum.photos/700/400" alt="Cornell is where you want to be" />
+  button_data:
+    text: 'Read the interview'
+  card_link_url: '#'
+  card_link_alt: 'Read the interview'
+-
   demo_label: Inset
   demo_count: 2
   demo_columns: 2
