@@ -1,0 +1,157 @@
+@import './global/global';
+
+.cu-call-to-action {
+  position: relative;
+  padding: var(--cu-vr1) var(--cu-ps1);
+
+  @include breakpoint(sm) {
+    padding: var(--cu-vr2) var(--cu-ps3);
+  }
+
+  @include breakpoint(md) {
+    display: grid;
+    grid-template-columns: 42% 8px 1fr;
+    gap: var(--cu-ps2);
+    align-items: start;
+    padding: var(--cu-vr3) var(--cu-ps4);
+    margin: 0 auto;
+
+    // Divider.
+    &::before {
+      order: 2;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--cu-text-color);
+    }
+  }
+}
+
+.cu-call-to-action:not([class*=cu-colorscheme--]) {
+  padding: 0;
+}
+
+.cu-call-to-action__heading {
+  order: 1;
+  margin: 0;
+  font-family: 'futura-pt', sans-serif;
+  font-size: var(--cu-ms3);
+  --cu-font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-wrap: balance;
+
+  @include breakpoint(md) {
+    font-size: var(--cu-ms10);
+    line-height: 1;
+  }
+
+  @include breakpoint(lg) {
+    font-size: var(--cu-ms11);
+  }
+}
+
+.cu-call-to-action__content {
+  order: 3;
+  --cu-font-weight: 400;
+}
+
+.cu-call-to-action__text {
+  margin-bottom: var(--cu-vr0);
+  --cu-font-size: var(--cu-ms-1);
+  line-height: 1.5;
+
+  @include breakpoint(md) {
+    --cu-font-size: var(--cu-ms0);
+    line-height: 1.6;
+  }
+
+  p {
+    margin: 0 0 var(--cu-vr0) 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.cu-call-to-action__button {
+  margin: 0;
+}
+
+/*=============================================
+=            Centered variation               =
+=============================================*/
+.cu-call-to-action--centered {
+  &::before {
+    display: none;
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .cu-call-to-action__heading {
+    @include breakpoint(md) {
+    }
+  }
+
+  .cu-call-to-action__content {
+    @include breakpoint(md) {
+      border-left: none;
+      padding-left: 0;
+    }
+  }
+
+  .cu-call-to-action__button {
+    display: inline-block;
+  }
+}
+/*=====  End of Centered variation  ======*/
+
+/*=============================================
+=            Mission Statement (No Heading)   =
+=============================================*/
+// When there's no heading, display as mission statement style
+.cu-call-to-action:not(:has(.cu-call-to-action__heading)) {
+  position: relative;
+  display: block;
+  padding: var(--cu-vr1) var(--cu-ps4) var(--cu-vr3) var(--cu-ps2);
+  border-left: 16px solid var(--cu-colorscheme-accent);
+
+  // L-shaped border with partial bottom width
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 25%;
+    height: 16px;
+    background-color: var(--cu-colorscheme-accent);
+    }
+
+  .cu-call-to-action__text {
+    font-family: 'Freight Text Pro', Georgia, serif;
+    font-size: var(--cu-ms5);
+    line-height: 1.4;
+
+    @include breakpoint(md) {
+      font-size: var(--cu-ms7);
+      margin-bottom: 0;
+    }
+
+    @include breakpoint(lg) {
+      font-size: var(--cu-ms9);
+    }
+  }
+
+  .cu-call-to-action__button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+/*=====  End of Mission Statement  ======*/
