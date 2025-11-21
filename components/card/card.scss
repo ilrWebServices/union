@@ -134,13 +134,16 @@
         display: none;
       }
 
-      &::before {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 8px;
-        background-color: var(--cu-colorscheme-accent, #b31b1b);
-        margin-bottom: var(--cu-vr0);
+      // Only add the top accent bar after the inset is moved to the edge.
+      @container (min-width: 37.5rem) {
+        &::before {
+          content: '';
+          display: block;
+          width: 80px;
+          height: 8px;
+          background-color: var(--cu-colorscheme-accent, #b31b1b);
+          margin-bottom: var(--cu-vr0);
+        }
       }
     }
 
