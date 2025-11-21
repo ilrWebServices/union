@@ -3,63 +3,67 @@
 .cu-call-to-action {
   position: relative;
   padding: var(--cu-vr1) var(--cu-ps1);
-  
+
   @include breakpoint(sm) {
-    padding: var(--cu-vr1) var(--cu-ps2);
+    padding: var(--cu-vr2) var(--cu-ps3);
   }
 
   @include breakpoint(md) {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 42% 8px 1fr;
     gap: var(--cu-ps2);
     align-items: start;
-    padding: var(--cu-vr2) var(--cu-ps3);
-    max-width: var(--cu-max-width-section, #{$max-width-section});
+    padding: var(--cu-vr3) var(--cu-ps4);
     margin: 0 auto;
+
+    // Divider.
+    &::before {
+      order: 2;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-color: var(--cu-text-color);
+    }
   }
 }
 
-.cu-call-to-action__heading-wrapper {
-  margin-bottom: var(--cu-vr1);
-
-  @include breakpoint(md) {
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-  }
+.cu-call-to-action:not([class*=cu-colorscheme--]) {
+  padding: 0;
 }
 
 .cu-call-to-action__heading {
+  order: 1;
   margin: 0;
   font-family: 'futura-pt', sans-serif;
   font-size: var(--cu-ms3);
-  font-weight: 700;
+  --cu-font-weight: 700;
   line-height: 1.2;
   text-transform: uppercase;
   text-wrap: balance;
 
   @include breakpoint(md) {
-    font-size: 67px;
-    line-height: 76px;
-    max-width: 550px;
+    font-size: var(--cu-ms10);
+    line-height: 1;
+  }
+
+  @include breakpoint(lg) {
+    font-size: var(--cu-ms11);
   }
 }
 
 .cu-call-to-action__content {
-  @include breakpoint(md) {
-    padding-left: var(--cu-ps2);
-    border-left: 4px solid var(--cu-text-color, #{$white});
-  }
+  order: 3;
+  --cu-font-weight: 400;
 }
 
 .cu-call-to-action__text {
-  margin-bottom: var(--cu-vr1);
-  font-size: var(--cu-ms-1);
+  margin-bottom: var(--cu-vr0);
+  --cu-font-size: var(--cu-ms-1);
   line-height: 1.5;
 
   @include breakpoint(md) {
-    font-size: var(--cu-ms0);
+    --cu-font-size: var(--cu-ms0);
     line-height: 1.6;
   }
 
@@ -80,14 +84,17 @@
 =            Centered variation               =
 =============================================*/
 .cu-call-to-action--centered {
+  &::before {
+    display: none;
+  }
+
   @include breakpoint(md) {
     grid-template-columns: 1fr;
     text-align: center;
   }
 
-  .cu-call-to-action__heading-wrapper {
+  .cu-call-to-action__heading {
     @include breakpoint(md) {
-      margin-bottom: var(--cu-vr1);
     }
   }
 
@@ -108,71 +115,43 @@
 =            Mission Statement (No Heading)   =
 =============================================*/
 // When there's no heading, display as mission statement style
-.cu-call-to-action:not(:has(.cu-call-to-action__heading-wrapper)) {
-  @include breakpoint(md) {
-    position: relative;
-    display: block;
-    padding: var(--cu-vr3) var(--cu-ps3);
-    padding-left: var(--cu-ps2);
-    border-left: 16px solid #{$cornell-red};
-  }
+.cu-call-to-action:not(:has(.cu-call-to-action__heading)) {
+  position: relative;
+  display: block;
+  padding: var(--cu-vr1) var(--cu-ps4) var(--cu-vr3) var(--cu-ps2);
+  border-left: 16px solid var(--cu-colorscheme-accent);
 
   // L-shaped border with partial bottom width
   &::after {
     content: '';
+    display: block;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 25%;
     height: 16px;
-    background-color: #{$cornell-red};
-
-    @include breakpoint(md) {
-      display: block;
+    background-color: var(--cu-colorscheme-accent);
     }
-  }
-
-  // White borders for non-vibrant color schemes
-  &.cu-colorscheme--light,
-  &.cu-colorscheme--dark {
-    @include breakpoint(md) {
-      border-left-color: #{$cornell-red};
-    }
-
-    &::after {
-      background-color: #{$cornell-red};
-    }
-  }
-
-  .cu-call-to-action__content {
-    @include breakpoint(md) {
-      display: flex;
-      align-items: flex-end;
-      gap: var(--cu-ps3);
-      padding-left: 0;
-      border-left: none;
-    }
-  }
 
   .cu-call-to-action__text {
+    font-family: 'Freight Text Pro', Georgia, serif;
+    font-size: var(--cu-ms5);
+    line-height: 1.4;
+
     @include breakpoint(md) {
-      flex: 1;
-      font-family: 'Freight Text Pro', Georgia, serif;
-      font-size: var(--cu-ms3);
-      line-height: 1.3;
+      font-size: var(--cu-ms7);
       margin-bottom: 0;
     }
 
     @include breakpoint(lg) {
-      font-size: var(--cu-ms4);
+      font-size: var(--cu-ms9);
     }
   }
 
   .cu-call-to-action__button {
-    @include breakpoint(md) {
-      flex-shrink: 0;
-      align-self: flex-end;
-    }
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }
 /*=====  End of Mission Statement  ======*/
