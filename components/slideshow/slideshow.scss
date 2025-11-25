@@ -1,0 +1,381 @@
+@import './global/global';
+
+// Custom elements need a `display` property before things like background colors will work.
+cu-slideshow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  container-type: inline-size;
+  min-height: 600px;
+}
+
+@container (min-width: 768px) {
+  cu-slideshow {
+    min-height: 700px;
+  }
+}
+
+// Static white content card
+.cu-slideshow__content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--cu-ps3, 3rem) var(--cu-ps2, 2rem);
+  gap: var(--cu-ps1, 1rem);
+  width: 100%;
+  background-color: $white;
+  order: -1;
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__content {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 50px 48px 48px 56px;
+    width: 42%;
+    max-width: 535px;
+    height: auto;
+    max-height: 70%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.cu-slideshow__heading {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--cu-color-text, #000);
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__heading {
+    font-size: 1.875rem;
+  }
+}
+
+.cu-slideshow__subheading {
+  margin: 0;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px; /* 150% */
+  font-family: 'Replica', sans-serif;
+  color: var(--cu-color-text, #000);
+}
+
+.cu-slideshow__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $white;
+  background-color: var(--cu-color-brand, $cornell-red);
+  border: 2px solid var(--cu-color-brand, #b31b1b);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover,
+  &:focus {
+    background-color: var(--cu-color-brand-dark, #8b1515);
+    border-color: var(--cu-color-brand-dark, #8b1515);
+    transform: translateY(-2px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cu-color-brand);
+    outline-offset: 2px;
+  }
+}
+
+// Select menu styling (for multiple links)
+.cu-slideshow__select-wrapper {
+  position: relative;
+  display: inline-block;
+  min-width: 250px;
+}
+
+.cu-slideshow__select {
+  appearance: none;
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cu-color-brand, #b31b1b);
+  background-color: $white;
+  border: 1px solid $black;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  &:focus {
+    outline: 2px solid $black;
+    outline-offset: 2px;
+  }
+
+  option {
+    padding: 0.5rem;
+    
+    &:disabled {
+      color: var(--cu-color-brand, #b31b1b);
+      font-weight: 600;
+    }
+  }
+}
+
+.cu-slideshow__select-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--cu-color-brand, #b31b1b);
+}
+
+// Rotating image area
+.cu-slideshow__item-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; // IE and Edge
+  z-index: 1;
+
+  &::-webkit-scrollbar {
+    display: none; // Chrome, Safari, Opera
+  }
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__item-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+
+.cu-slideshow__items {
+  display: flex;
+  gap: 0;
+  height: 100%;
+}
+
+.cu-slideshow__item {
+  width: 100cqw;
+  height: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Image overlay (title and link on image)
+.cu-slideshow__image-overlay {
+  position: absolute;
+  bottom: 5rem;
+  left: var(--cu-ps2, 2rem);
+  right: var(--cu-ps2, 2rem);
+  z-index: 5;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cu-ps2, 2rem);
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__image-overlay {
+    display: flex;
+  }
+}
+
+.cu-slideshow__image-title {
+  margin: 0;
+  font-family: 'Replica', sans-serif;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 44px;
+  color: $white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  flex: 1;
+}
+
+.cu-slideshow__image-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  font-family: 'Replica', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: 40px;
+  color: $white !important;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  transition: gap 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+
+  &:hover {
+    gap: 0.75rem;
+    color: $white !important;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s;
+    stroke: $white;
+  }
+
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+// Play/Pause button states
+cu-slideshow[data-state="paused"] .cu-slideshow__playpause {
+  .pause {
+    display: none;
+  }
+}
+
+cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
+  .play {
+    display: none;
+  }
+}
+
+// Controls container (play/pause + dots)
+.cu-slideshow__controls {
+  position: absolute;
+  bottom: var(--cu-ps2, 2rem);
+  left: var(--cu-ps2, 2rem);
+  z-index: 20;
+  display: flex;
+  gap: var(--cu-ps1, 1rem);
+  align-items: center;
+}
+
+// Pagination dots
+.cu-slideshow__pagination {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.cu-slideshow__dot {
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.15);
+  }
+
+  &.active {
+    background-color: $white;
+    transform: scale(1.2);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $white;
+    outline-offset: 3px;
+  }
+}
+
+// Animation for active dot during auto-play
+cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
+  animation: dot-pulse var(--cu-slideshow-duration, 4s) ease-in-out;
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+// Play/Pause button styling
+.cu-slideshow__playpause {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  color: $white;
+  background-color: $white;
+  border: 2px solid $white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $white;
+    outline-offset: 3px;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  // Icon color
+  .play,
+  .pause {
+    stroke: $black;
+  }
+}
+
+// Hide prev/next navigation buttons
+.cu-slideshow__nav {
+  display: none;
+}
+
+// Static first slide behavior
+cu-slideshow[data-static-first="true"] {
+  .cu-slideshow__item:first-child {
+    scroll-snap-align: none;
+  }
+}

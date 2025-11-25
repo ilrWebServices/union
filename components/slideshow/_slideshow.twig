@@ -1,0 +1,76 @@
+{#
+/**
+ * Slideshow component
+ *
+ * A slideshow with static content card and rotating images.
+ *
+ * @var string $heading Main heading (static, appears in white card)
+ * @var string $subheading Optional subheading (static, appears in white card)
+ * @var array $links Optional links for control (static, appears in white card)
+ * @var array $slides An array of slide data (images that rotate)
+ * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+<cu-slideshow{{ attributes.addClass(['cu-slideshow']) }}>
+  {# Static white content card #}
+  <div class="cu-slideshow__content">
+    {% if heading %}
+      <h2 class="cu-slideshow__heading">{{ heading }}</h2>
+    {% endif %}
+    
+    {% if subheading %}
+      <p class="cu-slideshow__subheading">{{ subheading }}</p>
+    {% endif %}
+    
+    {% if links and links|length > 0 %}
+      <div class="cu-slideshow__actions">
+        {% if links|length == 1 %}
+          {# Single link: render as button #}
+          <a href="{{ links[0].url }}" class="cu-slideshow__button">
+            {{ links[0].title }}
+          </a>
+        {% else %}
+          {# Multiple links (2+): render as dropdown #}
+          <div class="cu-slideshow__select-wrapper">
+            <select class="cu-slideshow__select" aria-label="Navigate to">
+              <option value="" disabled selected>{{ links[0].title }}</option>
+              {% for link in links %}
+                <option value="{{ link.url }}">{{ link.title }}</option>
+              {% endfor %}
+            </select>
+            <svg class="cu-slideshow__select-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Rotating image slides #}
+  <div class="cu-slideshow__item-wrapper">
+    <div class="cu-slideshow__items">
+    {% for slide in slides %}
+      <div class="cu-slideshow__item">
+        {{ slide.media|raw }}
+        {% if slide.image_title or slide.image_link %}
+          <div class="cu-slideshow__image-overlay">
+            {% if slide.image_title %}
+              <h3 class="cu-slideshow__image-title">{{ slide.image_title }}</h3>
+            {% endif %}
+            {% if slide.image_link %}
+              <a href="{{ slide.image_link.url }}" class="cu-slideshow__image-link">
+                {{ slide.image_link.title }}
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</cu-slideshow>
