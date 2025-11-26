@@ -15,6 +15,12 @@ cu-slideshow {
   }
 }
 
+@container (min-width: 1200px) {
+  cu-slideshow {
+    min-height: 800px;
+  }
+}
+
 // Static white content card
 .cu-slideshow__content {
   position: relative;
@@ -22,24 +28,27 @@ cu-slideshow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: var(--cu-ps3, 3rem) var(--cu-ps2, 2rem);
+  padding: 2rem;
   gap: var(--cu-ps1, 1rem);
-  width: 100%;
+  width: calc(100% - 3rem);
   background-color: $white;
   order: -1;
+  margin: 1.5rem;
+  box-shadow: 0 0 0 1.5rem $black;
 }
 
-@container (min-width: 768px) {
+@container (min-width: 1120px) {
   .cu-slideshow__content {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    padding: 50px 48px 48px 56px;
-    width: 42%;
-    max-width: 535px;
+    padding: 2rem;
+    width: 45%;
+    max-width: 500px;
     height: auto;
-    max-height: 70%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-height: 75%;
+    margin: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -53,7 +62,8 @@ cu-slideshow {
 
 @container (min-width: 768px) {
   .cu-slideshow__heading {
-    font-size: 1.875rem;
+    font-size: 2rem;
+    line-height: 1.1;
   }
 }
 
@@ -159,24 +169,15 @@ cu-slideshow {
   }
 }
 
-@container (min-width: 768px) {
-  .cu-slideshow__item-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-  }
-}
-
 .cu-slideshow__items {
   display: flex;
   gap: 0;
-  height: 100%;
+  min-height: 100%;
 }
 
 .cu-slideshow__item {
   width: 100cqw;
-  height: 100%;
+  min-height: 100%;
   scroll-snap-align: start;
   flex-shrink: 0;
   overflow: hidden;
@@ -186,7 +187,45 @@ cu-slideshow {
   video {
     width: 100%;
     height: 100%;
+    min-height: 600px;
     object-fit: cover;
+  }
+
+  // Gradient overlay for better text readability
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.4) 70%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__item {
+    img,
+    video {
+      min-height: 700px;
+    }
+  }
+}
+
+@container (min-width: 1200px) {
+  .cu-slideshow__item {
+    img,
+    video {
+      min-height: 800px;
+    }
   }
 }
 
@@ -196,29 +235,40 @@ cu-slideshow {
   bottom: 5rem;
   left: var(--cu-ps2, 2rem);
   right: var(--cu-ps2, 2rem);
-  z-index: 5;
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--cu-ps2, 2rem);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 @container (min-width: 768px) {
   .cu-slideshow__image-overlay {
-    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom: 5rem;
+    justify-content: space-between;
+    gap: var(--cu-ps2, 2rem);
   }
 }
 
 .cu-slideshow__image-title {
   margin: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 37px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 400;
-  line-height: 44px;
+  line-height: 1.2;
   color: $white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   flex: 1;
+}
+
+@container (min-width: 768px) {
+  .cu-slideshow__image-title {
+    font-size: 30px;
+    line-height: 44px;
+  }
 }
 
 .cu-slideshow__image-link {
@@ -227,10 +277,10 @@ cu-slideshow {
   gap: 0.5rem;
   padding: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 28px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 400 !important;
-  line-height: 40px;
+  line-height: 1.4;
   color: $white !important;
   background-color: transparent;
   border: none;
@@ -256,6 +306,13 @@ cu-slideshow {
   }
 }
 
+@container (min-width: 768px) {
+  .cu-slideshow__image-link {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
 // Play/Pause button states
 cu-slideshow[data-state="paused"] .cu-slideshow__playpause {
   .pause {
@@ -272,18 +329,18 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
 // Controls container (play/pause + dots)
 .cu-slideshow__controls {
   position: absolute;
-  bottom: var(--cu-ps2, 2rem);
-  left: var(--cu-ps2, 2rem);
+  bottom: 1.5rem;
+  left: 1.5rem;
   z-index: 20;
   display: flex;
-  gap: var(--cu-ps1, 1rem);
+  gap: 0.75rem;
   align-items: center;
 }
 
 // Pagination dots
 .cu-slideshow__pagination {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -291,28 +348,28 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
 }
 
 .cu-slideshow__dot {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   padding: 0;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    transform: scale(1.15);
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
   }
 
   &.active {
     background-color: $white;
-    transform: scale(1.2);
+    transform: scale(1.15);
   }
 
   &:focus-visible {
     outline: 2px solid $white;
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
 }
 
@@ -332,39 +389,40 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
 
 // Play/Pause button styling
 .cu-slideshow__playpause {
-  width: 35px;
-  height: 35px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   color: $white;
-  background-color: $white;
-  border: 2px solid $white;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.1);
+    background-color: $white;
+    transform: scale(1.05);
   }
 
   &:focus-visible {
     outline: 2px solid $white;
-    outline-offset: 3px;
+    outline-offset: 2px;
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
   }
 
   // Icon color
   .play,
   .pause {
     stroke: $black;
+    stroke-width: 2;
   }
 }
 
