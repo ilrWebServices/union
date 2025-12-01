@@ -22,7 +22,6 @@
     #observer;
     #timer;
     #isVisible = false;
-    #staticFirst = false;
 
     constructor() {
       super();
@@ -35,7 +34,6 @@
     connectedCallback() {
       this.#items = this.querySelectorAll('.cu-slideshow__item');
       this.#itemsArray = Array.from(this.#items);
-      this.#staticFirst = this.dataset.staticFirst === 'true';
 
       this.#elements.controls.classList.add('cu-slideshow__controls');
       this.#elements.pagination.classList.add('cu-slideshow__pagination');
@@ -144,6 +142,17 @@
         this.delegateClick(event);
       });
 
+      // Ensure we start on the first slide
+      this.#currentItem = 0;
+      this.moveCenter(this.#items[0]);
+
+      // Auto-play after initialization (unless reduced motion is preferred)
+      setTimeout(() => {
+        if (!window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) {
+          this.play();
+        }
+      }, 100);
+
       // Handle dropdown navigation
       const dropdown = this.querySelector('.cu-slideshow__select');
       if (dropdown) {
@@ -153,13 +162,6 @@
           }
         });
       }
-
-      // Auto-play after initialization
-      setTimeout(() => {
-        if (!window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) {
-          this.play();
-        }
-      }, 100);
     }
 
     delegateClick(event) {
@@ -187,29 +189,19 @@
     }
 
     next() {
-      let startIndex = this.#staticFirst ? 1 : 0;
-      let maxIndex = this.#items.length - 1;
-
       this.#currentItem++;
       
-      if (this.#currentItem > maxIndex) {
-        this.#currentItem = startIndex;
-      }
-      
-      // Skip first item if static
-      if (this.#staticFirst && this.#currentItem === 0) {
-        this.#currentItem = 1;
+      if (this.#currentItem > this.#items.length - 1) {
+        this.#currentItem = 0;
       }
 
       this.moveCenter(this.#items[this.#currentItem]);
     }
 
     prev() {
-      let startIndex = this.#staticFirst ? 1 : 0;
-
       this.#currentItem--;
       
-      if (this.#currentItem < startIndex) {
+      if (this.#currentItem < 0) {
         this.#currentItem = this.#items.length - 1;
       }
 
