@@ -7,10 +7,50 @@
   border-radius: 2px;
   border: 2px solid var(--cu-colorscheme-accent);
   padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   width: auto;
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
+}
+
+// When a button in either in a component that is using a light colorscheme, or
+// the component using a light color scheme is nested in another component using
+// any colorscheme.
+.cu-colorscheme--light .cu-button:not(.cu-button--pill),
+[class*="cu-colorscheme--"] .cu-colorscheme--light .cu-button:not(.cu-button--pill) {
+  background-color: transparent;
+  --cu-text-color: var(--cu-color-dark);
+}
+
+// Same as above but for buttons nested in a dark component.
+.cu-colorscheme--dark .cu-button:not(.cu-button--pill),
+[class*="cu-colorscheme--"] .cu-colorscheme--dark .cu-button:not(.cu-button--pill)  {
+  background-color: transparent;
+  --cu-text-color: var(--cu-color-white);
+}
+
+// Same as above but for buttons nested in a vibrant component.
+.cu-colorscheme--vibrant .cu-button:not(.cu-button--pill),
+[class*="cu-colorscheme--"] .cu-colorscheme--vibrant .cu-button:not(.cu-button--pill)  {
+  background-color: transparent;
+  --cu-text-color: var(--cu-color-white);
+}
+
+// TODO: Deal with hover on cards
+.cu-button:not(.cu-button--pill):hover,
+.cu-colorscheme--light .cu-button:not(.cu-button--pill):hover,
+.cu-colorscheme--dark .cu-button:not(.cu-button--pill):hover {
+  background-color: var(--cu-color-brand);
+  color: var(--cu-color-white);
+}
+
+.cu-colorscheme--vibrant .cu-button:not(.cu-button--pill):hover,
+.cu-button:not(.cu-button--overlay).cu-colorscheme--vibrant:hover,
+.cu-button.cu-button--alt:hover {
+  // 2025-11-19: TIL color-mix is a thing! With broad browser support!
+  background-color: color-mix(in oklab, var(--cu-color-brand) 80%, black);
+  --cu-text-color: var(--cu-color-white);
 }
 
 .cu-button--alt {
@@ -26,6 +66,7 @@
 }
 
 .cu-button--pill {
+  background-color: var(--cu-colorscheme-background, var(--cu-color-white));
   border: none;
   border-radius: 1rem;
   padding: 5px var(--cu-ps1);
