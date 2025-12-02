@@ -1,171 +1,187 @@
--
-  demo_label: Default
-  demo_count: 3
-  demo_columns: 3
-  card_link_url: '#'
-  card_link_alt: 'People are people'
-  card_content: |
-    <p class="cu-card__date">July 24, 2019</p>
-    <h2 class="cu-heading cu-card__heading">Once an ILRie, Always an ILRie</h2>
-    <p>Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/720/480" />
--
-  demo_label: Teaser card
-  demo_count: 3
-  demo_columns: 3
-  card_link_url: '#'
-  card_link_alt: 'People are people'
-  heading: Once an ILRie, Always an ILRie
-  eyebrow_heading: July 24, 2048
-  card_content: |
-    <p>Class of 2048 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/720/480" />
-  attributes:
-    class:
-      - 'cu-card--teaser'
--
-  demo_label: Icon card
-  attributes:
-    class:
-      - 'cu-card--icon'
-      - 'cu-text--xl'
-  icon_data:
-    title: Cornell University Tower
-    label: Undergraduate Admissions
-    label_element: h2
-    icon: tower
-    size: 2.5em
-    attributes:
-      class: cu-icon--inline-centered
-    attributes_label:
-      class: cu--accented
--
-  demo_label: Dynamic card
-  demo_count: 3
-  demo_columns: 3
-  heading: Undergraduate Admissions
-  card_content: |
-    <p class="cu-card__hover-content">The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
-  attributes:
-    class:
-      - 'cu-card--dynamic'
-      - 'cu-card--hover-content-reveal'
-  icon_data:
-    title: Cornell University Tower
-    icon: tower
-    size: 2.5em
-    attributes_label:
-      class: cu--accented
--
-  demo_label: Promo
-  attributes:
-    class:
-      - 'cu-card--promo'
-  heading: Your Life Journey Starts Here
-  card_content: |
-    <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
-  card_link_url: '#'
-  card_link_alt: 'Visit Us'
-  button_data:
-    text: 'Read more'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: Promo with media
-  attributes:
-    class:
-      - 'cu-card--promo'
-  card_content: |
-    <h2 class="cu-card__heading">700 Acres</h2>
-    <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/1020/450" alt="Hug a tree today" />
-  card_link_url: '#'
-  card_link_alt: 'Visit Us'
-  button_data:
-    text: 'Visit Us'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: Promo with complex content
-  overflow_demo: true
-  attributes:
-    class:
-      - 'cu-card--promo'
-  icon_data:
-    title: Cornell University
-    icon: 'cornell-seal'
-    size: '2em'
-    attributes:
-      class: 'cu-icon--light'
-  card_content: |
-    <h2 class="cu-card__heading">Visit Cornell ILR</h2>
-    <p>The ILR School and Cornell University admissions information programs and tours are offered throughout the year.</p>
-    <a class="cu-button--overlay cu-button" href="">Visit Us</a>
-    <ul class="cu-card__fact-list">
-      <li class="cu-card__fact">700<span class="cu-card__fact-label">Acre Campus</span></li>
-      <li class="cu-card__fact">4000+<span class="cu-card__fact-label">Courses</span></li>
-      <li class="cu-card__fact">1000+<span class="cu-card__fact-label">Student Organizations</span></li>
-      <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
-      <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
-    </ul>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/1360/656" alt="Cornell is where you want to be" />
--
-  demo_label: Hover overlay
-  attributes:
-    class:
-      - 'cu-card--hover-overlay'
-  card_content: |
-    <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/450/450" alt="Hug a tree today" />
-  card_link_url: '#'
-  card_link_alt: 'View'
-  button_data:
-    text: 'View'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: With aside
-  attributes:
-    class:
-      - 'cu-card--with-aside'
-  card_content: |
-    <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
-    <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/700/440" alt="Undergraduate Admissions" />
-    <div class="cu-image--blurred" style="--cu-bg-image: url(https://picsum.photos/700/440)"></div>
-  card_link_url: '#'
-  card_link_alt: 'Explore'
-  button_data:
-    text: 'Explore'
-    attributes:
-      class: 'cu-button--overlay'
--
-  demo_label: Popout
-  attributes:
-    class:
-      - 'cu-card--popout-right'
-      - 'cu-card--popout'
-  heading: The Popout Experience
-  card_content: |
-    <p>Cornell and ILR
-      provide countless opportunities for
-      personal and professional growth through clubs, research experiences, international
-      internships, global service learning programs and study abroad.</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/1360/700" alt="Cornell is where you want to be" />
-  button_data:
-    text: 'Read more'
+# -
+#   demo_label: Default
+#   demo_count: 3
+#   demo_columns: 3
+#   card_link_url: '#'
+#   card_link_alt: 'People are people'
+#   card_content: |
+#     <p class="cu-card__date">July 24, 2019</p>
+#     <h2 class="cu-heading cu-card__heading">Once an ILRie, Always an ILRie</h2>
+#     <p>Class of 2019 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/720/480" />
+# -
+#   demo_label: Teaser card
+#   demo_count: 3
+#   demo_columns: 3
+#   card_link_url: '#'
+#   card_link_alt: 'People are people'
+#   heading: Once an ILRie, Always an ILRie
+#   eyebrow_heading: July 24, 2048
+#   card_content: |
+#     <p>Class of 2048 members shared memories as they graduated this weekend and Interim Dean Alex Colvin gave them a rousing sendoff: "You haven't won a prize, you have earned an opportunity."</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/720/480" />
+#   attributes:
+#     class:
+#       - 'cu-card--teaser'
+# -
+#   demo_label: Icon card
+#   attributes:
+#     class:
+#       - 'cu-card--icon'
+#       - 'cu-text--xl'
+#   icon_data:
+#     title: Cornell University Tower
+#     label: Undergraduate Admissions
+#     label_element: h2
+#     icon: tower
+#     size: 2.5em
+#     attributes:
+#       class: cu-icon--inline-centered
+#     attributes_label:
+#       class: cu--accented
+# -
+#   demo_label: Dynamic card
+#   demo_count: 3
+#   demo_columns: 3
+#   heading: Undergraduate Admissions
+#   card_content: |
+#     <p class="cu-card__hover-content">The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+#   attributes:
+#     class:
+#       - 'cu-card--dynamic'
+#       - 'cu-card--hover-content-reveal'
+#   icon_data:
+#     title: Cornell University Tower
+#     icon: tower
+#     size: 2.5em
+#     attributes_label:
+#       class: cu--accented
+# -
+#   demo_label: Promo
+#   attributes:
+#     class:
+#       - 'cu-card--promo'
+#   heading: Your Life Journey Starts Here
+#   card_content: |
+#     <p>The ILR major focuses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+#   card_link_url: '#'
+#   card_link_alt: 'Visit Us'
+#   button_data:
+#     text: 'Read more'
+#     attributes:
+#       class: 'cu-button--overlay'
+# -
+#   demo_label: Promo with media
+#   attributes:
+#     class:
+#       - 'cu-card--promo'
+#   card_content: |
+#     <h2 class="cu-card__heading">700 Acres</h2>
+#     <p>Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id. Proin eget ipsum leo. Donec auctor a enim sodales lobortis. In  auctor lacinia lectus id.</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/1020/450" alt="Hug a tree today" />
+#   card_link_url: '#'
+#   card_link_alt: 'Visit Us'
+#   button_data:
+#     text: 'Visit Us'
+#     attributes:
+#       class: 'cu-button--overlay'
+# -
+#   demo_label: Promo with complex content
+#   overflow_demo: true
+#   attributes:
+#     class:
+#       - 'cu-card--promo'
+#   icon_data:
+#     title: Cornell University
+#     icon: 'cornell-seal'
+#     size: '2em'
+#     attributes:
+#       class: 'cu-icon--light'
+#   card_content: |
+#     <h2 class="cu-card__heading">Visit Cornell ILR</h2>
+#     <p>The ILR School and Cornell University admissions information programs and tours are offered throughout the year.</p>
+#     <a class="cu-button--overlay cu-button" href="">Visit Us</a>
+#     <ul class="cu-card__fact-list">
+#       <li class="cu-card__fact">700<span class="cu-card__fact-label">Acre Campus</span></li>
+#       <li class="cu-card__fact">4000+<span class="cu-card__fact-label">Courses</span></li>
+#       <li class="cu-card__fact">1000+<span class="cu-card__fact-label">Student Organizations</span></li>
+#       <li class="cu-card__fact">350<span class="cu-card__fact-label">Study Abroad Programs</span></li>
+#       <li class="cu-card__fact">36<span class="cu-card__fact-label">NCAS Division 1 Sports</span></li>
+#     </ul>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/1360/656" alt="Cornell is where you want to be" />
+# -
+#   demo_label: Hover overlay
+#   attributes:
+#     class:
+#       - 'cu-card--hover-overlay'
+#   card_content: |
+#     <p>Happy first day of classes! Wishing everyone a great start to the semester!</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/450/450" alt="Hug a tree today" />
+#   card_link_url: '#'
+#   card_link_alt: 'View'
+#   button_data:
+#     text: 'View'
+#     attributes:
+#       class: 'cu-button--overlay'
+# -
+#   demo_label: With aside
+#   attributes:
+#     class:
+#       - 'cu-card--with-aside'
+#   card_content: |
+#     <h2 class="cu-card__heading cu-heading--strong">Undergraduate Admissions</h2>
+#     <p>The ILR major focusses on the study of people and policies in the workplace. Explore our wide range of academic interests today.</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/700/440" alt="Undergraduate Admissions" />
+#     <div class="cu-image--blurred" style="--cu-bg-image: url(https://picsum.photos/700/440)"></div>
+#   card_link_url: '#'
+#   card_link_alt: 'Explore'
+#   button_data:
+#     text: 'Explore'
+#     attributes:
+#       class: 'cu-button--overlay'
+# -
+#   demo_label: Popout
+#   attributes:
+#     class:
+#       - 'cu-card--popout-right'
+#       - 'cu-card--popout'
+#   heading: The Popout Experience
+#   card_content: |
+#     <p>Cornell and ILR
+#       provide countless opportunities for
+#       personal and professional growth through clubs, research experiences, international
+#       internships, global service learning programs and study abroad.</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/1360/700" alt="Cornell is where you want to be" />
+#   button_data:
+#     text: 'Read more'
 -
   demo_label: Inset (single)
   attributes:
     class:
       - 'cu-card--inset'
+  heading: Betty Rubble
+  eyebrow_heading: Faculty Member
+  card_content: |
+    <p>See the career-spanning interview with world renowned actor Professor Rubble.</p>
+  card_media: |
+    <img class="cu-image" src="https://picsum.photos/700/400" alt="Cornell is where you want to be" />
+  button_data:
+    text: 'Read the interview'
+  card_link_url: '#'
+  card_link_alt: 'Read the interview'
+-
+  demo_label: Inset (single, preserved aspect ratio)
+  attributes:
+    class:
+      - 'cu-card--inset'
+      - 'cu-card--use-aspect-ratio'
   heading: Betty Rubble
   eyebrow_heading: Faculty Member
   card_content: |
@@ -193,133 +209,133 @@
     text: 'Read the interview'
   card_link_url: '#'
   card_link_alt: 'Read the interview'
--
-  demo_label: Panel
-  attributes:
-    class:
-      - 'cu-card--panel'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  icon_data:
-    icon: profile
-    attributes:
-      class: 'cu-icon--inline'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
-  card_link_url: '#3'
-  card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Panel (`cu-card--panel-left`)
-  attributes:
-    class:
-      - 'cu-card--panel'
-      - 'cu-card--panel-left'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  icon_data:
-    icon: profile
-    attributes:
-      class: 'cu-icon--inline'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
-  card_link_url: '#0'
-  card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Callout
-  attributes:
-    class:
-      - 'cu-card--cinematic'
-  heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
-  eyebrow_heading: 'Welcome to Cornell'
-  card_content: |
-    <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
-  card_link_url: '#0'
-  card_link_alt: 'Read more about Cornell'
-  button_data:
-    text: 'Read more about Cornell'
--
-  demo_label: Cinematic
-  attributes:
-    class:
-      - 'cu-card--cinematic'
-  heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
-  eyebrow_heading: 'Welcome to Cornell'
-  card_content: |
-    <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
-  card_link_url: '#0'
-  card_link_alt: 'Read more about Cornell'
-  button_data:
-    text: 'Read more about Cornell'
--
-  demo_label: Cinematic (Reversed)
-  attributes:
-    class:
-      - 'cu-card--cinematic'
-      - 'cu-card--cinematic-reversed'
-  heading: 'Barney Rubble'
-  eyebrow_heading: 'Associate Professor'
-  card_content: |
-    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
-  card_link_url: '#0'
-  card_link_alt: 'Read more about ILR faculty'
-  button_data:
-    text: 'Read more about ILR faculty'
--
-  demo_label: Post Small
-  attributes:
-    class:
-      - 'cu-card--post-small'
-  heading: 'Explainer: How to form a union'
-  eyebrow_heading: 'Sept 27, 2052'
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/100/100" alt="Photo of architecture" />
-  card_link_url: '#0'
-  card_link_alt: 'Read more'
--
-  demo_label: Stacked
-  attributes:
-    class:
-      - 'cu-card--stacked'
-  demo_count: 3
-  demo_columns: 3
-  heading: 'Undergraduate'
-  card_content: |
-    <p>Our flexible, interdisciplinary major lets students pursue a wide range of academic interests and careers in: business, economics, government, history, international relations, labor relations, law, public policy, and social justice."</p>
-  card_media: |
-    <img class="cu-image" src="https://picsum.photos/432/460" />
-  card_link_url: '#'
-  card_link_alt: 'Undergraduate Admissions'
-  button_data:
-    text: 'Undergraduate Admissions'
--
-  demo_label: Stacked with color scheme and no media
-  attributes:
-    class:
-      - 'cu-card--stacked'
-      - 'cu-colorscheme--vibrant'
-  demo_count: 3
-  demo_columns: 3
-  heading: 'Online'
-  card_content: |
-    <p>Make your gift online to direct your support today!</p>
-  card_link_url: '#'
-  card_link_alt: 'Online'
-  icon_data:
-    title: Cornell University Tower
-    label_element: h2
-    icon: tower
-    size: 2.5em
-  button_data:
-    text: 'Make your gift'
+# -
+#   demo_label: Panel
+#   attributes:
+#     class:
+#       - 'cu-card--panel'
+#   heading: 'Barney Rubble'
+#   eyebrow_heading: 'Associate Professor'
+#   icon_data:
+#     icon: profile
+#     attributes:
+#       class: 'cu-icon--inline'
+#   card_content: |
+#     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
+#   card_link_url: '#3'
+#   card_link_alt: 'Read more about ILR faculty'
+#   button_data:
+#     text: 'Read more about ILR faculty'
+# -
+#   demo_label: Panel (`cu-card--panel-left`)
+#   attributes:
+#     class:
+#       - 'cu-card--panel'
+#       - 'cu-card--panel-left'
+#   heading: 'Barney Rubble'
+#   eyebrow_heading: 'Associate Professor'
+#   icon_data:
+#     icon: profile
+#     attributes:
+#       class: 'cu-icon--inline'
+#   card_content: |
+#     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
+#   card_link_url: '#0'
+#   card_link_alt: 'Read more about ILR faculty'
+#   button_data:
+#     text: 'Read more about ILR faculty'
+# -
+#   demo_label: Callout
+#   attributes:
+#     class:
+#       - 'cu-card--cinematic'
+#   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
+#   eyebrow_heading: 'Welcome to Cornell'
+#   card_content: |
+#     <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
+#   card_link_url: '#0'
+#   card_link_alt: 'Read more about Cornell'
+#   button_data:
+#     text: 'Read more about Cornell'
+# -
+#   demo_label: Cinematic
+#   attributes:
+#     class:
+#       - 'cu-card--cinematic'
+#   heading: 'Cornell University Offers Over 4000 Courses with 1,695 Professors'
+#   eyebrow_heading: 'Welcome to Cornell'
+#   card_content: |
+#     <p>Cornell is a privately endowed research university and a partner of the State University of New York. As the federal land-grant institution in New York State, we have a responsibility—unique within the Ivy League—to make contributions in all fields of knowledge in a manner that prioritizes public engagement to help improve the quality of life in our state, the nation, the world.</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
+#   card_link_url: '#0'
+#   card_link_alt: 'Read more about Cornell'
+#   button_data:
+#     text: 'Read more about Cornell'
+# -
+#   demo_label: Cinematic (Reversed)
+#   attributes:
+#     class:
+#       - 'cu-card--cinematic'
+#       - 'cu-card--cinematic-reversed'
+#   heading: 'Barney Rubble'
+#   eyebrow_heading: 'Associate Professor'
+#   card_content: |
+#     <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/1200/514" alt="Undergraduate Admissions" />
+#   card_link_url: '#0'
+#   card_link_alt: 'Read more about ILR faculty'
+#   button_data:
+#     text: 'Read more about ILR faculty'
+# -
+#   demo_label: Post Small
+#   attributes:
+#     class:
+#       - 'cu-card--post-small'
+#   heading: 'Explainer: How to form a union'
+#   eyebrow_heading: 'Sept 27, 2052'
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/100/100" alt="Photo of architecture" />
+#   card_link_url: '#0'
+#   card_link_alt: 'Read more'
+# -
+#   demo_label: Stacked
+#   attributes:
+#     class:
+#       - 'cu-card--stacked'
+#   demo_count: 3
+#   demo_columns: 3
+#   heading: 'Undergraduate'
+#   card_content: |
+#     <p>Our flexible, interdisciplinary major lets students pursue a wide range of academic interests and careers in: business, economics, government, history, international relations, labor relations, law, public policy, and social justice."</p>
+#   card_media: |
+#     <img class="cu-image" src="https://picsum.photos/432/460" />
+#   card_link_url: '#'
+#   card_link_alt: 'Undergraduate Admissions'
+#   button_data:
+#     text: 'Undergraduate Admissions'
+# -
+#   demo_label: Stacked with color scheme and no media
+#   attributes:
+#     class:
+#       - 'cu-card--stacked'
+#       - 'cu-colorscheme--vibrant'
+#   demo_count: 3
+#   demo_columns: 3
+#   heading: 'Online'
+#   card_content: |
+#     <p>Make your gift online to direct your support today!</p>
+#   card_link_url: '#'
+#   card_link_alt: 'Online'
+#   icon_data:
+#     title: Cornell University Tower
+#     label_element: h2
+#     icon: tower
+#     size: 2.5em
+#   button_data:
+#     text: 'Make your gift'

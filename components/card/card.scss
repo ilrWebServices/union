@@ -155,6 +155,7 @@
         aspect-ratio: 1/2;
         width: 100%;
         height: 100%;
+        object-fit: cover;
 
         @container (min-width: 37.5rem) {
           aspect-ratio: var(--image-aspect-ratio);
@@ -175,6 +176,28 @@
       @container (min-width: 37.5rem) {
         right: unset;
         left: var(--cu-ps1);
+      }
+    }
+  }
+
+  &--inset.cu-card--use-aspect-ratio {
+    background-color: #b31b1b;
+
+    .cu-card__content {
+      position: relative;
+      top: unset;
+      bottom: unset;
+      left: unset;
+      right: unset;
+      margin: var(--cu-vr1) var(--cu-ps1) -20px;
+
+
+      @container (min-width: 37.5rem) {
+        position: absolute;
+        // top: var(--cu-vr1);
+        // bottom: unset;
+        // left: unset;
+        // right: unset;
       }
     }
   }
