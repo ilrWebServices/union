@@ -382,3 +382,60 @@
   }
 }
 /*=====  End of Hero banner  ======*/
+
+/*=============================================
+=            Banner modifiers                 =
+=============================================*/
+
+/**
+ * Hide frame - removes padding/border styling from the banner.
+ */
+.cu-banner--hide-frame {
+  &.cu-banner--page {
+    padding: 0;
+
+    .cu-banner__content {
+      padding: var(--cu-vr1);
+
+      @include breakpoint(sm) {
+        padding: var(--cu-vr1) var(--cu-vr2);
+      }
+
+      @include breakpoint(md) {
+        padding: var(--cu-vr1) var(--cu-vr4);
+      }
+    }
+  }
+}
+
+/**
+ * Text center - centers text content in the banner.
+ */
+.cu-banner--text-center {
+  .cu-banner__content {
+    text-align: center;
+  }
+
+  .cu-composite-heading {
+    text-align: center;
+  }
+
+  .cu-button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/**
+ * Full bleed - extends the banner to full viewport width.
+ */
+.cu-banner--full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/*=====  End of Banner modifiers  ======*/
