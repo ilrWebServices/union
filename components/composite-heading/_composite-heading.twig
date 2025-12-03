@@ -44,7 +44,13 @@
     <div class="cu-composite-heading__body">{{ body }}</div>
   {% endif %}
   {% if link and link_location == 'text' %}
-    {% if attributes.hasClass('cu-composite-heading--left') %}
+    {% if attributes.hasClass('cu-composite-heading--compact') %}
+    {% include '@union/_button.twig' with {
+      text: link.text,
+      url: link.url,
+      attributes: { class: ['cu-composite-heading__link', 'cu-button--alt'] }
+    } only %}
+    {% elseif attributes.hasClass('cu-composite-heading--left') %}
     {% include '@union/_button.twig' with {
       text: link.text,
       url: link.url,

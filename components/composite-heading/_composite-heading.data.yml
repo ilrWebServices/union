@@ -56,3 +56,35 @@
     url: "#"
     text: View All News
   link_location: heading
+-
+  demo_label: 'Compact'
+  heading: 'Latest Public Impact'
+  body: 'Dive into our latest stories of research, advocacy, and action shaping a just and sustainable future.'
+  link:
+    url: "#"
+    text: See all news
+  attributes:
+    class: 'cu-composite-heading--compact'
+-
+  demo_label: 'Compact with icon'
+  heading: 'Latest Public Impact'
+  body: 'Dive into our latest stories of research, advocacy, and action shaping a just and sustainable future.'
+  icon_data:
+    icon: tower
+  link:
+    url: "#"
+    text: See all news
+  attributes:
+    class: 'cu-composite-heading--compact'
+-
+  demo_label: 'Compact with the works'
+  heading: 'Latest Public Impact'
+  eyebrow_heading: 'Latest stories'
+  body: 'Dive into our latest stories of research, advocacy, and action shaping a just and sustainable future.'
+  icon_data:
+    icon: tower
+  link:
+    url: "#"
+    text: See all news
+  attributes:
+    class: 'cu-composite-heading--compact'

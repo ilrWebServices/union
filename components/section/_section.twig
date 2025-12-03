@@ -10,6 +10,7 @@
  * @var array $link An optional array with `url` and `text` keys.
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var string $content Any old HTML markup or content.
+ * @var bool $compact Use compact heading style.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  *
  * @union-variation cu-section--wide Supersized!
@@ -18,9 +19,11 @@
  * @union-variation cu-section--framed-right Places the frame to the right. Use with `cu-section--framed`.
  * @union-variation cu-section--left Moves the headings, icon, etc. to the left in a column.
  * @union-variation cu-section--centered Centers content vertically in columns when using `cu-section--left`.
+ * @union-variation cu-section--compact Uses compact heading style with left-aligned heading, subheading below, and link as button on right.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
+{% set is_compact = compact|default(false) or attributes.hasClass('cu-section--compact') %}
 
 <section{{attributes.addClass('cu-section')}}>
   {% if icon_data or eyebrow_heading or heading %}
@@ -33,8 +36,9 @@
     attributes: {
       class: [
         'cu-section__heading',
-        attributes.hasClass('cu-section--left') ? 'cu-composite-heading--left',
-        not attributes.hasClass('cu-section--left') ? 'cu-composite-heading--minimal',
+        is_compact ? 'cu-composite-heading--compact',
+        not is_compact and attributes.hasClass('cu-section--left') ? 'cu-composite-heading--left',
+        not is_compact and not attributes.hasClass('cu-section--left') ? 'cu-composite-heading--minimal',
       ]
     }
   } only %}
