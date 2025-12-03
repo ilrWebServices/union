@@ -173,7 +173,7 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
 
 /* Compact Section Gallery */
 
-/* Mobile: centered snap, show partial cards on sides, hide scrollbar */
+/* Hide scrollbar */
 .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item-wrapper {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE/Edge */
@@ -183,17 +183,23 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
   display: none; /* Chrome/Safari/Opera */
 }
 
-.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
-  width: 75%;
-  scroll-snap-align: center;
-}
-
-/* Mobile: hide navigation arrows, show dots */
-.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev,
-.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+/* Hide blank slides at beginning and end */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item--blank {
   display: none;
 }
 
+/* Left-align snap for all items */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
+  width: 75%;
+  scroll-snap-align: start;
+}
+
+/* Remove greyed-out/dimming effect on partially hidden items */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item.obscured {
+  opacity: 1;
+}
+
+/* Left-align pager/thumbnails */
 .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnails {
   display: flex;
   gap: var(--cu-ps0);
@@ -201,11 +207,6 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
   margin: 0;
   padding: var(--cu-vr0) 0 0 0;
   list-style-type: none;
-}
-
-/* Remove greyed-out effect on non-focused cards */
-.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item.obscured {
-  opacity: 1;
 }
 
 .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnail {
@@ -225,7 +226,40 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
   background-color: var(--cu-text-color, black);
 }
 
-/* Tablet+: start-aligned snap, 4 cards visible, hide dots, show arrows */
+/* Styled navigation arrows - white circle with red chevron (all breakpoints) */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev,
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  top: 30%;
+  z-index: 10;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev {
+  left: 5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' stroke='%23B31B1B' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 18l-6-6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+  right: 5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' stroke='%23B31B1B' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18l6-6-6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+}
+
+
+/* Tablet+: adjust sizes, hide dots */
 @media (min-width: 37.5rem) {
   .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__items {
     justify-content: flex-start;
@@ -240,9 +274,22 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
     display: none;
   }
 
+  /* Larger arrows at tablet+ */
   .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev,
   .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
-    display: flex;
+    width: 44px;
+    height: 44px;
+    top: calc(50% - 60px);
+  }
+
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev {
+    left: 0;
+    background-size: 20px;
+  }
+
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+    right: 0;
+    background-size: 20px;
   }
 }
 
@@ -250,5 +297,12 @@ cu-gallery.cu-gallery--content .cu-gallery__item iframe {
   .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
     width: calc(25% - 15px);
     min-width: 200px;
+  }
+
+  /* Hide navigation arrows when 4 or fewer items at desktop */
+  /* Uses :has() to check if there are NOT more than 4 real items */
+  .cu-section--compact cu-gallery.cu-gallery--content:not(:has(.cu-gallery__item:not(.cu-gallery__item--blank):nth-child(n+6))) .cu-gallery__navigation-prev,
+  .cu-section--compact cu-gallery.cu-gallery--content:not(:has(.cu-gallery__item:not(.cu-gallery__item--blank):nth-child(n+6))) .cu-gallery__navigation-next {
+    display: none;
   }
 }
