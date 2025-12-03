@@ -46,36 +46,20 @@
   demo_label: Content Gallery (content cards/teasers)
   items:
     - |
-      <article class="cu-card">
-        <div class="cu-card__media"><span class="cu-tag">Public Impact</span><img class="cu-image" src="https://picsum.photos/id/10/600/400" /></div>
-        <div class="cu-card__content">
-          <h3 class="cu-heading">Climate Jobs Institute Helps Rank-and-File Union Members Advocate for Maine's Clean Energy Future</h3>
-          <div class="cu-card__date">June 12, 2025</div>
-        </div>
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
       </article>
     - |
-      <article class="cu-card">
-        <div class="cu-card__media"><span class="cu-tag">Public Impact</span><img class="cu-image" src="https://picsum.photos/id/11/600/400" /></div>
-        <div class="cu-card__content">
-          <h3 class="cu-heading">Climate Jobs Institute Charts New York's Clean Energy Progress and Path Ahead</h3>
-          <div class="cu-card__date">June 12, 2025</div>
-        </div>
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content. No need for new card examples, because pretty much anything could go here.
       </article>
     - |
-      <article class="cu-card">
-        <div class="cu-card__media"><span class="cu-tag">In the Media</span><img class="cu-image" src="https://picsum.photos/id/12/600/400" /></div>
-        <div class="cu-card__content">
-          <h3 class="cu-heading">New York's Potential Green Energy Job Future</h3>
-          <div class="cu-card__date">June 10, 2025</div>
-        </div>
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
       </article>
     - |
-      <article class="cu-card">
-        <div class="cu-card__media"><span class="cu-tag">Public Impact</span><img class="cu-image" src="https://picsum.photos/id/13/600/400" /></div>
-        <div class="cu-card__content">
-          <h3 class="cu-heading">The Story Lives in the Body: Theater-Making as Movement-Building in the Pro-Worker Clean Energy Transition</h3>
-          <div class="cu-card__date">June 10, 2025</div>
-        </div>
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
       </article>
   attributes:
     class: 'cu-gallery--content'
