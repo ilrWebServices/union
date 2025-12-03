@@ -54,14 +54,14 @@
     {% for slide in slides %}
       <div class="cu-slideshow__item">
         {{ slide.media|raw }}
-        {% if slide.image_title or slide.image_link %}
+        {% if slide.heading or slide.link %}
           <div class="cu-slideshow__image-overlay">
-            {% if slide.image_title %}
-              <h3 class="cu-slideshow__image-title">{{ slide.image_title }}</h3>
+            {% if slide.heading %}
+              <h3 class="cu-slideshow__image-title">{{ slide.heading }}</h3>
             {% endif %}
-            {% if slide.image_link %}
-              <a href="{{ slide.image_link.url }}" class="cu-slideshow__image-link">
-                {{ slide.image_link.title }}
+            {% if slide.link %}
+              <a href="{{ slide.link.url }}" class="cu-slideshow__image-link">
+                {{ slide.link.title }}
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
