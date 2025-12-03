@@ -27,7 +27,6 @@
     letter-spacing: 0.1em;
     order: 2;
     margin: 0;
-    // This effectively narrows the flex row gap below this item.
     margin-bottom: calc(var(--cu-vr-1) * -1);
   }
 
@@ -86,6 +85,67 @@
 
       @include breakpoint(md) {
         --cu-font-size: var(--cu-ms7);
+      }
+    }
+  }
+
+  // Compact variant: left-aligned heading with body below, link as filled button on right
+  &--compact {
+    --cu-composite-heading-align: flex-start;
+    --cu-composite-heading-text-align: left;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--cu-vr-1);
+
+    .cu-icon {
+      order: 1;
+      margin: 0;
+    }
+
+    .cu-composite-heading__heading {
+      order: 2;
+    }
+
+    // Hide eyebrow in compact mode - use body instead
+    .cu-composite-heading__eyebrow-heading {
+      display: none;
+    }
+
+    .cu-composite-heading__body {
+      order: 3;
+      font-weight: 400;
+    }
+
+    .cu-composite-heading__link {
+      order: 4;
+      margin-bottom: 0;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    // Tablet+: row layout with button on right
+    @include breakpoint(sm) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--cu-vr-1) var(--cu-ps1);
+
+      .cu-composite-heading__heading {
+        order: 2;
+        flex-grow: 1;
+      }
+
+      .cu-composite-heading__body {
+        order: 4;
+        flex-basis: 100%;
+        margin-top: calc(var(--cu-vr-1) * -1);
+      }
+
+      .cu-composite-heading__link {
+        order: 3;
       }
     }
   }
