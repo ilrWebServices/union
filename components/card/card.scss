@@ -716,3 +716,48 @@
   background: transparent;
   pointer-events: all;
 }
+
+/*----------  Carousel Card (Compact Section)  ----------*/
+.cu-section--compact .cu-card--carousel {
+  --cu-composite-heading-align: flex-start;
+  --cu-composite-heading-text-align: left;
+  background: transparent;
+
+  .cu-card__content {
+    padding: 0;
+    background: transparent;
+  }
+
+  .cu-card__meta {
+    margin-bottom: var(--cu-vr0);
+
+    // Red bar separator after heading
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 8px;
+      background-color: var(--cu-color-brand);
+      margin-top: var(--cu-vr0);
+    }
+  }
+
+  .cu-composite-heading__heading {
+    font-family: "Replica Std", sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+
+  .cu-card__date {
+    color: #6C6C6C;
+    font-family: "Replica Std", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+}

@@ -147,3 +147,108 @@ cu-gallery[class*="cu-colorscheme--"] {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+/* Content Gallery variant - for displaying content cards/teasers */
+cu-gallery.cu-gallery--content .cu-gallery__item {
+  max-width: none;
+  width: 280px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+@media (min-width: 37.5rem) {
+  cu-gallery.cu-gallery--content .cu-gallery__item {
+    width: 300px;
+  }
+}
+
+cu-gallery.cu-gallery--content .cu-gallery__item img,
+cu-gallery.cu-gallery--content .cu-gallery__item video,
+cu-gallery.cu-gallery--content .cu-gallery__item iframe {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+/* Compact Section Gallery */
+
+/* Mobile: centered snap, show partial cards on sides, hide scrollbar */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item-wrapper {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
+  width: 75%;
+  scroll-snap-align: center;
+}
+
+/* Mobile: hide navigation arrows, show dots */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev,
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+  display: none;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnails {
+  display: flex;
+  gap: var(--cu-ps0);
+  justify-content: flex-start;
+  margin: 0;
+  padding: var(--cu-vr0) 0 0 0;
+  list-style-type: none;
+}
+
+/* Remove greyed-out effect on non-focused cards */
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item.obscured {
+  opacity: 1;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnail {
+  cursor: pointer;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnail::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  border: 1px solid var(--cu-text-color, black);
+  border-radius: 7.5em;
+}
+
+.cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnail.active::before {
+  background-color: var(--cu-text-color, black);
+}
+
+/* Tablet+: start-aligned snap, 4 cards visible, hide dots, show arrows */
+@media (min-width: 37.5rem) {
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__items {
+    justify-content: flex-start;
+  }
+
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
+    width: 220px;
+    scroll-snap-align: start;
+  }
+
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__thumbnails {
+    display: none;
+  }
+
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-prev,
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
+    display: flex;
+  }
+}
+
+@media (min-width: 61rem) {
+  .cu-section--compact cu-gallery.cu-gallery--content .cu-gallery__item {
+    width: calc(25% - 15px);
+    min-width: 200px;
+  }
+}
