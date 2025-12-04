@@ -42,3 +42,24 @@
       <img class="cu-image" src="https://picsum.photos/id/17/800/1200" />
     - |
       <img class="cu-image" src="https://picsum.photos/id/18/1200/800" />
+-
+  demo_label: Content Gallery (content cards/teasers)
+  items:
+    - |
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
+      </article>
+    - |
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content. No need for new card examples, because pretty much anything could go here.
+      </article>
+    - |
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
+      </article>
+    - |
+      <article class="cu-card" style="background: #ddd; height: 100%; padding: 1em;">
+        Any kind of HTML content.
+      </article>
+  attributes:
+    class: 'cu-gallery--content'

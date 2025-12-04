@@ -8,6 +8,8 @@
  * @var string $attribution Some text attributing the photographer/videographer and maybe some copyright info.
  * @var array $items An array of items, typically images.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
+ *
+ * @union-variation cu-gallery--content Content Gallery variant for displaying content cards/teasers in a carousel.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
