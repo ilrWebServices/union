@@ -1,28 +1,28 @@
 {#
 /**
- * Slideshow component
+ * Slideshow
  *
  * A slideshow with static content card and rotating images.
  *
  * @var string $heading Main heading (static, appears in white card)
  * @var string $subheading Optional subheading (static, appears in white card)
  * @var array $links Optional links for control (static, appears in white card)
- * @var array $slides An array of slide data (images that rotate)
+ * @var array $slides An array of slide data (images that rotate). Each slide can include `heading`, `subheading`, `media`, and `link`, which itself has `url` and `title` properties.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  */
 #}
 {% set attributes = union_attributes(attributes|default([])) %}
 <cu-slideshow{{ attributes.addClass(['cu-slideshow']) }}>
-  {# Static white content card #}
+  {# Static white content box #}
   <div class="cu-slideshow__content">
     {% if heading %}
       <h2 class="cu-slideshow__heading">{{ heading }}</h2>
     {% endif %}
-    
+
     {% if subheading %}
       <p class="cu-slideshow__subheading">{{ subheading }}</p>
     {% endif %}
-    
+
     {% if links and links|length > 0 %}
       <div class="cu-slideshow__actions">
         {% if links|length == 1 %}
