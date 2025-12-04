@@ -27,9 +27,11 @@
       <div class="cu-slideshow__actions">
         {% if links|length == 1 %}
           {# Single link: render as button #}
-          <a href="{{ links[0].url }}" class="cu-slideshow__button">
-            {{ links[0].title }}
-          </a>
+          {% include '@union/_button.twig' with {
+            text: links[0].title|default('Read More'),
+            url: links[0].url,
+            attributes: { 'class': 'cu-slideshow__button' }
+          } only %}
         {% else %}
           {# Multiple links (2+): render as dropdown #}
           <div class="cu-slideshow__select-wrapper">
