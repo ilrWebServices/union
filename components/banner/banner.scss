@@ -426,16 +426,4 @@
   }
 }
 
-/**
- * Full bleed - extends the banner to full viewport width.
- */
-.cu-banner--full-bleed {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-}
-
 /*=====  End of Banner modifiers  ======*/
