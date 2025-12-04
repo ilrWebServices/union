@@ -103,7 +103,7 @@
       margin: 0;
     }
 
-    .cu-composite-heading__heading {
+    &:has(.cu-composite-heading__link) .cu-composite-heading__heading {
       --cu-font-size: var(--cu-ms8);
     }
 
