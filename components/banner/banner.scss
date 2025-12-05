@@ -2,6 +2,8 @@
 
 .cu-banner {
   position: relative;
+  --cu-composite-heading-align: start;
+  --cu-composite-heading-text-align: start;
 }
 
 /*=============================================
@@ -81,6 +83,8 @@
 =============================================*/
 .cu-banner--page {
   padding: var(--cu-vr1);
+  --cu-composite-heading-align: center;
+  --cu-composite-heading-text-align: center;
 
   &.cu-banner--with-media {
     // Override any colorscheme.
@@ -391,17 +395,11 @@
  * Text center - centers text content in the banner.
  */
 .cu-banner--text-center {
+  --cu-composite-heading-align: center;
+  --cu-composite-heading-text-align: center;
+
   .cu-banner__content {
     text-align: center;
-  }
-
-  .cu-composite-heading {
-    text-align: center;
-  }
-
-  .cu-button {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
