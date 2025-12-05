@@ -85,3 +85,29 @@
     <img class="cu-image" src="https://picsum.photos/896/752" alt="Undergraduate Admissions" />
   link_url: '#0'
   link_text: 'Read more about ILR faculty'
+-
+  demo_label: Full bleed (choose colorscheme to test)
+  attributes:
+    class:
+      - 'cu-banner--full-bleed'
+  heading: 'Barney Rubble'
+  eyebrow_heading: 'Associate Professor'
+  icon_data:
+    icon: profile
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  link_url: '#0'
+  link_text: 'Read more about ILR faculty'
+-
+  demo_label: Center text
+  attributes:
+    class:
+      - 'cu-banner--text-center'
+  heading: 'Barney Rubble'
+  eyebrow_heading: 'Associate Professor'
+  icon_data:
+    icon: profile
+  content: |
+    <p>At ILR we want to provide our students on campus and in our outreach education with more international and comparative course work to prepare them for careers that will take them abroad</p>
+  link_url: '#0'
+  link_text: 'Read more about ILR faculty'
