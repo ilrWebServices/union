@@ -4,18 +4,26 @@
   position: relative;
   --cu-composite-heading-align: start;
   --cu-composite-heading-text-align: start;
+
+  &[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr0) 0;
+  }
 }
 
 /*=============================================
 =            Panel banner            =
 =============================================*/
 .cu-banner--panel {
-  padding: 1em 33% 1em 2em;
+  &, &[class*="cu-colorscheme--"] {
+    padding: 1em 33% 1em 2em;
+  }
 
   @include breakpoint(md) {
     display: grid;
     grid-template-columns: 66% 34%;
-    padding: 0;
+    &, &[class*="cu-colorscheme--"] {
+      padding: 0;
+    }
   }
 
   .cu-banner__content {
@@ -82,9 +90,12 @@
 =            Page banner                      =
 =============================================*/
 .cu-banner--page {
-  padding: var(--cu-vr1);
   --cu-composite-heading-align: center;
   --cu-composite-heading-text-align: center;
+
+  &, &[class*="cu-colorscheme--"] {
+    padding: var(--cu-vr1);
+  }
 
   &.cu-banner--with-media {
     // Override any colorscheme.
@@ -99,11 +110,15 @@
   }
 
   @include breakpoint(sm) {
-    padding: var(--cu-vr1) var(--cu-vr2);
+    &, &[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr1) var(--cu-vr2);
+    }
   }
 
   @include breakpoint(md) {
-    padding: var(--cu-vr1) var(--cu-vr4);
+    &, &[class*="cu-colorscheme--"] {
+      padding: var(--cu-vr1) var(--cu-vr4);
+    }
   }
 
   .cu-breadcrumb {
@@ -186,6 +201,10 @@
 =            Video banner                     =
 =============================================*/
 .cu-banner--video {
+  &[class*="cu-colorscheme--"] {
+    padding: 0;
+  }
+
   .cu-banner__content {
     position: absolute;
     pointer-events: none;
@@ -250,6 +269,10 @@
   display: grid;
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
+
+  &[class*="cu-colorscheme--"] {
+    padding: 0;
+  }
 
   > * {
     grid-column: 1;
