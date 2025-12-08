@@ -54,24 +54,22 @@ cu-slideshow {
 
 .cu-slideshow__heading {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
   color: var(--cu-color-text, #000);
+  --cu-font-size: var(--cu-ms4);
 }
 
 @container (min-width: 768px) {
   .cu-slideshow__heading {
-    font-size: 2rem;
+    --cu-font-size: var(--cu-ms8);
     line-height: 1.1;
   }
 }
 
 .cu-slideshow__subheading {
   margin: 0;
-  font-size: 20px;
+  --cu-font-size: var(--cu-ms0);
+  --cu-font-weight: 400;
   font-style: normal;
-  font-weight: 400;
   line-height: 30px; /* 150% */
   font-family: 'Replica', sans-serif;
   color: var(--cu-color-text, #000);
@@ -89,10 +87,10 @@ cu-slideshow {
   width: 100%;
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-size: 1rem;
-  font-weight: 600;
   color: var(--cu-color-brand, #b31b1b);
   background-color: $white;
   border: 1px solid $black;
+  --cu-font-weight: 600;
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -111,7 +109,7 @@ cu-slideshow {
 
     &:disabled {
       color: var(--cu-color-brand, #b31b1b);
-      font-weight: 600;
+      --cu-font-weight: 600;
     }
   }
 }
@@ -227,9 +225,9 @@ cu-slideshow {
 .cu-slideshow__item-title {
   margin: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 24px;
+  --cu-font-size: var(--cu-ms4);
   font-style: normal;
-  font-weight: 400;
+  --cu-font-weight: 400;
   line-height: 1.2;
   color: $white;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
@@ -238,7 +236,7 @@ cu-slideshow {
 
 @container (min-width: 768px) {
   .cu-slideshow__item-title {
-    font-size: 30px;
+    --cu-font-size: var(--cu-ms5);
     line-height: 44px;
   }
 }
@@ -249,9 +247,9 @@ cu-slideshow {
   gap: 0.5rem;
   padding: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 18px;
+  --cu-font-size: var(--cu-ms1);
   font-style: normal;
-  font-weight: 400 !important;
+  --cu-font-weight: 400;
   line-height: 1.4;
   color: $white !important;
   background-color: transparent;
@@ -280,7 +278,7 @@ cu-slideshow {
 
 @container (min-width: 768px) {
   .cu-slideshow__item-link {
-    font-size: 28px;
+    --cu-font-size: var(--cu-ms2);
     line-height: 40px;
   }
 }
