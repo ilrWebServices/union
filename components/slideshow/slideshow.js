@@ -134,10 +134,9 @@
       if (this.#dots.includes(event.target)) {
         this.#currentItem = parseInt(event.target.dataset.item);
         this.moveCenter(this.#items[this.#currentItem]);
-        this.pause();
       }
 
-      // Removed prev/next button handling since we're not using those buttons anymore
+      this.pause();
     }
 
     next() {
