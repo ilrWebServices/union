@@ -43,11 +43,6 @@
       this.#elements.controls.append(this.#elements.play_pause);
       this.#elements.controls.append(this.#elements.pagination);
 
-      // Honor prefers-reduced-motion
-      if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
-        this.dataset.state = 'paused';
-      }
-
       this.#observer = new IntersectionObserver((entries, observer) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
@@ -82,9 +77,10 @@
       const in_view_observer = new IntersectionObserver((entries, observer) => {
         // Since only one item, this slideshow, is observed, the array will always only have one item.
         this.#isVisible = entries[0].isIntersecting;
+        this.dataset.visible = this.#isVisible;
       }, {
         root: document,
-        threshold: .25,
+        threshold: .75,
       });
 
       in_view_observer.observe(this);
@@ -136,22 +132,17 @@
         }
       });
 
-      this.pause();
+      // Honor prefers-reduced-motion
+      if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
+        this.pause();
+      }
+      else {
+        this.play();
+      }
 
       this.addEventListener('click', (event) => {
         this.delegateClick(event);
       });
-
-      // Ensure we start on the first slide
-      this.#currentItem = 0;
-      this.moveCenter(this.#items[0]);
-
-      // Auto-play after initialization (unless reduced motion is preferred)
-      setTimeout(() => {
-        if (!window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) {
-          this.play();
-        }
-      }, 100);
 
       // Handle dropdown navigation
       const dropdown = this.querySelector('.cu-slideshow__select');
