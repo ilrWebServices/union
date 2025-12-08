@@ -96,42 +96,6 @@
         }
       });
 
-      // Pause on hover
-      this.addEventListener("mouseenter", () => {
-        if (this.dataset.state === 'playing') {
-          this.pause();
-        }
-      });
-
-      // Resume on mouse leave (if it was playing before)
-      this.addEventListener("mouseleave", () => {
-        if (this.dataset.state === 'paused' && !this.dataset.userPaused) {
-          this.play();
-        }
-      });
-
-      // Pause on focus
-      this.addEventListener("focusin", () => {
-        if (this.dataset.state === 'playing') {
-          this.pause();
-        }
-      });
-
-      // Keyboard navigation
-      this.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          this.prev();
-          this.pause();
-          this.dataset.userPaused = 'true';
-        } else if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          this.next();
-          this.pause();
-          this.dataset.userPaused = 'true';
-        }
-      });
-
       // Honor prefers-reduced-motion
       if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
         this.pause();
@@ -159,11 +123,9 @@
       if (event.target === this.#elements.play_pause || event.target.closest('.cu-slideshow__playpause')) {
         if (this.dataset.state === 'paused') {
           this.play();
-          this.dataset.userPaused = 'false';
         }
         else {
           this.pause();
-          this.dataset.userPaused = 'true';
         }
 
         return;
@@ -173,7 +135,6 @@
         this.#currentItem = parseInt(event.target.dataset.item);
         this.moveCenter(this.#items[this.#currentItem]);
         this.pause();
-        this.dataset.userPaused = 'true';
       }
 
       // Removed prev/next button handling since we're not using those buttons anymore
