@@ -64,7 +64,7 @@
       for (const item of this.#items) {
         this.#observer.observe(item);
         item.dataset.item = this.#itemsArray.indexOf(item);
-        
+
         let dot = document.createElement('button');
         dot.classList.add('cu-slideshow__dot');
         dot.dataset.item = this.#itemsArray.indexOf(item);
@@ -151,7 +151,7 @@
 
     next() {
       this.#currentItem++;
-      
+
       if (this.#currentItem > this.#items.length - 1) {
         this.#currentItem = 0;
       }
@@ -161,7 +161,7 @@
 
     prev() {
       this.#currentItem--;
-      
+
       if (this.#currentItem < 0) {
         this.#currentItem = this.#items.length - 1;
       }
