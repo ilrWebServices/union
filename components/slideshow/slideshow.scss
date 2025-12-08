@@ -214,7 +214,7 @@ cu-slideshow {
   .cu-slideshow__item-content {
     left: calc(var(--cu-ps0) + 3rem);
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     gap: var(--cu-ps2, 2rem);
   }
@@ -241,6 +241,7 @@ cu-slideshow {
 
 .cu-slideshow__item-link {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.25rem;
   padding: 0;
