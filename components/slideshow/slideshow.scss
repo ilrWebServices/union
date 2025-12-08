@@ -202,7 +202,7 @@ cu-slideshow {
 }
 
 // Image overlay (title and link on image)
-.cu-slideshow__image-overlay {
+.cu-slideshow__item-content {
   position: absolute;
   bottom: 5rem;
   left: var(--cu-ps2, 2rem);
@@ -215,7 +215,7 @@ cu-slideshow {
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-overlay {
+  .cu-slideshow__item-content {
     flex-direction: row;
     align-items: center;
     bottom: 5rem;
@@ -224,7 +224,7 @@ cu-slideshow {
   }
 }
 
-.cu-slideshow__image-title {
+.cu-slideshow__item-title {
   margin: 0;
   font-family: 'Replica', sans-serif;
   font-size: 24px;
@@ -237,13 +237,13 @@ cu-slideshow {
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-title {
+  .cu-slideshow__item-title {
     font-size: 30px;
     line-height: 44px;
   }
 }
 
-.cu-slideshow__image-link {
+.cu-slideshow__item-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -279,7 +279,7 @@ cu-slideshow {
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-link {
+  .cu-slideshow__item-link {
     font-size: 28px;
     line-height: 40px;
   }
