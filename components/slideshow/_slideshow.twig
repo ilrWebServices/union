@@ -14,10 +14,9 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 <cu-slideshow{{ attributes.addClass(['cu-slideshow']) }}>
   {# Static white content box #}
+  {% if heading %}
   <div class="cu-slideshow__content">
-    {% if heading %}
-      <h2 class="cu-slideshow__heading">{{ heading }}</h2>
-    {% endif %}
+    <h2 class="cu-slideshow__heading">{{ heading }}</h2>
 
     {% if subheading %}
       <p class="cu-slideshow__subheading">{{ subheading }}</p>
@@ -49,6 +48,7 @@
       </div>
     {% endif %}
   </div>
+  {% endif %}
 
   {# Rotating image slides #}
   <div class="cu-slideshow__item-wrapper">
