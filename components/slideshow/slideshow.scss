@@ -71,6 +71,10 @@ cu-slideshow {
   line-height: 30px; /* 150% */
   font-family: 'Replica', sans-serif;
   overflow: hidden;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 // Select menu styling (for multiple links)
