@@ -108,6 +108,10 @@
         this.delegateClick(event);
       });
 
+      this.addEventListener('mouseover', (event) => {
+        this.delegateHover(event);
+      });
+
       // Handle dropdown navigation
       const dropdown = this.querySelector('.cu-slideshow__select');
       if (dropdown) {
@@ -137,6 +141,12 @@
       }
 
       this.pause();
+    }
+
+    delegateHover(event) {
+      if (event.target.matches('.cu-slideshow__item-link')) {
+        this.pause();
+      }
     }
 
     next() {
