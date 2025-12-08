@@ -303,7 +303,7 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
   left: 1.5rem;
   z-index: 20;
   display: flex;
-  gap: 0.75rem;
+  gap: calc(3rem - 35px);
   align-items: center;
 }
 
@@ -359,8 +359,8 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
 
 // Play/Pause button styling
 .cu-slideshow__playpause {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   padding: 0;
   color: $white;
   background-color: rgba(255, 255, 255, 0.8);
@@ -384,8 +384,8 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
   }
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
   }
 
   // Icon color
