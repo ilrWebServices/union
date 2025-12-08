@@ -30,10 +30,10 @@ cu-slideshow {
   justify-content: center;
   padding: var(--cu-ps2);
   gap: var(--cu-ps1, 1rem);
-  background-color: $white;
+  background-color: var(--cu-colorscheme-background, white);
   order: -1;
-  box-shadow: 0 0 0 1.5rem $black;
   margin: var(--cu-ps0);
+  box-shadow: 0 0 0 var(--cu-ps0) var(--cu-color-dark, #222);
 }
 
 @container (min-width: 1120px) {
@@ -53,7 +53,6 @@ cu-slideshow {
 
 .cu-slideshow__heading {
   margin: 0;
-  color: var(--cu-color-text, #000);
   --cu-font-size: var(--cu-ms4);
 }
 
@@ -71,7 +70,6 @@ cu-slideshow {
   font-style: normal;
   line-height: 30px; /* 150% */
   font-family: 'Replica', sans-serif;
-  color: var(--cu-color-text, #000);
 }
 
 // Select menu styling (for multiple links)
@@ -86,10 +84,10 @@ cu-slideshow {
   width: 100%;
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-size: 1rem;
-  color: var(--cu-color-brand, #b31b1b);
-  background-color: $white;
-  border: 1px solid $black;
   --cu-font-weight: 600;
+  --cu-text-color: var(--cu-color-brand, #b31b1b);
+  background-color: var(--cu-color-white, white);
+  border: 1px solid var(--cu-color-dark, #222);
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -99,7 +97,7 @@ cu-slideshow {
   }
 
   &:focus {
-    outline: 2px solid $black;
+    outline: 2px solid var(--cu-color-dark, #222);
     outline-offset: 2px;
   }
 
@@ -228,7 +226,7 @@ cu-slideshow {
   font-style: normal;
   --cu-font-weight: 400;
   line-height: 1.2;
-  color: $white;
+  --cu-text-color: var(--cu-color-white, white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   flex: 1;
 }
@@ -250,7 +248,7 @@ cu-slideshow {
   font-style: normal;
   --cu-font-weight: 400;
   line-height: 1.4;
-  color: $white !important;
+  --cu-text-color: var(--cu-color-white, white);
   background-color: transparent;
   border: none;
   text-decoration: none;
@@ -259,7 +257,6 @@ cu-slideshow {
   flex-shrink: 0;
 
   &:hover {
-    color: $white !important;
     gap: 0.5rem;
   }
 
@@ -267,7 +264,7 @@ cu-slideshow {
     width: 32px;
     height: 32px;
     transition: transform 0.2s;
-    stroke: $white;
+    stroke: var(--cu-color-white, white);
   }
 
   &:hover svg {
@@ -332,12 +329,12 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
   }
 
   &.active {
-    background-color: $white;
+    background-color: var(--cu-color-white, white);
     transform: scale(1.15);
   }
 
   &:focus-visible {
-    outline: 2px solid $white;
+    outline: 2px solid var(--cu-color-white, white);
     outline-offset: 2px;
   }
 }
@@ -361,7 +358,7 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
   width: 35px;
   height: 35px;
   padding: 0;
-  color: $white;
+  --cu-text-color: var(--cu-color-white, white);
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
@@ -373,12 +370,12 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
   flex-shrink: 0;
 
   &:hover {
-    background-color: $white;
+    background-color: var(--cu-color-white, white);
     transform: scale(1.05);
   }
 
   &:focus-visible {
-    outline: 2px solid $white;
+    outline: 2px solid var(--cu-color-white, white);
     outline-offset: 2px;
   }
 
@@ -390,7 +387,7 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
   // Icon color
   .play,
   .pause {
-    stroke: $black;
+    stroke: var(--cu-color-dark, #222);
     stroke-width: 2;
   }
 }
