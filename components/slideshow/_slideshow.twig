@@ -5,7 +5,7 @@
  * A slideshow with static content card and rotating images.
  *
  * @var string $heading Main heading (static, appears in white card)
- * @var string $subheading Optional subheading (static, appears in white card)
+ * @var string $text Optional text (static, appears in white card)
  * @var array $links Optional links for control (static, appears in white card)
  * @var array $slides An array of slide data (images that rotate). Each slide can include `heading`, `subheading`, `media`, and `link`, which itself has `url` and `title` properties.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
@@ -18,8 +18,8 @@
   <div class="cu-slideshow__content">
     <h2 class="cu-slideshow__heading cu-heading">{{ heading }}</h2>
 
-    {% if subheading %}
-      <div class="cu-slideshow__subheading">{{ subheading }}</div>
+    {% if text %}
+      <div class="cu-slideshow__text">{{ text }}</div>
     {% endif %}
 
     {% if links and links|length > 0 %}
