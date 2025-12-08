@@ -28,21 +28,20 @@ cu-slideshow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--cu-ps2);
   gap: var(--cu-ps1, 1rem);
-  width: calc(100% - 3rem);
   background-color: $white;
   order: -1;
-  margin: 1.5rem;
   box-shadow: 0 0 0 1.5rem $black;
+  margin: var(--cu-ps0);
 }
 
 @container (min-width: 1120px) {
   .cu-slideshow__content {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 2rem;
+    top: var(--cu-vr0);
+    left: var(--cu-ps0);
+    padding: 3rem;
     width: 45%;
     max-width: 530px;
     height: auto;
@@ -202,8 +201,8 @@ cu-slideshow {
 // Image overlay (title and link on image)
 .cu-slideshow__item-content {
   position: absolute;
-  bottom: 5rem;
-  left: var(--cu-ps2, 2rem);
+  bottom: var(--cu-vr3);
+  left: var(--cu-ps0);
   right: var(--cu-ps2, 2rem);
   z-index: 10;
   display: flex;
@@ -214,9 +213,9 @@ cu-slideshow {
 
 @container (min-width: 768px) {
   .cu-slideshow__item-content {
+    left: calc(var(--cu-ps0) + 3rem);
     flex-direction: row;
     align-items: center;
-    bottom: 5rem;
     justify-content: space-between;
     gap: var(--cu-ps2, 2rem);
   }
@@ -244,7 +243,7 @@ cu-slideshow {
 .cu-slideshow__item-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   padding: 0;
   font-family: 'Replica', sans-serif;
   --cu-font-size: var(--cu-ms1);
@@ -260,8 +259,8 @@ cu-slideshow {
   flex-shrink: 0;
 
   &:hover {
-    gap: 0.75rem;
     color: $white !important;
+    gap: 0.5rem;
   }
 
   svg {
@@ -300,7 +299,7 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
 .cu-slideshow__controls {
   position: absolute;
   bottom: 1.5rem;
-  left: 1.5rem;
+  left: var(--cu-ps0);
   z-index: 20;
   display: flex;
   gap: calc(3rem - 35px);
