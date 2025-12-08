@@ -43,11 +43,6 @@
       this.#elements.controls.append(this.#elements.play_pause);
       this.#elements.controls.append(this.#elements.pagination);
 
-      // Honor prefers-reduced-motion
-      if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
-        this.dataset.state = 'paused';
-      }
-
       this.#observer = new IntersectionObserver((entries, observer) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
@@ -69,7 +64,7 @@
       for (const item of this.#items) {
         this.#observer.observe(item);
         item.dataset.item = this.#itemsArray.indexOf(item);
-        
+
         let dot = document.createElement('button');
         dot.classList.add('cu-slideshow__dot');
         dot.dataset.item = this.#itemsArray.indexOf(item);
@@ -82,9 +77,10 @@
       const in_view_observer = new IntersectionObserver((entries, observer) => {
         // Since only one item, this slideshow, is observed, the array will always only have one item.
         this.#isVisible = entries[0].isIntersecting;
+        this.dataset.visible = this.#isVisible;
       }, {
         root: document,
-        threshold: .25,
+        threshold: .75,
       });
 
       in_view_observer.observe(this);
@@ -100,58 +96,21 @@
         }
       });
 
-      // Pause on hover
-      this.addEventListener("mouseenter", () => {
-        if (this.dataset.state === 'playing') {
-          this.pause();
-        }
-      });
-
-      // Resume on mouse leave (if it was playing before)
-      this.addEventListener("mouseleave", () => {
-        if (this.dataset.state === 'paused' && !this.dataset.userPaused) {
-          this.play();
-        }
-      });
-
-      // Pause on focus
-      this.addEventListener("focusin", () => {
-        if (this.dataset.state === 'playing') {
-          this.pause();
-        }
-      });
-
-      // Keyboard navigation
-      this.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          this.prev();
-          this.pause();
-          this.dataset.userPaused = 'true';
-        } else if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          this.next();
-          this.pause();
-          this.dataset.userPaused = 'true';
-        }
-      });
-
-      this.pause();
+      // Honor prefers-reduced-motion
+      if (window.matchMedia(`(prefers-reduced-motion: reduce)`) === true || window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true) {
+        this.pause();
+      }
+      else {
+        this.play();
+      }
 
       this.addEventListener('click', (event) => {
         this.delegateClick(event);
       });
 
-      // Ensure we start on the first slide
-      this.#currentItem = 0;
-      this.moveCenter(this.#items[0]);
-
-      // Auto-play after initialization (unless reduced motion is preferred)
-      setTimeout(() => {
-        if (!window.matchMedia(`(prefers-reduced-motion: reduce)`).matches) {
-          this.play();
-        }
-      }, 100);
+      this.addEventListener('mouseover', (event) => {
+        this.delegateHover(event);
+      });
 
       // Handle dropdown navigation
       const dropdown = this.querySelector('.cu-slideshow__select');
@@ -168,11 +127,9 @@
       if (event.target === this.#elements.play_pause || event.target.closest('.cu-slideshow__playpause')) {
         if (this.dataset.state === 'paused') {
           this.play();
-          this.dataset.userPaused = 'false';
         }
         else {
           this.pause();
-          this.dataset.userPaused = 'true';
         }
 
         return;
@@ -181,16 +138,20 @@
       if (this.#dots.includes(event.target)) {
         this.#currentItem = parseInt(event.target.dataset.item);
         this.moveCenter(this.#items[this.#currentItem]);
-        this.pause();
-        this.dataset.userPaused = 'true';
       }
 
-      // Removed prev/next button handling since we're not using those buttons anymore
+      this.pause();
+    }
+
+    delegateHover(event) {
+      if (event.target.matches('.cu-slideshow__item-link')) {
+        this.pause();
+      }
     }
 
     next() {
       this.#currentItem++;
-      
+
       if (this.#currentItem > this.#items.length - 1) {
         this.#currentItem = 0;
       }
@@ -200,7 +161,7 @@
 
     prev() {
       this.#currentItem--;
-      
+
       if (this.#currentItem < 0) {
         this.#currentItem = this.#items.length - 1;
       }

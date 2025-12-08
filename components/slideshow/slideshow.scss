@@ -28,23 +28,22 @@ cu-slideshow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--cu-ps2);
   gap: var(--cu-ps1, 1rem);
-  width: calc(100% - 3rem);
-  background-color: $white;
+  background-color: var(--cu-colorscheme-background, white);
   order: -1;
-  margin: 1.5rem;
-  box-shadow: 0 0 0 1.5rem $black;
+  margin: var(--cu-ps0);
+  box-shadow: 0 0 0 var(--cu-ps0) var(--cu-color-dark, #222);
 }
 
 @container (min-width: 1120px) {
   .cu-slideshow__content {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    padding: 2rem;
+    top: var(--cu-vr0);
+    left: var(--cu-ps0);
+    padding: 3rem;
     width: 45%;
-    max-width: 500px;
+    max-width: 530px;
     height: auto;
     max-height: 75%;
     margin: 0;
@@ -54,27 +53,28 @@ cu-slideshow {
 
 .cu-slideshow__heading {
   margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--cu-color-text, #000);
+  --cu-font-size: var(--cu-ms4);
 }
 
 @container (min-width: 768px) {
   .cu-slideshow__heading {
-    font-size: 2rem;
+    --cu-font-size: var(--cu-ms8);
     line-height: 1.1;
   }
 }
 
-.cu-slideshow__subheading {
+.cu-slideshow__text {
   margin: 0;
-  font-size: 20px;
+  --cu-font-size: var(--cu-ms0);
+  --cu-font-weight: 400;
   font-style: normal;
-  font-weight: 400;
   line-height: 30px; /* 150% */
   font-family: 'Replica', sans-serif;
-  color: var(--cu-color-text, #000);
+  overflow: hidden;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 // Select menu styling (for multiple links)
@@ -89,10 +89,10 @@ cu-slideshow {
   width: 100%;
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--cu-color-brand, #b31b1b);
-  background-color: $white;
-  border: 1px solid $black;
+  --cu-font-weight: 600;
+  --cu-text-color: var(--cu-color-brand, #b31b1b);
+  background-color: var(--cu-color-white, white);
+  border: 1px solid var(--cu-color-dark, #222);
   border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -102,7 +102,7 @@ cu-slideshow {
   }
 
   &:focus {
-    outline: 2px solid $black;
+    outline: 2px solid var(--cu-color-dark, #222);
     outline-offset: 2px;
   }
 
@@ -111,7 +111,7 @@ cu-slideshow {
 
     &:disabled {
       color: var(--cu-color-brand, #b31b1b);
-      font-weight: 600;
+      --cu-font-weight: 600;
     }
   }
 }
@@ -202,10 +202,10 @@ cu-slideshow {
 }
 
 // Image overlay (title and link on image)
-.cu-slideshow__image-overlay {
+.cu-slideshow__item-content {
   position: absolute;
-  bottom: 5rem;
-  left: var(--cu-ps2, 2rem);
+  bottom: var(--cu-vr3);
+  left: var(--cu-ps0);
   right: var(--cu-ps2, 2rem);
   z-index: 10;
   display: flex;
@@ -215,45 +215,46 @@ cu-slideshow {
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-overlay {
+  .cu-slideshow__item-content {
+    left: calc(var(--cu-ps0) + 3rem);
     flex-direction: row;
-    align-items: center;
-    bottom: 5rem;
+    align-items: end;
     justify-content: space-between;
     gap: var(--cu-ps2, 2rem);
   }
 }
 
-.cu-slideshow__image-title {
+.cu-slideshow__item-title {
   margin: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 24px;
+  --cu-font-size: var(--cu-ms4);
   font-style: normal;
-  font-weight: 400;
+  --cu-font-weight: 400;
   line-height: 1.2;
-  color: $white;
+  --cu-text-color: var(--cu-color-white, white);
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
   flex: 1;
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-title {
-    font-size: 30px;
+  .cu-slideshow__item-title {
+    --cu-font-size: var(--cu-ms5);
     line-height: 44px;
   }
 }
 
-.cu-slideshow__image-link {
+.cu-slideshow__item-link {
   display: inline-flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
   padding: 0;
   font-family: 'Replica', sans-serif;
-  font-size: 18px;
+  --cu-font-size: var(--cu-ms1);
   font-style: normal;
-  font-weight: 400 !important;
+  --cu-font-weight: 400;
   line-height: 1.4;
-  color: $white !important;
+  --cu-text-color: var(--cu-color-white, white);
   background-color: transparent;
   border: none;
   text-decoration: none;
@@ -262,15 +263,14 @@ cu-slideshow {
   flex-shrink: 0;
 
   &:hover {
-    gap: 0.75rem;
-    color: $white !important;
+    gap: 0.5rem;
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 32px;
+    height: 32px;
     transition: transform 0.2s;
-    stroke: $white;
+    stroke: var(--cu-color-white, white);
   }
 
   &:hover svg {
@@ -279,8 +279,8 @@ cu-slideshow {
 }
 
 @container (min-width: 768px) {
-  .cu-slideshow__image-link {
-    font-size: 28px;
+  .cu-slideshow__item-link {
+    --cu-font-size: var(--cu-ms2);
     line-height: 40px;
   }
 }
@@ -302,10 +302,10 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
 .cu-slideshow__controls {
   position: absolute;
   bottom: 1.5rem;
-  left: 1.5rem;
+  left: var(--cu-ps0);
   z-index: 20;
   display: flex;
-  gap: 0.75rem;
+  gap: calc(3rem - 35px);
   align-items: center;
 }
 
@@ -335,12 +335,12 @@ cu-slideshow[data-state="playing"] .cu-slideshow__playpause {
   }
 
   &.active {
-    background-color: $white;
+    background-color: var(--cu-color-white, white);
     transform: scale(1.15);
   }
 
   &:focus-visible {
-    outline: 2px solid $white;
+    outline: 2px solid var(--cu-color-white, white);
     outline-offset: 2px;
   }
 }
@@ -361,10 +361,10 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
 
 // Play/Pause button styling
 .cu-slideshow__playpause {
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   padding: 0;
-  color: $white;
+  --cu-text-color: var(--cu-color-white, white);
   background-color: rgba(255, 255, 255, 0.8);
   border: none;
   border-radius: 50%;
@@ -376,24 +376,24 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
   flex-shrink: 0;
 
   &:hover {
-    background-color: $white;
+    background-color: var(--cu-color-white, white);
     transform: scale(1.05);
   }
 
   &:focus-visible {
-    outline: 2px solid $white;
+    outline: 2px solid var(--cu-color-white, white);
     outline-offset: 2px;
   }
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: 35px;
+    height: 35px;
   }
 
   // Icon color
   .play,
   .pause {
-    stroke: $black;
+    stroke: var(--cu-color-dark, #222);
     stroke-width: 2;
   }
 }

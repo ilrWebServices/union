@@ -5,7 +5,7 @@
  * A slideshow with static content card and rotating images.
  *
  * @var string $heading Main heading (static, appears in white card)
- * @var string $subheading Optional subheading (static, appears in white card)
+ * @var string $text Optional text (static, appears in white card)
  * @var array $links Optional links for control (static, appears in white card)
  * @var array $slides An array of slide data (images that rotate). Each slide can include `heading`, `subheading`, `media`, and `link`, which itself has `url` and `title` properties.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
@@ -14,13 +14,12 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 <cu-slideshow{{ attributes.addClass(['cu-slideshow']) }}>
   {# Static white content box #}
+  {% if heading %}
   <div class="cu-slideshow__content">
-    {% if heading %}
-      <h2 class="cu-slideshow__heading">{{ heading }}</h2>
-    {% endif %}
+    <h2 class="cu-slideshow__heading cu-heading">{{ heading }}</h2>
 
-    {% if subheading %}
-      <p class="cu-slideshow__subheading">{{ subheading }}</p>
+    {% if text %}
+      <div class="cu-slideshow__text">{{ text }}</div>
     {% endif %}
 
     {% if links and links|length > 0 %}
@@ -49,6 +48,7 @@
       </div>
     {% endif %}
   </div>
+  {% endif %}
 
   {# Rotating image slides #}
   <div class="cu-slideshow__item-wrapper">
@@ -57,15 +57,15 @@
       <div class="cu-slideshow__item">
         {{ slide.media|raw }}
         {% if slide.heading or slide.link %}
-          <div class="cu-slideshow__image-overlay">
+          <div class="cu-slideshow__item-content">
             {% if slide.heading %}
-              <h3 class="cu-slideshow__image-title">{{ slide.heading }}</h3>
+              <h3 class="cu-slideshow__item-title">{{ slide.heading }}</h3>
             {% endif %}
             {% if slide.link %}
-              <a href="{{ slide.link.url }}" class="cu-slideshow__image-link">
+              <a href="{{ slide.link.url }}" class="cu-slideshow__item-link">
                 {{ slide.link.title }}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m23 16h-14.5m7-7.5 7.5 7.5-7.5 7.5" stroke-width="2" fill="none" stroke="currentColor" stroke-linejoin="round"></path>
                 </svg>
               </a>
             {% endif %}

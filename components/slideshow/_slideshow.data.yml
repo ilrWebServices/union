@@ -1,7 +1,7 @@
 default:
   demo_label: Default (with dropdown)
   heading: 'Driving Change Nationwide'
-  subheading: "We're working alongside states and workers across the country to advance equity, grow clean energy jobs, and secure a sustainable future."
+  text: "We're working alongside states and workers across the country to advance equity, grow clean energy jobs, and secure a sustainable future."
   links:
     - title: 'Explore by state'
       url: '/states'
@@ -12,7 +12,7 @@ default:
     - title: 'Texas Impact'
       url: '/states/texas'
   slides:
-    - media: '<img src="https://placehold.co/1600x900/333333/ffffff?text=Slide+1" alt="Slide 1">'
+    - media: '<img src="https://placehold.co/1600x900/ffffff/333333?text=Slide+1" alt="Slide 1">'
       heading: 'Clean Energy Growth Doubles Statewide Economy'
       link:
         title: 'Learn More'
@@ -31,7 +31,7 @@ default:
 single_button:
   demo_label: Single button
   heading: 'Building a Sustainable Future'
-  subheading: 'Join us in creating lasting change for communities nationwide.'
+  text: 'Join us in creating lasting change for communities nationwide.'
   links:
     - title: 'Learn More'
       url: '/learn-more'
@@ -50,7 +50,7 @@ single_button:
 minimal:
   demo_label: Minimal (no links on slides)
   heading: 'Our Impact'
-  subheading: 'Making a difference across the nation.'
+  text: 'Making a difference across the nation.'
   links:
     - title: 'Explore'
       url: '/explore'
