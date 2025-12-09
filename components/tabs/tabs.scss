@@ -1,0 +1,395 @@
+@import './global/global';
+
+// Custom element display
+cu-tabs {
+  display: block;
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+}
+
+// Override section styles when it contains tabs
+.cu-section:has(cu-tabs) {
+  margin: 0;
+  max-width: none;
+}
+
+// Background media - spans full component height
+.cu-tabs__media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  overflow: hidden;
+
+  // Handle Drupal's nested wrapper divs
+  > div,
+  .cu-media,
+  .contextual-region,
+  .field,
+  .field__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  img,
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--cu-image-position, center);
+  }
+
+  // Dark overlay for text readability
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 30, 60, 0.8);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+// Header section
+.cu-tabs__header {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 40px 20px;
+  max-width: 758px;
+  margin: 0 auto;
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__header {
+    min-height: 123px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.cu-tabs__heading {
+  margin: 0 0 7px;
+  font-family: 'Replica', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 40px;
+  color: white;
+}
+
+@container (min-width: 768px) {
+  .cu-tabs__heading {
+    font-size: 50px;
+    line-height: 56px;
+  }
+}
+
+.cu-tabs__body {
+  font-family: 'Replica', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: white;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@container (min-width: 768px) {
+  .cu-tabs__body {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+// Main container - sits on top of background
+// Padding creates space to show background image on sides and bottom
+.cu-tabs__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 40px;
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__container {
+    flex-direction: row;
+    padding: 0 40px 60px;
+  }
+}
+
+
+// Inner wrapper for white background on content area
+.cu-tabs__inner {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--cu-color-white, white);
+  width: 100%;
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__inner {
+    flex-direction: row;
+    gap: 120px;
+  }
+}
+
+// Mobile select dropdown
+.cu-tabs__select-wrapper {
+  position: relative;
+  padding: var(--cu-vr1) var(--cu-ps1);
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__select-wrapper {
+    display: none;
+  }
+}
+
+.cu-tabs__select-label {
+  display: block;
+  font-family: 'Replica', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: $black;
+  margin-bottom: 0.5rem;
+}
+
+.cu-tabs__select {
+  appearance: none;
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-family: 'Replica', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $black;
+  background-color: var(--cu-color-white, white);
+  border: 1px solid #bababa;
+  border-radius: 0;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $black;
+  }
+
+  &:focus {
+    outline: 2px solid $black;
+    outline-offset: 2px;
+  }
+}
+
+.cu-tabs__select-icon {
+  position: absolute;
+  right: calc(var(--cu-ps1) + 1rem);
+  bottom: calc(var(--cu-vr1) + 0.75rem);
+  pointer-events: none;
+  color: $black;
+}
+
+// Desktop tab list
+.cu-tabs__list {
+  display: none;
+  flex-direction: column;
+  width: 479px;
+  flex-shrink: 0;
+  overflow-y: auto;
+  max-height: 800px;
+  position: relative;
+  border-right: 0.5px solid #bababa;
+
+  // Firefox scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: #bababa #f3f3f3;
+
+  // Custom scrollbar styling
+  // Webkit browsers (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f3f3f3;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bababa;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #999999;
+  }
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__list {
+    display: flex;
+  }
+}
+
+.cu-tabs__tab {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100px;
+  padding: 24px 40px;
+  font-family: 'Replica', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40px;
+  color: $black;
+  background-color: transparent;
+  border: none;
+  border-top: 0.5px solid #bababa;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:last-child {
+    border-bottom: 0.5px solid #bababa;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $black;
+    outline-offset: -2px;
+  }
+
+  &.cu-tabs__tab--active {
+    background-color: $cornell-red;
+    color: $white;
+    min-height: 150px;
+    border-color: $cornell-red;
+
+    &:hover {
+      background-color: darken($cornell-red, 5%);
+    }
+  }
+}
+
+// Tab panels container
+.cu-tabs__panels {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px 24px;
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__panels {
+    padding: 0;
+    padding-right: 40px;
+  }
+}
+
+.cu-tabs__panel {
+  display: none;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 610px;
+
+  &.cu-tabs__panel--active {
+    display: flex;
+  }
+}
+
+// Subheading (label above content)
+.cu-tabs__subheading {
+  margin: 0;
+  font-family: 'Replica', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: $black;
+}
+
+// Red accent line
+.cu-tabs__accent-line {
+  width: 80px;
+  height: 4px;
+  background-color: $cornell-red;
+}
+
+// Main content area
+.cu-tabs__content {
+  font-family: 'Replica', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 40px;
+  color: $black;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Large text style for main content
+  .cu-text--xxxl {
+    font-size: 28px;
+    line-height: 40px;
+  }
+}
+
+@container (min-width: 976px) {
+  .cu-tabs__content {
+    font-size: 50px;
+    line-height: 56px;
+
+    .cu-text--xxxl {
+      font-size: 50px;
+      line-height: 56px;
+    }
+  }
+}
+
+// CTA button
+.cu-tabs__link {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+// Button outline style override for this component
+.cu-tabs__link.cu-button--outline {
+  border: 2px solid $cornell-red;
+  color: $black;
+  background-color: transparent;
+  padding: 12px 40px;
+  font-family: 'Replica', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: $cornell-red;
+    color: $white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $black;
+    outline-offset: 2px;
+  }
+}

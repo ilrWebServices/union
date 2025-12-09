@@ -1,0 +1,104 @@
+{#
+/**
+ * Tabs
+ *
+ * A tabbed content component with a scrollable list of items on the left
+ * and content display on the right. On mobile, displays as a select dropdown.
+ *
+ * @var string $heading Main heading displayed above the component
+ * @var string $body Optional body text displayed below the heading
+ * @var string $media Background media (image/video) for the component
+ * @var array $items Array of tab items. Each item includes:
+ *   - tab_heading: The tab label shown in the list/dropdown
+ *   - subheading: Small label shown above the content
+ *   - content: Main content area (can include rich text, stats, etc.)
+ *   - link: Optional link object with `url` and `title` properties
+ * @var Drupal\Core\Template\Attribute $attributes Attributes for the component
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+<cu-tabs{{ attributes.addClass(['cu-tabs']) }}>
+  {# Background media #}
+  {% if media %}
+  <div class="cu-tabs__media">
+    {{ media|raw }}
+  </div>
+  {% endif %}
+
+  {# Header section with heading and body #}
+  {% if heading or body %}
+  <div class="cu-tabs__header">
+    {% if heading %}
+      <h2 class="cu-tabs__heading cu-heading">{{ heading }}</h2>
+    {% endif %}
+    {% if body %}
+      <div class="cu-tabs__body">{{ body|raw }}</div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="cu-tabs__container">
+    {% if items and items|length > 0 %}
+    <div class="cu-tabs__inner">
+      {# Mobile select dropdown #}
+      <div class="cu-tabs__select-wrapper">
+        <label for="cu-tabs-select" class="cu-tabs__select-label">Select State:</label>
+        <select class="cu-tabs__select" id="cu-tabs-select" aria-label="Select a tab">
+          {% for item in items %}
+            <option value="{{ loop.index0 }}"{% if loop.first %} selected{% endif %}>{{ item.tab_heading }}</option>
+          {% endfor %}
+        </select>
+        <svg class="cu-tabs__select-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      {# Desktop tab list #}
+      <div class="cu-tabs__list" role="tablist" aria-label="Content tabs">
+        {% for item in items %}
+          <button
+            class="cu-tabs__tab{% if loop.first %} cu-tabs__tab--active{% endif %}"
+            role="tab"
+            aria-selected="{{ loop.first ? 'true' : 'false' }}"
+            aria-controls="cu-tabs-panel-{{ loop.index0 }}"
+            id="cu-tabs-tab-{{ loop.index0 }}"
+            tabindex="{{ loop.first ? '0' : '-1' }}"
+          >
+            {{ item.tab_heading }}
+          </button>
+        {% endfor %}
+      </div>
+
+      {# Tab panels #}
+      <div class="cu-tabs__panels">
+        {% for item in items %}
+          <div
+            class="cu-tabs__panel{% if loop.first %} cu-tabs__panel--active{% endif %}"
+            role="tabpanel"
+            id="cu-tabs-panel-{{ loop.index0 }}"
+            aria-labelledby="cu-tabs-tab-{{ loop.index0 }}"
+            {% if not loop.first %}hidden{% endif %}
+          >
+            {% if item.subheading %}
+              <p class="cu-tabs__subheading">{{ item.subheading }}</p>
+              <div class="cu-tabs__accent-line" aria-hidden="true"></div>
+            {% endif %}
+
+            {% if item.content %}
+              <div class="cu-tabs__content">{{ item.content|raw }}</div>
+            {% endif %}
+
+            {% if item.link and item.link.url %}
+              {% include '@union/_button.twig' with {
+                text: item.link.title|default('Learn More'),
+                url: item.link.url,
+                attributes: { 'class': 'cu-tabs__link cu-button--outline' }
+              } only %}
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</cu-tabs>
