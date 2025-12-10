@@ -414,10 +414,112 @@ cu-slideshow[data-static-first="true"] {
   }
 }
 
+// Homepage hero variant (no white content box)
 cu-slideshow:not(:has(.cu-slideshow__content)) {
-  opacity: .5;
+  // Restructure item content for hero layout - position centered vertically
+  .cu-slideshow__item-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    left: var(--cu-ps0);
+    right: var(--cu-ps0);
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
+  @container (min-width: 768px) {
+    .cu-slideshow__item-content {
+      left: 60px;
+      right: auto;
+      max-width: 600px;
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .cu-slideshow__item-content {
+      left: 100px;
+      max-width: 840px;
+    }
+  }
+
+  // Show and style eyebrow heading
   .cu-slideshow__item-eyebrow {
-    display: revert;
+    display: block;
+    order: -1;
+    margin: 0 0 var(--cu-ps-1, 0.5rem) 0;
+    font-family: 'Replica', sans-serif;
+    --cu-font-size: var(--cu-ms1);
+    font-style: normal;
+    --cu-font-weight: 400;
+    line-height: $reduced-line-height;
+    --cu-text-color: var(--cu-color-white, #{$white});
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
+  @container (min-width: 768px) {
+    .cu-slideshow__item-eyebrow {
+      --cu-font-size: var(--cu-ms3);
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .cu-slideshow__item-eyebrow {
+      --cu-font-size: var(--cu-ms5);
+      line-height: 44px;
+    }
+  }
+
+  // Hero heading style
+  .cu-slideshow__item-title {
+    margin: 0;
+    font-family: 'Obviously', 'FuturaBT', 'Replica', sans-serif;
+    --cu-font-size: var(--cu-ms5);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+    --cu-text-color: var(--cu-color-white, #{$white});
+  }
+
+  @container (min-width: 768px) {
+    .cu-slideshow__item-title {
+      --cu-font-size: var(--cu-ms8);
+      line-height: 60px;
+    }
+  }
+
+  @container (min-width: 1200px) {
+    .cu-slideshow__item-title {
+      --cu-font-size: var(--cu-ms10);
+      line-height: 94px;
+    }
+  }
+
+  // Style link as button
+  .cu-slideshow__item-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--cu-ps1, 1.5rem);
+    padding: 12px 40px;
+    font-family: 'Replica', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--cu-color-brand, #{$cornell-red});
+    background-color: var(--cu-color-white, #{$white});
+    border: 2px solid var(--cu-color-white, #{$white});
+    text-decoration: $link-decoration;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: rgba($white, 0.9);
+      color: var(--cu-color-brand, #{$cornell-red});
+    }
+
+    svg {
+      display: none;
+    }
   }
 }
