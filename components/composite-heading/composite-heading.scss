@@ -103,7 +103,7 @@
       margin: 0;
     }
 
-    .cu-composite-heading__heading {
+    &:has(.cu-composite-heading__link) .cu-composite-heading__heading {
       --cu-font-size: var(--cu-ms8);
     }
 
@@ -122,7 +122,7 @@
     @include breakpoint(sm) {
       display: grid;
       grid-template-rows: auto;
-      grid-template-columns: 1fr auto;
+      grid-auto-columns: 1fr auto;
       gap: var(--cu-vr-2) var(--cu-ps-1);
 
       .cu-composite-heading__link {
@@ -136,13 +136,12 @@
         grid-template-rows: repeat(2, auto);
       }
 
-
       &:has(.cu-composite-heading__eyebrow-heading):has(.cu-composite-heading__body) {
         grid-template-rows: repeat(3, auto);
       }
 
       &:has(.cu-icon) {
-        grid-template-columns: auto 1fr auto;
+        grid-auto-columns: auto 1fr auto;
 
         .cu-composite-heading__heading {
           grid-column: 2;

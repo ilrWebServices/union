@@ -1,0 +1,63 @@
+default:
+  demo_label: Default (with dropdown)
+  heading: 'Driving Change Nationwide'
+  text: "We're working alongside states and workers across the country to advance equity, grow clean energy jobs, and secure a sustainable future."
+  links:
+    - title: 'Explore by state'
+      url: '/states'
+    - title: 'New York Impact'
+      url: '/states/new-york'
+    - title: 'California Impact'
+      url: '/states/california'
+    - title: 'Texas Impact'
+      url: '/states/texas'
+  slides:
+    - media: '<img src="https://placehold.co/1600x900/ffffff/333333?text=Slide+1" alt="Slide 1">'
+      heading: 'Clean Energy Growth Doubles Statewide Economy'
+      link:
+        title: 'Learn More'
+        url: '/impact'
+    - media: '<img src="https://placehold.co/1600x900/006699/ffffff?text=Slide+2" alt="Slide 2">'
+      heading: 'Building a Sustainable Future'
+      link:
+        title: 'Our Mission'
+        url: '/mission'
+    - media: '<img src="https://placehold.co/1600x900/228B22/ffffff?text=Slide+3" alt="Slide 3">'
+      heading: 'Community Impact Across the Nation'
+      link:
+        title: 'Get Involved'
+        url: '/get-involved'
+
+single_button:
+  demo_label: Single button
+  heading: 'Building a Sustainable Future'
+  text: 'Join us in creating lasting change for communities nationwide.'
+  links:
+    - title: 'Learn More'
+      url: '/learn-more'
+  slides:
+    - media: '<img src="https://placehold.co/1600x900/333333/ffffff?text=Slide+1" alt="Slide 1">'
+      heading: 'Clean Energy Jobs'
+      link:
+        title: 'View Jobs'
+        url: '/jobs'
+    - media: '<img src="https://placehold.co/1600x900/006699/ffffff?text=Slide+2" alt="Slide 2">'
+      heading: 'Community Impact'
+      link:
+        title: 'See Impact'
+        url: '/impact'
+
+minimal:
+  demo_label: Minimal (no links on slides)
+  heading: 'Our Impact'
+  text: 'Making a difference across the nation.'
+  links:
+    - title: 'Explore'
+      url: '/explore'
+  slides:
+    - media: '<img src="https://placehold.co/1600x900/333333/ffffff?text=Slide+1" alt="Slide 1">'
+      heading: 'Research'
+    - media: '<img src="https://placehold.co/1600x900/006699/ffffff?text=Slide+2" alt="Slide 2">'
+      heading: 'Education'
+    - media: '<img src="https://placehold.co/1600x900/228B22/ffffff?text=Slide+3" alt="Slide 3">'
+      heading: 'Outreach'

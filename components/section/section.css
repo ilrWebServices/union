@@ -102,6 +102,10 @@
   margin-bottom: unset;
 }
 
+.cu-section--compact .cu-section__heading {
+  margin-bottom: var(--cu-vr0);
+}
+
 @media (min-width: 61rem) {
   .cu-section--left {
     display: grid;
