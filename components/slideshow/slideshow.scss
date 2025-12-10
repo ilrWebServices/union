@@ -243,6 +243,10 @@ cu-slideshow {
   }
 }
 
+.cu-slideshow__item-eyebrow {
+  display: none;
+}
+
 .cu-slideshow__item-link {
   display: inline-flex;
   flex-wrap: wrap;
@@ -407,5 +411,13 @@ cu-slideshow[data-state="playing"] .cu-slideshow__dot.active {
 cu-slideshow[data-static-first="true"] {
   .cu-slideshow__item:first-child {
     scroll-snap-align: none;
+  }
+}
+
+cu-slideshow:not(:has(.cu-slideshow__content)) {
+  opacity: .5;
+
+  .cu-slideshow__item-eyebrow {
+    display: revert;
   }
 }
