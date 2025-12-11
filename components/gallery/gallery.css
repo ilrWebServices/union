@@ -279,16 +279,13 @@ cu-gallery.cu-gallery--content .cu-gallery__navigation-next {
   }
 }
 
+cu-gallery:not(:has(.cu-gallery__item.obscured)) .cu-gallery__navigation,
+cu-gallery:not(:has(.cu-gallery__item.obscured)) .cu-gallery__thumbnails {
+  display: none;
+}
+
 @media (min-width: 61rem) {
   cu-gallery.cu-gallery--content .cu-gallery__item {
     width: calc(25cqw - var(--gallery-grid-gap) * .75);
-    min-width: 200px;
-  }
-
-  /* Hide navigation arrows when 4 or fewer items at desktop */
-  cu-gallery.cu-gallery--content:not(:has(.cu-gallery__item:not(.cu-gallery__item--blank):nth-child(n+6))) .cu-gallery__navigation-prev,
-  cu-gallery.cu-gallery--content:not(:has(.cu-gallery__item:not(.cu-gallery__item--blank):nth-child(n+6))) .cu-gallery__navigation-next,
-  cu-gallery.cu-gallery--content .cu-gallery__thumbnails {
-    display: none;
   }
 }
