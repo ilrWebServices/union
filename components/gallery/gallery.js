@@ -158,7 +158,7 @@
     }
 
     moveCenter(item) {
-      item.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      item.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
       for (const thumb of this.#thumbs) {
         thumb.classList.remove('active');
