@@ -164,6 +164,11 @@
         thumb.classList.remove('active');
       }
       this.#thumbs[this.#currentItem].classList.add('active');
+
+      for (const gallery_item of this.#items) {
+        gallery_item.classList.remove('active');
+      }
+      item.classList.add('active');
     }
 
   }
