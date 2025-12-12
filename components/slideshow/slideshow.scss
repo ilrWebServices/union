@@ -475,7 +475,7 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     margin: 0;
     font-family: 'Obviously', 'FuturaBT', 'Replica', sans-serif;
     --cu-font-size: var(--cu-ms5);
-    font-weight: 900;
+    --cu-font-weight: 900;
     text-transform: uppercase;
     line-height: 1.05;
     --cu-text-color: var(--cu-color-white, #{$white});
@@ -503,8 +503,8 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     margin-top: var(--cu-ps1, 1.5rem);
     padding: 12px 40px;
     font-family: 'Replica', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
+    --cu-font-size: 16px;
+    --cu-font-weight: 700;
     line-height: 24px;
     color: var(--cu-color-brand, #{$cornell-red});
     background-color: var(--cu-color-white, #{$white});
