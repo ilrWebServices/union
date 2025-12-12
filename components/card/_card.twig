@@ -22,6 +22,7 @@
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the card content region.
  * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
+ * @var Drupal\Core\Template\Attribute|array $heading_attributes Attributes for the composite heading.
  *
  * @union-variation cu-card--stacked Centered content below the media.
  * @union-variation cu-card--with-media Not a layout, but an indication that the card includes media.
@@ -53,6 +54,7 @@
 {% set attributes = union_attributes(attributes|default([])) %}
 {% set content_attributes = union_attributes(content_attributes|default([])) %}
 {% set link_attributes = union_attributes(link_attributes|default([])) %}
+{% set heading_attributes = union_attributes(heading_attributes|default([])) %}
 
 <div{{ attributes.addClass([
     'cu-card',
@@ -66,14 +68,12 @@
       heading: heading,
       eyebrow_heading_element: eyebrow_heading_element,
       heading_element: heading_element,
-      attributes: {
-        class: [
-          'cu-card__meta',
-          attributes.hasClass('cu-card--panel') or attributes.hasClass('cu-card--cinematic') or attributes.hasClass('cu-card--post-small') ? 'cu-composite-heading--left',
-          attributes.hasClass('cu-card--panel') ? 'cu-composite-heading--bold',
-          not heading ? 'cu-composite-heading--minimal'
-        ]
-      }
+      attributes: heading_attributes.addClass([
+        'cu-card__meta',
+        attributes.hasClass('cu-card--panel') or attributes.hasClass('cu-card--cinematic') or attributes.hasClass('cu-card--post-small') ? 'cu-composite-heading--left',
+        attributes.hasClass('cu-card--panel') ? 'cu-composite-heading--bold',
+        not heading ? 'cu-composite-heading--minimal'
+      ])
     } only %}
     {% endif %}
     {{ card_content }}

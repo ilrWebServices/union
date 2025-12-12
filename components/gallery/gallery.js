@@ -158,12 +158,17 @@
     }
 
     moveCenter(item) {
-      item.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      item.scrollIntoView({ behavior: "smooth", block: "nearest" });
 
       for (const thumb of this.#thumbs) {
         thumb.classList.remove('active');
       }
       this.#thumbs[this.#currentItem].classList.add('active');
+
+      for (const gallery_item of this.#items) {
+        gallery_item.classList.remove('active');
+      }
+      item.classList.add('active');
     }
 
   }
