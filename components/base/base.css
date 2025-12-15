@@ -37,6 +37,8 @@
   --cu-ms9: calc(var(--cu-ms-ratio) * var(--cu-ms8));
   --cu-ms10: calc(var(--cu-ms-ratio) * var(--cu-ms9));
   --cu-ms11: calc(var(--cu-ms-ratio) * var(--cu-ms10));
+  --cu-ms12: calc(var(--cu-ms-ratio) * var(--cu-ms11));
+  --cu-ms13: calc(var(--cu-ms-ratio) * var(--cu-ms12));
   --cu-ms-1: calc(var(--cu-ms0) / var(--cu-ms-ratio));
   --cu-ms-2: calc(var(--cu-ms-1) / var(--cu-ms-ratio));
   --cu-ms-3: calc(var(--cu-ms-2) / var(--cu-ms-ratio));

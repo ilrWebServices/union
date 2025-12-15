@@ -469,8 +469,8 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
   // Hero heading style
   .cu-slideshow__item-title {
     margin: 0;
-    font-family: 'Obviously', 'FuturaBT', 'Replica', sans-serif;
-    --cu-font-size: var(--cu-ms5);
+    --cu-font-family: "futura-pt", sans-serif;
+    --cu-font-size: var(--cu-ms6);
     --cu-font-weight: 900;
     text-transform: uppercase;
     line-height: 1.05;
@@ -479,15 +479,7 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
 
   @container (min-width: 768px) {
     .cu-slideshow__item-title {
-      --cu-font-size: var(--cu-ms8);
-      line-height: 60px;
-    }
-  }
-
-  @container (min-width: 1200px) {
-    .cu-slideshow__item-title {
-      --cu-font-size: var(--cu-ms10);
-      line-height: 94px;
+      --cu-font-size: var(--cu-ms13);
     }
   }
 
