@@ -7,7 +7,7 @@
  * @var string $heading Main heading (static, appears in white card)
  * @var string $text Optional text (static, appears in white card)
  * @var array $links Optional links for control (static, appears in white card)
- * @var array $slides An array of slide data (images that rotate). Each slide can include `heading`, `subheading`, `media`, and `link`, which itself has `url` and `title` properties.
+ * @var array $slides An array of slide data (images that rotate). Each slide can include `heading`, `eyebrow_heading`, `media`, and `link`, which itself has `url` and `title` properties.
  * @var Drupal\Core\Template\Attribute $attributes Attributes (class, data, etc.) for the entire component.
  */
 #}
@@ -60,6 +60,9 @@
           <div class="cu-slideshow__item-content">
             {% if slide.heading %}
               <h3 class="cu-slideshow__item-title">{{ slide.heading }}</h3>
+            {% endif %}
+            {% if slide.eyebrow_heading %}
+              <h4 class="cu-slideshow__item-eyebrow">{{ slide.eyebrow_heading }}</h4>
             {% endif %}
             {% if slide.link %}
               <a href="{{ slide.link.url }}" class="cu-slideshow__item-link">
