@@ -69,7 +69,6 @@ cu-slideshow {
   --cu-font-weight: 400;
   font-style: normal;
   line-height: 30px; /* 150% */
-  font-family: 'Replica', sans-serif;
   overflow: hidden;
 
   p:last-of-type {
@@ -226,7 +225,6 @@ cu-slideshow {
 
 .cu-slideshow__item-title {
   margin: 0;
-  font-family: 'Replica', sans-serif;
   --cu-font-size: var(--cu-ms4);
   font-style: normal;
   --cu-font-weight: 400;
@@ -253,7 +251,6 @@ cu-slideshow {
   align-items: center;
   gap: 0.25rem;
   padding: 0;
-  font-family: 'Replica', sans-serif;
   --cu-font-size: var(--cu-ms1);
   font-style: normal;
   --cu-font-weight: 400;
@@ -448,7 +445,6 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     display: block;
     order: -1;
     margin: 0 0 var(--cu-ps-1, 0.5rem) 0;
-    font-family: 'Replica', sans-serif;
     --cu-font-size: var(--cu-ms1);
     font-style: normal;
     --cu-font-weight: 400;
@@ -502,7 +498,6 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     justify-content: center;
     margin-top: var(--cu-ps1, 1.5rem);
     padding: 12px 40px;
-    font-family: 'Replica', sans-serif;
     --cu-font-size: 16px;
     --cu-font-weight: 700;
     line-height: 24px;
