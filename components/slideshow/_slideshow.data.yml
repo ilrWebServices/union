@@ -66,19 +66,19 @@ minimal:
 homepage_hero:
   demo_label: Homepage Hero (no content box)
   slides:
-    - media: '<img src="https://placehold.co/1600x900/1a3a5c/ffffff?text=Climate+Jobs" alt="Climate Jobs">'
+    - media: '<img src="https://picsum.photos/id/15/1600/900" alt="Climate Jobs">'
       eyebrow_heading: "Update on New York's Renewable Energy Policies, Plans & Progress:"
       heading: 'A Climate Jobs Perspective'
       link:
         title: 'Read Report'
         url: '/report'
-    - media: '<img src="https://placehold.co/1600x900/2d5a3d/ffffff?text=Green+Energy" alt="Green Energy">'
+    - media: '<img src="https://picsum.photos/id/16/1600/900" alt="Green Energy">'
       eyebrow_heading: 'Research & Policy:'
       heading: 'Building a Sustainable Future'
       link:
         title: 'Learn More'
         url: '/sustainability'
-    - media: '<img src="https://placehold.co/1600x900/5a3d2d/ffffff?text=Workers" alt="Workers">'
+    - media: '<img src="https://picsum.photos/id/17/1600/900" alt="Workers">'
       eyebrow_heading: 'Worker Impact:'
       heading: 'Jobs for Tomorrow'
       link:
