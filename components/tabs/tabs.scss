@@ -6,12 +6,7 @@ cu-tabs {
   position: relative;
   container-type: inline-size;
   overflow: hidden;
-}
-
-// Override section styles when it contains tabs
-.cu-section:has(cu-tabs) {
-  margin: 0;
-  max-width: none;
+  padding: 0 var(--cu-ps2) var(--cu-vr2);
 }
 
 // Background media - spans full component height
@@ -23,19 +18,6 @@ cu-tabs {
   bottom: 0;
   z-index: 0;
   overflow: hidden;
-
-  // Handle Drupal's nested wrapper divs
-  > div,
-  .cu-media,
-  .contextual-region,
-  .field,
-  .field__item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
   img,
   video {
@@ -53,7 +35,7 @@ cu-tabs {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 30, 60, 0.8);
+    background: linear-gradient(to top, transparent 55%, rgba(7, 57, 73, 0.8) 100%);
     pointer-events: none;
     z-index: 1;
   }
@@ -69,7 +51,7 @@ cu-tabs {
   margin: 0 auto;
 }
 
-@container (min-width: 976px) {
+@container (min-width: 37.5rem) {
   .cu-tabs__header {
     min-height: 123px;
     display: flex;
@@ -81,14 +63,13 @@ cu-tabs {
 
 .cu-tabs__heading {
   margin: 0 0 7px;
-  font-family: 'Replica', sans-serif;
-  font-size: 32px;
+  --cu-font-size: 32px;
   font-weight: 400;
   line-height: 40px;
   color: white;
 }
 
-@container (min-width: 768px) {
+@container (min-width: 37.5rem) {
   .cu-tabs__heading {
     font-size: 50px;
     line-height: 56px;
@@ -96,7 +77,7 @@ cu-tabs {
 }
 
 .cu-tabs__body {
-  font-family: 'Replica', sans-serif;
+  // font-family: 'Replica', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -107,7 +88,7 @@ cu-tabs {
   }
 }
 
-@container (min-width: 768px) {
+@container (min-width: 37.5rem) {
   .cu-tabs__body {
     font-size: 20px;
     line-height: 30px;
@@ -115,212 +96,179 @@ cu-tabs {
 }
 
 // Main container - sits on top of background
-// Padding creates space to show background image on sides and bottom
 .cu-tabs__container {
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 0 16px 40px;
-}
+  background-color: var(--cu-color-white, white);
+  padding: 1em;
 
-@container (min-width: 976px) {
-  .cu-tabs__container {
-    flex-direction: row;
-    padding: 0 40px 60px;
+  input[type=radio],
+  input[type=checkbox] {
+    display: none;
   }
 }
-
 
 // Inner wrapper for white background on content area
 .cu-tabs__inner {
   display: flex;
   flex-direction: column;
-  background-color: var(--cu-color-white, white);
-  width: 100%;
 }
 
-@container (min-width: 976px) {
+@container (min-width: 37.5rem) {
   .cu-tabs__inner {
-    flex-direction: row;
-    gap: 120px;
-    max-width: 1360px;
-    min-height: 800px;
-    margin: 0 auto;
-  }
-}
-
-// Mobile select dropdown
-.cu-tabs__select-wrapper {
-  position: relative;
-  padding: var(--cu-vr1) var(--cu-ps1);
-}
-
-@container (min-width: 976px) {
-  .cu-tabs__select-wrapper {
-    display: none;
-  }
-}
-
-.cu-tabs__select-label {
-  display: block;
-  font-family: 'Replica', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: $black;
-  margin-bottom: 0.5rem;
-}
-
-.cu-tabs__select {
-  appearance: none;
-  width: 100%;
-  padding: 0.75rem 2.5rem 0.75rem 1rem;
-  font-family: 'Replica', sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: $black;
-  background-color: var(--cu-color-white, white);
-  border: 1px solid #bababa;
-  border-radius: 0;
-  cursor: pointer;
-  transition: border-color 0.2s ease;
-
-  &:hover {
-    border-color: $black;
-  }
-
-  &:focus {
-    outline: 2px solid $black;
-    outline-offset: 2px;
+    width: 36%;
+    // height: 70vh;
+    min-height: 700px;
+    max-height: 800px;
+    overflow-y: scroll;
   }
 }
 
 .cu-tabs__select-icon {
   position: absolute;
-  right: calc(var(--cu-ps1) + 1rem);
-  bottom: calc(var(--cu-vr1) + 0.75rem);
-  pointer-events: none;
-  color: $black;
+  padding: 12px;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
 }
 
-// Desktop tab list
-.cu-tabs__list {
-  display: none;
-  flex-direction: column;
-  width: 479px;
-  flex-shrink: 0;
-  overflow-y: auto;
-  max-height: 800px;
-  position: relative;
-  border-right: 0.5px solid #bababa;
 
-  // Firefox scrollbar
-  scrollbar-width: thin;
-  scrollbar-color: #bababa #f3f3f3;
 
-  // Custom scrollbar styling
-  // Webkit browsers (Chrome, Safari, Edge)
-  &::-webkit-scrollbar {
-    width: 5px;
-  }
+// .cu-tabs__list {
+//   display: none;
+//   flex-direction: column;
+//   width: 479px;
+//   flex-shrink: 0;
+//   overflow-y: auto;
+//   max-height: 800px;
+//   position: relative;
+//   border-right: 0.5px solid #bababa;
 
-  &::-webkit-scrollbar-track {
-    background: #f3f3f3;
-    border-radius: 10px;
-  }
+//   // Firefox scrollbar
+//   scrollbar-width: thin;
+//   scrollbar-color: #bababa #f3f3f3;
 
-  &::-webkit-scrollbar-thumb {
-    background: #bababa;
-    border-radius: 10px;
-  }
+//   // Custom scrollbar styling
+//   // Webkit browsers (Chrome, Safari, Edge)
+//   &::-webkit-scrollbar {
+//     width: 5px;
+//   }
 
-  &::-webkit-scrollbar-thumb:hover {
-    background: #999999;
-  }
-}
+//   &::-webkit-scrollbar-track {
+//     background: #f3f3f3;
+//     border-radius: 10px;
+//   }
 
-@container (min-width: 976px) {
-  .cu-tabs__list {
-    display: flex;
-  }
-}
+//   &::-webkit-scrollbar-thumb {
+//     background: #bababa;
+//     border-radius: 10px;
+//   }
+
+//   &::-webkit-scrollbar-thumb:hover {
+//     background: #999999;
+//   }
+// }
+
+// @container (min-width: 37.5rem) {
+//   .cu-tabs__list {
+//     display: flex;
+//   }
+// }
 
 .cu-tabs__tab {
+  order: -1;
   display: flex;
   align-items: center;
-  width: 100%;
-  min-height: 100px;
-  padding: 24px 40px;
-  font-family: 'Replica', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 40px;
-  color: $black;
-  background-color: transparent;
-  border: none;
-  border-top: 0.5px solid #bababa;
-  text-align: left;
-  cursor: pointer;
+  --cu-font-weight: 400;
   transition: background-color 0.2s ease, color 0.2s ease;
-
-  &:last-child {
-    border-bottom: 0.5px solid #bababa;
-  }
-
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-  }
+  padding: var(--cu-vr-1) var(--cu-ps0);
 
   &:focus-visible {
     outline: 2px solid $black;
     outline-offset: -2px;
   }
+}
 
-  &.cu-tabs__tab--active {
-    background-color: $cornell-red;
-    color: $white;
-    min-height: 150px;
-    border-color: $cornell-red;
+.cu-tabs__tab[aria-selected="true"] {
+  border: 2px solid green;
+}
+
+.cu-tabs__tab[aria-selected="false"] {
+  display: none;
+  padding: var(--cu-vr-2) var(--cu-ps0);
+}
+
+input[type=checkbox]:checked ~ .cu-tabs__tab[aria-selected="false"] {
+  display: block;
+  // position: absolute;
+  border-left: 2px solid green;
+  border-right: 2px solid green;
+}
+
+@container (min-width: 37.5rem) {
+  .cu-tabs__tab {
+    min-height: 100px;
+    padding: var(--cu-vr0) 40px;
+    --cu-font-size: var(--cu-ms3);
+    border-top: 0.5px solid #bababa;
+
+    &:last-child {
+      border-bottom: 0.5px solid #bababa;
+    }
 
     &:hover {
-      background-color: darken($cornell-red, 5%);
+      background-color: rgba(0, 0, 0, 0.02);
     }
-  }
-}
 
-// Tab panels container
-.cu-tabs__panels {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 40px 24px;
-}
+    &:has(+ .cu-tabs__panel + input[type=radio]:checked) {
+      background-color: $cornell-red;
+      color: $white;
+      min-height: 150px;
+      border-color: $cornell-red;
 
-@container (min-width: 976px) {
-  .cu-tabs__panels {
-    padding: 0;
-    padding-right: 40px;
+      &:hover {
+        background-color: darken($cornell-red, 5%);
+      }
+    }
   }
 }
 
 .cu-tabs__panel {
   display: none;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  max-width: 610px;
 
-  &.cu-tabs__panel--active {
-    display: flex;
+  &:has(+ input[type=radio]:checked) {
+    display: block;
   }
+}
+
+@container (min-width: 37.5rem) {
+  .cu-tabs__panel {
+    position: absolute;
+    left: calc(36% + var(--cu-ps4));
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    overflow-y: scroll;
+    padding: var(--cu-vr1) 0;
+  }
+}
+
+.cu-tabs__panel-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1em;
+  min-height: 100%;
+  padding-right: var(--cu-ps1);
 }
 
 // Subheading (label above content)
 .cu-tabs__subheading {
+  order: -2;
   margin: 0;
-  font-family: 'Replica', sans-serif;
+  // font-family: 'Replica', sans-serif;
   font-size: 12px;
   font-weight: 700;
   line-height: 20px;
@@ -330,69 +278,71 @@ cu-tabs {
 }
 
 // Red accent line
-.cu-tabs__accent-line {
+.cu-tabs__panel-inner:has(.cu-tabs__subheading)::after {
+  order: -1;
+  content: '';
   width: 80px;
-  height: 4px;
+  height: 8px;
   background-color: $cornell-red;
 }
 
 // Main content area
 .cu-tabs__content {
-  font-family: 'Replica', sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-  line-height: 40px;
-  color: $black;
+  // font-family: 'Replica', sans-serif;
+  // font-size: 28px;
+  // font-weight: 400;
+  // line-height: 40px;
+  // color: $black;
 
   p:last-child {
     margin-bottom: 0;
   }
 
-  // Large text style for main content
-  .cu-text--xxxl {
-    font-size: 28px;
-    line-height: 40px;
-  }
+  // // Large text style for main content
+  // .cu-text--xxxl {
+  //   font-size: 28px;
+  //   line-height: 40px;
+  // }
 }
 
-@container (min-width: 976px) {
-  .cu-tabs__content {
-    font-size: 50px;
-    line-height: 56px;
+@container (min-width: 37.5rem) {
+  // .cu-tabs__content {
+  //   font-size: 50px;
+  //   line-height: 56px;
 
-    .cu-text--xxxl {
-      font-size: 50px;
-      line-height: 56px;
-    }
-  }
+    // .cu-text--xxxl {
+    //   font-size: 50px;
+    //   line-height: 56px;
+    // }
+  // }
 }
 
 // CTA button
 .cu-tabs__link {
-  margin-top: 20px;
+//   margin-top: 20px;
   align-self: flex-start;
 }
 
 // Button outline style override for this component
-.cu-tabs__link.cu-button--outline {
-  border: 2px solid $cornell-red;
-  color: $black;
-  background-color: transparent;
-  padding: 12px 40px;
-  font-family: 'Replica', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 24px;
-  text-decoration: none;
-  transition: background-color 0.2s ease, color 0.2s ease;
+.cu-tabs__link {
+  // border: 2px solid $cornell-red;
+  // color: $black;
+  // background-color: transparent;
+  // padding: 12px 40px;
+  // font-family: 'Replica', sans-serif;
+  // font-size: 16px;
+  --cu-font-weight: 700;
+  // line-height: 24px;
+  // text-decoration: none;
+  // transition: background-color 0.2s ease, color 0.2s ease;
 
-  &:hover {
-    background-color: $cornell-red;
-    color: $white;
-  }
+  // &:hover {
+  //   background-color: $cornell-red;
+  //   color: $white;
+  // }
 
-  &:focus-visible {
-    outline: 2px solid $black;
-    outline-offset: 2px;
-  }
+  // &:focus-visible {
+  //   outline: 2px solid $black;
+  //   outline-offset: 2px;
+  // }
 }

@@ -1,12 +1,61 @@
 /**
  * @file
  * Tabs component JavaScript.
- *
- * Handles tab switching, keyboard navigation, and mobile select synchronization.
  */
 
-(function () {
+(function() {
+
   'use strict';
+
+  class cuTabs extends HTMLElement {
+
+    #tabs;
+    #selector;
+    #selectorThing;
+
+    connectedCallback() {
+      this.#tabs = this.querySelectorAll('.cu-tabs__tab');
+      this.#selector = this.querySelector('.cu-tabs__select-icon');
+      this.#selectorThing = this.querySelector('#' + this.#selector.getAttribute('for'));
+      console.log(this.#selectorThing.checked);
+
+
+      for (const tab of this.#tabs) {
+        tab.addEventListener('focus', (event) => {
+          event.target.click();
+        })
+      }
+
+      this.addEventListener('click', (event) => {
+        this.delegateClick(event);
+      });
+
+      if (this.#tabs.length) {
+        this.#tabs[0].click();
+      }
+    }
+
+    delegateClick(event) {
+      if (event.target.matches('.cu-tabs__tab')) {
+        for (const tab of this.#tabs) {
+          tab.setAttribute('aria-selected', 'false');
+        }
+
+        event.target.setAttribute('aria-selected', 'true');
+
+        setTimeout(() => {
+          if (this.#selectorThing.checked)
+          this.#selector.click();
+          console.log(this.#selector.getAttribute('for'))
+        }, 250);
+        // this.#selector.click();
+      }
+    }
+
+  }
+
+  customElements.define("cu-tabs", cuTabs);
+  return;
 
   /**
    * Initialize tabs functionality for a single cu-tabs element.
@@ -134,6 +183,7 @@
   }
 
   // Re-initialize on Drupal behaviors attach (for AJAX-loaded content)
+  // Union components shouldn't know about Drupal.
   if (typeof Drupal !== 'undefined' && Drupal.behaviors) {
     Drupal.behaviors.cuTabs = {
       attach: function (context) {
