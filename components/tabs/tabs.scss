@@ -45,7 +45,6 @@ cu-tabs {
   z-index: 1;
   text-align: center;
   padding: var(--cu-vr1) var(--cu-ps0);
-  // max-width: 758px;
   margin: 0 auto;
 }
 
@@ -59,10 +58,6 @@ cu-tabs {
   }
 }
 
-.cu-tabs__heading {
-  color: var(--cu-color-white);
-}
-
 @container (min-width: 768px) {
   .cu-tabs__heading {
     --cu-font-size: var(--cu-ms8);
@@ -70,16 +65,19 @@ cu-tabs {
 }
 
 .cu-tabs__body {
-  font-weight: 400;
-  color: var(--cu-color-white);
+  --cu-font-weight: 400;
 
   p:last-child {
     margin-bottom: 0;
   }
 }
 
+cu-tabs:has(.cu-tabs__media) .cu-tabs__heading,
+cu-tabs:has(.cu-tabs__media) .cu-tabs__body {
+  --cu-text-color: var(--cu-color-white);
+}
+
 // Main container - sits on top of background
-// Padding creates space to show background image on sides and bottom
 .cu-tabs__container {
   position: relative;
   display: flex;
@@ -89,57 +87,18 @@ cu-tabs {
   background-color: var(--cu-colorscheme-background, white);
 }
 
+@container (min-width: 37.5rem) {
+  .cu-tabs__container {
+    display: grid;
+    grid-template-columns: 1fr 60%;    // justify-content: space-between;
+    gap: var(--cu-ps4);
+    padding: 0;
+  }
+}
+
 .cu-tabs__container input[type=checkbox] {
   display: none;
 }
-
-.cu-tabs__select-icon {
-  position: absolute;
-  padding: 12px;
-  top: var(--cu-vr1);
-  right: var(--cu-ps1);
-  width: 40px;
-  height: 40px;
-  z-index: 2;
-}
-
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__container {
-//     flex-direction: row;
-//     padding: 0 40px 60px;
-//   }
-// }
-
-
-// // Inner wrapper for white background on content area
-// .cu-tabs__inner {
-//   display: flex;
-//   flex-direction: column;
-//   background-color: var(--cu-color-white, white);
-//   width: 100%;
-// }
-
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__inner {
-//     flex-direction: row;
-//     gap: 120px;
-//     max-width: 1360px;
-//     min-height: 800px;
-//     margin: 0 auto;
-//   }
-// }
-
-// // Mobile select dropdown
-// .cu-tabs__select-wrapper {
-//   position: relative;
-//   padding: var(--cu-vr1) var(--cu-ps1);
-// }
-
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__select-wrapper {
-//     display: none;
-//   }
-// }
 
 .cu-tabs__tabs {
   margin: 0;
@@ -176,137 +135,46 @@ cu-tabs {
   }
 }
 
+@container (min-width: 37.5rem) {
+  .cu-tabs__tabs {
+    --cu-font-size: var(--cu-ms3);
+    border: none;
+    height: unset;
+    border-right: 1px solid var(--cu-color-gray);
+    max-height: 80vh;
+    overflow-y: auto;
+
+    .cu-tabs__tab {
+      height: 5rem;
+      border-bottom: 1px solid var(--cu-color-gray);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .cu-tabs__tab:last-child {
+      border-bottom: none;
+    }
+
+    .cu-tabs__tab:has([aria-selected="true"]) {
+      height: 7rem;
+      background-color: var(--cu-color-brand);
+      --cu-text-color: var(--cu-color-white);
+    }
+
+    .cu-tabs__tab:has(.cu-tabs__tab--select-trigger) {
+      display: none;
+    }
+
+    .cu-tabs__tab-link {
+      width: 100%;
+      padding: var(--cu-vr0) 0;
+      padding-left: var(--cu-ps1);
+    }
+  }
+}
+
 input[type=checkbox]:checked + .cu-tabs__tabs {
   height: unset;
 }
-
-// .cu-tabs__select-label {
-//   display: block;
-//   font-family: 'Replica', sans-serif;
-//   font-size: 12px;
-//   font-weight: 700;
-//   text-transform: uppercase;
-//   letter-spacing: 1.2px;
-//   color: $black;
-//   margin-bottom: 0.5rem;
-// }
-
-// .cu-tabs__select {
-//   appearance: none;
-//   width: 100%;
-//   padding: 0.75rem 2.5rem 0.75rem 1rem;
-//   font-family: 'Replica', sans-serif;
-//   font-size: 1rem;
-//   font-weight: 400;
-//   color: $black;
-//   background-color: var(--cu-color-white, white);
-//   border: 1px solid #bababa;
-//   border-radius: 0;
-//   cursor: pointer;
-//   transition: border-color 0.2s ease;
-
-//   &:hover {
-//     border-color: $black;
-//   }
-
-//   &:focus {
-//     outline: 2px solid $black;
-//     outline-offset: 2px;
-//   }
-// }
-
-// .cu-tabs__select-icon {
-//   position: absolute;
-//   right: calc(var(--cu-ps1) + 1rem);
-//   bottom: calc(var(--cu-vr1) + 0.75rem);
-//   pointer-events: none;
-//   color: $black;
-// }
-
-// // Desktop tab list
-// .cu-tabs__list {
-//   display: none;
-//   flex-direction: column;
-//   width: 479px;
-//   flex-shrink: 0;
-//   overflow-y: auto;
-//   max-height: 800px;
-//   position: relative;
-//   border-right: 0.5px solid #bababa;
-
-//   // Firefox scrollbar
-//   scrollbar-width: thin;
-//   scrollbar-color: #bababa #f3f3f3;
-
-//   // Custom scrollbar styling
-//   // Webkit browsers (Chrome, Safari, Edge)
-//   &::-webkit-scrollbar {
-//     width: 5px;
-//   }
-
-//   &::-webkit-scrollbar-track {
-//     background: #f3f3f3;
-//     border-radius: 10px;
-//   }
-
-//   &::-webkit-scrollbar-thumb {
-//     background: #bababa;
-//     border-radius: 10px;
-//   }
-
-//   &::-webkit-scrollbar-thumb:hover {
-//     background: #999999;
-//   }
-// }
-
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__list {
-//     display: flex;
-//   }
-// }
-
-// .cu-tabs__tab {
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   min-height: 100px;
-//   padding: 24px 40px;
-//   font-family: 'Replica', sans-serif;
-//   font-size: 28px;
-//   font-weight: 400;
-//   line-height: 40px;
-//   color: $black;
-//   background-color: transparent;
-//   border: none;
-//   border-top: 0.5px solid #bababa;
-//   text-align: left;
-//   cursor: pointer;
-//   transition: background-color 0.2s ease, color 0.2s ease;
-
-//   &:last-child {
-//     border-bottom: 0.5px solid #bababa;
-//   }
-
-//   &:hover {
-//     background-color: rgba(0, 0, 0, 0.02);
-//   }
-
-//   &:focus-visible {
-//     outline: 2px solid $black;
-//     outline-offset: -2px;
-//   }
-
-//   &.cu-tabs__tab--active {
-//     background-color: $cornell-red;
-//     color: $white;
-//     min-height: 150px;
-//     border-color: $cornell-red;
-
-//     &:hover {
-//       background-color: darken($cornell-red, 5%);
-//     }
-//   }
-// }
 
 // Tab panels container
 .cu-tabs__panels {
@@ -315,17 +183,26 @@ input[type=checkbox]:checked + .cu-tabs__tabs {
   gap: var(--cu-vr3);
 }
 
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__panels {
-//     padding: 0;
-//     padding-right: 40px;
-//   }
-// }
+@container (min-width: 37.5rem) {
+  .cu-tabs__panels {
+    justify-content: center;
+    padding: var(--cu-vr1) var(--cu-ps1) var(--cu-vr1) 0;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+}
 
 .cu-tabs__panel {
   display: flex;
   flex-direction: column;
   gap: var(--cu-vr0);
+}
+
+@container (min-width: 37.5rem) {
+  .cu-tabs__panel {
+    display: grid;
+    max-height: 100%;
+  }
 }
 
 .cu-tabs__panel:has(.cu-tabs__subheading)::after {
@@ -349,13 +226,6 @@ input[type=checkbox]:checked + .cu-tabs__tabs {
   text-transform: uppercase;
 }
 
-// // Red accent line
-// .cu-tabs__accent-line {
-//   width: 80px;
-//   height: 4px;
-//   background-color: $cornell-red;
-// }
-
 // Main content area
 .cu-tabs__content {
   p:last-child {
@@ -363,44 +233,9 @@ input[type=checkbox]:checked + .cu-tabs__tabs {
   }
 }
 
-// @container (min-width: 37.5rem) {
-//   .cu-tabs__content {
-//     font-size: 50px;
-//     line-height: 56px;
-
-//     .cu-text--xxxl {
-//       font-size: 50px;
-//       line-height: 56px;
-//     }
-//   }
-// }
-
 // CTA button
 .cu-tabs__link {
   margin-bottom: 0;
   text-align: center;
+  justify-self: start;
 }
-
-// // Button outline style override for this component
-// .cu-tabs__link.cu-button--outline {
-//   border: 2px solid $cornell-red;
-//   color: $black;
-//   background-color: transparent;
-//   padding: 12px 40px;
-//   font-family: 'Replica', sans-serif;
-//   font-size: 16px;
-//   font-weight: 700;
-//   line-height: 24px;
-//   text-decoration: none;
-//   transition: background-color 0.2s ease, color 0.2s ease;
-
-//   &:hover {
-//     background-color: $cornell-red;
-//     color: $white;
-//   }
-
-//   &:focus-visible {
-//     outline: 2px solid $black;
-//     outline-offset: 2px;
-//   }
-// }
