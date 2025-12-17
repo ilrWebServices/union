@@ -2,53 +2,58 @@ default:
   demo_label: Default
   heading: 'Our National Impact'
   body: "Explore the depth of our 21 state-based partnerships, from policy wins to workforce transformation."
-  media: '<img src="https://placehold.co/1600x900/1a3a5c/ffffff?text=Background+Image" alt="Background">'
+  media: '<img src="https://picsum.photos/id/391/1600/900" alt="Background">'
+  select_text: Select...
   items:
     - tab_heading: 'Illinois'
       subheading: 'ILLINOIS STATE IMPACT'
-      content: '<p class="cu-text--xxxl">As a founding partner in the Climate Jobs National Resource Center, Illinois has led the charge in clean energy workforce development.</p>'
+      content: |
+        <p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">As a founding partner in the Climate Jobs National Resource Center, Illinois has led the charge in clean energy workforce development.</p>
       link:
         title: 'Explore work in Illinois'
         url: '/states/illinois'
     - tab_heading: 'Maine'
       subheading: 'MAINE STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Maine has pioneered offshore wind initiatives and sustainable forestry practices across the region.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Maine has pioneered offshore wind initiatives and sustainable forestry practices across the region.</p>'
       link:
         title: 'Explore work in Maine'
         url: '/states/maine'
     - tab_heading: 'Massachusetts'
       subheading: 'MASSACHUSETTS STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Massachusetts continues to lead in clean energy innovation and workforce training programs.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Massachusetts continues to lead in clean energy innovation and workforce training programs.</p>'
       link:
         title: 'Explore work in Massachusetts'
         url: '/states/massachusetts'
     - tab_heading: 'New York'
       subheading: 'NEW YORK STATE IMPACT'
-      content: '<p class="cu-text--xxxl">As a founding partner in the Climate Jobs National Resource Center, New York has led the charge in distributed solar and policy innovation.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">As a founding partner in the Climate Jobs National Resource Center, New York has led the charge in distributed solar and policy innovation.</p>'
       link:
         title: 'Explore work in New York'
         url: '/states/new-york'
     - tab_heading: 'Pennsylvania'
       subheading: 'PENNSYLVANIA STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Pennsylvania is transforming its energy sector while supporting workers in traditional industries.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Pennsylvania is transforming its energy sector while supporting workers in traditional industries.</p>'
       link:
         title: 'Explore work in Pennsylvania'
         url: '/states/pennsylvania'
     - tab_heading: 'Rhode Island'
       subheading: 'RHODE ISLAND STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Rhode Island has become a leader in offshore wind development and marine energy innovation.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Rhode Island has become a leader in offshore wind development and marine energy innovation.</p>'
       link:
         title: 'Explore work in Rhode Island'
         url: '/states/rhode-island'
     - tab_heading: 'Texas'
       subheading: 'TEXAS STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Texas leads the nation in wind energy production and is rapidly expanding solar capacity.</p>'
+      content: |
+        <p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Texas leads the nation in wind energy production and is rapidly expanding solar capacity.</p>
+        <p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Just in case text is very long.</p>
+        <p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       link:
         title: 'Explore work in Texas'
         url: '/states/texas'
     - tab_heading: 'Washington'
       subheading: 'WASHINGTON STATE IMPACT'
-      content: '<p class="cu-text--xxxl">Washington continues to advance clean energy policy and sustainable workforce development.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Washington continues to advance clean energy policy and sustainable workforce development.</p>'
       link:
         title: 'Explore work in Washington'
         url: '/states/washington'
@@ -60,19 +65,19 @@ minimal:
   items:
     - tab_heading: 'Northeast'
       subheading: 'NORTHEAST REGION'
-      content: '<p class="cu-text--xxxl">Our Northeast programs focus on offshore wind and urban sustainability.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Our Northeast programs focus on offshore wind and urban sustainability.</p>'
       link:
         title: 'Learn more'
         url: '/regions/northeast'
     - tab_heading: 'Midwest'
       subheading: 'MIDWEST REGION'
-      content: '<p class="cu-text--xxxl">The Midwest leads in agricultural innovation and rural energy development.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">The Midwest leads in agricultural innovation and rural energy development.</p>'
       link:
         title: 'Learn more'
         url: '/regions/midwest'
     - tab_heading: 'West'
       subheading: 'WEST REGION'
-      content: '<p class="cu-text--xxxl">Western states are pioneering solar energy and water conservation efforts.</p>'
+      content: '<p style="font-size: var(--cu-ms4); font-weight: 400; line-height: 1.25;">Western states are pioneering solar energy and water conservation efforts.</p>'
       link:
         title: 'Learn more'
         url: '/regions/west'
