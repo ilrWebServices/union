@@ -141,7 +141,7 @@ cu-tabs:has(.cu-tabs__media) .cu-tabs__body {
     border: none;
     height: unset;
     border-right: 1px solid var(--cu-color-gray);
-    max-height: 80vh;
+    height: 80vh;
     overflow-y: auto;
 
     .cu-tabs__tab {
@@ -187,7 +187,7 @@ input[type=checkbox]:checked + .cu-tabs__tabs {
   .cu-tabs__panels {
     justify-content: center;
     padding: var(--cu-vr1) var(--cu-ps1) var(--cu-vr1) 0;
-    max-height: 80vh;
+    height: 80vh;
     overflow-y: auto;
   }
 }
@@ -201,6 +201,7 @@ input[type=checkbox]:checked + .cu-tabs__tabs {
 @container (min-width: 37.5rem) {
   .cu-tabs__panel {
     display: grid;
+    gap: var(--cu-vr1);
     max-height: 100%;
   }
 }
