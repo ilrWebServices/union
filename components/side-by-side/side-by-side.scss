@@ -74,7 +74,7 @@
 
 // Media area styling
 .cu-side-by-side__media {
-  line-height: 0;
+  --cu-line-height: 0;
 
   img, video {
     width: 100%;
@@ -109,18 +109,13 @@
   --frame-color: #ccc;
   --frame-width: 16px;
 
-  .cu-image,
-  iframe {
+  .cu-side-by-side__media {
     padding: var(--frame-width) var(--frame-width) var(--frame-width) 0;
     background:
       linear-gradient(var(--frame-color) 0 0) top right / 75% var(--frame-width),
       linear-gradient(var(--frame-color) 0 0) right / var(--frame-width) 100%,
       linear-gradient(var(--frame-color) 0 0) bottom right / 15% var(--frame-width), transparent;
     background-repeat: no-repeat;
-  }
-
-  iframe {
-    aspect-ratio: 16 / 10;
   }
 
   // Vibrant (brand color) variant
@@ -135,8 +130,7 @@
 
   // Mirror the frame for reversed layouts
   &.cu-layoutscheme--reversed {
-    .cu-image,
-    iframe {
+    .cu-side-by-side__media {
       padding: var(--frame-width) 0 var(--frame-width) var(--frame-width);
       background:
         linear-gradient(var(--frame-color) 0 0) bottom left / 75% var(--frame-width),
