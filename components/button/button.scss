@@ -17,21 +17,21 @@
 // When a button in either in a component that is using a light colorscheme, or
 // the component using a light color scheme is nested in another component using
 // any colorscheme.
-.cu-colorscheme--light .cu-button,
+.cu-colorscheme--light .cu-button:not([class*="cu-colorscheme--"]),
 [class*="cu-colorscheme--"] .cu-colorscheme--light .cu-button {
   background-color: transparent;
   --cu-text-color: var(--cu-color-dark);
 }
 
 // Same as above but for buttons nested in a dark component.
-.cu-colorscheme--dark .cu-button,
+.cu-colorscheme--dark .cu-button:not([class*="cu-colorscheme--"]),
 [class*="cu-colorscheme--"] .cu-colorscheme--dark .cu-button  {
   background-color: transparent;
   --cu-text-color: var(--cu-color-white);
 }
 
 // Same as above but for buttons nested in a vibrant component.
-.cu-colorscheme--vibrant .cu-button,
+.cu-colorscheme--vibrant .cu-button:not([class*="cu-colorscheme--"]),
 [class*="cu-colorscheme--"] .cu-colorscheme--vibrant .cu-button  {
   background-color: transparent;
   --cu-text-color: var(--cu-color-white);
