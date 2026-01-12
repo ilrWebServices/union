@@ -1,5 +1,5 @@
 .cu-page-nav {
-  margin-top: var(--cu-component-margin-top, var(--cu-vr1));
+  margin-top: var(--cu-component-margin-top, 0);
   width: 100%; }
 
 .cu-page-nav__heading {
