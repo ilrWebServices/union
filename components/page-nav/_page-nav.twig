@@ -1,3 +1,14 @@
+{#
+/**
+ * Page nav
+ *
+ * Displays in-page navigation.
+ *
+ * @var string $heading Optional heading.
+ * @var array $items An array of link items, which must have url and text properties.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the component.
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
 
 <div{{ attributes.addClass(['cu-page-nav']) }}>

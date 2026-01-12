@@ -2,7 +2,7 @@
   margin-top: var(--cu-component-margin-top, var(--cu-vr1));
   width: 100%; }
 
-.cu-heading--page-nav {
+.cu-page-nav__heading {
   --cu-font-size: var(--cu-ms0);
   --cu-font-weight: bold !important; }
 

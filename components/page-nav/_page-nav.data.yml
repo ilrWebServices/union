@@ -1,0 +1,16 @@
+default:
+  demo_label: Default
+  # heading: test
+  items:
+    -
+      url: #
+      text: About
+    -
+      url: #
+      text: Contact
+    -
+      url: #
+      text: Our team
+    -
+      url: #
+      text: Misc
