@@ -1,8 +1,8 @@
 .cu-page-nav {
-  margin-top: var(--cu-component-margin-top, var(--cu-vr1));
+  margin-top: var(--cu-component-margin-top, 0);
   width: 100%; }
 
-.cu-heading--page-nav {
+.cu-page-nav__heading {
   --cu-font-size: var(--cu-ms0);
   --cu-font-weight: bold !important; }
 
@@ -25,3 +25,84 @@
 
 .cu-page-nav__link {
   text-decoration: none; }
+
+.cu-page-nav input[type="checkbox"] {
+  display: none;
+}
+
+.cu-page-nav__item:has(.cu-page-nav__select-trigger) {
+  display: none;
+}
+
+/* `select` variant styles. */
+.cu-page-nav.cu-page-nav--select .cu-page-nav__select-trigger {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cu-vr-2) var(--cu-ps0);
+}
+
+.cu-page-nav.cu-page-nav--select .cu-page-nav__select-trigger .cu-heading {
+  text-transform: uppercase;
+  --cu-font-size: var(--cu-ms-3);
+  opacity: .8;
+}
+
+.cu-page-nav.cu-page-nav--select .cu-page-nav__list {
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--cu-text-color);
+  --cu-font-weight: 400;
+  width: 100%;
+  height: 2.5rem;
+  overflow: hidden;
+  background-color: var(--cu-colorscheme-background);
+}
+
+.cu-page-nav.cu-page-nav--select input[type="checkbox"]:checked + .cu-page-nav__list {
+  height: unset;
+}
+
+.cu-page-nav.cu-page-nav--select .cu-page-nav__item {
+  display: flex;
+  min-height: 2.5rem;
+  align-items: center;
+}
+
+.cu-page-nav.cu-page-nav--select .cu-page-nav__link {
+  display: block;
+  padding: var(--cu-vr-2) var(--cu-ps0);
+}
+
+.cu-page-nav.cu-page-nav--select .cu-heading {
+  --cu-font-weight: 700;
+  --cu-font-size: var(--cu-ms-2);
+  margin: 0;
+}
+
+.cu-page-nav.cu-page-nav--select .cu-heading.cu--accented {
+  margin: 0;
+}
+.cu-page-nav.cu-page-nav--select .cu-heading.cu--accented::after {
+  content: none;
+}
+
+@media (min-width: 61rem) {
+  .cu-page-nav.cu-page-nav--select .cu-page-nav__select-trigger svg {
+    display: none;
+  }
+
+  .cu-page-nav.cu-page-nav--select .cu-page-nav__list {
+    justify-content: space-evenly;
+    border: unset;
+    height: 3.5rem;
+  }
+
+  .cu-page-nav.cu-page-nav--select .cu-page-nav__item {
+    min-height: 3.5rem;
+  }
+}

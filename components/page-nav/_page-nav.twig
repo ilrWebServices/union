@@ -1,8 +1,28 @@
+{#
+/**
+ * Page nav
+ *
+ * Displays in-page navigation.
+ *
+ * @var string $heading Optional heading.
+ * @var array $items An array of link items, which must have url and text properties.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the component.
+ */
+#}
 {% set attributes = union_attributes(attributes|default([])) %}
+{% set id = random() %}
 
 <div{{ attributes.addClass(['cu-page-nav']) }}>
-  {% if heading %}<h2 class="cu-heading cu-heading--page-nav">{{ heading }}</h2>{% endif %}
+  <input type="checkbox" id="cu-page-nav-selector-{{ id }}" />
   <ul class="cu-page-nav__list">
+    <li class="cu-page-nav__item">
+      <label for="cu-page-nav-selector-{{ id }}" class="cu-page-nav__select-trigger">
+        {% if heading %}<h2 class="cu-heading cu-page-nav__heading">{{ heading }}</h2>{% endif %}
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </label>
+    </li>
   {% for item in items %}
     <li class="cu-page-nav__item"><a href="{{ item.url }}" class="cu-page-nav__link"><h4 class="cu-heading cu--accented">{{ item.text }}</h4></a></li>
   {% endfor %}
