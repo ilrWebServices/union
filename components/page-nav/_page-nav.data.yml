@@ -14,3 +14,22 @@ default:
     -
       url: #
       text: Misc
+select-box:
+  demo_label: Select box
+  heading: Jump to:
+  items:
+    -
+      url: #
+      text: About
+    -
+      url: #
+      text: Contact
+    -
+      url: #
+      text: Our team
+    -
+      url: #
+      text: Misc
+  attributes:
+    class:
+      - 'cu-page-nav--select'
