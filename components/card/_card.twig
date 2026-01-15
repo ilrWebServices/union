@@ -19,6 +19,7 @@
  * @var string $card_link_alt Alt text for the card link.
  * @var array $icon_data An array of icon data (e.g. `icon`, `title`, `size`, `label`, etc.)
  * @var array $button_data An array of button data (e.g. `text`, `attributes`, etc.)
+ * @var string $suffix Markup that should be placed at the root of the component, but generally hidden or absolutely positioned.
  * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire card.
  * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the card content region.
  * @var Drupal\Core\Template\Attribute|array $link_attributes Attributes for the card link.
@@ -89,4 +90,5 @@
 {% if card_link_url %}
   <a{{ link_attributes.addClass(['cu-card__link']) }} href="{{ card_link_url }}">{{ card_link_alt }}</a>
 {% endif %}
+  {{ suffix }}
 </div>
