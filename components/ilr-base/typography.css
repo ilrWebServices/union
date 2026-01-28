@@ -26,6 +26,14 @@
   margin: 0 0 var(--cu-component-margin-bottom, var(--cu-vr0));
   --cu-line-height: 1.2;
   --cu-font-weight: 400;
+  overflow-wrap: anywhere;
+}
+
+
+@media (min-width: 37.5rem) {
+  .cu-heading {
+    overflow-wrap: unset;
+  }
 }
 
 .cu-heading strong {

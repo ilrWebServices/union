@@ -76,11 +76,9 @@
       --cu-font-family: 'futura-pt';
       --cu-font-size: var(--cu-ms4);
       text-transform: uppercase;
-      word-wrap: anywhere;
 
       @include breakpoint(sm) {
         --cu-font-size: var(--cu-ms6);
-        word-wrap: normal;
       }
 
       @include breakpoint(md) {
