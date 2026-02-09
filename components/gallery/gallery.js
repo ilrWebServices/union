@@ -91,16 +91,19 @@
       this.#thumbs[this.#currentItem].classList.add('active');
 
       // Move first item to center without calling moveItem(), which also
-      // scrolls vertically, which we don't want on page load.
-      setTimeout(() => {
-        // This value is an educated guess. The first blank slide has a height
-        // set in CSS (currently 180px, 270px, or 360px) and an aspect ration of
-        // 1.5. We scroll to where we assume the edge of that blank slide will
-        // be and let the CSS `scroll-snap-align` property take over to center
-        // it. This still needs to run in a timeout because it seems we still
-        // need time for the images and other replaceable content to load.
-        item_wrapper.scrollLeft = 270;
-      }, '1500');
+      // scrolls vertically, which we don't want on page load. However, only do
+      // this when trying to center the first image.
+      if (window.getComputedStyle(this.#itemsArray[0]).scrollSnapAlign === 'center') {
+        setTimeout(() => {
+          // This value is an educated guess. The first blank slide has a height
+          // set in CSS (currently 180px, 270px, or 360px) and an aspect ratio of
+          // 1.5. We scroll to where we assume the edge of that blank slide will
+          // be and let the CSS `scroll-snap-align` property take over to center
+          // it. This still needs to run in a timeout because it seems we still
+          // need time for the images and other replaceable content to load.
+          item_wrapper.scrollLeft = 270;
+        }, '1500');
+      }
 
     }
 
