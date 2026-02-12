@@ -122,6 +122,10 @@
       grid-auto-columns: 1fr auto;
       gap: var(--cu-vr-2) var(--cu-ps-1);
 
+      .cu-composite-heading__heading {
+        --cu-line-height: 1;
+      }
+
       .cu-composite-heading__link {
         grid-row: 1/-1;
         grid-column: 2;
