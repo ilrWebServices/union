@@ -1,0 +1,61 @@
+{#
+/**
+ * Tout
+ *
+ * A component that displays content and media side by side, with variants for
+ * image positioning and styling.
+ *
+ * @var string $content The primary content of the component.
+ * @var string $media Image.
+ * @var string $heading Main heading title.
+ * @var string $heading_element The HTML element for the heading. Defaults to `h2`.
+ * @var string $button_text Text for the Read More button. Defaults to "Read More".
+ * @var string $button_url URL for the Read More button.
+ * @var Drupal\Core\Template\Attribute|array $attributes Attributes (class, data, etc.) for the entire component.
+ * @var Drupal\Core\Template\Attribute|array $content_attributes Attributes for the content region.
+ * @var Drupal\Core\Template\Attribute|array $media_attributes Attributes for the media region.
+ *
+ * @union-variation cu-layoutscheme--reversed Flips the orientation, placing media on the left and content on the right.
+ */
+#}
+{% set attributes = union_attributes(attributes|default([])) %}
+{% set content_attributes = union_attributes(content_attributes|default([])) %}
+{% set media_attributes = union_attributes(media_attributes|default([])) -%}
+
+<div{{ attributes.addClass('cu-tout') }}>
+  <div{{ content_attributes.addClass(['cu-tout__content']) }}>
+    {% include '@union/_composite-heading.twig' with {
+      heading: heading,
+      heading_element: heading_element,
+      attributes: {
+        class: [
+          'cu-tout__meta',
+          'cu-composite-heading--left'
+        ]
+      }
+    } only %}
+
+    {% if content %}
+      <div class="cu-tout__body cu-text">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    {% if button_url %}
+    {% include '@union/_button.twig' with {
+      text: button_text|default('Read More'),
+      url: button_url,
+      attributes: { 'class': 'cu-tout__button' }
+    } only %}
+    {% endif %}
+  </div>
+  <div{{ media_attributes.addClass(['cu-tout__media']) }}>
+  {% if button_url %}
+    <a class="cu-tout__media-link" href="{{button_url}}">
+  {% endif %}
+    {{ media }}
+  {% if button_url %}
+    </a>
+  {% endif %}
+  </div>
+</div>

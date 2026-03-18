@@ -1,0 +1,82 @@
+// Tout Component
+// Leverages design patterns from ilr-base and global styles
+
+@import '../../global/global';
+
+.cu-tout {
+  display: grid;
+  gap: 0;
+  align-content: stretch;
+  grid-template-columns: 1fr;
+  border: 1px solid #BABABA;
+
+  .cu-tout__media {
+    order: -1;
+    background-color: $gray-light; // Consider adapting to colorscheme.
+    padding: var(--cu-vr1) var(--cu-ps1);
+
+    .cu-tout__media-link {
+      display: block;
+      width: 100%;
+    }
+
+    .cu-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--cu-border-radius);
+    }
+  }
+
+  .cu-tout__content {
+    order: 1;
+    padding: var(--cu-vr1) var(--cu-ps1);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--cu-vr1);
+
+    .cu-composite-heading::after {
+      content: none;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+    .cu-button {
+      margin-top: auto;
+    }
+  }
+
+  @include breakpoint(sm) {
+    grid-template-columns: auto 50%;
+    gap: var(--cu-ps1);
+
+    &.cu-layoutscheme--reversed {
+      grid-template-columns: 50% auto;
+    }
+
+    .cu-tout__media {
+      order: initial;
+      display: flex;
+      align-items: start;
+    }
+
+    .cu-tout__content {
+      order: initial;
+    }
+  }
+}
+
+// Variant: Reversed layout (media on left, content on right)
+.cu-layoutscheme--reversed {
+  @include breakpoint(sm) {
+    .cu-tout__media {
+      order: -1;
+    }
+
+    .cu-tout__content {
+      order: 1;
+    }
+  }
+}
