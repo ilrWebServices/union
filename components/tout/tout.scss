@@ -10,6 +10,10 @@
   grid-template-columns: 1fr;
   border: 1px solid #BABABA;
 
+  .cu-tout__meta .cu-heading {
+    --cu-font-size: var(--cu-ms3);
+  }
+
   .cu-tout__media {
     order: -1;
     background-color: $gray-light; // Consider adapting to colorscheme.
@@ -48,9 +52,12 @@
     }
   }
 
+  .cu-tout__body {
+    --cu-font-size: var(--cu-ms-2);
+  }
+
   @include breakpoint(sm) {
     grid-template-columns: auto 50%;
-    gap: var(--cu-ps1);
 
     &.cu-layoutscheme--reversed {
       grid-template-columns: 50% auto;
