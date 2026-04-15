@@ -141,7 +141,7 @@
   --cu-text-color: var(--cu-color-medium-gray);
 }
 
-@container (min-width: 326px) {
+@container (min-width: 360px) {
   .cu-person--adaptive {
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: auto;
