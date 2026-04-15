@@ -626,7 +626,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
+      white-space: pre-line;
 
       // The background color is set here on a pseudo-element, rather than on
       // .cu-card__content, so that we can adjust its opacity without affecting
