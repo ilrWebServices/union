@@ -33,7 +33,7 @@ final class UnionVariation extends BaseTag {
      *   allowed in this instance (though you can also construct an empty
      *   description object).
      */
-    public function __construct(string $class_name, Description $description = null) {
+    public function __construct(string $class_name, ?Description $description = null) {
       $this->className = $class_name;
       $this->description = $description;
     }
@@ -48,7 +48,7 @@ final class UnionVariation extends BaseTag {
      *   it is highly recommended to pass it. If you omit it then it is assumed that
      *   the DocBlock is in the global namespace and has no `use` statements.
      */
-    public static function create(string $body, DescriptionFactory $descriptionFactory = null, Context $context = null): self {
+    public static function create(string $body, ?DescriptionFactory $descriptionFactory = null, ?Context $context = null): self {
       Assert::notNull($descriptionFactory);
       $parts = Utils::pregSplit('/(\s+)/Su', $body, 2);
       $class_name = $parts[0] ?? '';
