@@ -3,6 +3,7 @@
   demo_count: 3
   demo_columns: 3
   heading: Reducing Bias in Hiring
+  eyebrow_heading: HR Insights
   event_date: 2023-06-09 11:30am
   link_url: '#'
   link_alt: 'Events are events'
@@ -13,6 +14,7 @@
   demo_count: 2
   demo_columns: 1
   heading: A more flexible event card
+  eyebrow_heading: HR Insights
   event_date: 2023-08-18 5:00pm
   content: |
     <p>This should show as the vertical variant if space permits.</p>
@@ -35,28 +37,17 @@
   demo_count: 3
   demo_columns: 3
   heading: Haggis Day
+  eyebrow_heading: Tasty Morsels
   event_date: 2525-11-12 10:30am
   datetime_format: 'M j, Y'
   link_url: '#'
   link_alt: 'Tube steaks!'
 -
-  demo_label: Default w/ time
-  demo_count: 3
-  demo_columns: 3
-  heading: Hot Dog Day
-  event_date: 2525-05-05 10:30am
-  datetime_format: D M j • g:ia
-  content: |
-    <p>This is some more stuff.</p>
-  link_url: '#'
-  link_alt: 'Tube steaks!'
-  media: |
-    <img class="cu-image" src="https://picsum.photos/700/700" />
--
   demo_label: Mini
   demo_count: 2
   demo_columns: 2
   heading: Past, Present, and Future Connections
+  eyebrow_heading: Time is a River
   event_date: 2525-11-12 10:30am
   # link_url: '#'
   link_alt: 'Tube steaks!'
@@ -71,18 +62,6 @@
   demo_columns: 2
   heading: Evolving Perspectives on Fostering Connection, Community, and Culture in the Remote and Hybrid Workplace Virt Working Group
   event_date: 2525-11-12 10:30am
-  # link_url: '#'
-  link_alt: 'Tube steaks!'
-  attributes:
-    class:
-      - 'cu-event-card--mini'
--
-  demo_label: Mini w/o media w/ year
-  demo_count: 2
-  demo_columns: 2
-  heading: Evolving Perspectives on Fostering Connection, Community, and Culture in the Remote and Hybrid Workplace Virt Working Group
-  event_date: 2525-11-12 10:30am
-  datetime_format: 'M j, Y'
   # link_url: '#'
   link_alt: 'Tube steaks!'
   attributes:

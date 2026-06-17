@@ -39,7 +39,7 @@
   <div{{ content_attributes.addClass(['cu-event-card__content']) }}>
     {% if heading or event_date %}
     {% include '@union/_composite-heading.twig' with {
-      eyebrow_heading: event_date_time_element,
+      eyebrow_heading: eyebrow_heading,
       heading: heading,
       eyebrow_heading_element: eyebrow_heading_element,
       heading_element: heading_element,
