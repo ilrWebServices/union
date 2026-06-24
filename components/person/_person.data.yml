@@ -1,15 +1,22 @@
 -
-  demo_label: Thumb
+  demo_label: Default
   demo_count: 3
-  demo_columns: 1
+  demo_columns: 3
   name: "Jerry Bannerhoff"
   title: "Instructor"
   content: '<p>Praesent porttitor tellus ut elit viverra tincidunt. Curabitur scelerisque, est id varius sodales, purus orci faucibus nunc, sed pharetra diam dolor ac ipsum.</p>'
   img: |
     <img class="cu-image" src="https://picsum.photos/id/823/300/300" />
-  attributes:
-    class:
-      - 'cu-person--thumb'
+-
+  demo_label: Default (missing image)
+  demo_count: 4
+  demo_columns: 4
+  name: Saul Goodman
+  title:
+    - Senior Associate Dean for Academic Affairs
+    - ILR Professor of Economics and International & Comparative Labor
+  additional_info: |
+    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
 -
   demo_label: Featured
   demo_count: 1
@@ -25,7 +32,7 @@
     class:
       - 'cu-person--featured'
 -
-  demo_label: Adaptive
+  demo_label: Horizontal
   demo_count: 2
   demo_columns: 2
   name: Albus Dumbledore
@@ -39,43 +46,4 @@
     <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
   attributes:
     class:
-      - 'cu-person--adaptive'
--
-  demo_label: Adaptive
-  demo_count: 5
-  demo_columns: 5
-  name: Saul Goodman
-  title:
-    - Senior Associate Dean for Academic Affairs
-    - ILR Professor of Economics and International & Comparative Labor
-  img: |
-    <img class="cu-image" src="https://picsum.photos/id/1074/800/600" />
-  additional_info: |
-    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
-  content: '<p>Praesent porttitor tellus ut elit viverra tincidunt.</p>'
-  attributes:
-    class:
-      - 'cu-person--adaptive'
--
-  demo_label: Adaptive (missing image)
-  demo_count: 5
-  demo_columns: 5
-  name: Saul Goodman
-  title:
-    - Senior Associate Dean for Academic Affairs
-    - ILR Professor of Economics and International & Comparative Labor
-  additional_info: |
-    <div class="field-type--email"><a href="mailto:person@cornell.edu">person@cornell.edu</a></div>
-  attributes:
-    class:
-      - 'cu-person--adaptive'
-# 64
-# 550
-# 783
-# 823
-# 978
-# 996
-# 1011
-# 1027
-# 1062
-# 1074
+      - 'cu-person--horizontal'
