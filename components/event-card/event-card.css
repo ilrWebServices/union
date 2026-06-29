@@ -32,32 +32,42 @@
 }
 
 .cu-event-card .cu-composite-heading {
-  gap: var(--cu-vr1);
+  gap: var(--cu-vr0);
+}
+
+.cu-event-card .cu-composite-heading:not(:has(.cu-composite-heading__eyebrow-heading)) {
+  display: block;
 }
 
 .cu-event-card .cu-composite-heading__eyebrow-heading {
   --cu-font-size: 16px !important;
   --cu-font-weight: 400;
+  max-width: calc(100% - 94px - var(--cu-ps0));
 }
 
 .cu-event-card .cu-event-card__icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: absolute;
-  top: var(--cu-vr1);
-  right: var(--cu-ps1);
   --cu-text-color: var(--cu-color-white);
   background-color: var(--cu-color-dark);
   border: 4px solid white;
-  min-width: 94px;
+  width: 94px;
   --cu-line-height: 1;
   text-align: center;
   aspect-ratio: 1/1;
+  float: right;
+  margin-left: 16px; /* Keep the spacing tight for better wrapping on narrow cards. */
 }
 
-.cu-event-card.cu-event-card--with-media .cu-event-card__icon {
-  top: calc(var(--cu-vr2) * -1);
+.cu-event-card .cu-event-card__icon:has(+ .cu-composite-heading .cu-composite-heading__eyebrow-heading) {
+  position: absolute;
+  right: var(--cu-ps1);
+}
+
+
+.cu-event-card.cu-event-card--with-media:not(.cu-event-card--mini) .cu-event-card__icon {
+  margin-top: -70px;
 }
 
 .cu-event-card .cu-event-card__icon_month,
@@ -143,17 +153,17 @@
   }
 
   .cu-event-card.cu-event-card--with-media:not(.cu-event-card--mini) .cu-event-card__icon {
-    top: var(--cu-vr0);
-    right: var(--cu-ps0);
-  }
-
-  /* Try to prevent the header from being covered by the date icon. */
-  .cu-event-card:not(.cu-event-card--mini) .cu-composite-heading {
-    padding-top: var(--cu-ps3);
+    align-self: flex-end;
+    margin: 0;
   }
 
   .cu-event-card:not(.cu-event-card--mini) .cu-event-card__media .cu-image {
     height: 100%;
+  }
+
+  .cu-event-card .cu-event-card__icon:has(+ .cu-composite-heading .cu-composite-heading__eyebrow-heading) {
+    position: relative;
+    right: unset;
   }
 }
 

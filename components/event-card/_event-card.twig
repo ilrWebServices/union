@@ -37,7 +37,8 @@
     media ? 'cu-event-card--with-media'
   ]) }} itemscope itemtype="http://schema.org/Event">
   <div{{ content_attributes.addClass(['cu-event-card__content']) }}>
-    {% if heading or event_date %}
+    <time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
+    {% if heading %}
     {% include '@union/_composite-heading.twig' with {
       eyebrow_heading: eyebrow_heading,
       heading: heading,
@@ -56,7 +57,6 @@
     } only %}
     {% endif %}
     {{ content }}
-    <time class="cu-event-card__icon" datetime="{{ event_date|date("c") }}"><span class="cu-event-card__icon_month">{{ event_date|date("M", false) }}</span><span class="cu-event-card__icon_day">{{ event_date|date("j", false) }}</span></time>
   </div>
 {% if media %}
   <div class="cu-event-card__media">
