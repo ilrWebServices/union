@@ -40,8 +40,7 @@
 }
 
 .cu-event-card .cu-composite-heading__eyebrow-heading {
-  --cu-font-size: 16px !important;
-  --cu-font-weight: 400;
+  --cu-line-height: 1.2 !important;
   max-width: calc(100% - 94px - var(--cu-ps0));
 }
 
