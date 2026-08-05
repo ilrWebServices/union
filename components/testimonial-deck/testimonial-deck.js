@@ -37,6 +37,11 @@
       this.#items = this.querySelectorAll('.cu-testimonial');
       this.#itemsArray = Array.from(this.#items);
 
+      // Ensure there are two or more items in the deck.
+      if (this.#itemsArray.length < 2) {
+        return;
+      }
+
       this.#elements.thumb_container.classList.add('cu-testimonial-deck__thumbnails');
       this.#elements.nav_container.classList.add('cu-testimonial-deck__nav');
 
