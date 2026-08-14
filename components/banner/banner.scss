@@ -1,6 +1,6 @@
-@use './global/variables';
-@use './global/breakpoints';
-@use './global/mixins';
+@use '../../global/variables';
+@use '../../global/breakpoints';
+@use '../../global/mixins';
 
 .cu-banner {
   position: relative;

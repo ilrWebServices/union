@@ -1,8 +1,8 @@
 // Side by Side Component
 // Leverages design patterns from ilr-base and global styles
 
-@use './global/variables';
-@use './global/breakpoints';
+@use '../../global/variables';
+@use '../../global/breakpoints';
 
 .cu-side-by-side {
   display: grid;

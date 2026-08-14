@@ -1,5 +1,5 @@
-@use './global/variables';
-@use './global/breakpoints';
+@use '../../global/variables';
+@use '../../global/breakpoints';
 
 .cu-section-heading {
   margin: var(--cu-component-margin-top, var(--cu-vr2)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
