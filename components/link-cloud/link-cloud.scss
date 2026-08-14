@@ -1,4 +1,4 @@
-@import './global/global';
+@use './global/breakpoints';
 
 .cu-link-cloud {
   display: flex;
@@ -9,7 +9,7 @@
     padding: var(--cu-vr1) var(--cu-ps1);
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     &[class*="cu-colorscheme--"] {
       padding: var(--cu-vr3) var(--cu-ps4);
     }

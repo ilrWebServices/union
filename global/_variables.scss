@@ -1,3 +1,4 @@
+@use "sass:color";
 // Variables
 
 // Colors
@@ -27,17 +28,17 @@ $color-text--medium: $gray-medium;
 
 // Color status indictors
 $color-info: #5bc0de !default;
-$color-info--dark: darken($color-info, 30%) !default;
-$color-info--light: lighten($color-info, 30%) !default;
+$color-info--dark: color.adjust($color-info, $lightness: -30%) !default;
+$color-info--light: color.adjust($color-info, $lightness: 30%) !default;
 $color-status: #5cb85c !default;
-$color-status--dark: darken($color-status, 20%) !default;
-$color-status--light: lighten($color-status, 38%) !default;
+$color-status--dark: color.adjust($color-status, $lightness: -20%) !default;
+$color-status--light: color.adjust($color-status, $lightness: 38%) !default;
 $color-warning: #ffc107 !default;
-$color-warning--dark: darken($color-warning, 20%) !default;
-$color-warning--light: lighten($color-warning, 40%) !default;
+$color-warning--dark: color.adjust($color-warning, $lightness: -20%) !default;
+$color-warning--light: color.adjust($color-warning, $lightness: 40%) !default;
 $color-error: #d9534f !default;
-$color-error--dark: darken($color-error, 20%) !default;
-$color-error--light: lighten($color-error, 33%) !default;
+$color-error--dark: color.adjust($color-error, $lightness: -20%) !default;
+$color-error--light: color.adjust($color-error, $lightness: 33%) !default;
 
 // Fonts and typography
 $base-font-size-percentage: 100% !default;
@@ -63,7 +64,7 @@ $max-width-section: 1060px;
 // Links
 $color-link: $cornell-red;
 $link-decoration: none;
-$color-link-hover: lighten($cornell-red, 0.1);
+$color-link-hover: color.adjust($cornell-red, $lightness: 1%);
 $link-hover-decoration: underline;
 
 // Tables

@@ -1,4 +1,4 @@
-@import './global/global';
+@use './global/breakpoints';
 
 .cu-topic-list {
   display: flex;
@@ -9,7 +9,7 @@
   }
 }
 
-@include breakpoint(md) {
+@include breakpoints.breakpoint(md) {
   .cu-topic-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -59,7 +59,7 @@
   order: 1;
   margin-bottom: var(--cu-vr1);
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     height: 0; /* Remove this from grid height calculations. */
     min-height: 100%; /* min-height should match rows's height. */
     margin-bottom: 0;

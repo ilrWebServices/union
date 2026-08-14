@@ -1,4 +1,4 @@
-@import './global/global';
+@use './global/variables';
 
 // Custom elements need a `display` property before things like background colors will work.
 cu-slideshow {
@@ -448,8 +448,8 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     --cu-font-size: var(--cu-ms1);
     font-style: normal;
     --cu-font-weight: 400;
-    line-height: $reduced-line-height;
-    --cu-text-color: var(--cu-color-white, #{$white});
+    line-height: variables.$reduced-line-height;
+    --cu-text-color: var(--cu-color-white, #{variables.$white});
     text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   }
 
@@ -474,7 +474,7 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     --cu-font-weight: 900;
     text-transform: uppercase;
     line-height: 1.05;
-    --cu-text-color: var(--cu-color-white, #{$white});
+    --cu-text-color: var(--cu-color-white, #{variables.$white});
   }
 
   @container (min-width: 768px) {
@@ -493,16 +493,16 @@ cu-slideshow:not(:has(.cu-slideshow__content)) {
     --cu-font-size: 16px;
     --cu-font-weight: 700;
     line-height: 24px;
-    color: var(--cu-color-brand, #{$cornell-red});
-    background-color: var(--cu-color-white, #{$white});
-    border: 2px solid var(--cu-color-white, #{$white});
-    text-decoration: $link-decoration;
+    color: var(--cu-color-brand, #{variables.$cornell-red});
+    background-color: var(--cu-color-white, #{variables.$white});
+    border: 2px solid var(--cu-color-white, #{variables.$white});
+    text-decoration: variables.$link-decoration;
     transition: background-color 0.2s, color 0.2s;
     white-space: nowrap;
 
     &:hover {
-      background-color: rgba($white, 0.9);
-      color: var(--cu-color-brand, #{$cornell-red});
+      background-color: rgba(variables.$white, 0.9);
+      color: var(--cu-color-brand, #{variables.$cornell-red});
     }
 
     svg {

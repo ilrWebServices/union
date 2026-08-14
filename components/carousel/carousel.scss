@@ -1,4 +1,4 @@
-@import './global/global';
+@use './global/breakpoints';
 
 .cu-carousel {
   display: grid;
@@ -15,7 +15,7 @@
   }
 }
 
-@include breakpoint(md) {
+@include breakpoints.breakpoint(md) {
   .cu-carousel {
     grid-template-columns: 2fr 3fr;
     gap: var(--cu-ps3);
@@ -33,7 +33,7 @@
   justify-content: center;
   padding-right: var(--cu-ps1);
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     padding: var(--cu-vr3) 0;
   }
 }
@@ -45,7 +45,7 @@
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     padding: var(--cu-vr3) 0;
     overflow-x: hidden;
   }
@@ -88,7 +88,7 @@
 .cu-carousel__navigation {
   display: none;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     padding-left: 0;
     position: absolute;
     margin: 0;
