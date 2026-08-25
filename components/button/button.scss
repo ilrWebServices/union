@@ -17,35 +17,41 @@
 // When a button in either in a component that is using a light colorscheme, or
 // the component using a light color scheme is nested in another component using
 // any colorscheme.
-.cu-colorscheme--light .cu-button:not([class*="cu-colorscheme--"]),
+.cu-colorscheme--light .cu-button:not([class*="cu-colorscheme--"]):not(.cu-button--alt),
 [class*="cu-colorscheme--"] .cu-colorscheme--light .cu-button {
   background-color: transparent;
   --cu-text-color: var(--cu-color-dark);
 }
 
 // Same as above but for buttons nested in a dark component.
-.cu-colorscheme--dark .cu-button:not([class*="cu-colorscheme--"]),
+.cu-colorscheme--dark .cu-button:not([class*="cu-colorscheme--"]):not(.cu-button--alt),
 [class*="cu-colorscheme--"] .cu-colorscheme--dark .cu-button  {
   background-color: transparent;
   --cu-text-color: var(--cu-color-white);
 }
 
 // Same as above but for buttons nested in a vibrant component.
-.cu-colorscheme--vibrant .cu-button:not([class*="cu-colorscheme--"]),
+.cu-colorscheme--vibrant .cu-button:not([class*="cu-colorscheme--"]):not(.cu-button--alt),
 [class*="cu-colorscheme--"] .cu-colorscheme--vibrant .cu-button  {
   background-color: transparent;
   --cu-text-color: var(--cu-color-white);
 }
 
+// Same as above but for alt buttons nested in a vibrant component.
+.cu-colorscheme--vibrant .cu-button--alt  {
+  background-color: white;
+  --cu-text-color: var(--cu-color-brand);
+}
+
 // TODO: Deal with hover on cards
-.cu-button:hover,
-.cu-colorscheme--light .cu-button:hover,
-.cu-colorscheme--dark .cu-button:hover {
+.cu-button:hover:not(.cu-button--alt),
+.cu-colorscheme--light .cu-button:hover:not(.cu-button--alt),
+.cu-colorscheme--dark .cu-button:hover:not(.cu-button--alt) {
   background-color: var(--cu-color-brand);
   color: var(--cu-color-white);
 }
 
-.cu-colorscheme--vibrant .cu-button:hover,
+.cu-colorscheme--vibrant .cu-button:hover:not(.cu-button--alt),
 .cu-button:not(.cu-button--overlay).cu-colorscheme--vibrant:hover,
 .cu-button.cu-button--alt:hover {
   // 2025-11-19: TIL color-mix is a thing! With broad browser support!
@@ -53,7 +59,8 @@
   --cu-text-color: var(--cu-color-white);
 }
 
-.cu-button--alt {
+.cu-button--alt,
+.cu-colorscheme--light .cu-button--alt  {
   --cu-text-color: var(--cu-color-white);
   border-color: var(--cu-color-brand);
   background-color: var(--cu-color-brand);
