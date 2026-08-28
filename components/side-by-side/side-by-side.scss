@@ -1,7 +1,8 @@
 // Side by Side Component
 // Leverages design patterns from ilr-base and global styles
 
-@import '../../global/global';
+@use '../../global/variables';
+@use '../../global/breakpoints';
 
 .cu-side-by-side {
   display: grid;
@@ -20,7 +21,7 @@
   }
 
   // Desktop: side by side layout
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     grid-template-columns: auto 50%;
     gap: var(--cu-vr3);
 
@@ -92,7 +93,7 @@
 
 // Variant: Reversed layout (media on left, content on right)
 .cu-layoutscheme--reversed {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     .cu-side-by-side__media {
       order: -1;
     }
@@ -120,7 +121,7 @@
 
   // Vibrant (brand color) variant
   &.cu-component__frame--vibrant {
-    --frame-color: var(--cu-color-brand, #{$cornell-red});
+    --frame-color: var(--cu-color-brand, #{variables.$cornell-red});
   }
 
   // Dark variant

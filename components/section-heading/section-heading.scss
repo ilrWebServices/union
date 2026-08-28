@@ -1,13 +1,14 @@
-@import './global/global';
+@use '../../global/variables';
+@use '../../global/breakpoints';
 
 .cu-section-heading {
   margin: var(--cu-component-margin-top, var(--cu-vr2)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
-  max-width: var(--cu-max-width-section, #{$max-width-section});
+  max-width: var(--cu-max-width-section, #{variables.$max-width-section});
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     margin: var(--cu-component-margin-top, var(--cu-vr3)) auto var(--cu-component-margin-bottom, var(--cu-vr1));
   }
 
@@ -17,7 +18,7 @@
   }
 
   .cu-composite-heading .cu-composite-heading__link {
-    --cu-text-color: #{$cornell-red};
+    --cu-text-color: #{variables.$cornell-red};
     --cu-font-weight: 400;
     --cu-font-size: var(--cu-ms-2);
   }
@@ -41,7 +42,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background: $black;
+      background: variables.$black;
     }
 
     &::before {

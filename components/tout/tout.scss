@@ -1,7 +1,8 @@
 // Tout Component
 // Leverages design patterns from ilr-base and global styles
 
-@import '../../global/global';
+@use '../../global/variables';
+@use '../../global/breakpoints';
 
 .cu-tout {
   display: grid;
@@ -16,7 +17,7 @@
 
   .cu-tout__media {
     order: -1;
-    background-color: $gray-light; // Consider adapting to colorscheme.
+    background-color:variables.$gray-light; // Consider adapting to colorscheme.
     padding: var(--cu-vr1) var(--cu-ps1);
 
     .cu-tout__media-link {
@@ -56,7 +57,7 @@
     --cu-font-size: var(--cu-ms-2);
   }
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     grid-template-columns: auto 50%;
 
     &.cu-layoutscheme--reversed {
@@ -77,7 +78,7 @@
 
 // Variant: Reversed layout (media on left, content on right)
 .cu-layoutscheme--reversed {
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     .cu-tout__media {
       order: -1;
     }

@@ -1,4 +1,6 @@
-@import './global/global';
+@use '../../global/variables';
+@use '../../global/breakpoints';
+@use '../../global/mixins';
 
 .cu-banner {
   position: relative;
@@ -18,7 +20,7 @@
     padding: 1em 33% 1em 2em;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     display: grid;
     grid-template-columns: 66% 34%;
     &, &[class*="cu-colorscheme--"] {
@@ -27,7 +29,7 @@
   }
 
   .cu-banner__content {
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -49,7 +51,7 @@
     width: 100%;
     height: 100%;
     // z-index: -2;
-    @include overlay;
+    @include mixins.overlay;
 
     // Only specific Replaced Elements can cover the media div.
     // See https://html.spec.whatwg.org/multipage/rendering.html#replaced-elements
@@ -66,7 +68,7 @@
       display: contents;
     }
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       position: relative;
       grid-column: 1;
       grid-row: 1;
@@ -75,12 +77,12 @@
 }
 
 .cu-banner--panel-left {
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     grid-template-columns: 34% 66%;
   }
 
   .cu-banner__media {
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       grid-column: 2;
     }
   }
@@ -100,22 +102,22 @@
   &.cu-banner--with-media {
     // Override any colorscheme.
     // @todo Use ::has(.cu-banner__media) once supported in Firefox.
-    --cu-text-color: #{$white};
+    --cu-text-color: #{variables.$white};
   }
 
   &.cu-banner--with-media.cu-colorscheme--light {
     .cu-button {
-      --cu-text-color: #{$black};
+      --cu-text-color: #{variables.$black};
     }
   }
 
-  @include breakpoint(sm) {
+  @include breakpoints.breakpoint(sm) {
     &, &[class*="cu-colorscheme--"] {
       padding: var(--cu-vr1) var(--cu-vr2);
     }
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     &, &[class*="cu-colorscheme--"] {
       padding: var(--cu-vr1) var(--cu-vr4);
     }
@@ -126,7 +128,7 @@
   }
 
   .cu-banner__content {
-    max-width: var(--cu-max-width-section, #{$max-width-section});
+    max-width: var(--cu-max-width-section, #{variables.$max-width-section});
     margin: 0 auto;
     z-index: 2;
     position: relative;
@@ -162,12 +164,12 @@
       width: 10%;
       max-width: 100%;
       padding: .25em 0 0 0;
-      border-bottom: 4px solid var(--cu-color-brand, #{$cornell-red});
+      border-bottom: 4px solid var(--cu-color-brand, #{variables.$cornell-red});
     }
   }
 
   .cu-banner__media {
-    @include overlay;
+    @include mixins.overlay;
 
     & {
       position: absolute;
@@ -220,7 +222,7 @@
       pointer-events: auto;
     }
 
-    @include breakpoint(lg) {
+    @include breakpoints.breakpoint(lg) {
       padding: var(--cu-vr1) var(--cu-ps3);
     }
 
@@ -278,7 +280,7 @@
     grid-column: 1;
   }
 
-  @include breakpoint(md) {
+  @include breakpoints.breakpoint(md) {
     min-height: 500px;
     display: block;
   }
@@ -293,7 +295,7 @@
     align-items: start;
     flex-direction: column;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       padding: var(--cu-vr4) var(--cu-ps3);
       max-width: 40%;
     }
@@ -306,7 +308,7 @@
         color: var(--cu-color-dark);
         line-height: 1.05;
 
-        @include breakpoint(md) {
+        @include breakpoints.breakpoint(md) {
           --cu-font-size: 67px;
           line-height: 63px;
         }
@@ -324,7 +326,7 @@
       margin-bottom: var(--cu-vr0);
       max-width: 70%;
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         margin-bottom: var(--cu-vr1);
         max-width: unset;
       }
@@ -346,7 +348,7 @@
     width: 100%;
     height: 100%;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       position: absolute;
       inset: 0;
     }
@@ -386,7 +388,7 @@
     align-items: center;
     justify-content: center;
 
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       position: absolute;
       top: 0;
       right: 0;
@@ -401,7 +403,7 @@
   }
 
   .cu-banner__link {
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       background-color: var(--cu-color-brand);
       color: var(--cu-color-white);
       border: 1px solid var(--cu-color-brand);
@@ -430,7 +432,7 @@
  * Full bleed - extends the banner to full viewport width.
  */
 .cu-banner--full-bleed {
-    @include breakpoint(md) {
+    @include breakpoints.breakpoint(md) {
       padding-left: 0;
       padding-right: 0;
     }

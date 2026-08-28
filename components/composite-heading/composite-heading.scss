@@ -1,4 +1,4 @@
-@import './global/global';
+@use '../../global/breakpoints';
 
 .cu-composite-heading {
   display: flex;
@@ -76,11 +76,11 @@
       --cu-font-size: var(--cu-ms4);
       text-transform: uppercase;
 
-      @include breakpoint(sm) {
+      @include breakpoints.breakpoint(sm) {
         --cu-font-size: var(--cu-ms6);
       }
 
-      @include breakpoint(md) {
+      @include breakpoints.breakpoint(md) {
         --cu-font-size: var(--cu-ms7);
       }
     }
@@ -116,7 +116,7 @@
       display: none;
     }
 
-    @include breakpoint(sm) {
+    @include breakpoints.breakpoint(sm) {
       display: grid;
       grid-template-rows: auto;
       grid-auto-columns: 1fr auto;

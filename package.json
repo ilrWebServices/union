@@ -25,10 +25,11 @@
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-livereload": "^4",
-    "gulp-sass": "^5",
+    "gulp-sass": "^6",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^9",
-    "sass": "^1"
+    "sass": "^1",
+    "sass-migrator": "^2.6.1"
   },
   "scripts": {
     "start": "gulp",
