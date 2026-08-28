@@ -99,13 +99,16 @@
     padding: var(--cu-vr1);
   }
 
-  &.cu-banner--with-media {
-    // Override any colorscheme.
-    // @todo Use ::has(.cu-banner__media) once supported in Firefox.
+  &:has(.cu-banner__media) .cu-banner__content,
+  &:has(.cu-banner__media) .cu-banner__content_side {
+    // Override any colorscheme, but only in content areas. This allows the
+    // property to be reverted so the text color will fall back to the value
+    // from the colorscheme. One use case is when the banner is modified to
+    // _not_ show the image under the text.
     --cu-text-color: #{variables.$white};
   }
 
-  &.cu-banner--with-media.cu-colorscheme--light {
+  &:has(.cu-banner__media).cu-colorscheme--light {
     .cu-button {
       --cu-text-color: #{variables.$black};
     }
